@@ -288,6 +288,7 @@ html[lang='ja-JP'] {
 }
 .menu__link--active:not(.menu__link--sublist) {
   background: var(--ifm-active-menu-color);
+  width: 189px;
 }
 .menu__list {
   ._productlink {
@@ -312,6 +313,7 @@ html[lang='ja-JP'] {
   li {
     margin: 4px 8px 4px 0;
     border-radius: 4px;
+    width: 189px;
     a {
       padding: 3px 8px;
       line-height: 1.5;

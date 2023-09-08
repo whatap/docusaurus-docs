@@ -3377,6 +3377,11 @@ const sidebars = {
               label: 'DB 연결 지연과 커넥션 풀',
               id: 'best-practice-guides/about-apm-dbc'
             },
+            {
+              type: 'doc',
+              label: 'HTTP 호출 지연',
+              id: 'best-practice-guides/about-apm-httpc'
+            },
           ]
         },
       ]
