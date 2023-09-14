@@ -1,0 +1,54 @@
+A tag consists of a search key and a search value. As an example, in the following case, the search key is `exception` and the search value is `IllegalArgumentException`.
+
+![Tag structure](/img/log-filter-comp.png)
+
+#### Search key types
+
+| Search key types                          | Search key format | Meaning          | Example for Search key and search value                           | Seach example                             |
+| ----------------------------------------- | ----------------- | ---------------- | ----------------------------------------------------------------- | ----------------------------------------- |
+| String keyword                            | keyword           | File Name        | -   Key: fileName<br/> - Value: /data/whatap/logs/yard.log        | `fileName:/data/whatap/logs/yard.log`     |
+| Numeric keyword                           | keyword.n         | Response Time    | -   Key: response_time.n<br/> - Value: 2945                       | `response_time.n>=2945`                   |
+| Reserved keyword<br/>(predefined keyword) | @keyword          | Transaction ID   | -   Key: @txid<br/> - Value: 85459614215434144                    | `@txid:85459614215434144`                 |
+| Log body's keyword                        | content           | Log body         | -   Key: content<br/> - Value: user input                         | `content: *ERROR*`                        |
+
+:::note
+
+**Content search key**
+
+-   The content search key searches the bodies of unindexed logs. For example, if you enter `content: *ERROR*`, the logs containing `ERROR` are searched among the log bodies. 
+
+-   If you do not know which keywords need to be used for indexing, use the content search keys to identify the logs containing problematic keywords. Afterwards, you can improve the search performance by setting a parser with the keyword through the log parser settings in **_Log setting_** and creating indexes.
+
+:::
+
+#### Common syntaxes
+
+| Syntax type               | Description                                                                                                                                                                                 | Example                                                                            |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `+searchValue`            | -   Searches for the logs that match the search value.<br/> - If no operator is entered, it operates as +.<br/> - If the value is a negative number such as -123, be sure to enter `+-123`. | `exception:RuntimeException` <br/> `exception:+RuntimeException`<br/>`@txid:+-123` |
+| `-searchValue`            | -   Searches for the logs that do not match the search value.<br/> - To search with excluding the logs with a value of 123, be sure to enter `-123`.                                        | `exception:-RuntimeException`<br/> `@txid:-123`                                    |
+| `*searchValue`            | Searches for the logs starting with the search value.                                                                                                                                       | `word:*hello`                                                                      |
+| `searchValue*`            | Searches for the logs ending with the search value.                                                                                                                                         | `word:hello*`                                                                      |
+| `*searchValue*`           | Searches for the logs that contain the search value in the middle.                                                                                                                          | `word:*hello*`                                                                     |
+| `*search*Value*`          | Searches for the logs that contain the search value.                                                                                                                                        | `word:*he*llo*`                                                                    |
+| `re:{regexr}+re:{regexr}` | Searches for the logs that match a regular expression.                                                                                                                                      | `caller:+re:^i\.w\.a\.w\.s\.v\.r\.`                                                |
+| `-re:{regexr}`            | Searches for the logs that do not match a regular expression.                                                                                                                               | `caller:-re:^i\.w\.a\.w\.s\.v\.r\.`                                                |
+
+#### Syntax in case the search key has a numeric value (keyword.n)
+
+The following syntax is supported only when the search key is in `keyword.n` format.
+
+-   Search values must only be numbers.
+
+-   No prefix is attached to the value of the `.n` keyword. All keywords other than `.n` must be attached with a prefix.
+
+    > For example, `+>searchValue` is invalid.
+
+| Syntax type       | Description                                                                        | Example                    |
+| ----------------- | ---------------------------------------------------------------------------------- | -------------------------- |
+| `>searchValue`    | Searches for the logs containing values greater than the search value.             | `response_time.n>3000`     |
+| `>=searchValue`   | Searches for the logs containing values greater than or equal to the search value. | `response_time.n>=3000`    |
+| `==searchValue`   | Searches for the logs containing the same search value.                            | `response_time.n==3000`    |
+| `!=searchValue`   | Searches for the logs that contain values different from the search value.         | `response_time.n!=3000`    |
+| `<searchValue`    | Searches for the logs containing values less than the search value.                | `response_time.n<3000`     |
+| `<=searchValue`   | Searches for the logs containing values less than or equal to the search value.    | `response_time.n<=3000`    |

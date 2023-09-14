@@ -5,6 +5,60 @@ toc_max_heading_level: 2
 pagination_next: release-notes/service/service-1_106_x
 ---
 
+## Service 1.108.14
+
+2023年9月8日
+
+<div class='indentTab'>
+
+### `共通`
+
+-   <Status>Feature</Status><UI>インターバル</UI>選択オプションから<UI>デフォルト</UI>項目を選択した場合、デフォルトのインターバル値を表示する機能の追加
+
+    <div class='.release-compare'>
+
+    |                      変更前                     |                     変更後                     |
+    | :------------------------------------------: | :-----------------------------------------: |
+    | ![](/img/release/interval-option-before.png) | ![](/img/release/interval-option-after.png) |
+
+    </div>
+
+-   <Status>Changed</Status><UI>時間</UI>照会区間が変更されるとき<UI>インターバル</UI>選択オプションから<UI>デフォルト</UI>項目を選択するようにロジックを修正
+
+    照会区間を変更する際、**_インターバル_**オプションが**_デフォルト_**項目が選択される場合は、次のとおりです。
+
+    -   **_インターバル_**オプションで以前の選択項目が**_デフォルト_**の場合
+
+    -   **_インターバル_**オプションで以前の選択項目が**_デフォルト_**ではなく、変更された**_インターバル_** オプション一覧にない場合
+
+    -   **_インターバル_**オプションで以前の選択項目が**_デフォルト_**ではなく、選択した**_インターバル_** オプション値が照会期間の半分以下の場合
+
+-   <Status>Fixed</Status>一部の状況で<UI>カラム設定</UI>ポップアップの<UI>確認</UI>ボタンを押したときに、不明なエラーメッセージを表示し、作動しないエラーの修正
+
+-   <Status>Fixed</Status>初期画面<UI>プロジェクト一覧</UI>のカードビュー画面で<UI>アプリケーション</UI> 項目のカウントが０に出力されるバグを修正
+
+* * *
+
+### `Application`
+
+-   <Status>Changed</Status>JAVAプロジェクトの<UI>管理</UI>><UI>エージェント設定</UI>メニューから<code>biz_exceptions</code>と<code>ignore_exceptions</code>オプションのカテゴリを<UI>通知オプション</UI>><UI>HTTP outbound呼び出し</UI>から<UI>Exception</UI>下位に変更
+
+-   <Status>Fixed</Status><UI>トレース分析</UI>ウィンドウの<UI>トランザクションログ</UI>タブでログ照会パスワードが設定された場合、レイアウトが壊れる現象を修正
+
+* * *
+
+### `Server`
+
+<p><Status>Fixed</Status><UI>サーバー一覧</UI>><UI>サーバー一覧</UI>メニューからサーバーごとのステータスが変更された場合、テーブル行の色が変更されないバグを修正</p>
+
+* * *
+
+### `URL`
+
+<p><Status>Changed</Status><UI>警告アラート</UI>><UI>イベント受信設定</UI>メニューから<UI>大量アラート通知発生防止</UI>機能の活性化</p>
+
+</div>
+
 ## Service 1.108.13
 
 2023年9月4日
@@ -65,7 +119,7 @@ pagination_next: release-notes/service/service-1_106_x
 
 ### `共通`
 
-#### 利用履歴
+#### 利用内訳
 
 <p><Status>Changed</Status><UI>請求及び納付内訳</UI>メニューの<UI>請求内訳の詳細</UI>テーブルで<b>CPUコア</b>カラムの代わりに<UI>課金集計量</UI>カラム追加</p>
 

@@ -8,7 +8,6 @@
 /// <reference types="node" resolution-mode="require"/>
 /// <reference types="node" resolution-mode="require"/>
 import type { Buffer } from 'node:buffer';
-import { URL, URLSearchParams } from 'node:url';
 import { checkServerIdentity } from 'node:tls';
 import http from 'node:http';
 import https from 'node:https';
@@ -27,39 +26,39 @@ import type { CancelableRequest } from '../as-promise/types.js';
 import type { PlainResponse, Response } from './response.js';
 import type { RequestError } from './errors.js';
 import type { Delays } from './timed-out.js';
-declare type Promisable<T> = T | Promise<T>;
-export declare type DnsLookupIpVersion = undefined | 4 | 6;
-declare type Except<ObjectType, KeysType extends keyof ObjectType> = Pick<ObjectType, Exclude<keyof ObjectType, KeysType>>;
-export declare type NativeRequestOptions = HttpsRequestOptions & CacheOptions & {
+type Promisable<T> = T | Promise<T>;
+export type DnsLookupIpVersion = undefined | 4 | 6;
+type Except<ObjectType, KeysType extends keyof ObjectType> = Pick<ObjectType, Exclude<keyof ObjectType, KeysType>>;
+export type NativeRequestOptions = HttpsRequestOptions & CacheOptions & {
     checkServerIdentity?: CheckServerIdentityFunction;
 };
-declare type AcceptableResponse = IncomingMessageWithTimings | ResponseLike;
-declare type AcceptableRequestResult = Promisable<AcceptableResponse | ClientRequest> | undefined;
-export declare type RequestFunction = (url: URL, options: NativeRequestOptions, callback?: (response: AcceptableResponse) => void) => AcceptableRequestResult;
-export declare type Agents = {
+type AcceptableResponse = IncomingMessageWithTimings | ResponseLike;
+type AcceptableRequestResult = Promisable<AcceptableResponse | ClientRequest> | undefined;
+export type RequestFunction = (url: URL, options: NativeRequestOptions, callback?: (response: AcceptableResponse) => void) => AcceptableRequestResult;
+export type Agents = {
     http?: HttpAgent | false;
     https?: HttpsAgent | false;
     http2?: unknown | false;
 };
-export declare type Headers = Record<string, string | string[] | undefined>;
-export declare type ToughCookieJar = {
+export type Headers = Record<string, string | string[] | undefined>;
+export type ToughCookieJar = {
     getCookieString: ((currentUrl: string, options: Record<string, unknown>, cb: (error: Error | null, cookies: string) => void) => void) & ((url: string, callback: (error: Error | null, cookieHeader: string) => void) => void);
     setCookie: ((cookieOrString: unknown, currentUrl: string, options: Record<string, unknown>, cb: (error: Error | null, cookie: unknown) => void) => void) & ((rawCookie: string, url: string, callback: (error: Error | null, result: unknown) => void) => void);
 };
-export declare type PromiseCookieJar = {
+export type PromiseCookieJar = {
     getCookieString: (url: string) => Promise<string>;
     setCookie: (rawCookie: string, url: string) => Promise<unknown>;
 };
-export declare type InitHook = (init: OptionsInit, self: Options) => void;
-export declare type BeforeRequestHook = (options: Options) => Promisable<void | Response | ResponseLike>;
-export declare type BeforeRedirectHook = (updatedOptions: Options, plainResponse: PlainResponse) => Promisable<void>;
-export declare type BeforeErrorHook = (error: RequestError) => Promisable<RequestError>;
-export declare type BeforeRetryHook = (error: RequestError, retryCount: number) => Promisable<void>;
-export declare type AfterResponseHook<ResponseType = unknown> = (response: Response<ResponseType>, retryWithMergedOptions: (options: OptionsInit) => never) => Promisable<Response | CancelableRequest<Response>>;
+export type InitHook = (init: OptionsInit, self: Options) => void;
+export type BeforeRequestHook = (options: Options) => Promisable<void | Response | ResponseLike>;
+export type BeforeRedirectHook = (updatedOptions: Options, plainResponse: PlainResponse) => Promisable<void>;
+export type BeforeErrorHook = (error: RequestError) => Promisable<RequestError>;
+export type BeforeRetryHook = (error: RequestError, retryCount: number) => Promisable<void>;
+export type AfterResponseHook<ResponseType = unknown> = (response: Response<ResponseType>, retryWithMergedOptions: (options: OptionsInit) => never) => Promisable<Response | CancelableRequest<Response>>;
 /**
 All available hooks of Got.
 */
-export declare type Hooks = {
+export type Hooks = {
     /**
     Called with the plain request options, right before their normalization.
 
@@ -328,20 +327,20 @@ export declare type Hooks = {
     */
     afterResponse: AfterResponseHook[];
 };
-export declare type ParseJsonFunction = (text: string) => unknown;
-export declare type StringifyJsonFunction = (object: unknown) => string;
+export type ParseJsonFunction = (text: string) => unknown;
+export type StringifyJsonFunction = (object: unknown) => string;
 /**
 All available HTTP request methods provided by Got.
 */
-export declare type Method = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'HEAD' | 'DELETE' | 'OPTIONS' | 'TRACE' | 'get' | 'post' | 'put' | 'patch' | 'head' | 'delete' | 'options' | 'trace';
-export declare type RetryObject = {
+export type Method = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'HEAD' | 'DELETE' | 'OPTIONS' | 'TRACE' | 'get' | 'post' | 'put' | 'patch' | 'head' | 'delete' | 'options' | 'trace';
+export type RetryObject = {
     attemptCount: number;
     retryOptions: RetryOptions;
     error: RequestError;
     computedValue: number;
     retryAfter?: number;
 };
-export declare type RetryFunction = (retryObject: RetryObject) => Promisable<number>;
+export type RetryFunction = (retryObject: RetryObject) => Promisable<number>;
 /**
 An object representing `limit`, `calculateDelay`, `methods`, `statusCodes`, `maxRetryAfter` and `errorCodes` fields for maximum retry count, retry handler, allowed methods, allowed status codes, maximum [`Retry-After`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After) time and allowed error codes.
 
@@ -364,7 +363,7 @@ __Note:__ Got does not retry on `POST` by default.
 __Note:__ If `maxRetryAfter` is set to `undefined`, it will use `options.timeout`.
 __Note:__ If [`Retry-After`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After) header is greater than `maxRetryAfter`, it will cancel the request.
 */
-export declare type RetryOptions = {
+export type RetryOptions = {
     limit: number;
     methods: Method[];
     statusCodes: number[];
@@ -374,20 +373,20 @@ export declare type RetryOptions = {
     noise: number;
     maxRetryAfter?: number;
 };
-export declare type CreateConnectionFunction = (options: NativeRequestOptions, oncreate: (error: NodeJS.ErrnoException, socket: Socket) => void) => Socket;
-export declare type CheckServerIdentityFunction = (hostname: string, certificate: DetailedPeerCertificate) => NodeJS.ErrnoException | void;
-export declare type CacheOptions = {
+export type CreateConnectionFunction = (options: NativeRequestOptions, oncreate: (error: NodeJS.ErrnoException, socket: Socket) => void) => Socket;
+export type CheckServerIdentityFunction = (hostname: string, certificate: DetailedPeerCertificate) => NodeJS.ErrnoException | void;
+export type CacheOptions = {
     shared?: boolean;
     cacheHeuristic?: number;
     immutableMinTimeToLive?: number;
     ignoreCargoCult?: boolean;
 };
-declare type PfxObject = {
+type PfxObject = {
     buffer: string | Buffer;
     passphrase?: string | undefined;
 };
-declare type PfxType = string | Buffer | Array<string | Buffer | PfxObject> | undefined;
-export declare type HttpsOptions = {
+type PfxType = string | Buffer | Array<string | Buffer | PfxObject> | undefined;
+export type HttpsOptions = {
     alpnProtocols?: string[];
     rejectUnauthorized?: NativeRequestOptions['rejectUnauthorized'];
     checkServerIdentity?: CheckServerIdentityFunction;
@@ -439,12 +438,12 @@ export declare type HttpsOptions = {
     ecdhCurve?: SecureContextOptions['ecdhCurve'];
     certificateRevocationLists?: SecureContextOptions['crl'];
 };
-export declare type PaginateData<BodyType, ElementType> = {
+export type PaginateData<BodyType, ElementType> = {
     response: Response<BodyType>;
     currentItems: ElementType[];
     allItems: ElementType[];
 };
-export declare type FilterData<ElementType> = {
+export type FilterData<ElementType> = {
     item: ElementType;
     currentItems: ElementType[];
     allItems: ElementType[];
@@ -452,7 +451,7 @@ export declare type FilterData<ElementType> = {
 /**
 All options accepted by `got.paginate()`.
 */
-export declare type PaginationOptions<ElementType, BodyType> = {
+export type PaginationOptions<ElementType, BodyType> = {
     /**
     A function that transform [`Response`](#response) into an array of items.
     This is where you should do the parsing.
@@ -551,23 +550,23 @@ export declare type PaginationOptions<ElementType, BodyType> = {
     */
     stackAllItems?: boolean;
 };
-export declare type SearchParameters = Record<string, string | number | boolean | null | undefined>;
+export type SearchParameters = Record<string, string | number | boolean | null | undefined>;
 /**
 All parsing methods supported by Got.
 */
-export declare type ResponseType = 'json' | 'buffer' | 'text';
-declare type OptionsToSkip = 'searchParameters' | 'followRedirects' | 'auth' | 'toJSON' | 'merge' | 'createNativeRequestOptions' | 'getRequestFunction' | 'getFallbackRequestFunction' | 'freeze';
-export declare type InternalsType = Except<Options, OptionsToSkip>;
-export declare type OptionsError = NodeJS.ErrnoException & {
+export type ResponseType = 'json' | 'buffer' | 'text';
+type OptionsToSkip = 'searchParameters' | 'followRedirects' | 'auth' | 'toJSON' | 'merge' | 'createNativeRequestOptions' | 'getRequestFunction' | 'getFallbackRequestFunction' | 'freeze';
+export type InternalsType = Except<Options, OptionsToSkip>;
+export type OptionsError = NodeJS.ErrnoException & {
     options?: Options;
 };
-export declare type OptionsInit = Except<Partial<InternalsType>, 'hooks' | 'retry'> & {
+export type OptionsInit = Except<Partial<InternalsType>, 'hooks' | 'retry'> & {
     hooks?: Partial<Hooks>;
     retry?: Partial<RetryOptions>;
 };
 export default class Options {
     private _unixOptions?;
-    private _internals;
+    private readonly _internals;
     private _merging;
     private readonly _init;
     constructor(input?: string | URL | OptionsInit, options?: OptionsInit, defaults?: Options);
@@ -741,8 +740,6 @@ export default class Options {
     /**
     You can abort the `request` using [`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController).
 
-    *Requires Node.js 16 or later.*
-
     @example
     ```
     import got from 'got';
@@ -758,8 +755,8 @@ export default class Options {
     }, 100);
     ```
     */
-    get signal(): any | undefined;
-    set signal(value: any | undefined);
+    get signal(): AbortSignal | undefined;
+    set signal(value: AbortSignal | undefined);
     /**
     Ignore invalid cookies instead of throwing an error.
     Only useful when the `cookieJar` option has been set. Not recommended.
@@ -1147,7 +1144,7 @@ export default class Options {
         form: Record<string, any> | undefined;
         url: string | URL | undefined;
         cookieJar: PromiseCookieJar | ToughCookieJar | undefined;
-        signal: any;
+        signal: AbortSignal | undefined;
         ignoreInvalidCookies: boolean;
         searchParams: string | SearchParameters | URLSearchParams | undefined;
         dnsLookup: {
@@ -1193,7 +1190,7 @@ export default class Options {
         passphrase: string | undefined;
         pfx: PfxType;
         rejectUnauthorized: boolean | undefined;
-        checkServerIdentity: CheckServerIdentityFunction | typeof checkServerIdentity;
+        checkServerIdentity: typeof checkServerIdentity | CheckServerIdentityFunction;
         ciphers: string | undefined;
         honorCipherOrder: boolean | undefined;
         minVersion: import("tls").SecureVersion | undefined;
@@ -1221,16 +1218,21 @@ export default class Options {
         createConnection: CreateConnectionFunction | undefined;
         timeout: number | undefined;
         h2session: http2wrapper.ClientHttp2Session | undefined;
-        signal?: AbortSignal | undefined;
-        protocol?: string | null | undefined;
+        _defaultAgent?: http.Agent | undefined;
+        auth?: string | null | undefined;
+        defaultPort?: string | number | undefined;
+        hints?: number | undefined;
         host?: string | null | undefined;
         hostname?: string | null | undefined;
-        port?: string | number | null | undefined;
-        defaultPort?: string | number | undefined;
-        socketPath?: string | undefined;
+        insecureHTTPParser?: boolean | undefined;
+        localPort?: number | undefined;
         path?: string | null | undefined;
-        auth?: string | null | undefined;
-        _defaultAgent?: http.Agent | undefined;
+        port?: string | number | null | undefined;
+        protocol?: string | null | undefined;
+        signal?: AbortSignal | undefined;
+        socketPath?: string | undefined;
+        uniqueHeaders?: (string | string[])[] | undefined;
+        joinDuplicateHeaders?: boolean | undefined;
         clientCertEngine?: string | undefined;
         privateKeyEngine?: string | undefined;
         privateKeyIdentifier?: string | undefined;

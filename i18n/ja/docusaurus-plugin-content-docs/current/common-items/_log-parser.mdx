@@ -244,9 +244,10 @@ projectCode logCategiry dexBuildStartTime {area=areaEnum, city=cityEnum} dexBuil
 
 ### シミュレーション{#grok-simulation}
 
-**_パーサシミュレーション_**ウィンドウから**_ログ_**と**_パターン_**を入力してパーシング結果を事前に確認することができます。
+**_パーサシミュレーション_**ウィンドウから**_ログ_**と**_パターン_**を入力してパーシング結果を事前に確認することができます。 
 
 > **_ログ_**例: `[2023-08-08 02:02:30,101 GMT][INFO ][i.w.y.l.c.LogSinkDexScheduleThread.realProcess(159)] 8 VirtualLog 20230808 02:01:00.000 {area=4, city=5} 56ms`
+>
 > **_パターン_**例: `[%{TIMESTAMP_ISO8601:date}\sGMT\][%{LOGLEVEL:level}\s\][%{DATA:caller}\]\s(?<projectCode>\d)\s(?<logCategory>\w*)\s(?<dexBuildStartTime>\d{8}\s\d{2}:\d{2}:\d{2}\.\d{3})\s\{area=(?<areaEnum>\d),\scity=(?<cityEnum>\d)\}\s(?<dexBuildElapsed>\d{2})ms`
 
 1.  **_パーサ追加_**ウィンドウで**_シミュレーション_**ボタンを選択してください。 

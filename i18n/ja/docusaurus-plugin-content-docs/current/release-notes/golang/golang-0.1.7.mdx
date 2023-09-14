@@ -7,7 +7,7 @@ toc_max_heading_level: 2
 import Status from '@site/src/components/Highlight';
 import UI from '@site/src/components/UItext';
 
-リリーズ：2022-01-04
+リリース：2022-01-04
 
 ## ベータ版 - アップデート
 
@@ -15,7 +15,7 @@ import UI from '@site/src/components/UItext';
 
 database/sqlパッケージの`sql.Open`関数の代わりに`whatapsql.OpenContext`関数を使用します。`PrepareContext`、`QueryContext`、`ExecContext`などcontextを伝える関数の使用をお勧めします。 
 
-伝達するcontextは`trace.Start()`を通じる必要があり、whatap TraceCtx情報が必要です。
+伝達するcontextは`trace.Start()`を使用する必要があり、whatap TraceCtx情報が必要です。
 
 ```go title='Install guide'
 
@@ -33,7 +33,7 @@ func main() {
   http.HandleFunc("/query", whataphttp.Func(func(w http.ResponseWriter, r *http.Request) {
     ctx := r.Context()
     
-    // Use WhaTap Driver. whatapのTraceCtxがあるcontextを伝達します。 
+    // Use WhaTap Driver. whatapのTraceCtxでcontextを伝達します。 
     db, err := whatapsql.OpenContext(ctx, "mysql", dataSource)
     if err != nil {
       fmt.Println("Error whatapsql.Open ", err)
@@ -44,7 +44,7 @@ func main() {
     ... 
     query := "select id, subject from tbl_faq limit 10"
     
-    // whatap TraceCtxがあるcontextを伝達します。 
+    // whatap TraceCtxでcontextを伝達します。 
     if rows, err := db.QueryContext(ctx, query); err == nil {
       ...
     }

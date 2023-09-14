@@ -5,6 +5,60 @@ toc_max_heading_level: 2
 pagination_next: release-notes/service/service-1_106_x
 ---
 
+## Service 1.108.14
+
+September 8, 2023
+
+<div class='indentTab'>
+
+### `Common`
+
+-   <Status>Feature</Status> Added the function to display the default interval value, if you select <UI>Default</UI> among the <UI>Interval</UI> selection options.
+
+    <div class='.release-compare'>
+
+    |                    Before                    |                    After                    |
+    | :------------------------------------------: | :-----------------------------------------: |
+    | ![](/img/release/interval-option-before.png) | ![](/img/release/interval-option-after.png) |
+
+    </div>
+
+-   <Status>Changed</Status> Modified to select <UI>Default</UI> among the <UI>Interval</UI> selection options, when any <UI>time</UI> search section is changed.
+
+    When changing the search section, the **_Interval_** option is selected as **_Default_** in the following cases:
+
+    -   The previous selection in the **_Interval_** option is **_Default_**.
+
+    -   The previous selection in the **_Interval_** option is not **_Default_** and it is not in the changed **_Interval_** option list.
+
+    -   The previous selection in the **_Interval_** option is not **_Default_** and the selected **_Interval_** option value is less than half of the search period.
+
+-   <Status>Fixed</Status> Fixed the error where, in some situations, pressing <UI>OK</UI> in the <UI>Column settings</UI> pop-up displays an unknown error message and it does not work.
+
+-   <Status>Fixed</Status> In the card view screen for the <UI>Project list</UI> of the initial screen, fixed the bug where the <UI>application</UI> count appears as 0.
+
+* * *
+
+### `Application`
+
+-   <Status>Changed</Status> In <UI>Management</UI> > <UI>Agent CONFIG.</UI> for the Java project, changed the category for the <code>biz_exceptions</code> and <code>ignore_exceptions</code> options from <UI>Alert option</UI> > <UI>HTTP outbound call</UI> to <UI>Exception</UI>.
+
+-   <Status>Fixed</Status> Fixed the issue where the layout is broken when the log search password has been set in the <UI>Transaction log</UI> tab of the <UI>Trace analysis</UI> window.
+
+* * *
+
+### `Server`
+
+<p><Status>Fixed</Status> In <UI>Server list</UI> > <UI>Server list</UI>, fixed the bug where the colors of table rows do not change according to the server status change.</p>
+
+* * *
+
+### `URL`
+
+<p><Status>Changed</Status> In <UI>Alert</UI> > <UI>Notification setting</UI>, enabled <UI>Avoids a large number of alerts</UI>.</p>
+
+</div>
+
 ## Service 1.108.13
 
 September 4, 2023

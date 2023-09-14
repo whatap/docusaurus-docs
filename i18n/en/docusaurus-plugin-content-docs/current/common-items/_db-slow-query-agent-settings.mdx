@@ -20,11 +20,13 @@ log_output=FILE # or TABLE
 
 :::note
 
--   If you have set `log_output=FILE` in DB server, you need to install XOS. For more information, see [the following](agent-xos-settings).
+-   If you set the `log_output=FILE` option on the DB server, xos installation is required. For more information, see [the following](agent-xos-settings).
 
--   RDS requires configuration to use CloudWatch instead of installing XOS. For more information, see [the following](agent-dbx-settings#using-aws-rds).
+-   If you are using AWS RDS and set the `log_output=FILE` option, configure the settings to use CloudWatch instead of xos installation. For more information, see [the following](agent-dbx-settings#using-aws-rds).
 
--   If you set as `log_output=TABLE`, the role and capacity management are required for `mysql.slow_log`. Execute the following command.
+-   If you use other clouds, set the `log_output=TABLE` option to use the **_Slow query_** menu. However, in the environments where many slow queries occur, caution is required because the DB performance may decrease when viewing mysql.slow_log.
+
+-   If you set the `log_output=TABLE` option, assign the lookup role to the monitoring account. Execute the following command.
 
     ```bash
     grant select on mysql.slow_log to whatap;

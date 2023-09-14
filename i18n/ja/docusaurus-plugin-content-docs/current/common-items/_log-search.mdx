@@ -46,7 +46,7 @@
 
 ## フィルター
 
-#### フィルター適用
+### フィルター適用
 
 ![number-s](/img/number-01.png)左側の**_時間選択ウィンドウ_**で時間範囲を指定することができます。右側から、{@include: ../common-items/_log-filter-apply.mdx} 
 
@@ -58,11 +58,11 @@
 
 :::
 
-#### フィルター修正
+### フィルター修正
 
 {@include: ../common-items/_log-filter-modify.mdx}
 
-#### 検索キー(Search Key)
+### 検索キー(Search Key)
 
 左側の![number-s](/img/number-02.png)領域のタグはカテゴリ別にパーシング(parsing) された検索キーです。タグを選択してフィルターを入力します。<span class='logwr'>オレンジ色</span> タグはカテゴリーで、<span class='lowfg'>青色</span>タグは検索キーです。
 
@@ -74,13 +74,37 @@
 
 <InDoc product='aws-log'>
 
-例えば![number-s](/img/number-02.png)領域の<span class='logwr'>AppLog</span>と<span class='logwr'>AppStdOut</span>はカテゴリーであり、その下の<span class='lowfg'>oid</span>などのタグは、パーシング(parsing) された検索キーです。検索キーは**_管理_** > **_ログ設定_**の**_ログParser 設定_**からパーシングロジックを登録することで設定できます。 
+例えば![number-s](/img/number-02.png)領域の<span class='logwr'>AppLog</span>と<span class='logwr'>AppStdOut</span>はカテゴリーであり、その下の<span class='lowfg'>oid</span>などのタグは、パーシング(parsing) された検索キーです。検索キーは**_管理_** > **_ログ設定_**の**_ログParser 設定_**からパーシングロジックを登録することで設定できます。
 
 </InDoc>
 
-#### フィルター処理の入力文法
+### フィルター入力文法{#filter-expressions}
 
-{@include: ../common-items/_log-filter-rule.mdx} 
+{@include: ../common-items/_log-filter-expressions.mdx} 
+
+## ログのタグオプション
+
+ログのタグを選択すると、次のようにドロップダウンメニューが表示されます。**_検索_**、**_除外検索_**、**_隣接ログ_**オプションを確認できます。 
+
+<ImgLang img='log-search-tag.png' desc='ログタグドロップダウンメニュー'/>
+
+-   **検索**
+
+    **_検索_**オプションを選択すると**_フィルター_**に該当タグが次のように含まれる('+')条件として入力されます。
+
+    <ImgLang img='log-search-tag-se.png' desc='ログタグ検索'/>
+
+-   **除外検索**
+
+    **_除外検索_**オプションを選択すると**_フィルター_**に該当タグが次のように除外される('-')条件として入力されます。
+
+    <ImgLang img='log-search-tag-ese.png' desc='ログタグ除外検索'/>
+
+-   **隣接ログ**
+
+    **_隣接ログ_**オプションを選択すると**_隣接ログ_**詳細ウィンドウが表示されます。選択したログのサーバーを対象に、選択したログと隣接する時間帯のログを照会します。**_時間選択_**ボタンをクリックして、隣接する時間帯のログを照会できます。 基準のログは青地で表示されます。
+
+    <ImgLang img='log-search-adjacent-log.png' desc='ログタグ隣接ログ'/>
 
 ## ハイライト
 

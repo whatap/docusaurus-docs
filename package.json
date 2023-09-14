@@ -17,7 +17,9 @@
     "postgen": "docusaurus-post-generator"
   },
   "dependencies": {
+    "@algolia/autocomplete-core": "^1.11.0",
     "@crowdin/cli": "^3.13.0",
+    "@docsearch/react": "^3.5.2",
     "@docusaurus/core": "^2.4.1",
     "@docusaurus/module-type-aliases": "^2.4.1",
     "@docusaurus/plugin-client-redirects": "^2.4.1",
@@ -37,8 +39,8 @@
     "docusaurus-plugin-enlarge-image": "^0.1.1",
     "docusaurus-plugin-includes": "^1.1.4",
     "docusaurus-plugin-pagemove": "github:usagrada/docusaurus-plugin-pagemove",
-    "docusaurus-plugin-sass": "^0.2.3",
-    "docusaurus-prince-pdf": "^1.1.1",
+    "docusaurus-plugin-sass": "^0.2.5",
+    "docusaurus-prince-pdf": "^1.2.1",
     "docusaurus-theme-search-typesense": "^0.12.0-0",
     "emailjs-com": "^3.2.0",
     "file-saver": "^2.0.5",

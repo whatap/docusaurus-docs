@@ -9,17 +9,17 @@ tags:
 
 任意のWindows性能カウンターを収集できます。WhaTapのサーバーモニタリング設定ファイルに性能カウンターセット名を追加します。 
 
--   性能カウンターセット名を照会できます。
+-   性能カウンターセット名を検索できます。
     ```bash title='Windows Powershell'
     Get-Counter -ListSet *
     ```
 
 -   設定ファイルに性能カウンターセットを追加できます。
     ```bash title='Windows Powershell'
-    Add-Content -Path "C:\Program Files\WhatapInfra\whatap.conf" -Value "performance.counter.$(Get-Date -uformat %s)=照会する性能カウンターセット名"
+    Add-Content -Path "C:\Program Files\WhatapInfra\whatap.conf" -Value "performance.counter.$(Get-Date -uformat %s)=検索する性能カウンターセット名"
     ```
 
--   追加した性能カウンターは **_分析_** > **_メトリクス照会_** メニューの **_カテゴリ_** `performance_counter_{性能カウンターセット名}`で照会することができます。
+-   追加した性能カウンターは **_分析_** > **_メトリクス参照_** メニューの **_カテゴリ_** `performance_counter_{性能カウンターセット名}`で表示することができます。
 
 :::note
 

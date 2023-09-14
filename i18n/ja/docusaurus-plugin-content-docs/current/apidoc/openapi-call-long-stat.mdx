@@ -1,7 +1,7 @@
 ---
 id: openapi-call-long-stat
 title: 長期統計
-description: 長期統計の照会のためのOpenAPIに関する説明を提供します。
+description: 長期的な統計の参照のためのOpenAPIに関する説明を提供します。
 tags:
   - Open API
   - API
@@ -10,13 +10,13 @@ tags:
 
 :::note
 
-**訪問ユーザー**は、1日単位のアクティブユーザー、そして1ヶ月単位のアクティブユーザーと集計されます。 
+**訪問ユーザー**は、1日単位のアクティブユーザー数と1ヶ月単位のアクティブユーザー数で集計されます。 
 
 :::
 
-## アクティブユーザー（1日単位）
+## アクティブユーザー(1日単位)
 
-1日間集計された固有ユーザー統計で、`etime`は`stime`を基準に31日を超えることはできません。
+1日間の集計された固有なユーザー統計で、`etime`は`stime`を基準に31日を超えることはできません。
 
 <span class='apitype'>GET</span> https://api.whatap.io/open/api/json/visitor_d/<code>stitme</code>/<code>etime</code>
 
@@ -28,7 +28,7 @@ $ curl -L -w "\n" -H "x-whatap-token: {{PROJECT API TOKEN}}" -H "x-whatap-pcode:
 {
   "data": [
     [
-      1554163200000, // 1일 단위 (24*60*60*1000)
+      1554163200000, // 1日単位 (24*60*60*1000)
       1007
     ],
     [
@@ -47,7 +47,7 @@ $ curl -L -w "\n" -H "x-whatap-token: {{PROJECT API TOKEN}}" -H "x-whatap-pcode:
 }
 ```
 
-## アクティブユーザー（1ヵ月単位）
+## アクティブユーザー(1ヵ月単位)
 
 1ヶ月間集計された固有ユーザー統計で、`etime`は`stime`を基準に365日を超えることはできません。
 
@@ -61,7 +61,7 @@ $ curl -L -w "\n" -H "x-whatap-token: {{PROJECT API TOKEN}}" -H "x-whatap-pcode:
 {
   "data": [
     {
-      "stime": 1535760000000,  // 月 1日 時刻 (24*60*60*1000)
+      "stime": 1535760000000,  // 月 1日 時間 (24*60*60*1000)
       "etime": 1538352000000,
       "sdate": "Sat Sep 01 00:00:00 GMT 2018",
       "edate": "Mon Oct 01 00:00:00 GMT 2018",

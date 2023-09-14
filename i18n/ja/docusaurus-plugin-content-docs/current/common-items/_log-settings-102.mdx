@@ -146,6 +146,16 @@
 
 :::
 
+:::note
+
+**パーサ登録のできない予約語**
+
+次の予約語の場合、パーサを登録してもインデックスは作成されません。
+
+`timestamp`, `message`, `pcode`, `category`, `content`, `logContent`
+
+:::
+
 :::note 
 
 ログパーサの詳細については、[次の文書](log-parser)を参照してください。
@@ -307,7 +317,7 @@
 
     -   **シミュレーションの成功画面**
 
-        <ImgLang img='log-simulation-success.png' desc='シミュレーションの成功画面'/>
+        <ImgLang img='log-simulation-success.png' desc='シミュレーションの成功'/>
 
     -   **シミュレーションの失敗画面**
 
@@ -361,7 +371,7 @@
 
 **_ログ設定_**メニューの上段で**_対数2次パーサー設定_**タブを選択してログパーサーを登録・修正できます。 次に、パーサー登録時の共通手順について案内します。
 
-<ImgLang img='log-2nd-parser-add.png' desc='ログ2次パーサ登録順序 sc'/>
+<ImgLang img='log-2nd-parser-add.png' desc='ログ2次パーサ登録順序'/>
 
 1.  **_+追加する_**ボタンを選択すると**_パーサー追加_**ウィンドウが表示されます。
 
@@ -407,7 +417,7 @@
 
 ウィジェットを作成すると、次のようにデータを確認できます。
 
-<ImgLang img='log-flexboard-widget-chart-4xx5xx.png' desc='Log Flex board widget chart-4xx5xx'/>
+<ImgLang img='log-flexboard-widget-chart-4xx5xx.png'desc='Log Flex board widget chart - 4xx5xx'/>
 
 -   **_avg_**：照会期間中のデータの平均値です。
 
@@ -510,7 +520,7 @@
 
 1.  **_Flexボード_**の**_ウィジェットテンプレート_**で**_ログ長期保存統計_**を検索し、ウィジェットを作成してください。
 
-    <ImgLang img='log-flexboard-widget-long-term.png' desc='로그 장기 보관 통계 위젯 템플릿'/>
+    <ImgLang img='log-flexboard-widget-long-term.png' desc='長期保存統計ウィジェットテンプレート'/>
 
 2.  データを照会する**_カテゴリー_**と**_キー_**を指定して**_適用_**ボタンを選択します。
 

@@ -7,31 +7,31 @@ tags:
   - Script plugin
 ---
 
-Javaエージェントが提供するプラグインを活用してトレースデータに付加情報を追加したり、メソッド遂行の前後に希望するコードを注入するなど多様なことができます。
+Javaエージェントが提供するプラグインを使用してトレースデータに追加情報を追加したり、メソッドの実行前と実行後に目的のコードを挿入するなど多様なことができます。
 
 ## プラグインオプション
 
-Javaエージェントプラグインは、メソッドの開始・終了部分に挿入して実行します。プラグインを適用する位置（クラス、メソッド）は、エージェントオプションで設定できます。
+Javaエージェントプラグインは、メソッドの開始/終了部分に挿入して実行します。プラグインを適用する場所(クラス、メソッド)は、エージェントオプションで設定できます。
 
 -   `hook_trace_helper_start_patterns`
 
-    メソッドの開始部分にトレースプラグインを挿入する地点（クラス、メソッド）を設定します。プラグインコードは、_`$WHATAP_HOME`/plugin/TraceHelperStart.x_ファイルに作成してください。
+    メソッドの開始部分にトレースプラグインを挿入するポイント(クラス、メソッド)を設定します。プラグインコードは、_`$WHATAP_HOME`/plugin/TraceHelperStart.x_ファイルに記述してください。
 
 -   `hook_trace_helper_end_patterns`
 
-    メソッドの終了部分にトレースプラグインを挿入する地点（クラス、メソッド）を設定します。プラグインコードは、_`$WHATAP_HOME`/plugin/TraceHelperEnd.x_ファイルに作成してください。
+    メソッドの最後にトレースプラグインを挿入するポイント(クラス、メソッド)を設定します。プラグインコードは、_`$WHATAP_HOME`/plugin/TraceHelperEnd.x_ファイルに記述してください。
 
 -   `hook_trace_helper_patterns`
 
-    メソッドの開始・終了の両方にトレースプラグインを挿入する地点（クラス、メソッド）を設定します。プラグインコードは、_`$WHATAP_HOME`/plugin/TraceHelperStart.x_, _`$WHATAP_HOME`/plugin/TraceHelperEnd.x_ファイルにそれぞれ作成してください。
+    メソッドの開始/終了の両方にトレースプラグインを挿入するポイント(クラス、メソッド)を設定します。プラグインコードは、_`$WHATAP_HOME`/plugin/TraceHelperStart.x_, _`$WHATAP_HOME`/plugin/TraceHelperEnd.x_ファイルにそれぞれ記述してください。
 
 -   `custom_pool_classes`
 
-    ユーザー定義プールをモニタリングするために、プール使用量情報を持つクラスを設定します。プラグインコードは、_`$/WHATAP_HOME`/plugin/CustomPool.x_に作成します。
+    ユーザー定義プールをモニタリングするには、プール使用量の情報を含むクラスを設定します。プラグインコードは、_`$/WHATAP_HOME`/plugin/CustomPool.x_に作成します。
 
 ## プラグインの設定例
 
-複数のクラスを設定する場合は、コンマ（,）を区切り文字として利用してください。パッケージ名の文字列の一部または全部を「\*」に置き換えることができます。
+複数のクラスを設定する場合は、コンマ(,)を区切り文字として利用してください。パッケージ名の文字列の一部または全部を「\*」に置き換えることができます。
 
 -   **パッケージとメソッド名を設定する場合**
 
@@ -67,17 +67,17 @@ Javaエージェントプラグインは、メソッドの開始・終了部分�
 
 ## プラグインコードの作成例
 
-ほとんどの場合はオブジェクトを返しますので、明示的な型変換処理が必要です。以下はプラグインコードの作成例です。
+ほとんどの場合はオブジェクトを返すので、明示的な型変換処理が必要です。以下はプラグインコードの作成例です。
 
 ### 設定したメソッド開始時間をトレースに記録する
 
-1.  Javaエージェント`hook_trace_helper_patterns`オプションに適用するメソッドを_whatap.conf_ファイルに作成してください。
+1.  Javaエージェント`hook_trace_helper_patterns`オプションに適用するメソッドを_whatap.conf_ファイルに記述してください。
 
 ```ini title='$WHATAP_HOME/whatap.conf'
 hook_trace_helper_patterns=org.apache.catalina.connector.RequestFacade.*
 ```
 
-2.  _TraceHelperStart.x_ファイルにプラグインコードを作成してください。
+2.  _TraceHelperStart.x_ファイルにプラグインコードを記述してください。
 
 ```java title='$WHATAP_HOME/plugin/TraceHelperStart.x'
 // String prefixにクラス名、メソッド名を代入してください。
@@ -94,13 +94,13 @@ $ctx.profile(prefix + " Start", new java.util.Date().toString());
 
 ### 設定したメソッド終了時間と実行時間をトレースに記録する
 
-1.  Javaエージェント`hook_trace_helper_patterns`オプションに適用するメソッドを_whatap.conf_ファイルに作成してください。
+1.  Javaエージェント`hook_trace_helper_patterns`オプションに適用するメソッドを_whatap.conf_ファイルに記述してください。
 
 ```ini title='$WHATAP_HOME/whatap.conf'
 hook_trace_helper_patterns=org.apache.catalina.connector.RequestFacade.*
 ```
 
-1.  _TraceHelperEnd.x_ファイルにプラグインコードを作成してください。
+1.  _TraceHelperEnd.x_ファイルにプラグインコードを記述してください。
 
 ```java title='$WHATAP_HOME/plugin/TraceHelperEnd.x' {3,8} showLineNumbers
 String prefix = $point.class1 + "." + $point.method;
@@ -109,7 +109,7 @@ long st = ((Long) $ctx.getAttribute(prefix + "st")).longValue();
 long gap = System.currentTimeMillis() - st;
 StringBuilder sb = new StringBuilder();
 sb.append(new java.util.Date().toString() + " (Gap:" + gap + " milliseconds)");
-// トレース情報に開始時間と現在時間とのGap（実行時間）を追加してください。
+// トレース情報に開始時間と現在時間とのGap(実行時間)を追加してください。
 $ctx.profile(prefix + " End", sb.toString()); 
 ```
 
@@ -119,7 +119,7 @@ $ctx.profile(prefix + " End", sb.toString());
 
 ## プラグインAPI
 
-プラグインAPIは、共通項目である`$ctx`、`$point`、`$req`、`$res`で区分します。トランザクション開始・終了時、HTTPC区間、特定メソッドの実行区間などに適用できます。
+プラグインAPIは、共通項目である`$ctx`、`$point`、`$req`、`$res`で区分します。トランザクション開始/終了時、HTTPC間隔、特定メソッドの実行間隔などに適用できます。
 
 ### パラメータ提供 - 共通プラグインファイル{#common-plugin}
 
@@ -153,20 +153,20 @@ $ctx.profile(prefix + " End", sb.toString());
 |  ^      | Object[] args                                                | ファクター                                         |
 |  ^      | Object return1                                                | リターン                                          |
 
-### パラメータ未提供 - 共通プラグインファイル
+### パラメータ未指定 - 共通プラグインファイル
 
 | パラメータ | メソッド／変数                                              | 説明                                            |
 | :---: | ---------------------------------------------------- | --------------------------------------------- |
-|  無し   | void log(Object c)                                   | Loggerを通じたLogging                             |
-| ^     | void println(Object c)                               | System.out.println()を通じた出力                    |
+|  無し   | void log(Object c)                                   | LoggerによるLogging                              |
+| ^     | void println(Object c)                               | System.out.println()で出力                       |
 | ^     | Object field(Object o, String field)                 | Field値をリターン                                   |
 | ^     | Object method(Object o, String method)               | Invokeメソッド                                    |
 | ^     | Object method(Object o, String method, String param) | Invokeメソッド                                    |
-| ^     | String toString(Object o)                            | ObjectをtoSting()へリターン                         |
-| ^     | String toString(Object o, String def)                | ObjectをtoSting()へリターン、nullの場合defリターン          |
+| ^     | String toString(Object o)                            | ObjectをtoSting() に戻す                          |
+| ^     | String toString(Object o, String def)                | ObjectをtoSting() 戻し、nullの場合def 戻し             |
 | ^     | int syshash(Object o)                                | hash値リターン                                     |
-| ^     | int syshash(HookArgs hook, int x)                    | x番目のargumentのhash値リターン                        |
-| ^     | int syshash(HookArgs hook)                           | argumentのhash値リターン                            |
+| ^     | int syshash(HookArgs hook, int x)                    | x番目のargumentのhash 値戻す                         |
+| ^     | int syshash(HookArgs hook)                           | argumentのhash値 戻し                             |
 | ^     | int cint(Object o)                                   | intでリターン                                      |
 | ^     | float cfloat(Object o)                               | floatでリターン                                    |
 | ^     | String cString(Object o)                             | Stringでリターン                                   |
@@ -178,7 +178,7 @@ $ctx.profile(prefix + " End", sb.toString());
 
 ### デーモンおよびバッチ
 
-デーモン、バッチなどのアプリケーション サーバーをモニタリングする際、開始点として設定したメソッドに適用するAPIです。次のファイルにコードを作成してください。
+デーモン、バッチなどのアプリケーション サーバーをモニタリングする場合、開始点として設定したメソッドに適用するAPIです。次のファイルにコードを記述してください。
 
 -   サービス開始部分適用：_`$WHATAP_HOME`/plugin/AppServiceStart.x_
 -   サービス終了部分適用：_`$WHATAP_HOME`/plugin/AppServiceEnd.x_
@@ -191,7 +191,7 @@ $ctx.profile(prefix + " End", sb.toString());
 
 ### HTTPサービス
 
-`javax.servlet.http.HTTPServlet`クラスを使用する一般的なウェブアプリケーションに適用できるAPIです。次のファイルにコードを作成してください。
+`javax.servlet.http.HTTPServlet`クラスを使用する一般的なウェブアプリケーションに適用できるAPIです。次のファイルにコードを記述してください。
 
 -   サービス開始部分適用：_`$WHATAP_HOME`/plugin/HttpServiceStart.x_
 -   サービス終了部分適用：_`$WHATAP_HOME`/plugin/HttpServiceEnd.x_ 
@@ -221,7 +221,7 @@ $ctx.profile(prefix + " End", sb.toString());
 
 ### HTTP Outbound
 
-`HttpClient`などのライブラリを利用してHTTP Outbound Callを実行する際、適用できるAPIです。次のファイルにコードを作成してください。
+`HttpClient`などのライブラリを使用してHTTP Outbound Callを実行するときに適用できるAPIです。次のファイルにコードを記述してください。
 
 -   サービス開始部分適用：_`$WHATAP_HOME`/plugin/HttpCallStart.x_
 -   サービス終了部分適用：_`$WHATAP_HOME`/plugin/HttpCallEnd.x_
@@ -242,7 +242,7 @@ $ctx.profile(prefix + " End", sb.toString());
 
 ### 特定メソッド
 
-Javaエージェントオプション(`hook_trace_helper_*`)を通じて設定したメソッドに対して適用するAPIです。
+Javaエージェントオプション(`hook_trace_helper_*`)で設定したメソッドに適用するAPIです。
 
 | プラグインファイル          |  パラメータ  | メソッド／変数     | 説明           |
 | ------------------ | :-----: | ----------- | ------------ |
@@ -253,7 +253,7 @@ Javaエージェントオプション(`hook_trace_helper_*`)を通じて設定�
 
 ### ユーザー定義Pool
 
-ユーザー定義プールをモニタリングするためのAPIです。プール使用量情報を持つメソッドを設定すると、WhaTapモニタリングサービスで観察し、統計情報を確認することができます。
+ユーザー定義プールをモニタリングするためのAPIです。プール使用量の情報を使用してメソッドを設定すると、WhaTapモニタリングサービスで監視し、統計情報を確認することができます。
 
 | プラグインファイル     |   パラメータ  | メソッド／変数            | 説明                               |
 | ------------- | :------: | ------------------ | -------------------------------- |
@@ -268,7 +268,7 @@ Javaエージェントオプション(`hook_trace_helper_*`)を通じて設定�
 
 ### Elasticsearchエンジンの検索要求モニタリング
 
-Elasticsearch（以下ES）エンジンは、サブレットエンジンではないため、非定型モニタリングを行う必要があります。他の製品が指標中心のモニタリングをする場合、WhaTapのプラグインを活用してESの要請および処理時間、検索キーワードをトレーディングすることができます。
+Elasticsearch(以下ES) エンジンは、サブレットエンジンではないため、非定型モニタリングを行う必要があります。他の製品が指標中心のモニタリングをする場合、WhaTapのプラグインを使用して、ESの要請および処理時間、検索キーワードを追跡することができます。
 
 ```ini title='whatap.conf'
 # トランザクションEndPointとしてorg.elasticsearch.search.SearchService.executeQueryPhaseを設定します。
@@ -290,7 +290,7 @@ try {
     if (tclass.equals($point.class1) && tmethod.equals($point.method)) {
         // 一番目のargumentのqueryメソッドの呼び出し結果をString queryに保存、
         // org.elasticsearch.search.query.QueryPhase.execute(SearchContext searchContext)です。
-        // つまり、SearchContext.query()メソッドをinvokeした結果をString queryに保存します。
+        // それから、SearchContext.query()メソッドをinvokeした結果をString queryに保存します。
         String query = " " + method($point.args[0], "query");
         // String queryをトレース情報として出力
         $ctx.profile(query);
@@ -302,10 +302,10 @@ try {
 
 ### 特定のIPに流入するトランザクション収集を除外
 
-Health Check、内部ユーザーが誘発したトランザクションを収集を除外するにはプラグインを活用できます。
+Health Check、内部ユーザーによるトランザクションの収集を除外する場合は、プラグインを使用できます。
 
 ```java title='${WHATAP_HOME}/plugin/HttpServiceStart.x' {2} showLineNumbers
-// ignoreIP値を収集除外するIPとして設定してください。
+// ignoreIP値を収集するIPとして設定してください。
 String ignoreIP = "123.234.123.234";
 String remoteIP = $req.getRemoteAddr();
 
@@ -318,7 +318,7 @@ if ($ctx.ok() && remoteIP != null) {
 
 ### Atomikos Poolモニタリング
 
-[API文書](https://www.atomikos.com/downloads/transactions-essentials/com/atomikos/AtomikosTransactionsEssentials/javadoc/3.7/com/atomikos/jdbc/AbstractDataSourceBean.html)を参考に適用してください。
+[API文書](https://www.atomikos.com/downloads/transactions-essentials/com/atomikos/AtomikosTransactionsEssentials/javadoc/3.7/com/atomikos/jdbc/AbstractDataSourceBean.html)を参照して適用してください。
 
 ```ini title='whatap.conf'
 custom_pool_classes=atomikos@com.atomikos.jdbc.internal.AbstractDataSourceBean
@@ -337,7 +337,7 @@ $result.idle(avail);
 クッキーの値をトレースから確認できます。
 
 ```java title='${WHATAP_HOME}/plugin/HttpServiceStart.x' {2} showLineNumbers
-// $req.getCookie()パラメータで確認したいCookieを設定してください。
+// $req.getCookie() パラメータで確認したいCookieを設定してください。
 String cookie = $req.getCookie("AWSALB");
 
 if ($ctx.ok()) {

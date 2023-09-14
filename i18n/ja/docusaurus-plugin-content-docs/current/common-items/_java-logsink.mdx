@@ -16,25 +16,25 @@ LogSinkオプションはwhatap.agent-2.1.0以降で使用できます。
 
     デフォルト値`logsink_enabled`
 
-    Javaアプリケーションで発生するSystem.outログを収集するかどうかを設定します。
+    Javaアプリケーションから発生するSystem.outログを収集するかどうかを設定します。
 
 -   **logsink_stderr_enabled** <span class='type'>Boolean</span>
 
     デフォルト値`logsink_enabled`
 
-    Javaアプリケーションで発生するSystem.errログを収集するかどうかを設定します。
+    Javaアプリケーションから発生するSystem.errログを収集するかどうかを設定します。
 
 -   **logsink_logback_enabled** <span class='type'>Boolean</span>
 
     デフォルト値`logsink_enabled`
 
-    logbackフレームワークログを収集するかどうかを設定します。
+    logbackフレームワークのログを収集するかどうかを設定します。
 
 -   **logsink_log4j_enabled** <span class='type'>Boolean</span>
 
     デフォルト値`logsink_enabled`
 
-    log4jフレームワークログを収集するかどうかを設定します。
+    log4jフレームワークのログを収集するかどうかを設定します。
 
 -   **logsink_tomcat_enabled** <span class='type'>Boolean</span>
 
@@ -52,7 +52,7 @@ LogSinkオプションはwhatap.agent-2.1.0以降で使用できます。
 
 フレームワークで収集するログをモニタリングするには、モジュールからログをインターセプトするための設定とプラグインを追加する必要があります。フレームワークで収集するログの基本カテゴリ名を`AppLog`に設定します。デフォルト値は、`hooklog_enabled`オプションの設定と同じです。
 
-`hooklog_enabled`値を変更すると、再起動が必要です。`hooklog_enabled` のデフォルト値は`logsink_enabled`です。従って`logsink_enabled=true`として設定してJavaアプリケーションを再起動すると、`hooklog_enabled`は`true`として設定され`hooklog_logback_enabled`も`true`に設定されます。
+`hooklog_enabled`値を変更した場合は再起動が必要です。`hooklog_enabled` のデフォルト値は`logsink_enabled`です。従って`logsink_enabled=true`として設定してJavaアプリケーションを再起動すると、`hooklog_enabled`は`true`として設定され`hooklog_logback_enabled`も`true`に設定されます。
 
 -   **hooklog_enabled** <span class='type'>Boolean</span>
 
@@ -64,7 +64,7 @@ LogSinkオプションはwhatap.agent-2.1.0以降で使用できます。
 
     デフォルト値`hooklog_enabled`
 
-    logbackフレームワーク収集ログ追跡を有効にするかどうかを設定します。
+    logbackフレームワークの収集ログ追跡を有効にするかどうかを設定します。
 
 -   **hooklog_log4j_enabled** <span class='type'>Boolean</span>
 
@@ -86,13 +86,13 @@ LogSinkオプションはwhatap.agent-2.1.0以降で使用できます。
     hooklog_custom_methods=com.greatshop.common.Log.print
     ```
 
-### ログ転送の設定
+### ログ送信の設定
 
 -   **logsink_queue_size** <span class='type'>Int</span>
 
     デフォルト値 `1000`
 
-    ログ転送時のキューサイズに対する設定です。
+    ログ送信時のキューサイズに対する設定です。
 
 -   **logsink_line_size** <span class='type'>Int</span>
 
@@ -100,13 +100,13 @@ LogSinkオプションはwhatap.agent-2.1.0以降で使用できます。
 
     ログ送信時の単一ラインの最大サイズ設定です。
 
-### ログの圧縮伝送
+### ログの圧縮送信
 
 -   **logsink_zip_enabled** <span class='type'>Boolean</span>
 
     デフォルト値 `true`
 
-    収集したログデータを圧縮転送できます。
+    収集したログデータを圧縮送信できます。
 
 -   **debug_logsink_zip_enabled** <span class='type'>Boolean</span>
 

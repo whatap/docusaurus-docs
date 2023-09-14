@@ -17,7 +17,7 @@
 | Questions                        | 実行されたqueryの数                                                                                 |
 | Com Select                       | Selectコマンドを実行した回数                                                                            |
 | Writes                           | 書き込みに使用したコマンド回数<br/>Com_insert + update + delete                                             |
-| Bytes Received                   | dbサーバーが受け取ったデータbytes                                                                         |
+| Bytes Received                   | dbサーバーが受信したデータbytes                                                                          |
 | Bytes Sent                       | dbサーバーが送信したデータbytes                                                                          |
 | Innodb Row Lock Current Waits    | ロック数                                                                                         |
 | Connections                      | DBに接続を試みた回数                                                                                  |
@@ -35,24 +35,24 @@
 
 <div class='metric'>
 
-| Metric                | Description                                                            |
-| --------------------- | ---------------------------------------------------------------------- |
-| Active Sessions       | クエリが実行されているセッション数                                                      |
-| Deadlock Count        | 検出されたdeadlockの数                                                        |
-| Commit Count          | コミットされたトランザクションの数                                                      |
-| Rollback Count        | ロールバックされたトランザクションの数                                                    |
-| DML Count             | DML（insert、 update、 delete）の実行回数                                       |
-| BLKS Read             | 読み込んだディスクブロック数（Physical read）                                          |
-| BLKS Hit              | ディスクブロックキャッシュヒット数（ディスクブロックが既にバッファキャッシュにあるため読み込みを必要としない回数。Logical read） |
-| BLKS Hit Ratio        | blks hit(キャッシュヒット)와 blks read(ディスク読み込み回数)の比率                           |
-| Check Point           | checkpoint実行された回数                                                      |
-| Total Sessions        | すべてのセッション数                                                             |
-| Total Runtime         | active sessionの実行時間の合計                                                 |
-| Long Running Sessions | 実行時間の長いセッションの数                                                         |
-| Lock Wait Sessions    | lockをwaitするセッション数                                                      |
-| Table Hit Ratio       | テーブルのblks hit(キャッシュヒット)와 blks read(ディスク読み込み回数)の比率                      |
-| Index Hit Ratio       | インデックスのblks hit(キャッシュヒット)와 blks read(ディスク読み込み回数)の比率                    |
-| Vacuum Running Count  | vacuumが実行された回数                                                         |
+| Metric                | Description                                                          |
+| --------------------- | -------------------------------------------------------------------- |
+| Active Sessions       | クエリが実行されているセッション数                                                    |
+| Deadlock Count        | 検知されたdeadlockの数                                                      |
+| Commit Count          | コミットされたトランザクションの数                                                    |
+| Rollback Count        | ロールバックされたトランザクションの数                                                  |
+| DML Count             | DML(insert、 update、 delete) の実行回数                                    |
+| BLKS Read             | 読み込んだディスクブロック数 (Physical read)                                       |
+| BLKS Hit              | ディスクブロックキャッシュヒット数(ディスクブロックが既にバッファキャッシュにあり、読み込みが不要である回数。Logical read) |
+| BLKS Hit Ratio        | blks hit(キャッシュヒット)に対する blks read(ディスク読み込み回数)の比率                      |
+| Check Point           | checkpointが実行された回数                                                   |
+| Total Sessions        | すべてのセッション数                                                           |
+| Total Runtime         | active sessionの実行時間の合計                                               |
+| Long Running Sessions | 実行時間の長いセッションの数                                                       |
+| Lock Wait Sessions    | lockをwaitするセッション数                                                    |
+| Table Hit Ratio       | テーブルのblks hit(キャッシュヒット)と blks read(ディスク読み込み回数)の比率                    |
+| Index Hit Ratio       | インデックスのblks hit(キャッシュヒット)と blks read(ディスク読み込み回数)の比率                  |
+| Vacuum Running Count  | vacuumが実行された回数                                                       |
 
 </div>
 
@@ -60,30 +60,30 @@
 
 <div class='metric'>
 
-| Metric                   | Description                                  |
-| ------------------------ | -------------------------------------------- |
-| CPU                      | dbのcpu使用率                                    |
-| Active Sessions          | クエリが実行されているセッション数                            |
-| Total Sessions           | すべてのセッション数                                   |
-| Lock Wait Sessions       | lockをwaitするセッション数                            |
-| Session Logical Reads    | データをbuffer cache内で読み込んだ回数                    |
-| Physical Reads           | データを物理的なdiskで読み込んだ回数                         |
-| Execute Count            | SQLの実行数                                      |
-| Opened Cursors Current   | 現在開いているcursorの数                              |
-| Parse Count (hard)       | hard parse回数                                 |
-| Parse Count (total)      | 全体parse回数(hard soft)                         |
-| Enqueue Waits            | enqueue待機回数                                  |
-| Logons Current           | 現在logonされている数                                |
-| User Commits             | commit実行回数                                   |
-| CPU used by this session | sessionによって使用されたcpu timeの合計                  |
-| DB Time                  | DB使用にかかる時間の合計                                |
-| Physical Writes          | データをdiskに記録した回数                              |
-| Sorts (memory)           | memoryからdiskに記録中のsortした時間の比率                 |
-| DB File Sequential Read  | サービス時間中に書き込みのためにwaitする割合(Single-block reads) |
-| DB File Scattered Read   | サービス時間中に書き込みのためにwaitする割合(Multi-block reads)  |
-| Wait Sessions            | eventをwaitするセッション数                           |
-| Txn Sessions             | transactionがあるセッション数                         |
-| Long Running Sessions    | lockをwaitするセッション数                            |
+| Metric                   | Description                               |
+| ------------------------ | ----------------------------------------- |
+| CPU                      | dbのcpu使用率                                 |
+| Active Sessions          | クエリが実行されているセッション数                         |
+| Total Sessions           | すべてのセッション数                                |
+| Lock Wait Sessions       | lockをwaitするセッション数                         |
+| Session Logical Reads    | データをbuffer cache内で読み込んだ回数                 |
+| Physical Reads           | データを物理的なdiskで読み込んだ回数                      |
+| Execute Count            | SQLの実行数                                   |
+| Opened Cursors Current   | 現在開いているcursorの数                           |
+| Parse Count (hard)       | hard parse回数                              |
+| Parse Count (total)      | 全体parse回数(hard soft)                      |
+| Enqueue Waits            | enqueue待機回数                               |
+| Logons Current           | 現在logonされている数                             |
+| User Commits             | commit実行回数                                |
+| CPU used by this session | sessionによって使用されたcpu timeの合計               |
+| DB Time                  | DB使用に掛かる時間の合計                             |
+| Physical Writes          | データをdiskに記録した回数                           |
+| Sorts (memory)           | memoryからdiskに記録中をsortした時間の比率              |
+| DB File Sequential Read  | サービス時間中に書き込みをwaitする割合(Single-block reads) |
+| DB File Scattered Read   | サービス時間中に書き込みをwaitする割合(Multi-block reads)  |
+| Wait Sessions            | eventをwaitするセッション数                        |
+| Txn Sessions             | transactionを含むセッション数                      |
+| Long Running Sessions    | lockをwaitするセッション数                         |
 
 </div>
 

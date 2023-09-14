@@ -89,7 +89,7 @@ import UI from '@site/src/components/UItext';
 
 http transportでのRoundTripper使用に対応します。パッケージの`sql.Open`関数の代わりに`whatapsql.OpenContext`関数を使用します。`PrepareContext`、`QueryContext`、`ExecContext`などのcontextを伝える関数の使用をお勧めします。 
 
-伝達するcontextは`trace.Start()`を通じる必要があり、whatap TraceCtx情報が必要です。
+伝達するcontextは`trace.Start()`を使用する必要があり、whatap TraceCtx情報が必要です。
 
 ```go title='Install guide '
 import (

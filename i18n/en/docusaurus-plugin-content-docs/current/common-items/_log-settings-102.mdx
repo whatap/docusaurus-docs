@@ -146,6 +146,16 @@ At the top of **_Log Setting_**, select the **_Log primary parser setting_** tab
 
 :::
 
+:::note
+
+**Reserved words that cannot be registered for the parser**
+
+For the following reserved words, indexes are not created even if a parser has been registered.
+
+`timestamp`, `message`, `pcode`, `category`, `content`, `logContent`
+
+:::
+
 :::note 
 
 For more information about the log parser, see [the following](log-parser).
@@ -162,7 +172,7 @@ For more information about the log parser, see [the following](log-parser).
 
 ### Parser List{#log-parser-list-1st}
 
-<ImgLang img='log-1st-parser-list.png' desc='Log Parser List'/>
+<ImgLang img='log-1st-parser-list.png' desc='Log parser lists'/>
 
 If you select the **_Log primary parser setting_** tab at the top of **_Log Setting_**, you can see the **_Parser List_** screen where you can search for registered parsers and add or edit them. 
 
@@ -178,7 +188,7 @@ If you select the **_Log primary parser setting_** tab at the top of **_Log Sett
 
 At the top of **_Log Setting_**, select the **_Log primary parser setting_** tab to register and modify the log parser. The following shows the common parser registration procedure.
 
-<ImgLang img='log-1st-parser-add.png' desc='Add Log Parser'/>
+<ImgLang img='log-1st-parser-add.png' desc='Add Log parser'/>
 
 1.  Select **_+ Add_**. The **_Add Parser_** window appears.
 
@@ -210,7 +220,7 @@ When registering the log parser, parsers cannot be registered repeatedly in the 
 
 ### GROK Parser Pattern Registration{#log-pattern-grok}
 
-<ImgLang img='log-1st-grok.png' desc='GROK Pattern Parser'/>
+<ImgLang img='log-1st-grok.png' desc='Registering the Grok pattern parser'/>
 
 The default syntax is `%{SYNTAX:SEMANTIC}`. For more information about the GROK parser, see [the following](log-parser#grok-parser-detail).
 
@@ -311,7 +321,7 @@ If all or part of a log is output in JSON format, you can parse the JSON output 
 
     -   **Simulation Failure Screen**
 
-        <ImgLang img='log-simulation-fail.png' desc='Simulation Failure Screen'/>
+        <ImgLang img='log-simulation-fail.png' desc='Simulation Failure'/>
 
 2.  When you click **_Apply Pattern_**, the pattern that has been entered for the selected parser is applied. 
 
@@ -361,7 +371,7 @@ If you select the **_Log secondary parser setting_** tab at the top of **_Log Se
 
 At the top of **_Log Setting_**, select the **_Log secondary parser setting_** tab to register and modify the log parser. The following shows the common parser registration procedure.
 
-<ImgLang img='log-2nd-parser-add.png' desc='Parser registration order'/>
+<ImgLang img='log-2nd-parser-add.png' desc='Log secondary parser registration order'/>
 
 1.  Select **_+ Add_**. The **_Add Parser_** window appears.
 

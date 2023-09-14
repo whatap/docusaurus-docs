@@ -11,7 +11,7 @@ import Xclude from '@site/src/components/XcludeDoc.js';
 
 WhaTapの.NETアプリケーションモニタリングは、.NETフレームワーク4.5バージョンに対応しており、.NETによるウェブアプリケーションサーバモニタリングサービスを提供します。
 
-.NETフレームワークアプリケーションをモニタリングできます。IIS、Console、サービス、ウィンドウアプリケーションをモニタリングします。DB Query、外部呼び出しを追跡して、どこで呼び出しが遅れているかを見つけることができます。
+.NETフレームワークアプリケーションをモニタリングできます。IIS、Console、サービス、ウィンドウアプリケーションをモニタリングします。DB Query、外部呼び出しを追跡して、呼び出しが遅延しているかを見つけることができます。
 
 <!-- {@video: https://www.whatap.io/video/product/ko/app_dotnet.mp4}-->
 
@@ -19,10 +19,10 @@ WhaTapの.NETアプリケーションモニタリングは、.NETフレームワ
 
 ## 動作方式
 
-ドットネットプログラムの場合、コンパイル後に中間言語（Microsoft Intermediate Language、MSIL）形式のexeまたはdlファイルに変換されます。これを共通言語ランタイム（Common Language Runtime、CLR）にあるJIT（Just-In-Time）コンパイラがネイティブコードに翻訳して動作します。WhaTapは、ドットネットフレームワークで提供するトレーディングAPIを通じて実行中のアプリケーションをモニタリングします。
+ドットネットプログラムの場合、コンパイル後に中間言語(Microsoft Intermediate Language、MSIL)形式でexeまたはdlファイルに変換されます。これを共通言語ランタイム(Common Language Runtime、CLR)にあるJIT(Just-In-Time)コンパイラによってネイティブコードに変換されます。WhaTapは、ドットネットフレームワークで提供するトレーディングAPIを使用して実行中のアプリケーションをモニタリングします。
 
-![トレーシングアーキテクチャ](https://img.whatap.io/media/agent_dotnet/install/profiling-architecture.png)
+![プロファイリングアーキテクチャ](https://img.whatap.io/media/agent_dotnet/install/profiling-architecture.png)
 
 ドットネットモニタリングサービスを使用するには、モニタリング対象アプリケーションにモニタリングエージェントをインストールする必要があります。エージェントは、ウィンドウにインストール可能なインストーラーとして提供します。
 
-インストールを完了すると、WindowsサービスにWhaTapエージェントが自動登録されます。
+インストールを完了すると、WindowsサービスにWhaTapエージェントが自動的に登録されます。

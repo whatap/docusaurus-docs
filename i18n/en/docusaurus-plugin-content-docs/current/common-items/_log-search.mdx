@@ -46,7 +46,7 @@ The searched log data is imported to the dynamic page line by line. If the scrol
 
 ## Filtering
 
-#### Apply Filter
+### Apply Filter
 
 In **_Time Selector_** on the left of ![number-s](/img/number-01.png), you can specify the time range. On the right: {@include: ../common-items/_log-filter-apply.mdx} 
 
@@ -58,11 +58,11 @@ The expression under the entered filter value is a preview of the filter express
 
 :::
 
-#### Modifying the filter
+### Modifying the filter
 
 {@include: ../common-items/_log-filter-modify.mdx}
 
-#### Search Key
+### Search Key
 
 The tags on the left ![number-s](/img/number-02.png) area are the search keys parsed for each category. You can enter filters by selecting tags. The <span class='logwr'>orange</span> tag is the category, and the <span class='lowfg'>blue</span> tag is the search key.
 
@@ -74,13 +74,37 @@ For example, <span class='logwr'>AppLog</span> and <span class='logwr'>AppStdOut
 
 <InDoc product='aws-log'>
 
-For example, <span class='logwr'>AppLog</span> and <span class='logwr'>AppStdOut</span> in ![number-s](/img/number-02.png) are categories. The tags below such as <span class='lowfg'>oid</span> are search keys parsed. The search keys can be set by registering the parsing logic in **_Log Parser Setting_** under **_Management_** > **_Log Setting_**. 
+For example, <span class='logwr'>AppLog</span> and <span class='logwr'>AppStdOut</span> in ![number-s](/img/number-02.png) are categories. The tags below such as <span class='lowfg'>oid</span> are search keys parsed. The search keys can be set by registering the parsing logic in **_Log Parser Setting_** under **_Management_** > **_Log Setting_**.
 
 </InDoc>
 
-#### Filter input syntax
+### Filter input syntax{#filter-expressions}
 
-{@include: ../common-items/_log-filter-rule.mdx} 
+{@include: ../common-items/_log-filter-expressions.mdx} 
+
+## Log tagging options
+
+When you select a log tag, the following drop-down menu appears. You can find the **_Search_**, **_Exclusion search_**, and **_Adjacent log_** options. 
+
+<ImgLang img='log-search-tag.png' desc='Log tag dropdown menu'/>
+
+-   **Search**
+
+    If you select the **_Search_** option, the tags that correspond to **_Filter_** are entered with the inclusion (`+`) condition as follows:
+
+    <ImgLang img='log-search-tag-se.png' desc='Log tag search'/>
+
+-   **Exclusion search**
+
+    If you select the **_Exclusion search_** option, the tags that correspond to **_Filter_** are entered with the exclusion (`-`) condition as follows:
+
+    <ImgLang img='log-search-tag-ese.png' desc='Log search exclude tag'/>
+
+-   **Adjacent Log**
+
+    If you select the **_Adjacent Log_** option, the **_Adjacent Log_** detail window appears. Search for the logs of the target server and the logs in time zones adjacent to the selected log. You can click **_Time selector_** to see the logs in adjacent time zones. Reference logs appear with a blue background.
+
+    <ImgLang img='log-search-adjacent-log.png' desc='Log tag - adjacent logs'/>
 
 ## Highlight
 

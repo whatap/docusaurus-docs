@@ -1,0 +1,39 @@
+---
+id: java-2_2_16
+title: Java Agent v2.2.16
+toc_max_heading_level: 2
+pagination_next: release-notes/java/java-2_2_15
+---
+
+September 8, 2023
+
+-   <Status>Feature</Status> Java 20 is supported (Java option is required).
+
+    ```bash
+    --add-opens=java.base/java.lang=ALL-UNNAMED
+    ```
+
+-   <Status>Feature</Status> Tracing for Lettuce drivers in Redis.
+
+    ```ini title='whatap.conf'
+    weaving=lettuce-6.2
+    ```
+
+-   <Status>Feature</Status> Included the Lettuce settings in the spring-boot-3.0 configuration
+
+    ```ini title='whatap.conf'
+    weaving=spring-boot-3.0
+    ```
+
+-   <Status>Changed</Status> Added the option to exclude the <code>oracle.jdbc.driver.OraclePreparedStatement</code> tracing.
+
+    ```ini title='whatap.conf'
+    # default
+    hook_pstmt_oracle_enabled=true
+    ```
+
+-   <Status>Fixed</Status> Deleted the kafka header logs that occur when tracing kafka-clients-2.4.0.
+
+-   <Status>Fixed</Status> Fixed the issue where HTTP calls are not collected when tracing okhttp-2.7, okhttp3-3.14, and okhttp3-4.4.
+
+-   <Status>Fixed</Status> Fixed the <code>java.sql.Date</code> reference error that may occur when calling SQLs.

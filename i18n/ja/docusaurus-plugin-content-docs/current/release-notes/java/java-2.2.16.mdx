@@ -1,0 +1,39 @@
+---
+id: java-2_2_16
+title: Java Agent v2.2.16
+toc_max_heading_level: 2
+pagination_next: release-notes/java/java-2_2_15
+---
+
+2023年9月8日
+
+-   <Status>Feature</Status>Java 20対応(JAVAオプションが必要)
+
+    ```bash
+    --add-opens=java.base/java.lang=ALL-UNNAMED
+    ```
+
+-   <Status>Feature</Status>RedisのLettuceドライバー追跡
+
+    ```ini title='whatap.conf'
+    weaving=lettuce-6.2
+    ```
+
+-   <Status>Feature</Status>spring-boot-3.0設定にLettuce設定を含む
+
+    ```ini title='whatap.conf'
+    weaving=spring-boot-3.0
+    ```
+
+-   <Status>Changed</Status> <code>oracle.jdbc.driver.OraclePreparedStatement</code>追跡を除外するオプションの追加
+
+    ```ini title='whatap.conf'
+    # default
+    hook_pstmt_oracle_enabled=true
+    ```
+
+-   <Status>Fixed</Status> kafka-clients-2.4.0追跡時に発生するkafka ヘッダーログの除去
+
+-   <Status>Fixed</Status>okhttp-2.7, okhttp3-3.14、okhttp3-4.4追跡時にHTTP Call情報を収集できない問題の修正
+
+-   <Status>Fixed</Status>SQL呼び出し時に発生する可能性のある<code>java.sql.Date</code>参照エラーを修正

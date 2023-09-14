@@ -109,7 +109,7 @@ WhaTapに保存されているKubernetesイベントは、`message`、`namespace
 
 ![WhaTapイベント](/img/k8s-container-event-wt-all.png)
 
-各イベントの左帯はイベントレベルを示します。グレー色は<span class='k8s-normal'>Info</span>、オレンジ色は<span class='slow'>Warning</span>、赤色は<span class='vslow'>Critical</span>状態を意味します。ユーザーの選択対象によって提供、WhaTapイベントは以下の通りです。
+各イベントの左側の帯はイベントレベルを示します。グレー色は<span class='k8s-normal'>Info</span>、オレンジ色は<span class='slow'>Warning</span>、赤色は<span class='vslow'>Critical</span>状態を意味します。ユーザーの選択によって使用可能なWhaTapイベントは以下の通りです。
 
 | 選択対象       | 提供イベント                              |
 | ---------- | ----------------------------------- |
@@ -121,27 +121,27 @@ WhaTapに保存されているKubernetesイベントは、`message`、`namespace
 | Pod        | `podName`がユーザーPod名と一致               |
 | Container  | `containerId`がユーザーContainer IDと一致   |
 
-WhaTapイベントは`message`、`status`、`title`、`level`などの項目で構成されています。次の例の画面は**_WhaTap Containterイベント_**記録を照会しています。
+WhaTapイベントは`message`、`status`、`title`、`level`などの項目で構成されています。次の例の画面は**_WhaTap Containterイベント_**履歴を検索しています。
 
 ![クバネティスWhaTapイベントsc](/img/k8s-container-event-wt.png)
 
--   ![number 1](/img/number-01.png)**詳細**左の要約情報カードから照会する対象を選択してください。
+-   ![number 1](/img/number-01.png)**詳細**左側のサマリー情報カードから表示する対象を選択してください。
 
--   ![number 2](/img/number-02.png)要約情報一覧から選択対象の情報を確認してください。
+-   ![number 2](/img/number-02.png)サマリー情報一覧から選択対象の情報を確認してください。
 
 -   ![number 3](/img/number-03.png)**_イベント_**タブから**_WhaTap_**イベントを選択してください。 
 
-    > **詳細**画面に進入する前**_コンテナマップ_**上段のビューオプションをコンテナビューと指定して**_Containerイベント_**を照会できます。
+    > **詳細**画面にアクセスする前に、**_コンテナマップ_**の上のビューオプションをコンテナビューに設定することで、**_Containerイベント_**を表示できます。
 
--   ![number 4](/img/number-04.png)時間選択者を通じて、照会する時間を選択してください。基本設定は**_1日_**です。
+-   ![number 4](/img/number-04.png)時間セレクターを使用して、表示する時間を選択してください。基本設定は**_1日_**です。
 
--   ![number 5](/img/number-05.png)棒チャートを通じて指定した時間帯の**_イベント数推移_**を確認してください。
+-   ![number 5](/img/number-05.png)棒チャートを使用して指定した時間帯の**_イベント数の推移_**を確認してください。
 
-    > ７月10日８時57分から７月월11日８時 57分まで１日基準でイベント数推移をみると、11日８時48分にイベント二つがカウントされたことを確認できます。 
+    > ７月10日８時57分から７月11日８時 57分まで１日分のイベント数の推移をみると、11日８時48分にイベントの２つがカウントされたことを確認できます。 
 
--   ![number 6](/img/number-06.png)イベント記録一覧でイベント記録情報を確認してください。リストの左帯からイベント別レベルを確認できます。イベントメッセージおよびタグ全体を確認するには ![下向き矢印アイコン](/img/ic-caret-down.svg)アイコンを選択してください。
+-   ![number 6](/img/number-06.png)イベント履歴一覧でイベント履歴情報を確認してください。リストの左側の帯からイベントのレベルを確認できます。イベントメッセージおよびタグ全体を確認するには ![下向き矢印アイコン](/img/ic-caret-down.svg)アイコンを選択してください。
 
-    > イベント履歴一覧で`コンテナLimit基準CPU使用量が85%以上`, `GC回数以上`<span class='slow'>Warning</span>レベルイベント二つを照会できます。 
+    > イベント履歴一覧で、`コンテナLimitの標準CPU使用量が85%以上`, `GC回数以上`<span class='slow'>Warning</span>レベルのイベントを２つを表示できます。 
 
 <!-- 
 

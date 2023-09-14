@@ -190,11 +190,11 @@ If you parse with the above syntax, you can extract tags as follows.
 
 1.  To apply the GROK pattern parser, go to the **_Log primary parser setting_** tab in **_Log setting_**.
 
-    <ImgLang img='log-1st-parser-list.png' desc='Log Parser List'/>
+    <ImgLang img='log-1st-parser-list.png' desc='Log parser lists'/>
 
 2.  Select **_+ Add_** and then select the **_GROK_** parser in the **_Parser_** field.
 
-    <ImgLang img='log-1st-grok.png' desc='GROK Pattern Parser'/>
+    <ImgLang img='log-1st-grok.png' desc='Registering the Grok pattern parser'/>
 
 3.  Enter values for **_Category_**, **_Log detection condition_**, and **_Pattern_**. The components of the **_Add Parser_** window are as follows: 
 
@@ -244,9 +244,10 @@ If you parse with the above syntax, you can extract tags as follows.
 
 ### Simulation{#grok-simulation}
 
-You can check the parsed result in advance by entering **_log_** and **_pattern_** in the **_Parser simulation_** window.
+You can check the parsed result in advance by entering **_log_** and **_pattern_** in the **_Parser simulation_** window. 
 
 > **_Log_** example: `[2023-08-08 02:02:30,101 GMT][INFO ][i.w.y.l.c.LogSinkDexScheduleThread.realProcess(159)] 8 VirtualLog 20230808 02:01:00.000 {area=4, city=5} 56ms`
+>
 > **_Pattern_** example: `[%{TIMESTAMP_ISO8601:date}\sGMT\][%{LOGLEVEL:level}\s\][%{DATA:caller}\]\s(?<projectCode>\d)\s(?<logCategory>\w*)\s(?<dexBuildStartTime>\d{8}\s\d{2}:\d{2}:\d{2}\.\d{3})\s\{area=(?<areaEnum>\d),\scity=(?<cityEnum>\d)\}\s(?<dexBuildElapsed>\d{2})ms`
 
 1.  In the **_Parser addition_** window, select **_Simulation_**. 
@@ -267,7 +268,7 @@ If logs are collected in JSON format, they can be easily parsed using the JSON p
 
 1.  To apply the JSON pattern parser, go to the **_Log primary parser setting_** tab in **_Log setting_**.
 
-    <ImgLang img='log-1st-parser-list.png' desc='Log Parser List'/>
+    <ImgLang img='log-1st-parser-list.png' desc='Log parser lists'/>
 
 2.  Select **_+ Add_** and then select the **_JSON_** parser in the **_Parser_** field.
 

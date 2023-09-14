@@ -2999,14 +2999,15 @@ const sidebars = {
               className: 'new',
               link: {
                 type: 'doc',
-                id: 'release-notes/java/java-2_2_15',
+                id: 'release-notes/java/java-2_2_16',
               },
               items: [
                 {
                   type: 'doc',
-                  id: 'release-notes/java/java-2_2_15',
+                  id: 'release-notes/java/java-2_2_16',
                   className: 'new',
                 },
+                'release-notes/java/java-2_2_15',
                 'release-notes/java/java-2_2_14',
                 'release-notes/java/java-2_2_13',
                 'release-notes/java/java-2_2_12',
@@ -3015,7 +3016,6 @@ const sidebars = {
                 'release-notes/java/java-2_2_9',
                 'release-notes/java/java-2_2_8',
                 'release-notes/java/java-2_2_7',
-                'release-notes/java/java-2_2_6',
                 'release-notes/java/java-previous',
               ],
             },
@@ -3024,11 +3024,17 @@ const sidebars = {
               label: 'PHP',
               collapsible: true,
               collapsed: true,
+              className: 'new',
               link: {
                 type: 'doc',
-                id: 'release-notes/php/php-2_6_1',
+                id: 'release-notes/php/php-2_6_2',
               },
               items: [
+                {
+                  type: 'doc',
+                  id: 'release-notes/php/php-2_6_2',
+                  className: 'new',
+                },
                 'release-notes/php/php-2_6_1',
                 'release-notes/php/php-2_6_0',
                 'release-notes/php/php-2_5_4',
@@ -3096,14 +3102,15 @@ const sidebars = {
               className: 'new',
               link: {
                 type: 'doc',
-                id: 'release-notes/dotnet/dotnet-2_1_4',
+                id: 'release-notes/dotnet/dotnet-2_1_5',
               },
               items: [
                 {
                   type: 'doc',
-                  id: 'release-notes/dotnet/dotnet-2_1_4',
+                  id: 'release-notes/dotnet/dotnet-2_1_5',
                   className: 'new',
                 },
+                'release-notes/dotnet/dotnet-2_1_4',
                 'release-notes/dotnet/dotnet-2_1_3',
                 'release-notes/dotnet/dotnet-2_1_2',
                 'release-notes/dotnet/dotnet-2_1_1',
@@ -3112,7 +3119,6 @@ const sidebars = {
                 'release-notes/dotnet/dotnet-2_0_8',
                 'release-notes/dotnet/dotnet-2_0_7',
                 'release-notes/dotnet/dotnet-2_0_6',
-                'release-notes/dotnet/dotnet-2_0_5',
                 'release-notes/dotnet/dotnet-previous',
               ],
             },
@@ -3121,17 +3127,18 @@ const sidebars = {
               label: 'Go',
               collapsible: true,
               collapsed: true,
-              // className: 'new',
+              className: 'new',
               link: {
                 type: 'doc',
-                id: 'release-notes/golang/golang-0_2_2',
+                id: 'release-notes/golang/golang-0_2_3',
               },
               items: [
                 {
                   type: 'doc',
-                  id: 'release-notes/golang/golang-0_2_2',
-                  // className: 'new'
+                  id: 'release-notes/golang/golang-0_2_3',
+                  className: 'new'
                 },
+                'release-notes/golang/golang-0_2_2',
                 'release-notes/golang/golang-0_1_14',
                 'release-notes/golang/golang-0_1_13',
                 'release-notes/golang/golang-0_1_12',
@@ -3140,7 +3147,6 @@ const sidebars = {
                 'release-notes/golang/golang-0_1_9',
                 'release-notes/golang/golang-0_1_8',
                 'release-notes/golang/golang-0_1_7',
-                'release-notes/golang/golang-0_1_6',
                 'release-notes/golang/golang-previous',
               ],
             },
@@ -3177,17 +3183,18 @@ const sidebars = {
               label: 'Kubernetes',
               collapsible: true,
               collapsed: true,
-              // className: 'new',
+              className: 'new',
               link: {
                 type: 'doc',
-                id: 'release-notes/k8s/k8s-1_3_4',
+                id: 'release-notes/k8s/k8s-1_3_5',
               },
               items: [
                 {
                   type: 'doc',
-                  id: 'release-notes/k8s/k8s-1_3_4',
-                  // className: 'new',
+                  id: 'release-notes/k8s/k8s-1_3_5',
+                  className: 'new',
                 },
+                'release-notes/k8s/k8s-1_3_4',
                 'release-notes/k8s/k8s-1_3_3',
                 'release-notes/k8s/k8s-1_3_2',
                 'release-notes/k8s/k8s-1_3_1',
@@ -3196,7 +3203,6 @@ const sidebars = {
                 'release-notes/k8s/k8s-1_2_7',
                 'release-notes/k8s/k8s-1_2_6',
                 'release-notes/k8s/k8s-1_2_5',
-                'release-notes/k8s/k8s-1_2_2',
                 'release-notes/k8s/k8s-previous',
               ],
             },

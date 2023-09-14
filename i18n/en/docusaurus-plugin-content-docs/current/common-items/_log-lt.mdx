@@ -20,7 +20,7 @@ In **_Live Tail_**, complex logs can be easily accessed. You can search the logs
 
 ## ![](/img/number-01.png) filter area
 
-#### Apply Filter
+### Apply Filter
 
 {@include: ../common-items/_log-filter-apply.mdx}
 
@@ -32,25 +32,25 @@ The expression under the entered filter value is a preview of the filter express
 
 :::
 
-#### Modifying the filter
+### Modifying the filter
 
 {@include: ../common-items/_log-filter-modify.mdx}
 
-#### Search Key
+### Search Key
 
 In the following image, the blue boxed part is the search key for parsing. The search key can be set by registering the parsing logic in **_Log parser setting_** under **_Log setting_**.
 
 ![Search key](https://img.whatap.io/media/images/livetail_007_parsed_key.png)
 
-#### Filter input syntax
+### Filter input syntax{#filter-expressions}
 
-{@include: ../common-items/_log-filter-rule.mdx} 
+{@include: ../common-items/_log-filter-expressions.mdx}
 
 ## ![](/img/number-02.png) Content filter area
 
-#### Content Filter
+### Content Filter
 
-Only the logs containing the keyword in the content pieces are filtered. 
+Only the logs containing the keyword in the content pieces are filtered.
 
 <ImgLang img='log-lt-contents-filter.png' desc='Content Filter'/>
 
@@ -60,7 +60,7 @@ Only the logs containing the keyword in the content pieces are filtered.
 
 -   You can filter by single or multiple keywords.
 
-#### Content filtering condition
+### Content filtering condition
 
 When filtering with multiple keywords, write as follows.
 
@@ -70,7 +70,7 @@ When filtering with multiple keywords, write as follows.
 | `"Whatap is good."`   | To include spaces in keywords, wrap them in '`'` or `""`.             | Whatap is good.   |
 | `"Whatap\\ is good."` | If `\` is included in the keyword surrounded by "", enter it as `\\`. | Whatap\\ is good. |
 
-#### Highlight
+### Highlight
 
 The highlight function is provided to easily identify the desired keywords.
 
@@ -84,7 +84,7 @@ The highlight function is provided to easily identify the desired keywords.
 
 -   The settings are saved in **Project Rules**.  
 
-#### Table settings
+### Table settings
 
 -   Right of the ![number-s](/img/number-02.png) area: {@include: ../common-items/_log-ui-table-setting.mdx}
 

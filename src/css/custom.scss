@@ -116,7 +116,7 @@ html[lang='en-US'] {
 
 html[lang='ja-JP'] {
   word-wrap: break-word;
-  word-break: break-all;
+  word-break: inherit;
   font-family: 'Noto Sans JP', 'Noto Sans', sans-serif, 'Apple SD Gothic Neo' !important; //'Noto Emoji'
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Noto Sans JP', 'Noto Sans', sans-serif, 'Apple SD Gothic Neo' !important; //'Noto Emoji'

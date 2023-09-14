@@ -60,6 +60,14 @@
         {
             "filePath": "docs/release-notes/service/service-1.108.x.mdx",
             "group": "Default"
+        },
+        {
+            "filePath": "docs/best-practice-guides",
+            "group": "Default"
+        },
+        {
+            "filePath": "docs/common-items",
+            "group": "Default"
         }
     ],
     "favorites.sortOrder": "ASC"

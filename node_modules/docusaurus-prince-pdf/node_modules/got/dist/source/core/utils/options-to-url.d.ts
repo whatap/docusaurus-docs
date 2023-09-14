@@ -1,6 +1,5 @@
 /// <reference types="node" resolution-mode="require"/>
-import { URL } from 'node:url';
-export declare type URLOptions = {
+export type URLOptions = {
     href?: string;
     protocol?: string;
     host?: string;
