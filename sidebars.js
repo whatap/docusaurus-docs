@@ -3211,14 +3211,14 @@ const sidebars = {
               label: 'DB',
               collapsible: true,
               collapsed: true,
-              className: 'new',
+              // className: 'new',
               items: [
                 {
                   type: 'category',
                   label: 'DBX',
                   collapsible: true,
                   collapsed: true,
-                  className: 'new',
+                  // className: 'new',
                   link: {
                     type: 'doc',
                     id: 'release-notes/db/dbx-1_6_9',
@@ -3227,7 +3227,7 @@ const sidebars = {
                     {
                       type: 'doc',
                       id: 'release-notes/db/dbx-1_6_9',
-                      className: 'new',
+                      // className: 'new',
                     },
                     'release-notes/db/dbx-1_6_8',
                     'release-notes/db/dbx-1_6_7',
@@ -3268,17 +3268,18 @@ const sidebars = {
               label: 'Browser',
               collapsible: true,
               collapsed: true,
-              // className: 'new',
+              className: 'new',
               link: {
                 type: 'doc',
-                id: 'release-notes/browser/browser-v1_2_2',
+                id: 'release-notes/browser/browser-v1_3_0',
               },
               items: [
                 {
                   type: 'doc',
-                  id: 'release-notes/browser/browser-v1_2_2',
-                  // className: 'new',
+                  id: 'release-notes/browser/browser-v1_3_0',
+                  className: 'new',
                 },
+                'release-notes/browser/browser-v1_2_1',
                 'release-notes/browser/browser-v1_2_1',
                 'release-notes/browser/browser-v1_2_0',
                 'release-notes/browser/browser-v1_1_4',

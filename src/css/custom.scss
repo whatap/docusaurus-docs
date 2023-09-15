@@ -1196,10 +1196,15 @@ main {
     img[alt*='light'], img[alt*='dark'] {
       background-color: #fff;
     }
-    img[src*='flexboard-time-set'] {
+    img[src*='flexboard-time-set.png'], img[src*='flexboard-time-set-en.png'], img[src*='flexboard-time-set-ja.png'] {
       width: 306px;
     }
-    img[src*='flexboard-time-set-pause.png'], img[src*='flexboard-time-set-select.png'] {
+    img[src*='flexboard-time-set-pause.png'], 
+    img[src*='flexboard-time-set-pause-en.png'],
+    img[src*='flexboard-time-set-pause-ja.png'],
+    img[src*='flexboard-time-set-select.png'],
+    img[src*='flexboard-time-set-select-en.png'],
+    img[src*='flexboard-time-set-select-ja.png'] {
       width: 600px;
     }
     ol {
@@ -1818,7 +1823,7 @@ main {
 // media query
 @media (min-width: 997px) {
   @supports (scrollbar-gutter: stable) {
-    .menu_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-Content-styles-module {
+    nav.thin-scrollbar {
       padding: 0px 8px !important;
     }
   }
