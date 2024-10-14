@@ -44,6 +44,7 @@
     "axios": "^1.7.2",
     "cheerio": "^1.0.0-rc.12",
     "clsx": "^2.0.0",
+    "codehike": "^1.0.2",
     "docusaurus-plugin-image-zoom": "^2.0.0",
     "docusaurus-plugin-sass": "^0.2.5",
     "file-saver": "^2.0.5",

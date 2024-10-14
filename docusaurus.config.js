@@ -5,7 +5,15 @@ const {themes} = require('prism-react-renderer');
 const lightTheme = themes.github;
 const darkTheme = themes.dracula;
 const {rehypeExtendedTable} = require("rehype-extended-table");
+const { remarkCodeHike, recmaCodeHike } = require("codehike/mdx");
 // const rehypeSectionHeadings = require("rehype-section-headings");
+
+const chConfig = {
+  components: { code: "MyCode" },
+  syntaxHighlighting: {
+    theme: "github-dark",
+  },
+}
 
 /** @type {import('@docusaurus/types').Config} */
 
@@ -114,10 +122,12 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
+          beforeDefaultRemarkPlugins: [[remarkCodeHike, chConfig]],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           rehypePlugins: [ rehypeExtendedTable ],
           remarkPlugins: [ require("@whatap-docs/remark-sectionize") ],
+          recmaPlugins: [[recmaCodeHike, chConfig]],
           editUrl: 'undefined', // 'https://gitlab.whatap.io/whatap-inc/docs/-/blob/main/',
           include: [ '**/*.mdx' ],
           exclude: [ 'weaving/*.mdx', 'weaving/**/*.mdx', 'wip/*.mdx', 'common-items/*.mdx', '**/_*.mdx', 'release-notes/otel/*.mdx' ],

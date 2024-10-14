@@ -27,6 +27,7 @@ import FiletreeItem from '@site/src/components/FiletreeItem';
 import Title from '@site/src/components/Title';
 import ReturnLink from '@site/src/components/CurrentDocurl.js';
 import ImportJson from "@site/src/components/ImportJson";
+import { MyCode } from "../components/code"
 
 export default {
   // 기본 mapping 재사용
@@ -56,5 +57,6 @@ export default {
   FiletreeItem,
   Title,
   ReturnLink,
-  ImportJson
+  ImportJson,
+  MyCode
 };
