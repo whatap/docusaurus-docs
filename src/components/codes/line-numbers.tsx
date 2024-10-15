@@ -5,7 +5,7 @@ import clsx from 'clsx'
 export const lineNumbers: AnnotationHandler = {
   name: "line-numbers",
   Line: (props) => {
-    const width = props.totalLines.toString().length + 1
+    const width = props.totalLines.toString().length + 0
     return (
       <div className={styles.flex}>
         <span
