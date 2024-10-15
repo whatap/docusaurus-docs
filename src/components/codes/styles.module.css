@@ -1,3 +1,8 @@
+.codeBlockContainer {
+  margin-bottom: var(--ifm-leading);
+  position: relative;
+}
+
 .codeBlockTitle {
   border-bottom: 1px solid var(--ifm-color-emphasis-300);
   font-size: var(--ifm-code-font-size);
@@ -10,7 +15,6 @@
 }
 .codeBlock {
   font: inherit;
-  float: left;
   min-width: 100%;
   padding: var(--ifm-pre-padding);
 }

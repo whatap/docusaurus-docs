@@ -52,6 +52,7 @@
     "fs-extra": "^11.1.1",
     "google-auth-library": "^0.10.0",
     "googleapis": "^19.0.0",
+    "lucide-react": "^0.452.0",
     "medium-zoom": "^1.1.0",
     "meilisearch-docsearch": "^0.6.0",
     "npm-check-updates": "^16.10.12",

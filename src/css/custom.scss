@@ -1152,6 +1152,39 @@ main {
       background-color: #fff;
       margin: 8px 0;
     }
+    .theme-code-block {
+      .text-zinc-200 {
+        --tw-text-opacity: 1;
+        color: rgb(228 228 231 / var(--tw-text-opacity));
+      }
+      .p-1 {
+          padding: .25rem;
+      }
+      .rounded {
+          border-radius: .25rem;
+      }
+      .top-1 {
+          top: .25rem;
+      }
+      .right-1 {
+          right: .25rem;
+      }
+      .absolute {
+          position: absolute;
+      }
+      [role=button], button {
+          cursor: pointer;
+      }
+      
+      button, input:where([type=button]), input:where([type=reset]), input:where([type=submit]) {
+          -webkit-appearance: button;
+          background-color: transparent;
+          background-image: none;
+      }
+      button, select {
+          text-transform: none;
+      }
+    }
     .container {
       margin-left: 0;
       img {
