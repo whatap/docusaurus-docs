@@ -1,0 +1,20 @@
+.codeBlockTitle {
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  font-size: var(--ifm-code-font-size);
+  font-weight: 500;
+  padding: 0.75rem var(--ifm-pre-padding);
+  border-top-left-radius: var(--ifm-pre-border-radius);
+  border-top-right-radius: var(--ifm-pre-border-radius);
+  background: #212121;
+  color: #fafafa;
+}
+.codeBlock {
+  font: inherit;
+  float: left;
+  min-width: 100%;
+  padding: var(--ifm-pre-padding);
+}
+.codeBlockTitle + .codeBlock {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
