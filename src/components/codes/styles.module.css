@@ -16,9 +16,39 @@
 .codeBlock {
   font: inherit;
   min-width: 100%;
-  padding: var(--ifm-pre-padding);
+  padding: var(--ifm-pre-padding) 0;
+}
+.codeBlock > div > div {
+  padding: 0 8px;
+  border-left-color: transparent;
 }
 .codeBlockTitle + .codeBlock {
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0 !important;
+}
+
+.flex {
+  display: flex;
+}
+
+.textright {
+  text-align: right;
+}
+
+.opacity50 {
+  opacity: .5;
+}
+
+.selectnone {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.flex_1 {
+  flex: 1 1 0%;
+}
+
+.pl_2 {
+  padding-left: .5rem;
 }
