@@ -49127,9 +49127,9 @@
     "service_id": "DSC07131"
   },
   "DSC07132": {
-    "en": "The memory usage for ${oname} is ${mem(xos)}.",
-    "ja": "${oname}のメモリ使用量が${mem(xos)}です。",
-    "ko": "${oname}의 메모리 사용량이 ${mem(xos)}입니다.",
+    "en": "The memory usage for ${oname} is ${mem(xos)}%.",
+    "ja": "${oname}のメモリ使用量が${mem(xos)}%です。",
+    "ko": "${oname}의 메모리 사용량이 ${mem(xos)}%입니다.",
     "zh": "The memory usage for ${oname} is ${mem(xos)}.",
     "service_id": "DSC07132"
   },
@@ -53698,9 +53698,9 @@
     "service_id": "NTC07789"
   },
   "DSC07790": {
-    "en": "The CPU utilization of ${oname} is ${cpu(xos)}.",
-    "ja": "${oname}のCPU使用率が${cpu(xos)}です。",
-    "ko": "${oname}의 CPU 사용률이 ${cpu(xos)}입니다.",
+    "en": "The CPU utilization of ${oname} is ${cpu(xos)}%.",
+    "ja": "${oname}のCPU使用率が${cpu(xos)}%です。",
+    "ko": "${oname}의 CPU 사용률이 ${cpu(xos)}%입니다.",
     "zh": "The CPU utilization of ${oname} is ${cpu(xos)}.",
     "service_id": "DSC07790"
   },
@@ -54251,10 +54251,10 @@
     "service_id": "DSC07868"
   },
   "DSC07869": {
-    "en": "For more information, please visit <a href=\"{url}\" target=\"_blank\">Rocktree</a>.",
+    "en": "For more information, please visit <a href=\"{url}\" target=\"_blank\">Rock Tree</a>.",
     "ja": "詳細については、<a href=\"{url}\" target=\"_blank\">ロックツリー</a>を参考してください。",
     "ko": "자세한 내용은 <a href=\"{url}\" target=\"_blank\">락트리</a>에서 확인하세요.",
-    "zh": "For more information, please visit <a href=\"{url}\" target=\"_blank\">Rocktree</a>.",
+    "zh": "For more information, please visit <a href=\"{url}\" target=\"_blank\">Rock Tree</a>.",
     "service_id": "DSC07869"
   },
   "DSC07870": {
@@ -54973,7 +54973,7 @@
   },
   "DSC07972": {
     "en": "Run the following command to create an agent.",
-    "ja": "エージェントを生成するには、次のコマンドを実行します。",
+    "ja": "エージェントを作成するには、次のコマンドを実行します。",
     "ko": "에이전트를 생성하기 위해 다음 명령어를 실행하세요.",
     "zh": "Run the following command to create an agent.",
     "service_id": "DSC07972"
@@ -55224,10 +55224,10 @@
     "service_id": "DSC08007"
   },
   "DSC08008": {
-    "en": "Check the manifest for each object from the past",
+    "en": "Check the manifest of each object from the past",
     "ja": "過去時点のオブジェクト別マニフェストを確認します。",
     "ko": "과거 시점의 오브젝트별 매니페스트를 확인",
-    "zh": "Check the manifest for each object from the past",
+    "zh": "Check the manifest of each object from the past",
     "service_id": "DSC08008"
   },
   "DSC08009": {
@@ -55519,7 +55519,7 @@
   },
   "DSC08050": {
     "en": "You can only register Korean mobile phone numbers.",
-    "ja": "電話番号は<span style = \"color：＃F34747;\">韓国の携帯電話番号のみを登録</span>できます。",
+    "ja": "電話番号は<span style=\"color: #F34747;\">韓国の携帯電話番号のみ登録</span>できます。",
     "ko": "전화번호는 <span style=\"color: #F34747;\">한국 휴대 전화 번호만 등록</span>할 수 있습니다.",
     "zh": "You can only register Korean mobile phone numbers.",
     "service_id": "DSC08050"
@@ -55644,10 +55644,10 @@
     "service_id": "DSC08067"
   },
   "CNT08068": {
-    "en": "Are you sure you want to delete this item?",
+    "en": "Are you sure you want to delete that item?",
     "ja": "該当の項目を削除してもよろしいですか？",
     "ko": "해당 항목을 삭제하시겠습니까?",
-    "zh": "Are you sure you want to delete this item?",
+    "zh": "Are you sure you want to delete that item?",
     "service_id": "CNT08068"
   },
   "TLT08069": {
@@ -56261,7 +56261,7 @@
   },
   "BTN08155": {
     "en": "Time batch reset",
-    "ja": "時間バッチ初期化",
+    "ja": "時間一括初期化",
     "ko": "시간 일괄 초기화",
     "zh": "Time batch reset",
     "service_id": "BTN08155"
@@ -56932,17 +56932,17 @@
     "service_id": "TLT08251"
   },
   "NTC08252": {
-    "en": "The maximum viewing period for the current page is {time}.",
-    "ja": "現在のページに対する最大照会期間は{time}です。",
-    "ko": "현재 페이지 최대 조회 기간은 {time} 입니다.",
-    "zh": "The maximum viewing period for the current page is {time}.",
+    "en": "The maximum viewing period is {time}.",
+    "ja": "最大検索期間は{time}です。",
+    "ko": "최대 조회 기간은 {time} 입니다.",
+    "zh": "The maximum viewing period is {time}.",
     "service_id": "NTC08252"
   },
   "NTC08253": {
-    "en": "Searching for \"{category}\" as there are no logs that match your search criteria.",
+    "en": "Searching for \"{category}\" as there are no logs matching the search criteria.",
     "ja": "検索条件に一致するログがないため、「{category}」を検索します。",
     "ko": "검색 조건과 일치하는 로그가 없어 \"{category}\"를(을) 조회합니다.",
-    "zh": "Searching for \"{category}\" as there are no logs that match your search criteria.",
+    "zh": "Searching for \"{category}\" as there are no logs matching the search criteria.",
     "service_id": "NTC08253"
   },
   "DSC08254": {
@@ -57724,7 +57724,7 @@
   },
   "CNT08366": {
     "en": "Select search results",
-    "ja": "検索結果を選択",
+    "ja": "検索結果の選択",
     "ko": "검색 결과 선택",
     "zh": "Select search results",
     "service_id": "CNT08366"
@@ -57842,10 +57842,10 @@
     "service_id": "DSC08382"
   },
   "DSC08383": {
-    "en": "This is the latest agent version of WhaTap. If you select the Preview version, if nodes are added in the future, the latest agent version at the time the node is started will be installed. ",
+    "en": "This is WhaTap’s latest agent version. If you select the Preview version, if nodes are added in the future, the latest agent version at the time the node is started will be installed. ",
     "ja": "WhaTapの最新エージェントバージョンです。プレビューバージョンを選択した場合、将来ノードが追加されると、そのノードが起動した時点の最新のエージェントバージョンがインストールされます。 ",
     "ko": "와탭의 최신 에이전트 버전입니다. Preview 버전을 선택하는 경우 향후에 노드가 추가되면 해당 노드가 기동된 시점의 최신 에이전트 버전이 설치됩니다. ",
-    "zh": "This is the latest agent version of WhaTap. If you select the Preview version, if nodes are added in the future, the latest agent version at the time the node is started will be installed. ",
+    "zh": "This is WhaTap’s latest agent version. If you select the Preview version, if nodes are added in the future, the latest agent version at the time the node is started will be installed. ",
     "service_id": "DSC08383"
   },
   "ITM08384": {
@@ -58143,10 +58143,10 @@
     "service_id": "TTL08425"
   },
   "DSC08426": {
-    "en": "It takes approximately 30 seconds to 1 minute to complete the task.",
+    "en": "It will take approximately 30 seconds to 1 minute to complete the task.",
     "ja": "作業完了まで1分程かかることがあります。",
     "ko": "작업 완료까지 약 30초에서 1분 정도 소요됩니다.",
-    "zh": "It takes approximately 30 seconds to 1 minute to complete the task.",
+    "zh": "It will take approximately 30 seconds to 1 minute to complete the task.",
     "service_id": "DSC08426"
   },
   "CNT08427": {
@@ -58179,7 +58179,7 @@
   },
   "DSC08431": {
     "en": "This node maintains light usage most of the time, but <b>occasionally experiences moderate load on {resources}</b>. If you want stable operation, we recommend monitoring periodically when load occurs.",
-    "ja": "このノードはほとんどの時間にわたって余裕を持っていますが、<b>断続的に{resources}で中程度の負荷が発生する状態</b>です。安定した運用が必要な場合は、定期的に負荷が発生した時点での監視をお勧めします。",
+    "ja": "このノードはほとんどの時間にわたって余裕を持っていますが、<b>断続的に{resources}で中程度の負荷が発生する状態</b>です。安定した運用が必要な場合は、定期的に負荷が発生した場合に備えて監視することをお勧めします。",
     "ko": "이 노드는 대부분의 시간 동안 여유로운 사용량을 유지하지만, <b>간헐적으로 {resources}에서 중간 정도의 부하가 발생하는 상태</b>입니다. 안정적인 운영을 원한다면 주기적으로 부하가 발생하는 시점에 대비한 모니터링을 권장합니다.",
     "zh": "This node maintains light usage most of the time, but <b>occasionally experiences moderate load on {resources}</b>. If you want stable operation, we recommend monitoring periodically when load occurs.",
     "service_id": "DSC08431"
@@ -58199,10 +58199,10 @@
     "service_id": "DSC08433"
   },
   "DSC08434": {
-    "en": "This node's average and maximum CPU and memory usage remain at typical levels, showing <b>consistent resource utilization</b>.",
+    "en": "This node's average and maximum usage of CPU and memory both remain at typical levels, ensuring <b>resource utilization remains consistent</b>.",
     "ja": "このノードはCPU、メモリの平均使用量と最大使用量の両方が一般的なレベルに留まり、<b>リソースの活用が一貫して維持</b>されています。",
     "ko": "이 노드는 CPU, 메모리의 평균 사용량과 최대 사용량이 모두 일반적인 수준에 머물러 있어, <b>리소스 활용이 일관되게 유지</b>되고 있습니다.",
-    "zh": "This node's average and maximum CPU and memory usage remain at typical levels, showing <b>consistent resource utilization</b>.",
+    "zh": "This node's average and maximum usage of CPU and memory both remain at typical levels, ensuring <b>resource utilization remains consistent</b>.",
     "service_id": "DSC08434"
   },
   "DSC08435": {
@@ -58675,10 +58675,10 @@
     "service_id": "DSC08501"
   },
   "DSC08502": {
-    "en": "Add the script file to <b>{Agent installation path}/scripts/dbms/</b>.",
-    "ja": "スクリプトファイルを<b> {エージェントインストールパス} / scripts / dbms /パスに追加</b>します。",
-    "ko": "스크립트 파일을 <b>{에이전트 설치 경로}/scripts/dbms/ 경로에 추가</b>하세요.",
-    "zh": "Add the script file to <b>{Agent installation path}/scripts/dbms/</b>.",
+    "en": "<b>Add the script file to the {path} path</b>.",
+    "ja": "スクリプトファイルを<b> {path}パスに追加</b>します。",
+    "ko": "스크립트 파일을 <b>{path} 경로에 추가</b>하세요.",
+    "zh": "<b>Add the script file to the {path} path</b>.",
     "service_id": "DSC08502"
   },
   "DSC08503": {
@@ -58907,7 +58907,7 @@
   },
   "TTL08537": {
     "en": "Introducing the node map feature!",
-    "ja": "ノードマップ機能を紹介します！",
+    "ja": "ノードマップ機能をご紹介します！",
     "ko": "노드 맵 기능을 소개합니다!",
     "zh": "Introducing the node map feature!",
     "service_id": "TTL08537"
@@ -58997,10 +58997,10 @@
     "service_id": "LNK08549"
   },
   "DSC08550": {
-    "en": "The memory usage of ${oname} is ${metricValue}.",
-    "ja": "${oname}のメモリ使用率は${metricValue}です。",
-    "ko": "${oname}의 메모리 사용률이 ${metricValue}입니다.",
-    "zh": "The memory usage of ${oname} is ${metricValue}.",
+    "en": "${oname}'s memory usage is ${metricValue}%.",
+    "ja": "${oname} のメモリ使用率は ${metricValue}% です。",
+    "ko": "${oname}의 메모리 사용률이 ${metricValue}%입니다.",
+    "zh": "${oname}'s memory usage is ${metricValue}%.",
     "service_id": "DSC08550"
   },
   "DSC08551": {
@@ -59033,7 +59033,7 @@
   },
   "time_action_fromend": {
     "en": "from end time",
-    "ja": "〜終了時間",
+    "ja": "- 終了時間",
     "ko": "~ 종료시간",
     "zh": "from end time",
     "service_id": "ITM08555"
@@ -59060,10 +59060,836 @@
   },
   "TTL08559": {
     "en": "AJAX\bhitmap pattern",
-    "ja": "AJAXヒートマップパターン",
+    "ja": "AJAXヒットマップのパターン",
     "ko": "AJAX 히트맵 패턴",
     "zh": "AJAX\bhitmap pattern",
     "service_id": "TTL08559"
+  },
+  "TTL08560": {
+    "en": "Find",
+    "ja": "検索",
+    "ko": "찾기",
+    "zh": "Find",
+    "service_id": "TTL08560"
+  },
+  "TTL08561": {
+    "en": "Show no group",
+    "ja": "グループなしの表示",
+    "ko": "그룹 없음 표시",
+    "zh": "Show no group",
+    "service_id": "TTL08561"
+  },
+  "TLT08562": {
+    "en": "Indicates the user's IP address. \nTo additionally check the log, click the > button.",
+    "ja": "ユーザーのIPアドレスを示します。 \nログをさらに確認するには、>ボタンをクリックしてください。",
+    "ko": "사용자의 IP 주소를 나타냅니다. \n추가적으로 로그를 확인하려면 > 버튼을 클릭하세요.",
+    "zh": "Indicates the user's IP address. \nTo additionally check the log, click the > button.",
+    "service_id": "TLT08562"
+  },
+  "TLT08563": {
+    "en": "It refers to the time it takes for the browser to completely load a web page.",
+    "ja": "ブラウザがWebページを完全に読み込むまでかかる時間を示します。",
+    "ko": "브라우저가 웹 페이지를 완전히 불러오는데 걸리는 시간을 나타냅니다.",
+    "zh": "It refers to the time it takes for the browser to completely load a web page.",
+    "service_id": "TLT08563"
+  },
+  "TLT08564": {
+    "en": "Represents a group of URLs on a page.",
+    "ja": "ページのURLグループを示します。",
+    "ko": "페이지의 URL 그룹을 나타냅니다.",
+    "zh": "Represents a group of URLs on a page.",
+    "service_id": "TLT08564"
+  },
+  "TLT08565": {
+    "en": "Indicates the number of page loads.",
+    "ja": "ページロード数を示します。",
+    "ko": "페이지 로드 수를 나타냅니다.",
+    "zh": "Indicates the number of page loads.",
+    "service_id": "TLT08565"
+  },
+  "TLT08566": {
+    "en": "Indicates the processing time of the frontend area during page load.",
+    "ja": "ページロード中に、フロントエンド領域の処理にかかる時間を示します。",
+    "ko": "페이지 로드 중 프론트엔드 영역의 처리 시간을 나타냅니다.",
+    "zh": "Indicates the processing time of the frontend area during page load.",
+    "service_id": "TLT08566"
+  },
+  "TLT08567": {
+    "en": "Indicates backend zone processing time during page load.",
+    "ja": "ページロード中に、バックエンド領域の処理にかかる時間を示します。",
+    "ko": "페이지 로드 중 백엔드 영역 처리 시간을 나타냅니다.",
+    "zh": "Indicates backend zone processing time during page load.",
+    "service_id": "TLT08567"
+  },
+  "TLT08568": {
+    "en": "Indicates the time at which the load event is completed, as measured by the browser.",
+    "ja": "ブラウザが測定する load イベントが完了した時間を示します。",
+    "ko": "브라우저가 측정하는 load 이벤트가 완료되는 시간을 나타냅니다.",
+    "zh": "Indicates the time at which the load event is completed, as measured by the browser.",
+    "service_id": "TLT08568"
+  },
+  "TLT08569": {
+    "en": "Indicates the time it takes for the redirection process when the browser loads a web page.",
+    "ja": "ブラウザのWebページロード中に、リダイレクト過程にかかる時間を示します。",
+    "ko": "브라우저가 웹 페이지를 불러올 때 리다이렉트 과정에서 걸리는 시간을 나타냅니다.",
+    "zh": "Indicates the time it takes for the redirection process when the browser loads a web page.",
+    "service_id": "TLT08569"
+  },
+  "TLT08570": {
+    "en": "This refers to the time the browser retrieves cached resources while loading a web page.",
+    "ja": "ブラウザのWebページロード中に、キャッシュされたリソースの取得にかかる時間を示します。",
+    "ko": "브라우저가 웹 페이지를 불러오면서 캐시된 리소스를 검색하는 시간을 나타냅니다.",
+    "zh": "This refers to the time the browser retrieves cached resources while loading a web page.",
+    "service_id": "TLT08570"
+  },
+  "TLT08571": {
+    "en": "Indicates the time the browser establishes a network connection with the server.",
+    "ja": "ブラウザがサーバーとのネットワーク接続にかかる時間を示します。",
+    "ko": "브라우저가 서버와의 네트워크 연결하는 시간을 나타냅니다.",
+    "zh": "Indicates the time the browser establishes a network connection with the server.",
+    "service_id": "TLT08571"
+  },
+  "TLT08572": {
+    "en": "It refers to the time it takes for a browser to look up a website domain while loading a web page.",
+    "ja": "ブラウザのWebページロード中に、Webサイトドメインの照会にかかる時間を示します。",
+    "ko": "브라우저가 웹 페이지를 불러오면서 웹사이트 도메인을 조회하는데 걸리는 시간을 나타냅니다.",
+    "zh": "It refers to the time it takes for a browser to look up a website domain while loading a web page.",
+    "service_id": "TLT08572"
+  },
+  "TLT08573": {
+    "en": "Indicates the time it takes for the TCP handshake process when the browser loads a web page.",
+    "ja": "ブラウザのWebページロード中に、TCPハンドシェイクにかかる時間を示します。",
+    "ko": "브라우저가 웹 페이지를 불러올 때 TCP 핸드셰이크 과정에서 걸리는 시간을 나타냅니다.",
+    "zh": "Indicates the time it takes for the TCP handshake process when the browser loads a web page.",
+    "service_id": "TLT08573"
+  },
+  "TLT08574": {
+    "en": "This refers to the time it takes for the browser to load a web page and download resources from the server.",
+    "ja": "ブラウザのWebページロード中に、サーバーからのリソースダウンロードにかかる時間を示します。",
+    "ko": "브라우저가 웹 페이지를 불러오면서 서버로부터 리소스를 다운로드하는데 걸리는 시간을 나타냅니다.",
+    "zh": "This refers to the time it takes for the browser to load a web page and download resources from the server.",
+    "service_id": "TLT08574"
+  },
+  "TLT08575": {
+    "en": "This refers to the time it takes for a browser to load a web page, send a network request, and wait until the first byte is received from the server.",
+    "ja": "ブラウザのWebページロード中に、ネットワークリクエストを送信してからサーバーからの最初バイト受信までにかかる時間を示します。",
+    "ko": "브라우저가 웹 페이지를 불러오면서 네트워크 요청을 보낸 후 서버로부터 첫 번째 바이트가 수신될 때까지 소요한 시간을 나타냅니다.",
+    "zh": "This refers to the time it takes for a browser to load a web page, send a network request, and wait until the first byte is received from the server.",
+    "service_id": "TLT08575"
+  },
+  "TLT08576": {
+    "en": "This refers to the time it takes for a web page to render its initial content and become interactive.",
+    "ja": "Webページが初期コンテンツをレンダリングして相互作用できる状態になるまでかかる時間を示します。",
+    "ko": "웹 페이지가 초기 콘텐츠를 렌더링하고 상호 작용할 수 있는 상태가 되기까지의 걸리는 시간을 나타냅니다.",
+    "zh": "This refers to the time it takes for a web page to render its initial content and become interactive.",
+    "service_id": "TLT08576"
+  },
+  "TLT08577": {
+    "en": "This refers to the time it takes for a web page to load and render all of its resources before the user can interact with it.",
+    "ja": "Webページのすべてのリソースがロードされ、レンダリングが完了してからユーザーとの相互作用できる状態になるまでかかる時間を示します。",
+    "ko": "웹 페이지의 모든 자원이 로드되고 렌더링이 완료된 후 사용자가 상호 작용할 수 있는 상태가 되기까지의 시간을 나타냅니다.",
+    "zh": "This refers to the time it takes for a web page to load and render all of its resources before the user can interact with it.",
+    "service_id": "TLT08577"
+  },
+  "TLT08578": {
+    "en": "Indicates the average time it takes to render resources downloaded from the server on the screen and complete a page load event.",
+    "ja": "サーバーからダウンロードしたリソースを画面にレンダリングし、ページロードイベントを完了するまでかかる平均時間を示します。",
+    "ko": "서버로부터 다운로드한 리소스를 화면에 렌더링하고 페이지 로드 이벤트를 완료하는데 걸리는 평균 시간을 나타냅니다.",
+    "zh": "Indicates the average time it takes to render resources downloaded from the server on the screen and complete a page load event.",
+    "service_id": "TLT08578"
+  },
+  "TLT08579": {
+    "en": "Indicates that {n}% of the data is below this value.",
+    "ja": "データの {n}% がこの値以下であることを示します。",
+    "ko": "데이터의 {n}%가 이 값 이하임을 나타냅니다.",
+    "zh": "Indicates that {n}% of the data is below this value.",
+    "service_id": "TLT08579"
+  },
+  "BTN08580": {
+    "en": "View log",
+    "ja": "ログの表示",
+    "ko": "로그 보기",
+    "zh": "View log",
+    "service_id": "BTN08580"
+  },
+  "DSC08581": {
+    "en": "If you change the event target, the number of notifications may change. <span class=\"{class}\">Run the “Simulation” button again.</span>",
+    "ja": "イベントの対象を変更した場合は、アラート通知の件数が変わる可能性があるため、<span class=\"{class}\">「シミュレーション」ボタンをもう一度実行してください。</span>",
+    "ko": "이벤트 대상을 변경한 경우, 알림 건수가 달라질 수 있으니 <span class=\"{class}\">“시뮬레이션” 버튼을 다시 실행하세요.</span>",
+    "zh": "If you change the event target, the number of notifications may change. <span class=\"{class}\">Run the “Simulation” button again.</span>",
+    "service_id": "DSC08581"
+  },
+  "DSC08582": {
+    "en": "To use reception testing, enter or select a value for <span class=\"{class}\">Required items ({items})</span>.",
+    "ja": "受信テストを利用するには、<span class=\"{class}\">必須項目（{items}）</span>に値を入力するか、選択してください。",
+    "ko": "수신 테스트를 이용하려면 <span class=\"{class}\">필수 항목({items})</span>에 값을 입력하거나 선택하세요.",
+    "zh": "To use reception testing, enter or select a value for <span class=\"{class}\">Required items ({items})</span>.",
+    "service_id": "DSC08582"
+  },
+  "TTL08583": {
+    "en": "Indicator settings",
+    "ja": "指標設定",
+    "ko": "지표 설정",
+    "zh": "Indicator settings",
+    "service_id": "TTL08583"
+  },
+  "DSC08584": {
+    "en": "When you set an event reception tag, project members with that tag will receive notifications.",
+    "ja": "イベント受信タグを設定すると、該当のタグを持つプロジェクトメンバーは通知を受信します。",
+    "ko": "이벤트 수신 태그를 설정하면 해당 태그를 가진 프로젝트 멤버는 알림을 수신합니다.",
+    "zh": "When you set an event reception tag, project members with that tag will receive notifications.",
+    "service_id": "DSC08584"
+  },
+  "DSC08585": {
+    "en": "For detailed instructions on setting up event reception, please refer to the guide document. ",
+    "ja": "イベント受信設定の詳細については、ガイドを参照してください。 ",
+    "ko": "이벤트 수신 설정에 대한 자세한 설명은 가이드 문서를 참고해 주세요. ",
+    "zh": "For detailed instructions on setting up event reception, please refer to the guide document. ",
+    "service_id": "DSC08585"
+  },
+  "DSC08586": {
+    "en": "You can enter a variable by typing $. ex) An error occurred at ${active_tx_8} ${time}.",
+    "ja": "$を入力すると変数を入力できます。 例) ${active_tx_8} ${time} にエラーが発生しました。",
+    "ko": "$를 입력하면 변수를 입력할 수 있습니다. ex) ${active_tx_8} ${time}에 에러가 발생했습니다.",
+    "zh": "You can enter a variable by typing $. ex) An error occurred at ${active_tx_8} ${time}.",
+    "service_id": "DSC08586"
+  },
+  "DSC08587": {
+    "en": "Please refer to the guide document for Tag and Field variables that can be entered as messages.",
+    "ja": "メッセージとして入力できるタグとフィールド変数については、ガイドを参照してください。",
+    "ko": "메시지로 입력할 수 있는 Tag와 Field 변수는 가이드 문서를 참고하세요.",
+    "zh": "Please refer to the guide document for Tag and Field variables that can be entered as messages.",
+    "service_id": "DSC08587"
+  },
+  "DSC08588": {
+    "en": "The pattern is registered after the simulation is performed to ensure that the log is successfully parsed with the entered pattern.",
+    "ja": "入力したパターンでログが正常に解析されるかどうかをシミュレートし、パターンを登録します。",
+    "ko": "입력한 패턴으로 로그가 성공적으로 파싱되는지 시뮬레이션 진행 후 패턴을 등록합니다.",
+    "zh": "The pattern is registered after the simulation is performed to ensure that the log is successfully parsed with the entered pattern.",
+    "service_id": "DSC08588"
+  },
+  "DSC08589": {
+    "en": "Simulate that the log is parsed successfully. Simulation must be performed, and additional pattern registration may be required depending on the simulation results.",
+    "ja": "ログが正常に解析されるかどうかをシミュレートします。シミュレーションは必須でなければならず、シミュレーション結果によってはパターン登録がさらに必要になる場合があります。",
+    "ko": "로그가 성공적으로 파싱되는지 시뮬레이션합니다. 시뮬레이션은 필수적으로 수행되어야 하며,시뮬레이션 결과에 따라 패턴 등록이 추가로 필요할 수 있습니다.",
+    "zh": "Simulate that the log is parsed successfully. Simulation must be performed, and additional pattern registration may be required depending on the simulation results.",
+    "service_id": "DSC08589"
+  },
+  "TTL08590": {
+    "en": "Parser pattern registration",
+    "ja": "パーサーパターンの登録",
+    "ko": "파서 패턴 등록",
+    "zh": "Parser pattern registration",
+    "service_id": "TTL08590"
+  },
+  "BTN08591": {
+    "en": "Simulation verification and pattern modification",
+    "ja": "シミュレーション検証とパターン修正",
+    "ko": "시물레이션 검증 및 패턴 수정",
+    "zh": "Simulation verification and pattern modification",
+    "service_id": "BTN08591"
+  },
+  "BTN08592": {
+    "en": "Modify parser pattern",
+    "ja": "パーサーパターンの修正",
+    "ko": "파서 패턴 수정",
+    "zh": "Modify parser pattern",
+    "service_id": "BTN08592"
+  },
+  "BTN08593": {
+    "en": "Register pattern",
+    "ja": "パターン登録",
+    "ko": "패턴 등록",
+    "zh": "Register pattern",
+    "service_id": "BTN08593"
+  },
+  "DSC08594": {
+    "en": "{highlight} and additional pattern registration may be required depending on simulation results.",
+    "ja": "{highlight}する必要があり、シミュレーションの結果に応じてパターン登録が必要になる場合があります。",
+    "ko": "{highlight}되어야 하며, 시뮬레이션 결과에 따라 패턴 등록이 추가로 필요할 수 있습니다.",
+    "zh": "{highlight} and additional pattern registration may be required depending on simulation results.",
+    "service_id": "DSC08594"
+  },
+  "DSC08595": {
+    "en": "Log simulation is essential",
+    "ja": "ログシミュレーションは必須です",
+    "ko": "로그 시뮬레이션은 필수적으로 수행",
+    "zh": "Log simulation is essential",
+    "service_id": "DSC08595"
+  },
+  "DSC08596": {
+    "en": "Reserved words do not work even if registered as log detection conditions or patterns.",
+    "ja": "予約語はログ検出条件、パターンで登録しても動作しません。",
+    "ko": "예약어는 로그 검출 조건, 패턴으로 등록해도 동작하지 않습니다.",
+    "zh": "Reserved words do not work even if registered as log detection conditions or patterns.",
+    "service_id": "DSC08596"
+  },
+  "DSC08597": {
+    "en": "{keyword} is a reserved word.",
+    "ja": "{keyword} は予約語です。",
+    "ko": "{keyword}는 예약어입니다.",
+    "zh": "{keyword} is a reserved word.",
+    "service_id": "DSC08597"
+  },
+  "TTL08598": {
+    "en": "parser pattern",
+    "ja": "パーサーパターン",
+    "ko": "파서 패턴",
+    "zh": "parser pattern",
+    "service_id": "TTL08598"
+  },
+  "DSC08599": {
+    "en": "WhaTap reserves the right to disable parsers that may affect the stability of the WhaTap service.",
+    "ja": "WhaTap Monitoringには、サービスの信頼性に影響を与える可能性があるパーサーを無効にできる権限があります。",
+    "ko": "와탭은 와탭 서비스의 안정성에 영향을 줄 수 있는 파서를 비활성화할 수 있는 권한을 가집니다.",
+    "zh": "WhaTap reserves the right to disable parsers that may affect the stability of the WhaTap service.",
+    "service_id": "DSC08599"
+  },
+  "DSC08600": {
+    "en": "If multiple parsers are registered in the same category, only the first matching parser is applied.",
+    "ja": "同じカテゴリに複数のパーサーが登録されている場合、最初に一致するパーサーのみが適用されます。",
+    "ko": "같은 카테고리에 여러 개의 파서가 등록되어 있는 경우 첫 번째로 매칭되는 파서만 적용됩니다.",
+    "zh": "If multiple parsers are registered in the same category, only the first matching parser is applied.",
+    "service_id": "DSC08600"
+  },
+  "DSC08601": {
+    "en": "Parser performance threshold must pass {time} by {count} of simulation results.",
+    "ja": "パーサーの性能しきい値は、シミュレーションの結果{count}に基づいて{time}を超える必要があります。",
+    "ko": "파서 성능 임계치가 시뮬레이션 결과 {count} 기준, {time}를 통과해야 합니다.",
+    "zh": "Parser performance threshold must pass {time} by {count} of simulation results.",
+    "service_id": "DSC08601"
+  },
+  "DSC08602": {
+    "en": "Parser registration is possible only when the threshold is passed. If you have any questions, please contact crisp.",
+    "ja": "しきい値を超えてからとパーサー登録が可能です。質問などはチャットでお問い合わせください。",
+    "ko": "임계치 통과가 되어야 파서 등록이 가능합니다. 궁금 사항은 crisp에 문의해 주세요.",
+    "zh": "Parser registration is possible only when the threshold is passed. If you have any questions, please contact crisp.",
+    "service_id": "DSC08602"
+  },
+  "DSC08603": {
+    "en": "Even if you register a reserved word as a log detection condition or pattern, it does not work. Please check the registered pattern. ",
+    "ja": "予約語をログ検出条件やパターンとして登録しても動作しません。登録されたパターンを確認してください。 ",
+    "ko": "예약어를 로그 검출 조건, 패턴으로 등록해도 동작하지않습니다. 등록된 패턴을 확인해주세요. ",
+    "zh": "Even if you register a reserved word as a log detection condition or pattern, it does not work. Please check the registered pattern. ",
+    "service_id": "DSC08603"
+  },
+  "TTL08604": {
+    "en": "Performance measurement results",
+    "ja": "性能測定の結果",
+    "ko": "퍼포먼스 측정 결과",
+    "zh": "Performance measurement results",
+    "service_id": "TTL08604"
+  },
+  "TLT08605": {
+    "en": "In order to have meaningful statistical groups in the browser monitoring service, the URL Path is normalized and provided under the name of page group. Numbers, dates, etc. that are judged to be meaningless in URL Path unit analysis are replaced with question marks (?) and provided. ",
+    "ja": "Browserモニタリングで有意味な統計グループを持つために、URLパスを正規化してページグループという名前で指定します。 URLパス 単位の分析に意味がないと判断した数字、日付などを疑問符(?)で置き換えます。 ",
+    "ko": "브라우저 모니터링 서비스에서 의미있는 통계 그룹을 가지기 위해 URL Path를 정규화해 페이지 그룹이라는 이름으로 제공합니다. URL Path 단위 분석에 의미가 없다고 판단한 숫자, 날짜 등을 물음표(?)로 치환해 제공합니다. ",
+    "zh": "In order to have meaningful statistical groups in the browser monitoring service, the URL Path is normalized and provided under the name of page group. Numbers, dates, etc. that are judged to be meaningless in URL Path unit analysis are replaced with question marks (?) and provided. ",
+    "service_id": "TLT08605"
+  },
+  "DSC08606": {
+    "en": "If you do not set the above items, the event will be triggered for everything included in the project, which may result in many notifications.",
+    "ja": "上記の項目を設定しないと、プロジェクトに含まれたすべてを対象にイベントが発生し、多量の通知が発生する可能性があります。",
+    "ko": "위 항목을 설정하지 않으면 프로젝트에 포함된 전체를 대상으로 이벤트가 발생되어 많은 알림이 발생할 수 있습니다.",
+    "zh": "If you do not set the above items, the event will be triggered for everything included in the project, which may result in many notifications.",
+    "service_id": "DSC08606"
+  },
+  "TLT08607": {
+    "en": "Linked Service information does not exist.",
+    "ja": "連携したサービス情報が存在しません。",
+    "ko": "연결된 Service 정보가 존재하지 않습니다.",
+    "zh": "Linked Service information does not exist.",
+    "service_id": "TLT08607"
+  },
+  "DSC08608": {
+    "en": "After setting the conditions, you can press the simulation button<br/>to check the expected number of notifications.",
+    "ja": "条件を設定してからシミュレーションボタンを押すと、通知の予想件数を確認できます。",
+    "ko": "조건 설정 후 시뮬레이션 버튼을 누르면<br/>알림 예상 건수를 확인할 수 있습니다.",
+    "zh": "After setting the conditions, you can press the simulation button<br/>to check the expected number of notifications.",
+    "service_id": "DSC08608"
+  },
+  "ITM08609": {
+    "en": "from end time",
+    "ja": "終了時刻から",
+    "ko": "종료 시간으로부터",
+    "zh": "from end time",
+    "service_id": "ITM08609"
+  },
+  "ITM08610": {
+    "en": "from start time",
+    "ja": "開始時刻から",
+    "ko": "시작 시간으로부터",
+    "zh": "from start time",
+    "service_id": "ITM08610"
+  },
+  "TTL08611": {
+    "en": "Enterprise Manager Workspace Token Registration",
+    "ja": "Enterprise Managerワークスペースのトークン登録",
+    "ko": "엔터프라이즈 매니저 워크스페이스 토큰 등록",
+    "zh": "Enterprise Manager Workspace Token Registration",
+    "service_id": "TTL08611"
+  },
+  "TTL08612": {
+    "en": "Registered workspace",
+    "ja": "登録されたワークスペース",
+    "ko": "등록된 워크스페이스",
+    "zh": "Registered workspace",
+    "service_id": "TTL08612"
+  },
+  "BTN08613": {
+    "en": "Register",
+    "ja": "登録",
+    "ko": "등록",
+    "zh": "Register",
+    "service_id": "BTN08613"
+  },
+  "TTL08614": {
+    "en": "All server",
+    "ja": "全てのサーバー",
+    "ko": "전체 서버",
+    "zh": "All server",
+    "service_id": "TTL08614"
+  },
+  "DSC08615": {
+    "en": "Please enter your token.",
+    "ja": "トークンを入力してください。",
+    "ko": "토큰을 입력하세요.",
+    "zh": "Please enter your token.",
+    "service_id": "DSC08615"
+  },
+  "DSC08616": {
+    "en": "When events at the critical and warning levels are resolved, you receive a notification with a status of <span class=\"{class}\">RECOVERED</span>.",
+    "ja": "CriticalとWarningレベルのイベントが解消されたら、<span class=\"{class}\">RECOVERED状態の通知を受信</span>します。",
+    "ko": "Critical과 Warning 레벨의 이벤트가 해소되면 <span class=\"{class}\">RECOVERED 상태의 알림을 수신</span>합니다.",
+    "zh": "When events at the critical and warning levels are resolved, you receive a notification with a status of <span class=\"{class}\">RECOVERED</span>.",
+    "service_id": "DSC08616"
+  },
+  "DSC08617": {
+    "en": "The parser can be registered only when {result} results are confirmed based on {count} number of simulations. If you have any questions, please contact us through {contact}.",
+    "ja": "シミュレーション{count}回に基づいて{result}の結果が確認できてからパーサーを登録できます。質問事項などは{contact}を通じてお問い合わせください。",
+    "ko": "시뮬레이션 횟수 {count}건 기준으로 {result} 결과가 확인되어야 파서를 등록할 수 있습니다. 궁금한 사항은 {contact}를 통해서 문의해 주세요.",
+    "zh": "The parser can be registered only when {result} results are confirmed based on {count} number of simulations. If you have any questions, please contact us through {contact}.",
+    "service_id": "DSC08617"
+  },
+  "DSC08618": {
+    "en": "An error may occur if you enter a field name that contains special characters ({character}) or begins with a number. Select <span class=\"{class}\">Direct input option</span>, then enter it in curly brackets ({character2}) as shown in the example.",
+    "ja": "特殊文字（{character}）を含むフィールド、または数字で始まるフィールド名を入力すると、エラーが発生する可能性があります。 <span class=\"{class}\">直接入力オプション</span>を選択してから、例のように中括弧（{character2}）で囲んで入力します。",
+    "ko": "특수문자({character})가 포함되거나 숫자로 시작하는 필드명을 입력하면 오류가 발생할 수 있습니다. <span class=\"{class}\">직접 입력 옵션</span>을 선택한 다음 예시와 같이 중괄호({character2})로 묶어서 입력하세요.",
+    "zh": "An error may occur if you enter a field name that contains special characters ({character}) or begins with a number. Select <span class=\"{class}\">Direct input option</span>, then enter it in curly brackets ({character2}) as shown in the example.",
+    "service_id": "DSC08618"
+  },
+  "TTL08619": {
+    "en": "installed agent",
+    "ja": "インストールされたエージェント",
+    "ko": "설치된 에이전트",
+    "zh": "installed agent",
+    "service_id": "TTL08619"
+  },
+  "DSC08620": {
+    "en": "Workspace not found.",
+    "ja": "ワークスペースが見つかりません。",
+    "ko": "워크스페이스를 찾을 수 없습니다.",
+    "zh": "Workspace not found.",
+    "service_id": "DSC08620"
+  },
+  "DSC08621": {
+    "en": "This workspace is already registered.",
+    "ja": "すでに登録されたワークスペースです。",
+    "ko": "이미 등록된 워크스페이스입니다.",
+    "zh": "This workspace is already registered.",
+    "service_id": "DSC08621"
+  },
+  "DSC08622": {
+    "en": "You have registered successfully.",
+    "ja": "正常に登録されました。",
+    "ko": "성공적으로 등록되었습니다.",
+    "zh": "You have registered successfully.",
+    "service_id": "DSC08622"
+  },
+  "CNT08623": {
+    "en": "Would you like to delete the current project from the EM workspace?",
+    "ja": "現在のプロジェクトを当該のEnterprise Managerワークスペースから削除しますか？",
+    "ko": "현재 프로젝트를 해당 EM 워크스페이스에서 삭제하시겠습니까?",
+    "zh": "Would you like to delete the current project from the EM workspace?",
+    "service_id": "CNT08623"
+  },
+  "CNT08624": {
+    "en": "If you delete it, you will no longer be able to manage this project in your EM workspace.",
+    "ja": "削除すると、該当のEnterprise Managerワークスペースでこのプロジェクトを管理できなくなります。",
+    "ko": "삭제하시면 해당 EM 워크스페이스에서 이 프로젝트를 관리할 수 없습니다.",
+    "zh": "If you delete it, you will no longer be able to manage this project in your EM workspace.",
+    "service_id": "CNT08624"
+  },
+  "NTC08625": {
+    "en": "The project has been deleted from the workspace.",
+    "ja": "ワークスペースからプロジェクトが削除されました。",
+    "ko": "워크스페이스에서 프로젝트가 삭제되었습니다.",
+    "zh": "The project has been deleted from the workspace.",
+    "service_id": "NTC08625"
+  },
+  "TTL08626": {
+    "en": "cloud service",
+    "ja": "クラウドサービス",
+    "ko": "클라우드 서비스",
+    "zh": "cloud service",
+    "service_id": "TTL08626"
+  },
+  "TTL08627": {
+    "en": "Collection indicators",
+    "ja": "収集指標",
+    "ko": "수집지표",
+    "zh": "Collection indicators",
+    "service_id": "TTL08627"
+  },
+  "TLT08628": {
+    "en": "Modification and deletion are possible on the relevant cloud service page.",
+    "ja": "変更と削除は、当該のクラウドサービスページで可能です。",
+    "ko": "수정 및 삭제는 해당 클라우드 서비스 페이지에서 가능합니다.",
+    "zh": "Modification and deletion are possible on the relevant cloud service page.",
+    "service_id": "TLT08628"
+  },
+  "DSC08629": {
+    "en": "Cloud metrics setup guide",
+    "ja": "クラウドメトリクス設定ガイド",
+    "ko": "클라우드 메트릭 설정 안내",
+    "zh": "Cloud metrics setup guide",
+    "service_id": "DSC08629"
+  },
+  "DSC08630": {
+    "en": "You can collect and monitor the resource status of the cloud database server through cloud settings.",
+    "ja": "クラウド設定により、クラウドデータベースサーバーのリソース状況を収集して監視できます。",
+    "ko": "클라우드 설정을 통해 클라우드 데이터베이스 서버의 자원현황을 수집하고 모니터링할 수 있습니다.",
+    "zh": "You can collect and monitor the resource status of the cloud database server through cloud settings.",
+    "service_id": "DSC08630"
+  },
+  "DSC08631": {
+    "en": "Depending on usage after installation, additional costs may be incurred in the cloud, separate from WhaTap fees. Check the pricing policy of the cloud service you are using before installation.",
+    "ja": "インストール後の使用量によって、WhaTap Monitoringの利用料とは別に、当該のクラウドプラットフォームから追加料金が発生する可能性があります。インストール前に、利用しているクラウドサービスの価格ポリシーを確認してください。",
+    "ko": "설치 후 사용량에 따라 와탭 요금과는 별개로 클라우드에서 추가 비용이 발생할 수 있습니다. 설치 전 사용중인 클라우드 서비스의 가격 정책을 확인하세요.",
+    "zh": "Depending on usage after installation, additional costs may be incurred in the cloud, separate from WhaTap fees. Check the pricing policy of the cloud service you are using before installation.",
+    "service_id": "DSC08631"
+  },
+  "DSC08632": {
+    "en": "If you have difficulty setting up metrics, please refer to <b>WhaTap Docs</b>.",
+    "ja": "メトリクス設定が難しい場合は、<b> WhaTap Docs </b>を参照してください。",
+    "ko": "메트릭 설정이 어려운 경우 <b>WhaTap Docs</b>를 참고하세요.",
+    "zh": "If you have difficulty setting up metrics, please refer to <b>WhaTap Docs</b>.",
+    "service_id": "DSC08632"
+  },
+  "TTL08633": {
+    "en": "Added cloud services",
+    "ja": "追加されたクラウドサービス",
+    "ko": "추가된 클라우드 서비스",
+    "zh": "Added cloud services",
+    "service_id": "TTL08633"
+  },
+  "DSC08634": {
+    "en": "Appears when cloud metrics have been collected within the last 5 minutes.",
+    "ja": "過去5分以内にクラウド指標が収集された場合に表示されます。",
+    "ko": "최근 5분 이내에 클라우드 지표가 수집되면 표시됩니다.",
+    "zh": "Appears when cloud metrics have been collected within the last 5 minutes.",
+    "service_id": "DSC08634"
+  },
+  "TTL08635": {
+    "en": "1. Select the service you want to add metrics to.",
+    "ja": "1. メトリクスを追加するサービスを選択します。",
+    "ko": "1. 메트릭을 추가할 서비스를 선택하세요.",
+    "zh": "1. Select the service you want to add metrics to.",
+    "service_id": "TTL08635"
+  },
+  "TTL08636": {
+    "en": "4. Check the collected metrics.",
+    "ja": "4. 収集されたメトリクスを確認します。",
+    "ko": "4. 수집된 메트릭을 확인하세요.",
+    "zh": "4. Check the collected metrics.",
+    "service_id": "TTL08636"
+  },
+  "TTL08637": {
+    "en": "2. Enter parameters.",
+    "ja": "2. パラメータを入力します。",
+    "ko": "2. 파라미터를 입력하세요.",
+    "zh": "2. Enter parameters.",
+    "service_id": "TTL08637"
+  },
+  "DSC08638": {
+    "en": "resourceID must be checked and entered in the monitored database console.",
+    "ja": "resourceIDは、監視対象のデータベースコンソールで確認して入力する必要があります。",
+    "ko": "resourceID 는 모니터링 대상 데이터베이스 콘솔에서 확인하고 입력해야합니다.",
+    "zh": "resourceID must be checked and entered in the monitored database console.",
+    "service_id": "DSC08638"
+  },
+  "BTN08639": {
+    "en": "JSON generation",
+    "ja": "JSONの生成",
+    "ko": "JSON 생성",
+    "zh": "JSON generation",
+    "service_id": "BTN08639"
+  },
+  "TTL08640": {
+    "en": "3. Set {value}.",
+    "ja": "3. {value}を設定します。",
+    "ko": "3. {value}을 설정하세요.",
+    "zh": "3. Set {value}.",
+    "service_id": "TTL08640"
+  },
+  "DSC08641": {
+    "en": "Collect cloud metrics by installing the {value} template provided by WhaTap. <br />Please refer to the guide link below to install and set up {value} for metrics collection.",
+    "ja": "WhaTap Monitoringが提供する{value}テンプレートをインストールしてクラウドメトリクスを収集します。 <br />以下のガイドリンクを参照して、メトリクス収集用の{value}のインストールと設定を進めます。",
+    "ko": "와탭이 제공하는 {value} 템플릿을 설치하여 클라우드 메트릭을 수집합니다. <br />아래 가이드 링크를 참조하여 메트릭 수집을 위한 {value} 설치 및 설정을 진행하세요.",
+    "zh": "Collect cloud metrics by installing the {value} template provided by WhaTap. <br />Please refer to the guide link below to install and set up {value} for metrics collection.",
+    "service_id": "DSC08641"
+  },
+  "DSC08642": {
+    "en": "Install an AWS CloudFormation template to collect Amazon CloudWatch metrics.",
+    "ja": "AWS CloudFormation テンプレートをインストールして Amazon CloudWatch メトリクスを収集します。",
+    "ko": "AWS CloudFormation 템플릿을 설치하여 Amazon CloudWatch 메트릭을 수집합니다.",
+    "zh": "Install an AWS CloudFormation template to collect Amazon CloudWatch metrics.",
+    "service_id": "DSC08642"
+  },
+  "DSC08643": {
+    "en": "Install the Azure Resource Manager template to collect cloud metrics.",
+    "ja": "Azure Active Directory に App Registration を追加して、Azure Monitor メトリクスを収集します.",
+    "ko": "Azure Resource Manager 템플릿을 설치하여 클라우드 메트릭을 수집합니다.",
+    "zh": "Install the Azure Resource Manager template to collect cloud metrics.",
+    "service_id": "DSC08643"
+  },
+  "DSC08644": {
+    "en": "Only Pods scheduled on the node are displayed.",
+    "ja": "ノードにスケジュールされたPodのみが表示されます。",
+    "ko": "노드에 스케줄링된 Pod만 표시됩니다.",
+    "zh": "Only Pods scheduled on the node are displayed.",
+    "service_id": "DSC08644"
+  },
+  "DSC08645": {
+    "en": "Only created containers are displayed.",
+    "ja": "生成されたコンテナのみが表示されます。",
+    "ko": "생성된 컨테이너만 표시됩니다.",
+    "zh": "Only created containers are displayed.",
+    "service_id": "DSC08645"
+  },
+  "DSC08646": {
+    "en": "Container not created.",
+    "ja": "生成されていないコンテナです。",
+    "ko": "생성되지 않은 컨테이너입니다.",
+    "zh": "Container not created.",
+    "service_id": "DSC08646"
+  },
+  "DSC08647": {
+    "en": "LoadBalancer IP is <code class='_copy' >{ips}</code>.",
+    "ja": "LoadBalancer IP は <code class='_copy' >{ips}</code> です。",
+    "ko": "LoadBalancer IP는 <code class='_copy' >{ips}</code> 입니다.",
+    "zh": "LoadBalancer IP is <code class='_copy' >{ips}</code>.",
+    "service_id": "DSC08647"
+  },
+  "DSC08648": {
+    "en": "LoadBalancer information not found.",
+    "ja": "LoadBalancer 情報が見つかりません。",
+    "ko": "LoadBalancer 정보는 찾을 수 없습니다.",
+    "zh": "LoadBalancer information not found.",
+    "service_id": "DSC08648"
+  },
+  "DSC08649": {
+    "en": "Traffic coming to <code class='_copy'>{hostPath}</code> is forwarded to the service <code class='_copy'>{backend}</code> via the <code class='_copy'>{ingressName}</code> Ingress policy in the <code class='_copy'>{ingressNamespace}</code> namespace.",
+    "ja": "<code class='_copy'>{ingressNamespace}</code> ネームスペースに存在する <code class='_copy'>{ingressName}</code> Ingress ポリシーを通じて <code class='_copy'>{hostPath} </code>に流入されるトラフィックは、サービス<code class = '_copy'> {backend} </code>へ転送されます。",
+    "ko": "<code class='_copy'>{ingressNamespace}</code> 네임스페이스에 존재하는 <code class='_copy'>{ingressName}</code> Ingress 정책을 통해 <code class='_copy'>{hostPath}</code>로 들어오는 트래픽이 서비스 <code class='_copy'>{backend}</code>로 전달됩니다.",
+    "zh": "Traffic coming to <code class='_copy'>{hostPath}</code> is forwarded to the service <code class='_copy'>{backend}</code> via the <code class='_copy'>{ingressName}</code> Ingress policy in the <code class='_copy'>{ingressNamespace}</code> namespace.",
+    "service_id": "DSC08649"
+  },
+  "DSC08650": {
+    "en": "Share with project members",
+    "ja": "プロジェクトメンバーと共有",
+    "ko": "프로젝트 멤버와 공유",
+    "zh": "Share with project members",
+    "service_id": "DSC08650"
+  },
+  "TLT08651": {
+    "en": "The favorite item will appear as a shared filter to project members. ",
+    "ja": "該当のお気に入りの項目は、プロジェクトメンバーに共有されたフィルタとして表示されます。 ",
+    "ko": "해당 즐겨찾기 항목이 프로젝트 멤버에게 공유된 필터로 표시됩니다. ",
+    "zh": "The favorite item will appear as a shared filter to project members. ",
+    "service_id": "TLT08651"
+  },
+  "DSC08652": {
+    "en": "<code class='_copy'>{ingressName}</code> Ingress was created at <code>{creationTime}</code>.",
+    "ja": "<code class='_copy'>{ingressName}</code> Ingress が <code>{creationTime}</code> に作成されました。",
+    "ko": "<code class='_copy'>{ingressName}</code> Ingress는 <code>{creationTime}</code>에 생성되었습니다.",
+    "zh": "<code class='_copy'>{ingressName}</code> Ingress was created at <code>{creationTime}</code>.",
+    "service_id": "DSC08652"
+  },
+  "DSC08653": {
+    "en": "Additionally, this <code class='_copy'>{backend}</code> service of type <code class='_copy'>{serviceType}</code> has <code class='_copy'>{targetPort}</ You are routing traffic to <code>{totalContainers}</code> containers using code>port.",
+    "ja": "さらに、<code class='_copy'>{serviceType}</code> タイプのこの <code class='_copy'>{backend}</code> サービスは、<code>{totalContainers}</code> 件のコンテナポート<code class='_copy'>{targetPort}</code>へトラフィックをルーティングしています。",
+    "ko": "추가로 <code class='_copy'>{serviceType}</code> 타입의 이 <code class='_copy'>{backend}</code> 서비스는 <code class='_copy'>{targetPort}</code>포트를 사용하는 <code>{totalContainers}</code>개의 컨테이너로 트래픽을 라우팅하고 있습니다.",
+    "zh": "Additionally, this <code class='_copy'>{backend}</code> service of type <code class='_copy'>{serviceType}</code> has <code class='_copy'>{targetPort}</ You are routing traffic to <code>{totalContainers}</code> containers using code>port.",
+    "service_id": "DSC08653"
+  },
+  "DSC08654": {
+    "en": "Among the containers connected to the <code class='_copy'>{backend}</code> service, there are <code>{notRunningContainers}</code> containers that are not in the Running state. Check the container status.",
+    "ja": "<code class='_copy'>{backend}</code> サービスに接続されたコンテナの内、Running 状態ではないコンテナが <code>{notRunningContainers}</code> 件あります。コンテナの状態を確認してください。",
+    "ko": "<code class='_copy'>{backend}</code> 서비스에 연결된 컨테이너 중 Running 상태가 아닌 컨테이너가 <code>{notRunningContainers}</code>개 있습니다. 컨테이너 상태를 확인하세요.",
+    "zh": "Among the containers connected to the <code class='_copy'>{backend}</code> service, there are <code>{notRunningContainers}</code> containers that are not in the Running state. Check the container status.",
+    "service_id": "DSC08654"
+  },
+  "DSC08655": {
+    "en": "Among the containers connected to the <code class='_copy'>{backend}</code> service, there are <code>{pendingPods}</code> Pods in the Pending state.",
+    "ja": "<code class='_copy'>{backend}</code> サービスに接続された Pod の内、Pending 状態の Pod が <code>{pendingPods}</code> 件あります。",
+    "ko": "<code class='_copy'>{backend}</code> 서비스에 연결된 Pod 중 Pending 상태의 Pod가 <code>{pendingPods}</code>개 있습니다.",
+    "zh": "Among the containers connected to the <code class='_copy'>{backend}</code> service, there are <code>{pendingPods}</code> Pods in the Pending state.",
+    "service_id": "DSC08655"
+  },
+  "DSC08656": {
+    "en": "The service information associated with <code class='_copy'>{hostPath}</code> could not be found.",
+    "ja": "<code class='_copy'>{hostPath}</code> に関連付けられたサービス情報が見つかりません。",
+    "ko": "<code class='_copy'>{hostPath}</code>에 연결된 서비스 정보를 찾을 수 없습니다.",
+    "zh": "The service information associated with <code class='_copy'>{hostPath}</code> could not be found.",
+    "service_id": "DSC08656"
+  },
+  "DSC08657": {
+    "en": "No container was found to connect to the <code class='_copy'>{backend}</code> service. Check whether a Pod matching the Service selector exists.",
+    "ja": "<code class='_copy'>{backend}</code> サービスに接続可能なコンテナが見つかりません。サービスセレクタに一致するPodが存在するかを確認してください。",
+    "ko": "<code class='_copy'>{backend}</code> 서비스에 연결 가능한 컨테이너를 찾을 수 없습니다. Service selector에 매칭되는 Pod가 존재하는지 확인하세요.",
+    "zh": "No container was found to connect to the <code class='_copy'>{backend}</code> service. Check whether a Pod matching the Service selector exists.",
+    "service_id": "DSC08657"
+  },
+  "LNK08658": {
+    "en": "Service list",
+    "ja": "サービス一覧",
+    "ko": "Service 목록",
+    "zh": "Service list",
+    "service_id": "LNK08658"
+  },
+  "TTL08659": {
+    "en": "Performance",
+    "ja": "性能",
+    "ko": "성능",
+    "zh": "Performance",
+    "service_id": "TTL08659"
+  },
+  "TTL08660": {
+    "en": "Server uptime summary",
+    "ja": "サーバーアップタイムの要約",
+    "ko": "서버 업타임 요약",
+    "zh": "Server uptime summary",
+    "service_id": "TTL08660"
+  },
+  "TTL08661": {
+    "en": "Summary of server inventory",
+    "ja": "サーバー構成情報の要約",
+    "ko": "서버 구성 정보 요약",
+    "zh": "Summary of server inventory",
+    "service_id": "TTL08661"
+  },
+  "TTL08662": {
+    "en": "Summary of file system usage information",
+    "ja": "ファイルシステム使用情報の要約",
+    "ko": "파일 시스템 사용 정보 요약",
+    "zh": "Summary of file system usage information",
+    "service_id": "TTL08662"
+  },
+  "TTL08663": {
+    "en": "IP load statistics detail page",
+    "ja": "IPロード統計の詳細ページ",
+    "ko": "IP 로드 통계 상세 페이지",
+    "zh": "IP load statistics detail page",
+    "service_id": "TTL08663"
+  },
+  "DSC08664": {
+    "en": "Agent installation path",
+    "ja": "エージェントのインストールパス",
+    "ko": "에이전트 설치 경로",
+    "zh": "Agent installation path",
+    "service_id": "DSC08664"
+  },
+  "TTL08665": {
+    "en": "Server inventory",
+    "ja": "サーバー構成情報",
+    "ko": "서버 구성 정보",
+    "zh": "Server inventory",
+    "service_id": "TTL08665"
+  },
+  "TTL08666": {
+    "en": "File system information",
+    "ja": "ファイルシステム情報",
+    "ko": "파일 시스템 정보",
+    "zh": "File system information",
+    "service_id": "TTL08666"
+  },
+  "DSC08667": {
+    "en": "If the problem persists, contact WhaTap.",
+    "ja": "問題が解決しない場合は、ワタップにお問い合わせください。",
+    "ko": "문제가 지속될 시 와탭에 문의하세요.",
+    "zh": "If the problem persists, contact WhaTap.",
+    "service_id": "DSC08667"
+  },
+  "DSC08668": {
+    "en": "You can use the Azure Resource Manager (ARM) template provided by WhaTap to install a Function App that collects Azure Monitor metrics to the WhaTap server.<br />\nPlease refer to the guide below to set up metrics collection through ARM template and install the Functions App.",
+    "ja": "ワタップが提供するAzure Resource Manager（ARM）テンプレートを使用して、Azure Monitorメトリックをワタップサーバーとして収集するFunction Appをインストールできます。<br />\n以下のガイドを参照して、ARMテンプレートを使用してメトリックを収集するための設定を行い、Functions Appをインストールしてください。",
+    "ko": "와탭이 제공하는 Azure Resource Manager(ARM) 템플릿을 사용하여 Azure Monitor 메트릭을 와탭 서버로 수집하는 Function App 을 설치할 수 있습니다.<br />\n아래 가이드를 참조하여 ARM 템플릿을 통해 메트릭 수집을 위한 설정을 하고 Functions App 을 설치하세요.",
+    "zh": "You can use the Azure Resource Manager (ARM) template provided by WhaTap to install a Function App that collects Azure Monitor metrics to the WhaTap server.<br />\nPlease refer to the guide below to set up metrics collection through ARM template and install the Functions App.",
+    "service_id": "DSC08668"
+  },
+  "TTL08669": {
+    "en": "Acknowledge detail",
+    "ja": "処理履歴詳細",
+    "ko": "처리내역 상세",
+    "zh": "Acknowledge detail",
+    "service_id": "TTL08669"
+  },
+  "DSC08670": {
+    "en": "You can enter less than {maxLength} bytes.",
+    "ja": "{maxLength} byte未満まで入力可能です。",
+    "ko": "{maxLength}byte 미만까지 입력 가능합니다.",
+    "zh": "You can enter less than {maxLength} bytes.",
+    "service_id": "DSC08670"
+  },
+  "TTL08671": {
+    "en": "Download command",
+    "ja": "ダウンロード命令",
+    "ko": "다운로드 명령어",
+    "zh": "Download command",
+    "service_id": "TTL08671"
+  },
+  "TTL08672": {
+    "en": "IP load performance trend",
+    "ja": "IP負荷パフォーマンスの推移",
+    "ko": "IP 로드 성능 추이",
+    "zh": "IP load performance trend",
+    "service_id": "TTL08672"
+  },
+  "TTL08673": {
+    "en": "Top 10 IP Load Times",
+    "ja": "IP ロード時間 Top10",
+    "ko": "IP 로드 시간 Top10",
+    "zh": "Top 10 IP Load Times",
+    "service_id": "TTL08673"
+  },
+  "TTL08674": {
+    "en": "Top 10 IP Load Count",
+    "ja": "IP負荷数 Top10",
+    "ko": "IP 로드 수 Top10",
+    "zh": "Top 10 IP Load Count",
+    "service_id": "TTL08674"
+  },
+  "TLT08675": {
+    "en": "There is no registered processing history.",
+    "ja": "登録された処理履歴はありません。",
+    "ko": "등록된 처리내역이 없습니다.",
+    "zh": "There is no registered processing history.",
+    "service_id": "TLT08675"
+  },
+  "TTL08676": {
+    "en": "IP Load Timeline",
+    "ja": "IPロードタイムライン",
+    "ko": "IP 로드 타임라인",
+    "zh": "IP Load Timeline",
+    "service_id": "TTL08676"
+  },
+  "DSC08677": {
+    "en": "If you register processing details, the repeat notification (escalation) function for the event will stop.",
+    "ja": "処理履歴を登録すると、そのイベントの繰り返し通知（エスカレーション）機能は停止します。",
+    "ko": "처리내역을 등록하면 해당 이벤트의 반복 알림(에스컬레이션) 기능은 중지됩니다.",
+    "zh": "If you register processing details, the repeat notification (escalation) function for the event will stop.",
+    "service_id": "DSC08677"
   },
   "": {
     "en": "#VALUE!",
@@ -59912,6 +60738,11 @@
     "en": "Agent Update",
     "ja": "エージェントアップデート",
     "ko": "에이전트 업데이트"
+  },
+  "side_dbCloudSetting": {
+    "en": "Cloud Settings",
+    "ja": "クラウド設定",
+    "ko": "클라우드 설정"
   },
   "side_event": {
     "en": "Alert",
@@ -61020,5 +61851,10 @@
     "en": "Resource Status",
     "ja": "リソース状況",
     "ko": "리소스 현황"
+  },
+  "side_ingressList": {
+    "en": "Ingress List",
+    "ja": "Ingress List",
+    "ko": "Ingress 목록"
   }
 }

@@ -1870,5 +1870,9 @@
   "sidebar.releaseSidebar.doc.Server HP-UX": {
     "message": "Server HP-UX",
     "description": "The label for the doc item Server HP-UX in sidebar releaseSidebar, linking to the doc release-notes/server-hpux/server-hpux-1_3_4"
+  },
+  "sidebar.featuremonitorSidebar.doc.vCenter": {
+    "message": "vCenter",
+    "description": "The label for the doc item vCenter in sidebar featuremonitorSidebar, linking to the doc features/vcenter-introduction"
   }
 }

@@ -3,7 +3,7 @@ const fs = require('fs').promises;
 const path = require('path');
 
 // 폴더 경로
-const folderPath = './crw-data/crwld-agent-24q2';
+const folderPath = './crw-data/crwld-agent-24q3';
 
 async function processFiles() {
     try {

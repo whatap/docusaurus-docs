@@ -28,7 +28,7 @@ export default function Cover() {
           Kubernetes Monitoring
         </h1>
         <p className={styles.date}>
-            release date. 2024.09.30
+            release date. 2024.11.04
         </p>
         <img className={styles.background} src={bgPath} />
       </div>

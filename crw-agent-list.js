@@ -8,9 +8,12 @@ const cheerio = require('cheerio');
 
 // URL 배열 정의
 const urls = [
-    'https://docs.whatap.io/release-notes/browser/browser-v1_3_6',
-    // 'https://docs.whatap.io/release-notes/db/dbx-1_8_1',
-    // 'https://docs.whatap.io/release-notes/db/dbx-1_7_8',
+    'https://docs.whatap.io/release-notes/db/dbx-1_8_0',
+    'https://docs.whatap.io/release-notes/db/dbx-1_8_1',
+    'https://docs.whatap.io/release-notes/db/dbx-1_9_0',
+    'https://docs.whatap.io/release-notes/db/dbx-1_9_1',
+    'https://docs.whatap.io/release-notes/db/dbx-1_9_5',
+    'https://docs.whatap.io/release-notes/db/dbx-2_0_0',
 ];
 
 // 순차적으로 각 URL을 처리하는 함수
@@ -78,7 +81,7 @@ const processUrlsSequentially = async () => {
                     const lastUrl = segments[segments.length - 1];
                     const seg2 = lastUrl.split('-');
                     lastUrl2 = seg2[0];
-                    const fileName = `./crw-data/crwld-agent-24q2/_import-agent-24q2-${lastUrl2}.mdx`;
+                    const fileName = `./crw-data/crwld-agent-24q3/_import-agent-24q3-${lastUrl2}.mdx`;
                     productFiles[versionName].push(fileName);
                     console.log('테스트');
                 });
@@ -117,12 +120,12 @@ const processUrlsSequentially = async () => {
                 const lastUrl = segments[segments.length - 1];
                 const seg2 = lastUrl.split('-');
                 lastUrl2 = seg2[0];
-                const fileName = `./crw-data/crwld-agent-24q2/_import-agent-24q2-${lastUrl2}.mdx`;
+                const fileName = `./crw-data/crwld-agent-24q3/_import-agent-24q3-${lastUrl2}.mdx`;
                 productFiles[versionName].push(fileName);
             }
 
             // mdx 파일 생성 또는 추가
-            const fileName = `./crw-data/crwld-agent-24q2/_import-agent-24q2-${lastUrl2}.mdx`;
+            const fileName = `./crw-data/crwld-agent-24q3/_import-agent-24q3-${lastUrl2}.mdx`;
             let existingContent = '';
             if (fs.existsSync(fileName)) {
                 existingContent = fs.readFileSync(fileName, 'utf-8');
@@ -157,13 +160,13 @@ const generateFilesListMDX = async (productFiles) => {
                 versionName = 'DOTNET';
             }
 
-            return `<div class='indentTab'>\n\nimport ${versionName}_agent_24q2 from ".${cleanFileName}";\n\n<${versionName}_agent_24q2 />\n\n</div>\n`;
+            return `<div class='indentTab'>\n\nimport ${versionName}_agent_24q3 from ".${cleanFileName}";\n\n<${versionName}_agent_24q3 />\n\n</div>\n`;
         }).join('\n');
         const cleanversionName = versionName.replace(/\u200B/g, '');
         productFilesContent += `### \`${cleanversionName}\`\n\n${filesList}\n`;
     });
 
-    const newFilesMDX = `./crw-data/crwld-agent-24q2/_import-new-files-list.mdx`; // newFilesMDX 정의
+    const newFilesMDX = `./crw-data/crwld-agent-24q3/_import-new-files-list.mdx`; // newFilesMDX 정의
     if (fs.existsSync(newFilesMDX)) {
         const existingFilesContent = fs.readFileSync(newFilesMDX, 'utf-8');
         const existingFilesSet = new Set(existingFilesContent.split('\n').map(line => line.trim()));

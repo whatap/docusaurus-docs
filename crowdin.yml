@@ -36,7 +36,17 @@ files: [
  {
   "source" : "/crw-data/**/*",
   "translation" : "/i18n/%two_letters_code%/**/%original_file_name%",
-  "ignore" : [ ],
+  "ignore" : [ 
+    "/crw-data/overview/_changelog_overview.mdx", 
+    "/crw-data/crwld-service-23q2/_import-new-files-service.mdx", 
+    "/crw-data/crwld-service-23q3/_import-new-files-service.mdx",
+    "/crw-data/arranged/**/*",
+    "/crw-data/crwd/**/*",
+    "/crw-data/crwld-service-23q3-2/**/*",
+    "/crw-data/crwld-service-23q4-2/**/*",
+    "/crw-data/crwld-service-23q2/**/*",
+    "/crw-data/crwld-service-23q1/**/*"
+  ],
   "escape_special_characters": 0,
  },
 ]
