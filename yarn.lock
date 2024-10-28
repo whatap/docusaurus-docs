@@ -1296,10 +1296,10 @@
     react-is "^18.2.0"
     react-shallow-renderer "^16.15.0"
 
-"@code-hike/lighter@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@code-hike/lighter/-/lighter-1.0.0.tgz#05ab87127a060f325fff8ef61748bad19ac6cd30"
-  integrity sha512-GVd0NveUTZ2jgeUh4lrLBZr2zSQT1ws32H747qK6AxSOMas4lXfp5KvkgmsHVg8WLdWwhtaaU9IXpyHEjfeDBw==
+"@code-hike/lighter@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@code-hike/lighter/-/lighter-1.0.1.tgz#da0a8dc0230ce93897fe891bab73745eabd3a7dd"
+  integrity sha512-mccvcsk5UTScRrE02oBz1/qzckyhD8YE3VQlQv++2bSVVZgNuCUX8MpokSCi5OmfRAAxbj6kmNiqq1Um8eXPrw==
   dependencies:
     ansi-sequence-parser "1.1.1"
 
@@ -3922,12 +3922,12 @@ clsx@^2.0.0:
   resolved "https://registry.npmjs.org/clsx/-/clsx-2.1.1.tgz"
   integrity sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==
 
-codehike@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/codehike/-/codehike-1.0.2.tgz#fca6ea14bdb8d6635dc2e2343c670b2b9013cdb8"
-  integrity sha512-SZHT7RKzx7TsWFuarXXQA8VWu+BSauqZV6dZ3vcHeY+yf6+xZTyJqyJmlS7VMtsrSTM0aQ6wmEjG5AQ8lROMNg==
+codehike@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/codehike/-/codehike-1.0.4.tgz#bf246909a5a8d7730cbca252425ed37c1db17ee6"
+  integrity sha512-mG/YJiK5J9tFHp/2seoliZpT4uxzjcbwDWXWXcYPRQKgQa4iRtwzVsOp/L4FnEX1J9LceZjCe3+ztSiktrcV1w==
   dependencies:
-    "@code-hike/lighter" "1.0.0"
+    "@code-hike/lighter" "1.0.1"
     diff "^5.1.0"
     estree-util-visit "^2.0.0"
     mdast-util-mdx-jsx "^3.0.0"
