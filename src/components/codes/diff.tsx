@@ -1,4 +1,5 @@
-import { AnnotationHandler, InnerLine, BlockAnnotation } from "codehike/code"
+import { AnnotationHandler, InnerLine, BlockAnnotation } from "codehike/code";
+import styles from './styles.module.css';
 
 export const diff: AnnotationHandler = {
   name: "diff",
@@ -9,7 +10,7 @@ export const diff: AnnotationHandler = {
   },
   Line: ({ annotation, ...props }) => (
     <>
-      <div className="...">
+      <div className={styles.annot}>
         {annotation?.query}
       </div>
       <InnerLine merge={props} />

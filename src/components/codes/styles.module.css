@@ -28,6 +28,11 @@
   border-top-right-radius: 0 !important;
 }
 
+.annot {
+  position: absolute;
+  left: .5rem;
+}
+
 .flex {
   display: flex;
 }
