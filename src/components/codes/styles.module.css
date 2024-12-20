@@ -34,6 +34,8 @@
 
 .textright {
   text-align: right;
+  position: relative;
+  left: -6px
 }
 
 .opacity50 {
