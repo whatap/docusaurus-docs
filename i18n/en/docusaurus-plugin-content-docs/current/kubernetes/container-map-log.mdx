@@ -108,7 +108,7 @@ If you enable the WhaTap log service and use the container's standard output log
 
 Some older versions of the agent do not provide the function to save container standard output logs. The agent upgrade method is as follows:
 
-```bahs title='Agent update'
+```bash title='Agent update'
 kubectl set image daemonset/whatap-node-agent whatap-node-agent=whatap/kube_mon:<에이전트버전> -n whatap-monitoring
 ```
 

@@ -108,7 +108,7 @@ WhaTapログサービスを有効にして、コンテナのStandard Outputロ�
 
 一部の古いバージョンのエージェントは、コンテナStandard Outputログ保存機能を提供しません。エージェントのアップグレード方法は、次のとおりです。
 
-```bahs title='Agent update'
+```bash title='Agent update'
 kubectl set image daemonset/whatap-node-agent whatap-node-agent=whatap/kube_mon:<에이전트버전> -n whatap-monitoring
 ```
 
