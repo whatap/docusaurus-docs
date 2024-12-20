@@ -1,0 +1,140 @@
+{/* #### 공통​ */}
+
+{/* - <code class="Changed">Changed</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" /> 메뉴의 대시보드에서 마우스 우클릭으로 표시되는 위젯 선택 목록의 스타일 변경 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code> */}
+
+{/* - <code class="Changed">Changed</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" /> 및 <Cmdname sid="flexboard" className="uitext" /> 메뉴에서 <span class="uitext">SQL Elapse Map</span> 위젯을 통해 <span class="uitext">Query List</span> 창을 열었을 때, 테이블의 컬럼 순서 변경 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code> */}
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbLockTree" className="uitext" />メニューで次の機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.0​</code></a></code>
+
+  - <span class="uitext">Lock Wait Sessions</span>ウィジェットの右上に照会時間単位と最大値の表記タグを追加
+  - 時間照会範囲が1か月前の状態で3時間以内のデータを照会する場合、照会不可メッセージの表示機能を追加
+
+- <code class="Changed">Changed</code> プロジェクトV1対応の終了に関する案内ポップアップウィンドウの日付を変更 <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.1​</code></a></code>
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />メニューで基本プリセット(<span class="uitext">Default(rds)</span>、<span class="uitext">Default(xos)</span>) を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" /> / <Cmdname sid="side_multiInstance" className="uitext" />メニューで<span class="uitext">Lock Wait Sessions</span>ウィジェットのチャートをクリックすると、画面下のテーブルの<Cmdname sid="side_dbLockTree" className="uitext" />タブが活性化されるように修正 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Feature">Feature</code> 次のメニュー経路で<Cmdname sid="side_dbLockTree" className="uitext" />テーブルのカラムをクリックすると、セッションの詳細ウィンドウを表示する機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+  - <Cmdname sid="dashboard" className="uitext" /> &gt; <Cmdname sid="instance_monitoring" className="uitext" />
+  - <Cmdname sid="dashboard" className="uitext" /> &gt; <Cmdname sid="multi_instance_monitoring" className="uitext" />
+  - <Cmdname sid="analysis" className="uitext" /> &gt; <Cmdname sid="lock_tree" className="uitext" />
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" /> &gt; <Cmdname sid="side_sectionDatabase" className="uitext" />タブでエージェントイベントの復旧通知(<Cmdname sid="resolved_event_notification" className="uitext" />)機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Feature">Feature</code> XOS2指標の代替に関する案内事項を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <span class="uitext"></span> <Cmdname sid="side_agentUpdate" className="uitext" />メニューの新しいUI適用及び機能の変更 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbSqlStat" className="uitext" />メニューから、クエリ(query)にマウスオーバー時のクエリプレビュー機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="agentInstall" className="uitext" />メニューでDBユーザーファイルを作成するためのコマンドを入力する時に、OSによる考慮事項を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="agent_list" className="uitext" />メニューでデータベースサーバーのIPアドレスを表記する<Cmdname sid="db_ip" className="uitext" />カラムを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Changed">Changed</code> **XOS**指標の変更(xos2 → xos)のためのデータベース製品サービスの変更点を適用 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbSqlStat" className="uitext" />メニューでマルチフィルタ選択機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="session_detail" className="uitext" />ウィンドウにリアルタイム/停止照会及び更新ボタンを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="flexboard" className="uitext" />メニューでアクティブセッションテーブルフィルターを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+{/* #### Database
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" />及び<Cmdname sid="flexboard" className="uitext" />メニューで<span class="uitext">SQL Elapse Map</span>ウィジェットを通じて<span class="uitext">Query List</span>画面を開いた時、テーブルのカラム順序を変更 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbLockTree" className="uitext" />メニューで次の機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.0​</code></a></code>
+
+- <code class="Changed">Changed</code> プロジェクトV1対応の終了に関する案内ポップアップウィンドウの日付を変更 <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.1​</code></a></code>
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />メニューで基本プリセット(<span class="uitext">Default(rds)</span>、<span class="uitext">Default(xos)</span>) を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" /> / <Cmdname sid="side_multiInstance" className="uitext" />メニューで<span class="uitext">Lock Wait Sessions</span>ウィジェットのチャートをクリックすると、画面下のテーブルの<Cmdname sid="side_dbLockTree" className="uitext" />タブが活性化されるように修正 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Feature">Feature</code> 次のメニュー経路で<Cmdname sid="side_dbLockTree" className="uitext" />テーブルのカラムをクリックすると、セッションの詳細ウィンドウを表示する機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+  - <Cmdname sid="dashboard" className="uitext" /> &gt; <Cmdname sid="instance_monitoring" className="uitext" />
+  - <Cmdname sid="dashboard" className="uitext" /> &gt; <Cmdname sid="multi_instance_monitoring" className="uitext" />
+  - <Cmdname sid="analysis" className="uitext" /> &gt; <Cmdname sid="lock_tree" className="uitext" /> */}
+
+#### PostgreSQL / MySQL​
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_instanceList" className="uitext" />メニューでエージェントアップデートの案内文を変更 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> プロジェクトで<code class="my">V2</code>に対応していないエージェントバージョンがインストールされている場合、エージェント更新の案内文をヘッダーに表示する機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> ダッシュボードの<span class="uitext">SQL Elapse Map</span>と<span class="uitext">Slow Query</span>ウィジェットで変更したY軸値を保存する機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <span class="uitext">Default(xos)</span>、<span class="uitext">Default(rds)</span>プリセットを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" />メニュー機能の改編 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+#### PosgreSQL
+
+- <code class="Feature">Feature</code> 次のメニュー経路で<b>column</b>、<b>index</b>構成を確認できる機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_pgStat" className="uitext" />メニューから、クエリ(query)にマウスオーバー時のクエリプレビュー機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbWaitAnalysis" className="uitext" />メニューから、機能紹介モーダルを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbWaitAnalysis" className="uitext" />メニューから、エージェント設定方法の案内モーダルを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbParameter" className="uitext" />メニューで<span class="uitext">Value</span>カラム表記時、一部の値に対して単位表記を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_pgStat" className="uitext" />メニューでマルチフィルタ選択機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="agentInstall" className="uitext" />メニューのデザイン改善及びインストール案内を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+#### MySQL
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbSize" className="uitext" />メニューの<Cmdname sid="TTL06572" className="uitext" />テーブルで<span class="uitext">TABLENAME</span>カラム項目をクリックすると<b>column</b>、<b>index</b>構成を確認できる機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Feature">Feature</code> JSON形式でのPlan照会機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_mysqlStat" className="uitext" />メニューから、クエリ(query)にマウスオーバー時のクエリプレビュー機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_mysqlStat" className="uitext" />メニューでマルチフィルタ選択機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+{/* #### Database <code class="my">V2</code>
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />メニューで基本プリセット(<span class="uitext">Default(rds)</span>、<span class="uitext">Default(xos)</span>) を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" /> / <Cmdname sid="side_multiInstance" className="uitext" />メニューで<span class="uitext">Lock Wait Sessions</span>ウィジェットのチャートをクリックすると、画面下のテーブルの<Cmdname sid="side_dbLockTree" className="uitext" />タブが活性化されるように修正 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Feature">Feature</code> 다음 메뉴 경로에서 <Cmdname sid="side_dbLockTree" className="uitext" /> 테이블의 컬럼을 클릭하면 세션 상세 창을 표시하는 기능 추가 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code> */}
+
+{/* #### PostgreSQL <code class="my">V2</code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbParameter" className="uitext" /> 메뉴에서 <span class="uitext">Value</span> 컬럼 표기 시 일부 값에 단위 표기 추가 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code> */}
+
+#### Redis​
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="agentInstall" className="uitext" />メニューでRedisバージョンによって異なる<em>uid.sh</em>実行コマンドの説明を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="New">New</code> **Redis** <code class="my">V2</code>サービスを開始 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+{/* #### PostgreSQL, MySQL​
+
+- <code class="Feature">Feature</code> ダッシュボードの<span class="uitext">SQL Elapse Map</span>と<span class="uitext">Slow Query</span>ウィジェットで変更したY軸値を保存する機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <span class="uitext">Default(xos)</span>、<span class="uitext">Default(rds)</span>プリセットを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" /> 메뉴의 기능 개편 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code> */}
+
+{/* #### PostgreSQL​
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_pgStat" className="uitext" />メニューでマルチフィルタ選択機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <span class="uitext">관리</span> &gt; <Cmdname sid="agentInstall" className="uitext" /> 메뉴의 디자인 개선 및 설치 안내 추가 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code> */}
+
+{/* #### MySQL​
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_mysqlStat" className="uitext" /> 메뉴에서 다중 필터 선택 기능 추가 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code> */}
+
+#### MongoDB​
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbSize" className="uitext" />メニューのUI変更 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="New">New</code> **MongoDB** <code class="my">V2</code>サービスを開始 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>

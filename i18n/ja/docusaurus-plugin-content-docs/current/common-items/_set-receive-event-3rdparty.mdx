@@ -212,13 +212,33 @@ WhaTapのサポート範囲に含まれていないアラート連携は、標�
 
 </details>
 
+<Xclude product="server">
+
 <details>
 
 <summary>Webhook JSON</summary>
 
 1. 通知を受けるWebhookを登録します。登録したURLに、POST Methodで通知データがJSONで転送されます。
 
-   ![Webhook](/img/3rdparty/set-event-3rd-party-plugin-add-webhook-json.png)
+   ```json
+   {
+       "pcode": 1234,
+       "projectName": "Sample project",
+       "time": 1577840400000,
+       "oid": 1234567890,
+       "oname": "WAS-01", // Optional
+       "title": "Alert Title",
+       "message": "Sample warning message",
+       "level": "Warning",
+       "status": "on",
+       "metricName": "cpu", // Optional
+       "metricValue": "99.99", // Optional
+       "metricThreshold": "90", // Optional
+       "uuid": "ba5db108b788475c95195***********",
+       "okind": "WAS-okind-01", // Optional
+       "onode": "WAS-onode-01", // Optional
+   }
+   ```
 
 2. <UI>Webhook Name</UI>と<UI>Webhook URL</UI>項目を入力します。
 
@@ -237,6 +257,57 @@ WhaTapのサポート範囲に含まれていないアラート連携は、標�
 :::
 
 </details>
+
+</Xclude>
+
+<InDoc product="server">
+
+<details>
+
+<summary>Webhook JSON</summary>
+
+1. 通知を受けるWebhookを登録します。登録したURLに、POST Methodで通知データがJSONで転送されます。
+
+   ```json
+   {
+       "pcode": 1234,
+       "projectName": "Sample project",
+       "time": 1577840400000,
+       "oid": 1234567890,
+       "oname": "WAS-01", // Optional
+       "title": "Alert Title",
+       "message": "Sample warning message",
+       "level": "Warning",
+       "status": "on",
+       "metricName": "cpu", // Optional
+       "metricValue": "99.99", // Optional
+       "metricThreshold": "90", // Optional
+       "uuid": "ba5db108b788475c95195***********",
+       "okind": "WAS-okind-01", // Optional
+       "onode": "WAS-onode-01", // Optional
+       "serverAlertPolicyName": "Memory Alert" // Optional
+   }
+   ```
+
+2. <UI>Webhook Name</UI>と<UI>Webhook URL</UI>項目を入力します。
+
+   <ImgLang img="3rdparty/set-event-3rd-party-plugin-add-webhook-json-options.png" className="width-600" desc="登録" />
+
+3. <Cmdname sid="BTN06673" className="uitext" />ボタンを選択します。
+
+:::note
+
+- イベント状態(`status`)はイベント発生(`on`)、イベントの解消(`off`)で区分できます。
+
+- `level`は`None`、`Info`、`Warning`、`Critical`のいずれかに分類されます。
+
+- Header値を追加するには<Cmdname sid="TTL06674" className="uitext" />を選択します。
+
+:::
+
+</details>
+
+</InDoc>
 
 <details>
 

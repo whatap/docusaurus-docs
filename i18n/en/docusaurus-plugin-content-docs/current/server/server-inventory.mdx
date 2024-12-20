@@ -1,14 +1,16 @@
 ---
 id: server-inventory
 title: Server Inventory
-description: It guides you to the server configuration menu.
+description: The following guides the server inventory menu.
 keywords:
-  - Server details
+  - Server List
   - Server Inventory
   - Analysis
   - UI
   - Server
 ---
+
+{/* 11월에 서버 구성 정보 -> 서버 인벤토리 변경 예정 현재 로케일 미 업데이트라 관련 텍스트만 일부 수정 */}
 
 Home &gt; Select Project &gt; <Cmdname sid="side_serverList" className="uitext" /> &gt; <Cmdname sid="side_serverInventory" className="uitext" />
 
@@ -160,7 +162,7 @@ The following settings are required to enable the <Cmdname sid="side_serverInven
      <TabItem value="windows-opt" label="Add option command" default>
 
      ```bash
-     if (-not (Select-String -Path "C:\\Program Files\WhatapInfra\whatap.conf" -Pattern "^hostinfov2.enabled" -Quiet)) { Add-Content -Path "C:\\Program Files\WhatapInfra\whatap.conf" -Value "hostinfov2.enabled=true" }
+     if (-not (Select-String -Path "C:\Program Files\WhatapInfra\whatap.conf" -Pattern "^hostinfov2.enabled" -Quiet)) { Add-Content -Path "C:\Program Files\WhatapInfra\whatap.conf" -Value "hostinfov2.enabled=true" }
      ```
 
      </TabItem>
@@ -203,7 +205,7 @@ In the ![Instruction line 1](/img/number-01.png) filter input field at the top, 
 
 > e..g. <code class='filter'>Server name</code><code class='filter center'>==</code><code class='filter'>server04</code>
 
-If you click <Cmdname sid="BTN06223" className="uitext" /> after entering the filters, you can view the filtered list in the ![Instruction line 2](/img/number-02.png) server configuration list area. 
+If you click <Cmdname sid="BTN06223" className="uitext" /> after entering the filters, you can view the filtered list in the ![Instruction line 2](/img/number-02.png) server inventory list area. 
 
 {/* 컬럼 조건 특정 후 조회 선택해야 적용 */}
 
@@ -234,7 +236,7 @@ Users can configure custom columns by adding their own desired items in addition
 
 Click ![Column Icon](/img/ic-column.svg) <Cmdname sid="column_settings" className="uitext" /> at the top of the ![Leader line 2](/img/number-02.png) area. Select columns and add custom columns as shown below, and then select <Cmdname sid="BTN06053" className="uitext" /> at the bottom to save the column settings. 
 
-<ImgLang img='server-inventory-cl.png' desc='Server inventory column settings' />
+<ImgLang img='server-inventory-cl.png' desc='Server inventory column setting' />
 
 - **Select Column** 
 
@@ -252,11 +254,11 @@ Click ![Column Icon](/img/ic-column.svg) <Cmdname sid="column_settings" classNam
 
 ### Download CSV
 
-By selecting ![Download icon](/img/ico-download.svg) <Cmdname sid="download" className="uitext" /> at the top of the ![Leader line 2](/img/number-02.png) area, you can download the collected server configuration information in *CSV* file format. 
+By selecting ![Download icon](/img/ico-download.svg) <Cmdname sid="download" className="uitext" /> at the top of the ![Leader line 2](/img/number-02.png) area, you can download the collected server inventory in *CSV* file format. 
 
 ### Edit
 
-You can edit the server configuration item list by selecting ![Edit icon](/img/ic-edit.svg) <Cmdname sid="edit" className="uitext" /> at the top of the ![Leader line 2](/img/number-02.png) area. 
+You can edit the server inventory list by selecting ![Edit icon](/img/ic-edit.svg) <Cmdname sid="edit" className="uitext" /> at the top of the ![Leader line 2](/img/number-02.png) area. 
 
 - You can configure the settings for the <Cmdname sid="TTL08183" className="uitext" /> and <Cmdname sid="TTL08184" className="uitext" /> columns.
 

@@ -65,6 +65,15 @@ EndTimeQuery:
     type: integer
     format: int64
     description: Query end time (UNIX epoch time, millisecond)
+Progress:
+  name: progress
+  in: query
+  required: false
+  schema:
+    type: boolean
+    description: |
+      * `true`: Query only events in progress
+      * `false`: Query all events, including those in progress
 TimeMergeQuery:
   name: timeMerge
   in: query
@@ -121,6 +130,16 @@ OidPath:
     type: integer
     format: int32
     description: Multiple agent identifiers (ID) can be entered using comma (,) as the delimiter.
+OidPathopt:
+  name: oid
+  in: query
+  required: false
+  schema:
+    type: integer
+    format: int32
+    description: |
+      - Agent's unique identifier (ID). You can enter multiple values ​​using commas (,) as the delimiter.
+      - URL encoded required: 17079562,352247167 → -17079562%2C352247167
 OidQuery:
   name: oids
   in: query
@@ -137,6 +156,26 @@ AOidQuery:
     type: integer
     format: int32
     description: Agent's unique identifier (ID)
+OkindQuery:
+  name: okinds
+  in: query
+  required: false
+  schema:
+    type: integer
+    format: int32
+    description: |
+      - Agent group IDs for each type. You can enter multiple values ​​using commas (,) as the delimiter.
+      - URL encoded required: 17079562,352247167 → -17079562%2C352247167
+OnodesQuery:
+  name: onodes
+  in: query
+  required: false
+  schema:
+    type: integer
+    format: int32
+    description: |
+      - Agent group IDs for each server, You can enter multiple values ​​using commas (,) as the delimiter.
+      - URL encoded required: 17079562,352247167 → -17079562%2C352247167
 FilterQuery:
   name: filter
   in: query

@@ -1,0 +1,194 @@
+## AWS CloudWatch configuration {#awscloudwatch}
+
+You can monitor the status and resource usage of the database running in the AWS cloud environment.
+
+### Selecting the service to which you want to add metrics
+
+<Xclude product="oracle,mssql"><ImgLang img="db-cloudsettings-select-service.png" desc="Select service" /></Xclude>
+
+<InDoc product="oracle,mssql"><ImgLang img="db-cloudsettings-select-service-oracle.png" desc="Select service" /></InDoc>
+
+In the first section, select <UI>AWS CloudWatch</UI>. Install the **AWS CloudFormation** template to collect the Amazon CloudWatch metric.
+
+### Entering parameters
+
+Enter required items before proceeding with the **AWS Cloud Formation** configuration.
+
+<ImgLang img="db-cloudsettings-input-parameters.png" desc="Parameters" />
+
+- ***DB Identifier***: Enter the identifier of the AWS database instance to monitor.
+
+  :::note
+
+  Enter the **DB identifier** value of the Database instance created by the Amazon RDS service.
+
+  ![DB Identifire](/img/db-cloudsettings-input-parameters-db-identifier.png)
+
+  :::
+
+- ***Instance***: Select an instance (agent) to monitor metrics collected from databases running in the AWS cloud environment.
+
+- ***Interval***: Select a metric collection interval. (60 sec / 300 sec)
+
+### Configuring the AWS CloudFormation
+
+Install the **AWS CloudFormation** template provided by WhaTap. This template allows you to collect the CloudWatch metric through WhaTap. If you select <UI>AWS CloudFormation</UI> <Cmdname sid="setting" className="uitext" />, the installation starts and the configuration process is performed.
+
+<ImgLang img="db-cloudsettings-set-cloud-formation.png" desc="AWS CloudFormation" />
+
+1. When you select <UI>AWS CloudFormation</UI> <Cmdname sid="setting" className="uitext" />, the **AWS CloudFormation** configuration screen appears.
+
+2. Check the values ​​for the items automatically filled in the **Stack name** and **Parameters** sections.
+
+3. Select **Create stack** located at the bottom of the screen.
+
+:::note
+
+- For more information about **AWS CloudFormation**, see [the following link](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html).
+
+- For the **Amazon CloudWatch** metrics about **Amazon RDS**, see [the following link](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-metrics.html).
+
+:::
+
+### Setting the required roles
+
+To create a **CloudFormation** stack, set the following AWS roles:
+
+<details>
+
+<summary>Guide to AWS roles (JSON)</summary>
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateStack",
+        "cloudformation:UpdateStack",
+        "cloudformation:DeleteStack",
+        "cloudformation:DescribeStacks",
+        "cloudformation:DescribeStackResources",
+        "cloudformation:GetTemplateSummary",
+        "cloudformation:DescribeStackEvents",
+        "cloudformation:ListStacks",
+        "cloudformation:ListStackResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "lambda:CreateFunction",
+        "lambda:UpdateFunctionCode",
+        "lambda:UpdateFunctionConfiguration",
+        "lambda:InvokeFunction",
+        "lambda:DeleteFunction",
+        "lambda:GetFunction",
+        "lambda:GetFunctionConfiguration",
+        "lambda:ListFunctions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "events:PutRule",
+        "events:PutTargets",
+        "events:RemoveTargets",
+        "events:DeleteRule",
+        "events:DescribeRule",
+        "events:EnableRule",
+        "events:DisableRule"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateRole",
+        "iam:AttachRolePolicy",
+        "iam:PutRolePolicy",
+        "iam:GetRole",
+        "iam:DeleteRole",
+        "iam:PassRole",
+        "iam:ListRoles"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricData"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": "arn:aws:s3:::repo.whatap.io/agent/db/WhaTapRDSMonitoring.zip"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "scheduler:GetSchedule",
+        "scheduler:ListSchedules",
+        "scheduler:CreateSchedule"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
+
+</details>
+
+1. Copy the JSON content from **Guide to AWS roles**.
+
+2. In IAM, select a **user** that will create the **CloudFormation** stack.
+
+3. Select **Create inline policy**.
+
+   ![AWS](/img/db-cloudsettings-aws-iam-policy.png)
+
+4. After selecting **JSON**, paste the copied roles to register the policy.
+
+   ![AWS](/img/db-cloudsettings-aws-iam-policy-json.png)
+
+### Checking the collection metrics
+
+After completing the cloud data connection, the <Cmdname sid="TTL08633" className="uitext" /> section is generated on the screen. You can see a list of instances (agents) connected to the cloud database and the metrics being collected.
+
+<ImgLang img="db-cloudsettings-added-aws-cloud-services.png" desc="Cloud Services" />
+
+The metrics collected from **AWS CloudWatch** fall into the ***CloudWatch*** category.
+
+![CloudWatch](/img/db-cloudsettings-check-metrics-category-aws.png)
+
+You can check in the following paths.
+
+- <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />: You can select metrics by selecting the ![Settings icon](/img/ico-setting.svg) button on the widget.
+
+- <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" />: You can select metrics by adding custom widgets.
+
+:::note
+
+- For more information on how to change the metrics of a widget in the <Cmdname sid="side_dbMonitoring" className="uitext" /> menu, see [the following](instance-monitoring#selectmetrics).
+
+- For more information on how to add custom widgets in the <Cmdname sid="side_multiInstance" className="uitext" /> menu, see [the following](multi-instance-monitoring#customwidget).
+
+- In <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_metricsSearch" className="uitext" />, select the <Cmdname sid="category" className="uitext" /> entry with **db_aws_rds**. You can check the related tags and fields.
+
+:::

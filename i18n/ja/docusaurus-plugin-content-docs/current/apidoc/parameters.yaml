@@ -65,6 +65,15 @@ EndTimeQuery:
     type: integer
     format: int64
     description: 照会終了時間(UNIX epoch time、millisecond)
+Progress:
+  name: progress
+  in: query
+  required: false
+  schema:
+    type: boolean
+    description: |
+      * `true`: 進行中のイベントのみを表示
+      * `false`: 進行中のイベントを含むイベント全体を照会する
 TimeMergeQuery:
   name: timeMerge
   in: query
@@ -121,6 +130,16 @@ OidPath:
     type: integer
     format: int32
     description: エージェント固有識別子(ID)、コンマ(,)を区切り文字として複数入力可能
+OidPathopt:
+  name: oid
+  in: query
+  required: false
+  schema:
+    type: integer
+    format: int32
+    description: |
+      - エージェント固有識別子(ID)、コンマ(,)を区切り文字として複数入力可能
+      - URLエンコードが必要：17079562,352247167 → -17079562%2C352247167
 OidQuery:
   name: oids
   in: query
@@ -137,6 +156,26 @@ AOidQuery:
     type: integer
     format: int32
     description: エージェント固有識別子(ID)
+OkindQuery:
+  name: okinds
+  in: query
+  required: false
+  schema:
+    type: integer
+    format: int32
+    description: |
+      - タイプ別エージェントグループの固有識別子(ID)、コンマ(,)を区切り文字として複数入力可能
+      - URLエンコードが必要：17079562,352247167 → -17079562%2C352247167
+OnodesQuery:
+  name: onodes
+  in: query
+  required: false
+  schema:
+    type: integer
+    format: int32
+    description: |
+      - サーバー別エージェントグループの固有識別子(ID)、コンマ(,)を区切り文字として複数入力可能
+      - URLエンコードが必要：17079562,352247167 → -17079562%2C352247167
 FilterQuery:
   name: filter
   in: query

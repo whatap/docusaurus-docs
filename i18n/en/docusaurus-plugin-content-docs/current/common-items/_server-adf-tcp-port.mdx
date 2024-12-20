@@ -11,7 +11,7 @@ Select Home &gt; Select Project &gt; <Cmdname sid="side_event" className="uitext
 - Add the following command on the target server. 
 
   <Tabs groupId='server-user-script'>
-    <TabItem value="lxs" label="Linux Shell">
+  <TabItem value="lxs" label="Linux Shell">
 
   ```bash title=SH
   #Specify the IP to be monitored in the following variable.
@@ -22,15 +22,21 @@ Select Home &gt; Select Project &gt; <Cmdname sid="side_event" className="uitext
   ```
 
   </TabItem>
-    <TabItem value="wps" label="Windows Powershell">
+  <TabItem value="wps" label="Windows Powershell">
 
   ```bash title=SH
   #Specify the IP to be monitored in the following variable.
   $TARGET_IP="127.0.0.1"
   #Specify the port to be monitored in the following variable.
   $TARGET_PORT="80"
-  Add-Content -Path "C:\Program Files\WhatapInfra\whatap.conf" -Value "tcp.check.$TARGET_PORT=tcp://$TARGET_IP:$TARGET_PORT"
+  Add-Content -Path "C:\Program Files\WhatapInfra\whatap.conf" -Value "tcp.check.${TARGET_PORT}=tcp://${TARGET_IP}:${TARGET_PORT}"
   ```
 
   </TabItem>
-    </Tabs>
+  </Tabs>
+
+{/* 다중 포트 감시 추가 */}
+
+import TcpMulti from "../common-items/_server-tcp-port-multi.mdx";
+
+<TcpMulti />

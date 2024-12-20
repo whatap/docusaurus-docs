@@ -196,9 +196,25 @@ projectCode logCategiry dexBuildStartTime {area=areaEnum, city=cityEnum} dexBuil
 
 2. **_+_** <Cmdname sid="adding" className="uitext" />を選択した後<Cmdname sid="parser" className="uitext" />入力欄で**_GROK_**パーサを選択します。
 
-   <ImgLang img='log-1st-grok.png' desc='Grokパターンパーサ登録'/>
+   <ImgLang img='log-1st-parser-add.png' desc='ログパーサーの追加'/>
 
-3. <Cmdname sid="category" className="uitext" />および<Cmdname sid="ITM06439" className="uitext" />、<Cmdname sid="pattern" className="uitext" />を入力します。 <Cmdname sid="parser" className="uitext" /> <Cmdname sid="add" className="uitext" />画面の構成内容は、次の通りです。
+3. <Cmdname sid="BTN08593" className="uitext" />ボタンを選択すると、右側にパターン登録とシミュレーション画面が表示されます。
+
+4. <Cmdname sid="pattern" className="uitext" />と<Cmdname sid="log" className="uitext" />入力後、<Cmdname sid="simulation" className="uitext" />ボタンをクリックして、適用するパターンでパーシングに成功することを確認します。
+
+   > <Cmdname sid="pattern" className="uitext" />例: `\[%{TIMESTAMP_ISO8601:date}\sGMT\]\[%{LOGLEVEL:level}\s\]\[%{DATA:caller}\]\s(?<projectCode>\d)\s(?<logCategory>\w*)\s(?<dexBuildStartTime>\d{8}\s\d{2}:\d{2}:\d{2}\.\d{3})\s\{area=(?<areaEnum>\d),\scity=(?<cityEnum>\d)\}\s(?<dexBuildElapsed>\d{2})ms`
+   >
+   > <Cmdname sid="log" className="uitext" />例: `[2023-08-08 02:02:30,101 GMT][INFO ][i.w.y.l.c.LogSinkDexScheduleThread.realProcess(159)] 8 VirtualLog 20230808 02:01:00.000 {area=4, city=5} 56ms`
+
+5. シミュレーションの成功時<Cmdname sid="simulation_result" className="uitext" />と<Cmdname sid="TTL08604" className="uitext" />を照会できます。
+
+   <ImgLang img='log-parser-simulation2.png' desc='パーサーシミュレーションとパフォーマンス測定'/>
+
+6. シミュレーション後、<Cmdname sid="apply_pattern" className="uitext" />ボタンをクリックすると、選択したパーサーに入力したパターンが適用されます。 
+
+7. パターン適用後、<Cmdname sid="category" className="uitext" />と<Cmdname sid="ITM06439" className="uitext" />、<Cmdname sid="pattern" className="uitext" />を入力します。 
+
+   <ImgLang img='log-grok-parser-input.png' desc='GROKパーサー入力'/>
 
    - <Cmdname sid="category" className="uitext" />
 
@@ -212,17 +228,13 @@ projectCode logCategiry dexBuildStartTime {area=areaEnum, city=cityEnum} dexBuil
 
      - <Cmdname sid="ITM06439" className="uitext" />は、すべてのパーサが実行される前に適用されます。 つまり、パーサの結果として追加される<Cmdname sid="tag" className="uitext" />を使用できません。
 
-   - <Cmdname sid="pattern" className="uitext" />
-
-     GROKパターンを指定してください。 必須入力です。
-
-4. <Cmdname sid="add" className="uitext" />ボタンを選択してパーサを登録します。
+8. <Cmdname sid="add" className="uitext" />ボタンを選択してパーサを登録します。
 
 :::note
 
 - ログパーサ一覧から該当パーサの<Cmdname sid="ITM06352" className="uitext" />を変更するか、<Cmdname sid="enable" className="uitext" />および<Cmdname sid="edit" className="uitext" />、<Cmdname sid="delete" className="uitext" />できます。 
 
-- パーサを登録する前に<Cmdname sid="simulation" className="uitext" />を通じて登録するパターンが正常であるか確認できます。 
+- **_パーサーシミュレーション_**後、パターンを登録できます。 
 
 :::
 
@@ -244,6 +256,8 @@ projectCode logCategiry dexBuildStartTime {area=areaEnum, city=cityEnum} dexBuil
 
 :::
 
+{/* 
+
 ### シミュレーション{#grok-simulation}
 
 <Cmdname sid="parser" className="uitext" /> <Cmdname sid="simulation" className="uitext" />画面で<Cmdname sid="log" className="uitext" />と<Cmdname sid="pattern" className="uitext" />を入力するとパーシング結果を確認できます。
@@ -260,6 +274,8 @@ projectCode logCategiry dexBuildStartTime {area=areaEnum, city=cityEnum} dexBuil
 
    <ImgLang img='log-grok-parser-simulation.png' desc='GROKパーサシミュレーション'/>
 
+*/}
+
 ## JSONパーサ{#json-parser-detail}
 
 ログがJSONフォーマットで収集される場合、JSONパーサを使用して簡単かつ便利にパーシングできます。
@@ -274,9 +290,36 @@ projectCode logCategiry dexBuildStartTime {area=areaEnum, city=cityEnum} dexBuil
 
 2. **_+_** <Cmdname sid="adding" className="uitext" />を選択した後<Cmdname sid="parser" className="uitext" />入力欄で**_JSON_**パーサを選択します。
 
-   <ImgLang img='log-1st-json.png' desc='JSONパーサパターンの登録'/>
+   <ImgLang img='log-1st-parser-add.png' desc='ログパーサーの追加'/>
 
-3. <Cmdname sid="category" className="uitext" />および<Cmdname sid="ITM06439" className="uitext" />、<Cmdname sid="pattern" className="uitext" />を入力します。 <Cmdname sid="parser" className="uitext" /> <Cmdname sid="add" className="uitext" />画面の構成内容は、次の通りです。
+3. <Cmdname sid="BTN08593" className="uitext" />ボタンを選択すると、右側にパターン登録とシミュレーション画面が表示されます。
+
+4. <Cmdname sid="pattern" className="uitext" />と<Cmdname sid="log" className="uitext" />入力後、<Cmdname sid="simulation" className="uitext" />ボタンをクリックして、適用するパターンでパーシングに成功することを確認します。
+
+   ```javascript title='Example'
+   2023-08-08 02:43:28,615 -- {"host":"10.21.3.24","method":"POST","status":"200","url":"http://devote.whatap.io/yard/api/flush"} --
+   ```
+
+   例のログで**_Prefix_**と**_Postfix_**を`--`に指定し、**_Ignore_**に`url`を指定時`host`、`method`、`status`3つ<Cmdname sid="tag" className="uitext" />のみ生成します。
+
+   - **_Prefix_**\
+     ログでJSONフォーマットが開始する場所を指定します。 ログ全体がJSONフォーマットの場合は、空の値に設定します。
+
+   - **_Postfix_**\
+     ログでJSONフォーマットが終わる位置を指定します。 ログ全体がJSONフォーマットの場合は、空の値に設定します。
+
+   - **_Ignore_**\
+     JSONフォーマットの中でタグを生成しないキーを指定します。
+
+5. シミュレーションの成功時<Cmdname sid="simulation_result" className="uitext" />と<Cmdname sid="TTL08604" className="uitext" />を照会できます。
+
+   <ImgLang img='log-jason-parser-simulation.png' desc='パーサーシミュレーションとパフォーマンス測定'/>
+
+6. シミュレーション後、<Cmdname sid="apply_pattern" className="uitext" />ボタンをクリックすると、選択したパーサーに入力したパターンが適用されます。 
+
+7. パターン適用後、<Cmdname sid="category" className="uitext" />と<Cmdname sid="ITM06439" className="uitext" />、<Cmdname sid="pattern" className="uitext" />を入力します。 
+
+   <ImgLang img='log-jason-parser-input.png' desc='Jsonパーサー入力'/>
 
    - <Cmdname sid="category" className="uitext" />
 
@@ -290,29 +333,7 @@ projectCode logCategiry dexBuildStartTime {area=areaEnum, city=cityEnum} dexBuil
 
      - <Cmdname sid="ITM06439" className="uitext" />は、すべてのパーサが実行される前に適用されます。 つまり、パーサの結果として追加される<Cmdname sid="tag" className="uitext" />を使用できません。
 
-   - <Cmdname sid="pattern" className="uitext" />
-
-     - **_Prefix_**
-
-       ログからJSONフォーマットが開始する位置を指定します。 ログ全体がJSONフォーマットの場合は、空の値に設定します。
-
-     - **_Postfix_**
-
-       ログでJSONフォーマットが終了する位置を指定します。 ログ全体がJSONフォーマットの場合は、空の値に設定します。
-
-     - **_Ignore_**
-
-       JSONフォーマット中にタグを生成しないキーを指定します。
-
-     - JSONパターンの例
-
-       ```javascript title='Example'
-       2023-08-08 02:43:28,615 -- {"host":"10.21.3.24","method":"POST","status":"200","url":"http://devote.whatap.io/yard/api/flush"} --
-       ```
-
-       例のログで**_Prefix_**と**_Postfix_**を`--`に指定し、**_Ignore_**に`url`を指定時`host`、`method`、`status`3つ<Cmdname sid="tag" className="uitext" />のみ生成します。
-
-4. <Cmdname sid="add" className="uitext" />ボタンを選択してパーサを登録します。
+8. <Cmdname sid="add" className="uitext" />ボタンを選択してパーサを登録します。
 
 :::note
 

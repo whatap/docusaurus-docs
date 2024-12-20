@@ -1,0 +1,201 @@
+---
+id: apache-introduction
+title: APACHEモニタリング
+description: この文書は、APACHEモニタリング製品に対する紹介ページです。
+displayed_sidebar: featuremonitorSidebar
+toc_max_heading_level: 2
+keywords:
+  - APACHE
+  - Feature
+---
+
+import InstallFeature from '../common-items/_import_feature-install-agent.mdx';
+import HttpStatus from "../common-items/_import_feature-http-status.mdx";
+import TR from '@site/src/components/TR';
+
+:::note
+
+**Featureプロジェク**<ScrollToLink anchor='feature-project' />
+
+WhaTapは、ユーザーが希望するソフトウェアのモニタリング支援の有無を簡単に確認し、簡単にモニタリングを開始できるように、新しく**Featureプロジェク**(<code class='Features'>Features</code>)を導入しました。 Featureプロジェクは、既存のモニタリング製品を、ユーザーがモニタリングしようとするソフトウェアに合わせてリパッケージし、最適化されたモニタリングソリューションを提供します。 WhaTapのFeatureプロジェクを通じて、サービスの安定性と性能をより効果的に管理します。 
+
+:::
+
+Apacheサーバーは、世界中で最も広く使用されているウェブサーバーの一つであり、HTTPリクエストを処理し、コンテンツを提供する役割を果たします。 APACHEモニタリングにより、サーバーのパフォーマンス、リクエスト処理量、応答時間などを効果的に管理できます。
+
+WhaTapは新しい**Featureプロジェクト**方式で***APACHE***モニタリングを提供します。 Apacheサーバーの性能と状態をリアルタイムで追跡し、問題を早期に検知して解決できるようにします。
+
+- **メトリクスモニタリング**: Apacheサーバーのトラフィック、接続数、応答状態など様々なメトリクスを追跡し、サーバーの性能と安定性を確認できます。
+
+- **カスタマイズされたダッシュボード**: カスタマイズされたダッシュボードで、必要なメトリクスを効率的に照会および分析できます。
+
+WhaTap***APACHE***モニタリングにより、Apacheサーバーの安定的に運用し、管理してみてください。
+
+## インストール
+
+WhaTapのApacheモニタリングサービス利用のための基本インストール方法をご案内します。 
+
+WhaTapモニタリングサービスを使用するには、[会員登録](https://www.whatap.io/ja/signup/)後、プロジェクトを作成し、ターゲットサーバーにエージェントをインストールする必要があります。 会員登録に関する詳細は、[次の文書](../account/account-manage)を参照してください。 
+
+:::note 
+
+**サポート環境**<ScrollToLink anchor='APACHE-supported-env' />
+
+WhaTapのApacheモニタリングエージェントをインストールする前に、サポート環境を確認します。 
+
+- **APACHE**: APACHE 1.3以降
+
+- **Ubuntu**: Ubuntu 12.04以降
+
+- **OS**: Red Hat 6 or equivalent(CentOS, Rocky Linux, Amazon Linux)
+
+- **OSアーキテクチャ**: Amd64/X86_64, Arm64/Aarch64
+
+:::
+
+### Featureプロジェクトを作成する
+
+import CreateFeature from "../common-items/_import_feature-project-create.mdx";
+
+<CreateFeature />
+
+### APACHEエージェントのインストール
+
+<InstallFeature name='APACHE エージェントインストール' />
+
+## メインメニュー
+
+### カスタマイズされたダッシュボード
+
+ホーム画面 > **Featureプロジェクト**(<code class='Features'>Features</code>) 選択> ***APACHE*** > ***APACHEダッシュボード***
+
+***APACHEダッシュボードは***ウェブ サーバーの性能をリアルタイムでモニタリングおよび分析するために設計された視覚的ツールです。 様々な要求ステータスコード、メトリクス、トラフィック処理量、遅延時間など、いくつかの重要なメトリクスを効果的にモニタリングできます。 
+
+WhaTapが提供するApache**カスタマイズされたダッシュボード**は、次の3つのプリセットで構成されています。 
+
+- ***Apache Overview***
+
+  Apacheサーバーの全般的な状態を一目で把握できるように、主要な性能メトリクスと要求状態を視覚化したプリセットです。 
+
+  <details>
+  <summary>ダッシュボードのメトリクス案内</summary>
+
+  #### ***Apache Requests Status Code***
+
+  <HttpStatus />
+
+  #### ***Apache Metrics***
+
+  - ***Apache Busy Workers***: リクエストを処理中のワーカーの数を表示します。
+
+  - ***Apache Idle Workers***: 待機中のワーカーの数を表示します。 
+
+  - ***Request Per Sec***: 1秒当たりに処理されたリクエストの数を表示します。 
+
+  - ***Bytes Per Sec***: 1秒当たりの送信データ量を表示します。 
+
+  - ***Bytes Per Request***: リクエストごとに送信されたデータ量を表示します。 
+
+  - ***Connections***: サーバーに接続されているクライアントの合計数を表示します。 
+
+  - ***Apache Scoreboard Waiting***: Apache scoreboardで、接続を待っている状態のリクエスト数を表示します。 
+
+  #### ***Domain Throughput***
+
+  - ***Response Bytes SUM***: サーバーが処理した合計応答バイト数を表示します。 
+
+  - ***Latency Average***: 平均の応答遅延時間を表示します。 
+
+  </details>
+
+- ***Apache Worker Performance***
+
+  Apacheサーバーのホストロード、ワーカー状態、接続状態およびプロセスに関連するメトリクスを視覚化したプリセットです。 
+
+  <details>
+  <summary>ダッシュボードのメトリクス案内</summary>
+
+  #### ***Host Load***
+
+  - ***CPULoad***: 現在のシステムの合計CPU負荷を表示します。
+
+  - ***CPUUser***: ユーザーモードで使用されたCPU時間比を表示します。 
+
+  - ***CPUSystem***: システムモードで使用されたCPU時間比を表示します。 
+
+  - ***CPUChildrenUser***: 子プロセスのユーザーモードで使用されたCPU時間を表示します。
+
+  - ***CPUChildrenSystem***: 子プロセスのシステムモードで使用されたCPU時間を表示します。
+
+  #### ***Workers***
+
+  - ***BusyWorkers***: 現在リクエストを処理している忙しいワーカー数を表示します。 
+
+  - ***IdleWorkers***: 現在待機中のワーカーの数を表示します。 
+
+  - ***GracefulWorkers***: 徐々に終了しているワーカーの数を表示します。 
+
+  #### ***Connections***
+
+  - ***ConnsTotal***: サーバーに接続されているクライアントの合計数を表示します。 
+
+  - ***ConnsAsyncWriting***: 非同期でデータをクライアントに書き込んでいる接続の数を表示します。
+
+  - ***ConnsAsyncClosing***: 非同期で接続を終了している状態の接続数を表示します。
+
+  - ***ConnsAsyncKeepAlive***: 非同期で接続を維持している状態の接続数を表示します。 
+
+  #### ***Apache Server***
+
+  - ***Processes***: サーバーで実行されているApacheプロセスの数を表示します。 
+
+  - ***Stopping***: 終了中のApacheプロセス数を表示します。 
+
+  - ***ParentServerMPMGeneration***: ApacheのMPM(Multi-Processing Module) 世帯番号を表示します。 Apacheは、様々な方法でリクエストを処理できますが、この値はその世帯の変更を追跡するために使用されます。
+
+  - ***ParentServerConfigGeneration***: サーバー設定が変更された後に再ロードされた回数を表示します。 設定の変更後にサーバーが再起動したり、設定を適用したりする頻度が分かります。
+
+  </details>
+
+- ***Apache Throughput*** 
+
+  Apacheサーバーが処理するデータ量を表す様々なメトリクスを照会し、サーバーの性能を確認できるようにするプリセットです。 
+
+  <details>
+  <summary>ダッシュボードのメトリクス案内</summary>
+
+  #### ***Throughput***
+
+  - ***TotalBytes***: サーバーが処理した合計バイト数を表示します。 これは、サーバーが処理したデータ量を確認する重要なメトリクスです。
+
+  - ***TotalAccesses***: サーバーが処理したリクエストの合計数を表示します。 トラフィック全体を把握するのに役立つメトリクスです。
+
+  - ***TotalDuration***: すべてのリクエストに対してサーバーが使用した合計時間(ミリ秒)を表示します。 リクエストの処理に必要な合計時間を確認できます。
+
+  - ***BytesPerSec***: 1秒当たりの処理されたデータバイト数を表示します。 サーバーのデータ処理速度を確認できます。
+
+  - ***BytesPerReq***: リクエストごとに処理されたバイト数を表示します。 各リクエストが処理したデータ量を分析するのに役立ちます。
+
+  - ***ReqPerSec***: 1秒当たりに処理されたリクエスト数を表示します。 サーバーのリクエスト処理速度をリアルタイムでモニタリングできます。
+
+  - ***DurationPerReq***: リクエストごとの処理にかかった時間を表示します。 このメトリクスにより、応答の遅延時間を特定できます。
+
+  #### ***Score Boards***
+
+  - ***scboard_open***: 現在開いているワーカーの数を表示します。 ワーカーがリクエストを処理するために準備された状態です。
+
+  - ***scboard_reading***: リクエストデータを読み込んでいるワーカーの数を表示します。 クライアントからデータを受信している状態です。
+
+  - ***scboard_sending***: 応答データを送信しているワーカーの数を表示します。 クライアントにデータを転送している状態です。
+
+  - ***scboard_waiting***: リクエストを待っているワーカーの数を表示します。 Keep-alive状態で接続が維持されており、新しいリクエストを待っている状態です。
+
+  - ***scboard_dnslookup***: DNS照会作業中のワーカー数を表示します。
+
+  - ***scboard_starting***: 新しく開始されているワーカー数を表示します。 新しいプロセスが作成されるか、ワーカーが初期化されている状態です。
+
+  - ***scboard_idle_cleanup***: 待機中のワーカーを整理するステータスを表示します。
+
+  - ***scboard_keepalive***: Keep-alive状態で接続が維持されているワーカーの数を表示します。
+
+  </details>

@@ -1,0 +1,248 @@
+---
+id: ms-entra-id
+title: Microsoft Entra ID連携
+description: Microsoft EntraID連携を通じて一つのIDとパスワードを利用して簡単にアカウントを管理します。
+keywords:
+  - Microsoft Entra ID
+  - アカウント
+  - セキュリティ
+displayed_sidebar: manageSidebar
+---
+
+**Microsoft Entra ID**を基準にWhaTapモニタリングサービスアカウントと連携する方法を案内します。 **Microsoft Entra ID**アカウントでWhaTapモニタリングサービスにログインでき、ユーザーに与えられた権限内でWhaTapモニタリングサービスを利用できます。
+
+**Microsoft Entra ID**アカウントとWhaTapモニタリングサービスを連携する手順は次のとおりです。
+
+import TOCInline from '@theme/TOCInline';
+
+<TOCInline toc={toc} maxHeadingLevel={2} />
+
+:::note
+
+**Microsoft Entra ID**についての詳細は、[次のリンク](https://learn.microsoft.com/entra/fundamentals/whatis)を参照してください。
+
+:::
+
+## 使用するアカウント(email) を確認する
+
+始める前にWhaTapとMicrosoft Entraサービスにアカウントがあることを確認します。
+
+### WhaTapにアカウントが作成された場合
+
+Microsoft Entra IDで使用するアカウントがWhaTapにすでに生成されている場合、次の事項を参照してください。
+
+- 次の例のように、各サービスで使用するアカウントの名前が同じでなければ連携できません。
+
+  - WhaTap：monitoring1@abc.com
+
+  - Microsoft Entra: monitoring1@abc.com
+
+- 次の例のように、各サービスで使用するアカウントの名前が異なると連携できません。
+
+  - WhaTap：monitoring2@abc.com
+
+  - Microsoft Entra: monitoring3@abc.com
+
+### WhaTapにアカウントがない場合{#noneaccount}
+
+Microsoft Entra IDで使用するアカウントがWhaTapにない場合、ユーザー確認のために最初の1回の認証連携が必要です。
+
+1. 会社または学校のアカウントで<Cmdname sid="myapp_portal" className="b600" entra/>にログインします。 使用できる組織所有のすべてのクラウドベースのアプリを表示する<Cmdname sid="myapps" className="b600" entra/>ページが表示されます。
+
+2. <Cmdname sid="entraAppDashboard" className="b600" entra/>で既に登録されているエンタープライズアプリケーションを介して、ワタブ(WhaTap) サービスにアクセスします。
+
+   <ImgLang img="ms-account-manage-02.png" desc="My account" />
+
+3. 接続した画面で名前と会社情報を入力して認証を連携します。
+
+   ![Sign up](/img/ms2whatap-signup.png)
+
+4. エラーページが表示されたらそのページを閉じ、<Cmdname sid="entraAppDashboard" className="b600" entra/>で再びワタブ(WhaTap) アプリケーションをクリックすると、正常にログインできます。
+
+## WhaTapで連動(SSO) キーを生成する
+
+WhaTapモニタリングサービス画面でSSOキーを発行する方法をご案内します。 発行されたSSOキーを通じてMicrosoft Entra IDと連携できます。 最初にMicrosoft Entra ID連携を設定する場合、必ずWhaTapアカウントを作成する必要があります。 WhaTapアカウントがなければ、[次の文書](#noneaccount)を参照してください。
+
+1. Microsoft Entra IDとの連携を設定するアカウントでWhaTapモニタリングサービスにログインしてください。
+
+2. 画面の右上のプロフィールアイコンを選択してください。
+
+3. ポップアップメニューが表示されたら<Cmdname sid="MNU07360" className="uitext" />を選択します。
+
+4. 画面の左側のメニューで<Cmdname sid="ssoIntegrations" className="uitext" />を選択します。
+
+5. ***Service provider ID (WhaTap)***セクションの<Cmdname sid="BTN07473" className="uitext" />でKey Nameを入力します。
+
+   Key Nameは、ユーザーが任意に入力できます。
+
+   <ImgLang img='sso-service-key.png' desc='Service provider ID' />
+
+6. <Cmdname sid="BTN07473" className="uitext" />ボタンを選択します。
+
+7. <Cmdname sid="TTL07478" className="uitext" />で<span class="uitext">EntityID</span>と<span class="uitext">Sign-On URL</span>項目の値を確認してコピーします。
+
+   <ImgLang img='sso-check-sso-info.png' desc='sso-info' />
+
+:::note
+
+- SSOキーは最大5個まで発行でき、それぞれ固有の認証情報値を持っています。 
+
+- <Cmdname sid="BTN07476" className="uitext" />ボタンを選択してSSOキーを追加し、その後の手順に進みます。
+
+- 追加されたSSO情報は、***Key Name***項目でリストボックスを選択して確認できます。
+
+:::
+
+## Microsoft Entra IDエンタープライズアプリケーションを作成する
+
+[Microsoft Entra管理センター](https://entra.microsoft.com/#home)サービスに移動してログインし、次の手順に従って<Cmdname sid="entraEntApp" className="b600" entra/>を生成します。
+
+1. <Cmdname sid="entraIdentity" className="b600" entra/> &gt; <Cmdname sid="entraApplication" className="b600" entra/> &gt; <Cmdname sid="entraEntApp" className="b600" entra/>メニューで<Cmdname sid="entraNewApp" className="b600" entra/>をクリックします。 {/* Ientity, Applications, Enterprise applications */}
+
+   <ImgLang img="ms-entraid-enterprise-application-01.png" desc="Entra ID" className="width-800" />
+
+2. <Cmdname sid="entraCreateMyApp" className="b600" entra/>をクリックします。
+
+   <ImgLang img="ms-entraid-enterprise-application-02.png" desc="Entra ID" className="width-800" />
+
+3. 右側にアプリ名設定画面が表示されたら、アプリ名を入力した後<Cmdname sid="entraOtherApp" className="b600" entra/>オプションをクリックします。
+
+4. 画面下段の<Cmdname sid="entrabtnCreate" className="b600" entra/>ボタンをクリックします。
+
+## アプリケーションにユーザーを割り当てる
+
+新しく作成されたエンタープライズアプリケーション画面で、連携するユーザーを割り当てます。
+
+1. <Cmdname sid="entraAssignUsergroup" className="b600" entra/>をクリックします。
+
+   <ImgLang img="ms-entraid-enterprise-application-assign-01.png" desc="Entra ID" className="width-800" />
+
+2. <Cmdname sid="entraAddUsergroup" className="b600" entra/>をクリックします。
+
+   <ImgLang img="ms-entraid-enterprise-application-assign-02.png" desc="Entra ID" className="width-800" />
+
+3. <Cmdname sid="entraAddAssign" className="b600" entra/>画面で<Cmdname sid="entraNoneAssign" className="b600" entra/>をクリックします。
+
+   <ImgLang img="ms-entraid-enterprise-application-assign-03.png" desc="Entra ID" className="width-800" />
+
+4. ユーザー一覧で連携するユーザーを選択した後<Cmdname sid="entraSelect" className="b600" entra/>ボタンをクリックします。
+
+5. 画面下段の<Cmdname sid="entraAssign" className="b600" entra/>ボタンをクリックします。
+
+## Microsoft Entra ID認証を設定する
+
+ユーザーがMicrosoft Entra資格情報を使用してアプリケーションにログインできるように設定します。
+
+1. エンタープライズアプリケーションの<Cmdname sid="entraOverview" className="b600" entra/>を選択して初期画面に移動し<Cmdname sid="entraSignonset" className="b600" entra/>をクリックします。
+
+   <ImgLang img="ms-entraid-enterprise-application-sso-01.png" desc="Entra ID" className="width-800" />
+
+2. <Cmdname sid="entraSelectsso" className="b600" entra/>で<Cmdname sid="entraSaml" className="b600" entra/>をクリックします。
+
+   <ImgLang img="ms-entraid-enterprise-application-sso-02.png" desc="Entra ID" className="width-800" />
+
+3. <Cmdname sid="entraBasicSaml" className="b600" entra/>で<Cmdname sid="entraBtnEdit" className="b600" entra/>をクリックします。
+
+   <ImgLang img="ms-entraid-enterprise-application-sso-03.png" desc="Entra ID" className="width-800" />
+
+4. WhaTapの<Cmdname sid="ssoIntegrations" className="uitext" />画面で生成したSSO情報を入力します。
+
+   <ImgLang img="ms-entraid-enterprise-application-sso-04.png" desc="Entra ID" className="width-800" />
+
+   - ***EntityID***項目の値をコピーした後、<Cmdname sid="entraAddId" className="b600" entra/>ボタンをクリックして<Cmdname sid="entraAddIdfiedl" className="b600" entra/>に貼り付けてください。
+
+   - ***Sign-On URL***項目の値をコピーした後、<Cmdname sid="entraAddurl" className="b600" entra/>ボタンをクリックして<Cmdname sid="entraAddurlfield" className="b600" entra/>に貼り付けてください。
+
+5. <Cmdname sid="entraBtnsave" className="b600" entra/>ボタンをクリックします。
+
+6. <Cmdname sid="entraAttrclaim" className="b600" entra/>で<Cmdname sid="entraBtnEdit" className="b600" entra/>をクリックします。
+
+   <ImgLang img="ms-entraid-enterprise-application-sso-05.png" desc="Entra ID" className="width-800" />
+
+7. <Cmdname sid="entraUniqueId" className="b600" entra/>をクリックします。
+
+   <ImgLang img="ms-entraid-enterprise-application-sso-06.png" desc="Entra ID" className="width-800" />
+
+8. <Cmdname sid="entraSourceattr" className="b600" entra/>で**user.mail**を選択した後<Cmdname sid="entraBtnsave" className="b600" entra/>をクリックします。
+
+   <ImgLang img="ms-entraid-enterprise-application-sso-07.png" desc="Entra ID" className="width-800" />
+
+9. <Cmdname sid="entraSamlCerti" className="b600" entra/>で<Cmdname sid="entraMetadata" className="b600" entra/>項目の値をコピーします。
+
+   <ImgLang img="ms-entraid-enterprise-application-sso-08.png" desc="Entra ID" className="width-800" />
+
+## WhaTapでメタデータを登録する
+
+Microsoft Entra IDで発行されたメタデータを登録し、認証情報を連携します。
+
+1. WhaTapモニタリングサービスで<Cmdname sid="ssoIntegrations" className="uitext" />メニューに移動します。
+
+2. <Cmdname sid="TTL07484" className="uitext" />セクションで<Cmdname sid="BTN07491" className="uitext" />ボタンを選択します。
+
+   <ImgLang img='sso-externalidp-button.png' desc='External IdP' />
+
+3. <Cmdname sid="BTN07491" className="uitext" />画面が表示されたら、<b>Microsoft Entra ID</b>でコピーしたメタデータ値を***Metadata***項目に貼り付けてください。
+
+   <ImgLang img="ms-entraid-enterprise-application-whatap-externalidp.png" desc="Metadata" />
+
+4. 認証データを自動変換するために<Cmdname sid="BTN07494" className="uitext" />ボタンを選択します。
+
+5. <Cmdname sid="save" className="uitext" />ボタンを選択します。
+
+## 連携をテストする
+
+Microsoft Entra ID画面に戻り、Single Sign Onの作動可否をテストします。
+
+1. <Cmdname sid="entraTest" className="b600" entra/>で<Cmdname sid="entraBtnTest" className="b600" entra/>ボタンをクリックします。
+
+   <ImgLang img="ms-entraid-enterprise-application-sso-test-01.png" desc="Test" />
+
+2. <Cmdname sid="entraBtnLogtest" className="b600" entra/>ボタンをクリックします。
+
+   <ImgLang img="ms-entraid-enterprise-application-sso-test-02.png" desc="Login test" />
+
+- WhaTapアカウントがある場合は、WhaTapモニタリングサービス画面に正常に移動します。
+
+- WhaTapアカウントがない場合、認証連携を通じて新規アカウントを作成できます。
+
+## エンタープライズアプリケーションでWhaTapアカウントを管理する
+
+Microsoft Entra IDのエンタープライズアプリケーションでWhaTapアカウントを管理するには、[次のリンク](https://myapplications.microsoft.com/)へ移動します。
+
+- エンタープライズアプリケーションに招待された<Cmdname sid="myAccount" className="b600" entra/>情報
+
+  <ImgLang img="ms-account-manage-01.png" desc="My account" />
+
+- 招待されたアカウントの<Cmdname sid="myapps" className="b600" entra/>情報
+
+  <ImgLang img="ms-account-manage-02.png" desc="My account" />
+
+<Title level={2} hashid="removessokey">SSOキーの削除</Title>
+
+1. WhaTapモニタリングサービスで<Cmdname sid="ssoIntegrations" className="uitext" />メニューに移動します。
+
+2. ***Service provider ID (WhaTap)***セクションの<Cmdname sid="TTL07478" className="uitext" />で削除しようとする***Key Name***を選択します。
+
+   <ImgLang img='sso-delete-sso-key.png' desc='Delete SSO Key' />
+
+3. <Cmdname sid="BTN07481" className="uitext" />ボタンを選択します。
+
+4. 削除確認ウィンドウが表示されたら、<Cmdname sid="BTN07481" className="uitext" />ボタンを選択します。
+
+<Title level={2} hashid="editexternalidp">External Idp情報の修正・削除</Title>
+
+1. WhaTapモニタリングサービスで<Cmdname sid="ssoIntegrations" className="uitext" />メニューに移動します。
+
+2. <Cmdname sid="TTL07484" className="uitext" />セクションで<Cmdname sid="BTN07490" className="uitext" />ボタンを選択します。
+
+3. <Cmdname sid="BTN07491" className="uitext" />画面が表示されたら、<b>Microsoft Entra ID</b>でコピーしたメタデータ値を***Metadata***項目に貼り付けてください。
+
+4. 認証データを自動変換するための<Cmdname sid="BTN07494" className="uitext" />ボタンを選択します。
+
+5. <Cmdname sid="save" className="uitext" />ボタンを選択します。
+
+:::tip
+
+**External Idp**情報を削除するには、<Cmdname sid="BTN07490" className="uitext" />ボタンをクリックし、ポップアップで<Cmdname sid="delete" className="uitext" />ボタンを選択します。
+
+:::

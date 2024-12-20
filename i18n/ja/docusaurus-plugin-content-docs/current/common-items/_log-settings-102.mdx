@@ -77,7 +77,7 @@
 
 - **アプリケーションモニタリング**
 
-  **_適用する_**メニューの下にある固有のアプリケーション手順を確認してください。 次の説明書[Java](log-java)、[PHP](log-php)、[Python](log-python)、[Go](log-go) などを参照してください。
+  **_適用する_**メニューの下にある固有のアプリケーション手順を確認してください。 次の説明書[Java](log-java)、[PHP](log-php)、[Node.js](log-nodejs)、[Python](log-python)、[Go](log-go)などをご参照ください。
 
 - **サーバーモニタリング**
 
@@ -118,15 +118,17 @@
 
 ### ログモニタリングのデータ設定 {#log-data-setting}
 
-![number 2](/img/number-02.png)領域で<Cmdname sid="log_usage" className="uitext" />が確認できます。 また<Cmdname sid="data_retention" className="uitext" />および<Cmdname sid="log_lookup_password" className="uitext" />設定を変更できます。
+![number 2](/img/number-02.png)領域で<Cmdname sid="log_usage" className="uitext" />が確認できます。 また<UI>ログ保存期間</UI>と<Cmdname sid="log_lookup_password" className="uitext" />設定を変更できます。
 
-#### データ保存期間 {#data-retention}
+#### ログ保存期間{#data-retention}
 
-共通に適用する基本(default) データ保持期間です。 未指定の場合、既定値は1日です。 カテゴリごとのデータ保存期間を個別で設定しない場合は、このデータ保存期間がデフォルトとして適用されます。 カテゴリごとのデータ保存期間を設定し、<Cmdname sid="initialized" className="uitext" />ボタンを選択すると、基本データの保存期間が初期化されます。
+{/* <Cmdname sid="DSC08751" className="uitext" /> */}
 
-#### カテゴリ別のデータ保存期間 {#data-retention-per-category}
+共通に適用する基本(default) データ保持期間です。 未指定の場合、既定値は1日です。 ログ保存期間の選択オプションの他に、ユーザーが希望する期間を入力できます。 <Cmdname sid="log_usage" className="uitext" />一覧で別に設定しない場合、このログデータの保存期間がデフォルトで適用されます。 <Cmdname sid="log_usage" className="uitext" />一覧でカテゴリごとのデータ保存期間を設定し<Cmdname sid="initialized" className="uitext" />ボタンを選択すると、デフォルトのデータ保存期間に初期化されます。 
 
-カテゴリごとのログデータの保存期間を指定できます。 **ログ数**は、その期間中に蓄積されたログ行数を意味します。 例えば、<Cmdname sid="daily_log_count" className="uitext" />は、その日に収集されたログラインの数、<Cmdname sid="expected_log_count" className="uitext" />は、データ保持日に本日のログ数を掛けたログラインの数を意味します。 
+#### ログ使用量{#data-retention-per-category}
+
+<Cmdname sid="log_usage" className="uitext" />一覧でカテゴリ別のログデータの保存期間を指定できます。 **ログ数**は、当該期間中に蓄積されたログの件数を意味します。 例えば、<Cmdname sid="daily_log_count" className="uitext" />は、1日にたまったログ件数、<Cmdname sid="expected_log_count" className="uitext" />は、データ保持日に今日のログ数を掛けたログ件数を意味します。
 
 ログデータの保存期間を次のように指定できます。 期間指定により、古いデータを削除してスペースを確保できます。
 
@@ -142,7 +144,7 @@
 
   データの保存期間によってコストが異なります。
 
-  > 例えば、1日平均200万ログ行が蓄積され、データ保存期間を3日に指定した場合、平均600万ログ行が収集サーバに保持され、課金の対象となります。
+  > 例、1日平均200万ログ件数が蓄積され、データ保存期間を3日に指定した場合、平均600万ログ件数が収集サーバーに保持され、課金の対象となります。
 
 #### ログ参照パスワード {#log-lookup-pw}
 
@@ -214,7 +216,7 @@
 
 <Cmdname sid="side_logSetting" className="uitext" />メニューの上部にある<Cmdname sid="log_parser_setting_primary" className="uitext" />タブを選択してログパーサを登録または修正ができます。 次に、パーサ登録の共通の手順を説明します。
 
-<ImgLang img='log-1st-parser-add.png' desc='ログパーサ追加'/>
+<ImgLang img='log-1st-parser-add.png' desc='ログパーサーの追加'/>
 
 1. **_+_**<Cmdname sid="adding" className="uitext" />ボタンを選択すると<Cmdname sid="parser" className="uitext" /> <Cmdname sid="add" className="uitext" />画面が表示されます。
 
@@ -224,31 +226,35 @@
 
    - **_JSON_** [パーサおよびパターン登録](#log-pattern-json)
 
-3. <Cmdname sid="category" className="uitext" />選択画面からカテゴリを選択するか、直接入力します。
+3. <Cmdname sid="BTN08593" className="uitext" />ボタンを選択すると、右側にパターン登録とシミュレーション画面が表示されます。
 
-4. <Cmdname sid="ITM06439" className="uitext" />として使用する<Cmdname sid="ITM06429" className="uitext" />と<Cmdname sid="ITM06430" className="uitext" />を選択するか、直接入力してください。
+4. 登録を希望する<Cmdname sid="pattern" className="uitext" />と<Cmdname sid="log" className="uitext" />を入力します。 
 
-   フィルター条件に合ったログデータのみパターンを適用します。 <Cmdname sid="ITM06439" className="uitext" />を指定しない場合は、すべてのログにパターンを適用します。
+5. 登録したいパターンが正常な場合は、<Cmdname sid="simulation" className="uitext" />ボタンをクリックしてシミュレーション及びパターンのパフォーマンスを測定してください。
 
-5. <Cmdname sid="pattern" className="uitext" />を入力してください。
+6. パターンの適用後、<Cmdname sid="category" className="uitext" />選択画面でカテゴリを選択するか、直接入力します。 
 
-6. 登録したいパターンが正常な場合は、<Cmdname sid="simulation" className="uitext" />ボタンをクリックしてシミュレーション及びパターンのパフォーマンスを測定してください。
+7. <Cmdname sid="ITM06439" className="uitext" />として使用する<Cmdname sid="ITM06429" className="uitext" />と<Cmdname sid="ITM06430" className="uitext" />を選択するか、直接入力してください。
 
-   シミュレーションとパフォーマンス測定の詳細については、[次の文書](#parser-simulation)を参照してください。
-
-7. シミュレーション結果が正常である場合は、<Cmdname sid="add" className="uitext" />ボタンを選択してパーサを登録します。
+8. <Cmdname sid="add" className="uitext" />ボタンを選択してパーサーを追加します。
 
 :::note
 
-ログパーサ登録時、同じ<Cmdname sid="category" className="uitext" />のパーサを重複で登録できません。
+- シミュレーションと性能測定についての詳細は、[次の文書](#parser-simulation-and-performance)を参照してください。
+
+- ログパーサ登録時、同じ<Cmdname sid="category" className="uitext" />のパーサを重複で登録できません。
+
+- フィルター条件に合ったログデータのみパターンを適用します。 <Cmdname sid="ITM06439" className="uitext" />を指定しない場合は、すべてのログにパターンを適用します。
 
 :::
 
+{/* 설정하기 문서에서는 각 패턴별 이미지 안내 제외 1031 */}
+
 ### GROKパーサパターン登録 {#log-pattern-grok}
 
-<ImgLang img='log-1st-grok.png' desc='Grokパターンパーサ登録'/>
+{/* <ImgLang img='log-1st-grok.png' desc='GROK 파서 패턴 등록'/> */}
 
-基本文法は、`%{SYNTAX:SEMANTIC}`です。 GROKパーサの詳細は、[次の文書](log-parser#grok-parser-detail)を参照してください。
+基本文法は、`%{SYNTAX:SEMANTIC}`です。 GROKパーサの詳細は、[次の文書](log-parser#grok-parser-detail)を参照してください。 パターン登録とシミュレーションが不可欠です。 
 
 - **SYNTAX**
 
@@ -266,9 +272,9 @@
 
 ### JSONフォーマットのパーサパターン登録 {#log-pattern-json}
 
-<ImgLang img='log-1st-json.png' desc='JSONフォーマットパーサパターン登録'/>
+{/* <ImgLang img='log-1st-json.png' desc='JSON 포맷 파서 패턴 등록'/>  */}
 
-ログ全体または一部がJSON形式で出力される場合、JSONフォーマットのパーサを使用して、JSONに出力された部分をパーシングできます。 ログのうちJSON形式として出力された部分を検出するために、**_Prefix_**、**_Postfix_**オプションを組み合わせてログのどの部分をJSONとして認識してパーシングするかを指定します。 JSONパーサの詳細は、[次の文書](log-parser#json-parser-detail)を参照してください。
+ログ全体または一部がJSON形式で出力される場合、JSONフォーマットのパーサを使用して、JSONに出力された部分をパーシングできます。 ログのうちJSON形式として出力された部分を検出するために、**_Prefix_**、**_Postfix_**オプションを組み合わせてログのどの部分をJSONとして認識してパーシングするかを指定します。 JSONパーサの詳細は、[次の文書](log-parser#json-parser-detail)を参照してください。 シミュレーションが不可欠です。 
 
 | オプション    | 説明                                                                                                             |
 | -------- | -------------------------------------------------------------------------------------------------------------- |
@@ -329,33 +335,48 @@
     io.whatap.logsink.parser.JsonFormatParser {prefix: "Response : "}
     ```
 
-### パーサシミュレーション {#parser-simulation}
+### パーサーシミュレーションと性能測定{#parser-simulation-and-performance}
 
-1. パーサ追加画面でパターンを入力した後<Cmdname sid="simulation" className="uitext" />ボタンを選択します。 <Cmdname sid="parser" className="uitext" /> <Cmdname sid="simulation" className="uitext" />画面が表示されます。 
+<ImgLang img='log-parser-simulation2.png' desc='パーサーシミュレーションとパフォーマンス測定'/>
 
-2. <Cmdname sid="parser" className="uitext" /> <Cmdname sid="simulation" className="uitext" />画面で<Cmdname sid="log" className="uitext" />を入力します。
+1. <Cmdname sid="pattern" className="uitext" />と<Cmdname sid="log" className="uitext" />を入力します。
 
-3. 入力した<Cmdname sid="log" className="uitext" />と<Cmdname sid="pattern" className="uitext" />を確認してください。
+2. <Cmdname sid="simulation" className="uitext" />ボタンをクリックして、登録しようとするパターンでパーシングに成功することを確認します。
 
-<ImgLang img='log-parser-simulation.png' desc='パーサシミュレーション'/>
+3. シミュレーションの成功時<Cmdname sid="simulation_result" className="uitext" />と<Cmdname sid="TTL08604" className="uitext" />を照会できます。
 
-1. <Cmdname sid="simulation" className="uitext" />ボタンを選択して登録するパターンで、パーシングが成功するか確認してください。
+4. シミュレーション後、<Cmdname sid="apply_pattern" className="uitext" />ボタンをクリックすると、選択したパーサーに入力したパターンが適用されます。 
 
-   - **シミュレーションの成功画面**
+:::note 
 
-     <ImgLang img='log-simulation-success.png' desc='シミュレーション成功'/>
+- <Cmdname sid="performance_measurement" className="uitext" />は、シミュレーション実行対象文字列に対してパーサーの反復パーシング所要時間を測定します。
 
-   - **シミュレーションの失敗画面**
+- **_パーサーシミュレーション_**後、パターンを登録できます。 
 
-     <ImgLang img='log-simulation-fail.png' desc='シミュレーション失敗'/>
+:::
 
-2. <Cmdname sid="apply_pattern" className="uitext" />ボタンをクリックすると、選択したパーサに入力したパターンが適用されます。
+{/* 
+    \* **시뮬레이션 성공 화면**
+
+```
+  <ImgLang img='log-simulation-success.png' desc='시뮬레이션 성공'/>
+
+* **시뮬레이션 실패 화면**
+
+  <ImgLang img='log-simulation-fail.png' desc='시뮬레이션 실패'/>  
+```
+
+*/}
+
+{/* 
 
 ### パフォーマンス測定 {#log-performance}
 
 シミュレーションの成功後<Cmdname sid="performance_measurement" className="uitext" />ボタンを選択して、パーサのパフォーマンスを測定できます。 シミュレーションを実行する対象文字列に対して、パーサの繰り返しパーシングの所要時間を測定した後、次のように測定結果を確認します。
 
 <ImgLang img='log-performance.png' desc='パフォーマンス測定'/>
+
+*/}
 
 ### パーシングの成功 {#log-parsed}
 
@@ -397,7 +418,7 @@
 
 <Cmdname sid="side_logSetting" className="uitext" />メニューの上部にある<Cmdname sid="log_parser_setting_secondary" className="uitext" />タブを選択してログパーサを登録または修正できます。 次に、パーサ登録の共通の手順を説明します。
 
-<ImgLang img='log-2nd-parser-add.png' desc='ログ2次パーサ登録手順'/>
+<ImgLang img='log-2nd-parser-add.png' desc='ログ2次パーサ登録手順' />
 
 1. **_+_**<Cmdname sid="adding" className="uitext" />ボタンを選択すると<Cmdname sid="parser" className="uitext" /> <Cmdname sid="add" className="uitext" />画面が表示されます。
 
@@ -407,17 +428,17 @@
 
    - <Cmdname sid="status_success_rate" className="uitext" /> [設定項目および除外するステータスコード登録](#log-pattern-status)
 
-3. <Cmdname sid="category" className="uitext" />選択画面からカテゴリを選択するか、直接入力します。
+3. <Cmdname sid="ITM06255" className="uitext" />を入力してください。
 
-4. <Cmdname sid="ITM06439" className="uitext" />を選択するか、直接入力してください。
+4. <Cmdname sid="category" className="uitext" />選択画面からカテゴリを選択するか、直接入力します。
 
-5. <Cmdname sid="ITM06255" className="uitext" />を入力してください。
+5. <Cmdname sid="ITM06439" className="uitext" />を選択するか、直接入力してください。
 
 6. <Cmdname sid="add" className="uitext" />ボタンを選択してパーサを登録します。
 
 ### 4xx、5xxで除外するステータスコードを登録 {#4xx-5xx-status-parser}
 
-<ImgLang img='log-2nd-4xx5xx.png' desc='4xx、5xx状態コードパーサ'/>
+{/* <ImgLang img='log-2nd-4xx5xx.png' desc='4XX 5XX 상태 코드 파서'/> */}
 
 <Cmdname sid="status_4xx5xx_parser" className="uitext" />は、statusが既にパーシングされている場合にのみ使用できるパーサです。 パーシングされたstatusを利用して追加で4xx、5xxのステータスコードをパーシングします。 パーシングされたデータで4xx、5xxの件数データを作成できます。 除外するステータスコードとして、4xx、5xxのステータスコードを入力または選択できます。 入力されたステータスコードは、ログから4xx、5xxのステータスコードをパーシングする際に除外されます。
 
@@ -453,7 +474,7 @@
 
 ### 成功率をパーサから除外するステータスコード登録 {#log-pattern-status}
 
-<ImgLang img='log-2nd-status.png' desc='ステータスコード成功率パーサ'/>
+{/* <ImgLang img='log-2nd-status.png' desc='상태 코드 성공률 파서'/> */}
 
 <Cmdname sid="status_success_rate" className="uitext" />は、statusが既にパーシングされている場合に使用できるパーサです。 statusパーシングに関する内容は、[次の文書](#4xx-5xx-status-parser)を参照してください。 パーシングされたstatusから追加で2xx、3xxのステータスコードをパーシングします。 パーシングしたデータで、HTTP要請成功率データを生成できます。 除外するステータスコードは、2xx、3xxのステータスコードを入力または選択できます。 入力されたステータスコードは、ログから2xx、3xxのステータスコードをパーシングする際に除外されます。
 

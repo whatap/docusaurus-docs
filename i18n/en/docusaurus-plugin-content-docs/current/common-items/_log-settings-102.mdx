@@ -77,7 +77,7 @@ Check the agent version and settings to start the log monitoring. Select **_Chec
 
 - **Server Monitoring**
 
-  Under **_Apply_**, check the application guides for each application. See the following guides: [Java](log-java), [PHP](log-php), [Python](log-python), [Go](log-go).
+  Under **_Apply_**, check the application guides for each application. See the following guides: [Java](log-java), [PHP](log-php), [Node.js](log-nodejs), [Python](log-python), [Go](log-go).
 
 - **DB Monitoring**
 
@@ -118,15 +118,17 @@ Select <Cmdname sid="use_log_monitoring" className="uitext" /> to set whether or
 
 ### Log monitoring data setting {#log-data-setting}
 
-In the ![number 2](/img/number-02.png) area, you can see the <Cmdname sid="log_usage" className="uitext" />. Furthermore, you can change the settings for <Cmdname sid="data_retention" className="uitext" /> and <Cmdname sid="log_lookup_password" className="uitext" />.
+In the ![number 2](/img/number-02.png) area, you can see the <Cmdname sid="log_usage" className="uitext" />. You can also change the <UI>Log retention period</UI> and <Cmdname sid="log_lookup_password" className="uitext" /> settings.
 
-#### Data retention {#data-retention}
+#### Log retention period {#data-retention}
 
-This is the default data retention period to be applied commonly. If not specified, the default value is 1 day. If you do not set the data retention periods for each category, this data retention period is applied by default. If you set the data retention periods for each category and select <Cmdname sid="initialized" className="uitext" />, the default data retention period is reset.
+{/* <Cmdname sid="DSC08751" className="uitext" /> */}
 
-#### Data retention per category {#data-retention-per-category}
+This is the default data retention period to be applied commonly. If not specified, the default value is 1 day. In addition to the option to select a log retention period, you can enter a desired period of time. If not set separately in the <Cmdname sid="log_usage" className="uitext" /> list, this log data retention period is applied by default. If you set the data retention periods for each category in the <Cmdname sid="log_usage" className="uitext" /> list and select <Cmdname sid="initialized" className="uitext" />, the default data retention period is reset. 
 
-You can specify the log data retention periods for each category. **Log Count** means the log lines stacked for the period. For example, <Cmdname sid="daily_log_count" className="uitext" /> is the number of log lines accumulated during the day, and <Cmdname sid="expected_log_count" className="uitext" /> is the number of log lines of the today's log count multiplied by the days of data retention. 
+#### Log usage amount {#data-retention-per-category}
+
+You can specify the log data retention periods for each category in the <Cmdname sid="log_usage" className="uitext" /> list. **Log Count** means the number of logs stacked for the period. For example, <Cmdname sid="daily_log_count" className="uitext" /> is the number of logs accumulated during the day, and <Cmdname sid="expected_log_count" className="uitext" /> is the number of logs of the today's log count multiplied by the days of data retention.
 
 You can specify the log data retention period as follows. You can free the space by deleting old data according to the specified period.
 
@@ -142,7 +144,7 @@ You can specify the log data retention period as follows. You can free the space
 
   The price differs depending on the data retention period.
 
-  > For example, if an average of 2 million log lines per day accumulates and the data retention period is set to 3 days, an average of 6 million log lines is kept on the collection server and subject to billing.
+  > For example, if an average of 2 million logs per day accumulates and the data retention period is set to 3 days, an average of 6 million logs is kept on the collection server and subject to billing.
 
 #### Log lookup password {#log-lookup-pw}
 
@@ -214,7 +216,7 @@ If you select the <Cmdname sid="log_parser_setting_primary" className="uitext" /
 
 At the top of <Cmdname sid="side_logSetting" className="uitext" />, select the <Cmdname sid="log_parser_setting_primary" className="uitext" /> tab to register and modify the log parser. The following shows the common parser registration procedure.
 
-<ImgLang img='log-1st-parser-add.png' desc='Add Log parser'/>
+<ImgLang img='log-1st-parser-add.png' desc='Add Log Parser'/>
 
 1. If you select **_+_** <Cmdname sid="adding" className="uitext" />, the <Cmdname sid="parser" className="uitext" /> <Cmdname sid="add" className="uitext" /> window appears.
 
@@ -224,31 +226,35 @@ At the top of <Cmdname sid="side_logSetting" className="uitext" />, select the <
 
    - **_JSON_** [Parser and Pattern Registration](#log-pattern-json)
 
-3. In the <Cmdname sid="category" className="uitext" /> selection window, select a category or enter it.
+3. When you select <Cmdname sid="BTN08593" className="uitext" />, the pattern registration and simulation window appears on the right.
 
-4. Select a <Cmdname sid="ITM06429" className="uitext" /> and <Cmdname sid="ITM06430" className="uitext" /> for the <Cmdname sid="ITM06439" className="uitext" /> or directly enter them.
+4. Enter values for <Cmdname sid="pattern" className="uitext" /> and <Cmdname sid="log" className="uitext" /> for registration. 
 
-   The pattern is applied only to the log data that meets the filter conditions. If <Cmdname sid="ITM06439" className="uitext" /> is not specified, the pattern is applied to all logs.
+5. To check whether the pattern is normal, click <Cmdname sid="simulation" className="uitext" /> and then measure the performance of simulation and pattern.
 
-5. Enter the <Cmdname sid="pattern" className="uitext" />.
+6. After applying the pattern, select a category in the <Cmdname sid="category" className="uitext" /> selection window or directly enter it. 
 
-6. To check whether the pattern is normal, click <Cmdname sid="simulation" className="uitext" /> and then measure the performance of simulation and pattern.
+7. Select a <Cmdname sid="ITM06429" className="uitext" /> and <Cmdname sid="ITM06430" className="uitext" /> for the <Cmdname sid="ITM06439" className="uitext" /> or directly enter them.
 
-   For more information about the simulation and performance measurement, see [the following](#parser-simulation).
-
-7. If the simulation result is normal, select <Cmdname sid="add" className="uitext" /> and then register the parser.
+8. Select <Cmdname sid="add" className="uitext" /> to add a parser.
 
 :::note
 
-When registering the log parser, parsers cannot be registered repeatedly in the same <Cmdname sid="category" className="uitext" />.
+- For more information on simulation and performance measurement, see [the following] (#parser-simulation-and-performance).
+
+- When registering the log parser, parsers cannot be registered repeatedly in the same <Cmdname sid="category" className="uitext" />.
+
+- The pattern is applied only to the log data that meets the filter conditions. If <Cmdname sid="ITM06439" className="uitext" /> is not specified, the pattern is applied to all logs.
 
 :::
 
+{/* 설정하기 문서에서는 각 패턴별 이미지 안내 제외 1031 */}
+
 ### GROK parser pattern registration {#log-pattern-grok}
 
-<ImgLang img='log-1st-grok.png' desc='Registering the Grok pattern parser'/>
+{/* <ImgLang img='log-1st-grok.png' desc='GROK 파서 패턴 등록'/> */}
 
-The default syntax is `%{SYNTAX:SEMANTIC}`. For more information about the GROK parser, see [the following](log-parser#grok-parser-detail).
+The default syntax is `%{SYNTAX:SEMANTIC}`. For more information about the GROK parser, see [the following](log-parser#grok-parser-detail). Pattern registration and simulation are required. 
 
 - **SYNTAX**
 
@@ -266,9 +272,9 @@ The default syntax is `%{SYNTAX:SEMANTIC}`. For more information about the GROK 
 
 ### Registering the JSON format parser pattern {#log-pattern-json}
 
-<ImgLang img='log-1st-json.png' desc='Registering the JSON Format Parser Pattern'/>
+{/* <ImgLang img='log-1st-json.png' desc='JSON 포맷 파서 패턴 등록'/>  */}
 
-If all or part of a log is output in JSON format, you can parse the JSON output through the JSON format parser. To detect the JSON output of the log, the **_prefix_** and **_postfix_** options are combined to specify which part of the log to be recognized by JSON for parsing. For more information about the JSON parser, see [the following](log-parser#json-parser-detail).
+If all or part of a log is output in JSON format, you can parse the JSON output through the JSON format parser. To detect the JSON output of the log, the **_prefix_** and **_postfix_** options are combined to specify which part of the log to be recognized by JSON for parsing. For more information about the JSON parser, see [the following](log-parser#json-parser-detail). Simulation is required. 
 
 | Option    | Description                                                                                                                                          |
 | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -329,33 +335,48 @@ If all or part of a log is output in JSON format, you can parse the JSON output 
     io.whatap.logsink.parser.JsonFormatParser {prefix: "Response : "}
     ```
 
-### Parser Simulation {#parser-simulation}
+### Parser simulation and performance measurement {#parser-simulation-and-performance}
 
-1. Enter a pattern in the parser addition screen, and then select <Cmdname sid="simulation" className="uitext" />. The <Cmdname sid="parser" className="uitext" /> <Cmdname sid="simulation" className="uitext" /> window appears. 
+<ImgLang img='log-parser-simulation2.png' desc='Parser simulation and performance measurement'/>
 
-2. Enter the <Cmdname sid="log" className="uitext" /> in the <Cmdname sid="parser" className="uitext" /> <Cmdname sid="simulation" className="uitext" /> window.
+1. Enter values for <Cmdname sid="pattern" className="uitext" /> and <Cmdname sid="log" className="uitext" />.
 
-3. Check the entered <Cmdname sid="log" className="uitext" /> and <Cmdname sid="pattern" className="uitext" />.
+2. Click <Cmdname sid="simulation" className="uitext" /> to check whether the parsing has been successful with the pattern to register.
 
-<ImgLang img='log-parser-simulation.png' desc='Parser simulation'/>
+3. If the simulation is successful, you can view <Cmdname sid="simulation_result" className="uitext" /> and <Cmdname sid="TTL08604" className="uitext" />.
 
-1. Select <Cmdname sid="simulation" className="uitext" /> and then check whether parsing is successful with the pattern to register.
+4. When you click <Cmdname sid="apply_pattern" className="uitext" /> after simulation, the pattern that has been entered for the selected parser is applied. 
 
-   - **Simulation Success Screen**
+:::note 
 
-     <ImgLang img='log-simulation-success.png' desc='Simulation Success'/>
+- <Cmdname sid="performance_measurement" className="uitext" /> measures the time taken by the parser to perform repeated parsing on the target string for simulation.
 
-   - **Simulation Failure Screen**
+- After **_parser simulation_**, you can register a pattern. 
 
-     <ImgLang img='log-simulation-fail.png' desc='Simulation Failure'/>
+:::
 
-2. When you click <Cmdname sid="apply_pattern" className="uitext" />, the pattern that has been entered for the selected parser is applied.
+{/* 
+    \* **시뮬레이션 성공 화면**
+
+```
+  <ImgLang img='log-simulation-success.png' desc='시뮬레이션 성공'/>
+
+* **시뮬레이션 실패 화면**
+
+  <ImgLang img='log-simulation-fail.png' desc='시뮬레이션 실패'/>  
+```
+
+*/}
+
+{/* 
 
 ### Performance measurement {#log-performance}
 
 After successful simulation, click <Cmdname sid="performance_measurement" className="uitext" /> to measure the performance of the parser. After measuring the parser's repetitive parsing time for the string to be simulated, you can check the measurement result on a pop-up as follows:
 
 <ImgLang img='log-performance.png' desc='Performance measurement'/>
+
+*/}
 
 ### Parsing success {#log-parsed}
 
@@ -397,7 +418,7 @@ If you select the <Cmdname sid="log_parser_setting_secondary" className="uitext"
 
 At the top of <Cmdname sid="side_logSetting" className="uitext" />, select the <Cmdname sid="log_parser_setting_secondary" className="uitext" /> tab to register and modify the log parser. The following shows the common parser registration procedure.
 
-<ImgLang img='log-2nd-parser-add.png' desc='Log secondary parser registration order'/>
+<ImgLang img='log-2nd-parser-add.png' desc='Log secondary parser registration order' />
 
 1. If you select **_+_** <Cmdname sid="adding" className="uitext" />, the <Cmdname sid="parser" className="uitext" /> <Cmdname sid="add" className="uitext" /> window appears.
 
@@ -407,17 +428,17 @@ At the top of <Cmdname sid="side_logSetting" className="uitext" />, select the <
 
    - <Cmdname sid="status_success_rate" className="uitext" /> [Registration of settings and status codes to exclude](#log-pattern-status)
 
-3. In the <Cmdname sid="category" className="uitext" /> selection window, select a category or enter it.
+3. Enter the <Cmdname sid="ITM06255" className="uitext" />.
 
-4. Select <Cmdname sid="ITM06439" className="uitext" /> or enter it.
+4. In the <Cmdname sid="category" className="uitext" /> selection window, select a category or enter it.
 
-5. Enter the <Cmdname sid="ITM06255" className="uitext" />.
+5. Select <Cmdname sid="ITM06439" className="uitext" /> or enter it.
 
 6. Select <Cmdname sid="add" className="uitext" /> to register a parser.
 
 ### Registration of status codes to exclude for the 4xx, 5xx status code parser {#4xx-5xx-status-parser}
 
-<ImgLang img='log-2nd-4xx5xx.png' desc='4XX 5XX status code parser'/>
+{/* <ImgLang img='log-2nd-4xx5xx.png' desc='4XX 5XX 상태 코드 파서'/> */}
 
 The <Cmdname sid="status_4xx5xx_parser" className="uitext" /> can be used when the status has already been parsed. Additional 4xx and 5xx status codes are parsed using the parsed status. You can create 4xx and 5xx counts with the parsed data. For the status codes to exclude, you can enter or select the 4xx, 5xx status codes. The entered status code is excluded upon parsing the 4xx, 5xx status codes from the logs.
 
@@ -453,7 +474,7 @@ If the widget is created, you can see the following data.
 
 ### Registration of status codes to exclude by the status code success rate parser {#log-pattern-status}
 
-<ImgLang img='log-2nd-status.png' desc='Status Code Success Rate Parser'/>
+{/* <ImgLang img='log-2nd-status.png' desc='상태 코드 성공률 파서'/> */}
 
 The <Cmdname sid="status_success_rate" className="uitext" /> can be used when the status has already been parsed. For more information about status parsing, see [the following](#4xx-5xx-status-parser). Additional 2xx and 3xx status codes are parsed using the parsed status. HTTP request success rate data can be generated using the parsed data. For the status codes to exclude, you can enter or select the 2xx, 3xx status codes. The entered status code is excluded upon parsing the 2xx, 3xx status codes from the logs.
 

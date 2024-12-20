@@ -1,0 +1,44 @@
+[
+  {
+    "url": "https://docs.whatap.io/release-notes/server-hpux/server-hpux-1_3_6",
+    "ver": "v1.3.6",
+    "date": "2024-12-03",
+    "Lists": [
+      {
+        "ver": "v1.3.6",
+        "hash": "v136",
+        "product": "Server HP-UX Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> HP-UX 11.31 버전 지원</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/release-notes/server-hpux/server-hpux-1_3_4",
+    "ver": "v1.3.4",
+    "date": "2024-09-19",
+    "Lists": [
+      {
+        "ver": "v1.3.4",
+        "hash": "v134",
+        "product": "Server HP-UX Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Provided the feature to support for HP-UX (IA64, PA-RISC) 11.24.</p>"
+      },
+      {
+        "ver": "v1.3.4",
+        "hash": "v134",
+        "product": "Server HP-UX Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the feature to collect server configuration data.</p>"
+      },
+      {
+        "ver": "v1.3.4",
+        "hash": "v134",
+        "product": "Server HP-UX Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Improved to fix the OID value after initial startup of the agent.</p>"
+      }
+    ]
+  }
+]

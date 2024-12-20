@@ -15,10 +15,9 @@ keywords:
 
 ## エージェント削除
 
-{/* 에이전트 설치 서버에서 삭제하기 */}
-import Dbuninstallagentinstalledserver from "../common-items/_db-uninstall-agent-installed-server.mdx";
+### エージェントがインストールされたサーバーから削除する
 
-<Dbuninstallagentinstalledserver />
+サーバー上で起動されるJavaプロセス中`whatap.agent.dmx`文字列を含むプロセスを終了します。 エージェントをインストールした経路で*stop.sh*を実行します。 その後、エージェントファイルおよびエージェントに登録したUser権限を削除処理してください。
 
 {/* 서비스 화면에서 삭제하기 */}
 import Dbunistallagentinservice from "../common-items/_db-unistall-agent-in-service.mdx";

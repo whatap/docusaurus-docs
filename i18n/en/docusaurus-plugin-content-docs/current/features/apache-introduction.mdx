@@ -1,0 +1,201 @@
+---
+id: apache-introduction
+title: APACHE Monitoring
+description: This document is an introductory page for the APACHE monitoring product.
+displayed_sidebar: featuremonitorSidebar
+toc_max_heading_level: 2
+keywords:
+  - APACHE
+  - Feature
+---
+
+import InstallFeature from '../common-items/_import_feature-install-agent.mdx';
+import HttpStatus from "../common-items/_import_feature-http-status.mdx";
+import TR from '@site/src/components/TR';
+
+:::note
+
+**Feature Project**<ScrollToLink anchor='feature-project' />
+
+WhaTap newly introduced **Feature Project** (<code class='Features'>Features</code>) so that users can easily check whether the desired software supports monitoring and easily start monitoring. The Feature Project provides an optimized monitoring solution by repackaging existing monitoring products to fit the software to monitor. Manage your services for stability and performance more effectively through the WhaTap's Feature Project. 
+
+:::
+
+Apache Server is one of the most widely used web servers in the world, which handles HTTP requests and provides relevant content. Through Apache Monitoring, you can effectively manage the server performance, request throughput, response times, and more.
+
+WhaTap provides ***APACHE*** monitoring in a new **feature project** manner. By tracing the performance and status of Apache servers in real time, it helps you identify and resolve problems early as possible.
+
+- **Metric Monitoring**: You can check the server performance and stability by tracing various metrics such as Apache server traffic, number of connections, and response status.
+
+- **Custom dashboard**: It efficiently views and analyzes the required metrics through this dashboard.
+
+Operate and manage Apache servers stably through the WhaTap ***APACHE*** monitoring.
+
+## Installation
+
+This guide provides basic installation instructions for using the WhaTap Apache monitoring services. 
+
+To use the WhaTap monitoring service, after [Sign up](https://www.whatap.io/en/signup/), create a project and then install the agent to the target server. For more information about membership registration, see [the following](../account/account-manage). 
+
+:::note 
+
+**Supported environment**<ScrollToLink anchor='APACHE-supported-env' />
+
+Before installing the WhaTap Apache monitoring agent, check the supported environments. 
+
+- **APACHE**: APACHE 1.3 or later
+
+- **Ubuntu**: Ubuntu 12.04 or later
+
+- **OS**: Red Hat 6 or equivalent (CentOS, Rocky Linux, Amazon Linux)
+
+- **OS Architecture**: Amd64/X86_64, Arm64/Aarch64
+
+:::
+
+### Creating a Feature Project
+
+import CreateFeature from "../common-items/_import_feature-project-create.mdx";
+
+<CreateFeature />
+
+### Installing the APACHE agent
+
+<InstallFeature name='APACHE Agent Installation' />
+
+## Learn about the main features
+
+### Custom dashboard
+
+Select Home screen > **Feature project**(<code class='Features'>Features</code>) > ***APACHE*** > ***APACHE Dashboard***
+
+***APACHE DASHBOARD*** is a visual tool designed to monitor and analyze the performance of the web servers in real time. You can effectively monitor multiple important metrics such as various request status codes, metrics, traffic throughput, and latency. 
+
+APACHE **Custom Dashboard** provided by WhaTap consists of the following three presets: 
+
+- ***Apache Overview***
+
+  This preset visualizes major performance metrics and request status to help you check the overall status of the Apache servers at a glance. 
+
+  <details>
+  <summary>Guide to dashboard metrics</summary>
+
+  #### ***Apache Requests Status Code***
+
+  <HttpStatus />
+
+  #### ***Apache Metrics***
+
+  - ***Apache Busy Workers***: It displays the number of workers processing the requests.
+
+  - ***Apache Idle Workers***: It displays the number of idle workers. 
+
+  - ***Request Per Sec***: It displays the number of processed requests per second. 
+
+  - ***Bytes Per Sec***: It displays the transmitted data bytes per second. 
+
+  - ***Bytes Per Request***: It displays the transmitted data bytes per request. 
+
+  - ***Connections***: It displays the number of all clients connected to the server. 
+
+  - ***Apache Scoreboard Waiting***: It displays the number of requests waiting for connection in the Apache scoreboard. 
+
+  #### ***Domain Throughput***
+
+  - ***Response Bytes SUM***: It displays the total responded bytes processed by the server. 
+
+  - ***Latency Average***: It displays the average response delay time. 
+
+  </details>
+
+- ***Apache Worker Performance***
+
+  This preset visualizes the metrics related to the host load, worker status, connection status, and processes for Apache servers. 
+
+  <details>
+  <summary>Guide to dashboard metrics</summary>
+
+  #### ***Host Load***
+
+  - ***CPULoad***: It displays the total CPU load of the current system.
+
+  - ***CPUUser***: It displays the CPU time rate used in user mode. 
+
+  - ***CPUSystem***: It displays the CPU time rate used in system mode. 
+
+  - ***CPUChildrenUser***: It displays the CPU time used in user mode for child processes.
+
+  - ***CPUChildrenSystem***: It displays the CPU time used in system mode for child processes.
+
+  #### ***Workers***
+
+  - ***BusyWorkers***: It displays the number of busy workers currently processing requests. 
+
+  - ***IdleWorkers***: It displays the number of idle workers. 
+
+  - ***GracefulWorkers***: It displays the number of workers that are being progressively terminated. 
+
+  #### ***Connections***
+
+  - ***ConnsTotal***: It displays the number of all clients connected to the server. 
+
+  - ***ConnsAsyncWriting***: It displays the number of connections that are writing data to clients asynchronously.
+
+  - ***ConnsAsyncClosing***: It displays the number of connections that are being asynchronously terminated.
+
+  - ***ConnsAsyncKeepAlive***: It displays the number of connections that are in asynchronous state. 
+
+  #### ***Apache Server***
+
+  - ***Processes***: It displays the number of Apache processes running on the server. 
+
+  - ***Stopping***: It displays the number of Apache processes that are being terminated. 
+
+  - ***ParentServerMPMGeneration***: It displays the generation number of the Apache MPM (Multi-Processing Module). Apache can process requests in numerous ways, and this value is used to trace changes in this generation.
+
+  - ***ParentServerConfigGeneration***: It displays the number of reloads after changing the server configuration. After changing the settings, the server restarts or the configuration application frequency is known.
+
+  </details>
+
+- ***Apache Throughput*** 
+
+  This preset helps you check the server’s performance by viewing various metrics that indicate the amount of data processed by the Apache server. 
+
+  <details>
+  <summary>Guide to dashboard metrics</summary>
+
+  #### ***Throughput***
+
+  - ***TotalBytes***: It displays the total bytes processed by the server. This is an important metric on how much data the server has processed.
+
+  - ***TotalAccesses***: It displays the total number of requests processed by the server. This is a useful metric to see the overall traffic.
+
+  - ***TotalDuration***: It displays the total time (milliseconds) used by the server for all requests. You can see the total time taken for the requests to be processed.
+
+  - ***BytesPerSec***: It displays the processed data bytes per second. You can check the data processing speed of the server.
+
+  - ***BytesPerReq***: It displays the processed bytes per request. It is useful for analyzing the amount of data processed by each request.
+
+  - ***ReqPerSec***: It displays the number of processed requests per second. You can monitor the server's request processing speed in real time.
+
+  - ***DurationPerReq***: It displays the processed time per request. This metric helps you see the response latency.
+
+  #### ***Score Boards***
+
+  - ***scboard_open***: It displays the number of open workers. The worker is ready to process the request.
+
+  - ***scboard_reading***: It displays the number of workers that are reading the request data. Data is being received from the client.
+
+  - ***scboard_sending***: It displays the number of workers that are sending the response data. Data is being transmitted to the client.
+
+  - ***scboard_waiting***: It displays the number of workers that are waiting for requests. In keep-alive status, the connection is maintained and waiting for new requests.
+
+  - ***scboard_dnslookup***: It displays the number of workers that are performing DNS queries.
+
+  - ***scboard_starting***: It displays the number of newly started workers. A new process is being created or workers are being initialized.
+
+  - ***scboard_idle_cleanup***: It displays the status where idle workers are being cleaned up.
+
+  - ***scboard_keepalive***: It displays the number of workers that are maintaining a connection in keep-alive status.
+
+  </details>

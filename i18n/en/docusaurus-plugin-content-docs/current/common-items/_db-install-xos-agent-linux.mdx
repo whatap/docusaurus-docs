@@ -1,0 +1,19 @@
+1. Grant the role to run the XOS agent.
+
+    ```bash
+    chmod +x ./whatap.agent.xos*
+    ```
+
+1. Run the XOS agent.
+
+    ```bash
+    ./start.sh
+    ```
+
+:::note
+
+* To transmit monitored data to the DBX agent, the port set to `dbx_port` (default 3002) must have been open. (**UDP Outbound**)
+
+* To run the XOS agent in the background, run the *./startd.sh* file.
+
+:::

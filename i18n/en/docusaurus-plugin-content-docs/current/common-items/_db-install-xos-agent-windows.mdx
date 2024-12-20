@@ -1,0 +1,27 @@
+Run the agent with a batch file in the *xos* folder.
+
+```bash
+start.bat
+```
+
+After confirming that there are no errors in the execution log displayed on the screen and terminating the execution, register for the service in the following order.
+
+* **Service registration**
+
+  Run the *install_WindowsService.bat* file in the xos folder as follows to register in the service. If you do not enter a name after the `create` option, the service is registered under the name, **WhatapXOSAgent** by default.
+
+  ```bash
+  install_WindowsService.bat create WhatapXOSAgent
+  ```
+
+* **Deletion of a service**
+
+  ```bash
+  install_WindowsService.bat delete WhatapXOSAgent
+  ```
+
+:::note
+
+To transmit monitored data to the DBX agent, the port set to `dbx_port` (default 3002) must have been open. (**UDP Outbound**)
+
+:::

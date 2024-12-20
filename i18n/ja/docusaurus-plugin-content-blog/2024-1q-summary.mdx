@@ -1,0 +1,421 @@
+---
+slug: 2024-1q-summary
+title: 第1四半期のご案内
+authors: ysj
+date: 2024-05-20T15:30
+toc_max_heading_level: 2
+tags:
+  - 新しい機能
+  - 2024
+---
+
+WhaTapの2024年第1四半期のサービス新規機能および注目すべき変更事項の概要をご案内します。 WhaTapが新たに提供する機能を一目でご覧ください。
+
+<ImgLang img='changelog/changelog-new3.png' desc='新しい機能' />
+
+{/* truncate */}
+
+{/* 먼저 1분기 상품별 신규 기능 및 신규 상품 요약은 다음과 같습니다. サイドメニューの改編とダッシュボードの高度化作業が行われました。  */}
+
+{/* 요약은 다시 써야 함 */}
+
+<div class ='faq'>
+
+| **共通** |
+| ------ |
+
+> - **サイドメニュー**が改編されました。  
+> - メトリクスフィールド中心のユーザーエクスペリエンスを強化した<Cmdname sid="side_eventSetting" className="uitext" /> <code class="newfunc">New</code>機能を新たに提供します。 
+> - **SSOアカウント連動**機能が追加されました。
+
+| **Application** |
+| --------------- |
+
+> - <Cmdname sid="side_statistics" className="uitext" />および<Cmdname sid="side_agentsConfiguration" className="uitext" />メニュー構造を改善しました。
+> - <Cmdname sid="side_transaction_map" className="uitext" />が高度化されました。
+> - `Go`商品ベータサービスを終了し**定式**サービスを提供します。
+
+| **Server** |
+| ---------- |
+
+> Unix **AIX**エージェントのインストールパッケージを提供します。 
+
+| **Kubernetes** |
+| -------------- |
+
+> - **コントロールプレーンモニタリング**を新たに提供します。 コントロールプレーンコンポーネントの中でkube-apiserverモニタリングのために<Cmdname sid="side_kubeApiserverDashboard" className="uitext" />および<Cmdname sid="side_kubeApiserverMetricsSearch" className="uitext" />機能が追加されました。 
+> - 既存のPod初期化性能機能およびマスターメタ情報機能を改編し<Cmdname sid="side_podInitPerf" className="uitext" />と<Cmdname sid="side_objectManifest" className="uitext" />機能を提供します。 
+> - Deployment基準で関連情報を照会できる<Cmdname sid="side_deploymentList" className="uitext" />、マスターおよびノードエージェントのインストール状況が確認できる<Cmdname sid="side_kubernetesAgentList" className="uitext" />機能が追加されました。 
+> - マスターおよびノードエージェントのインストール時に*Helm*チャートのインストールをサポートします。 
+
+| **Database** |
+| ------------ |
+
+> - `MongoDB`と`Redis`製品でチャートや収集機能を強化した新しい<code class="my">V2</code>サービスを提供します。
+> - 既存のXOSとXOS2に分かれていたメトリクスを**XOS**に統合し、パーセンテージ表記で確認できるように変更しました。 
+
+| **Browser** |
+| ----------- |
+
+> <Cmdname sid="TTL07736" className="uitext" />機能を新たに提供します。
+
+| **Network** |
+| ----------- |
+
+> **ネットワークパフォーマンスモニタリング**(Network Performance Monitoring) 製品が**定式**で発売されました。 
+
+</div>
+
+商品別の新規機能以外の変更事項の概要および当該リリースバージョン、エージェントの変更事項は、次の案内で確認できます。
+
+<br/>
+<br/>
+
+## `共通`
+
+WhaTap2024年第1四半期`共通`部分の注目すべき新規機能として、サイドメニューの改編、SSOアカウント連動機能の追加および新しいイベント設定機能を紹介します。 
+
+ユーザーの利便性向上のため、5年ぶりにWhaTapモニタリングの**サイドメニュー**が新しく改編されました。 WhaTapサービスの利用には、プロジェクトの選択が先行されます。 プロジェクトの作成と選択後、動線を便利に活用できるよう、従来と比べてUIの混雑度を減らし、プロジェクトの選択とメニューの領域を確保する構造に改編されました。 
+
+プロジェクト一覧を選択した部分だけを開いて確認でき、縦の領域を確保してより楽に多様な機能メニューを照会できます。 また、簡単な星形の(<LinkImage img='ic-star.svg' desc='비교하기 아이콘'/>) アイコンをクリックすると、製品別プロジェクトメニュー内でよく使う機能をお気に入りにできます。 
+
+<ImgLang img='release/release-main-ui.png' desc='サイドメニュー改編cl分岐例' />
+
+また**SSOアカウント連動機能**が追加されました。 クラウドベースのユーザーアカウント管理およびアクセス権限の管理ソリューション**Okta**とWhaTapモニタリングを連動できます。 組織内で使用中の**Okta**アカウントを利用してWhaTapサービスにログインした後、サービスを利用できます。 
+
+<ImgLang img='sso-check-sso-info.png' desc='sso-info cl 分岐例' />
+
+新しい<Cmdname sid="side_eventSetting" className="uitext" /> <code class="newfunc">New</code>機能はフィールド(Field) 中心のユーザーエクスペリエンスを強化し、カテゴリよりもフィールドを先に選択する方法で、ユーザーが認知するメトリクスとイベント設定の不一致を解消しました。 また、商品に適した基本的なイベントテンプレートを提供することで、より簡単に警告通知イベントを設定できます。 
+
+![イベントv2 cl四半期の例](/img/changelog/changelog-common-event-v2.png)
+
+次の概要案内を通じて、2024年第1四半期共通部分の新規機能および主要変更事項を該当リリースバージョンと共に確認してみてください。
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Common_1q from "../crw-data/crwld-service/_import-service-Common.mdx";
+
+<Common_1q />
+
+</details>
+
+:::note 
+
+- サイドメニューの改編についての詳細は、[次の文書](https://www.whatap.io/bbs/board.php?bo_table=blog&wr_id=214)を参照してください。 
+
+- SSOアカウント連動機能についての詳細は、[次の文書](https://docs.whatap.io/account/sso)を参照してください。 
+
+- 新しい<Cmdname sid="side_eventSetting" className="uitext" /> <code class="newfunc">New</code>についての詳細は、[次の文書](https://docs.whatap.io/java/warning-notice-v2)を参照してください。 
+
+:::
+
+<br/>
+
+## `Application`
+
+WhaTap2024年第1四半期`Application`製品群の注目すべき新機能と変更事項により`Go`商品の正式発売、<Cmdname sid="side_transaction_map" className="uitext" />の高度化、そして<Cmdname sid="side_statistics" className="uitext" />および<Cmdname sid="side_agentsConfiguration" className="uitext" />メニュー構造の改善をご紹介します。  
+
+`Go`アプリケーションのモニタリングが、ベータ版終了後**定式**サービスを開始しました。 WhaTapの`Go`アプリケーションのモニタリングは、ウェブフレームワークに対応し、GoRuntimeパッケージの情報を継続的に収集します。 また、MSA環境で連携追跡を通じて呼び出し関係を収集します。 
+
+<Cmdname sid="side_transaction_map" className="uitext" />は、性能テストまたは障害状況発生時に短期間のトランザクション別現況を詳細に確認できるメニューです。 次のように<Cmdname sid="side_transaction_map" className="uitext" />高度化作業が行われました。
+
+既存のTXトレースセクションを削除した代わりに、チャートドラッグ時に<Cmdname sid="TTL06209" className="uitext" />ポップアップ画面で詳細情報を確認できるよう、構造を改善しました。 また、トレース分析件数を従来の100件から**1000**件に拡張し、以前より10倍多いトレースを分析できるようになりました。 
+
+その他にも一つの画面でフィルターを適用して動作を最小化する方向で、**フィルター**機能を改善しました。 例えば、トランザクションフィルタを利用して、選択したトランザクションのみを選別して照会できます。 そして、従来のリアルタイム最大5分だけでなく、過去の時点で最大10分までデータを照会できるように変更し、全般的に利便性を向上させました。  
+
+ {/* 그외에도 ***Top 30*** 섹션에 IP 필터 기능을 추가했고, <Cmdname sid="multi_transaction" className="uitext" /> 탭에서 프로잭트 선택 상태를 저장하는 등 트랜잭션 분석 시 편의성을 전반적으로 향상시켰습니다.  */}
+
+<ImgLang img='changelog/changelog-app-tx-map.png' desc='sc' className='changelog-img'/>
+
+<Cmdname sid="side_statistics" className="uitext" />と<Cmdname sid="side_agentsConfiguration" className="uitext" />メニューの場合、各メニューのタブメニュー構成を、個別下位メニューで構成するなど、動線と安定性向上のための改善作業が行われました。
+
+![統計及びインスタンス性能モニタリングsc cl](/img/changelog/changelog-app-stat-instance.png)
+
+{/* 안정적으로 각 기능을 사용할 수 있도록 / 기존 문제 개선 및 다양한 안정화 작업을 진행했습니다. */}
+
+以下の概要案内により、2024年第1四半期`Application`製品群の新規機能および主要変更事項を当該リリースバージョンと一緒に確認してみてください。
+
+{/* <code class="New">New</code> `Go` 모니터링 상품 **정식 서비스** 시작 <code class='changelog-service'>Service 2.2.4​</code> */}
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Application_1q from "../crw-data/crwld-service/_import-service-Application.mdx";
+
+<Application_1q />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>エージェントガイド</b></summary>
+
+### `Java`
+
+import Java_agent_1q from "../crw-data/crwld-agent/_import-agent-java.mdx";
+
+<Java_agent_1q />
+
+### `PHP`
+
+import PHP_agent_1q from "../crw-data/crwld-agent/_import-agent-php.mdx";
+
+<PHP_agent_1q />
+
+### `Python`
+
+import Python_agent_1q from "../crw-data/crwld-agent/_import-agent-python.mdx";
+
+<Python_agent_1q />
+
+### `Node.js`
+
+import Node_agent_1q from "../crw-data/crwld-agent/_import-agent-nodejs.mdx";
+
+<Node_agent_1q />
+
+### `Go`
+
+import Go_agent_1q from "../crw-data/crwld-agent/_import-agent-golang.mdx";
+
+<Go_agent_1q />
+
+</details>
+
+<br/>
+
+## `Server`
+
+WhaTap2024年第1四半期`Server`製品の注目すべき新機能と変更事項により**Unix**`AIX`インストールパッケージについてご紹介します。 
+
+この第1四半期に新しく**Unix**`AIX`**エージェントインストールパッケージ**を提供します。 IBMが開発したAIXは、エンタープライズサーバーで主に使用されます。 拡張性、互換性、エンタープライズ環境での堅牢性のために、特別に設計されたOSです。 
+
+WhaTapは**AIXバージョン6.1**以上に対応します。 `AIX`インストールパッケージを通じて、そのパッケージをダウンロードして実行するだけで簡単にインストールできます。 WhaTapサーバのモニタリングにより、AIXのOSをより効果的に管理し、モニタリングできます。 
+
+![AIX sc cl](/img/changelog/changelog-server-aix.png)
+
+以下の概要案内により、2024年第1四半期`Server`製品の新規機能および主な変更事項を当該リリースバージョンと一緒に確認してみてください。
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Server_1q from "../crw-data/crwld-service/_import-service-Server.mdx";
+
+<Server_1q />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>エージェントガイド</b></summary>
+
+import Server_agent_1q from "../crw-data/crwld-agent/_import-agent-server.mdx";
+
+<Server_agent_1q />
+
+</details>
+
+:::note 
+
+AIXインストールについての詳細は、[次の文書](https://docs.whatap.io/server/server-os/server-aix)を参照してください。 
+
+:::
+
+<br/>
+
+## `Kubernetes`
+
+WhaTap2024年第1四半期`Kubernetes`製品の注目すべき新機能と変更点として新機能である**コントロールプレーンモニタリング**、<Cmdname sid="side_kubernetesAgentList" className="uitext" />、<Cmdname sid="side_deploymentList" className="uitext" />、そして改編された機能である<Cmdname sid="side_podInitPerf" className="uitext" />と<Cmdname sid="side_objectManifest" className="uitext" />、また、新たに追加された**Helm**チャートのインストールサポート等についてご紹介します。 
+
+WhaTapクバネティスモニタリングは、今回の第1四半期に新しく**コントロールプレーンモニタリング**を提供します。 Kubernetesクラスタ全般を管理するコントロールプレーンコンポーネントのうち、クラスタ内API要求を処理するkube-apiserverに対する可視性確保のため、<Cmdname sid="side_kubeApiserverDashboard" className="uitext" />と<Cmdname sid="side_kubeApiserverMetricsSearch" className="uitext" />機能が追加されました。 
+
+<Cmdname sid="side_kubeApiserverDashboard" className="uitext" />は、kube-apiserverの状態および性能メトリック収集、応答時間、処理量、要請失敗などを追跡し、クラスターの可用性と性能をモニタリングできます。 <Cmdname sid="side_kubeApiserverMetricsSearch" className="uitext" />これにより、kube-apiserver収集メトリクス一覧を照会できます。
+
+![コントロールプレーンモニタリング sc cl](/img/changelog/changelog-k8s-kube-apiserver.png)
+
+また、Deploymentを基準に関連情報を照会できる<Cmdname sid="side_deploymentList" className="uitext" />、マスターおよびノードエージェントのインストール状況が確認できる<Cmdname sid="side_kubernetesAgentList" className="uitext" />機能が追加されました。 
+
+個別のPodより、Pod集合状態をモニタリングすることがサービスの安定性と性能確保のために重要です。 アプリケーションの配布とアップデートを担当するDeploymentモニタリングは、その意味で不可欠です。 <Cmdname sid="side_deploymentList" className="uitext" />において、リソース関係図とクラスター内Pod、コンテナ、アプリケーションの現状、CPU、メモリ、トランザクション数などの主要な性能メトリクスをDeployment単位で照会できます。 
+
+また、新たに追加された<Cmdname sid="side_kubernetesAgentList" className="uitext" />では、マスターおよびノードエージェントのインストール状況を一目で確認できます。
+
+そして、既存のPod初期化性能機能とマスターメタ情報機能を改編し、各<Cmdname sid="side_podInitPerf" className="uitext" />と<Cmdname sid="side_objectManifest" className="uitext" />機能を提供します。 <Cmdname sid="side_podInitPerf" className="uitext" />は、Pod別の開始時点の精密分析により、起動にかかる時間とリソース使用量に関する詳細データを提供します。 <Cmdname sid="side_objectManifest" className="uitext" />オブジェクトごとに過去の照会と比較機能が追加され、クラスター内の変動を簡単に追跡できます。 
+
+![Object Manifest及びPod起動分析sc cl](/img/changelog/changelog-k8s-om-podinit.png)
+
+{/* 
+
+それだけでなく、Deployment基準でリソース関係図やトレース、ログ、メトリクスといったオブザーバビリティの核心データを一目で確認できます。 
+
+클러스터 관리 효율성 향상 */}
+
+また、マスターおよびノードエージェントのインストール時、既存のYamlファイル方式以外の運営複雑度を減らす**Helm**チャートのインストール方法を正式にサポートします。 
+
+以下の概要案内を通じて、2024年第1四半期`Kubernetes`製品の新規機能および主な変更事項を当該リリースバージョンと一緒に確認してみてください。
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Kubernetes_1q from "../crw-data/crwld-service/_import-service-Kubernetes.mdx";
+
+<Kubernetes_1q />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>エージェントガイド</b></summary>
+
+import Kubernetes_agent_1q from "../crw-data/crwld-agent/_import-agent-k8s.mdx";
+
+<Kubernetes_agent_1q />
+
+</details>
+
+:::note 
+
+- <Cmdname sid="side_kubeApiserverDashboard" className="uitext" />の詳細については、[次のドキュメント](https://docs.whatap.io/kubernetes/kube-apiserver-dashboard)を参照してください。
+
+- <Cmdname sid="side_kubeApiserverMetricsSearch" className="uitext" />の詳細については、[次のドキュメント](https://docs.whatap.io/kubernetes/kube-apiserver-metrics-search)を参照してください。
+
+- <Cmdname sid="side_deploymentList" className="uitext" />の詳細については、[次のドキュメント](https://docs.whatap.io/kubernetes/deployment-list)を参照してください。
+
+- <Cmdname sid="side_kubernetesAgentList" className="uitext" />の詳細については、[次のドキュメント](https://docs.whatap.io/kubernetes/agent-list)を参照してください。
+
+- マスターおよびノードエージェント*Helm*チャートのインストール方法についての詳細は、[次の文書](https://docs.whatap.io/kubernetes/install-master-node-agent#create-kubernetes-agent)を参照してください。 
+
+:::
+
+<br/>
+
+## `Database`
+
+WhaTap2024年第1四半期`Database`製品群の注目すべき新機能と変更事項として**Redis**と**MongoDB**製品<code class="my">V2</code>発売についてご紹介します。
+
+WhaTap`Database`製品群が<code class="my">V2</code>に転換されています。 既存の**PostgreSQL**と**MySQL**それに続いて、今回の第1四半期には**Redis**と**MongoDB**<code class="my">V2</code>サービスが開始されました。 <code class="my">V2</code>は、全般的にチャートおよび収集機能が強化されました。  
+
+![データベースsc cl ](/img/changelog/changelog-db.png)
+
+<Cmdname sid="side_dashboard" className="uitext" />メニューのUIと機能を改善し、該当メニューでデータベースの性能メトリクス情報をすぐに確認できます。 また、<Cmdname sid="side_multiInstance" className="uitext" />メニューでクラスター別のエージェントを選択できます。 そして、データベースログを検索して推移を確認し、ログ関連の通知を受信できる<Cmdname sid="side_log" className="uitext" />メニューを提供します。
+
+<code class="my">V2</code>の切り替えと同時に、既存のXOSとXOS2に分かれていたメトリクスを%で確認できるパーセンテージ表記に変更し、**XOS**に統合して提供します。
+
+以下の概要案内により、2024年第1四半期`Database`製品群の新規機能および主要変更事項を当該リリースバージョンと一緒に確認してみてください。
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Database_1q from "../crw-data/crwld-service/_import-service-Database.mdx";
+
+<Database_1q />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>エージェントガイド</b></summary>
+
+import DBX_agent_1q from "../crw-data/crwld-agent/_import-agent-dbx.mdx";
+
+<DBX_agent_1q />
+
+</details>
+
+<br/>
+
+## `Browser`
+
+WhaTap2024年第1四半期`Browser`製品の注目すべき新機能と変更事項として<Cmdname sid="TTL07736" className="uitext" />の機能および***ユーザー定義イベントの収集機能***をご紹介します。 
+
+この第1四半期に新たに提供する<Cmdname sid="TTL07736" className="uitext" />機能は、ユーザーのウェブページの探索方法を把握する時に活用できます。 ユーザーがどのように動き、どのページにとどまっているか、画面のどのような要素をクリックするか、画面で発生するエラーなどに関するユーザーの全般的な活動を分析し、ユーザーがサービスを利用する方法についての洞察を得るだけでなく、ユーザーの行動パターンをより理解できます。 
+
+<Cmdname sid="side_userSessionEventSearch" className="uitext" />、<Cmdname sid="side_ajaxAnalytics" className="uitext" />と<Cmdname sid="side_rumPageLoadHitmap" className="uitext" />を利用して、ユーザーのページ内の行動分析およびセッション中に発生する複数のエラー追跡が可能です。 セッションログ情報を通じて、エンドユーザーのパス、離脱の原因、性能とユーザーエクスペリエンスなどを分析できます。 また***AJAXヒットマップ***と<Cmdname sid="side_rumPageLoadHitmap" className="uitext" />で、リアルタイムで問題を抱えているユーザーを把握できます。 これらの情報により、ユーザーのサービス経験とサービスの現在の性能状態を確認できます。
+
+<ImgLang img='browser-search-user-session-log-analysis.png' desc='ユーザーセッション分析分岐の例' className='changelog-img'/>
+
+***ユーザー定義イベント収集***機能は、ブラウザのモニタリングが提供する基本情報以外のユーザーが希望するイベントを追加で収集できるインターフェースを提供します。 ブラウザのエージェントが提供するインターフェイスのうち、`addCustomEvent`メソッドを利用してユーザー定義型イベントを収集した後、<Cmdname sid="side_userSessionEventSearch" className="uitext" />メニューまたは<Cmdname sid="side_flexboard" className="uitext" />を通じて収集したデータを照会できます。 
+
+{/* 사용자가 웹 페이지를 탐색하는 방식을 이해할 수 있도록 돕습니다. 把握に役立ちます。   */}
+
+以下の概要案内により、2024年第1四半期`Browser`製品の新規機能および主な変更事項を当該リリースバージョンと一緒に確認してみてください。
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Browser_1q from "../crw-data/crwld-service/_import-service-Browser.mdx";
+
+<Browser_1q />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>エージェントガイド</b></summary>
+
+import Browser_agent_1q from "../crw-data/crwld-agent/_import-agent-browser.mdx";
+
+<Browser_agent_1q />
+
+</details>
+
+<br/>
+
+## `Network`
+
+WhaTap2024年第1四半期にネットワーク間の混雑や障害を把握し、ユーザのネットワーク性能改善のためにプロセスのネットワーク情報を収集する**ネットワークパフォーマンスモニタリング**(**Network Performance Monitoring**) 製品が正式に発売されました。 
+
+![ネットワークモニタリングsc cl ](/img/changelog/changelog-network.png)
+
+最近、ネットワーク市場はクラウドと仮想化という大きな枠組みで成長しています。 既存の機器中心のネットワークモニタリングだけでなく、作業を行うプロセスが重要なモニタリングの対象となっています。 WhaTapネットワークの性能モニタリングを通じてプロセス単位のネットワークメトリクスを安定的にモニタリングしてみてください。
+
+WhaTapの`Network`製品は、各プロセスが実行するネットワーク動作を追跡し、複雑なコンポーネントと状態情報をトポロジーを通じて直感的に理解できるよう、視覚化しました。 **品質メトリクス** ***Latency***と***Jitter***、そして**ネットワーク使用量メトリクス** ***bps***、***pps***、***session count***を照会できます。 また、タグオプションで可視性を確保しており、<Cmdname sid="side_flexboard" className="uitext" />を通じて、様々なユーザーカスタムチャートを提供します。
+
+以下の概要案内により、2024年第1四半期`Network`製品の新規機能および主な変更事項を当該リリースバージョンと一緒に確認してみてください。
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Network_1q from "../crw-data/crwld-service/_import-service-Network.mdx";
+
+<Network_1q />
+
+</details>
+
+:::note 
+
+- `Network`商品についての詳細は、[次の文書](https://docs.whatap.io/npm/introduction)を参照してください。 
+
+- AWSリソース識別に関するエージェントのオプション案内についての詳細は、[次の文書](https://docs.whatap.io/npm/set-aws-resource-options)を確認してください。 
+
+:::
+
+<br/>
+
+{/* ## `AWSLog`
+
+<div class='indentTab'>
+
+import AWSLog_1q from "../crw-data/crwld-service/_import-service-AWSLog.mdx";
+
+<AWSLog_1q />
+
+</div> <br/> */}
+
+## `Log`
+
+WhaTap2024年第1四半期`Log`商品の注目すべき新機能および変更事項に改編された**ログ検索フィルター機能**をご紹介します。 
+
+<Cmdname sid="side_logSearch" className="uitext" />および<Cmdname sid="side_logTail" className="uitext" />メニュー内の**ログ検索フィルター機能**が改編されました。 検索値の入力時に案内ガイドUIを通じてサポートする検索文法を確認でき、キーボード入力でタグを生成と修正し、演算子をクリックして修正できる機能が追加されました。
+
+また、エージェントオプションが設定されている場合は、ログレベル(<span class='logwr'>WARN</span>、<span class='loger'>ERROR</span>、<span class='logft'>FATAL</span>)を収集し、ログ一覧の左側でその基準色を表示する機能が追加されました。  
+
+![ログエージェントオプションclブランチの例](/img/log-agent-option-level.png)
+
+以下の概要案内により、2024年第1四半期`Log`製品の新規機能および主な変更事項を当該リリースバージョンと一緒に確認してみてください。
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Log_1q from "../crw-data/crwld-service/_import-service-Log.mdx";
+
+<Log_1q />
+
+</details>
+
+<br/>

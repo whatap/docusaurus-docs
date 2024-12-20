@@ -16,13 +16,13 @@ toc_max_heading_level: 3
 
 **要求事項**
 
-- Kubernetesクラスタープロジェクト(<code class='my'>CP</code>)の**読み込み権限**が必要です。
+- WhaTap Kubernetesエージェント1.4.1バージョン以降が必要です。 
 
-- WhaTap Kubernetesエージェント1.3.7バージョン以降が必要です。 
+- Kubernetesクラスタープロジェクト(<code class='my'>CP</code>)の場合、該当メニューを照会できます。
 
 :::
 
-<Cmdname sid="side_nodeMap" className="uitext" />メニューは、クラスターの観点からノードの状態をモニタリングする機能を提供します。 ノードの状態、リソース使用量、エージェント状態情報を視覚化して、ユーザーが直感的に理解できるようにします。 また、過去時点のノード状態を照会でき、以前の状態を簡単に確認できる機能をサポートします。
+<Cmdname sid="side_nodeMap" className="uitext" />メニューは、クラスターの観点からノードの状態をモニタリングする機能を提供します。 ノードの状態、リソース使用量、エージェントの状況を可視化し、ユーザーが直感的に把握できるようにサポートします。 また、過去時点のノード状態を照会でき、以前の状態を簡単に確認できる機能を提供します。
 
 <ImgLang img='k8s-node-map.png' />
 
@@ -32,7 +32,7 @@ toc_max_heading_level: 3
 
 ### ユーザー設定
 
-<Cmdname sid="side_nodeMap" className="uitext" />上段の**ユーザー設定**領域では<Cmdname sid="groupby" className="uitext" />、<Cmdname sid="TTL08456" className="uitext" />、<Cmdname sid="label" className="uitext" />、<Cmdname sid="filter" className="uitext" />、プリセットおよび![設定アイコン](/img/ic-setting.svg)追加設定を構成できます。 次の例の画像は<Cmdname sid="groupby" className="uitext" />、<Cmdname sid="TTL08456" className="uitext" />、<Cmdname sid="label" className="uitext" />が適用されています。
+<Cmdname sid="side_nodeMap" className="uitext" />上段の**ユーザー設定**領域では<Cmdname sid="groupby" className="uitext" />、<Cmdname sid="TTL08456" className="uitext" />、<Cmdname sid="label" className="uitext" />、<Cmdname sid="filter" className="uitext" />、プリセットおよび![設定アイコン](/img/ic-setting.svg)追加設定を構成できます。 次の例は、<Cmdname sid="groupby" className="uitext" />、<Cmdname sid="TTL08456" className="uitext" />、<Cmdname sid="label" className="uitext" />が適用されています。
 
 <ImgLang img='k8s-node-map-custom.png' desc='ノードマップユーザー設定' />
 
@@ -44,17 +44,17 @@ toc_max_heading_level: 3
 
 #### しきい値の設定
 
-ユーザーは、<Cmdname sid="TTL08456" className="uitext" />を通じてノードの状態を色で表現できます。 メトリクスは1つ以上設定可能で、各メトリクスごとに警告(<span class='slow'>Warning</span>)とエラー(<span class='vslow'>Error</span>)区間を指定できます。 正常(<span class='normal'>Normal</span>) 区間は<span class='normal'>青色</span>と表示されます。 設定した範囲によって、その状態に合わせた色が適用されます。 
+ユーザーは、<Cmdname sid="TTL08456" className="uitext" />を通じてノードの状態を色で表現できます。 メトリクスは1つ以上設定可能で、各メトリクスごとに警告(<span class='slow'>Warning</span>)とエラー(<span class='vslow'>Error</span>)区間を指定できます。 正常(<span class='normal'>Normal</span>) 区間は<span class='normal'>青色</span>で表示します。 設定した範囲によって、その状態に合わせた色が適用されます。 
 
 {/* 해당 범위에 속할 경우 지정된 색상이 적용됩니다.  */}
 
 1. <Cmdname sid="TTL08456" className="uitext" />オプションをクリックします。
 
-2. 希望するメトリクスを選択してから、各<span class='slow'>Warning</span>、<span class='vslow'>Error</span>区間を設定します。 
+2. メトリクスを選択してから、<span class='slow'>Warning</span>と<span class='vslow'>Error</span>区間を設定します。 
 
-3. メトリクスの追加を希望する場合、下段の<UI>+</UI> <Cmdname sid="BTN08454" className="uitext" />ボタンをクリックします。 
+3. メトリクスを追加する場合は、下段の<UI>+</UI> <Cmdname sid="BTN08454" className="uitext" />ボタンをクリックします。 
 
-4. 希望するメトリクスごとのしきい値設定を終えたら、下段の<Cmdname sid="save" className="uitext" />ボタンをクリックします。 
+4. メトリクスごとのしきい値を設定した後、下段の<Cmdname sid="save" className="uitext" />ボタンをクリックします。 
 
 :::note 
 
@@ -77,51 +77,19 @@ toc_max_heading_level: 3
 | MemoryPressure   | `true` / `false`         | `true`       |
 | Unschedulable    | `true` / `false`         | `true`       |
 
-{/* 
-
-- <span class='normal'>Normal</span>: <span class='normal'>青色</span>
-
-- <span class='slow'>Warning</span>: <span class='slow'>オレンジ色</span>
-
-- <span class='vslow'>Error</span>: <span class='vslow'>赤色</span>
-
-*/}
-
 ##### ノード状態表示の優先順位
 
-状態表示の優先順位は<span class='vslow'>Error</span>区間が一番高いです。 様々なメトリクスのうち、1つの項目でも<span class='vslow'>Error</span>区間に属する場合、当該ノードは優先的に<span class='vslow'>赤色</span>に表示されます。 次の例の場合、ノード![指示線a](/img/char-a.svg)とノード![指示線b](/img/char-b.svg)すべて<span class='vslow'>Error</span>に表示されます。 
+状態表示の優先順位は<span class='vslow'>Error</span>区間が一番高いです。 様々なメトリクスのうち、1つの項目でも<span class='vslow'>Error</span>区間に属する場合、該当ノードは優先的に<span class='vslow'>赤色</span>に表示されます。 次の例の場合、ノード![指示線a](/img/char-a.svg)とノード![指示線b](/img/char-b.svg)すべて<span class='vslow'>Error</span>に表示されます。 
 
 ![ノード状態表示の優先順位sc](/img/k8s-node-map-custom-err-col.png)
 
-{/* * **우선 순위** 예시 이미지 사용해서 노드 A, B 비교 */}
-
-{/* 
-
-また*String*タイプメトリクスの場合、特定の文字列が含まれる場合<span class='vslow'>Error</span>に指定されます。 例えば***Status (string)***メトリクスに`NotReady`というテキストが含まれる場合、そのノードは<span class='vslow'>Error</span>に指定され<span class='vslow'>赤色に</span>表示されます。 
-
-*/}
-
-{/* 
-
-:::note 
-
-**優先順位**
-
-예시 이미지 사용해서 노드 A, B 비교
-
-::: 
-
-*/}
-
 #### ラベル
-
-{/* 사용자는 노드 블록 내부에 텍스트 라벨을 설정하여 지정한 주요 정보를 한눈에 볼 수 있습니다. <Cmdname sid="label" className="uitext" />を***CpuUsedPercent***メトリクス基準で設定した場合、上記の例示画像のようにノードブロック内部で当該情報を確認できます。  */}
 
 <Columns>
 
 <Column className="text--left width--20">
 
-![ラベル](/img/k8s-node-map-label.png)
+![ラベルsc](/img/k8s-node-map-label.png)
 
 </Column>
 
@@ -129,7 +97,7 @@ toc_max_heading_level: 3
 
 <br/>
 
-ユーザーは、ノードブロック内にテキストラベルを設定して、指定した主要な情報を一目で確認できます。 <Cmdname sid="label" className="uitext" />を***CpuUsedPercent***メトリクス基準で設定した場合、左の例示画像のようにノードブロック内部で当該情報を確認できます。 
+ユーザーは、ノードブロックにテキストラベルを設定して、指定した主な情報を一目で確認できます。 <Cmdname sid="label" className="uitext" />を***CpuUsedPercent***メトリクス基準で設定した場合、左の例のようにノードブロックからその情報を確認できます。 
 
 </Column>
 
@@ -141,7 +109,7 @@ toc_max_heading_level: 3
 
 #### プリセット
 
-ユーザーは、設定したオプションをプリセットとして保存し、必要に応じて読み込みできます。 プリセットはプロジェクト単位で保存されます。 これにより、プロジェクトメンバーは同じ設定でクラスターをモニタリングできます。 基本プリセット(***Default***)を提供し、デフォルトのプリセットの場合は削除できません。 
+ユーザーは、設定したオプションをプリセットに保存し、必要な時読み込みできます。 プリセットはプロジェクト単位で保存されます。 これにより、プロジェクトメンバーは同じ設定でクラスターをモニタリングできます。 基本プリセット(***Default***)を提供しており、基本プリセットは削除できません。 
 
 :::note 
 
@@ -159,13 +127,13 @@ toc_max_heading_level: 3
 
 #### 追加設定
 
-<Cmdname sid="side_nodeMap" className="uitext" /> 右上の![設定アイコン](/img/ic-setting.svg)アイコンを使用して、次の追加の詳細設定を調整できます。
+<Cmdname sid="side_nodeMap" className="uitext" /> 右上の![設定アイコン](/img/ic-setting.svg)アイコンを使用して、次のような追加の詳細設定が調整できます。
 
 <ImgLang img='k8s-node-map-addtional-settings.png' desc='ノードマップ追加設定' />
 
 - <Cmdname sid="layout" className="uitext" />: グループ化されたウィジェットのカラムを固定します。
 
-- <Cmdname sid="TTL07772" className="uitext" />: グループ化されたウィジェットをノード数または名前ベースで並べ替えます。
+- <Cmdname sid="TTL07772" className="uitext" />: グループ化されたウィジェットをノード数または名前でソートします。
 
 - <Cmdname sid="ITM06977" className="uitext" type="node" />: 最近1分以内に消えたノードを表示します。
 
@@ -173,9 +141,9 @@ toc_max_heading_level: 3
 
 - <Cmdname sid="BTN08458" className="uitext" />: 特定のノードが<Cmdname sid="TTL08456" className="uitext" />によって<span class='slow'>Warning</span>または<span class='vslow'>Error</span>ステータスの時に警告のポップオーバーを表示します。
 
-- <Cmdname sid="BTN08459" className="uitext" />: ウィジェットの下部に平均、合計、最大値、最小値を表示可否を設定します。
+- <Cmdname sid="BTN08459" className="uitext" />: ウィジェットの下部に平均、合計、最大値、最小値の表示有無を設定します。
 
-- <Cmdname sid="BTN08460" className="uitext" />: ウィジェットの下部に表示するメトリクスを選択します。 特定のメトリクスを選択し、グループ化されたすべてのノードに対して、そのメトリクスを平均、合計、最大値、最小値のうち、目的の方法でデータを表示するように設定します。
+- <Cmdname sid="BTN08460" className="uitext" />: ウィジェットの下部に表示するメトリクスを選択します。 特定のメトリクスを選択し、グループ化されたすべてのノードに対して、データの表示を平均、合計、最大値、最小値から選んで設定します。
 
 ### ノードマップチャート
 
@@ -183,17 +151,17 @@ toc_max_heading_level: 3
 
 <ImgLang img='k8s-node-map-chart.png' />
 
-![指示線1](/img/number-01.png) **ウィジェット上段領域** 
+![指示線1](/img/number-01.png) **ウィジェット上段** 
 
-  ノードの全体個数またはグループ化された場合、グループ化された項目の合計個数と選択したメトリクスの状態別個数を表示します。 
+  ノード数またはグループ化された場合、グループ化された項目の数と選択されたメトリクスの状態別の数を表示します。 
 
-![指示線2](/img/number-02.png) **中央視覚化領域** 
+![指示線2](/img/number-02.png) **中央可視化領域** 
 
-  ノード全体の状態と数を直感的に確認できる視覚化されたダッシュボードを提供します。 
+  ノード全体の状態と数を直感的に確認できる可視化されたダッシュボードを提供します。 
 
-![指示線3](/img/number-03.png) **ウィジェット下段領域** 
+![指示線3](/img/number-03.png) **ウィジェット下段** 
 
-  選択したメトリクスの統計値を表示します。 追加設定の<Cmdname sid="BTN08460" className="uitext" />で、設定したとおりに合計、最大値、最小値のいずれかでデータを表示します。 
+  選択したメトリクスの統計値を表示します。 追加設定の<Cmdname sid="BTN08460" className="uitext" />で、設定したとおりに平均、合計、最大値、最小値のいずれかでデータを表示します。 
 
 :::note 
 
@@ -203,36 +171,28 @@ toc_max_heading_level: 3
 
 ## 要約の表示と詳細分析
 
-<Cmdname sid="side_nodeMap" className="uitext" />で照会したいノードを選択します。 右側に表示される概要ビュー画面から特定のオブジェクトの概要を確認できます。 要約の表示画面で<Cmdname sid="BTN07712" className="uitext" />ボタンをクリックして詳細分析画面を確認できます。
+<Cmdname sid="side_nodeMap" className="uitext" />で照会するノードを選択します。 右側に表示される概要ビュー画面から該当オブジェクトの概要を確認できます。 要約の表示画面で<Cmdname sid="BTN07712" className="uitext" />ボタンをクリックして詳細分析画面を確認できます。
 
 <ImgLang img='k8s-node-map-summary.png' />
 
-#### 対象情報
+### <Cmdname sid="TTL06782" className="uitext" />{#node-target-info}
 
-<Cmdname sid="TTL06782" className="uitext" />タブで、ユーザーが選択したノードの主要な属性情報を確認できます。
+<Cmdname sid="TTL06782" className="uitext" />タブで、ユーザーが選択したノードの主な属性情報を確認できます。 また、[ノードリスト](resource-node-list) および[コンテナマップ](container-map) メニューに移動できます。
 
-:::note 
+#### Nodeの要約分析{#node-summary-analysis}
 
-***Labels***メトリクスは、マスターエージェントバージョン1.7.9以降から対応します。
+ノードのリソース割り当てと使用状況の要約情報を***Nodeの要約分析***を通じて確認できます。
 
-:::
+import NodeSummary from "../common-items/_import_k8s-node-summary.mdx";
 
-#### ノード構成
-
-<Cmdname sid="TTL08441" className="uitext" type="node"/>タブで、ノード内のCPU、メモリ、ディスク、ネットワーク構成および使用量とContainer Runtime、kubelet、kube-proxyなどのKubernetesシステムプロセス情報を確認できます。
-
-{/* 노드 내 CPU, 메모리, 디스크, 네트워크 자원 사용 현황을 포함한 상세 정보를 확인할 수 있습니다. */}
-
-#### メトリクス
-
-<Cmdname sid="metrics" className="uitext" />タブで選択したノードの主要なメトリクス情報を照会し、リソースの使用パターンを確認できます。 これにより、リソース関連の性能の最適化と問題点をすばやく識別できます。
+<NodeSummary />
 
 :::note 
 
-***K8s CPU Request / Allocatable CPU (%)***ウィジェットは、マスターエージェントバージョン1.7.9以降から対応します。
+***Labels***指標は、クバネティスエージェントバージョン1.7.9以降から対応します。
 
 :::
 
-#### イベント
+import K8snodedt from "../common-items/_k8s-node-details.mdx";
 
-<Cmdname sid="event" className="uitext" />タブで、***K8s Nodeイベント***とユーザが設定した***WhaTap Nodeイベント***を確認することで、クラスター内で発生した主要なイベントやアラートをモニタリングできます。
+<K8snodedt />

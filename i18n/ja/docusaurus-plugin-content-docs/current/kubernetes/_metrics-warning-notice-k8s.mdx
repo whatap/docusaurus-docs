@@ -1,0 +1,237 @@
+## テンプレート {#template}
+
+### メトリクスイベントテンプレート
+
+:::note 
+
+クバネティスイベントの`reason`フィールドの詳細については、[クバネティス公式文書](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/events/event.go#L27)を参照してください。 
+
+:::
+
+#### ***BackOff***
+
+Kubernetesイベントの`reason`フィールド情報のうち、`BackOff`が0回以上表示された場合、その通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。 
+
+> Kubernetesイベント(Kube Event `${message}`)
+
+#### ***Evicted***
+
+Kubernetesイベントの`reason`フィールド情報のうち、`Evicted`が0回以上表示された場合、その通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> Kubernetesイベント(Kube Event `${message}`)
+
+#### ***FailedCreatePodSandBox***
+
+Kubernetesイベントの`reason`フィールド情報のうち、`FailedCreatePodSandBox`が0回以上表示された場合、その通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> Kubernetesイベント(Kube Event `${message}`)
+
+#### ***FailedMount***
+
+Kubernetesイベントの`reason`フィールド情報のうち、`FailedMount`が0回以上表示された場合、その通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> Kubernetesイベント(Kube Event `${message}`)
+
+#### ***FailedScheduling***
+
+Kubernetesイベントの`reason`フィールド情報のうち、`FailedScheduling`が0回以上表示された場合、その通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> Kubernetesイベント(Kube Event `${message}`)
+
+#### ***FailedSync***
+
+Kubernetesイベントの`reason`フィールド情報のうち、`FailedSync`が0回以上表示された場合、その通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> Kubernetesイベント(Kube Event `${message}`)
+
+#### ***NodeNotReady***
+
+Kubernetesイベントの`reason`フィールド情報のうち、`NodeNotReady`が0回以上表示された場合、その通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> Kubernetesイベント(Kube Event `${message}`)
+
+#### ***Unhealthy***
+
+Kubernetesイベントの`reason`フィールド情報のうち、`Unhealthy`が0回以上表示された場合、その通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> Kubernetesイベント(Kube Event `${message}`)
+
+#### ***コンテナCPU割当てによる使用率アラート***
+
+コンテナのCPU Limit基準でCPUの全体使用量(`${cpu_per_quota}`)が70%以上の場合、その通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> `${okindName}`の`${oname}`コンテナのCPU使用率が「`${cpu_per_quota}`% >= 70%」でです。
+
+#### ***コンテナメモリ失敗回数***
+
+コンテナメモリのLimit到達件数が 1回以上の場合、その通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> `${okindName}`の`${oname}`コンテナが limitを超えたため、`${mem_failcnt}`が増加しました。
+
+#### ***コンテナメモリ使用率***
+
+コンテナメモリのLimit基準使用量(`${container.mem_percent}`)が90%以上の場合、その通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> `${okindName}`の`${oname}`コンテナのメモリ使用率は「`${container.mem_percent}`% >= 90%」です。
+
+#### ***コンテナDEAD状態の通知***
+
+コンテナの状態コードが`100`の場合、その通知が発生します。 状態コード`100`は`DEAD`を意味します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> `${oname}`コンテナが`DEAD`状態です。
+
+#### ***クラスタCPU Request通知***
+
+ノード割り当て可能なCPU量をLimit CPUの合計で割った値に100を乗じた値が80%以上であれば、その通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> クラスタのCPUクォータに対してCPU Request(最低要求リソース)が80％を超えました。
+
+#### ***クラスタMemory Request通知***
+
+ノード割り当て可能なメモリ量をLimit Memoryの合計で割った値に100を乗じた値が80%以上であれば、その通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> クラスタのMemoryクォータに対してMemory Request(最低要求リソース)が 80%を超えました。
+
+#### ***クラスタCPU Request通知***
+
+ノード割り当て可能なCPU量をLimit CPUの合計で割った値に100を乗じた値が60%以上であれば、その通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> クラスタのCPUクォータに対してCPU Request(最低要求リソース)が60％を超えました。
+
+#### ***クラスタMemory Request通知***
+
+ノード割り当て可能なメモリ量をLimit Memoryの合計で割った値に100を乗じた値が60%以上であれば、その通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> クラスタのMemoryクォータに対してMemory Request(最低要求リソース)が 60%を超えました。
+
+#### ***クラスタPod数の通知***
+
+ノードに割り当て可能なPodが存在しない場合、その通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> マスターに割当てできるPodの数は0です。
+
+#### ***ノードCPU使用率のアラート通知***
+
+ノードのCPU使用率(`${cpu}`)が70%以上の場合、その通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> `${oname}`のCPU使用率が「`${cpu}`% >= 70%」です。
+
+#### ***ノードメモリ使用率のアラート通知***
+
+ノードのメモリ使用率(`${memory_pused}`)が90%以上の場合、その通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> `${oname}`のメモリ使用率が「`${memory_pused}`% >= 90%」です。
+
+#### ***割り当てできないノード通知***
+
+ノードに割り当て可能なPod数が 0以下の場合、通知が発生します。 
+
+#### ***APDEX***
+
+トランザクションが存在し、APDEX点数が0.7点より低い場合、その通知が発生します。  <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+ノードに割り当て可能なPod数が0個以下の場合、その通知が発生します。  <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> APDEXが0.7未満です (`${oname}`)
+
+{/* 
+
+#### ***HPA CPUの使用率通知***
+
+現在実行中のPod数がリソース内の最大Pod数と同じで、CPU使用率が70%以上の場合、その通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> HPA Podが生成可能な最大値に達して、CPU使用率が >= 70% の状況です。
+
+#### ***HPAメモリの使用率通知***
+
+実行中のPod数がリソースの許容可能な最大Pod数と同じで、メモリ使用率が90%以上の場合、通知が発生します。 
+
+> HPA Podの生成が最大値に達していて、メモリ使用率が「>=90%」です。
+
+*/}
+
+### 複合メトリクスのイベントテンプレート
+
+#### ***Inactive agents has been found***
+
+アクティブ化されたエージェントの数が指定された条件よりも少ない時、通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。 
+
+> `${ip}` `${okindName}` The number of active agents has decreased to `${num_of_current_agents}`. 
+
+#### ***TPS has changed by more than 30% compared to the previous week***
+
+アプリケーションのTPSが先週に比べて30%以上変化した時、通知が発生します。 メッセージの例は次のとおりです。
+
+> `${okindName}` a week ago : `${prev_week_tps_display}`, current : `${current_tps_display}`,  difference : `${one_week_diff_display}`
+
+#### ***Very slow active transactions detected***
+
+アプリケーションの8秒超過区間のトランザクション数が平均10個を超えると、通知が発生します。 メッセージの例は次のとおりです。
+
+> `${okindName}` `${very_slow_tx_cnt_m5_avg_display}` active transactions performed for more than 8 seconds were detected.
+
+#### ***APDEX score dropped***
+
+APDEX点数が70未満になると、通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> The average apdex of `${pname}` in the last 5 seconds is `${apdex_display}`
+
+#### ***CPU % is too high***
+
+ノードのCPU使用率が80%を超えると、通知が発生します。 メッセージの例は次のとおりです。
+
+> CPU utilization rate of the `${oname}` in the last minute > `${_rule_}` %
+
+#### ***CPU User % is too high***
+
+ユーザーが使用するCPU使用率が50%を超えると、通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> CPU User utilization rate of the `${oname}` in the last minute > `${_rule_}` %
+
+#### ***The number of agents with high CPU SYS % is too large***
+
+システムが使用するCPU使用率が50%を超えると、通知が発生します。 メッセージの例は次のとおりです。 
+
+> The number of agents with a CPU SYS of 70% or more in the last minute > `${_rule_}` %
+
+#### ***The Disk I/O is too high***
+
+ディスクの I/O使用率が10%を超えると、通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> In the last minute, `${oname}`'s Disk I/O > `${_rule_}` %
+
+#### ***The Disk Used % is too high***
+
+ファイルシステムの使用率が90%を超えると、通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> In the last minute, `${oname}`'s Disk Used > `${_rule_}` %
+
+#### ***Network Traffic I/O is too high***
+
+ネットワークのインバウンドトラフィック/アウトバウンドトラフィックが10%を超えると、通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> In the last minute, `${oname}`'s Network Traffic I/O > `${_rule_}` %
+
+#### ***Network Packet I/O is too high***
+
+ネットワークのインバウンドパケット/アウトバウンドパケットが10%を超えると、通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> In the last minute, `${oname}`'s Network Packet I/O > `${_rule_}` %
+
+#### ***Network Error I/O is too high***
+
+ネットワークのインバウンドエラー/アウトバウンドエラーが10%を超えると、通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> In the last minute, The maximum value of the `${oname}`'s Network Error I/O > `${_rule_}` %
+
+#### ***The kube-apiserver latency over 10 second***
+
+コントロールプレーンコンポーネントの中でkube-apiserverのlatencyが10秒超えると、通知が発生します。 ただし、WATCH行為は除きます。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> Latency of the `${verb}` verb in `${instance}` of kube-apiserver exceeded `${metricValue}` seconds.
+
+#### ***The kube-apiserver response increase/decrease rate for error codes***
+
+コントロールプレーンコンポーネントの中でkube-apiserverのエラー応答が50件を超え、増減率が50% 以上に変化した場合、通知が発生します。 <Cmdname sid="message" className="uitext" />例は次のとおりです。
+
+> Rate of increase in the number of requests for code `${code}` on instance `${instance}` of kube-apiserver exceeded `${metricValue}`.

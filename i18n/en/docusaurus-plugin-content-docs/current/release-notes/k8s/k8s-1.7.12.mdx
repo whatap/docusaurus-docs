@@ -1,0 +1,71 @@
+---
+id: k8s-1_7_12
+title: Kubernetes Agent v1.7.12
+toc_max_heading_level: 2
+pagination_next: release-notes/k8s/k8s-1_7_11
+displayed_sidebar: releaseSidebar
+---
+
+September 30, 2024
+
+- <Status priority='1'>New</Status> Added the tag count `kube_process` category.
+
+  The tag count has been added to monitor Kubernetes-related processes running on the node. This allows you to trace processes running on a specific node and collect performance metrics.
+
+  :::note
+
+  - For more information about the related agent option (`collect_kube_node_process_metric_target_list`), see [the following](../../kubernetes/set-agent/#collect_kube_node_process_metric_target_list).
+
+  - For more information about the process (`kube_process`) category, see [the following](../../kubernetes/metrics-kubernetes/#kube_process).
+
+  :::
+
+- <Status priority='1'>New</Status> Added the `kube_client_tls_verify` option into the **whatap-control-plane-helper** container.
+
+  :::note
+
+  If the option value is set to `false`, TLS authentication is not enforced and the authentication process can be skipped. For more information, see [the following](../../kubernetes/set-agent/#kube_client_tls_verify).
+
+  :::
+
+- <Status priority='1'>Feature</Status> Added the node status-specific count metrics to the tag count `kube_stat` category.
+
+  Count metric has been added based on the node status in the cluster. It displays the number of nodes aggregated based on the Conditions(type:Ready) field of the node.
+
+  - `ready_node`: Number of nodes whose status of **Ready** is set to `True`.
+
+  - `not_ready_node`: Number of nodes whose status of **Ready** is set to `False`.
+
+  - `unknown_node`: Number of nodes whose status of **Ready** is set to `Unknown`.
+
+  :::note
+
+  It is expressed in integer and monitors the node status in the cluster by aggregating the number of nodes for each status according to the node status.
+
+  :::
+
+- <Status priority='1'>Feature</Status> Added the count metric for each Pod status (Phase) into the tag count `kube_pod_stat` category.
+
+  Count metrics have been added based on the Pod status (Phase) in the cluster. This allows you to quickly determine the status (phase) of the Pods running in the cluster.
+
+  - `running_pod`: Number of Pods running in the current cluster.
+
+  - `succeeded_pod`: Number of Pods that have been completed normally.
+
+  - `failed_pod`: Number of failed Pods.
+
+  - `pending_pod`: Number of Pods that are not yet running.
+
+  - `unknown_pod`: Number of Pods whose status is unknown.
+
+  :::note
+
+  It is expressed in integer and monitors the Pod status in the cluster by aggregating the number of nodes for each status according to the Pod status (Phase).
+
+  :::
+
+:::info
+
+Agent download: [kube_mon_1.7.12.tar](https://repo.whatap.io/docker/kube_mon_1.7.12.tar)
+
+:::

@@ -1,22 +1,198 @@
 [
   {
-    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_7_4",
-    "ver": "v1.7.4",
-    "date": "2024-06-07",
+    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_7_11",
+    "ver": "v1.7.11",
+    "date": "2024-09-11",
     "Lists": [
       {
-        "ver": "v1.7.4",
-        "hash": "v174",
+        "ver": "v1.7.11",
+        "hash": "v1711",
         "product": "Kubernetes Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> It debugs the error logs that occur when agent syncing fails in the whatap-node-helper container.</p>"
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the Pod status metric to the tag count <code>kube_stat</code> category.</p>",
+        "details": "<ul>\n<li>\n<p><code>pending_pod</code>: Number of waiting Pods.</p>\n</li>\n<li>\n<p><code>running_pod</code>: Number of running Pods.</p>\n</li>\n<li>\n<p><code>succeeded_pod</code>: Number of succeeded Pods.</p>\n</li>\n<li>\n<p><code>failed_pod</code>: Number of failed Pods.</p>\n</li>\n<li>\n<p><code>unknown_pod</code>: Number of unknown Pods.</p>\n</li>\n</ul>"
       },
       {
-        "ver": "v1.7.4",
-        "hash": "v174",
+        "ver": "v1.7.11",
+        "hash": "v1711",
+        "product": "Kubernetes Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the <code>creationTimeStamp</code> field to the tagcount <code>kube_node</code> category to display the creation time of each node.</p>",
+        "details": "<p>You can trace the node creation time through the <code>creationTimeStamp</code> field.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_7_15",
+    "ver": "v1.7.15",
+    "date": "2024-10-30",
+    "Lists": [
+      {
+        "ver": "v1.7.15",
+        "hash": "v1715",
+        "product": "Kubernetes Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> In <span class=\"uitext\">Management</span> &gt; <span class=\"uitext\">Agent CONF.</span>, added the log filtering feature.</p>",
+        "details": "<p>Added the log filtering feature to control collection of specific container logs. This feature allows users to refine log collection based on the namespace, Pod name, container name, and such. It also allows or blocks log collection for specific containers if necessary.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_7_13",
+    "ver": "v1.7.13",
+    "date": "2024-10-21",
+    "Lists": [
+      {
+        "ver": "v1.7.13",
+        "hash": "v1713",
+        "product": "Kubernetes Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the <span class=\"uitext\">Analysis</span> &gt; <span class=\"uitext\">Metrics Search</span> <code>kube_ingress</code> category.</p>",
+        "details": "<p>It collects the metadata and the related information for Ingress resources. This category is scheduled to be used for implementation of dashboards related to Ingress lists and routing policies.</p>"
+      },
+      {
+        "ver": "v1.7.13",
+        "hash": "v1713",
+        "product": "Kubernetes Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the container identification-related metrics in the <span class=\"uitext\">Analysis</span> &gt; <span class=\"uitext\">Metrics Search</span> <code>kube_oom_event</code> category.</p>",
+        "details": "<p>You can identify containers when an OOMKilled event occurs by adding values for <em><strong>namespace</strong></em>, <em><strong>podUid</strong></em>, and <em><strong>containerName</strong></em> as <em><strong>tags</strong></em>.</p>"
+      },
+      {
+        "ver": "v1.7.13",
+        "hash": "v1713",
+        "product": "Kubernetes Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the port-related metrics to the <span class=\"uitext\">Analysis</span> &gt; <span class=\"uitext\">Metrics Search</span> <code>container</code> category.</p>",
+        "details": "<p>The metrics related to <strong>containerPort</strong> used by containers have been added. Kubernetes services perform routing based on container ports within the Pod, so these metrics can be used to express relationships between services, Pods, and containers.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_7_14",
+    "ver": "v1.7.14",
+    "date": "2024-10-29",
+    "Lists": [
+      {
+        "ver": "v1.7.14",
+        "hash": "v1714",
         "product": "Kubernetes Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed errors that occur while collecting the node disk performance data.</p>"
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the bug in category metrics where data continues to come in even after the process is dead.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_7_16",
+    "ver": "v1.7.16",
+    "date": "2024-11-22",
+    "Lists": [
+      {
+        "ver": "v1.7.16",
+        "hash": "v1716",
+        "product": "Kubernetes Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the feature to enable and disable data collection for etcd monitoring.</p>",
+        "details": "<ul>\n<li>\n<p>Collecting whether the etcd reader exists</p>\n</li>\n<li>\n<p>Collecting the etcd reader change trend</p>\n</li>\n<li>\n<p>Collecting the etcd commit &amp; apply trend</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v1.7.16",
+        "hash": "v1716",
+        "product": "Kubernetes Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the feature to enable and disable the Foreign Project feature.</p>",
+        "details": "<ul>\n<li>Collecting data connected with the monitoring enabled in external Kubernetes projects</li>\n</ul>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_7_10",
+    "ver": "v1.7.10",
+    "date": "2024-08-29",
+    "Lists": [
+      {
+        "ver": "v1.7.10",
+        "hash": "v1710",
+        "product": "Kubernetes Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the <strong>capacity</strong> node and <strong>allocatable</strong> related metrics to the tag count <code>kube_node</code> category.</p>",
+        "details": "<ul>\n<li>\n<p><code>allocatable_ephemeral_storage</code>: It represents ephemeral storage available to the node.</p>\n</li>\n<li>\n<p><code>capacityEphemeralStorage</code>: Total capacity of the node's ephemeral storage.</p>\n</li>\n<li>\n<p><code>capacityPods</code>: Maximum number of Pods that can be scheduled on the node.</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v1.7.10",
+        "hash": "v1710",
+        "product": "Kubernetes Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the issue where millicore values are missing in the <code>allocatable_cpu</code> metric to provide more accurate CPU allocation data.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_7_12",
+    "ver": "v1.7.12",
+    "date": "2024-09-30",
+    "Lists": [
+      {
+        "ver": "v1.7.12",
+        "hash": "v1712",
+        "product": "Kubernetes Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the tag count <code>kube_process</code> category.</p>",
+        "details": "<p>The tag count has been added to monitor Kubernetes-related processes running on the node. This allows you to trace processes running on a specific node and collect performance metrics.</p>"
+      },
+      {
+        "ver": "v1.7.12",
+        "hash": "v1712",
+        "product": "Kubernetes Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the <code>kube_client_tls_verify</code> option into the <strong>whatap-control-plane-helper</strong> container.</p>"
+      },
+      {
+        "ver": "v1.7.12",
+        "hash": "v1712",
+        "product": "Kubernetes Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the node status-specific count metrics to the tag count <code>kube_stat</code> category.</p>",
+        "details": "<p>Count metric has been added based on the node status in the cluster. It displays the number of nodes aggregated based on the Conditions(type<!-- -->:Ready<!-- -->) field of the node.</p>"
+      },
+      {
+        "ver": "v1.7.12",
+        "hash": "v1712",
+        "product": "Kubernetes Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the count metric for each Pod status (Phase) into the tag count <code>kube_pod_stat</code> category.</p>",
+        "details": "<p>Count metrics have been added based on the Pod status (Phase) in the cluster. This allows you to quickly determine the status (phase) of the Pods running in the cluster.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_7_9",
+    "ver": "v1.7.9",
+    "date": "2024-08-19",
+    "Lists": [
+      {
+        "ver": "v1.7.9",
+        "hash": "v179",
+        "product": "Kubernetes Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added collection of RSS-related metrics in the cgroup v2 environment.</p>",
+        "details": "<p><code>container::mem_totalrss</code>: This metric collects the memory RSS (Resident Set Size) of the container in the cgroup v2 environment. This metric indicates the amount of physical memory the container is actually using.</p>"
+      },
+      {
+        "ver": "v1.7.9",
+        "hash": "v179",
+        "product": "Kubernetes Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the metrics for whether container's request and limit are set.</p>",
+        "details": "<ul>\n<li>\n<p><strong>Memory-related metrics</strong></p>\n<ul>\n<li>\n<p><code>container::memory_limit_contained</code>: This metric indicates whether the container's memory limit is set. If the value is <code>true', it indicates the limit is set. If the value is </code>false', it indicates the limit is not set.</p>\n</li>\n<li>\n<p><code>container::memory_request_contained</code>: This metric indicates whether the container's memory request is set. If the value is <code>true', it indicates the request is set. If the value is </code>false', it indicates the request is not set.</p>\n</li>\n</ul>\n</li>\n<li>\n<p><strong>CPU-related metrics</strong></p>\n<ul>\n<li>\n<p><code>container::cpu_limit_contained</code>: This metric indicates whether the container's CPU limit is set. If the value is <code>true', it indicates the limit is set. If the value is </code>false', it indicates the limit is not set.</p>\n</li>\n<li>\n<p><code>container::cpu_request_contained</code>: This metric indicates whether the container's CPU request is set. If the value is <code>true', it indicates the request is set. If the value is </code>false', it indicates the request is not set.</p>\n</li>\n</ul>\n</li>\n<li>\n<p><strong>Ephemeral-Storage-related metrics</strong></p>\n<ul>\n<li>\n<p><code>container::ephemeral_storage_limit_contained</code>: This metric indicates whether the container's ephemeral-storage limit is set. If the value is <code>true', it indicates the limit is set. If the value is </code>false', it indicates the limit is not set.</p>\n</li>\n<li>\n<p><code>container::ephemeral_storage_request_contained</code>: This metric indicates whether the container's ephemeral-storage request is set. If the value is <code>true', it indicates the request is set. If the value is </code>false', it indicates the request is not set.</p>\n</li>\n</ul>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v1.7.9",
+        "hash": "v179",
+        "product": "Kubernetes Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added node label metrics in the list format.</p>",
+        "details": "<ul>\n<li>\n<p><code>kube_node::labelKey</code>: This metric collects the label keys of the Kubernetes node. This represents the key of each label applied to the node.</p>\n</li>\n<li>\n<p><code>kube_node::labelValue</code>: This metric collects the label values of the Kubernetes node. This represents the value of each label applied to the node.</p>\n</li>\n</ul>"
       }
     ]
   },
@@ -66,21 +242,6 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_7_5",
-    "ver": "v1.7.5",
-    "date": "2024-06-18",
-    "Lists": [
-      {
-        "ver": "v1.7.5",
-        "hash": "v175",
-        "product": "Kubernetes Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Added the metrics collection option for the disks with the nfs file system.</p>",
-        "details": "<ul>\n<li><code>collect_nfs_disk_enabled</code>: This option determines whether to collect the nfs disks. The default value is <code>true</code>.</li>\n</ul>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_7_6",
     "ver": "v1.7.6",
     "date": "2024-07-01",
@@ -103,48 +264,53 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_7_2",
-    "ver": "v1.7.2",
-    "date": "2024-06-02",
+    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_7_5",
+    "ver": "v1.7.5",
+    "date": "2024-06-18",
     "Lists": [
       {
-        "ver": "v1.7.2",
-        "hash": "v172",
+        "ver": "v1.7.5",
+        "hash": "v175",
         "product": "Kubernetes Agent",
         "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Added the following metrics in the <code>server_disk</code> category.</p>",
-        "details": "<ul>\n<li>\n<p><code>blksize</code>: Disk block size. It indicates the unit size for basic read/write on the disk.</p>\n</li>\n<li>\n<p><code>readIops</code>: Number of read operations executed per second, or input/output operations per second.</p>\n</li>\n<li>\n<p><code>writeIops</code>: Number of write operations executed per second.</p>\n</li>\n<li>\n<p><code>queueLength</code>: Queue length for disk I/O requests. It indicates the number of pending I/O requests.</p>\n</li>\n<li>\n<p><code>readBps</code>: Amount of data read per second (Bytes per second).</p>\n</li>\n<li>\n<p><code>writeBps</code>: Amount of data written per second.</p>\n</li>\n<li>\n<p><code>ioPercent</code>: Percentage of time spent on I/O operations on the disk. This represents the percentage of time used for I/O operations against the total time.</p>\n</li>\n<li>\n<p><code>totalInode</code>: Total number of inodes available in the file system.</p>\n</li>\n<li>\n<p><code>usedInode</code>: Number of inodes in use.</p>\n</li>\n<li>\n<p><code>usedInodePercent</code>: Percentage of inodes in use.</p>\n</li>\n</ul>"
+        "desc": "<p><code class=\"Feature\">Feature</code> Added the metrics collection option for the disks with the nfs file system.</p>",
+        "details": "<ul>\n<li><code>collect_nfs_disk_enabled</code>: This option determines whether to collect the nfs disks. The default value is <code>true</code>.</li>\n</ul>"
       }
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_7_9",
-    "ver": "v1.7.9",
-    "date": "2024-08-19",
+    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_7_4",
+    "ver": "v1.7.4",
+    "date": "2024-06-07",
     "Lists": [
       {
-        "ver": "v1.7.9",
-        "hash": "v179",
+        "ver": "v1.7.4",
+        "hash": "v174",
         "product": "Kubernetes Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added collection of RSS-related metrics in the cgroup v2 environment.</p>",
-        "details": "<p><code>container::mem_totalrss</code>: This metric collects the memory RSS (Resident Set Size) of the container in the cgroup v2 environment. This metric indicates the amount of physical memory the container is actually using.</p>"
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> It debugs the error logs that occur when agent syncing fails in the whatap-node-helper container.</p>"
       },
       {
-        "ver": "v1.7.9",
-        "hash": "v179",
+        "ver": "v1.7.4",
+        "hash": "v174",
         "product": "Kubernetes Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the metrics for whether container's request and limit are set.</p>",
-        "details": "<ul>\n<li>\n<p><strong>Memory-related metrics</strong></p>\n<ul>\n<li>\n<p><code>container::memory_limit_contained</code>: This metric indicates whether the container's memory limit is set. If the value is <code>true', it indicates the limit is set. If the value is </code>false', it indicates the limit is not set.</p>\n</li>\n<li>\n<p><code>container::memory_request_contained</code>: This metric indicates whether the container's memory request is set. If the value is <code>true', it indicates the request is set. If the value is </code>false', it indicates the request is not set.</p>\n</li>\n</ul>\n</li>\n<li>\n<p><strong>CPU-related metrics</strong></p>\n<ul>\n<li>\n<p><code>container::cpu_limit_contained</code>: This metric indicates whether the container's CPU limit is set. If the value is <code>true', it indicates the limit is set. If the value is </code>false', it indicates the limit is not set.</p>\n</li>\n<li>\n<p><code>container::cpu_request_contained</code>: This metric indicates whether the container's CPU request is set. If the value is <code>true', it indicates the request is set. If the value is </code>false', it indicates the request is not set.</p>\n</li>\n</ul>\n</li>\n<li>\n<p><strong>Ephemeral-Storage-related metrics</strong></p>\n<ul>\n<li>\n<p><code>container::ephemeral_storage_limit_contained</code>: This metric indicates whether the container's ephemeral-storage limit is set. If the value is <code>true', it indicates the limit is set. If the value is </code>false', it indicates the limit is not set.</p>\n</li>\n<li>\n<p><code>container::ephemeral_storage_request_contained</code>: This metric indicates whether the container's ephemeral-storage request is set. If the value is <code>true', it indicates the request is set. If the value is </code>false', it indicates the request is not set.</p>\n</li>\n</ul>\n</li>\n</ul>"
-      },
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed errors that occur while collecting the node disk performance data.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_7_0",
+    "ver": "v1.7.0",
+    "date": "2024-05-13",
+    "Lists": [
       {
-        "ver": "v1.7.9",
-        "hash": "v179",
+        "ver": "v1.7.0",
+        "hash": "v170",
         "product": "Kubernetes Agent",
         "type": "Feature",
-        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added node label metrics in the list format.</p>",
-        "details": "<ul>\n<li>\n<p><code>kube_node::labelKey</code>: This metric collects the label keys of the Kubernetes node. This represents the key of each label applied to the node.</p>\n</li>\n<li>\n<p><code>kube_node::labelValue</code>: This metric collects the label values of the Kubernetes node. This represents the value of each label applied to the node.</p>\n</li>\n</ul>"
+        "desc": "<p><code class=\"Feature\">Feature</code> Added data in <b>TagCount</b>.</p>",
+        "details": "<ul>\n<li>\n<p>Added the <code>reason</code> and <code>message</code> fields to the <code>kube_pod</code> category.</p>\n<ul>\n<li><code>reason</code>: Reason of the Pod status</li>\n<li><code>message</code>: Message of the Pod status</li>\n</ul>\n</li>\n<li>\n<p>Added the <code>kube_state</code> (Container state) field to the <code>container</code> category.</p>\n</li>\n<li>\n<p>Collected the pending status pod and container data (<code>kube_pending_pod</code>, <code>kube_pending_container</code>).</p>\n<p>The collected data can be seen in <span class=\"uitext\">Laboratory</span> &gt; <span class=\"uitext\">Pending Pod Status</span>.</p>\n</li>\n<li>\n<p>Collected the data related to the service (<code>kube_service</code>).</p>\n</li>\n<li>\n<p>Upon booting the agent, modify to send the user installation runtime and cluster runtime to the <code>#whatapEvent</code> category.</p>\n</li>\n</ul>"
       }
     ]
   },
@@ -163,20 +329,6 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_6_0",
-    "ver": "v1.6.0",
-    "date": "2024-04-05",
-    "Lists": [
-      {
-        "ver": "v1.6.0",
-        "hash": "v160",
-        "product": "Kubernetes Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> In <span class=\"uitext\">Cluster</span> &gt; <span class=\"uitext\">Object Manifest</span>, fixed the warning event linking logic bug.</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_6_1",
     "ver": "v1.6.1",
     "date": "2024-04-17",
@@ -187,6 +339,21 @@
         "product": "Kubernetes Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the bug where Kubernetes events are missing after a specific time.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_7_2",
+    "ver": "v1.7.2",
+    "date": "2024-06-02",
+    "Lists": [
+      {
+        "ver": "v1.7.2",
+        "hash": "v172",
+        "product": "Kubernetes Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Added the following metrics in the <code>server_disk</code> category.</p>",
+        "details": "<ul>\n<li>\n<p><code>blksize</code>: Disk block size. It indicates the unit size for basic read/write on the disk.</p>\n</li>\n<li>\n<p><code>readIops</code>: Number of read operations executed per second, or input/output operations per second.</p>\n</li>\n<li>\n<p><code>writeIops</code>: Number of write operations executed per second.</p>\n</li>\n<li>\n<p><code>queueLength</code>: Queue length for disk I/O requests. It indicates the number of pending I/O requests.</p>\n</li>\n<li>\n<p><code>readBps</code>: Amount of data read per second (Bytes per second).</p>\n</li>\n<li>\n<p><code>writeBps</code>: Amount of data written per second.</p>\n</li>\n<li>\n<p><code>ioPercent</code>: Percentage of time spent on I/O operations on the disk. This represents the percentage of time used for I/O operations against the total time.</p>\n</li>\n<li>\n<p><code>totalInode</code>: Total number of inodes available in the file system.</p>\n</li>\n<li>\n<p><code>usedInode</code>: Number of inodes in use.</p>\n</li>\n<li>\n<p><code>usedInodePercent</code>: Percentage of inodes in use.</p>\n</li>\n</ul>"
       }
     ]
   },
@@ -206,17 +373,16 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_7_0",
-    "ver": "v1.7.0",
-    "date": "2024-05-13",
+    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_6_0",
+    "ver": "v1.6.0",
+    "date": "2024-04-05",
     "Lists": [
       {
-        "ver": "v1.7.0",
-        "hash": "v170",
+        "ver": "v1.6.0",
+        "hash": "v160",
         "product": "Kubernetes Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Added data in <b>TagCount</b>.</p>",
-        "details": "<ul>\n<li>\n<p>Added the <code>reason</code> and <code>message</code> fields to the <code>kube_pod</code> category.</p>\n<ul>\n<li><code>reason</code>: Reason of the Pod status</li>\n<li><code>message</code>: Message of the Pod status</li>\n</ul>\n</li>\n<li>\n<p>Added the <code>kube_state</code> (Container state) field to the <code>container</code> category.</p>\n</li>\n<li>\n<p>Collected the pending status pod and container data (<code>kube_pending_pod</code>, <code>kube_pending_container</code>).</p>\n<p>The collected data can be seen in <span class=\"uitext\">Laboratory</span> &gt; <span class=\"uitext\">Pending Pod Status</span>.</p>\n</li>\n<li>\n<p>Collected the data related to the service (<code>kube_service</code>).</p>\n</li>\n<li>\n<p>Upon booting the agent, modify to send the user installation runtime and cluster runtime to the <code>#whatapEvent</code> category.</p>\n</li>\n</ul>"
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> In <span class=\"uitext\">Cluster</span> &gt; <span class=\"uitext\">Object Manifest</span>, fixed the warning event linking logic bug.</p>"
       }
     ]
   },
@@ -256,27 +422,6 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_5_6",
-    "ver": "v1.5.6",
-    "date": "2024-02-23",
-    "Lists": [
-      {
-        "ver": "v1.5.6",
-        "hash": "v156",
-        "product": "Kubernetes Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> In <span class=\"uitext\">Container</span> &gt; <span class=\"uitext\">Container volume</span>, added the function to view the MountType property.</p>"
-      },
-      {
-        "ver": "v1.5.6",
-        "hash": "v156",
-        "product": "Kubernetes Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> When using the IPv6 address, in <span class=\"uitext\">Container</span> &gt; <span class=\"uitext\">Container volume</span>, fixed the search issue.</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_5_7",
     "ver": "v1.5.7",
     "date": "2024-03-07",
@@ -306,52 +451,23 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_5_2",
-    "ver": "v1.5.2",
-    "date": "2024-01-26",
+    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_5_3",
+    "ver": "v1.5.3",
+    "date": "2024-01-30",
     "Lists": [
       {
-        "ver": "v1.5.2",
-        "hash": "v152",
-        "product": "Kubernetes Agent",
-        "type": "Changed",
-        "desc": "<li><code class=\"Changed\">Changed</code> Modified to transmit the master agent version to the namespace project.</li>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_5_5",
-    "ver": "v1.5.5",
-    "date": "2024-02-14",
-    "Lists": [
-      {
-        "ver": "v1.5.5",
-        "hash": "v155",
+        "ver": "v1.5.3",
+        "hash": "v153",
         "product": "Kubernetes Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the issue where the master agent generates logs at an interval of 30 seconds when it does not have the role for the ReplicationController list.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_5_0",
-    "ver": "v1.5.0",
-    "date": "2024-01-16",
-    "Lists": [
-      {
-        "ver": "v1.5.0",
-        "hash": "v150",
-        "product": "Kubernetes Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Added the Object Manifest collection function.</p>",
-        "details": "<p>Added the function to collect and store the cluster objects once a day at midnight in the specified time zone. To use this function, set the agent options as follows. For more information, see <a href=\"/en/kubernetes/object-manifest\">the following</a>.</p>"
+        "desc": "<p><code class=\"Fixed\">Fixed</code> The collection interval has been set to 5 seconds for <code>server_disk</code>, <code>server network</code>, and <code>server_base</code> categories when collecting metrics.</p>"
       },
       {
-        "ver": "v1.5.0",
-        "hash": "v150",
+        "ver": "v1.5.3",
+        "hash": "v153",
         "product": "Kubernetes Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Improved the performance of the control plane monitoring agent, including the performance improvements for clients that communicate with the cluster.</p>"
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> When collecting metrics, added <b>external-ip</b> and <b>internal-ip</b> of the node in the <code>kube_node</code> category.</p>"
       }
     ]
   },
@@ -370,23 +486,51 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_5_3",
-    "ver": "v1.5.3",
-    "date": "2024-01-30",
+    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_5_5",
+    "ver": "v1.5.5",
+    "date": "2024-02-14",
     "Lists": [
       {
-        "ver": "v1.5.3",
-        "hash": "v153",
+        "ver": "v1.5.5",
+        "hash": "v155",
         "product": "Kubernetes Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> The collection interval has been set to 5 seconds for <code>server_disk</code>, <code>server network</code>, and <code>server_base</code> categories when collecting metrics.</p>"
-      },
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the issue where the master agent generates logs at an interval of 30 seconds when it does not have the role for the ReplicationController list.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_5_2",
+    "ver": "v1.5.2",
+    "date": "2024-01-26",
+    "Lists": [
       {
-        "ver": "v1.5.3",
-        "hash": "v153",
+        "ver": "v1.5.2",
+        "hash": "v152",
         "product": "Kubernetes Agent",
         "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> When collecting metrics, added <b>external-ip</b> and <b>internal-ip</b> of the node in the <code>kube_node</code> category.</p>"
+        "desc": "<li><code class=\"Changed\">Changed</code> Modified to transmit the master agent version to the namespace project.</li>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_5_6",
+    "ver": "v1.5.6",
+    "date": "2024-02-23",
+    "Lists": [
+      {
+        "ver": "v1.5.6",
+        "hash": "v156",
+        "product": "Kubernetes Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> In <span class=\"uitext\">Container</span> &gt; <span class=\"uitext\">Container volume</span>, added the function to view the MountType property.</p>"
+      },
+      {
+        "ver": "v1.5.6",
+        "hash": "v156",
+        "product": "Kubernetes Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> When using the IPv6 address, in <span class=\"uitext\">Container</span> &gt; <span class=\"uitext\">Container volume</span>, fixed the search issue.</p>"
       }
     ]
   },
@@ -415,6 +559,28 @@
         "product": "Kubernetes Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\">Fixed</code> Changed the namespace project's version transmission interval: when timeout occurs after transmission in 5-second increments for 5 minutes → transmits every minute.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/k8s/k8s-1_5_0",
+    "ver": "v1.5.0",
+    "date": "2024-01-16",
+    "Lists": [
+      {
+        "ver": "v1.5.0",
+        "hash": "v150",
+        "product": "Kubernetes Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Added the Object Manifest collection function.</p>",
+        "details": "<p>Added the function to collect and store the cluster objects once a day at midnight in the specified time zone. To use this function, set the agent options as follows. For more information, see <a href=\"/en/kubernetes/object-manifest\">the following</a>.</p>"
+      },
+      {
+        "ver": "v1.5.0",
+        "hash": "v150",
+        "product": "Kubernetes Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Improved the performance of the control plane monitoring agent, including the performance improvements for clients that communicate with the cluster.</p>"
       }
     ]
   },

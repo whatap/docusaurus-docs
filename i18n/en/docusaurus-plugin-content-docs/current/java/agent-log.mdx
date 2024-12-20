@@ -164,15 +164,33 @@ It provides agent options to exclude specific log appenders. The following agent
   It is the agent option to exclude specific appenders when tracing logback-1.2.8. For example, to exclude `CONSOLE` and `ACCESS_APPENDER`, see the following example.
 
   ```ini title="whatap.conf"
+  weaving=logback-1.2.8
   # example: ignore 'CONSOLE', 'ACCESS_APPENDER' appender
   ignore_logback_appender_set=CONSOLE,ACCESS_APPENDER
   ```
+
+  :::note
+
+  - If you apply this agent option, you must additionally apply the `weaving=logback-1.2.8` option.
+
+  - `ACCESS_APPENDER` is an example value. Specify an appender name that matches your environment.
+
+  :::
 
 - **ignore_log4j_appender_set** <span class='type'>String</span> <code className="my">Java Agent v2.2.28 or later</code>
 
   It is the agent option to exclude specific appenders when tracing log4j-2.17. For example, to exclude `CONSOLE` and `ACCESS_APPENDER`, see the following example.
 
   ```ini title="whatap.conf"
+  weaving=log4j-2.17
   # example: ignore 'CONSOLE', 'ACCESS_APPENDER' appender
   ignore_log4j_appender_set=CONSOLE,ACCESS_APPENDER
   ```
+
+  :::note
+
+  - When applying this agent option, you must additionally apply the `weaving=log4j-2.17` option.
+
+  - `ACCESS_APPENDER` is an example value. Specify an appender name that matches your environment.
+
+  :::

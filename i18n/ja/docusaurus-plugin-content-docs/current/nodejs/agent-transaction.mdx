@@ -87,7 +87,7 @@ import Transactionprofileactivecolor from "../common-items/_transaction-profile-
 
 以下は、アプリケーションで発生する例外を管理およびモニタリングするためのオプションです。特定の例外を無視したり、HTTPステータスコードがエラーの場合にエラーとして処理可否を設定できます。例外として処理された項目は、<Cmdname sid="side_hitmap" className="uitext" />または<Cmdname sid="TTL06209" className="uitext" />画面で正常なトランザクションとして表示されます。
 
-- **httpc_status_ignore** <span class='type'>String</span>
+- **httpc_status_ignore** <span class='type'>String</span> <ScrollToLink anchor='httpc_status_ignore' />
 
   HTTPのステータスコードがエラー(`HTTPC_ERROR`)の場合、無視します。複数の値を対象にする場合は、コンマ(,)を区切り文字として使用してください。
 
@@ -101,7 +101,7 @@ import Transactionprofileactivecolor from "../common-items/_transaction-profile-
 
   :::
 
-- **httpc_status_ignore_set** <span class='type'>String</span>
+- **httpc_status_ignore_set** <span class='type'>String</span> <ScrollToLink anchor='httpc_status_ignore_set' />
 
   `whatap.error.HTTPC_ERROR`を無視します。複数の値を対象とする場合は、コンマ(,)を区切り文字として使用してください。
 
@@ -169,6 +169,12 @@ import Transactionprofilehttp from "../common-items/_transaction-profile-http.md
 
   :::
 
+- **ignore_http_lost_connection** <span class='type'>Boolean</span>
+
+  既定値`false`
+
+  `true`に設定する場合、Lost connectionエラーを収集しません。
+
 - **profile_http_header_ignore_keys** <span class='type'>String</span>
 
   既定値 `Cookie,cookie,accept,user-agent,referer`
@@ -179,7 +185,7 @@ import Transactionprofilehttp from "../common-items/_transaction-profile-http.md
 
   設定されたキーに該当するパラメータ情報のみを記録します。複数を登録するときは、コンマ(,)を区切り文字として利用してください。設定しない場合、すべてのパラメータ情報が記録されます。
 
-- **status_ignore** <span class='type'>String</span>
+- **status_ignore** <span class='type'>String</span> <ScrollToLink anchor='status_ignore' />
 
   無視するHTTPのステータスコードを設定できます。複数の値を対象とする場合は、コンマ(,)を区切り文字として使用してください。
 
@@ -188,7 +194,7 @@ import Transactionprofilehttp from "../common-items/_transaction-profile-http.md
   status_ignore=408,500
   ```
 
-- **status_ignore_set** <span class='type'>String</span>
+- **status_ignore_set** <span class='type'>String</span> <ScrollToLink anchor='status_ignore_set' />
 
   HTTPステータスリターンコードの中で無視したいコードをURL単位で設定できます。
 
@@ -197,7 +203,7 @@ import Transactionprofilehttp from "../common-items/_transaction-profile-http.md
   status_ignore_set=/api/test/timeout/{time}:408,/error:500
   ```
 
-- **transaction_status_error_enable** <span class='type'>Boolean</span>
+- **transaction_status_error_enable** <span class='type'>Boolean</span> <ScrollToLink anchor='transaction_status_error_enable' />
 
   既定値 `true`
 

@@ -39,7 +39,7 @@ The following agent options allow you to trace the execution paths of each trans
 
   If the option value is set to `true`, the full name of the application appears before the URL of the transaction.
 
-- **trace_db_command_methods** <span class='type'>String</span>
+- **trace_db_command_methods** <span class='type'>String</span> <Status priority='1'>Deprecated</Status>
 
   Enter the name of the method to monitor in the `System.Data.Common.DbCommand` class. To set multiple values, use comma (,) as the delimiter. To monitor all methods, apply as follows:
 
@@ -57,19 +57,19 @@ The following agent options allow you to trace the execution paths of each trans
 
   Default `1000`(1 second) / Min `100`(0.1 second)
 
-  It collects data only when the response time is longer than the option value you set. It collects up to 100 cases per second.
+  When the `expand_transaction_level` option is `true`, data is collected only when the response time is longer than the set time. The data is collected up to 100 cases per second.
 
 ## Exceptional handling {#exception}
 
 The following options are used to manage and monitor exceptions that occur in applications. You can check the stability of applications by registering business exceptions and collecting related statistics. You can also set whether to ignore specific exceptions or treat them as errors if the HTTP status code is an error. Exception-handled items appear as normal transactions in the <Cmdname sid="side_hitmap" className="uitext" /> or <Cmdname sid="TTL06209" className="uitext" /> window.
 
-- **transaction_status_error_enable** <span class='type'>Boolean</span>
+- **transaction_status_error_enable** <span class='type'>Boolean</span> <ScrollToLink anchor='transaction_status_error_enable' />
 
   Default `true`
 
   If an HTTP status code that is not a normal response such as HTTP 401 or 403, is returned, set whether or not to handle it as an error.
 
-- **status_ignore** <span class='type'>String</span>
+- **status_ignore** <span class='type'>String</span> <ScrollToLink anchor='status_ignore' />
 
   You can set the HTTP status codes to ignore. For multiple values, use comma (,) as the delimiter.
 
@@ -84,7 +84,7 @@ The following options are used to manage and monitor exceptions that occur in ap
 
   :::
 
-- **status_ignore_set** <span class='type'>String</span>
+- **status_ignore_set** <span class='type'>String</span> <ScrollToLink anchor='status_ignore_set' />
 
   `whatap.error.STATUS_ERROR` is ignored. For multiple values, use comma (,) as the delimiter.
 

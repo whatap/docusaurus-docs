@@ -51,7 +51,7 @@ This event occurs when you access the web application and the page content is fu
 | ---------------------------------- | :------------------------------------------: | ------------------------------------------------------------------------------------------------------ | ----------------------------- |
 | navigationTiming.startTimeStamp    |      <span class='type'>TimeStamp</span>     | It is the time stamp of `navigationStart`. Time stamp of the page that starts loading                  | 1658057382311                 |
 | navigationTiming.eventID           |        <span class='type'>Long</span>        | This is a unique ID issued when a page loading event occurs.                                           | x7mkg24tags307                |
-| navigationTiming.redirect          |       <span class='type'>TimeSet</span>      | Time taken for HTTP redirection.                                                                       | \{duration: 10, start: 315\}   |
+| navigationTiming.redirect          |       <span class='type'>TimeSet</span>      | Time taken for HTTP redirection.                                                                       | \{duration: 10, start: 315}   |
 | navigationTiming.cache             |       <span class='type'>TimeSet</span>      | Time taken to load the app cache resources.                                                            | \{duration: 5, start: 325\}   |
 | navigationTiming.dns               |       <span class='type'>TimeSet</span>      | Time taken for browsing the website domain.                                                            | \{duration: 5, start: 330\}   |
 | navigationTiming.connect           |       <span class='type'>TimeSet</span>      | Time taken for TCP connection setting.                                                                 | \{duration: 6, start: 335\}   |
@@ -66,6 +66,43 @@ This event occurs when you access the web application and the page content is fu
 | navigationTiming.frontendTime      |       <span class='type'>TimeSet</span>      | Time from browser parsing completion to load event completion.                                         | \{duration: 51, start: 441\}  |
 | navigationTiming.loadTime          | <span class='type'>HighResolutionTime</span> | Time from `navigationStart` to `loadEventEnd`.                                                         | 492                           |
 | totalDuration                      | <span class='type'>HighResolutionTime</span> | This is the time between `navigationStart` and completion of importing the final page.                 | 550                           |
+
+</div>
+
+## Page load time {#pageloadtime}
+
+[Pageload time](https://developer.mozilla.org/docs/Glossary/Page_load_time) is the total time from the moment the web browser requests the URL of a page until all of the page's resources (HTML, CSS, JavaScript, images, etc.) are downloaded and processed, and the browser completely renders the page so that it is available.
+
+To collect page load times, browser agents collect them through the **Navigation Timing API**, one of the web APIs provided by the browser. This API provides measurements of the times for each step (e.g. request start, response, rendering start and completion).
+
+### Navigation timing
+
+There are measurement events accessible through the [PerformanceTiming](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming) interface that are measured in milliseconds. The following is a list of those events in the order in which they occur.
+
+![Navigation timing](https://w3c.github.io/navigation-timing/timestamp-diagram.svg)
+
+<div className="tableScroll">
+
+| Event                        | Description                                                                         | Remarks                                                                                                                                                                                            |
+| ---------------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `navigationStart`            | Starting point of page navigation.                                                  | -                                                                                                                                                                                                  |
+| `redirectStart`              | First HTTP redirection time point.                                                  | If there is no redirection, the value is `0`.                                                                                                                                                      |
+| `redirectEnd`                | Time point when the response to the last redirection has been received.             | If there is no redirection, the value is `0`.                                                                                                                                                      |
+| `fetchStart`                 | Time point when the browser begins the process of fetching resources.               | Time point when cache lookup has begun.                                                                                                                                                            |
+| `domainLookupStart`          | Starting point for DNS lookups for domain names.                                    | The browser begins converting the host name in the URL into an IP address. It can have the same value as `fetchStart` if there is cached DNS information or information in the local _hosts_ file. |
+| `domainLookupEnd`            | Time point when the DNS lookup has been completed.                                  | The browser successfully obtains the IP address for the domain. Even if the DNS lookup fails, it is logged with this time point.                                                                   |
+| `connectStart`               | Time point when the connection to the server has begun.                             | TCP connection begins. If you are reusing the persistent connection, you can have the same value as `domainLookupEnd`.                                                                             |
+| `connectEnd`                 | Time point when the connection to the server has been established completely.       | The TCP handshake is completed. For HTTPS, the SSL/TLS handshake is also completed by this time point. Even if the connection fails, it is logged with this time point.                            |
+| `secureConnectionStart`      | Time point when the HTTPS connection has begun.                                     | It is recorded only when applicable.                                                                                                                                                               |
+| `requestStart`               | Time point when requesting resources to the server has begun.                       | -                                                                                                                                                                                                  |
+| `responseStart`              | Time point when receiving the first byte of the response from the server has begun. | It is used to calculate the server's initial response time (Time to First Byte, TTFB) starting from the time the first byte of the HTTP response header was received.                              |
+| `responseEnd`                | Time point at which the last byte has been received from the server.                | Time point when the entire response (header and body) has been received. If you have a redirection response, it is the time point when the last byte of the final response has been received.      |
+| `domInteractive`             | It is the time point when DOM parsing has been finished and the script is ready.    | -                                                                                                                                                                                                  |
+| `domContentLoadedEventStart` | Time point when the `DOMCONTENTLOADED` event has occurred.                          | At this time, the loading and parsing of the HTML document have been completed and the DOM tree has been completely built.                                                                         |
+| `domContentLoadedEventEnd`   | Time point at which all `DOMContentLoaded` event handlers have completed execution. | -                                                                                                                                                                                                  |
+| `domComplete`                | Time point at which both DOM loading and subresource loading have been completed.   | -                                                                                                                                                                                                  |
+| `loadEventStart`             | Time point just before the load event.                                              | Time point immediately after the DOM is fully configured and all resources have been loaded. Moment just before the `window.onload` event handler has been executed.                               |
+| `loadEventEnd`               | Time point at which all load event handlers have completed execution.               | The page and all subresources are fully loaded.                                                                                                                                                    |
 
 </div>
 

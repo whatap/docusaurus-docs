@@ -1,0 +1,269 @@
+---
+id: pageload-stat
+title: Page load statistics
+description: The page load statistics provide load performance data for each page URL path on the website.
+keywords:
+  - Browser Monitoring
+  - Page Load
+  - Statistic
+---
+
+{/* Note */}
+import TimequeryNotes from "../common-items/_browser-stat-time-query-note.mdx"
+
+Home &gt; Select Project &gt; <Cmdname sid="side_statistics" className="uitext" /> &gt; <Cmdname sid="side_pageLoadStatistics" className="uitext" />
+
+The <Cmdname sid="side_pageLoadStatistics" className="uitext" /> menu provides the load performance data for each page of the website. This menu allows you to trace in detail how each page is loaded, identify pages that are underperforming, and analyze the performance of improved pages. You can also get useful information to improve user experience of the web application.
+
+- It provides load performance statistics for each page URL path.
+
+- You can check the statistics based on the average, maximum, minimum, and percentile.
+
+- You can analyze the performance in detail by filtering on the detailed time while page loading.
+
+- The navigation timing API provides statistics by collecting the time data for each step for page loading.
+
+:::note
+
+For more information about the data collected in <Cmdname sid="side_pageLoadStatistics" className="uitext" />, see [the following](collect-data#pageloadtime).
+
+:::
+
+## Basic usage guide
+
+You can check various performance metrics such as **page load time**, **DOM load time**, **network latency**, and **resource load time** based on the URL path of the page. This allows you to evaluate the performance of each page and determine whether it has been optimized.
+
+<ImgLang img="browser-pageload-statistics.png" desc="Page Load Statistics" />
+
+1. Set the date and time to view the performance metrics in <Cmdname sid="time" className="uitext" />.
+
+2. Select the desired criteria in <Cmdname sid="TTL08276" className="uitext" />.
+
+3. Select ![Search icon](/img/ic-search-on-press.svg) on the upper right of the screen.
+
+You can see the performance metrics of the time range searched for through graph charts and lists in each section. If you hover the mouse over the graph chart in each section, the metric information for the time zone appears.
+
+:::note
+
+For more information about <Cmdname sid="TTL08276" className="uitext" />, see [the following](#statcriteria).
+
+:::
+
+### Setting the lookup time
+
+Set the date and time to view the performance metrics in <Cmdname sid="time" className="uitext" />.
+
+- Select the green button on the utmost right, you can select from various time ranges. 
+
+  <ImgLang img="browser-statistics-set-time-select-options.png" className="width-600" desc="Time setting" />
+
+- By selecting ![Left arrow icon](/img/left-arrow.svg) or ![Right arrow icon](/img/right-arrow.svg), you can shift the time. The shifting interval is the time interval set on the right.
+
+- Click the Date & Time area to manually select the desired date and time.
+
+  <ImgLang img="browser-statistics-set-custom-time.png" desc="Time setting" />
+
+:::note
+
+- The maximum time you can select is 3 days, and the minimum selectable time is 5 minutes.
+
+- If you select a range of 2 hours or less, data is retrieved every 5 minutes. If it exceeds 2 hours, data is retrieved every 1 hour.
+
+:::
+
+### Selecting the statistical criteria {#statcriteria}
+
+<Cmdname sid="TTL08276" className="uitext" /> is an option that allows users to check the statistical metrics to analyze based on the following selection criteria:
+
+- <Cmdname sid="merge_avg" className="uitext" />: It provides statistics by calculating the average load times for each page.
+
+- <Cmdname sid="merge_max" className="uitext" />: It provides statistics based on the maximum load times for each page. It indicates that you can identify which page URL has the most inefficient page load time.
+
+- <Cmdname sid="merge_min" className="uitext" />: It provides statistics based on the minimum load times for each page. This allows you to identify which page URL has been loaded under the most optimal conditions. It is useful when setting the performance optimization goals.
+
+- <Cmdname sid="ITM08291" className="uitext" />: It provides statistics of the load times for each page percentile.
+
+  - <Cmdname sid="TTL08288" className="uitext" replace="95" />: It is the slowest 5% of page load times, which represents the experience of the top 5% of users who experienced the slowest page load times.
+
+  - <Cmdname sid="TTL08288" className="uitext" replace="90" />: This page load time corresponds to the slowest 10% of users, and is useful to identify performance issues primarily among slow user group.
+
+  - <Cmdname sid="TTL08288" className="uitext" replace="75" />: It displays the load times of the top 25% of users whose page load times are slower than the bottom 75%.
+
+  - <Cmdname sid="TTL08288" className="uitext" replace="50" />: The median means that half of all users loaded the page faster than the time, and half of them loaded the page slower.
+
+{/* Tip */}
+import CriteriaTip from "../common-items/_browser-stat-criteria-tip.mdx";
+
+<CriteriaTip/>
+
+### Downloading the viewed result
+
+You can download the searched data as a CSV format file. Select ![Download icon](/img/ic-csv-download-ms.svg) on the upper right of the screen. The CSV file name has the format of *LoadStatistics_`YYYYMMDD_HHMMSS`.csv*.
+
+## Screen layout
+
+### <Cmdname sid="TTL08305" /> {#TTL08305}
+
+This chart visualizes the trend for page load counts and performance metrics (response time) over time. This graph allows you to see if there have been any performance fluctuations over a specific period. 
+
+- If you select the blue bar graph for a specific time, the data can be viewed in the <Cmdname sid="TTL08306" className="uitext" />, <Cmdname sid="TTL08304" className="uitext" />, <Cmdname sid="TTL08445" className="uitext" /> sections for the selected time range.
+
+  <ImgLang img="browser-statistics-pageload-trend-select-time.png" desc="Page load performance trend" />
+
+- Depending on the options selected in <Cmdname sid="TTL08276" className="uitext" />, the items displayed in the chart are changed.
+
+#### <Cmdname sid="TTL08276" />: <Cmdname sid="merge_avg" />/<Cmdname sid="merge_max" />/<Cmdname sid="merge_min" /> {#Statisticalcriteria}
+
+<ImgLang img="browser-statistics-pageload-trend.png" desc="Page load performance trend" />
+
+- The blue bar graph is the number of pages loaded for a specific time zone.
+
+- The purple line graph is the average page loading time for the time zone.
+
+#### <Cmdname sid="TTL08276" />: <Cmdname sid="ITM08291" /> {#percent}
+
+<ImgLang img="browser-statistics-pageload-trend-pecent.png" desc="Page load performance trend" />
+
+- Blue represents <Cmdname sid="TTL08288" className="uitext" replace="50" />, purple <Cmdname sid="TTL08288" className="uitext" replace="75" />, orange <Cmdname sid="TTL08288" className="uitext" replace="90" />, and green <Cmdname sid="TTL08288" className="uitext" replace="95" />.
+
+- The blue bar graph is the number of pages loaded for a specific time zone.
+
+### <Cmdname sid="TTL08306" /> {#TTL08306}
+
+Page groups are grouped by 5-minute or 1-hour intervals and the top 10 page groups with the longest page load times per unit are displayed in a time series graph. This graph displays the data sorted in descending order of the page load time.
+
+<ImgLang img="browser-statistics-pageload-time-top.png" desc="Top 10 page load times" />
+
+- The bar chart at the bottom of the section displays the average values for each page group in the time series graph.
+
+- If <Cmdname sid="TTL08276" className="uitext" /> is <Cmdname sid="merge_avg" className="uitext" /> or <Cmdname sid="merge_max" className="uitext" />, <Cmdname sid="merge_min" className="uitext" />, the elapsed time is expressed with the selected reference value.
+
+- If <Cmdname sid="TTL08276" className="uitext" /> is <Cmdname sid="ITM08291" className="uitext" />, the elapsed time is expressed as <Cmdname sid="TTL08288" className="uitext" replace="95" />.
+
+- If data is not collected in continuous time intervals but exists only in specific intervals, a bar graph is displayed only.
+
+### <Cmdname sid="TTL08304" /> {#TTL08304}
+
+Page groups are grouped by 5-minute or 1-hour intervals and the top 10 page groups with the highest page load counts per unit are displayed in a time series graph. This graph displays the data sorted in descending order of the page load count.
+
+<ImgLang img="browser-statistics-pageload-count-top.png" desc="Top 10 page load counts" />
+
+- The bar chart at the bottom of the section displays the sum values for each page group in the time series graph.
+
+- If data is not collected in continuous time intervals but exists only in specific intervals, a bar graph is displayed only.
+
+### <Cmdname sid="TTL08445" /> {#TTL08445}
+
+It is a list where you can check various performance metrics based on the page group.
+
+<ImgLang img="browser-statistics-pageload-group-list.png" desc="Page group list" />
+
+- If you select <Cmdname sid="TTL08276" className="uitext" /> as <Cmdname sid="ITM08291" className="uitext" />, you can additionally check the number of cases for each page group and the elapsed time for <Cmdname sid="TTL08288" className="uitext" replace="50" />, <Cmdname sid="TTL08288" className="uitext" replace="75" />, <Cmdname sid="TTL08288" className="uitext" replace="90" />, and <Cmdname sid="TTL08288" className="uitext" replace="95" />.
+
+- When you select ![Detail icon](/img/ico-detail-view.svg) <Cmdname sid="detail" className="uitext" /> on the utmost left of the list, the <Cmdname sid="TTL08448" className="uitext" /> screen appears. You can check detailed statistical information of the selected page group through the <Cmdname sid="TTL08448" className="uitext" /> screen. For more information, see [the following](#TTL08448).
+
+- You can move to the <Cmdname sid="side_userSessionEventSearch" className="uitext" /> menu by selecting ![Right arrow icon](/img/right-arrow.svg) in the <Cmdname sid="page_group" className="uitext" /> column. You can check the results by applying the selected page group URL and query time as filters.
+
+- ![Column Icon](/img/ic-column.svg) <Cmdname sid="BTN06441" className="uitext" />: You can hide the table header columns or add desired items. You can also change the column order. For more information, see [the following](#setcolumn).
+
+<TimequeryNotes sid="side_pageLoadStatistics" img="browser-statistics-pagegroup-header.png" />
+
+### <Cmdname sid="TTL08448" /> {#TTL08448}
+
+You can check the statistics details for the selected page group.
+
+- <Cmdname sid="TTL08447" className="uitext" />
+
+  <ImgLang img="browser-statistics-pageload-timeline.png" desc="Page load timeline" />
+
+  It provides the overall page loading performances for the web applications. It displays the page load times and the average times for each load step. You can see the overall performance of your browser applications through this. For more information, see [the following](dashboard#pageloadtimeline).
+
+  :::note
+
+  If <Cmdname sid="TTL08276" className="uitext" /> is <Cmdname sid="ITM08291" className="uitext" />, the page load performance is displayed as a percentage. Blue represents <Cmdname sid="TTL08288" className="uitext" replace="50" />, purple <Cmdname sid="TTL08288" className="uitext" replace="75" />, orange <Cmdname sid="TTL08288" className="uitext" replace="90" />, and green <Cmdname sid="TTL08288" className="uitext" replace="95" />.
+
+  :::
+
+- <Cmdname sid="TTL06932" className="uitext" />
+
+  <ImgLang img="browser-statistics-pageload-time.png" desc="Page load time" />
+
+  You can check the page load time over time for the selected page group. You can select various performance metrics from the selection box. For more information about the performance metrics, see [the following](#columninfo).
+
+  :::note
+
+  If <Cmdname sid="TTL08276" className="uitext" /> is <Cmdname sid="ITM08291" className="uitext" />, the page load times for each percentile are provided.
+
+  :::
+
+- <Cmdname sid="TTL06931" className="uitext" />
+
+  <ImgLang img="browser-statistics-pageload-count.png" desc="Page load count" />
+
+  You can see the page load counts over time for the selected page group.
+
+- <Cmdname sid="TTL08374" className="uitext" type="browser" /> / <Cmdname sid="TTL08374" className="uitext" type="os" /> / <Cmdname sid="TTL08374" className="uitext" type="device" />
+
+  <ImgLang img="browser-statistics-pageload-top10.png" desc="Page load top10" />
+
+  A pie chart for the top 10 browsers, operating systems, and devices is provided based on the number of page loads. This allows you to identify the environment in which users interact with the web application.
+
+- <Cmdname sid="TTL08375" className="uitext" type="browser" /> / <Cmdname sid="TTL08375" className="uitext" type="os" /> / <Cmdname sid="TTL08375" className="uitext" type="device" />
+
+  <ImgLang img="browser-statistics-pageload-time-top10.png" desc="Page load top10" />
+
+  The page load times by browser, operating system, and device are provided. This helps you check the user environment of slowed page load times.
+
+  :::note
+
+  You can change to a table list format by selecting ![Table icon](/img/ic-table.svg) on the upper right of each section. The table list format provides the additional information about the elapsed time and time details. To change back to the graph format, select ![Graph icon](/img/ic-bar-chart.svg).
+
+  :::
+
+- <Cmdname sid="TTL08446" className="uitext" />
+
+  <ImgLang img="browser-statistics-pagel-url-path-list.png" desc="Page load top10" />
+
+  It is a list of tables that allow you to view various performance metrics at a glance based on the page URL path. The list is provided based on URL paths that are not grouped by regular expressions. 
+
+  - If you select ![Detail icon](/img/ico-detail-view.svg) <Cmdname sid="detail" className="uitext" /> on the utmost left of the list, you can check the <Cmdname sid="TTL08448" className="uitext" /> screen based on the page URL path. 
+
+  - You can go to the <Cmdname sid="side_userSessionEventSearch" className="uitext" /> menu by selecting ![Right arrow icon](/img/right-arrow.svg) in the <Cmdname sid="TTL08449" className="uitext" /> column. You can check the results by applying the selected page group URL and query time as filters.
+
+  <TimequeryNotes sid="TTL08446" img="browser-statistics-pageurlpath-header.png" />
+
+{/* 데이터 수집 제한 */}
+import DatacollectInfo from "../common-items/_browser-stat-data-info.mdx";
+
+<DatacollectInfo/>
+
+## Filtering the searched results
+
+You can filter the retrieved statistical data based on <Cmdname sid="page_group" className="uitext" /> or <Cmdname sid="TTL08292" className="uitext" replace="ms" /> to focus on analyzing the desired content.
+
+### Page group filter
+
+You can select a page related to a specific URL to view its performance data. Select a desired page group in the <Cmdname sid="page_group" className="uitext" /> option.
+
+<ImgLang img="browser-statistics-page-group-filter.png" desc="Page group" />
+
+:::note
+
+The page groups can be selected up to 3 groups.
+
+:::
+
+{/* 성능 지표 필터 */}
+import PermetricsFilter from "../common-items/_browser-stat-perf-metrics-filter.mdx";
+
+<PermetricsFilter/>
+
+{/* 컬럼 설정하기 */}
+import Coumnsetting from "../common-items/_browser-stat-column-setting.mdx";
+
+<Coumnsetting/>
+
+{/* 컬럼 및 용어 안내 */}
+import Statcolumn from "../common-items/_browser-stat-column-info.mdx";
+
+<Statcolumn/>

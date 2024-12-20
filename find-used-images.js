@@ -79,6 +79,16 @@ saveImagePathsToTextFile("docs", imgFileList)
         console.error('An error occurred:', error);
     });
 
+saveImagePathsToTextFile("blog", imgFileList)
+    .catch((error) => {
+        console.error('An error occurred:', error);
+    });
+
+saveImagePathsToTextFile("crw-data", imgFileList)
+    .catch((error) => {
+        console.error('An error occurred:', error);
+    });
+
 // 모든 이미지를 리스트로 불러오기
 const directoryPath = 'static';
 

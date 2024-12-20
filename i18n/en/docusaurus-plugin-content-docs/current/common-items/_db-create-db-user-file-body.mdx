@@ -1,4 +1,4 @@
-<Xclude product="oracle-pro,cubrid">
+<Xclude product="oracle-pro,cubrid,mssql">
 
 <Tabs groupId='os'>
 
@@ -116,5 +116,58 @@ User files must be run for both the user DB (`dba`) and CUBRID Manager (`admin`)
   ```
 
 :::
+
+</InDoc>
+
+<InDoc product="mssql">
+
+<Tabs groupId='os'>
+
+<TabItem value="windows" label="Windows">
+
+```bash title="CMD"
+uid.bat "DB_USER" "DB_PASSWORD"
+```
+
+:::note
+
+- After setting it once, it collects data from the database server to be monitored through the encrypted UID.
+
+- To create a DB user file, enter the project access key in the _whatap.conf_ file. [Checking the access key](#check-accesskey)
+
+- In the Azure database environment, enter `DB_USER` in the form of DB_USER@DB_name.
+
+- On Windows, the escape character (`\`) is not required for special characters in a password. However, it is required when using double quotes (`"`) within the password.
+
+:::
+
+</TabItem>
+<TabItem value="linux" label="Linux" default>
+
+```bash title="BASH"
+./uid.sh {DB_USER} {DB_PASSWORD}
+```
+
+:::note
+
+- After setting it once, it collects data from the database server to be monitored through the encrypted UID.
+
+- To create a DB user file, enter the project access key in the _whatap.conf_ file. [Checking the access key](#check-accesskey)
+
+- In the Azure database environment, enter `DB_USER` in the form of DB_USER@DB_name.
+
+- If special characters are included in `DB_USER` or `DB_PASSWORD`, enter the escape character (\\) together before any special characters.
+
+  ```bash title='Example'
+  ./uid.sh whatap whatap\!pwd
+
+  # If there are multiple special characters, add the escape character(\) for each.
+  ./uid.sh whatap whatap\!\@pwd
+  ```
+
+:::
+
+</TabItem>
+</Tabs>
 
 </InDoc>

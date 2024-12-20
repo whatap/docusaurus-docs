@@ -1,7 +1,7 @@
 ---
 id: node-disk-list
 title: ノードディスク一覧
-description: 「Service リスト」メニューを案内します。
+description: ノードディスクの一覧メニューをご案内します。
 keywords:
   - Kubernetes
   - Kubernetesモニタリング
@@ -16,7 +16,7 @@ toc_max_heading_level: 2
 
 **要求事項**
 
-- WhaTapマスターエージェントの1.7.8バージョン以降が必要です。 
+- WhaTap Kubernetesエージェント1.7.8バージョン以降が必要です。 
 
 - Kubernetesクラスタープロジェクト(<code class='my'>CP</code>)の場合、該当メニューを照会できます。
 
@@ -66,13 +66,13 @@ import K8slistcl from "../common-items/_k8s-list-cl.mdx";
 
 ## 比較する
 
-<Cmdname sid="TTL08423" className="uitext" />オプションにより、ディスク間の使用量を比較できます。 一覧で照会したいノードディスク<Cmdname sid="TTL08423" className="uitext" />カラムのチェックボックスを選択すると、右側に該当ディスクの詳細を比較する画面が表示されます。
+<Cmdname sid="TTL08423" className="uitext" />オプションにより、ディスク間の使用量を比較できます。 一覧から照会するノードのディスク<Cmdname sid="TTL08423" className="uitext" />カラムのチェックボックスを選択すると、右側に該当ディスクの詳細を比較する画面が表示されます。
 
 <ImgLang img='k8s-node-disk-compare.png' desc='ノードディスクの比較' />
 
-例えば、***UsedSpace***および***UsedPercent***グラフを使用すると、各ディスクの時間別使用量と使用率を確認できます。 これにより、特定の時間区間でのディスク使用量の変化を直観的に確認できます。 また、下段の詳細データ一覧を通じて、各ディスクの最大および最小使用量と増減率などの詳細データを確認できます。 カラム情報は次のとおりです。 
+例えば、***UsedSpace***および***UsedPercent***グラフを使用すると、各ディスクの時間別使用量と使用率を確認できます。 これにより、特定の時間区間でのディスク使用量の変化を直観的に確認できます。 また、下の詳細データ一覧では、各ディスクの最大使用量と最小使用量、増減率などの詳細なデータが表示されます。 カラム情報は次のとおりです。 
 
-- ***OnodeName***: そのディスクが接続されているノードの名前を示します。
+- ***OnodeName***: ディスクが接続されているノードの名前です。
 
 - ***DeviceId***: ディスクのデバイスIDを意味し、ディスクの具体的なデバイスを区分できます。
 

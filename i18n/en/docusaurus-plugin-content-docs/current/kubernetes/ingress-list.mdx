@@ -1,0 +1,87 @@
+---
+id: ingress-list
+title: Ingress List
+description: The following provides you of the Ingress list menu.
+keywords:
+  - Kubernetes
+  - Kubernetes Monitoring
+  - Cluster
+  - Ingress
+toc_max_heading_level: 2
+---
+
+Home &gt; Select Project &gt; <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_ingressList" className="uitext" />
+
+:::note 
+
+The WhaTap Kubernetes agent 1.7.13 or later is required. 
+
+:::
+
+It views <Cmdname sid="side_ingressList" className="uitext" />. Requests from outside Kubernetes are ultimately routed to the applications inside the container through **Ingress** and connected to a specific service or Pod depending on the Ingress configuration. Ingress Monitoring plays an important role in understanding and managing the flow of outbound traffic into the Kubernetes cluster.
+
+WhaTap's <Cmdname sid="side_ingressList" className="uitext" /> provides a list view that visualizes routing policies for each Ingress. This gives you a quick overview of how each Ingress is distributing traffic. 
+
+## Basic screen guide
+
+You can view the major Ingress policy-based data and the numbers of Pods and containers linked to each policy by status, based on the Ingress policy as follows. You can comprehensively view the connection status and major object information for each Ingress policy through the list and detailed view. You can also check the icons for each status of Pods and containers at the top of the list. 
+
+<ImgLang img='k8s-ingress-list.png' desc='Ingress list basic screen' />
+
+{/* 
+
+:::note
+
+At the top of the <Cmdname sid="side_ingressList" className="uitext" /> list, you can see status-specific icon for Pods and containers.
+
+아이콘 정보 예시 넣기 (CSS 추가 필요)
+
+::: 
+
+*/}
+
+:::note 
+
+The **Filter** and **Select Column** instructions in the list menu are the same.
+
+:::
+
+## Filtering
+
+import K8slistfilter from "../common-items/_k8s-list-filter.mdx";
+
+<K8slistfilter />
+  
+## Select Column
+
+import K8slistcl from "../common-items/_k8s-list-cl.mdx";
+
+<K8slistcl />
+
+## Display Detail
+
+When you select the ![Magnifier icon](/img/ic-search.svg) <Cmdname sid="display_detail" className="uitext" /> icon of the Ingress policy to search in the list, you can see the information details on the Ingress policy. 
+
+<ImgLang img='k8s-ingress-list-dt.png' desc='Ingress list details' />
+
+### Summary
+
+It provides <Cmdname sid="overview" className="uitext" /> analytics for Ingress basics and the selected Ingress policy. You can see the Ingress namespace, associated hosts and routes, and the backend service data with which traffic is transmitted. This allows us to look into the flow of outbound traffic and the structure of Ingress policies. Additionally, you can visualize the relationship diagram of major objects connected through the policy, allowing you to see the resource relationships within the policy at a glance. 
+
+:::note 
+
+You can see the [Object manifest](object-manifest) information at the top of the <Cmdname sid="overview" className="uitext" /> tab.
+
+:::
+
+### Service
+
+It provides a list of ***services*** linked to the selected Ingress policy. This allows you to see which services Ingress is connected to. You can view the connection status of each service and service details.
+
+### Pod
+
+It provides the <Cmdname sid="kube_pod" className="uitext" /> list linked to the selected Ingress policy. You can see the status and basic information of each connected Pod.
+
+### Container
+
+It provides the <Cmdname sid="container" className="uitext" /> list linked to the selected Ingress policy. You can see the status and performance of containers through which traffic is forwarded via Ingress policies.

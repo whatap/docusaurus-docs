@@ -6,6 +6,8 @@
 
 <InDoc product="oracle-pro,oracle"><ImgLang img='db-session-details-info-oracle-pro.png' desc='セッション詳細' /></InDoc>
 
+<InDoc product="mssql"><ImgLang img='db-session-details-info-mssql.png' desc='セッション詳細' /></InDoc>
+
 - セッションに関する情報は、既定値でリアルタイムで照会されています。 タイムセレクターの![静止アイコン](/img/ico-pause.svg)ボタンを選択すると、リアルタイム照会を中止し、中止した時間ベースのデータを確認できます。 リアルタイム照会を中止した状態でデータを更新するには、![更新アイコン](/img/ico-refresh.svg)ボタンを選択します。
 
 - **_Kill Session_**：選択したセッションを停止できます。 <Cmdname sid="session_kill" className="uitext" />画面が表示されたらパスワード(**_Parameter Key_**)を入力し、<Cmdname sid="apply" className="uitext" />ボタンを選択します。
@@ -38,9 +40,21 @@
 
 - **_Session Info_**: 選択したセッションの基本情報とステータスを含む詳細を確認できます。
 
+<Xclude product="mssql">
+
 - **_Wait Info_**: 選択したセッションの待機イベントと待ち時間の情報を提供します。 特定の作業を実行するために、データベースシステムで待機する時に発生する待機イベントに関する情報も確認できます。
 
 - **_SQL Text_** / **_Plan_**：選択したセッションのSQLクエリ文とPlan情報を確認できます。 詳細については[次の文書](#query-details)を参照してください。
+
+</Xclude>
+
+<InDoc product="mssql">
+
+- **_Stat_**：選択したセッションの様々な性能メトリクスと統計情報を提供します。 セッションで実行された作業のタイプと回数、リソース使用量などが含まれます。
+
+- **_Request SQL_** / **_Plan_**：選択したセッションのSQLクエリ文とPlan情報を確認できます。 詳細については[次の文書](#query-details)を参照してください。
+
+</InDoc>
 
 <InDoc product="postgresql">
 

@@ -1,0 +1,77 @@
+WhaTapモニタリングでは、プラットフォーム全体で自動的に検出および生成される共用イベントを提供します。 この文書は、システムによって発生するイベントのタイプと発生条件、対応方法について案内します。
+
+## EVENT_BLOCKED_BY_SYSTEM
+
+プロジェクトで短時間で過度なイベントが発生すると、WhaTapシステムがこれを探知してイベントを遮断し、次のメッセージをユーザーに送信します。 イベントがブロックされている場合は、ユーザーのイベント設定をチェックします。
+
+<ImgLang img="common-alert-event-blocked-by-system.png" desc="EVENT_BLOCKED_BY_SYSTEM" className="width-600" />
+
+### ブロックの基準
+
+イベントをブロックする基準は以下の通りです。
+
+1. 一つのエージェントで**1分**内に**10個**のイベントが発生すると、そのエージェントで発生するイベントをブロックします。
+
+2. **1**の場合によりイベントがブロックされたエージェントが**1分**内に**3個**以上になる場合、プロジェクト全体で発生するイベントをブロックします。
+
+3. 一つのプロジェクトで**1分**内に**100個**のイベントが発生すると、プロジェクト全体で発生するイベントをブロックします。
+
+### 解除方法
+
+システムによってイベントがブロックされた場合、1分間ターゲットエージェントまたはプロジェクトでイベントが発生しないようにする必要があります。 
+
+- <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" />メニューで設定したイベントをすべて無効にします。 **イベント設定をチェックして、過度なイベントが発生しないようにしきい値を調整する必要があります**。
+
+- イベントを設定する前に<Cmdname sid="simulation" className="uitext" />機能を活用してイベント発生回数を予測できます。
+
+:::note
+
+<Cmdname sid="side_eventSetting" className="uitext" />メニューの詳細は、次の文書を参照してください。
+
+<InDoc product="java,php,python,nodejs,dotnet,golang">
+
+- <a href="warning-notice"><Cmdname sid="side_eventSetting" className="uitext" /> &gt; <Cmdname sid="application" className="uitext" /></a>
+
+</InDoc>
+
+<InDoc product="server">
+
+- <a href="warning-notice"><Cmdname sid="side_eventSetting" className="uitext" /> &gt; <Cmdname sid="server" className="uitext" /></a>
+
+</InDoc>
+
+<InDoc product="kubernetes">
+
+- <a href="container-warning-notice"><Cmdname sid="side_eventSetting" className="uitext" /> &gt; <Cmdname sid="container" className="uitext" /></a>
+
+</InDoc>
+
+<InDoc product="postgresql,oracle,oracle-v1,oracle-pro,mysql,mssql,mssql-v1,tibero,cubrid,cubrid-v1,altibase,altibase-v1,redis,mongodb">
+
+- <a href="warning-notice"><Cmdname sid="side_eventSetting" className="uitext" /> &gt; <Cmdname sid="database" className="uitext" /></a>
+
+</InDoc>
+
+<Xclude product="amazon-cloudwatch,amazon-ecs,azure,oracle-cloud,ncloud,aws-log,log">
+
+- <a href="metric-warning-notice"><Cmdname sid="side_eventSetting" className="uitext" /> &gt; <Cmdname sid="metrics" className="uitext" /></a>
+
+- <a href="warning-notice-v2"><Cmdname sid="side_eventSetting" className="uitext" /> <code className="newfunc">New</code> &gt; <Cmdname sid="default" className="uitext" /></a>
+
+- <a href="metric-warning-notice-new"><Cmdname sid="side_eventSetting" className="uitext" /> <code className="newfunc">New</code> &gt; <Cmdname sid="metrics" className="uitext" /></a>
+
+</Xclude>
+
+<InDoc product="amazon-cloudwatch,amazon-ecs,azure,oracle-cloud,ncloud">
+
+<a href="metric-warning-notice"><Cmdname sid="side_eventSetting" className="uitext" /> &gt; <Cmdname sid="metrics" className="uitext" /></a>
+
+</InDoc>
+
+<InDoc product="aws-log,log">
+
+<a href="set-notice"><Cmdname sid="side_eventSetting" className="uitext" /> &gt; <Cmdname sid="log" className="uitext" /></a>
+
+</InDoc>
+
+:::

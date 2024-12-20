@@ -1,0 +1,353 @@
+---
+slug: 2024-3q-summary
+title: Third quarter guidance
+authors: ysj
+date: 2024-10-21T09:30
+toc_max_heading_level: 2
+tags:
+  - New features
+  - 2024
+---
+
+Here’s an overview of new features and notable changes of WhaTap’s 3rd quarter services in 2024. Take a look at new features offered by WhaTap at a glance.
+
+<ImgLang img='changelog/changelog-new3.png' desc='New features' />
+
+<div class ='faq'>
+
+| **Common** |
+| ---------- |
+
+> - The <Cmdname sid="side_eventSettingV2" className="uitext" /> menu has been improved.
+> - The `Application`, `Kubernetes`, and `Database` product suites newly provided the <Cmdname sid="side_metricsChart" className="uitext" /> <code class="newfunc">New</code> menu. 
+
+| **Application** |
+| --------------- |
+
+> Common menus such as <Cmdname sid="side_statistics" className="uitext" /> and <Cmdname sid="side_agentsConfiguration" className="uitext" /> have been improved.
+
+| **Server** |
+| ---------- |
+
+> - The Unix **HP-UX** installation package has been provided.
+> - The <Cmdname sid="side_serverInventory" className="uitext" /> menu has been newly provided.
+
+| **Kubernetes** |
+| -------------- |
+
+> - New menus such as <Cmdname sid="side_nodeMap" className="uitext" />, <Cmdname sid="side_nodeTimeline" className="uitext" />, and <Cmdname sid="side_nodeDiskList" className="uitext" /> have been added, and the existing <Cmdname sid="side_nodeList" className="uitext" /> menu has been improved.
+> - The <Cmdname sid="TTL08317" className="uitext" type="container" /> and <Cmdname sid="TTL08317" className="uitext" type="kube_pod" /> features have been newly provided.
+> - The <Cmdname sid="side_kubeServiceList" className="uitext" /> menu has been newly provided.
+
+| **Database** |
+| ------------ |
+
+> - The <code class="my">V2</code> services for `Oracle`, `Altibase`, and `Cubrid` products have been provided.
+> - The **official** services for the `Oracle Pro` product have been provided. 
+> - The <Cmdname sid="side_dbScriptManager" className="uitext" /> menu has been newly provided.
+> - The functionality of the <Cmdname sid="side_multiInstance" className="uitext" /> menu has been improved.
+
+| **Browser** |
+| ----------- |
+
+> The functionality of the <Cmdname sid="TTL08103" className="uitext" /> feature has been stabilized.
+
+</div>
+
+An overview of changes other than new features for each product, the corresponding release versions, and changes in the agent can be found in the following guide.
+
+<br/>
+<br/>
+
+## `Common`
+
+In the WhaTap `Common` section in Q3 2024, the <Cmdname sid="side_eventSettingV2" className="uitext" /> menu has been newly improved and the newly reorganized <Cmdname sid="side_metricsChart" className="uitext" /> <code class="newfunc">New</code> menu has been introduced. 
+
+The searching feature has been added to the existing <Cmdname sid="side_eventSettingV2" className="uitext" /> menu and the new <Cmdname sid="side_eventSettingV2" className="uitext" /> <code class="newfunc">New</code> menu. You can search for events by entering a string based on <Cmdname sid="event_title" className="uitext" />, <Cmdname sid="ITM07659" className="uitext" /> in the search bar on the upper right of the event list, or by selecting the desired criteria from <Cmdname sid="event_name" className="uitext" /> or <Cmdname sid="event_tag" className="uitext" /> and then entering a string. 
+
+![Common event search branching example](/img/changelog/changelog-24q3-common1.png)
+
+The `Application`, `Kubernetes`, and `Database` product suites newly reorganized the <Cmdname sid="side_metricsChart" className="uitext" /> <code class="newfunc">New</code> menu. <Cmdname sid="side_metricsChart" className="uitext" /> <code class="newfunc">New</code> is designed to enable monitoring tasks more efficient by significantly improving the user experience. 
+
+![Common metrics chart v2 branching example](/img/changelog/changelog-24q3-common-metrics-chart.gif)
+
+You can easily add charts by processing ***Time***, ***Target***, and ***Interval*** settings at a time. You can also freely change the time range of the dashboard widget, and the batch change and preset features make configuration management easier. In addition, you can freely adjust the dashboard layout and widgets, making chart analysis more efficient.
+
+The following overview guide helps you understand what's new and what's not in the Common section for the 3rd quarter in 2024, along with the released versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Common_24q3 from "../crw-data/crwld-service-24q3/_import-24q3-service-Common.mdx";
+
+<Common_24q3 />
+
+</details>
+
+:::note 
+
+For more information about the <Cmdname sid="side_metricsChart" className="uitext" /> <code class="newfunc">New</code> menu, see [the following](../java/metrics-chart-v2).
+
+:::
+
+<br/>
+
+## `Application`
+
+Notable new features and major changes in the `Application` section of WhaTap Q3 2024 are provided, as well as improvements to common features. 
+
+WhaTap Application Monitoring provides the <Cmdname sid="side_statistics" className="uitext" /> menu in the third quarter of this year, which allows you to view the URLs and number of calls made by specific IPs. Additionally, the feature to view the thread status of the application where the selected agent is installed and a column for CPU increase have been added to the <Cmdname sid="side_threadList" className="uitext" /> menu under the <Cmdname sid="side_agentsConfiguration" className="uitext" /> menu. 
+
+![Application branching example](/img/changelog/chagnelog-24q3-application.png)
+
+The following overview guide helps you understand new features and major changes in the `Application` product suite in Q3, 2024, along with release versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Application_24q3 from "../crw-data/crwld-service-24q3/_import-24q3-service-Application.mdx";
+
+<Application_24q3 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+### `Java`
+
+import Java_agent_24q3 from "../crw-data/crwld-agent-24q3/_import-agent-24q3-java.mdx";
+
+<Java_agent_24q3 />
+
+<br/>
+### `PHP`
+
+import PHP_agent_24q3 from "../crw-data/crwld-agent-24q3/_import-agent-24q3-php.mdx";
+
+<PHP_agent_24q3 />
+
+<br/>
+### `Node.js`
+
+import Nodejs_agent_24q3 from "../crw-data/crwld-agent-24q3/_import-agent-24q3-nodejs.mdx";
+
+<Nodejs_agent_24q3 />
+
+<br/>
+### `Python`
+
+import Python_agent_24q3 from "../crw-data/crwld-agent-24q3/_import-agent-24q3-python.mdx";
+
+<Python_agent_24q3 />
+
+<br/>
+### `.NET`
+
+import DOTNET_agent_24q3 from "../crw-data/crwld-agent-24q3/_import-agent-24q3-dotnet.mdx";
+
+<DOTNET_agent_24q3 />
+
+<br/>
+### `Go`
+
+import Go_agent_24q3 from "../crw-data/crwld-agent-24q3/_import-agent-24q3-golang.mdx";
+
+<Go_agent_24q3 />
+
+</details>
+
+:::info
+
+- The `Node.js` product provides the log monitoring.
+
+- `.NET` products support multi-transactions.
+
+:::
+
+:::note 
+
+- For more information about the <Cmdname sid="side_statIp" className="uitext" /> menu, see [the following](../java/analysis-apm-trs#statiptx).
+
+- For more information on how to use the <Cmdname sid="side_threadList" className="uitext" /> menu, see [the following](../best-practice-guides/about-instance-performance-analysis#advanced-use-thread-list-dump).
+
+:::
+
+<br/>
+
+## `Server`
+
+Notable new features in the `Server` section of WhaTap Q3 2024 include the **Unix** `HP-UX` installation package and the new <Cmdname sid="side_serverInventory" className="uitext" /> menu. 
+
+WhaTap Server Monitoring provides a new <Cmdname sid="side_serverInventory" className="uitext" /> menu in this third quarter. The <Cmdname sid="side_serverInventory" className="uitext" /> feature systematically manages the physical and virtual characteristics of the server, as well as the operation environment. Automatically collected server components and user-defined items allow you to understand and manage the server's configuration in detail. 
+
+![Server components sc](/img/changelog/changelog-24q3-server-inventory.png)
+
+Custom columns can be configured through custom items to monitor the server status and performance in more detail and respond to issues. For example, you can add information about the operation managers for direct communication with each server manager, enabling a quick response upon an issue. Additionally, the <Cmdname sid="side_serverInventory" className="uitext" /> menu allows you to quickly filter servers that meet your criteria through three-level multi-sorting. The default sorting is performed based on ***OS type***, ***Model***, and ***Serial information***. 
+
+**Unix** `HP-UX` agent installation package is provided. `HP-UX` is the high-performance Unix operating system developed by Hewlett-Packard (HP), known for its stability and performance on Itanium and PA-RISC systems. 
+
+![Server monitoring installation page sc](/img/changelog/changelog-24q3-server-hp-ux.png)
+
+WhaTap supports `HP-UX` Itanium 11.23 and PA-RISC-UX 11.23. The `HP-UX` installation package can be easily installed with just a simple downloading and execution, and you can effectively manage and monitor the `HP-UX` operating system through WhaTap Server Monitoring.
+
+The following overview guide helps you see the new features and major changes in the `Server` products in Q3 2024 along with the release versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Server_24q3 from "../crw-data/crwld-service-24q3/_import-24q3-service-Server.mdx";
+
+<Server_24q3 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+import Server_agent_24q3 from "../crw-data/crwld-agent-24q3/_import-agent-24q3-server.mdx";
+
+<Server_agent_24q3 />
+
+</details>
+
+:::note 
+
+For more information about the <Cmdname sid="side_serverInventory" className="uitext" /> menu, see [the following]( ../server/server-inventory).
+
+:::
+
+<br/>
+
+## `Kubernetes`
+
+Notable new features and changes in the `Kubernetes` section of WhaTap Q3 2024 include new features such as <Cmdname sid="side_nodeMap" className="uitext" />, <Cmdname sid="side_nodeTimeline" className="uitext" />, <Cmdname sid="side_nodeDiskList" className="uitext" />, <Cmdname sid="side_kubeServiceList" className="uitext" /> 및 <Cmdname sid="TTL08317" className="uitext" type="container" />, and <Cmdname sid="TTL08317" className="uitext" type="kube_pod" /> . 
+
+WhaTap Kubernetes Monitoring provides numerous new features in this Q3, along with the node monitoring expansion. New menus such as <Cmdname sid="side_nodeMap" className="uitext" />, <Cmdname sid="side_nodeTimeline" className="uitext" />, and <Cmdname sid="side_nodeDiskList" className="uitext" /> have been added, and the existing <Cmdname sid="side_nodeList" className="uitext" /> menu has been improved more efficiently.
+
+You can monitor the node status from the cluster perspective via <Cmdname sid="side_nodeMap" className="uitext" />. You can intuitively see the real-time status of nodes, resource usage, and relationships between nodes, and you can customize the dashboard to suit your preferences through the settings such as grouping, threshold settings, and labels.
+
+<ImgLang img='k8s-node-map-custom.png' desc='k8s node map branching example' />
+
+In <Cmdname sid="side_nodeTimeline" className="uitext" />, you can trace the node status changes over time. For example, you can visually see the time when a specific node is removed and its status at the time point. This is useful for analyzing issues that occurred during cluster operation or past situations checking.
+
+<ImgLang img='k8s-node-timeline-stage.png' desc='k8s node timeline branching example' />
+
+You can monitor the status of individual disks mounted on the node in real time via <Cmdname sid="side_nodeDiskList" className="uitext" />. And the comparison and detailed information search of the existing <Cmdname sid="side_nodeList" className="uitext" /> menu have been improved. Instead of moving to the <Cmdname sid="side_nodeDetail" className="uitext" /> menu, the configuration, resources, metrics, and events for the selected node can be checked via the <Cmdname sid="side_nodeList" className="uitext" /> detail modal.
+
+Additionally, WhaTap Kubernetes component analysis feature has been improved. The <Cmdname sid="TTL08317" className="uitext" type="container" /> and <Cmdname sid="TTL08317" className="uitext" type="kube_pod" /> features have been newly provided to enable comprehensive analysis of the performance and status of each component. You can see the summary analysis information in the <Cmdname sid="TTL06782" className="uitext" /> tab of <Cmdname sid="side_containerMap" className="uitext" />. 
+
+![k8s performance summary branching example](/img/changelog/changelog-24q3-k8s-summary.gif)
+
+In addition, as part of the expansion of WhaTap Kubernetes monitoring information, the new <Cmdname sid="side_kubeServiceList" className="uitext" /> menu has been added, allowing you to check the configuration of each service and the status of the connected Pods. It provides the service information collected over the past one minute based on the query time. 
+
+Through the following overview guide, check the new features and major changes in the `Kubernetes` product in Q3 2024 along with the release versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Kubernetes_24q3 from "../crw-data/crwld-service-24q3/_import-24q3-service-Kubernetes.mdx";
+
+<Kubernetes_24q3 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+import Kubernetes_agent_24q3 from "../crw-data/crwld-agent-24q3/_import-agent-24q3-k8s.mdx";
+
+<Kubernetes_agent_24q3 />
+
+</details>
+
+:::note 
+
+- For more information about the <Cmdname sid="side_nodeMap" className="uitext" /> menu, see [the following](../kubernetes/node-map).
+
+- For more information about the <Cmdname sid="side_nodeTimeline" className="uitext" /> menu, see [the following](../kubernetes/node-timeline).
+
+- For more information about the <Cmdname sid="side_nodeDiskList" className="uitext" /> menu, see [the following](../kubernetes/node-disk-list).
+
+- For more information about the <Cmdname sid="TTL08317" className="uitext" type="container" /> and <Cmdname sid="TTL08317" className="uitext" type="kube_pod" /> features, see [the following](../kubernetes/container-map-target-info#kube-resource-summary-analysis).
+
+- For more information about the <Cmdname sid="side_kubeServiceList" className="uitext" /> menu, see [the following](../kubernetes/service-list).
+
+:::
+
+<br/>
+
+## `Database`
+
+In the `Database` section of WhaTap Q3 2024, the official release of **Oracle Pro**, the release of **Oracle**, **Altibase**, and **Cubrid** products <code class="my">V2</code>, the addition of the new <Cmdname sid="side_dbScriptManager" className="uitext" /> menu, and improved functionality of the <Cmdname sid="side_multiInstance" className="uitext" /> menu have been introduced.
+
+The WhaTap database product suite is transitioning to <code class="my">V2</code>. Following **Redis** and **MongoDB** in Q1, **Oracle**, **Altibase**, and **Cubrid** <code class="my">V2</code> services have been launched in Q3. The <code class="my">V2</code> had a changed structure for the data transfer pack and its UI has been improved overall. 
+
+![Oracle new branching example](/img/changelog/changelog-24q2-db.png) 
+
+The official service to **Oracle Pro** has been launched. WhaTap **Oracle Pro** monitors the performance metrics by directly accessing the memory of the database server, collecting up-to-date performance information up to 20 times per second. It minimizes the system load by not going through disk I/O and provides precise performance analysis including the query execution time and buffer cache status.
+
+<ImgLang img='db-multi-instance-oracle-pro.png' desc='Oracle v2 new branching example' />
+
+And in <Cmdname sid="side_lab" className="uitext" />, the new <Cmdname sid="side_dbScriptManager" className="uitext" /> feature has been provided. <Cmdname sid="side_dbScriptManager" className="uitext" /> helps you manage SQL scripts. You can save scripts in the agent installation path and fetch and execute them in real time by the monitoring service. This allows you to automate complex database tasks and monitor them easily.
+
+![Script manager branching example](/img/changelog/changelog-24q3-db-scm.png)
+
+It also provides new custom widgets along with improvements to the <Cmdname sid="side_multiInstance" className="uitext" /> menu. In addition to the metrics provided by default on the dashboard, you can add the desired metrics.
+
+![Custom widget branching example](/img/changelog/changelog-24q3-db-custom.png)
+
+The following overview guide helps you understand new features and major changes in the `Database` product suite in Q3 2024, along with release versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Database_24q3 from "../crw-data/crwld-service-24q3/_import-24q3-service-Database.mdx";
+
+<Database_24q3 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+### `DBX`
+
+import DBX_agent_24q3 from "../crw-data/crwld-agent-24q3/_import-agent-24q3-dbx.mdx";
+
+<DBX_agent_24q3 />
+
+</details>
+
+:::note 
+
+- For more information about the **Oracle Pro** products, see [the following](../oracle-pro/monitoring-intro).
+
+- For more information about new features in **Oracle** <code className="my">V2</code>, see [the following](../oracle/monitoring-intro#new-feature).
+
+- For more information about new feature of the **Altibase** <code className="my">V2</code>, see [the following](../altibase/monitoring-intro#new-feature).
+
+- For more information about new features of **CUBRID** <code className="my">V2</code>, see [the following](../cubrid/monitoring-intro#new-feature).
+
+- For more information about the <Cmdname sid="side_dbScriptManager" className="uitext" /> feature, see [the following](../reference/script-manager).
+
+- For more information about the custom widgets of the <Cmdname sid="side_multiInstance" className="uitext" /> menu, see [the following](../oracle/multi-instance-monitoring#customwidget).
+
+:::
+
+<br/> 
+## `Feature`
+
+WhaTap launched the **Beta** services for `Aerospike` monitoring and `Apache Pulsar` monitoring in the form of feature projects (<code class='Features'>Features</code>) in Q3 2024. It is scheduled for official release in the future, and the support scope is to be expanded. 
+
+![Feature project branching example](/img/changelog/changelog-24q3-feature.png) 
+
+:::note 
+
+- For more information about the <code class="Beta">Beta</code> `Aerospike` monitoring, see [the following](../features/aerospike-introduction).
+
+- For more information about the <code class="Beta">Beta</code> `Apache Pulsar` monitoring, see [the following](../features/apache-pulsar-introduction).
+
+:::
+
+<br/>

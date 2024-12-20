@@ -61,11 +61,11 @@ Linuxサーバーで実行可能なユーザースクリプトを定期的に実
 3. スクリプトの正常収集を確認し、次のようにWhaTapサーバーのモニタリングエージェントにスクリプトを登録してください。
 
    ```bash title='Linux Shell'
-   export USER_SCRIPT=実行するユーザースクリプトの絶対パス
+   export USER_SCRIPT=実行するユーザースクリプトのフルパス
    suco chmod +x $USER_SCRIPT
    sudo mkdir /usr/whatap/infra/ext/
    sudo cp -r $USER_SCRIPT /usr/whatap/infra/ext/
-   export RUNAS_USER=ユーザースクリプトを実行するアカウント。rootアカウントを除く
+   export RUNAS_USER=ユーザースクリプトを実行するアカウント、rootアカウントを除く
    sudo WHATAP_HOME=/usr/whatap/infra/conf /usr/whatap/infra/whatap_infrad --user=$RUNAS_USER init-script
    sudo service whatap-infra restart
    ```

@@ -1,4 +1,4 @@
-<Xclude product="oracle-pro,cubrid">
+<Xclude product="oracle-pro,cubrid,mssql">
 
 <Tabs groupId='os'>
 
@@ -116,5 +116,58 @@ CUBRID環境におけるユーザーファイルは、ユーザーDB(`dba`)とCU
   ```
 
 :::
+
+</InDoc>
+
+<InDoc product="mssql">
+
+<Tabs groupId='os'>
+
+<TabItem value="windows" label="Windows">
+
+```bash title="CMD"
+uid.bat "DB_USER" "DB_PASSWORD"
+```
+
+:::note
+
+- 最初1回の設定で暗号化されたUIDを使用してモニタリング対象データベースサーバーからデータを収集します。
+
+- DBユーザーファイルを生成するには、プロジェクトアクセスキーを*whatap.conf*ファイルに入力する必要があります。[アクセスキーの確認](#check-accesskey)
+
+- Azure Database環境の場合、`DB_USER`をDB_USER@DB_nameの形式で入力してください。
+
+- Windowsでは、パスワードの特殊文字にEscape Character(`\`)が必要ありません。ただし、パスワードに大きな引用符(`"`)を使用する場合には必要です。
+
+:::
+
+</TabItem>
+<TabItem value="linux" label="Linux" default>
+
+```bash title="BASH"
+./uid.sh {DB_USER} {DB_PASSWORD}
+```
+
+:::note
+
+- 最初1回の設定で暗号化されたUIDを使用してモニタリング対象データベースサーバーからデータを収集します。
+
+- DBユーザーファイルを生成するには、プロジェクトアクセスキーを*whatap.conf*ファイルに入力する必要があります。[アクセスキーの確認](#check-accesskey)
+
+- Azure Database環境の場合、`DB_USER`をDB_USER@DB_nameの形式で入力してください。
+
+- `DB_USER`または`DB_PASSWORD`に特殊文字が含まれている場合、特殊文字の前にEscape Character(\\)を入力してください。
+
+  ```bash title='Example'
+  ./uid.sh whatap whatap\!pwd
+
+  # 特殊文字が2つ以上の場合、それぞれエスケープ文字を追加
+  ./uid.sh whatap whatap\!\@pwd
+  ```
+
+:::
+
+</TabItem>
+</Tabs>
 
 </InDoc>

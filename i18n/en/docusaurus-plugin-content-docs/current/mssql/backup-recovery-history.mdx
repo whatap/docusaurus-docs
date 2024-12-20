@@ -1,0 +1,109 @@
+---
+id: backup-recovery-history
+title: Backup/Recovery History
+description: It provides the records for database backup and recovery operations on the SQL Server.
+keywords:
+  - SQL Server
+  - Backup/Recovery History
+---
+
+Home &gt; Select Project &gt; <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbBackupRecoveryHistory" className="uitext" />
+
+It provides the records for database backup and recovery operations on the SQL Server. This helps you review the data protection and recovery strategy by checking its success or failure and detailed information.
+
+- You can check the backup success status and backup size for each database, and review the adequacy of the backup interval.
+
+- You can check that the recovery was successful and analyze the cause of error if the recovery failed.
+
+- Review the storage locations of backup files to ensure proper management and accessibility of backup files.
+
+- Analyze the continuity and recoverability of backup files, and review their security by checking whether the backups are password protected.
+
+:::note
+
+If there is no item in the list, select ![Refresh icon](/img/ico-refresh.png).
+
+:::
+
+## Checking the backup history {#backup}
+
+At the top of the screen, select the <Cmdname sid="TTL08690" className="uitext" /> tab. It provides backup information for each database by querying the top 50 backup jobs based on the collected data. You can check the name and type of the backup job, software, size, and time point.
+
+<ImgLang img="db-backup-history-mssql.png" desc="Backup history" />
+
+For more information about the provided columns, see the following:
+
+- ***database_name***: Database name for the backup job.
+
+- ***backup_name***: Name of the backup set.
+
+- ***backup_type***: Backup type.
+
+- ***device_type***: Type of the backup device.
+
+- ***software_name***: Software name for the backup.
+
+- ***recovery_model***: Recovery model of the database.
+
+- ***compatibility_level***: Compatibility level of the database.
+
+- ***backup_start_date***: Date and time when the backup started.
+
+- ***backup_finish_date***: Backup completion date and time.
+
+- ***latest_backup_location***: Physical path of the backup device.
+
+- ***backup_size_mb***: Size (Byte) of the backup set.
+
+- ***compressed_backup_size_mb***: Total size of backups stored on disk.
+
+- ***database_backup_lsn***: Log sequence number of the most recent full database backup.
+
+- ***checkpoint_lsn***: Log sequence number of the log record to be run again.
+
+- ***begins_log_chain***: First chain (`1`) in the continuous log backup chain. The log chain starts with the first log backup performed after creating the database or when transitioning from a simple model to a full or bulk-logged recovery model.
+
+- ***is_password_protected***
+
+  - `protected`: Password protected backup set
+
+  - `Not protected`: It is not protected.
+
+## Checking the recovery history {#recovery}
+
+At the top of the screen, select the <Cmdname sid="TTL08691" className="uitext" /> tab. Top 50 recovery jobs are viewed. You can check the restored database, its recovery type, and user information. You can identify the target database, time point, and file path for the recovery.
+
+<ImgLang img="db-recovery-history-mssql.png" desc="Recovery history" />
+
+For more information about the provided columns, see the following:
+
+- ***restore_database_name***: Target database name of the recovery.
+
+- ***backup_name***: Name of the backup set used for recovery.
+
+- ***restore_date***: Date and time when the recovery operation started.
+
+- ***restore_type***: Type of the recovery operation.
+
+- ***user_name***: Name of the user who performed the recovery operation.
+
+- ***backup_server_name***: Name of the SQL server that ran the backup operation.
+
+- ***backup_database_name***: Name of the database from which the backup set used for recovery was created.
+
+- ***destination_phys_name***: Physical path of the restored file.
+
+{/* 필터 조건추가하기*/}
+import Dbsqlfilter from "../common-items/_db-sql-filter.mdx";
+
+<Dbsqlfilter level={2} />
+
+## Downloading the viewed result
+
+You can download the backup or recovery history in CSV file format. Select a desired tab and then select ![csv icon](/img/ic-csv-download-ms.svg) at the top of the screen.
+
+The name format of the downloaded CSV file is as follows:
+
+- <Cmdname sid="TTL08690" className="uitext" />: *backup\_history\_`YYYY-MM-DD_HH-MM-SS`.csv*
+
+- <Cmdname sid="TTL08691" className="uitext" />: *recovery\_history\_`YYYY-MM-DD_HH-MM-SS`.csv*

@@ -935,10 +935,6 @@
     "message": "分析",
     "description": "The label for category 분석 in sidebar rumsSidebar"
   },
-  "sidebar.rumsSidebar.category.알림 설정하기": {
-    "message": "アラートの設定",
-    "description": "The label for category 알림 설정하기 in sidebar rumsSidebar"
-  },
   "sidebar.serverSidebar.category.Server 모니터링": {
     "message": "Serverモニタリング",
     "description": "The label for category Server 모니터링 in sidebar serverSidebar"
@@ -1108,7 +1104,7 @@
     "description": "The label for the doc item 히트맵 트랜잭션 in sidebar learningSidebar, linking to the doc best-practice-guides/about-apm-hitmap-class"
   },
   "sidebar.learningSidebar.doc.브라우저 모니터링": {
-    "message": "Browserモニタリング",
+    "message": "Browser Monitoring",
     "description": "The label for the doc item 브라우저 모니터링 in sidebar learningSidebar, linking to the doc best-practice-guides/using-browser-monitoring"
   },
   "sidebar.indexSidebar.link.Browser": {
@@ -1116,7 +1112,7 @@
     "description": "The label for link Browser in sidebar indexSidebar, linking to browser"
   },
   "sidebar.rumsSidebar.category.Browser 모니터링": {
-    "message": "Browserモニタリング",
+    "message": "Browser Monitoring",
     "description": "The label for category Browser 모니터링 in sidebar rumsSidebar"
   },
   "sidebar.nodejsSidebar.category.에이전트 설치": {
@@ -1170,10 +1166,6 @@
   "sidebar.npmsidebar.category.분석": {
     "message": "分析",
     "description": "The label for category 분석 in sidebar npmsidebar"
-  },
-  "sidebar.npmsidebar.category.알림 설정하기": {
-    "message": "アラート通知",
-    "description": "The label for category 알림 설정하기 in sidebar npmsidebar"
   },
   "sidebar.rumsSidebar.category.메트릭스": {
     "message": "メトリクス",
@@ -1508,7 +1500,7 @@
     "description": "The label for the doc item v1.0.3 in sidebar releaseSidebar, linking to the doc release-notes/mobile/mobile-app-v1_0_3"
   },
   "sidebar.rumsSidebar.category.브라우저 에이전트 적용": {
-    "message": "ブラウザーエージェントの適用",
+    "message": "ブラウザエージェントの適用",
     "description": "The label for category 브라우저 에이전트 적용 in sidebar rumsSidebar"
   },
   "sidebar.kubeSidebar.doc.설정하기": {
@@ -1760,7 +1752,7 @@
     "description": "The label for category 분석과 통계 in sidebar altibasev1Sidebar"
   },
   "sidebar.altibasev1Sidebar.category.알림 설정하기": {
-    "message": "アラート通知",
+    "message": "アラートの設定",
     "description": "The label for category 알림 설정하기 in sidebar altibasev1Sidebar"
   },
   "sidebar.altibasev1Sidebar.doc.지원 환경": {
@@ -1852,7 +1844,7 @@
     "description": "The label for category 통계/보고서 in sidebar cubridV1Sidebar"
   },
   "sidebar.cubridV1Sidebar.category.알림 설정하기": {
-    "message": "アラート通知",
+    "message": "アラートの設定",
     "description": "The label for category 알림 설정하기 in sidebar cubridV1Sidebar"
   },
   "sidebar.cubridV1Sidebar.doc.지원 환경": {
@@ -1863,12 +1855,192 @@
     "message": "アラート通知",
     "description": "The label for category 경고 알림 in sidebar mongodbSidebar"
   },
-  "sidebar.releaseSidebar.doc.Server Solaris": {
-    "message": "Server Solaris",
-    "description": "The label for the doc item Server Solaris in sidebar releaseSidebar, linking to the doc release-notes/server-solaris/server-solaris-1_3_4"
-  },
   "sidebar.releaseSidebar.doc.Server HP-UX": {
     "message": "Server HP-UX",
     "description": "The label for the doc item Server HP-UX in sidebar releaseSidebar, linking to the doc release-notes/server-hpux/server-hpux-1_3_4"
+  },
+  "sidebar.featuremonitorSidebar.doc.vCenter": {
+    "message": "vCenter",
+    "description": "The label for the doc item vCenter in sidebar featuremonitorSidebar, linking to the doc features/vcenter-introduction"
+  },
+  "sidebar.npmsidebar.category.경고 알림": {
+    "message": "アラート通知",
+    "description": "The label for category 경고 알림 in sidebar npmsidebar"
+  },
+  "sidebar.releaseSidebar.category.Server Solaris": {
+    "message": "Server Solaris",
+    "description": "The label for category Server Solaris in sidebar releaseSidebar"
+  },
+  "sidebar.manageSidebar.category.Single Sign-On 연동": {
+    "message": "Single Sign-On連携",
+    "description": "The label for category Single Sign-On 연동 in sidebar manageSidebar"
+  },
+  "sidebar.otelSidebar.category.릴리스 노트": {
+    "message": "リリースノート",
+    "description": "The label for category 릴리스 노트 in sidebar otelSidebar"
+  },
+  "sidebar.featuremonitorSidebar.doc.NGINX": {
+    "message": "NGINX",
+    "description": "The label for the doc item NGINX in sidebar featuremonitorSidebar, linking to the doc features/nginx-introduction"
+  },
+  "sidebar.featuremonitorSidebar.doc.APACHE": {
+    "message": "APACHE",
+    "description": "The label for the doc item APACHE in sidebar featuremonitorSidebar, linking to the doc features/apache-introduction"
+  },
+  "sidebar.rumsSidebar.category.통계": {
+    "message": "統計",
+    "description": "The label for category 통계 in sidebar rumsSidebar"
+  },
+  "sidebar.rumsSidebar.category.경고 알림": {
+    "message": "アラート通知",
+    "description": "The label for category 경고 알림 in sidebar rumsSidebar"
+  },
+  "sidebar.mssqlSidebar.category.SQL Server V2 모니터링": {
+    "message": "SQL Server V2モニタリング",
+    "description": "The label for category SQL Server V2 모니터링 in sidebar mssqlSidebar"
+  },
+  "sidebar.mssqlSidebar.category.로그": {
+    "message": "ログ",
+    "description": "The label for category 로그 in sidebar mssqlSidebar"
+  },
+  "sidebar.mssqlV1Sidebar.category.SQL Server V1 모니터링": {
+    "message": "SQL Server V1モニタリング",
+    "description": "The label for category SQL Server V1 모니터링 in sidebar mssqlV1Sidebar"
+  },
+  "sidebar.mssqlV1Sidebar.category.설치하기": {
+    "message": "インストール",
+    "description": "The label for category 설치하기 in sidebar mssqlV1Sidebar"
+  },
+  "sidebar.mssqlV1Sidebar.category.설정하기": {
+    "message": "設定",
+    "description": "The label for category 설정하기 in sidebar mssqlV1Sidebar"
+  },
+  "sidebar.mssqlV1Sidebar.category.주요 메뉴 알아보기": {
+    "message": "メインメニュー",
+    "description": "The label for category 주요 메뉴 알아보기 in sidebar mssqlV1Sidebar"
+  },
+  "sidebar.mssqlV1Sidebar.category.대시보드": {
+    "message": "ダッシューボード",
+    "description": "The label for category 대시보드 in sidebar mssqlV1Sidebar"
+  },
+  "sidebar.mssqlV1Sidebar.category.Flex 보드": {
+    "message": "Flexボード",
+    "description": "The label for category Flex 보드 in sidebar mssqlV1Sidebar"
+  },
+  "sidebar.mssqlV1Sidebar.category.분석": {
+    "message": "分析",
+    "description": "The label for category 분석 in sidebar mssqlV1Sidebar"
+  },
+  "sidebar.mssqlV1Sidebar.category.메트릭스": {
+    "message": "メトリクス",
+    "description": "The label for category 메트릭스 in sidebar mssqlV1Sidebar"
+  },
+  "sidebar.mssqlV1Sidebar.category.통계/보고서": {
+    "message": "統計/レポート",
+    "description": "The label for category 통계/보고서 in sidebar mssqlV1Sidebar"
+  },
+  "sidebar.mssqlV1Sidebar.category.경고 알림": {
+    "message": "アラート通知",
+    "description": "The label for category 경고 알림 in sidebar mssqlV1Sidebar"
+  },
+  "sidebar.mssqlV1Sidebar.doc.지원 환경": {
+    "message": "サポート環境",
+    "description": "The label for the doc item 지원 환경 in sidebar mssqlV1Sidebar, linking to the doc mssql-v1/monitoring-support"
+  },
+  "sidebar.serverSidebar.category.서버 인벤토리 맵": {
+    "message": "サーバーインベントリマップ",
+    "description": "The label for category 서버 인벤토리 맵 in sidebar serverSidebar"
+  },
+  "sidebar.altibasev1Sidebar.category.대시보드": {
+    "message": "ダッシューボード",
+    "description": "The label for category 대시보드 in sidebar altibasev1Sidebar"
+  },
+  "sidebar.altibasev1Sidebar.category.경고 알림": {
+    "message": "アラート通知",
+    "description": "The label for category 경고 알림 in sidebar altibasev1Sidebar"
+  },
+  "sidebar.releaseSidebar.category.Server HP-UX": {
+    "message": "Server HP-UX",
+    "description": "The label for category Server HP-UX in sidebar releaseSidebar"
+  },
+  "sidebar.learningSidebar.category.MXQL": {
+    "message": "MXQL",
+    "description": "The label for category MXQL in sidebar learningSidebar"
+  },
+  "sidebar.learningSidebar.category.단계별 명령어 가이드": {
+    "message": "段階別コマンドガイド",
+    "description": "The label for category 단계별 명령어 가이드 in sidebar learningSidebar"
+  },
+  "sidebar.learningSidebar.category.용어 알아보기": {
+    "message": "用語詳細",
+    "description": "The label for category 용어 알아보기 in sidebar learningSidebar"
+  },
+  "sidebar.referSidebar.category.라이선스": {
+    "message": "ライセンス",
+    "description": "The label for category 라이선스 in sidebar referSidebar"
+  },
+  "sidebar.referSidebar.link.Open API": {
+    "message": "Open API",
+    "description": "The label for link Open API in sidebar referSidebar, linking to /openapi-spec"
+  },
+  "sidebar.awslogSidebar.category.경고 알림": {
+    "message": "アラート通知",
+    "description": "The label for category 경고 알림 in sidebar awslogSidebar"
+  },
+  "sidebar.awsecsSidebar.category.경고 알림": {
+    "message": "アラート通知",
+    "description": "The label for category 경고 알림 in sidebar awsecsSidebar"
+  },
+  "sidebar.amazoncloudwatchSidebar.category.경고 알림": {
+    "message": "アラート通知",
+    "description": "The label for category 경고 알림 in sidebar amazoncloudwatchSidebar"
+  },
+  "sidebar.azuremonitorSidebar.category.경고 알림": {
+    "message": "アラート通知",
+    "description": "The label for category 경고 알림 in sidebar azuremonitorSidebar"
+  },
+  "sidebar.ncloudSidebar.category.경고 알림": {
+    "message": "アラート通知",
+    "description": "The label for category 경고 알림 in sidebar ncloudSidebar"
+  },
+  "sidebar.oracleSidebar.category.경고 알림": {
+    "message": "アラート通知",
+    "description": "The label for category 경고 알림 in sidebar oracleSidebar"
+  },
+  "sidebar.serverSidebar.category.대시보드": {
+    "message": "ダッシューボード",
+    "description": "The label for category 대시보드 in sidebar serverSidebar"
+  },
+  "sidebar.serverSidebar.category.경고 알림": {
+    "message": "アラート通知",
+    "description": "The label for category 경고 알림 in sidebar serverSidebar"
+  },
+  "sidebar.serverSidebar.category.이벤트 설정": {
+    "message": "イベント設定",
+    "description": "The label for category 이벤트 설정 in sidebar serverSidebar"
+  },
+  "sidebar.kubeSidebar.category.이벤트 설정": {
+    "message": "イベント設定",
+    "description": "The label for category 이벤트 설정 in sidebar kubeSidebar"
+  },
+  "sidebar.logSidebar.category.경고 알림": {
+    "message": "アラート通知",
+    "description": "The label for category 경고 알림 in sidebar logSidebar"
+  },
+  "sidebar.faqSidebar.category.자주 묻는 질문": {
+    "message": "よくあるご質問",
+    "description": "The label for category 자주 묻는 질문 in sidebar faqSidebar"
+  },
+  "sidebar.apmSidebar.category.APM Reference": {
+    "message": "APM Reference",
+    "description": "The label for category APM Reference in sidebar apmSidebar"
+  },
+  "sidebar.dbSidebar.category.Database Reference": {
+    "message": "Database Reference",
+    "description": "The label for category Database Reference in sidebar dbSidebar"
+  },
+  "sidebar.dbSidebar.link.데이터베이스별 지원 기능 비교": {
+    "message": "データベースごとのサポート機能の比較",
+    "description": "The label for link 데이터베이스별 지원 기능 비교 in sidebar dbSidebar, linking to ../db-support-functions"
   }
 }

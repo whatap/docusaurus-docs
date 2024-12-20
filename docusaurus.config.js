@@ -7,6 +7,8 @@ const darkTheme = themes.dracula;
 const {rehypeExtendedTable} = require("rehype-extended-table");
 const { remarkCodeHike, recmaCodeHike } = require("codehike/mdx");
 // const rehypeSectionHeadings = require("rehype-section-headings");
+const isDev = process.env.NODE_ENV === 'development';
+const locale = process.env.DOCUSAURUS_CURRENT_LOCALE; // 현재 로케일
 
 const chConfig = {
   components: { code: "MyCode" },
@@ -21,6 +23,9 @@ const config = {
   title: 'WhaTap Docs',
   tagline: '와탭 기술 문서 :: WhaTap, 와탭 기술 문서 페이지에 오신 것을 진심으로 환영합니다.',
   url: 'https://docs.whatap.io',
+  future: {
+    experimental_faster: isDev ? false : true
+  },
   baseUrl: '/',
   onBrokenLinks: 'ignore',
   onBrokenAnchors: 'ignore',
@@ -53,7 +58,7 @@ const config = {
   },
   // trailingSlash: false,
   clientModules: [
-    require.resolve("./src/modules/amplitude.js")
+    // require.resolve("./src/modules/amplitude.js")
   ],
   plugins: [
     [ './src/whatap-plugin-facebook', {}],
@@ -130,7 +135,11 @@ const config = {
           recmaPlugins: [[recmaCodeHike, chConfig]],
           editUrl: 'undefined', // 'https://gitlab.whatap.io/whatap-inc/docs/-/blob/main/',
           include: [ '**/*.mdx' ],
-          exclude: [ 'weaving/*.mdx', 'weaving/**/*.mdx', 'wip/*.mdx', 'common-items/*.mdx', '**/_*.mdx', 'release-notes/otel/*.mdx' ],
+          exclude: [ 'weaving/*.mdx', 'weaving/**/*.mdx', 'wip/*.mdx', 'common-items/*.mdx', '**/_*.mdx' ],
+          showLastUpdateAuthor: false,
+          showLastUpdateTime: false,
+          // exclude: [ 'weaving/*.mdx', 'weaving/**/*.mdx', 'wip/*.mdx', 'common-items/*.mdx', '**/_*.mdx', 'release-notes/otel/*.mdx' ],
+          // 재환님 요청으로 오픈텔레메트리 릴리스 노트 문서를 오픈텔레메트리 문서 하위에서 확인 가능하도록 수정 1106
         },
         // blog: false,
         blog: {
@@ -141,6 +150,7 @@ const config = {
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           blogSidebarTitle: '새로운 기능',
           blogSidebarCount: 'ALL',
+          onUntruncatedBlogPosts: 'ignore',
           include: [ '**/*.mdx' ],
           rehypePlugins: [ rehypeExtendedTable ],
           // groupByYear: true, (canary 버전 옵션)
@@ -184,32 +194,15 @@ const config = {
         theme: {
           // Change with your site colors
           primaryColor: '#1890ff',
+          theme: {
+            sidebar: {
+              width: "240px"
+            }
+          }
         },
       },
     ]
   ],
-  webpack: {
-    jsLoader: (isServer) => ({
-      loader: require.resolve("swc-loader"),
-      options: {
-        jsc: {
-          parser: {
-            syntax: "typescript",
-            tsx: true,
-          },
-          transform: {
-            react: {
-              runtime: 'automatic',
-            },
-          },
-          target: "es2017",
-        },
-        module: {
-          type: isServer ? "commonjs" : "es6",
-        },
-      },
-    }),
-  },
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -240,7 +233,7 @@ const config = {
       ],
       blog: {
         sidebar: {
-          groupByYear: true
+          groupByYear: false
         }
       },
       docs: {
@@ -264,20 +257,8 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'whatap-overview',
-            label: '시작하기',
-            position: 'left',
-          },
-          {
-            type: 'doc',
-            docId: 'learning-guides',
-            label: '학습하기',
-            position: 'left',
-          },
-          {
             type: 'dropdown',
-            label: '상품별 문서 바로가기',
+            label: '상품',
             position: 'left',
             items: [
               {
@@ -533,7 +514,14 @@ const config = {
             type: 'doc',
             docId: 'mssql/monitoring-intro',
             position: "left",
-            label: 'SQL Server 모니터링',
+            label: 'SQL Server V2 모니터링',
+            className: 'hidden',
+          },
+          {
+            type: 'doc',
+            docId: 'mssql-v1/monitoring-intro',
+            position: "left",
+            label: 'SQL Server V1 모니터링',
             className: 'hidden',
           },
           {
@@ -547,14 +535,28 @@ const config = {
             type: 'doc',
             docId: 'cubrid/monitoring-intro',
             position: "left",
-            label: 'CUBRID 모니터링',
+            label: 'CUBRID V2 모니터링',
+            className: 'hidden',
+          },
+          {
+            type: 'doc',
+            docId: 'cubrid-v1/monitoring-intro',
+            position: "left",
+            label: 'CUBRID V1 모니터링',
             className: 'hidden',
           },
           {
             type: 'doc',
             docId: 'altibase/monitoring-intro',
             position: "left",
-            label: 'Altibase 모니터링',
+            label: 'Altibase V2 모니터링',
+            className: 'hidden',
+          },
+          {
+            type: 'doc',
+            docId: 'altibase-v1/monitoring-intro',
+            position: "left",
+            label: 'Altibase V1 모니터링',
             className: 'hidden',
           },
           {
@@ -669,43 +671,32 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'license/licenses',
-            position: 'left',
-            label: '라이선스',
-          },
-          // {
-          //   type: 'doc',
-          //   docId: 'reference',
-          //   position: 'left',
-          //   label: '참조 문서',
-          // },
-          {
-            type: 'doc',
-            docId: 'release-notes',
-            position: 'left',
-            label: '릴리스 노트',
-          },
-          {
-            type: 'doc',
             docId: 'faq/index',
             position: 'left',
             label: 'FAQ',
           },
-          // {
-          //   to: 'blog', 
-          //   label: '새로운 기능', 
-          //   position: 'left', 
-          //   className: 'iflang-link',
-          // },
+          {
+            to: 'learning-guides', 
+            label: 'Learning', 
+            position: 'left', 
+            className: 'iflang-link',
+          },
           // 다국어 조건 블로그
           {
-            to: (function () {
-              const locale = process.env.DOCUSAURUS_CURRENT_LOCALE; // 현재 로케일
-              return locale === 'en' || locale === 'ja' ? 'blog/overview' : 'blog';
-            })(),
-            label: '새로운 기능',
-            position: 'left',
-            className: 'iflang-link',
+            type: 'dropdown',
+            label: 'What\'s New',
+            position: 'right',
+            className: 'oneColumn iflang-link box',
+            items: [
+              {
+                to: locale === 'en' || locale === 'ja' ? 'blog/overview' : 'blog',
+                label: '새로운 기능'
+              },
+              {
+                to: 'release-notes',
+                label: '릴리스 노트'
+              }
+            ]
           },
           {
             type: 'localeDropdown',
@@ -726,7 +717,7 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} WhaTap Labs Inc. All right reserved. Built with Docusaurus.`,
       },
       prism: {
-        additionalLanguages: [ 'java', 'scala', 'bash', 'powershell', 'batch', 'apacheconf', 'docker', 'properties', 'ini', 'sql', 'go', 'python', 'json', 'yaml', 'log', 'csharp', 'typescript', 'javascript' ],
+        additionalLanguages: [ 'php', 'java', 'scala', 'bash', 'powershell', 'batch', 'apacheconf', 'docker', 'properties', 'ini', 'sql', 'go', 'python', 'json', 'yaml', 'log', 'csharp', 'typescript', 'javascript' ],
       },
       zoom: {
         selector: '.markdown :not(em, div) > img:not(.ico-link)',

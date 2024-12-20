@@ -1,0 +1,468 @@
+---
+slug: 2024-2q-summary
+title: Second quarter guidance
+authors: ysj
+date: 2024-07-09T09:30
+toc_max_heading_level: 2
+tags:
+  - New features
+  - 2024
+---
+
+Here’s an overview of new features and notable changes of WhaTap’s 2nd quarter services in 2024. Take a look at new features offered by WhaTap at a glance.
+
+{/* 새로운 기능 sc 이미지 국문과 영문 */}
+
+<ImgLang img='changelog/changelog-new3.png' desc='New features' />
+
+{/* truncate */}
+
+<div class ='faq'>
+
+| **Common** |
+| ---------- |
+
+> Common menu improvements have been made for better convenience. 
+
+| **Application** |
+| --------------- |
+
+> - <Cmdname sid="side_transaction_map" className="uitext" /> has been further improved following the previous quarter.
+> - A default preset changing feature has been added to <Cmdname sid="application_dashboard" className="uitext" />.
+
+| **Server** |
+| ---------- |
+
+> - The installation screen has been reorganized to allow you to select the OS first when creating a server project.
+> - The Unix **Oracle Solaris** installation package has been provided. 
+
+| **Kubernetes** |
+| -------------- |
+
+> - The <Cmdname sid="agentInstall" className="uitext" /> screen has been reorganized to provide an easier method to select options.
+> - The <Cmdname sid="side_pendingPod" className="uitext" /> menu has been newly reorganized.
+> - In the <Cmdname sid="side_containerMap" className="uitext" /> menu, ***Resource Relationship Map*** has been provided.
+
+| **Database** |
+| ------------ |
+
+> The **Oracle Pro** Beta service is available.  
+
+| **Browser** |
+| ----------- |
+
+> A new <Cmdname sid="TTL08103" className="uitext" /> feature has been provided.
+
+</div>
+
+An overview of changes other than new features for each product, the corresponding release versions, and changes in the agent can be found in the following guide.
+
+<br/>
+<br/>
+
+{/* 공통 및 브라우저 뺄지?? */}
+
+## `Common`
+
+In the second quarter of 2024, improvements have been made to the common menus, including <Cmdname sid="side_flexboard" className="uitext" />, for better convenience in the `Common` section. You can easily move groups in <Cmdname sid="side_projectList" className="uitext" /> of the side menu. For <Cmdname sid="side_flexboard" className="uitext" />, the ***Apply to all widgets in group*** feature that allows you to share options in the group, and the <Cmdname sid="TLT06410" className="uitext" /> feature in the group widget have been added. 
+
+![Common branching example](/img/changelog/changelog-24q2-common.png)
+
+The following overview guide helps you find new features and major changes in the Common section in Q2 2024, along with release versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Common_24q2 from "../crw-data/crwld-service-24q2/_import-24q2-service-Common.mdx";
+
+<Common_24q2 />
+
+</details>
+
+<br/>
+
+## `Application`
+
+Notable new features in the `Application` section of WhaTap in Q2 2024 include the improvements of <Cmdname sid="side_transaction_map" className="uitext" /> and the feature to change the default preset of <Cmdname sid="application_dashboard" className="uitext" />, following the previous quarter (Q1).
+
+As part of improvements of <Cmdname sid="side_transaction_map" className="uitext" />, a new custom filtering feature has been provided that allows you to view only the selected items in the response time distribution chart. In the <Cmdname sid="custom" className="uitext" /> tab next to the ***TOP 30*** section, enter the desired value directly for a specific transaction, domain, or IP to search for, or select an item from the ***TOP 30*** list. The response time distribution of the selected items is filtered in real time on the chart.
+
+<p align="center">
+
+![Transaction map custom filter branching example](/img/changelog/changelog-24q2-app-trs-map.gif)
+
+</p>
+
+You can change the default dashboard preset that can be viewed when you first enter the <Cmdname sid="application_dashboard" className="uitext" /> menu. It provides a more personalized user experience by setting the preferred dashboard configuration as the default preset. After modifying the widget selection and arrangement as desired, try using the <Cmdname sid="BTN08106" className="uitext" /> option in the preset selection box on the upper right of the dashboard. The dashboard designated as default is marked with the <code class='default-tag'>default</code> tag in the preset list.
+
+![Application dashboard default preset branching example](/img/changelog/changelog-24q2-app-preset.png)
+
+{/* 이를 통해 클라우드 및 컨테이너 기반 애플리케이션을 포함한 다양한 플랫폼과 환경에서의 모니터링이 가능해졌습니다. <- 아직 안됨. 로드맵엔 있음  */}
+
+{/* `.NET` 상품의 지원 범위가 윈도우 운영체제에서 실행되는 `.NET` 프레임워크만이 아니라 `.NET` 코어까지 확대되어 보다 다양한 운영체제 기반 모니터링을 제공합니다. This aims to improve development and operation efficiency by enabling the monitoring in various environments, including cloud and container-based applications.  */}
+
+{/* * 닷넷 프레임워크에서 닷넷 코어(2분기 모니터링 지원 범위 확대) */}
+
+The following overview guide helps you check new features and major changes in the `Application` product suite for Q2 2024, along with release versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Application_24q2 from "../crw-data/crwld-service-24q2/_import-24q2-service-Application.mdx";
+
+<Application_24q2 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+### `Java`
+
+import Java_agent_24q2 from "../crw-data/crwld-agent-24q2/_import-agent-24q2-java.mdx";
+
+<Java_agent_24q2 />
+
+### `PHP`
+
+import PHP_agent_24q2 from "../crw-data/crwld-agent-24q2/_import-agent-24q2-php.mdx";
+
+<PHP_agent_24q2 />
+
+### `Node.js`
+
+import Nodejs_agent_24q2 from "../crw-data/crwld-agent-24q2/_import-agent-24q2-nodejs.mdx";
+
+<Nodejs_agent_24q2 />
+
+### `.NET`
+
+import DOTNET_agent_24q2 from "../crw-data/crwld-agent-24q2/_import-agent-24q2-dotnet.mdx";
+
+<DOTNET_agent_24q2 />
+
+### `Go`
+
+import Go_agent_24q2 from "../crw-data/crwld-agent-24q2/_import-agent-24q2-golang.mdx";
+
+<Go_agent_24q2 />
+
+</details>
+
+:::info
+
+**Old application dashboard service termination**
+
+***The old version of the <Cmdname sid="application_dashboard" className="uitext" /> <code class='oldfunc'>Old</code> menu accessed from the ***Sitemap**\* **ends** its service on **July 24\*\* in the third quarter. Use the new <Cmdname sid="application_dashboard" className="uitext" /> with improved features in the <Cmdname sid="side_dashboard" className="uitext" /> menu. 
+
+:::
+
+:::note 
+
+- The support scope of the application `.NET` products has been expanded from the existing `.NET` framework to `.NET` Core. 
+
+- For more information about the **Custom Filter** feature in the <Cmdname sid="side_transaction_map" className="uitext" /> menu, see [the following](https://docs.whatap.io/java/dashboard-transactionmap#custom).
+
+- For more information about changing the <Cmdname sid="application_dashboard" className="uitext" /> default preset, see [the following](https://docs.whatap.io/java/dashboard#changepreset).
+
+:::
+
+<br/>
+
+## `Server`
+
+Notable new features in the `Server` section of WhaTap Q2 2024 include improvements to the installation screen and the introduction to the **Unix** `Solaris` installation package. 
+
+The installation process for server monitoring products has been improved to be more intuitive. Instead of the previous method of separating tabs for each OS, user can now select an OS first and then an individual installation page tailored to the OS appears. 
+
+![Server monitoring install page sc](/img/changelog/changelog-24q2-server.png)
+
+In this Q2, a new **Unix** `Solaris` **agent installation package** is to be provided. Solaris that has been developed by Sun Microsystems, is a high-performance Unix operating system known for its scalability on SPARC systems and the features such as ZFS file system and DTrace. WhaTap supports Oracle Solaris 11.2 or later. You can install it simply by downloading the package by using the `Solaris` installation package and then running it. WhaTap Server Monitoring allows you to manage and monitor the `Solaris` operating system more effectively.
+
+{/* 서버 모니터링 상품 설치 시 사용자가 운영 체제를 먼저 선택하여 보다 직관적인 방식으로 설치 과정이 진행되도록 <Cmdname sid="agentInstall" className="uitext" /> 화면이 개선되었습니다. Instead of the previous OS-specific tab separating method, you can select an operating system and move to a separate installation page for the selected OS.  */}
+
+{/* \* 에이전트 설치 화면 편의성 개선 > OS 선택
+
+- Oracle Solaris 설치 패키지 제공 */}
+
+The following overview guide helps you check new features and major changes in the `Server` products in Q2 2024 along with release versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Server_24q2 from "../crw-data/crwld-service-24q2/_import-24q2-service-Server.mdx";
+
+<Server_24q2 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+import Server_agent_24q2 from "../crw-data/crwld-agent-24q2/_import-agent-24q2-server.mdx";
+
+<Server_agent_24q2 />
+
+</details>
+
+<br/>
+
+## `Kubernetes`
+
+Notable new features and changes in the `Kubernetes` section of WhaTap Q2 2024 include the reorganization of <Cmdname sid="agentInstall" className="uitext" /> and <Cmdname sid="side_pendingPod" className="uitext" />, and the introduction to the <Cmdname sid="TTL07237" className="uitext" /> feature in <Cmdname sid="side_containerMap" className="uitext" />.
+
+{/* 쿠버네티스 플랫폼의 다양성과 런타임 및 기능의 확장에 따라 에이전트 설치 과정의 상세도 역시 높아졌습니다. To address this, following the support for *Helm* chart installation in the previous quarter (Q1), the feature to automatically generate *YAML* files to install user environments and various WhaTap options in the second quarter. The agent installation process has been simplified and its usability has been greatly improved with an easy generation of agent installation file by selecting desired options in the UI.  */}
+
+Due to ongoing changes in Kubernetes products and emergence of various container runtimes, the agent installation process is also becoming more complex. Following the support for *Helm* chart installation in Q1, WhaTap provide a new Kubernetes <Cmdname sid="agentInstall" className="uitext" /> feature in Q2. Previously, after downloading the *YAML* file for installation, there were cases where the items needed to be modified additionally. But now, when you select key components or features in the Kubernetes environment and features to use, appropriate installation files are provided in the UI. This makes it much faster and easier to install agents.
+
+<ImgLang img='k8s-install-master-node-download.png' desc='Install file download branching example' />
+
+{/* <Cmdname sid="side_lab" className="uitext" />에서 제공하던 <Cmdname sid="side_pendingPod" className="uitext" /> 메뉴가 V2로 개편되며 <Cmdname sid="side_workload" className="uitext" /> 하위 메뉴로 재구성되었습니다. The feature has been significantly improved for provision of one-time pending information as follows. The <Cmdname sid="side_pendingPod" className="uitext" /> V2 provides real-time visibility into a Pod in pending status along with the related data that enables root cause analysis. This allows you to systematically monitor and analyze Pods in pending status in the cluster.  */}
+
+The <Cmdname sid="side_pendingPod" className="uitext" /> feature provided under the <Cmdname sid="side_lab" className="uitext" /> menu has been reorganized into <code class="my">V2</code> and the sub menu of <Cmdname sid="side_workload" className="uitext" /> has been officially released. The <Cmdname sid="side_pendingPod" className="uitext" /> feature provides real-time visibility into a Pod in Pending status, along with the related data that enables root cause analysis. This helps increase the availability of clusters and services.
+
+<ImgLang img='k8s-pending-pod-status-detail.png' desc='Pending Pod Detail branching example' />
+
+{/* 와탭 쿠버네티스 모니터링은 2024년 상반기에 걸쳐 <Cmdname sid="side_containerMap" className="uitext" /> 개선 작업을 진행해 왔습니다. In this second quarter, the <Cmdname sid="side_containerMap" className="uitext" /> detail <Cmdname sid="TTL07237" className="uitext" /> feature has been added. The <Cmdname sid="TTL07237" className="uitext" /> tab makes it easier to visually see the hierarchy and relationships between resources. This allows you to clearly see the resource structure and interactions in the cluster, check the resource status and location, and respond quickly when any issue occurs.  */}
+
+WhaTap Kubernetes Monitoring has undergone continuous <Cmdname sid="side_containerMap" className="uitext" /> improvements throughout the first half of 2024. In the second quarter, the <Cmdname sid="TTL07237" className="uitext" /> feature has been added to <Cmdname sid="side_containerMap" className="uitext" />. The <Cmdname sid="TTL07237" className="uitext" /> feature allows you to visually check the hierarchy and relationships between Kubernetes resources, allowing you to analyze the Kubernetes environment and identify the cause and impact at a glance when a problem occurs.
+
+<p align="center">
+
+![Resource relations branching example](/img/k8s-container-detail-rr-s.png)
+
+</p>
+
+{/* 쿠버네티스 리소스간 연결 관계를 시각적으로 확인할 수 있습니다. 
+
+It provides users with a visual representation of the hierarchy and relationships between resources in the Kubernetes cluster. This allows users to easily see at a glance on which node a Pod or Container is running, by which deployment it is released, and to which namespace it belongs.
+
+- Improved system understanding: Visualized information provides a clear understanding of the resource structure and interactions across the entire cluster.
+
+- Issue diagnosing and quick response: The status and location of each resource can be visually checked to quickly respond when issues occur.
+
+- Efficiency in resource management: It optimizes the placement and interactions for cluster resources and improves the operation efficiency.
+
+This feature enables efficiency and rapid troubleshooting during cluster operation and management. */}
+
+{/* 실시간으로 Pending 상태의 Pod 현황을 조회할 수 있으며, 
+
+The <Cmdname sid="side_pendingPod" className="uitext" /> V2 allows you to comprehensively monitor and analyze the status of Pods in pending status within the cluster.
+
+It allows you to comprehensively monitor and analyze Pods in pending status within the cluster.
+
+It allows you to comprehensively monitor and analyze Pods in pending status within the cluster. You can check the status of Pods in pending status in real time and analyze the cause of the status for each Pod in detail  
+
+ and provides more comprehensive information through real-time visibility, root cause analysis, and associated data provision. 
+
+You can visually check the resource relationships in the container map details. */}
+
+{/* \* 에이전트 설치 개선: 에이전트 설치 복잡도 증가(k8s 플랫폼, 런타임, 기능 증가) -> ui상에서 사용자 환경 및 기능을 on/off 설정 시 설치 yaml 파일 또는 helm 차트 자동 생성해 에이전트 설치 난이도 및 사용성 개선
+
+- Automatically provides the yaml for installation of each user environment and various WhaTap options.
+
+- Pending Pod status V2: It provides one-time pending information upon user request -> Improvement in service availability by providing visibility of Pods in pending status and various associated data for the cause of occurrence. 
+
+  - Switched to collection mode.
+
+  - Embedded the dedicated dashboard and analysis feature. 
+
+- 컨테이너 맵 리소스 관계도 */}
+
+The following overview guide helps you check new features and major changes in the `Kubernetes` products in Q2 2024 along with their release versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Kubernetes_24q2 from "../crw-data/crwld-service-24q2/_import-24q2-service-Kubernetes.mdx";
+
+<Kubernetes_24q2 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+import Kubernetes_agent_24q2 from "../crw-data/crwld-agent-24q2/_import-agent-24q2-k8s.mdx";
+
+<Kubernetes_agent_24q2 />
+
+</details>
+
+:::note 
+
+For more information about <Cmdname sid="side_pendingPod" className="uitext" /> <code class="my">V2</code>, see [the following](https://docs.whatap.io/kubernetes/pending-pod-status).
+
+:::
+
+<br/>
+
+## `Database`
+
+WhaTap is now announcing notable new features and changes in the `Database` section in Q2 2024, including the launch of **Oracle** product <code class="my">V2</code> and the Beta launch of **Oracle Pro**. 
+
+The WhaTap database product suite is transitioning to <code class="my">V2</code>. Following **Redis** and **MongoDB** in Q1, the transition to the **Oracle** <code class="my">V2</code> has begun in Q2. 
+
+![Oracle new branching example](/img/changelog/changelog-24q2-db.png) 
+
+The **Oracle Pro** **Beta** service has launched in preparation for the official release in Q3. **Oracle Pro** has applied the technologies to monitor the performance metrics by directly accessing the memory of the database server. It can monitor accurate performance information up to 20 times per second by reflecting the latest data, and can minimize the load on the system by directly accessing memory without using the disk I/O. This allows you to quickly and accurately analyze issues based on the precisely collected performance data, such as execution time for a specific query and status of the buffer cache.
+
+{/* \* Oracle Pro
+
+- Oracle <code class="my">V2</code>
+
+- 멀티 인스턴스 모니터링 메뉴 사용자 편의성 개선  */}
+
+{/* oracle pro의 경우 7월 정식 서비스 배포 예정 */}
+
+The following overview guide helps you check new features and major changes in the `Database` product suite for Q2 2024, along with release versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Database_24q2 from "../crw-data/crwld-service-24q2/_import-24q2-service-Database.mdx";
+
+<Database_24q2 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+### `DBX`
+
+import DBX_agent_24q2 from "../crw-data/crwld-agent-24q2/_import-agent-24q2-dbx.mdx";
+
+<DBX_agent_24q2 />
+
+</details>
+
+<br/>
+
+## `Browser`
+
+WhaTap introduces <Cmdname sid="TTL08103" className="uitext" /> as a notable new feature in the `Browser` section for Q2 2024. It may be difficult to accurately reproduce the failures with just the list of events. The <Cmdname sid="TTL08103" className="uitext" /> feature allows you to automatically record and play every event users perform on the website. 
+
+The interactions can be analyzed between the website and users by accurately reproducing every event, such as user clicks, scrolls, inputs, and page transitions. This enables real user experiences, allowing you to quickly identify and resolve potential issues, and provides insights into how users use the website and which can help you optimize it. 
+
+![Session replay sc](/img/changelog/changelog-24q2-browser1.png)
+
+{/* 
+
+![Session replay player](/img/browser-session-replay-player.png)
+
+It provides insights into how users use the website. This helps us understand and optimize user interactions. 
+
+You can reproduce user behaviors that allow you to understand exactly how users interact with the website and its environment.  
+
+It may be difficult to reproduce failures with just the list of events. When an actual failure occurs, the user's screen can be recorded to allow for more accurate failure reproduction.  */}
+
+<code class="Feature">Feature</code> In <Cmdname sid="side_rumPageLoadHitmap" className="uitext" />, <Cmdname sid="side_ajaxAnalytics" className="uitext" />, and <Cmdname sid="side_userSessionEventSearch" className="uitext" />, added the <Cmdname sid="TTL08103" className="uitext" /> feature. <code class='changelog-service'><a href="../release-notes/service/service-2_6_x"><code class='changelog-service'>Service 2.6.0​</code></a></code>
+
+{/* <details className='changelog'>
+
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Browser_24q2 from "../crw-data/crwld-service-24q2/_import-24q2-service-Browser.mdx";
+
+<Browser_24q2 />
+
+</details> */}
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+import Browser_agent_24q2 from "../crw-data/crwld-agent-24q2/_import-agent-24q2-browser.mdx";
+
+<Browser_agent_24q2 />
+
+</details>
+
+:::note 
+
+For more information about the <Cmdname sid="TTL08103" className="uitext" /> function, see [the following](https://docs.whatap.io/browser/session-replay).
+
+:::
+
+{/* ## `Cloud`
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Cloud_24q2 from "../crw-data/crwld-service-24q2/_import-24q2-service-Cloud.mdx";
+
+<Cloud_24q2 />
+
+</details> */}
+
+<br/>
+
+## `Feature`
+
+It introduces a new `Feature` project to be provided in the second quarter of 2024. WhaTap has introduced **Feature Project** so that users can easily check whether the desired software supports monitoring and easily start monitoring. The Feature Project provides an optimized monitoring solution by repackaging existing monitoring products to fit the software to monitor. 
+
+The **Beta** service of `KAFKA` monitoring has been launched using the feature project manner. It is scheduled for official release in the future, and the support for the scope other than `KAFKA` is to be expanded. 
+
+![Feature project branching example](/img/changelog/changelog-24q2-feature1.png) 
+
+{/* 와탭 피쳐 프로젝트를 통해 서비스의 안정성과 성능을 더욱 효과적으로 관리해 보세요. */}
+
+{/* <code class="Beta">Beta</code> `KAFKA` 모니터링 **베타** 서비스 시작  */}
+
+:::note 
+
+For more information about the feature project and `KAFKA` monitoring, see [the following](https://docs.whatap.io/features/kafka-introduction). 
+
+:::
+
+<br/>
+
+{/* <code class='changelog-service'><a href="../release-notes/service/service-2_6_x"><code class='changelog-service'>Service 2.6.0​</code></a></code> */}
+
+## `URL`
+
+WhaTap introduces the changes to the `URL` section in Q2 2024. The UI of the <Cmdname sid="side_urlList" className="uitext" /> menu and the <Cmdname sid="edit_url" className="uitext" /> window in that menu has been comprehensively reorganized to improve usability. In addition, <Cmdname sid="TTL07886" className="uitext" /> has been changed so that it can be deleted when viewing the list, not in the editing window. In case of ***URL Detail***window, it is provided in a pop-out manner for easy comparison.
+
+![URL sc](/img/changelog/changelog-24q2-url.png)
+
+{/* * 에러 유형 안내 문서가 새로 업데이트되었습니다. For more information, see [the following](https://docs.whatap.io/url/url-error-type).  */}
+
+{/* 부분의 주목할 만한 신규 기능으로 ~을 소개합니다.
+
+- A detail window pop-out with an improved interface
+
+- 상태 코드 문서 안내(첨언) */}
+
+The following overview guide helps you check the major changes to the `URL` products in Q2 2024 along with release versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import URL_24q2 from "../crw-data/crwld-service-24q2/_import-24q2-service-URL.mdx";
+
+<URL_24q2 />
+
+</details>
+
+:::note 
+
+The **URL status code types** guide has been added. For more information, see [the following](https://docs.whatap.io/url/url-http-status). 
+
+:::
+
+<br/>
+
+{/* ## `Log`
+
+WhaTap introduces a notable new feature xx in the `Log` section in Q2 2024.
+
+- Changing the way to display the accumulated number of cases when viewing the logs
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Log_24q2 from "../crw-data/crwld-service-24q2/_import-24q2-service-Log.mdx";
+
+<Log_24q2 />
+
+</details> */}

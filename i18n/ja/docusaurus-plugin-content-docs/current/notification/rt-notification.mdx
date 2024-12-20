@@ -10,11 +10,11 @@ keywords:
 
 ホーム画面 &gt; <Cmdname sid="side_integratedRealtimeAlert" className="uitext" />
 
-<ImgLang img='rt-notification.png' desc='リアルタイム通知一覧' />
-
 ユーザーが権限を持つすべてのプロジェクトの通知をリアルタイムで確認でき、通知の状況を一目で確認できます。タイムライン、通知タイトル、プロジェクト、アプリケーションを分類して確認できます。
 
-リアルタイムで通知リストを取得する間隔は20秒です。20秒前に通知リストを更新するには、画面右上の<Cmdname sid="refresh" className="uitext" />ボタンを選択してください。
+<ImgLang img='rt-notification.png' desc='リアルタイム通知一覧' />
+
+リアルタイムで通知リストを取得する間隔は20秒です。20秒前に通知リストを更新するには、画面右上の<Cmdname sid="refresh" className="uitext" />ボタンを選択します。
 
 :::note
 
@@ -28,7 +28,7 @@ keywords:
 
 ## グループ、プロジェクト、製品別フィルタリング
 
-通知リストはグループ、プロジェクト、または製品タイプ別にフィルタリングして確認できます。画面左上の<Cmdname sid="project" className="uitext" />ボタンを選択します。画面の右側に<Cmdname sid="project" className="uitext" />画面が表示されたら<Cmdname sid="group" className="uitext" />、<Cmdname sid="project" className="uitext" />、<Cmdname sid="productType" className="uitext" />で項目を選択してください。
+通知リストはグループ、プロジェクト、または製品タイプ別にフィルタリングして確認できます。画面左上の<Cmdname sid="project" className="uitext" />ボタンを選択します。画面の右側に<Cmdname sid="project" className="uitext" />画面が表示されたら<Cmdname sid="group" className="uitext" />、<Cmdname sid="project" className="uitext" />、<Cmdname sid="productType" className="uitext" />ごとに項目を選択します。
 
 <ImgLang img='rt-notification-filter.png' desc='通知フィルタリング' />
 
@@ -36,15 +36,15 @@ keywords:
 
 - 選択した項目をキャンセルするには、その項目をもう一度選択してください。
 
-- <Cmdname sid="project" className="uitext" />ウィンドウ![閉じるアイコン](/img/ico-close.svg)ボタンを選択または、<Cmdname sid="project" className="uitext" />ウィンドウ領域外をクリックして、フィルタリングした通知一覧が表示されます。
+- <Cmdname sid="project" className="uitext" />画面の![閉じる](/img/ico-close.svg)ボタンを選択するか、<Cmdname sid="project" className="uitext" />領域の外側をクリックすると、フィルタリングされた通知一覧が表示されます。
 
-- <Cmdname sid="project" className="uitext" />画面に多くのリストがある場合は、<Cmdname sid="search" className="uitext" />で探している項目が検索可能です。
+- <Cmdname sid="project" className="uitext" />画面に多くのリストがある場合は、<Cmdname sid="search" className="uitext" />で探している項目を検索できます。
 
 - 必要なアイテムをフィルタリングしながら、通知コンテンツを検索することもできます。
 
 ## 通知一覧の時間を設定する
 
-最近発生した通知のリストを時間帯別に確認できます。画面右上、<Cmdname sid="refresh" className="uitext" />ボタンの左側にある時間選択ボックスを選択します。<Cmdname sid="select_1_hour" className="uitext" />(既定値)、<Cmdname sid="select_3_hour" className="uitext" />、<Cmdname sid="select_6_hour" className="uitext" />、<Cmdname sid="select_12_hour" className="uitext" />、<Cmdname sid="select_1_day" className="uitext" />を選択できます。
+最近発生した通知のリストを時間帯で確認できます。画面右上、<Cmdname sid="refresh" className="uitext" />ボタンの左側にある時間選択ボックスを選択します。<Cmdname sid="select_1_hour" className="uitext" />(既定値)、<Cmdname sid="select_3_hour" className="uitext" />、<Cmdname sid="select_6_hour" className="uitext" />、<Cmdname sid="select_12_hour" className="uitext" />、<Cmdname sid="select_1_day" className="uitext" />を選択できます。
 
 選択した直近の時間登録に従って発生した通知がタイムラインで確認できます。最も多く発生した通知時間帯を確認するのは簡単です。
 
@@ -52,13 +52,49 @@ keywords:
 
 <ImgLang img='rt-notification-grouping.png' desc='通知のグループ化' />
 
-通知リストは、<Cmdname sid="title" className="uitext" />、<Cmdname sid="project" className="uitext" />、<Cmdname sid="application" className="uitext" />に並べ替えることができます。グループ化を解除するには、<Cmdname sid="timeline" className="uitext" />ボタンを選択します。
+通知リストを<Cmdname sid="title" className="uitext" />、<Cmdname sid="project" className="uitext" />、<Cmdname sid="application" className="uitext" />ごとにグルーピングしてソートできます。グループ化を解除するには、<Cmdname sid="timeline" className="uitext" />ボタンを選択します。
 
 :::note
 
 通知が発生した場合、サウンドをオンまたはオフにするには![音アイコン](/img/ico-noti-sound.svg)ボタンを選択します。
 
 :::
+
+## 通知一覧イベントを一括解消する
+
+リアルタイム通知一覧で進行中のすべてのイベントを一括で解消できます。
+
+1. 解消しようとする通知メッセージを検索またはフィルタリングし、一覧に表示します。 
+
+2. 画面右上の<Cmdname sid="add_ack_to_project" className="uitext" />ボタンを選択します。
+
+3. メッセージが表示されたら、<Cmdname sid="DSC08323" className="uitext" />ボタンを選択します。
+
+:::note
+
+- イベントの解消作業を完了するまで約30秒から1分ほどかかります。
+
+- <Cmdname sid="add_ack_to_project" className="uitext" />機能を使用すると、現在進行中のイベントの解消通知が大量に発生する可能性があります。
+
+- <Cmdname sid="add_ack_to_project" className="uitext" />機能を使用した後もイベントルールが有効になっており、データがしきい値を超えた場合、イベントは再び発生する可能性があります。
+
+- イベント解消のお知らせは<Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" />メニューでイベントの修正を通じて無効にできます。<Cmdname sid="CNT08320" className="uitext" />または<Cmdname sid="CNT08326" className="uitext" />オプションを無効にします。
+
+:::
+
+## 通知一覧をダウンロードする
+
+選択した時間の間、照会された一覧をCSV形式のファイルにダウンロードできます。
+
+1. 画面右上の![csvアイコン](/img/ic-csv-download-ms.svg)ボタンを選択します。
+
+   <ImgLang img="rt-notification-download-csv.png" desc="CSV" />
+
+2. <Cmdname sid="maximum_csv_lines" className="uitext" />オプションに希望する値を入力します。
+
+3. <Cmdname sid="download" className="uitext" />ボタンを選択してください。
+
+ダウンロードしたCSVファイル名は、_notifications_`YYYY-MM-DD`.csv_形式です。
 
 ## スナップショットの確認
 
@@ -72,7 +108,7 @@ keywords:
 
 通知一覧の各項目の右端の![詳細アイコン](/img/ico-more.svg)ボタンを選択して、次の追加機能にアクセスします。
 
-- <Cmdname sid="detail" className="uitext" />：通知の詳細とステータスを確認できるプロジェクトのメニューに移動します。
+- <Cmdname sid="detail" className="uitext" />：該当通知の詳細とステータスを確認できるプロジェクトのメニューに移動します。
 
 - <Cmdname sid="event_history" className="uitext" />：この通知のイベントメッセージを確認できるプロジェクト<Cmdname sid="side_eventHistory" className="uitext" />メニューに移動します。
 
@@ -81,15 +117,15 @@ keywords:
   <details>
   <summary>製品別文書</summary>
 
-  - アプリケーションモニタリング > [アラート通知の受信設定](../java/set-receive-event)
-  - サーバーモニタリング > [アラート通知の受信設定](../server/set-receive-event)
-  - データベースモニタリング > [アラート通知の受信設定](../mysql/set-receive-event)
-  - Kubernetesモニタリング > [アラート通知の受信設定](../kubernetes/set-receive-event)
-  - Amazon ECS > [アラート通知の受信設定](../amazon-ecs/set-receive-event)
-  - Amazon CloudWatch > [アラート通知の受信設定](../amazon-cloudwatch/set-receive-event)
-  - Azure Monitor > [アラート通知の受信設定](../azure/set-receive-event)
-  - Naver Cloud Monitoring > [アラート通知の受信設定](../ncloud/set-receive-event)
-  - Oracle Cloud Monitor > [アラート通知の受信設定](../oracle-cloud/set-receive-event)
+  - アプリケーションモニタリング > [通知設定](../java/set-receive-event)
+  - サーバーモニタリング > [通知設定](../server/set-receive-event)
+  - データベースモニタリング > [通知設定](../mysql/set-receive-event)
+  - Kubernetesモニタリング > [通知設定](../kubernetes/set-receive-event)
+  - Amazon ECS > [通知設定](../amazon-ecs/set-receive-event)
+  - Amazon CloudWatch > [通知設定](../amazon-cloudwatch/set-receive-event)
+  - Azure Monitor > [通知設定](../azure/set-receive-event)
+  - Naver Cloud Monitoring > [通知設定](../ncloud/set-receive-event)
+  - Oracle Cloud Monitor > [通知設定](../oracle-cloud/set-receive-event)
 
   </details>
 
@@ -113,6 +149,6 @@ keywords:
 
 :::note
 
-イベントの種類によって使用できる追加機能は異なる場合があります。
+イベントの種類により、使用可能な追加機能は異なる場合があります。
 
 :::

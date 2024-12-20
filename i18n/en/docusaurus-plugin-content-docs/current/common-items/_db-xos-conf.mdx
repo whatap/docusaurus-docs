@@ -54,7 +54,7 @@ Copy the _xos_ directory to the database server, and then enter the agent server
 
   You can collect a list of IPs for your database servers. Set the time interval in seconds (at least 3 seconds) for collection.
 
-<InDoc product="postgresql,mysql,redis,mongodb,oracle,altibase,cubrid">
+<InDoc product="postgresql,mysql,redis,mongodb,oracle,altibase,cubrid,mssql">
 
 - **file** <span class='type'>String</span>
 
@@ -64,9 +64,6 @@ Copy the _xos_ directory to the database server, and then enter the agent server
 
   ```ini title='xos.conf'
   file=/opt/postgresql/logs/postgresql.log
-  file1=/opt/postgresql/data/logs/pg10/postgresql-Sun.log
-  file2=/opt/postgresql/data/logs/pg10/postgresql-Mon.log
-  file3=/opt/postgresql/data/logs/pg10/postgresql-Tue.log
   ```
 
   </InDoc>
@@ -74,8 +71,6 @@ Copy the _xos_ directory to the database server, and then enter the agent server
 
   ```ini title='xos.conf'
   file=/var/log/mysqld.log
-  file1=/var/log/mysql_history.log
-  file2=/var/lib/mysql/dbx-database-slow.log
   ```
 
   </InDoc>
@@ -117,5 +112,29 @@ Copy the _xos_ directory to the database server, and then enter the agent server
   ```
 
   </InDoc>
+
+  <InDoc product='mssql'>
+
+  See the following example:
+
+  ```ini title='xos.conf'
+  # example
+  file=C:/Program Files/Microsoft SQL Server/MSSQL16.MSSQLSERVER/MSSQL/Log/ERRORLOG
+  ```
+
+  </InDoc>
+
+  :::tip
+
+  To add a logfile to monitor, add options in the same way as `file`, `file1`, `file2`.
+
+  ```ini title="xos.conf"
+  file={log_file_path1}
+  file1={log_file_path2}
+  file2={log_file_path3}
+  file3={log_file_path4}
+  ```
+
+  :::
 
 </InDoc>

@@ -1,0 +1,421 @@
+---
+slug: 2024-1q-summary
+title: First quarter guidance
+authors: ysj
+date: 2024-05-20T15:30
+toc_max_heading_level: 2
+tags:
+  - New features
+  - 2024
+---
+
+Here’s an overview of new features and notable changes of WhaTap’s first quarter services in 2024. Take a look at new features offered by WhaTap at a glance.
+
+<ImgLang img='changelog/changelog-new3.png' desc='New features' />
+
+{/* truncate */}
+
+{/* 먼저 1분기 상품별 신규 기능 및 신규 상품 요약은 다음과 같습니다. The side menu has been reorganized and the dashboard has been improved.  */}
+
+{/* 요약은 다시 써야 함 */}
+
+<div class ='faq'>
+
+| **Common** |
+| ---------- |
+
+> - The **Side Menu** has been reorganized.  
+> - The <Cmdname sid="side_eventSetting" className="uitext" /> <code class="newfunc">New</code> feature has been newly provided to enhance the metrics field-centeric user experience. 
+> - The **SSO account linking** feature has been added.
+
+| **Application** |
+| --------------- |
+
+> - The menu structures of <Cmdname sid="side_statistics" className="uitext" /> and <Cmdname sid="side_agentsConfiguration" className="uitext" /> have been improved.
+> - <Cmdname sid="side_transaction_map" className="uitext" /> has been improved.
+> - The `Go` product's Beta service has been terminated and the **official** service has been provided.
+
+| **Server** |
+| ---------- |
+
+> The Unix **AIX** agent installation package has been provided. 
+
+| **Kubernetes** |
+| -------------- |
+
+> - **Control plane monitoring** has been newly provided. The <Cmdname sid="side_kubeApiserverDashboard" className="uitext" /> and <Cmdname sid="side_kubeApiserverMetricsSearch" className="uitext" /> features have been added for monitoring the kube-apiserver among control plane components. 
+> - The Pod initialization performance and master meta data features have been reorganized to provide the <Cmdname sid="side_podInitPerf" className="uitext" /> and <Cmdname sid="side_objectManifest" className="uitext" /> features. 
+> - The <Cmdname sid="side_deploymentList" className="uitext" /> feature that allows you to search for related information based on the deployment, and the <Cmdname sid="side_kubernetesAgentList" className="uitext" /> feature that allows you to check the installation status of master and node agents, have been added. 
+> - Support for *Helm* chart installation has been provided when installing the master and node agents. 
+
+| **Database** |
+| ------------ |
+
+> - A new <code class="my">V2</code> service has been provided that enhances charting and collection features in `MongoDB` and `Redis` products.
+> - The metrics divided into XOS and XOS2 have been integrated into **XOS** and changed to be displayed in percentage. 
+
+| **Browser** |
+| ----------- |
+
+> The <Cmdname sid="TTL07736" className="uitext" /> feature has been newly provided.
+
+| **Network** |
+| ----------- |
+
+> The **Network Performance Monitoring** product has been **officially** released. 
+
+</div>
+
+An overview of changes other than new features for each product, the corresponding release versions, and changes in the agent can be found in the following guide.
+
+<br/>
+<br/>
+
+## `Common`
+
+Notable new features in the `Common` section in Q1 2024 include a reorganized side menu, addition of the SSO account link, and a new event configuration feature. 
+
+For better user convenience, the **side menu** of WhaTap Monitoring has been reorganized for the first time in 5 years. Project selection is required before using the WhaTap services. In order to make it easier to use the work flow after creating and selecting a project, the UI has been reorganized to reduce clutter compared to before, securing the area for project selection and menu space. 
+
+You can expand only the selected part of the project list for checking, and secure the vertical area to view various feature menus more easily. You can also bookmark frequently used functions in the product-specific project menu by clicking a simple star-shaped icon (<LinkImage img='ic-star.svg' desc='Compare Icon'/>). 
+
+<ImgLang img='release/release-main-ui.png' desc='Reorganize side menu cl branching example' />
+
+In addition, the **SSO account link feature** has been added. You can integrate WhaTap Monitoring with **Okta** that is a cloud-based user account management and access rights management solution. You can use the service after logging into the WhaTap service with the **Okta** account that is used in the organization. 
+
+<ImgLang img='sso-check-sso-info.png' desc='sso-info cl quarterly example' />
+
+The <Cmdname sid="side_eventSetting" className="uitext" /> <code class="newfunc">New</code> feature has enhanced the field-centric user experience by allowing users to select fields before categories, thus eliminating the mismatch between metrics perceived by users and event settings. The default event templates have been provided for your products, making it easier to configure the alert events. 
+
+![Event v2 cl branching example](/img/changelog/changelog-common-event-v2.png)
+
+The following overview guide helps you check new features and major changes in the Common section for Q1 2024, along with release versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Common_1q from "../crw-data/crwld-service/_import-service-Common.mdx";
+
+<Common_1q />
+
+</details>
+
+:::note 
+
+- For more information about the side menu reorganization, see [the following](https://www.whatap.io/bbs/board.php?bo_table=blog&wr_id=214/). 
+
+- For more information about the SSO account linking, see [the following](https://docs.whatap.io/account/sso/). 
+
+- For more information about <Cmdname sid="side_eventSetting" className="uitext" /> <code class="newfunc">New</code>, see [the following](https://docs.whatap.io/java/warning-notice-v2). 
+
+:::
+
+<br/>
+
+## `Application`
+
+Notable new features and changes in the `Application` product suite in Q1 2024 include the official release of the `Go` product, enhancements to <Cmdname sid="side_transaction_map" className="uitext" />, and improvements to the menu structures of <Cmdname sid="side_statistics" className="uitext" /> and <Cmdname sid="side_agentsConfiguration" className="uitext" />.  
+
+The `Go` application monitoring has started **official** service after ending the Beta version. WhaTap's `Go` application monitoring supports web frameworks and continuously collects the Go runtime package data. The call relationships are collected through link tracing in the MSA environment. 
+
+The <Cmdname sid="side_transaction_map" className="uitext" /> menu allows you to check the detailed status of each transaction for a short period during a performance test or upon occurrence of a failure. Enhancements have been made to <Cmdname sid="side_transaction_map" className="uitext" /> as follows.
+
+Instead of removing the TX Trace section, the structure has been improved to provide detailed information through the <Cmdname sid="TTL06209" className="uitext" /> popup window when dragging the chart. Additionally, the number of analyzed traces has been expanded from 100 to **1000**, enabling analysis of 10 times more traces than before. 
+
+In addition, the **Filter** feature has been improved to minimize behaviors by applying filters on a single screen. For example, you can use transaction filters to filter and view only the selected transactions. In addition, overall convenience has been improved by allowing you to view data from up to 10 minutes, in addition to the previous real-time data inquiry of up to 5 minutes.  
+
+ {/* 그외에도 ***Top 30*** 섹션에 IP 필터 기능을 추가했고, <Cmdname sid="multi_transaction" className="uitext" /> 탭에서 프로잭트 선택 상태를 저장하는 등 트랜잭션 분석 시 편의성을 전반적으로 향상시켰습니다.  */}
+
+<ImgLang img='changelog/changelog-app-tx-map.png' desc='sc' className='changelog-img'/>
+
+For <Cmdname sid="side_statistics" className="uitext" /> and <Cmdname sid="side_agentsConfiguration" className="uitext" /> menus, improvements have been made in the work flow and stability, such as tab configuration for each menu into individual submenus.
+
+![Statistics and instance performance monitoring sc cl](/img/changelog/changelog-app-stat-instance.png)
+
+{/* 안정적으로 각 기능을 사용할 수 있도록 / 기존 문제 개선 및 다양한 안정화 작업을 진행했습니다. */}
+
+The following overview guide helps you check new features and major changes in the `Application` product suite for Q1 2024, along with release versions.
+
+{/* <code class="New">New</code> `Go` 모니터링 상품 **정식 서비스** 시작 <code class='changelog-service'>Service 2.2.4​</code> */}
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Application_1q from "../crw-data/crwld-service/_import-service-Application.mdx";
+
+<Application_1q />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+### `Java`
+
+import Java_agent_1q from "../crw-data/crwld-agent/_import-agent-java.mdx";
+
+<Java_agent_1q />
+
+### `PHP`
+
+import PHP_agent_1q from "../crw-data/crwld-agent/_import-agent-php.mdx";
+
+<PHP_agent_1q />
+
+### `Python`
+
+import Python_agent_1q from "../crw-data/crwld-agent/_import-agent-python.mdx";
+
+<Python_agent_1q />
+
+### `Node.js`
+
+import Node_agent_1q from "../crw-data/crwld-agent/_import-agent-nodejs.mdx";
+
+<Node_agent_1q />
+
+### `Go`
+
+import Go_agent_1q from "../crw-data/crwld-agent/_import-agent-golang.mdx";
+
+<Go_agent_1q />
+
+</details>
+
+<br/>
+
+## `Server`
+
+The **Unix** `AIX` installation package with notable new features and changes in `Server` products in Q1 2024 of WhaTap. 
+
+In this Q1, a new **Unix** `AIX` **agent installation package** has been provided. AIX, developed by IBM, is primarily used on enterprise servers. It is an operating system specifically designed for scalability, compatibility, and robustness in enterprise environments. 
+
+WhaTap supports **AIX 6.1** or later. You can install the package simply by downloading it via the `AIX` installation package and running it. WhaTap Server Monitoring enables you to manage and monitor the AIX operating system more effectively. 
+
+![AIX sc cl](/img/changelog/changelog-server-aix.png)
+
+The following overview guide helps you check new features and major changes in the `Server` products in Q1 2024 along with release versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Server_1q from "../crw-data/crwld-service/_import-service-Server.mdx";
+
+<Server_1q />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+import Server_agent_1q from "../crw-data/crwld-agent/_import-agent-server.mdx";
+
+<Server_agent_1q />
+
+</details>
+
+:::note 
+
+For more information about the AIX installation, see [the following](https://docs.whatap.io/server/server-os/server-aix). 
+
+:::
+
+<br/>
+
+## `Kubernetes`
+
+Here are notable new features and changes in WhaTap's Q1 2024 Kubernetes products, including a new feature, **Control Plane Monitoring**, <Cmdname sid="side_kubernetesAgentList" className="uitext" />, <Cmdname sid="side_deploymentList" className="uitext" />, reorganized feature, <Cmdname sid="side_podInitPerf" className="uitext" /> and <Cmdname sid="side_objectManifest" className="uitext" />, and support for newly added **Helm** chart installation. 
+
+WhaTap Kubernetes Monitoring has introduced **Control Plane Monitoring** in this Q1. The <Cmdname sid="side_kubeApiserverDashboard" className="uitext" /> and <Cmdname sid="side_kubeApiserverMetricsSearch" className="uitext" /> features have been added to provide visibility into kube-apiserver, the control plane component that manages the entire Kubernetes cluster and handles API requests in the cluster. 
+
+<Cmdname sid="side_kubeApiserverDashboard" className="uitext" /> collects status and performance metrics of kube-apiserver, response times, throughputs, request failures, and such to monitor the availability and performance of the cluster. You can view the list of metrics collected by kube-apiserver via <Cmdname sid="side_kubeApiserverMetricsSearch" className="uitext" />.
+
+![Control Plane monitoring sc cl](/img/changelog/changelog-k8s-kube-apiserver.png)
+
+Additionally, the <Cmdname sid="side_deploymentList" className="uitext" /> feature that allows you to query information based on Deployment, and the <Cmdname sid="side_kubernetesAgentList" className="uitext" /> feature that allows you to check the installation status of master and node agents, have been added. 
+
+Monitoring the collection of Pods rather than individual Pods is important for ensuring service stability and performance. In this sense, deployment monitoring that is responsible for application deployment and updates, is essential. In <Cmdname sid="side_deploymentList" className="uitext" />, you can view resource relationships, status of pods, containers, and applications in the cluster, and key performance metrics such as CPU, memory, and number of transactions by Deployment. 
+
+Additionally, the newly added <Cmdname sid="side_kubernetesAgentList" className="uitext" /> allows you to see the master and node agent installation status at a glance.
+
+In addition, the Pod initialization performance and master meta information have been reorganized to provide <Cmdname sid="side_podInitPerf" className="uitext" /> and <Cmdname sid="side_objectManifest" className="uitext" /> features. <Cmdname sid="side_podInitPerf" className="uitext" /> provides data details on the startup time and resource usage through precise analysis of the startup times for each Pod. <Cmdname sid="side_objectManifest" className="uitext" /> adds historical view and comparison for each object, making it easy to trace changes in the cluster. 
+
+![Object manifest and Pod startup analysis sc cl](/img/changelog/changelog-k8s-om-podinit.png)
+
+{/* 
+
+In addition, you can see the resource relationship diagram and core observability data such as traces, logs, and metrics at a glance based on the deployment. 
+
+클러스터 관리 효율성 향상 */}
+
+In addition, support of the **Helm** chart installation method that reduces the operation complexity when installing master and node agents has been officially supported, in addition to the previous method using the Yaml file. 
+
+The following overview guide helps you check new features and major changes in the `Kubernetes` products in Q1 2024 along with their release versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Kubernetes_1q from "../crw-data/crwld-service/_import-service-Kubernetes.mdx";
+
+<Kubernetes_1q />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+import Kubernetes_agent_1q from "../crw-data/crwld-agent/_import-agent-k8s.mdx";
+
+<Kubernetes_agent_1q />
+
+</details>
+
+:::note 
+
+- For more information about <Cmdname sid="side_kubeApiserverDashboard" className="uitext" />, see [the following](https://docs.whatap.io/kubernetes/kube-apiserver-dashboard).
+
+- For more information about <Cmdname sid="side_kubeApiserverMetricsSearch" className="uitext" />, see [the following](https://docs.whatap.io/kubernetes/kube-apiserver-metrics-search).
+
+- For more information about <Cmdname sid="side_deploymentList" className="uitext" />, see [the following](https://docs.whatap.io/kubernetes/deployment-list).
+
+- For more information about <Cmdname sid="side_kubernetesAgentList" className="uitext" />, see [the following](https://docs.whatap.io/kubernetes/agent-list).
+
+- For more information about the *Helm* chart installation for master and node agents, see [the following](https://docs.whatap.io/kubernetes/install-master-node-agent#create-kubernetes-agent). 
+
+:::
+
+<br/>
+
+## `Database`
+
+WhaTap introduces notable new features and changes in the `Database` product suite in Q1 2024, including the launch of <code class="my">V2</code> for **Redis** and **MongoDB** products.
+
+WhaTap's `Database` product suite is being transitioned to <code class="my">V2</code>. Following the previous **PostgreSQL** and **MySQL**, **Redis** and **MongoDB** <code class="my">V2</code> services have been launched in this first quarter. The <code class="my">V2</code> features improved charting and collection features overall.  
+
+![Database sc cl ](/img/changelog/changelog-db.png)
+
+The UI and features of the <Cmdname sid="side_dashboard" className="uitext" /> menu have been improved, and you can now directly check the database performance metrics from the menu. You can also select agents for each cluster in <Cmdname sid="side_multiInstance" className="uitext" />. And it provides the <Cmdname sid="side_log" className="uitext" /> menu that allows you to search for database logs, check the trends, and receive log-related notifications.
+
+With the transition to <code class="my">V2</code>, the metrics divided into XOS and XOS2 are changed to percentage notation that can be checked as % and provided as an integrated version under **XOS*.
+
+The following overview guide helps you check new features and major changes in the `Database` product suite for Q1 2024, along with release versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Database_1q from "../crw-data/crwld-service/_import-service-Database.mdx";
+
+<Database_1q />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+import DBX_agent_1q from "../crw-data/crwld-agent/_import-agent-dbx.mdx";
+
+<DBX_agent_1q />
+
+</details>
+
+<br/>
+
+## `Browser`
+
+Notable new features and changes to the `Browser` products in Q1 2024 include the <Cmdname sid="TTL07736" className="uitext" /> feature and ***Custom event collection feature***. 
+
+A new feature in this Q1, <Cmdname sid="TTL07736" className="uitext" />, can be used to check how users navigate web pages. By analyzing overall user behaviors--how they act, what pages they stay on, what elements they click on the screen, what errors occur on the screen, you can gain insights into how they use the service and get closer to understanding the behavioral patterns. 
+
+You can use <Cmdname sid="side_userSessionEventSearch" className="uitext" />, <Cmdname sid="side_ajaxAnalytics" className="uitext" />, and <Cmdname sid="side_rumPageLoadHitmap" className="uitext" /> to analyze users' on-page behaviors and trace various errors that occur in sessions. Session log information can be used to analyze end users' paths, causes for attrition, performance, and user experience. You can also use ***AJAX hitmap*** and <Cmdname sid="side_rumPageLoadHitmap" className="uitext" /> to identify users who are having issues in real time. This information allows us to check user experience with services and performance status.
+
+<ImgLang img='browser-search-user-session-log-analysis.png' desc='User session analysis branching example' className='changelog-img'/>
+
+The ***Custom event collection*** feature provides an interface for users to collect desired events as well as basic information provided by Browser Monitoring. You can collect custom events using the `addCustomEvent` method among the interfaces provided by the browser agents, and then view the collected data through the <Cmdname sid="side_userSessionEventSearch" className="uitext" /> menu or <Cmdname sid="side_flexboard" className="uitext" />. 
+
+{/* 사용자가 웹 페이지를 탐색하는 방식을 이해할 수 있도록 돕습니다. You have insights with an aid of this.   */}
+
+The following overview guide helps you understand new features and major changes in `Browser` products in Q1 2024, along with release versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Browser_1q from "../crw-data/crwld-service/_import-service-Browser.mdx";
+
+<Browser_1q />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+import Browser_agent_1q from "../crw-data/crwld-agent/_import-agent-browser.mdx";
+
+<Browser_agent_1q />
+
+</details>
+
+<br/>
+
+## `Network`
+
+In the first quarter of 2024, WhaTap officially launched its **Network Performance Monitoring** product, which collects network data for processes to identify congestion and failures between networks and improve users' network performance. 
+
+![Network monitoring cl ](/img/changelog/changelog-network.png)
+
+Recently, the network market is growing within the larger framework of cloud and virtualization. In addition to traditional equipment-centric network monitoring, the processes that perform tasks are becoming critical monitoring targets. With the WhaTap network performance monitoring, you can reliably monitor network metrics at the process level.
+
+WhaTap's `Network` products trace the network behaviors performed by each process and visualize complex components and status information through the topology for intuitive understanding. You can view **quality metrics** (***Latency*** and ***Jitter***) and **network usage metrics** (***bps***, ***pps***, and ***session count***). Visibility has been obtained with tag options and various user custom charts have been provided through <Cmdname sid="side_flexboard" className="uitext" />.
+
+The following overview guide helps you check new features and major changes in the `Network` products in Q1 2024 along with release versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Network_1q from "../crw-data/crwld-service/_import-service-Network.mdx";
+
+<Network_1q />
+
+</details>
+
+:::note 
+
+- For more information about the `Network` product, see [the following](https://docs.whatap.io/en/npm/introduction). 
+
+- For more information about the agent options for AWS resource identification, see [the following](https://docs.whatap.io/npm/set-aws-resource-options). 
+
+:::
+
+<br/>
+
+{/* ## `AWSLog`
+
+<div class='indentTab'>
+
+import AWSLog_1q from "../crw-data/crwld-service/_import-service-AWSLog.mdx";
+
+<AWSLog_1q />
+
+</div> <br/> */}
+
+## `Log`
+
+WhaTap has introduced the reorganized **Log search filtering feature** with notable new features and changes to the `Log` product in Q1 2024. 
+
+The **Log search filtering feature** has been reorganized in <Cmdname sid="side_logSearch" className="uitext" /> and <Cmdname sid="side_logTail" className="uitext" />. When entering a search value, you can check the search grammar supported through the guide UI, and the feature has been added to create and modify a tag through keyboard input and modify operators by clicking.
+
+Additionally, if the agent option has been set, the feature to collect log levels (<span class='logwr'>WARN</span>, <span class='loger'>ERROR</span>, <span class='logft'>FATAL</span>) and display their colors on the left side of the log list has been added.  
+
+![Log agent option cl branching example](/img/log-agent-option-level.png)
+
+The following overview guide helps you understand new features and major changes in `Log` products in Q1 2024, along with release versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Log_1q from "../crw-data/crwld-service/_import-service-Log.mdx";
+
+<Log_1q />
+
+</details>
+
+<br/>

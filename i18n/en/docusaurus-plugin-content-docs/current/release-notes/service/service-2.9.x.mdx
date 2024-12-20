@@ -6,6 +6,150 @@ pagination_next: release-notes/service/service-2_8_x
 displayed_sidebar: releaseSidebar
 ---
 
+## Service 2.9.9
+
+October 29, 2024
+
+<div className="indentTab">
+
+### `Kubernetes`
+
+<Status priority='0'>Fixed</Status> In <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentInstall" className="uitext" />, fixed the issue where the description for the Kubernetes agent image version is not displayed properly.
+
+</div>
+
+## Service 2.9.8
+
+October 25, 2024
+
+<div className="indentTab">
+
+### `Database`
+
+#### Common
+
+<Status priority='0'>Fixed</Status> In <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbTopSqlComparison" className="uitext" />, fixed the issue where data fluctuations are inconsistent.
+
+#### Oracle Pro
+
+<Status priority='0'>Fixed</Status> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />, fixed the issue where data is not retrieved when retrieving old sessions through the <Cmdname sid="session_detail" className="uitext" /> window.
+
+</div>
+
+## Service 2.9.7
+
+October 23, 2024
+
+<div className="indentTab">
+
+### `Server`
+
+<Status priority='1'>Feature</Status> In<Cmdname sid="side_serverList" className="uitext" /> &gt; <Cmdname sid="side_serverInventory" className="uitext" />, added the <UI>Delete</UI> feature for the selected item in the list.
+
+</div>
+
+## Service 2.9.5
+
+October 8, 2024
+
+<div className="indentTab">
+
+### `Common`
+
+<Status priority='1'>Changed</Status> In <Cmdname sid="side_myUsage" className="uitext" /> &gt; <Cmdname sid="side_paymentInformation" className="uitext" />, changed the promotional image related to the WhaTap starter pack.
+
+</div>
+
+## Service 2.9.4
+
+October 2, 2024
+
+<div className="indentTab">
+
+### `Common`
+
+<Status priority='0'>Changed</Status> Improved the pagination component style.
+
+{/* 
+
+- <Status priority='0'>Fixed</Status> Restored the <UI>Clear in batch</UI> button in <Cmdname sid="TTL08411" className="uitext" />.
+
+*/}
+
+---
+
+### `Application`
+
+- <Status priority='0'>Fixed</Status> In <Cmdname sid="side_statistics" className="uitext" />, modified pagination to be disabled when retrieving data.
+
+- <Status priority='1'>Changed</Status> In <Cmdname sid="side_statistics" className="uitext" />, changed the number of CSV download lines to match the maximum number of retrievals.
+    
+  - **Before change**
+
+    CSV: 100,000 / Retrieval: 10,000
+
+  - **After change**
+
+    CSV: 10,000 / Retrieval: 10,000
+
+</div>
+
+## Service 2.9.3
+
+September 27, 2024
+
+<div className="indentTab">
+
+### `Kubernetes`
+
+{/* - <Status priority='0'>Fixed</Status> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_containerMap" className="uitext" /> 메뉴로 처음 진입할 때 간헐적으로 라벨이 제대로 표시되지 않는 문제 수정 */}
+
+<p><Status priority='0'>Fixed</Status> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_nodeMap" className="uitext" />, fixed the issue where log data is not retrieved when selecting all nodes in the and then moving to the <Cmdname sid="side_log" className="uitext" /> menu (cache issue resolved).</p>
+
+</div>
+
+## Service 2.9.2
+
+September 26, 2024
+
+<div className="indentTab">
+
+### `Server`
+
+<Status priority='0'>Fixed</Status> In <Cmdname sid="side_serverInventoryGuide" className="uitext" /> of the <Cmdname sid="side_serverList" className="uitext" /> &gt; <Cmdname sid="side_serverInventory" className="uitext" /> menu, added missing backslash (`\`) to the Windows option addition command.
+
+---
+
+### `Kubernetes`
+
+- <Status priority='1'>Feature</Status> Added a pop-up to guide new features when entering the following menu path.
+
+  - <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_nodeMap" className="uitext" />
+
+  - <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_nodeTimeline" className="uitext" />
+
+- <Status priority='1'>Changed</Status> In <Cmdname sid="side_report" className="uitext" />, modified the report form to allow selection of multiple agents, agent groups, and agent types when selecting <Cmdname sid="A200_AppMonthlyReport" className="uitext" report/> and <Cmdname sid="A155_AppMonthPerformance" className="uitext" report />.
+
+- <Status priority='0'>Fixed</Status> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_nodeMap" className="uitext" />, fixed the issue where the log data is not retrieved when you select all nodes and then go to the <Cmdname sid="side_log" className="uitext" /> menu.
+
+---
+
+### `Database`
+
+#### Common
+
+<Status priority='0'>Fixed</Status> Fixed the issue where multiple colons (`:`) are recognized as bind variables in SQL statements in the <Cmdname sid="TTL06224" className="uitext" /> window.
+
+#### Oracle <code className="my">V2</code>, Oracle Pro
+
+<Status priority='0'>Fixed</Status> Fixed the issue where the average data in <UI>Runtime Plan</UI> is calculated by summing up in the <Cmdname sid="TTL06224" className="uitext" /> window.
+
+#### PostgreSQL, MySQL
+
+<Status priority='0'>Fixed</Status> Modified the Object Detail window to display only the column names when there is no table when selecting a query from the <Cmdname sid="active_sessions" className="uitext" /> table in the dashboard to view the plan.
+
+</div>
+
 ## Service 2.9.1
 
 September 25, 2024

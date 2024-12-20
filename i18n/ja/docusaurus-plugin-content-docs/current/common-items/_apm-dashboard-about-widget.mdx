@@ -26,11 +26,27 @@
 
 トランザクションを通じて確認できるトラブルの事象は、まず応答時間で把握できます。 また、進行中のトランザクションが終了しない場合は、これもトラブルとして認識すべきです。 WhaTap Monitoringでは、進行中のトランザクションの遂行時間に基づいて状態を表示します。 <span class='normal'>青色(Normal)</span>は応答時間が正常なトランザクション、<span class='slow'>オレンジ色(Slow)</span>は応答時間が8秒までの遅いトランザクション、<span class='vslow'>赤色(Very slow)</span>は、応答時間が8秒を超えた非常に遅いトランザクションを意味します。 これにより、ユーザーはトラブル状況が直感的にすぐ認識できるようになります。
 
+<InDoc product="java">
+
+:::tip
+
+<Cmdname sid="side_correlatedProjectManagement" className="uitext" />メニューでデータベースプロジェクトを追加すると、次のウィジェットで連携したプロジェクトの性能メトリクスを照会できます。
+
+- <Cmdname sid="AA001" className="uitext" />, <Cmdname sid="AA002" className="uitext" />: 現在進行中のトランザクションと連携されたデータベースのSQL性能を照会できます。
+
+- <Cmdname sid="AA005" className="uitext" />: 過去の時点でのトランザクションに連携されたデータベースの性能メトリクスを照会できます。
+
+連携プロジェクトの追加と分析についての詳細は、[次の文書](linked-projects)を参照してください。
+
+:::
+
+</InDoc>
+
 #### <Cmdname sid="AA001" /> {#active-trs-speed}
 
 <ImgLang img="speedmeter.png" desc="アクティブTXスピードチャート" />
 
-現在進行中のトランザクション(中央領域)と、終了したトランザクション(右領域)の状態を確認できます。 左から右に流れる水玉模様のアイコンは、トランザクションを意味します。 
+現在進行中のトランザクション(中央領域)と、終了したトランザクション(右領域)の状態を確認できます。 左から右に流れる水玉模様のアイコンは、トランザクションを意味します。 チャート領域をクリックすると、進行中のトランザクション一覧を確認できる画面が表示されます。 トランザクション一覧のいずれかを選択すると、詳細なトランザクション情報とSQLクエリ、コールスタック情報を確認できます。
 
 - 左領域
 
@@ -238,7 +254,7 @@ TPS、応答時間、CPU 使用率分析の詳細については[次の文書](.
 
 ヒープメモリチャート分析に関しての詳細については、次のリンクを参照してください。
 
-- [月間WhaTap：モニタリングで注目すべき指標](https://www.whatap.io/bbs/board.php?bo_table=blog&wr_id=59)
+- [月間WhaTap：モニタリングで注目すべき指標(韓国語)](https://www.whatap.io/bbs/board.php?bo_table=blog&wr_id=59)
 
 - [Javaヒープメモリーチャートの分析：Ch.1ヒープチャート観察](https://youtu.be/FcWfVrETWh4)
 
@@ -264,7 +280,7 @@ TPS、応答時間、CPU 使用率分析の詳細については[次の文書](.
 
 :::tip
 
-チャート分析の詳細については、次のリンクを参考にしてください。 [月間WhaTap：モニタリングで注目すべき指標](https://www.whatap.io/bbs/board.php?bo_table=blog&wr_id=59)
+チャート分析の詳細については、次のリンクを参考にしてください。 [月間WhaTap：モニタリングで注目すべき指標(韓国語)](https://www.whatap.io/bbs/board.php?bo_table=blog&wr_id=59)
 
 :::
 

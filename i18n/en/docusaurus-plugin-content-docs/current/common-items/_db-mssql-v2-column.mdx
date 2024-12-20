@@ -1,0 +1,129 @@
+<Title level={props.level} hashid="column-info" >Column information guide</Title>
+
+<InDoc pages="instance-monitoring,multi-instance-monitoring,analysis-count-trend">
+
+For more information about columns, see [the link](https://learn.microsoft.com/en-us/sql/sql-server/?view=sql-server-ver16).
+
+<Tabs groupId="db-columns">
+
+<TabItem value="activesession" label="Active session">
+
+| Item                      | Description                                                                   |
+| ------------------------- | ----------------------------------------------------------------------------- |
+| `application`             | Name of the application that created the session.                             |
+| `blocking_session_id`     | ID of the session that is blocking the current session.                       |
+| `client`                  | Name or IP address of the client that created the session.                    |
+| `command`                 | SQL command on which the session is running. (SELECT, INSERT, UPDATE, DELETE) |
+| `completion_time`         | Time when the SQL operation is expected to finish.                            |
+| `cpu_time`                | Amount of CPU time (milliseconds) used in the session.                        |
+| `cpu_usage`               | It is the CPU utilization used in the session.                                |
+| `db`                      | Name of the database to which the session is connected.                       |
+| `elapsed_time`            | Elapsed time (milliseconds) since the session started.                        |
+| `granted_query_memory`    | Amount of memory (pages) allocated for query execution.                       |
+| `host`                    | Name of the client host that created the session.                             |
+| `id`                      | It is the unique ID to identify the session.                                  |
+| `instance`                | Agent or instance name.                                                       |
+| `isolation`               | Transaction isolation level of the current session.                           |
+| `last_request_start_time` | Time when the last request in the session started.                            |
+| `last_wait_type`          | Last type that the session waited for.                                        |
+| `login_time`              | Time when the session logged into SQL Server.                                 |
+| `logical_reads`           | Number of logical reads that occurred in the session.                         |
+| `memory_usage`            | Amount of memory the session uses.                                            |
+| `object`                  | Name of the database object referenced by the running SQL statement.          |
+| `objectid`                | ID of the object running in the session.                                      |
+| `percent_complete`        | Completion rate of the executing command.                                     |
+| `plan_handle`             | Handle that identifies the SQL plan.                                          |
+| `query`                   | Entire text of the SQL statement running in the session.                      |
+| `query_hash`              | Hash value of the SQL statement running in the session.                       |
+| `query_param`             | Parameter value of the SQL statement running in the session.                  |
+| `reads`                   | Number of physical reads that occurred in the session.                        |
+| `row_count`               | Number of rows processed in the session.                                      |
+| `sql_handle`              | It is the unique identifier of the SQL statement.                             |
+| `status`                  | Current state of the session. e.g. `running`, `suspended`, etc.               |
+| `time`                    | Task operation time.                                                          |
+| `user`                    | Name of the user connected to SQL Server.                                     |
+| `wait_resource`           | Resource the session is waiting on.                                           |
+| `wait_time`               | Time (milliseconds) that the session has been waiting.                        |
+| `wait_type`               | Type of wait the session is waiting on.                                       |
+| `writes`                  | Number of physical writes that occurred in the session.                       |
+
+</TabItem>
+
+<TabItem value="locktree" label="Lock tree">
+
+| Item             | Description                                                                                                                                                 |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `application`    | Name of the application that created the session.                                                                                                           |
+| `client`         | Name or IP address of the client that created the session.                                                                                                  |
+| `db`             | Name of the database to which the session is connected.                                                                                                     |
+| `elapsed_time`   | Elapsed time (milliseconds) since the session started. It is used to measure how much time has passed since a lock occurred.                                |
+| `host`           | Name of the client host that created the session.                                                                                                           |
+| `id`             | Unique ID for the locked session.                                                                                                                           |
+| `instance`       | Agent or instance name.                                                                                                                                     |
+| `last_wait_type` | Last type that the session waited for.                                                                                                                      |
+| `row_count`      | Number of rows processed in the session.                                                                                                                    |
+| `query`          | Entire text of the SQL statement running in the session.                                                                                                    |
+| `query_param`    | Parameter value of the SQL statement running in the session.                                                                                                |
+| `status`         | Current status of the session. For example, there are `running`, `suspended`, `sleeping`, and such which indicate whether the session is active or waiting. |
+| `user`           | Name of the user connected to SQL Server.                                                                                                                   |
+| `wait_resource`  | It indicates the resource the session is waiting for.                                                                                                       |
+| `wait_time`      | Time (milliseconds) that the session has been waiting.                                                                                                      |
+| `wait_type`      | Type of wait the session is in. For example, it includes information such as lock wait or IO wait.                                                          |
+
+</TabItem>
+
+<TabItem value="process-info" label="Process information">
+
+The following items are the metrics collected if the XOS agent has been installed.
+
+| Item       | Description                                                                               |
+| ---------- | ----------------------------------------------------------------------------------------- |
+| `cputime`  | CPU usage time                                                                            |
+| `cpuusage` | CPU Utilization                                                                           |
+| `elapse`   | Elapsed time of CPU usage                                                                 |
+| `vsize`    | Virtual memory size (Kb)                                                                  |
+| `rss`      | Resident Set Size (RSS) that is the number of physical pages associated with the process. |
+| `state`    | Process status                                                                            |
+| `ioread`   | Actual time spent reading the block (milliseconds)                                        |
+| `iowrite`  | Actual time spent writing the block (milliseconds)                                        |
+| `pss`      | Process specific memory usage + Percentage of shared memory occupied by one process       |
+| `uid`      | user id                                                                                   |
+| `cmd`      | Executing command                                                                         |
+| `longcmd`  | Full path of cmd                                                                          |
+
+</TabItem>
+
+</Tabs>
+
+</InDoc>
+
+<InDoc pages="analysis-lock-tree">
+
+Details for each session are provided in the following columns:
+
+| Item             | Description                                                                                                                                                 |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `application`    | Name of the application that created the session.                                                                                                           |
+| `client`         | Name or IP address of the client that created the session.                                                                                                  |
+| `db`             | Name of the database to which the session is connected.                                                                                                     |
+| `elapsed_time`   | Elapsed time (milliseconds) since the session started. It is used to measure how much time has passed since a lock occurred.                                |
+| `host`           | Name of the client host that created the session.                                                                                                           |
+| `id`             | Unique ID for the locked session.                                                                                                                           |
+| `instance`       | Agent or instance name.                                                                                                                                     |
+| `last_wait_type` | Last type that the session waited for.                                                                                                                      |
+| `row_count`      | Number of rows processed in the session.                                                                                                                    |
+| `query`          | Entire text of the SQL statement running in the session.                                                                                                    |
+| `query_param`    | Parameter value of the SQL statement running in the session.                                                                                                |
+| `status`         | Current status of the session. For example, there are `running`, `suspended`, `sleeping`, and such which indicate whether the session is active or waiting. |
+| `user`           | Name of the user connected to SQL Server.                                                                                                                   |
+| `wait_resource`  | It indicates the resource the session is waiting for.                                                                                                       |
+| `wait_time`      | Time (milliseconds) that the session has been waiting.                                                                                                      |
+| `wait_type`      | Type of wait the session is in. For example, it includes information such as lock wait or IO wait.                                                          |
+
+</InDoc>
+
+:::note
+
+WhaTap basically stores the client-related information.
+
+:::

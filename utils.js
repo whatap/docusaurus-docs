@@ -459,6 +459,12 @@ function colsToJson(data){
     "ko": "DBX 에이전트 설정",
   }
 
+  rd["side_kubeEventList"] = {
+    "en": "Kubernetes Event",
+    "ja": "Kubernetesイベント",
+    "ko": "쿠버네티스 이벤트"
+  }
+
   rd["daily_app_stat"].en = "Daily APP. Status";
   rd["daily_app_stat"].ja = "日別APP現況"
 

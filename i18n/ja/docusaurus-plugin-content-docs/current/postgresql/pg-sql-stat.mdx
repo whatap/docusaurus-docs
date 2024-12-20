@@ -17,6 +17,8 @@ PostgreSQLが提供するSQL統計(実行回数、実行時間、Row数など) �
 
 - 1時間周期で`pg_stat_statements`からデルタ値を計算して収集するため、設定から1時間が経ってから収集を開始します。
 
+- 1時間間隔に収集した場合、`total_time`基準最大5,000件まで収集します。
+
 - `pg_stat_statements`モジュールの詳細については、[次のリンク](https://www.postgresql.org/docs/current/pgstatstatements.html)を参照してください。
 
 :::
@@ -48,6 +50,17 @@ PostgreSQLが提供するSQL統計(実行回数、実行時間、Row数など) �
    ```bash
    select * from public.pg_stat_statements
    ```
+
+:::note
+
+データを収集する基準については、以下のDBXエージェントオプションを参照してください。 `pg_stat_statements`を照会し、rows値が`statements_min_row`より大きい場合に収集します。
+
+```ini title="whatap.conf"
+# default 10000 row
+statements_min_row=10000
+```
+
+:::
 
 ## 基本画面ガイド
 
@@ -98,7 +111,7 @@ import Dbproductsqlstatquerydetails from "../common-items/_db-product-sql-stat-q
 {/* 필터 조건추가하기*/}
 import Dbsqlfilter from "../common-items/_db-sql-filter.mdx";
 
-<Dbsqlfilter />
+<Dbsqlfilter level={2} />
 
 import Dbv2dataeditcolumn from "../common-items/_db-v2-data-edit-column.mdx";
 

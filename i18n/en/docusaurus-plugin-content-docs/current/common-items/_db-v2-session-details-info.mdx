@@ -6,6 +6,8 @@ If you select a session in the <Cmdname sid="active_sessions" className="uitext"
 
 <InDoc product="oracle-pro,oracle"><ImgLang img='db-session-details-info-oracle-pro.png' desc='Session detail' /></InDoc>
 
+<InDoc product="mssql"><ImgLang img='db-session-details-info-mssql.png' desc='Session detail' /></InDoc>
+
 - The session information is viewed in real time by default. If you select ![Pause icon](/img/ico-pause.svg) in the time selector, you can stop a real-time view and see the data based on the paused time. To refresh data while pausing a real-time view, select ![Refresh icon](/img/ico-refresh.svg).
 
 - **_Kill Session_**: You can stop the selected session. If the <Cmdname sid="session_kill" className="uitext" /> window appears, enter the password (**_Parameter Key_**) and then select <Cmdname sid="apply" className="uitext" />.
@@ -38,9 +40,21 @@ If you select a session in the <Cmdname sid="active_sessions" className="uitext"
 
 - **_Session Info_**: You can see the basic information of the selected session and the information details including the status.
 
+<Xclude product="mssql">
+
 - **_Wait Info_**: The waiting event and waiting time of the selected session are provided. You can also see information about the waiting events that occur when the database system is waiting to execute a specific task.
 
 - **_SQL Text_** / **_Plan_**: You can see the SQL query statements and plans of the selected session. For more information, see [the following](#query-details).
+
+</Xclude>
+
+<InDoc product="mssql">
+
+- **_Stat_**: It provides various performance metrics and statistical information for the selected session. It includes the type and number of tasks performed in the session, resource usage, and more.
+
+- **_Request SQL_** / **_Plan_**: You can see the SQL query statements and plans of the selected session. For more information, see [the following](#query-details).
+
+</InDoc>
 
 <InDoc product="postgresql">
 

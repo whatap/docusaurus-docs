@@ -12,6 +12,13 @@ keywords:
 
 指標情報の詳細については、[次のリンク](https://technet.tmax.co.kr/upload/download/online/tibero/pver-20220224-000002/index.html)を参照してください。
 
+import AgentStatus from "../common-items/_agent-status-summary-metrics.mdx";
+import Xosmetrics from "../common-items/_db-xos-metrics.mdx";
+
+<div className="metricslist">
+
+<AgentStatus />
+
 ## db_tibero_counter {#db_tibero_counter}
 
 ### Tags {#db_tibero_counter-tags}
@@ -42,12 +49,12 @@ keywords:
 | `execute_count`                        | SQLコマンドが実行された回数です。                   |
 | `fatal_count`                          | クリティカルなエラーが発生した回数です。                 |
 | `lock_wait_sessions`                   | ロック待機のため、待機中のセッションの数です。              |
-| `logical_reads`                        | 論理的読み込み作業が発生した回数です。                  |
+| `logical_reads`                        | 論理的読み取り作業が発生した回数です。                  |
 | `logons_cumulative`                    | 累積されたログイン回数です。                       |
 | `long_running_sessions`                | 長時間実行中のセッションの数です。                    |
 | `parse_count_(hard)`                   | ハードパース作業が発生した回数です。                   |
 | `parse_count_(total)`                  | パース作業が発生した合計回数です。                    |
-| `physical_reads`                       | 物理的読み込み作業が発生した回数です。                  |
+| `physical_reads`                       | 物理的読み取り作業が発生した回数です。                  |
 | `pq_sessions`                          | 並列クエリ作業が実行されたセッションの数です。              |
 | `sorts_(memory)`                       | メモリ内でソート作業が発生した回数です。                 |
 | `the_number_of_user_commits_performed` | 実行されたユーザーコミットの回数です。                  |
@@ -113,6 +120,6 @@ keywords:
 | `WE_WTHR_START_total_timeouts`         | スレッド開始待機中に発生したタイムアウトの回数です。           |
 | `WE_WTHR_START_total_waits`            | スレッド開始待機による待機回数の合計です。                |
 
-import Xosmetrics from "../common-items/_db-xos-metrics.mdx";
-
 <Xosmetrics />
+
+</div>

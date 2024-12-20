@@ -3,7 +3,7 @@ id: collect-data
 title: ブラウザーエージェント収集データ
 description: WhaTapブラウザーエージェントが収集するデータに関する説明です。
 keywords:
-  - Browserモニタリング
+  - Browser Monitoring
   - エージェント
 ---
 
@@ -51,7 +51,7 @@ WhaTapブラウザーエージェントは、ユーザーのブラウザーで�
 | ---------------------------------- | :------------------------------------------: | --------------------------------------------------------------------- | ----------------------------- |
 | navigationTiming.startTimeStamp    |      <span class='type'>TimeStamp</span>     | `navigationStart`のタイムスタンプです。 ページを読み込みが開始された時間のタイムスタンプ値です。             | 1658057382311                 |
 | navigationTiming.eventID           |        <span class='type'>Long</span>        | ページを読み込むイベントの発生時に発行する固有IDです。                                          | x7mkg24tags307                |
-| navigationTiming.redirect          |       <span class='type'>TimeSet</span>      | httpリダイレクションの所要時間です。                                                  | \{duration: 10, start: 315\}   |
+| navigationTiming.redirect          |       <span class='type'>TimeSet</span>      | httpリダイレクションの所要時間です。                                                  | \{duration: 10, start: 315}   |
 | navigationTiming.cache             |       <span class='type'>TimeSet</span>      | app cacheリソースを読み込みにかかる時間です。                                           | \{duration: 5, start: 325\}   |
 | navigationTiming.dns               |       <span class='type'>TimeSet</span>      | ウェブサイトのドメイン検索にかかった時間です。                                               | \{duration: 5, start: 330\}   |
 | navigationTiming.connect           |       <span class='type'>TimeSet</span>      | TCP接続設定の所要時間です。                                                       | \{duration: 6, start: 335\}   |
@@ -66,6 +66,43 @@ WhaTapブラウザーエージェントは、ユーザーのブラウザーで�
 | navigationTiming.frontendTime      |       <span class='type'>TimeSet</span>      | ブラウザーがパーシングを完了した時間からloadイベントが完了するまでの所要時間です。                           | \{duration: 51, start: 441\}  |
 | navigationTiming.loadTime          | <span class='type'>HighResolutionTime</span> | 「navigationStart」から「loadEventEnd」までの所要時間です。                           | 492                           |
 | totalDuration                      | <span class='type'>HighResolutionTime</span> | 「navigation Start」から最終ページロードを完了した時間です。                                | 550                           |
+
+</div>
+
+## ページロード時間{#pageloadtime}
+
+[ページロード時間](https://developer.mozilla.org/docs/Glossary/Page_load_time)はウェブブラウザーで、特定ページのURLを要請した瞬間からページのすべてのリソース(HTML、CSS、JavaScript、画像など)がダウンロードおよび処理され、ブラウザーがページを完全にレンダリングして使用可能な状態になるまでの合計時間を意味します。
+
+ページロード時間を収集するために、ブラウザーエージェントはブラウザーで提供するWeb API中の一つである**Navigation Timing API**を通じて収集します。 このAPIを通じて各段階別の時間(例: リクエストの開始、応答、レンダリングの開始と完了)を測定して提供します。
+
+### Navigation timing
+
+[PerformanceTiming](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming)インターフェースを通じてアクセスできるミリ秒単位の測定イベントがあります。 以下は、これらのイベントが発生する順に表示した一覧です。
+
+![Navigation timing](https://w3c.github.io/navigation-timing/timestamp-diagram.svg)
+
+<div className="tableScroll">
+
+| イベント                         | 説明                                           | 備考                                                                                            |
+| ---------------------------- | -------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `navigationStart`            | ページの探索開始時点です。                                | -                                                                                             |
+| `redirectStart`              | 最初のHTTPリダイレクトの開始時点です。                        | リダイレクトがなければ値は`0`です。                                                                           |
+| `redirectEnd`                | 最後のリダイレクトの応答受信完了の時点です。                       | リダイレクトがなければ値は`0`です。                                                                           |
+| `fetchStart`                 | ブラウザーがリソースを読み込むプロセスを開始する時点です。                | キャッシュ照会が始まる時点でもあります。                                                                          |
+| `domainLookupStart`          | ドメイン名に対するDNS照会の開始時点です。                       | ブラウザーがURLのホスト名をIPアドレスに変換し始めます。 キャッシュされたDNS情報があるか、ローカル_hosts_ファイルに情報があれば`fetchStart`と同じ値になります。 |
+| `domainLookupEnd`            | DNS照会完了の時点です。                                | ブラウザーがドメインのIPアドレスを正常に取得します。 DNS照会に失敗しても、この時点で記録します。                                           |
+| `connectStart`               | サーバーとの接続開始時点です。                              | TCP接続を開始します。 もし持続的な連結(persistent connection)を再利用する場合、`domainLookupEnd`と同じ値になります。              |
+| `connectEnd`                 | サーバーとの接続が完全に設定された時点です。                       | TCPハンドシェイクを完了します。 HTTPSの場合、SSL/TLS ハンドシェイクもこの時点までに完了します。 接続が失敗しても、この時点で記録します。                 |
+| `secureConnectionStart`      | HTTPS接続開始時点です。                               | 該当する場合のみ記録します。                                                                                |
+| `requestStart`               | サーバーにリソースを要請し始めた時点です。                        | -                                                                                             |
+| `responseStart`              | サーバーから応答の最初のバイト(byte)を受け始めた時点です。             | HTTP応答ヘッダーの最初のバイト(byte)を受信した時点であり、サーバーの初期応答時間(Time to First Byte、TTFB)を計算するのに使用します。           |
+| `responseEnd`                | サーバーから最後のバイト(byte)を受け取った時点                   | 全体応答(ヘッダーと本文)をすべて受け取った時点です。 リダイレクト応答があれば、最終応答の最後のバイト(byte)を受け取った時点です。                         |
+| `domInteractive`             | DOMパーシングが終わり、スクリプト実行の準備ができた時点です。             | -                                                                                             |
+| `domContentLoadedEventStart` | `DOMContentLoaded`イベントが発生した時点です。             | この時は、HTML文書のローディングとパーシングが完了し、DOMツリーが完全に構築されたことを意味します。                                         |
+| `domContentLoadedEventEnd`   | すべての`DOMContentLoaded`イベントハンドラーの実行が完了した時点です。 | -                                                                                             |
+| `domComplete`                | DOMローディングと下位リソースローディングが完了した時点です。             | -                                                                                             |
+| `loadEventStart`             | loadイベント発生直前の時点です。                           | DOMが完全に構成され、すべてのリソースをロードした直後です。 `window.onload`イベントハンドラーが実行される直前の時点です。                        |
+| `loadEventEnd`               | すべてのloadイベントハンドラーの実行が完了した時点です。               | ページとすべての従属リソースを完全にロードした状態です。                                                                  |
 
 </div>
 

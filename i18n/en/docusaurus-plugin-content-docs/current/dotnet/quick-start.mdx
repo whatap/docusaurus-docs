@@ -63,6 +63,8 @@ If the hitmaps are not collected properly as shown in the example, check whether
 
   - [.NET agent support environment analysis](https://whatap-dotnet.s3.ap-northeast-2.amazonaws.com/analysis.html)
 
+{/* 
+
 ### ETC
 
 If the error is not resolved using the methods above, send us the detailed debugging information. The debugging data collection procedure is as follows: 
@@ -83,7 +85,9 @@ If the error is not resolved using the methods above, send us the detailed debug
 
 6. Send the *UdpMonitor.txt* file to the person in charge. 
 
-7. If debugging is completed, remove the agent for debugging.
+7. If debugging is completed, remove the agent for debugging. 
+
+*/}
 
 ## Monitoring the WCF and officially unsupported libraries
 
@@ -122,6 +126,12 @@ Extensive settings may cause excessive traffic.
   After changing the option, you must restart IIS for the changes to take effect. 
 
   :::
+
+- **webservice_method_prefix_realtime** <span class='type'>Boolean</span> [<code className="my">.NET Agent v2.3.6 or later</code>](../release-notes/dotnet/dotnet-2_3_6)
+
+  Default `false`
+
+  If you set the value to `true`, the target of `webservice_method_prefix` is processed in real time as the previous.
 
 - **webservice_method_timeout** <span class='type'>Milliseconds</span>
 
@@ -165,6 +175,8 @@ The settings can be changed through the <Cmdname sid="side_management" className
 <ImgLang img='dotnet-trst03.png' desc='Agent CONFIG.' />
 
 :::
+
+{/* 
 
 #### WCF source code
 
@@ -229,7 +241,11 @@ namespace Whatap.DotNet.Examples
 
 - If you add `Whatap.DotNet.Examples.Service3` to the `webservice_method_prefix` option, the public method `IwantToSeeOnlyThis()` may become a monitoring target.
 
-:::
+::: 
+
+*/}
+
+{/* 
 
 ### In case it is difficult to find the namespace and class name
 
@@ -251,4 +267,43 @@ If you have difficulty finding the namespace in which your WCF server's methods 
 
 If it is difficult to apply the results, run *GetNamesapces.exe* and send the *GetNamesapces.txt* file created in the same folder to the person in charge. 
 
-:::
+::: 
+
+*/}
+
+## Finding the namespace and class name
+
+### In case of WCF
+
+For WCF, the *\*.svc* files are searched in the deployment folder. Open this file with a text editor such as Notepad and then check the value specified in the `Service` field. This value needs to be added to `webservice_method_prefix`.
+
+<ImgLang img='dotnet-quick-pic-01.png' desc='WCF setting example' />
+
+### In case of Web Service
+
+For web services, the *\*.asmx* files are searched in the deployment folder. Open this file with Notepad and then check the value specified in the `Class` field. This value needs to be added to `webservice_method_prefix`.
+
+<ImgLang img='dotnet-quick-pic-02.png' desc='Web Service setting example' />
+
+### Configuration example
+
+See the following configuration example. 
+
+```ini
+webservice_method_enabled=true
+webservice_method_prefix=wcfServer.Service1, WebServiceDemo.WebService
+```
+
+## In case transactions are captured but step are not displayed or too few
+
+If transactions are detected but steps are not visible or insufficient, you can expand the monitoring scope via `Method hook`. See the following configuration example. The configuration example allows you to display the items excluded from the monitoring scope in the basic library as step information.
+
+```ini
+hook_methods_enabled=true
+hook_methods_prefix=System.Net.Http.HttpClient., System.Net.WebRequest., System.Data., System.Net.Http.,
+# hook_methods_ignores=get,set
+```
+
+- `hook_methods_prefix`: In the step, it displays all methods that start with the specified value.
+
+- `hook_methods_ignores`: It excludes all methods starting with the specified value from monitoring.

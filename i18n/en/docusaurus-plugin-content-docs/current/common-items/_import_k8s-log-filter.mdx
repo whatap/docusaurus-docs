@@ -1,0 +1,139 @@
+## Setting the containerStdOut log filter
+
+Home &gt; Select Project &gt; <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentSetting" className="uitext" />
+
+The following guides you to filtering options to select information needed in the Kubernetes logs. You can set which logs to allow or exclude through filtering. In <Cmdname sid="side_agentSetting" className="uitext" />, select <Cmdname sid="direct_input" className="uitext" /> in the <Cmdname sid="write_options" className="uitext" /> manner.
+
+<ImgLang img='k8s-log-filter-settings.png' desc='Kubernetes log filter setting' />
+
+### Log naming conventions
+
+The Kubernetes containerStdOut logs are generated under the */var/log/containers/* path on the node. They keep the following naming conventions.
+
+```bash
+<podName>_<namespace>_<containerName>-<containerId>.log
+```
+
+### Log filtering options
+
+- **log_filter_enabled** <span class='type'>bool</span>
+
+  Default `false`
+
+  It sets whether to use log filters. 
+
+- **log_filter_allow_list** <span class='type'>list</span>
+
+  It sets the list of logs to allow. It indicates the items to be included for filtering. 
+
+- **log_filter_deny_list** <span class='type'>list</span>
+
+  It sets the list of logs to exclude. It indicates the items to be excluded for filtering. 
+
+### Log filtering operation
+
+Log filters work only when the `log_filter_enabled` option is active. You can selectively collect logs via `log_filter_allow_list` and `log_filter_deny_list` when the value of the option is set to `true`. 
+
+Log filters work on a blacklist basis. For example, if you enable `log_filter_enabled` and do not set the items to be added to the `log_filter_allow_list` option, the log collection for all containers is blocked by default. 
+
+Additionally, in the log filters, deny rules take precedence over allow rules. If the same items are set in both allow and deny rules, the deny rule takes precedence and logs are not collected.
+
+### Log filter example
+
+#### Collecting logs for a single namespace
+
+- **Allow** ***log_filter_allow_list*** `*_infra_*`
+
+All containers that exist in the `infra` namespace are targeted for collection.
+
+#### Collecting multiple namespace logs
+
+- **Allow** ***log_filter_allow_list*** `*_infra_*, *_monitoring_*`
+
+All containers that exist in the `infra` and `monitoring` namespaces are specified as collection targets.
+
+#### Pods containing specific terms are excluded.
+
+- **Allow** ***log_filter_allow_list*** `*_*_*`
+
+- **Deny** ***log_filter_deny_list*** `*prod*_*_*`
+
+All containers are targeted for collection, but the logs that contain `prod` in `podName` are excluded.
+
+#### Pods containing specific terms are collected.
+
+- **Allow** ***log_filter_allow_list*** `*prod*_*_*`
+
+Only the logs that contain `prod` in `podName` are collected.
+
+#### Multi-namespace logs are collected and Pods containing specific terms are excluded.
+
+- **Allow** ***log_filter_allow_list*** `*_infra_*, *_monitoring_*`
+
+- **Deny** ***log_filter_deny_list*** `*prod*_*_*`
+
+The logs for the `infra` and `monitoring` namespaces are collected, and the logs that contain `prod` in `podName` are excluded.
+
+#### The container logs that start with a specific term in the container name are excluded.
+
+- **Allow** ***log_filter_allow_list*** `*_*_db-*`
+
+The container logs whose `containerName` starts with `db` in all namespaces are excluded.
+
+{/* 
+
+### Kubernetes agent log filters
+
+#### Log naming conventions
+
+Kubernetes logs are collected on a container basis. They are created under the /var/log/containers/ path of the node according to the following naming conventions.
+
+```bash
+<podName>_<namespace>_<containerName>-<containerId>.log
+```
+
+#### Log filtering options
+
+- **log_filter_enabled** <span class='type'>bool</span>
+
+  Default `false`
+
+  It sets whether to use log filters. 
+
+- **log_filter_allow_list** <span class='type'>list</span>
+
+  It sets the list of logs to allow. It indicates the items to be included for filtering. 
+
+- **log_filter_deny_list** <span class='type'>list</span>
+
+  It sets the list of logs to exclude. It indicates the items to be excluded for filtering. 
+
+#### Log filtering operation
+
+#### Log filter example
+
+### Container standard output log filter
+
+It provides filtering options to select the information needed in the containerStdOut log. You can set which logs to allow or exclude through filtering. 
+
+#### Agent CONFIG.
+
+<Cmdname sid="side_agentSetting" className="uitext" />
+
+#### Container standard output log filter options
+
+- **log_filter_enabled** <span class='type'>bool</span>
+
+  Default `false`
+
+  It sets whether to use log filters. 
+
+- **log_filter_allow_list** <span class='type'>list</span>
+
+  It sets the list of logs to allow. It indicates the items to be included for filtering. 
+
+- **log_filter_deny_list** <span class='type'>list</span>
+
+  It sets the list of logs to exclude. It indicates the items to be excluded for filtering.  
+
+*/}

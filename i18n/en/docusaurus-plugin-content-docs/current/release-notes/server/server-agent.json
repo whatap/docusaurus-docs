@@ -1,5 +1,243 @@
 [
   {
+    "url": "https://docs.whatap.io/en/release-notes/server/server-2_6_6",
+    "ver": "v2.6.6",
+    "date": "2024-08-19",
+    "Lists": [
+      {
+        "ver": "v2.6.6",
+        "hash": "v266",
+        "product": "Server Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Improved display errors due to excessive collection of unnecessary GPU metrics fields.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server/server-2_7_1",
+    "ver": "v2.7.1",
+    "date": "2024-11-13",
+    "Lists": [
+      {
+        "ver": "v2.7.1",
+        "hash": "v271",
+        "product": "Server Agent",
+        "type": "New",
+        "desc": "<li><code class=\"New\" type=\"1\">New</code> Added the Linux service monitoring.</li>"
+      },
+      {
+        "ver": "v2.7.1",
+        "hash": "v271",
+        "product": "Server Agent",
+        "type": "Changed",
+        "desc": "<li><code class=\"Changed\" type=\"0\">Changed</code> Improved the logic to prevent duplicate execution upon delay of collection command execution to prevent excessive memory usage.</li>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server/server-2_7_0",
+    "ver": "v2.7.0",
+    "date": "2024-10-22",
+    "Lists": [
+      {
+        "ver": "v2.7.0",
+        "hash": "v270",
+        "product": "Server Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the validation message during user script registration stage.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server/server-2_6_8",
+    "ver": "v2.6.8",
+    "date": "2024-09-20",
+    "Lists": [
+      {
+        "ver": "v2.6.8",
+        "hash": "v268",
+        "product": "Server Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added <a href=\"https://chrony-project.org/\" target=\"_blank\" rel=\"noopener noreferrer\">chrony</a> to support the server time synchronization.</p>"
+      },
+      {
+        "ver": "v2.6.8",
+        "hash": "v268",
+        "product": "Server Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Improved to use alternative counters if Windows Server disk performance counters are not available.</p>"
+      },
+      {
+        "ver": "v2.6.8",
+        "hash": "v268",
+        "product": "Server Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the error in collecting the number of file descriptors for CenOS 6 processes.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server/server-2_6_9",
+    "ver": "v2.6.9",
+    "date": "2024-10-04",
+    "Lists": [
+      {
+        "ver": "v2.6.9",
+        "hash": "v269",
+        "product": "Server Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the mount monitoring feature for Windows Server volumes without a drive character.</p>"
+      },
+      {
+        "ver": "v2.6.9",
+        "hash": "v269",
+        "product": "Server Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the uncollectable issue for <a href=\"https://chrony-project.org/\" target=\"_blank\" rel=\"noopener noreferrer\">chrony</a>.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server/server-2_7_3",
+    "ver": "v2.7.3",
+    "date": "2024-12-09",
+    "Lists": [
+      {
+        "ver": "v2.7.3",
+        "hash": "v273",
+        "product": "Server Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Windows 환경에서 w32tm 시간 동기화 수집 기능 추가</p>"
+      },
+      {
+        "ver": "v2.7.3",
+        "hash": "v273",
+        "product": "Server Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Windows Event log 수집 시 기존의 WMI 방식을 Event Subscription 방식으로 변경</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server/server-2_7_2",
+    "ver": "v2.7.2",
+    "date": "2024-11-27",
+    "Lists": [
+      {
+        "ver": "v2.7.2",
+        "hash": "v272",
+        "product": "Server Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the <span class=\"uitext\">Server Inventory Map</span> metric collection feature in the Windows and Linux environments.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server/server-2_6_7",
+    "ver": "v2.6.7",
+    "date": "2024-09-03",
+    "Lists": [
+      {
+        "ver": "v2.6.7",
+        "hash": "v267",
+        "product": "Server Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the support of IMDS v2.</p>"
+      },
+      {
+        "ver": "v2.6.7",
+        "hash": "v267",
+        "product": "Server Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the error in collecting the process file descriptor count.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server/server-2_6_5",
+    "ver": "v2.6.5",
+    "date": "2024-08-09",
+    "Lists": [
+      {
+        "ver": "v2.6.5",
+        "hash": "v265",
+        "product": "Server Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the disk IO utilization collection errors in the Infoscale 8.x.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server/server-2_6_2",
+    "ver": "v2.6.2",
+    "date": "2024-07-16",
+    "Lists": [
+      {
+        "ver": "v2.6.2",
+        "hash": "v262",
+        "product": "Server Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Added the feature to run bat and powershell scripts on Windows agents.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server/server-2_6_3",
+    "ver": "v2.6.3",
+    "date": "2024-07-24",
+    "Lists": [
+      {
+        "ver": "v2.6.3",
+        "hash": "v263",
+        "product": "Server Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Added the server inventory collection option.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server/server-2_6_4",
+    "ver": "v2.6.4",
+    "date": "2024-07-29",
+    "Lists": [
+      {
+        "ver": "v2.6.4",
+        "hash": "v264",
+        "product": "Server Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the issue where past logs of the target files are incorrectly read when adding a log file keyword monitoring policy.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server/server-2_6_1",
+    "ver": "v2.6.1",
+    "date": "2024-06-26",
+    "Lists": [
+      {
+        "ver": "v2.6.1",
+        "hash": "v261",
+        "product": "Server Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the error where <code>rpm -a</code> is run periodically in Red Hat-series Linux.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server/server-2_5_9",
+    "ver": "v2.5.9",
+    "date": "2024-05-24",
+    "Lists": [
+      {
+        "ver": "v2.5.9",
+        "hash": "v259",
+        "product": "Server Agent",
+        "type": "Feature",
+        "desc": "<li><code class=\"Feature\">Feature</code> Added support for the zfs v2.2.</li>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/en/release-notes/server/server-2_6_0",
     "ver": "v2.6.0",
     "date": "2024-06-18",
@@ -24,132 +262,6 @@
         "product": "Server Agent",
         "type": "Change",
         "desc": "<p><code class=\"Change\">Change</code> Improved the ntpq shutdown handling.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/server/server-2_6_2",
-    "ver": "v2.6.2",
-    "date": "2024-07-16",
-    "Lists": [
-      {
-        "ver": "v2.6.2",
-        "hash": "v262",
-        "product": "Server Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Added the feature to run bat and powershell scripts on Windows agents.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/server/server-2_6_1",
-    "ver": "v2.6.1",
-    "date": "2024-06-26",
-    "Lists": [
-      {
-        "ver": "v2.6.1",
-        "hash": "v261",
-        "product": "Server Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the error where <code>rpm -a</code> is run periodically in Red Hat-series Linux.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/server/server-2_6_5",
-    "ver": "v2.6.5",
-    "date": "2024-08-09",
-    "Lists": [
-      {
-        "ver": "v2.6.5",
-        "hash": "v265",
-        "product": "Server Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the disk IO utilization collection errors in the Infoscale 8.x.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/server/server-2_6_4",
-    "ver": "v2.6.4",
-    "date": "2024-07-29",
-    "Lists": [
-      {
-        "ver": "v2.6.4",
-        "hash": "v264",
-        "product": "Server Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the issue where past logs of the target files are incorrectly read when adding a log file keyword monitoring policy.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/server/server-2_6_3",
-    "ver": "v2.6.3",
-    "date": "2024-07-24",
-    "Lists": [
-      {
-        "ver": "v2.6.3",
-        "hash": "v263",
-        "product": "Server Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Added the server inventory collection option.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/server/server-2_6_6",
-    "ver": "v2.6.6",
-    "date": "2024-08-19",
-    "Lists": [
-      {
-        "ver": "v2.6.6",
-        "hash": "v266",
-        "product": "Server Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Improved display errors due to excessive collection of unnecessary GPU metrics fields.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/server/server-2_5_9",
-    "ver": "v2.5.9",
-    "date": "2024-05-24",
-    "Lists": [
-      {
-        "ver": "v2.5.9",
-        "hash": "v259",
-        "product": "Server Agent",
-        "type": "Feature",
-        "desc": "<li><code class=\"Feature\">Feature</code> Added support for the zfs v2.2.</li>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/server/server-2_5_0",
-    "ver": "v2.5.0",
-    "date": "2024-01-24",
-    "Lists": [
-      {
-        "ver": "v2.5.0",
-        "hash": "v250",
-        "product": "Server Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> When installing the server monitoring agent in the Naver Cloud environment, fixed the bug where the <code>uptime</code> event cannot be applied because <code>uptime</code> is collected by the tag.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/server/server-2_5_5",
-    "ver": "v2.5.5",
-    "date": "2024-03-13",
-    "Lists": [
-      {
-        "ver": "v2.5.5",
-        "hash": "v255",
-        "product": "Server Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Added the SOCKET mode to the inter-process communication mode of WhaTap server agent in the Windows environment.</p>"
       }
     ]
   },
@@ -231,16 +343,16 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/server/server-2_5_1",
-    "ver": "v2.5.1",
-    "date": "2024-01-26",
+    "url": "https://docs.whatap.io/en/release-notes/server/server-2_5_5",
+    "ver": "v2.5.5",
+    "date": "2024-03-13",
     "Lists": [
       {
-        "ver": "v2.5.1",
-        "hash": "v251",
+        "ver": "v2.5.5",
+        "hash": "v255",
         "product": "Server Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the performance collection failure error when the network card name has <code>+</code>.</p>"
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Added the SOCKET mode to the inter-process communication mode of WhaTap server agent in the Windows environment.</p>"
       }
     ]
   },
@@ -259,6 +371,20 @@
     ]
   },
   {
+    "url": "https://docs.whatap.io/en/release-notes/server/server-2_5_1",
+    "ver": "v2.5.1",
+    "date": "2024-01-26",
+    "Lists": [
+      {
+        "ver": "v2.5.1",
+        "hash": "v251",
+        "product": "Server Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the performance collection failure error when the network card name has <code>+</code>.</p>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/en/release-notes/server/server-2_5_2",
     "ver": "v2.5.2",
     "date": "2024-02-13",
@@ -269,6 +395,20 @@
         "product": "Server Agent",
         "type": "New",
         "desc": "<p><code class=\"New\">New</code> Among the event logs of Windows, the events that meet the desired conditions can be collected as WhaTap logs.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server/server-2_5_0",
+    "ver": "v2.5.0",
+    "date": "2024-01-24",
+    "Lists": [
+      {
+        "ver": "v2.5.0",
+        "hash": "v250",
+        "product": "Server Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> When installing the server monitoring agent in the Naver Cloud environment, fixed the bug where the <code>uptime</code> event cannot be applied because <code>uptime</code> is collected by the tag.</p>"
       }
     ]
   }

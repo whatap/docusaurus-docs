@@ -294,13 +294,21 @@ After registering the payment information, go to <Cmdname sid="projectSubscripti
 
 - To see the list of projects with no **billing role**, select the ![Leader line 1](/img/number-01.png) <Cmdname sid="DSC07606" className="uitext" /> toggle button.
 
-- To download a list of projects in CSV format, select ![Leader line 1](/img/number-01.png) <Cmdname sid="download" className="uitext" />.
+- To download the project list as a CSV file, select ![Leader line 1](/img/number-01.png) ![csv icon](/img/ic-csv-download-ms.svg).
 
 :::note
 
 - **BILLING** is the right to convert to a paid plan, to register payment methods, and to receive billings.
+
 - In case of the project whose subscription date is less than 7 days, you can cancel the subscription. Select <Cmdname sid="cancel_subscription" className="uitext" />.
+
 - In case of the project whose subscription date is 7 days or more, the <Cmdname sid="delete_project" className="uitext" /> button is provided for you to delete the project.
+
+- The **_Copy_** column displays the **average quantity for calculating billing amount** of the product, excluding logs and browsers.
+
+  - The **Log** product displays the monthly total log unit.
+
+  - The **Browser/session replay** product displays the total number of monthly sessions.
 
 :::
 
@@ -404,3 +412,21 @@ Enter the granted code in the <Cmdname sid="promotion_code" className="uitext" /
 WhaTap products are using the deferred payment billing. You can receive an invoice for the previous month's usage within 5 business days of each month via email through the account with the <Cmdname sid="billing" className="b600" /> role. The usage of the previous month is the amount used from the 1st day to the last day of the month. Invoices are created for each account based on the list of paid products registered to the account.
 
 If the subscription period for paid products is in the middle of the month, the period of use is calculated and billed on a pro-rata basis.
+
+## Data retention period
+
+The data retention periods for each WhaTap product are provided as follows:
+
+- RAW data (real-time data) retention period: **1 month**
+
+- Statistical data (5 min/1 hour) retention period: **1 year**
+
+- Profile data retention period: **1 month**
+
+:::note
+
+- In case of the **Network** product, the statistical data (5 min/1 hour) retention period is **100 days**.
+
+- If the log monitoring feature is enabled, the default retention period for log data is **1 day**. You can change it to a desired period. For more information, see [the following](../log/log-setting#log-data-setting).
+
+:::

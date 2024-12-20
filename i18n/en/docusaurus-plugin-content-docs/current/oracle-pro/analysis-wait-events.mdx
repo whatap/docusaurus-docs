@@ -14,14 +14,87 @@ import ShortDesc from "../common-items/_db-analysis-wait-event-short-desc.mdx";
 
 <ShortDesc />
 
-{/* ## 기본 화면 안내 */}
-import WaiteventBasicguide from "../common-items/_db-analysis-wait-event-basic-guide.mdx";
+## Basic screen guide
 
-<WaiteventBasicguide />
+Select the <Cmdname sid="time" className="uitext" /> and <Cmdname sid="instance" className="uitext" /> to view. You can see the wait data corresponding to the set time and instance. If there are active sessions that frequently wait (delay) during the query period, it can be used to analyze what types of wait events occurred.
+
+<ImgLang img='db-analysis-wait-oracle.png' desc='Wait analysis' />
+
+The center time-series chart visually displays the distribution of wait classes and number of sessions by time zone. This allows you to identify patterns of increased waiting events in a specific time zone. You can select analysis categories such as ***Wait (time)***, ***Wait (count)***, ***Latch***, ***Enqueue***, ***Stat***, ***Cpu***, ***Memory***, and ***Session Count***.
+
+If you select the ![number1](/img/number-01.png) detailed time in the time-series chart, you can view the active sessions in the time and check the SQL statements in which the wait events occurred.
+
+<Columns>
+<Column className="text--left width--50">
+
+![Wait Class](/img/db-analysis-wait-class-oracle.png)
+
+</Column>
+
+<Column className="text--left">
+
+***Wait Class***
+
+It visualizes wait events for each wait class with a pie chart. This allows you to quickly identify the causes of major wait events. If the wait class is abnormally high, focus on checking the resources related to the class.
+
+</Column>
+</Columns>
+
+<Columns>
+<Column className="text--left width--50">
+
+![Wait Event Top 5](/img/db-analysis-wait-top5-oracle.png)
+
+</Column>
+
+<Column className="text--left">
+
+***Wait Event Top 5***
+
+It displays the top 5 frequent wait events. The percentage of each wait event can help you determine which events have the greatest impact on system performance, which is useful for identifying bottlenecks in the system.
+
+</Column>
+</Columns>
+
+<Columns>
+<Column className="text--left width--50">
+
+![Stat Top 5](/img/db-analysis-wait-stat-top5-oracle.png)
+
+</Column>
+
+<Column className="text--left">
+
+***Stat Top 5***
+
+The top 5 key stat data are displayed in percentage (%). You can quickly find the resource usage status and which operation is having the greatest impact on the database.
+
+</Column>
+</Columns>
+
+:::tip
+
+- The wait analysis results are used as a tool to help diagnose their causes, and problem resolution must be performed at the DBA's discretion.
+
+- You need to adjust the time range to accurately find the time zone when the problem occurs.
+
+- If you become familiar with the characteristics of the wait classes and events in advance, it can speed up the analysis.
+
+:::
+
+:::note
+
+- When you select the ***instance*** column in the ***Active Session*** section list, the <Cmdname sid="side_dbMonitoring" className="uitext" /> menu appears. For more information about <Cmdname sid="side_dbMonitoring" className="uitext" />, see [the following](instance-monitoring).
+
+- In the ***Active Session*** list, if you select a session, the <Cmdname sid="session_detail" className="uitext" /> window appears. For more information about the <Cmdname sid="session_detail" className="uitext" /> windows, see [the following](multi-instance-monitoring#session-details).
+
+- When you select the ***query*** column in the ***Active Session*** list, the <Cmdname sid="TTL06224" className="uitext" /> window appears. For more information about the <Cmdname sid="TTL06224" className="uitext" /> windows, see [the following](multi-instance-monitoring#query-details).
+
+:::
 
 import Dbtabledatafiltering from "../common-items/_db-table-data-filtering.mdx";
 
-<Dbtabledatafiltering level={3} />
+<Dbtabledatafiltering level={2} />
 
 import Dbv2dataeditcolumn from "../common-items/_db-v2-data-edit-column.mdx";
 

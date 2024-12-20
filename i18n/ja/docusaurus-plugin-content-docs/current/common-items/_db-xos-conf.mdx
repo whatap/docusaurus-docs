@@ -54,7 +54,7 @@
 
   データベースサーバーのIP一覧を収集できます。秒単位(最低3秒)で時間間隔(interval)を設定すると収集できます。
 
-<InDoc product="postgresql,mysql,redis,mongodb,oracle,altibase,cubrid">
+<InDoc product="postgresql,mysql,redis,mongodb,oracle,altibase,cubrid,mssql">
 
 - **file** <span class='type'>String</span>
 
@@ -64,9 +64,6 @@
 
   ```ini title='xos.conf'
   file=/opt/postgresql/logs/postgresql.log
-  file1=/opt/postgresql/data/logs/pg10/postgresql-Sun.log
-  file2=/opt/postgresql/data/logs/pg10/postgresql-Mon.log
-  file3=/opt/postgresql/data/logs/pg10/postgresql-Tue.log
   ```
 
   </InDoc>
@@ -74,8 +71,6 @@
 
   ```ini title='xos.conf'
   file=/var/log/mysqld.log
-  file1=/var/log/mysql_history.log
-  file2=/var/lib/mysql/dbx-database-slow.log
   ```
 
   </InDoc>
@@ -117,5 +112,29 @@
   ```
 
   </InDoc>
+
+  <InDoc product='mssql'>
+
+  次の例を参照にしてください。
+
+  ```ini title='xos.conf'
+  # example
+  file=C:/Program Files/Microsoft SQL Server/MSSQL16.MSSQLSERVER/MSSQL/Log/ERRORLOG
+  ```
+
+  </InDoc>
+
+  :::tip
+
+  モニタリングするログファイルを追加するには`file`、`file1`、`file2`といった方法でオプションを追加します。
+
+  ```ini title="xos.conf"
+  file={log_file_path1}
+  file1={log_file_path2}
+  file2={log_file_path3}
+  file3={log_file_path4}
+  ```
+
+  :::
 
 </InDoc>

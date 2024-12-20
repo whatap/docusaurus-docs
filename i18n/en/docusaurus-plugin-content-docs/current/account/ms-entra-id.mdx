@@ -1,0 +1,248 @@
+---
+id: ms-entra-id
+title: Microsoft Entra ID linking
+description: Easily manage the accounts with a single ID and password through Microsoft Entra ID linking.
+keywords:
+  - Microsoft Entra ID
+  - Account
+  - Security
+displayed_sidebar: manageSidebar
+---
+
+The following explains how to link the WhaTap monitoring service account based on the **Microsoft Entra ID**. You can log in to the WhaTap monitoring service with the **Microsoft Entra ID** account and use the WhaTap monitoring service within the assigned roles.
+
+Here are the steps to link the **Microsoft Entra ID** account with the WhaTap monitoring service.
+
+import TOCInline from '@theme/TOCInline';
+
+<TOCInline toc={toc} maxHeadingLevel={2} />
+
+:::note
+
+For more information about **Microsoft Entra ID**, see the [following link](https://learn.microsoft.com/entra/fundamentals/whatis).
+
+:::
+
+## Checking accounts (email) to use
+
+Before you begin, make sure you have an account with WhaTap and Microsoft Entra services.
+
+### In case an account has been created with WhaTap
+
+If you already have an account created in WhaTap to use with the Microsoft Entra ID, see the following.
+
+- For linking, the names of the accounts used in each service must be the same, as in the following example.
+
+  - WhaTap: monitoring1@abc.com
+
+  - Microsoft Entra: monitoring1@abc.com
+
+- If the account names used for each service are different as in the following example, linking is not possible.
+
+  - WhaTap: monitoring2@abc.com
+
+  - Microsoft Entra: monitoring3@abc.com
+
+### In case there is no account with WhaTap {#noneaccount}
+
+If the account you use for Microsoft Entra ID does not exist in WhaTap, it is required to authenticate yourself once to verify the identity.
+
+1. Log on to <Cmdname sid="myapp_portal" className="b600" entra/> with your company or school account. The <Cmdname sid="myapps" className="b600" entra/> page appears, displaying all organizations' cloud-based Apps that are available.
+
+2. Access the WhaTap service through the enterprise application registered in <Cmdname sid="entraAppDashboard" className="b600" entra/>.
+
+   <ImgLang img="ms-account-manage-02.png" desc="My account" />
+
+3. Enter your name and company on the accessed screen to link authentication.
+
+   ![Sign up](/img/ms2whatap-signup.png)
+
+4. If the error page appears, close the page and then click the WhaTap application again in <Cmdname sid="entraAppDashboard" className="b600" entra/> for normal log in.
+
+## Generating the link (SSO) key from WhaTap
+
+The following explains how to obtain an SSO key from the WhaTap Monitoring Service screen. You can link the Microsoft Entra ID with the received SSO key. If configuration for Microsoft Entra ID linking is made for the first time, you must create a WhaTap account. If there is no WhaTap account, see [the following](#noneaccount).
+
+1. Log on to the WhaTap Monitoring service with the account to link with the Microsoft Entra ID.
+
+2. Select the profile icon on the upper right of the screen.
+
+3. If a pop-up menu appears, select <Cmdname sid="MNU07360" className="uitext" />.
+
+4. In the menu on the right of the screen, select <Cmdname sid="ssoIntegrations" className="uitext" />.
+
+5. Enter the key name in <Cmdname sid="BTN07473" className="uitext" /> within the ***Service provider ID (WhaTap)*** section.
+
+   The key name can be entered by the user.
+
+   <ImgLang img='sso-service-key.png' desc='Service provider ID' />
+
+6. Select <Cmdname sid="BTN07473" className="uitext" />.
+
+7. In <Cmdname sid="TTL07478" className="uitext" />, check the values for <span class="uitext">EntityID</span> and <span class="uitext">Sign-On URL</span> and then copy them.
+
+   <ImgLang img='sso-check-sso-info.png' desc='sso-info' />
+
+:::note
+
+- Up to 5 SSO keys can be issued, and each has its own unique authentication data. 
+
+- Select <Cmdname sid="BTN07476" className="uitext" />, add the SSO key, and then proceed with the next procedure.
+
+- For the added SSO information, select and check the list box in ***Key Name***.
+
+:::
+
+## Creating a Microsoft Entra ID Enterprise Application
+
+Go to the [Microsoft Entra Admin Center](https://entra.microsoft.com/#home) service, log in, and create <Cmdname sid="entraEntApp" className="b600" entra/> by following steps:
+
+1. In <Cmdname sid="entraIdentity" className="b600" entra/> &gt; <Cmdname sid="entraApplication" className="b600" entra/> &gt; <Cmdname sid="entraEntApp" className="b600" entra/>, click <Cmdname sid="entraNewApp" className="b600" entra/>. {/* Ientity, Applications, Enterprise applications */}
+
+   <ImgLang img="ms-entraid-enterprise-application-01.png" desc="Entra ID" className="width-800" />
+
+2. Click <Cmdname sid="entraCreateMyApp" className="b600" entra/>.
+
+   <ImgLang img="ms-entraid-enterprise-application-02.png" desc="Entra ID" className="width-800" />
+
+3. If the App name configuration screen appears on the right, enter the App name and then click the <Cmdname sid="entraOtherApp" className="b600" entra/> option.
+
+4. At the bottom of the screen, click <Cmdname sid="entrabtnCreate" className="b600" entra/>.
+
+## Allocating users to the application
+
+Assign the users to link to in the newly created Enterprise Application screen.
+
+1. Click <Cmdname sid="entraAssignUsergroup" className="b600" entra/>.
+
+   <ImgLang img="ms-entraid-enterprise-application-assign-01.png" desc="Entra ID" className="width-800" />
+
+2. Click <Cmdname sid="entraAddUsergroup" className="b600" entra/>.
+
+   <ImgLang img="ms-entraid-enterprise-application-assign-02.png" desc="Entra ID" className="width-800" />
+
+3. In <Cmdname sid="entraAddAssign" className="b600" entra/>, click <Cmdname sid="entraNoneAssign" className="b600" entra/>.
+
+   <ImgLang img="ms-entraid-enterprise-application-assign-03.png" desc="Entra ID" className="width-800" />
+
+4. Select users to link with in the user list and then click <Cmdname sid="entraSelect" className="b600" entra/>.
+
+5. At the bottom of the screen, click <Cmdname sid="entraAssign" className="b600" entra/>.
+
+## Configuring the Microsoft Entra ID authentication
+
+Allow users to log on to the application by using the Microsoft Entra verification.
+
+1. Select <Cmdname sid="entraOverview" className="b600" entra/> for the enterprise application to go to the initial screen, and then click <Cmdname sid="entraSignonset" className="b600" entra/>.
+
+   <ImgLang img="ms-entraid-enterprise-application-sso-01.png" desc="Entra ID" className="width-800" />
+
+2. In <Cmdname sid="entraSelectsso" className="b600" entra/>, click <Cmdname sid="entraSaml" className="b600" entra/>.
+
+   <ImgLang img="ms-entraid-enterprise-application-sso-02.png" desc="Entra ID" className="width-800" />
+
+3. In <Cmdname sid="entraBasicSaml" className="b600" entra/>, click <Cmdname sid="entraBtnEdit" className="b600" entra/>.
+
+   <ImgLang img="ms-entraid-enterprise-application-sso-03.png" desc="Entra ID" className="width-800" />
+
+4. In the WhaTap <Cmdname sid="ssoIntegrations" className="uitext" /> screen, enter the created SSO information.
+
+   <ImgLang img="ms-entraid-enterprise-application-sso-04.png" desc="Entra ID" className="width-800" />
+
+   - Copy the value of ***EntityID***, click <Cmdname sid="entraAddId" className="b600" entra/>, and paste it into <Cmdname sid="entraAddIdfiedl" className="b600" entra/>.
+
+   - Copy the value of ***Sign-On URL***, click <Cmdname sid="entraAddurl" className="b600" entra/>, and paste it into <Cmdname sid="entraAddurlfield" className="b600" entra/>.
+
+5. Click <Cmdname sid="entraBtnsave" className="b600" entra/>.
+
+6. In <Cmdname sid="entraAttrclaim" className="b600" entra/>, click <Cmdname sid="entraBtnEdit" className="b600" entra/>.
+
+   <ImgLang img="ms-entraid-enterprise-application-sso-05.png" desc="Entra ID" className="width-800" />
+
+7. Click <Cmdname sid="entraUniqueId" className="b600" entra/>.
+
+   <ImgLang img="ms-entraid-enterprise-application-sso-06.png" desc="Entra ID" className="width-800" />
+
+8. In <Cmdname sid="entraSourceattr" className="b600" entra/>, select **user.mail** and then click <Cmdname sid="entraBtnsave" className="b600" entra/>.
+
+   <ImgLang img="ms-entraid-enterprise-application-sso-07.png" desc="Entra ID" className="width-800" />
+
+9. In <Cmdname sid="entraSamlCerti" className="b600" entra/>, copy the value in<Cmdname sid="entraMetadata" className="b600" entra/>.
+
+   <ImgLang img="ms-entraid-enterprise-application-sso-08.png" desc="Entra ID" className="width-800" />
+
+## Registering the metadata in WhaTap
+
+Link the authentication information by registering the metadata issued by Microsoft Entra ID.
+
+1. In the WhaTap monitoring service, go to <Cmdname sid="ssoIntegrations" className="uitext" />.
+
+2. In the <Cmdname sid="TTL07484" className="uitext" /> section, select <Cmdname sid="BTN07491" className="uitext" />.
+
+   <ImgLang img='sso-externalidp-button.png' desc='External IdP' />
+
+3. When the <Cmdname sid="BTN07491" className="uitext" /> window appears, paste the metadata value copied from <b>Microsoft Entra ID</b> to ***Metadata***.
+
+   <ImgLang img="ms-entraid-enterprise-application-whatap-externalidp.png" desc="Metadata" />
+
+4. Select <Cmdname sid="BTN07494" className="uitext" /> to automatically convert the authentication data.
+
+5. Select <Cmdname sid="save" className="uitext" />.
+
+## Link testing
+
+Return to the Microsoft Entra ID screen and then test the operation of Single Sign On.
+
+1. In <Cmdname sid="entraTest" className="b600" entra/>, click <Cmdname sid="entraBtnTest" className="b600" entra/>.
+
+   <ImgLang img="ms-entraid-enterprise-application-sso-test-01.png" desc="Test" />
+
+2. Click <Cmdname sid="entraBtnLogtest" className="b600" entra/>.
+
+   <ImgLang img="ms-entraid-enterprise-application-sso-test-02.png" desc="Login test" />
+
+- If you have a WhaTap account, the WhaTap Monitoring service screen appears.
+
+- If you do not have a WhaTap account, create a new account through the authentication.
+
+## Managing WhaTap accounts in the Enterprise Application
+
+To manage WhaTap accounts in the enterprise applications with Microsoft Entra ID, go to the [following link](https://myapplications.microsoft.com/).
+
+- Information on <Cmdname sid="myAccount" className="b600" entra/> invited to the enterprise application
+
+  <ImgLang img="ms-account-manage-01.png" desc="My account" />
+
+- <Cmdname sid="myapps" className="b600" entra/> information of the invited account
+
+  <ImgLang img="ms-account-manage-02.png" desc="My account" />
+
+<Title level={2} hashid="removessokey">Deleting the SSO key</Title>
+
+1. In the WhaTap monitoring service, go to <Cmdname sid="ssoIntegrations" className="uitext" />.
+
+2. In the ***Service provider ID (WhaTap)*** section, select the ***Key Name*** to delete from <Cmdname sid="TTL07478" className="uitext" />.
+
+   <ImgLang img='sso-delete-sso-key.png' desc='Delete SSO Key' />
+
+3. Select <Cmdname sid="BTN07481" className="uitext" />.
+
+4. If the deletion confirmation window appears, select <Cmdname sid="BTN07481" className="uitext" />.
+
+<Title level={2} hashid="editexternalidp">Modifying/deleting an external IdP</Title>
+
+1. In the WhaTap monitoring service, go to <Cmdname sid="ssoIntegrations" className="uitext" />.
+
+2. In the <Cmdname sid="TTL07484" className="uitext" /> section, select <Cmdname sid="BTN07490" className="uitext" />.
+
+3. When the <Cmdname sid="BTN07491" className="uitext" /> window appears, paste the metadata value copied from <b>Microsoft Entra ID</b> to ***Metadata***.
+
+4. Select <Cmdname sid="BTN07494" className="uitext" /> to automatically convert the authentication data.
+
+5. Select <Cmdname sid="save" className="uitext" />.
+
+:::tip
+
+To delete the **External IdP** information, click <Cmdname sid="BTN07490" className="uitext" /> and then select <Cmdname sid="delete" className="uitext" /> in the pop-up window.
+
+:::

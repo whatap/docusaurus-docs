@@ -67,13 +67,13 @@ import Dbinstallagentcommonnotes from "../common-items/_db-install-agent-common-
 
 ## モニタリングのアカウントを作成
 
-CUBRIDをモニタリングするためには、DBアカウントとCUBRID Managerアカウントの両方が必要です。 通常は、DBのデフォルトdbaアカウント(`dba`)とCUBRID Managerアカウント(`admin`)を使用します。 別のアカウントを作成して使用することができます。
+CUBRIDをモニタリングするためには、DBアカウントとCUBRID Managerアカウント、両方必要です。 通常は、DBのデフォルトdbaアカウント(`dba`)とCUBRID Managerアカウント(`admin`)を使用します。 別のアカウントを作成して使用することもできます。
 
 ## DBユーザーファイルの作成{#create-db-user}
 
-データベース接続用に暗号化されたUIDを作成します。 ユーザーファイルは、ユーザーDB(`dba`)와 CUBRID Manager(`admin`)に対してすべて実行する必要があります。 usernameとpasswordを入力し、シェルスクリプト(またはバッチファイル)を実行してください。 
+データベース接続用に暗号化されたUIDを作成します。 ユーザーファイルは、ユーザーDB(`dba`)とCUBRID Manager(`admin`)に対してすべて実行する必要があります。 usernameとpasswordを入力し、シェルスクリプト(またはバッチファイル)を実行します。 
 
-- *uid.sh*シェルスクリプトファイル(または*uid.bat*配置ファイル)は、WhaTapデータベースエージェントをインストールしたパスにあります。
+- *uid.sh*シェルスクリプトファイル(または*uid.bat*バッチファイル)は、WhaTapデータベースエージェントをインストールした場所にあります。
 
 - `dba`と`DB_PASSWORD`は、会員登録で使用したユーザー名とパスワードです。
 

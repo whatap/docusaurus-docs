@@ -13,6 +13,13 @@ keywords:
 
 メトリクス情報に関する詳しい内容は、[次のリンク](https://altibase.com/en/learn/manuals.php)を参照してください。
 
+import AgentStatus from "../common-items/_agent-status-summary-metrics.mdx";
+import Xosmetrics from "../common-items/_db-xos-metrics.mdx";
+
+<div className="metricslist">
+
+<AgentStatus />
+
 ## db_altibase_counter {#db_altibase_counter}
 
 ### Tags {#db_altibase_counter-tags}
@@ -47,7 +54,7 @@ keywords:
 | `data page create`                                                                      | データページが生成された回数です。                              |
 | `data page fix`                                                                         | データページを修正した回数です。                               |
 | `data page gets`                                                                        | データページにアクセスした回数です。                             |
-| `data page read`                                                                        | ディスクでデータページを読み込んだ回数です。                         |
+| `data page read`                                                                        | ディスクでデータページを読みとんだ回数です。                         |
 | `data page write`                                                                       | ディスクにデータページを書き込んだ回数です。                         |
 | `db file multi page read time waited`                                                   | 複数ページの読み取り中に待機した時間です。                          |
 | `db file single page read time waited`                                                  | 単一ページの読み取り中に待機した時間です。                          |
@@ -125,15 +132,15 @@ keywords:
 | `elapsed time: write undo record in DML(disk)`                                          | DML操作中にundoレコードを書き込むのにかかった時間です。                |
 | `enq: TX - allocate TXSEG entry time waited`                                            | TXSEG項目割り当ての待機時間です。                            |
 | `enq: TX - row lock contention, data row time waited`                                   | 行のロック競合によるデータ行の待ち時間です。                         |
-| `execute failure count`                                                                 | クエリ実行失敗の回数です。                                  |
+| `execute failure count`                                                                 | クエリ実行の失敗回数です。                                  |
 | `execute success count`                                                                 | クエリ実行の成功回数です。                                  |
 | `execute success count : delete`                                                        | 削除クエリの実行成功の回数です。                               |
-| `execute success count : insert`                                                        | 挿入クエリの実行成功回数です。                                |
-| `execute success count : select`                                                        | 選択クエリの実行成功回数です。                                |
+| `execute success count : insert`                                                        | 挿入クエリの実行成功の回数です。                               |
+| `execute success count : select`                                                        | 選択クエリの実行成功の回数です。                               |
 | `execute success count : update`                                                        | アップデートクエリの実行成功回数です。                            |
-| `fetch failure count`                                                                   | クエリ結果のフェッチ失敗回数です。                              |
-| `fetch success count`                                                                   | クエリ結果のフェッチ成功回数です。                              |
-| `fetch timeout`                                                                         | クエリ結果のフェッチタイムアウトの回数です。                         |
+| `fetch failure count`                                                                   | クエリ結果フェッチの失敗回数です。                              |
+| `fetch success count`                                                                   | クエリ結果フェッチの成功回数です。                              |
+| `fetch timeout`                                                                         | クエリ結果フェッチのタイムアウト回数です。                          |
 | `idle timeout`                                                                          | アイドル状態のタイムアウト回数です。                             |
 | `latch free: drdb LRU list time waited`                                                 | DRDB LRU一覧でのラッチ解除の待ち時間です。                      |
 | `latch free: drdb buffer bcb mutex time waited`                                         | DRDBバッファBCBミューテックスでのラッチ解除待ち時間です。               |
@@ -171,7 +178,7 @@ keywords:
 | `lock row retry count`                                                                  | 行ロックの再試行の回数です。                                 |
 | `lock_wait_sessions`                                                                    | ロック待機中のセッションの数です。                              |
 | `logon cumulative`                                                                      | 累積されたログイン回数です。                                 |
-| `logon current`                                                                         | 現在ログインされているセッションの数です。                          |
+| `logon current`                                                                         | ログインされているセッションの数です。                            |
 | `long_running_sessions`                                                                 | 長時間実行中のセッションの数です。                              |
 | `max time: task schedule`                                                               | タスクのスケジューリングにかかる最大時間です。                        |
 | `memory table access count`                                                             | メモリテーブルにアクセスした回数です。                            |
@@ -221,6 +228,6 @@ keywords:
 
 </div>
 
-import Xosmetrics from "../common-items/_db-xos-metrics.mdx";
-
 <Xosmetrics />
+
+</div>

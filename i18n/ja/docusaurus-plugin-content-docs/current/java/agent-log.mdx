@@ -161,18 +161,36 @@ LogSinkオプションはwhatap.agent-2.1.0以降で使用できます。
 
 - **ignore_logback_appender_set** <span class='type'>String</span> <code className="my">Java Agent v2.2.28 or later</code>
 
-  logback-1.2.8を追跡する際に特定appenderを除外するエージェントオプションです。例えば、`CONSOLE`と`ACCESS_APPENDER`を除外するには、次の例題を参照してください。
+  logback-1.2.8を追跡する際に特定appenderを除外するエージェントオプションです。例えば、`CONSOLE`と`ACCESS_APPENDER`を除外するには、次の例を参照します。
 
   ```ini title="whatap.conf"
+  weaving=logback-1.2.8
   # example: ignore 'CONSOLE', 'ACCESS_APPENDER' appender
   ignore_logback_appender_set=CONSOLE,ACCESS_APPENDER
   ```
 
+  :::note
+
+  - このエージェントオプションを適用する場合、`weaving=logback-1.2.8`オプションを追加適用する必要があります。
+
+  - `ACCESS_APPENDER`は例示として用いた値です。ユーザー環境に合わせたappender名前を指定する必要があります。
+
+  :::
+
 - **ignore_log4j_appender_set** <span class='type'>String</span> <code className="my">Java Agent v2.2.28 or later</code>
 
-  log4j-2.17を追跡する際に、特定appenderを除外するエージェント オプションです。 例えば、`CONSOLE`と`ACCESS_APPENDER`を除外するには、次の例を参照してください。
+  log4j-2.17を追跡する際に、特定appenderを除外するエージェント オプションです。 例えば、`CONSOLE`と`ACCESS_APPENDER`を除外するには、次の例を参照します。
 
   ```ini title="whatap.conf"
+  weaving=log4j-2.17
   # example: ignore 'CONSOLE', 'ACCESS_APPENDER' appender
   ignore_log4j_appender_set=CONSOLE,ACCESS_APPENDER
   ```
+
+  :::note
+
+  - このエージェントオプションを適用する場合、`weaving=log4j-2.17`オプションを追加適用する必要があります。
+
+  - `ACCESS_APPENDER`は例示として用いた値です。ユーザー環境に合わせたappender名前を指定する必要があります。
+
+  :::

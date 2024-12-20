@@ -1,0 +1,241 @@
+---
+id: etcd-dashboard
+title: etcd Dashboard
+description: The following guides to the etcd dashboard.
+keywords:
+  - Kubernetes
+  - Kubernetes Monitoring
+  - etcd
+  - Control Plane
+toc_max_heading_level: 3
+---
+
+{/* 프로젝트 데이터가 없음. 다국어 이미지는 나중에 */}
+
+Select Home screen &gt; cluster project (<code class='my'>CP</code>) &gt; <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_etcdDashboard" className="uitext" />
+
+:::note 
+
+**Requirements**
+
+- The WhaTap Kubernetes agent 1.7.16 or later is required. 
+
+- If it is a Kubernetes cluster project (<code class='my'>CP</code>), you can view the corresponding menu. 
+
+:::
+
+**etcd** is a core component in the Kubernetes environment that stores the data related to the cluster status. WhaTap provides <Cmdname sid="side_etcdDashboard" className="uitext" /> to monitor the performance and status of etcd. This increases the stability of the cluster and enables a quick response when a problem occurs.
+
+## Basic screen guide
+
+<ImgLang img='k8s-etcd-dashboard.png' desc='etcd dashboard' />
+
+<Cmdname sid="side_etcdDashboard" className="uitext" /> provides key etcd metrics collected over the last one hour at an interval of 1 minute. The key metrics you can see on the dashboard are as follows. For the metrics details, see the [metric guide](#etcd-metrics) at the bottom.
+
+- The resources used by etcd, number of Pod restarts, and log details are provided. 
+
+- The commits and number of applies in etcd are provided. 
+
+- It provides the existence status of etcd leaders and the history of leader changes. 
+
+## Activation of the etcd monitoring
+
+Activate the agent by modifying the downloaded *YAML* file and registering the mTLS certificate when installing the WhaTap Kubernetes agent.
+
+### Checking the certificate and creating the secret
+
+#### Checking the etcd certificate
+
+An mTLS certificate is required for etcd. The etcd certificates are typically stored in the */etc/kubernetes/pki/etcd* path on the control plane node. The file owner is the root account and the required certificates are as follows:
+
+- *ca.crt*
+
+- *server.crt*
+
+- *server.key*
+
+On the machine where the `kubectl` command is executed, check if the certificate exists using the following command. 
+
+{/* 경로에서 필요한 인증서 파일(*ca.crt*, *server.crt*, *server.key*)이 존재하는지 확인하려면 다음 명령어를 실행하세요. */}
+
+```bash
+sudo ls /etc/kubernetes/pki/etcd
+```
+
+#### Creating the secret
+
+If a certificate exists, create a secret with the following command. 
+
+```bash
+sudo kubectl create secret generic whatap-etcd-cert -n whatap-monitoring --from-file=ca.crt=/etc/kubernetes/pki/etcd/ca.crt --from-file=server.crt=/etc/kubernetes/pki/etcd/server.crt --from-file=server.key=/etc/kubernetes/pki/etcd/server.key
+```
+
+When a secret is created successfully, the following message appears. 
+
+```yaml
+secret/whatap-etcd-cert created
+```
+
+##### In case the root account is unavailable
+
+{/* root 계정에서 `kubectl` 명령을 사용할 수 없는 경우 인증서 파일을 복제한 뒤 소유자를 변경하여 등록하세요.  */}
+
+If you cannot use the `kubectl` command from the root account, see the following instructions. 
+
+1. After copying the certificate, go to the accessible path. 
+
+2. Change the owner of the duplicated certificate file to the current owner. 
+
+##### In case there is no namespace
+
+If you create a secret before applying the Kubernetes agent YAML, the secret creation may fail because the `whatap-monitoring` namespace does not exist. After creating the namespace, create a secret again with the following command.
+
+```bash
+kubectl create namespace whatap-monitoring
+```
+
+### Modifying the WhaTap Kubernetes agent *YAML*
+
+Modify the WhaTap Kubernetes agent *YAML* file to add container settings and then attach the secret.
+
+#### Configuring the container
+
+1. Add the etcd-related settings to the args section in the `whatap-control-plane-helper` container of Deployment. 
+
+   ```yaml
+   -collect_etcd_monitoring_enabled=true
+   -etcd_hosts=user_etcd_ip, user_etcd_ip
+   ```
+
+   See the following example: 
+
+   ```yaml title='Example'
+   -etcd_hosts=192.168.1.45,192.168.1.46,192.168.1.47
+   ```
+
+2. Add the following to the environment variables (env) of the `whatap-master-agent` container of Deployment. 
+
+   ```yaml
+   - name: "collect_etcd_monitoring_enabled"
+     value: "true"
+   ```
+
+#### Connecting the secret
+
+1. Add a secret to the volumes section in `whatap-master-agent` of Deployment. 
+
+   ```yaml
+   - name: "whatap-etcd-cert"
+     secret:
+       secretName: "whatap-etcd-cert"
+   ```
+
+2. Mount the secret into the `whatap-control-plane-helper` container. 
+
+   ```yaml
+   volumeMounts:
+     - name: "whatap-etcd-cert"
+       readOnly: true
+       mountPath: "/etc/kubernetes/pki/etcd"
+   ```
+
+#### Full *YAML* example
+
+Below is an example of the *YAML* file with all settings applied. See the highlighted area. 
+
+```yaml {31-32,55-56,64-67,76-78}
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "whatap-master-agent"
+  namespace: "whatap-monitoring"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: "whatap-master-agent"
+  template:
+    metadata:
+      labels:
+        name: "whatap-master-agent"
+    spec:
+      containers:
+      - command:
+        - "/bin/entrypoint.sh"
+        env:
+        - name: "WHATAP_LICENSE"
+          value: "x208gnc8i1kko-z2p19shk7npc4t-z788sgbj3n123a"
+        - name: "WHATAP_HOST"
+          value: "59.13.101.109"
+        - name: "WHATAP_PORT"
+          value: "61574"
+        - name: "WHATP_MEM_LIMIT"
+          valueFrom:
+            resourceFieldRef:
+              containerName: "whatap-master-agent"
+              resource: "limits.memory"
+        - name: "collect_control_plane_monitoring_enabled"
+          value: "true"
+        - name: "collect_etcd_monitoring_enabled"
+          value: "true"
+        image: "whatap/kube_mon"
+        name: "whatap-master-agent"
+        ports:
+        - containerPort: 6600
+        resources:
+          limits:
+            cpu: "200m"
+            memory: "350Mi"
+          requests:
+            cpu: "100m"
+            memory: "300Mi"
+        volumeMounts:
+        - mountPath: "/bin/entrypoint.sh"
+          name: "start-script-volume"
+          readOnly: true
+          subPath: "entrypoint.sh"
+        - mountPath: "/whatap_conf"
+          name: "whatap-config-volume"
+      - args:
+        - "-collect_control_plane_monitoring_enabled=true"
+        - "-collect_etcd_monitoring_enabled=true"
+        - "-etcd_hosts=192.168.1.45,192.168.1.46,192.168.1.47"
+        command:
+        - "/data/agent/master/whatap_control_plane_helper"
+        image: "whatap/kube_mon"
+        imagePullPolicy: "Always"
+        name: "whatap-control-plane-helper"
+        ports:
+        - containerPort: 9496
+        volumeMounts:
+          - name: "whatap-etcd-cert"
+            readOnly: true
+            mountPath: "/etc/kubernetes/pki/etcd"
+      serviceAccount: "whatap"
+      volumes:
+      - configMap:
+          defaultMode: 448
+          name: "master-start-script"
+        name: "start-script-volume"
+      - emptyDir: {}
+        name: "whatap-config-volume"
+      - name: "whatap-etcd-cert"
+        secret:
+          secretName: "whatap-etcd-cert" 
+```
+
+## etcd metrics {#etcd-metrics}
+
+| Type                           | Description                                           |
+| ------------------------------ | ----------------------------------------------------- |
+| ***Number of Pods***           | Number of the current etcd Pods                       |
+| ***etcd restart count trend*** | etcd Pod restart count sum trend                      |
+| ***Reader change trend***      | etcd Pod reader change count trend                    |
+| ***Reader exists or not***     | Whether the etcd Pod as the reader role exists or not |
+| ***CPU usage sum***            | etcd Pod CPU usage sum                                |
+| ***CPU usage***                | etcd Pod CPU usage trend                              |
+| ***Memory usage sum***         | etcd Pod memory usage sum                             |
+| ***Memory usage***             | etcd Pod memory usage trend                           |
+| ***Commit trend***             | Number of etcd change commits                         |
+| ***Apply trend***              | Number of applies after a commit                      |
+| ***etcd log***                 | Logs generated from the etcd Pod                      |

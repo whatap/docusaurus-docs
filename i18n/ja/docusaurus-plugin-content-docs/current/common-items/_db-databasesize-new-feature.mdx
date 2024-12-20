@@ -65,45 +65,71 @@ grant usage on schema {schema_name} to whatap;
 
 ## 時間別変化量を確認する
 
-<Cmdname sid="TTL06025" className="uitext" />から特定時間のグラフバーを選択すると、開始時刻から選択した時刻までのデータベースサイズの推移と変化量を一覧で確認できます。
-
 <ProdImg img='db-database-size-select-db.png' desc='DBサイズ'/>
+
+- <Cmdname sid="TTL06025" className="uitext" />
+
+  時間帯ごとに、データベースの全体的なサイズと使用量の変化を視覚的に確認できます。 チャートで各データベースのサイズを色分けして表示し、マウスをチャートの上にオーバーした状態で左右に移動します。 特定の時点の各データベースサイズをツールチップで詳細に確認できます。
+
+- <Cmdname sid="TTL06026" className="uitext" />
+
+  データベースごとの容量の詳細をテーブル形式で提供します。 各データベースの名前(**DB NAME**)および合計容量(**TOTAL**)、変更量(**CHANGED**)を確認できます。 特定のデータベースを選択すると、<Cmdname sid="TTL06572" className="uitext" />セクションで詳細情報を確認できます。
 
 ## テーブル別のサイズを確認する
 
-<Cmdname sid="TTL06026" className="uitext" />でデータベースを選択すると、そのデータベース内のサイズTOP50に該当するテーブル別サイズを一覧で確認できます。
+<Cmdname sid="TTL06026" className="uitext" />セクションでデータベースを選択すると、そのデータベース内のサイズTOP50に該当するテーブルごとのサイズを一覧で確認できます。
 
 <ProdImg img='db-database-size-top50.png' desc='DBサイズ'/>
 
 <InDoc product='mysql'>
 
-基本的にテーブル別**DATA SIZE**、**INDEX SIZE**、**ROWS**を表示します。 これは`information_schema.tables`の情報で、実際のサイズと異なる場合があります。 `information_schema.innodb_tablespaces`の**FILE SIZE**を一緒に確認するには、DBXエージェントに次のオプションを設定します。 このサイズは実際のサイズに似ています。
-
-```ini title='whatap.conf'
-table_filesize=true
-```
+データベース内のテーブルごとのデータサイズ(**DATA SIZE**)およびインデックスサイズ(**INDEX SIZE**)、行数(**ROWS**)をデフォルトで表示します。 照会開始時点と終了時点の変化量を確認できます。 これにより、容量の大きいテーブルを簡単に把握し、容量最適化のための管理に役立ちます。
 
 :::note
 
-モニタリングアカウントに照会権限があるテーブルを対象とします。 モニタリング用アカウント作成の詳細については、[次の文書](install-agent#uid)を参照してください。
+- <Cmdname sid="TTL06026" className="uitext" />セクションの情報は、`information_schema.tables`の情報で実際のサイズと異なる場合があります。 `information_schema.innodb_tablespaces`のファイルサイズ(**FILE SIZE**)を一緒に確認するには、DBXエージェントに次のオプションを設定します。 このサイズは実際のサイズに似ています。
+
+  ```ini title='whatap.conf'
+  table_filesize=true
+  ```
+
+- モニタリングアカウントに照会権限があるテーブルを対象とします。 モニタリング用アカウント作成の詳細については、[次の文書](install-agent#uid)を参照してください。
 
 :::
 
 </InDoc>
 
-<InDoc product='postgresql,mysql'>
+<InDoc product='postgresql'>
 
-テーブル別**DATA SIZE**、**INDEX SIZE**を表示します。 <Cmdname sid="TTL06572" className="uitext" />セクションのテーブル一覧から<span class="uitext">TABLENAME</span>カラム項目を選択すると**column**及び**index**構成が確認できる**_Object detail_**ウィンドウが表示されます。
+データベース内のテーブルごとにスキーマ名(**SCHEMANAME**)およびテーブル名(**TABLENAME**)、テーブルサイズ(**TABLE SIZE**)、インデックスサイズ(**INDEX SIZE**)、合計容量(**TOTAL SIZE**)を照会できます。 照会開始時点と終了時点の変化量を確認できます。 これにより、容量の大きいテーブルを簡単に把握し、容量最適化のための管理に役立ちます。
 
-<ImgLang img='db-database-size-objectdetail-postgresql.png' desc='Object detail' />
+</InDoc>
+
+<Xclude product="mongodb">
+
+<Cmdname sid="TTL06572" className="uitext" />セクションのテーブル一覧で<span class="uitext">TABLENAME</span>カラム項目を選択すると、**column**および**index**構成が確認できる***Object Detail***画面が表示されます。
+
+<ProdImg img='db-database-size-objectdetail.png' desc='Object detail' />
+
+</Xclude>
 
 :::note
 
-この機能は、DBXエージェント1.6.15バージョン以降に対応しています。 データベース権限に関する設定は、[次の文書](install-agent#uid)を参考にしてください。
+<InDoc product="postgresql">
 
-:::
+- この機能は、DBXエージェント1.6.15バージョン以降に対応しています。 データベース権限に関する設定は、[次の文書](install-agent#uid)を参考にしてください。
 
 </InDoc>
+
+<InDoc product="mongodb">
+
+- この機能は、DBXエージェント1.7.0バージョン以降に対応しています。 関連するエージェント設定の詳細については、[次の文書](agent-dbx-settings#collectdata)を参照してください。
+
+</InDoc>
+
+- <Cmdname sid="TTL06572" className="uitext" />セクションでテーブルカラムの順番を変更したり、特定のカラムを非表示にするには、右上に![カラムアイコン](/img/ico-column.svg)ボタンを選択します。 カラム設定の詳細については、[次の文書](instance-monitoring#change-column)を参照してください。
+
+:::
 
 ## 照会データのダウンロード
 

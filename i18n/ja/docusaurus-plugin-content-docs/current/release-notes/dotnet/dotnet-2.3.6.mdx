@@ -1,0 +1,29 @@
+---
+id: dotnet-2_3_6
+title: .NET Agent v2.3.6
+toc_max_heading_level: 2
+pagination_next: release-notes/dotnet/dotnet-2_3_5
+displayed_sidebar: releaseSidebar
+---
+
+2024年11月25日
+
+- <Status priority='1'>New</Status>エージェントオプションの追加
+
+  **webservice_method_prefix_realtime** <span class='type'>Boolean</span>
+
+  既定値`false`
+
+  値を`true`に設定すると、`webservice_method_prefix`ターゲットを以前と同じようにリアルタイムで処理します。
+
+- <Status priority='1'>Changed</Status> `webservice_method_prefix`オプションで収集するトランザクション処理方式の変更
+
+  - 再帰的な呼び出しによるエラーの発生を防止するために、トランザクション内で収集される他の`webservice_method_prefix`メソッドは無視するように修正
+
+  - 完了していないトランザクションは無視するように修正
+
+- <Status priority='1'>Changed</Status>個別にダウンロードを提供していた.NET Frameworkと.NET Core環境のインストーラの併合
+
+import DownloadAgent from "./_download-dotnet-agent.mdx";
+
+<DownloadAgent />

@@ -1,6 +1,6 @@
-## ユーザー定義ウィジェット{#customwidget}
+## カスタムウィジェット{#customwidget}
 
-ユーザー定義ウィジェットは、ダッシュボードでデフォルトに提供されるメトリクスの他に、ユーザーが希望するメトリクスを追加できる機能です。 デフォルトで提供するメトリクスの他に、ダッシュボードで継続的にモニタリングしたいメトリクスがある場合は、ユーザー定義ウィジェット機能を利用してください。
+カスタムウィジェットは、ダッシュボードでデフォルトに提供されるメトリクスの他に、ユーザーがメトリクスを追加できる機能です。 デフォルトで提供するメトリクスの他に、ダッシュボードで継続的にモニタリングしたいメトリクスがある場合は、カスタムウィジェット機能を利用できます。
 
 ### 追加する
 
@@ -12,17 +12,17 @@
 
    <ImgLang img="db-add-custom-widget.png" desc="Custom widget" />
 
-4. 画面の右側から <Cmdname sid="BTN08346" className="uitext" />画面が現れると、<Cmdname sid="title" className="uitext" />項目にウィジェットの名前を入力してください。
+4. 画面の右側から <Cmdname sid="BTN08346" className="uitext" />画面が現れると、<Cmdname sid="title" className="uitext" />項目にウィジェットの名前を入力します。
 
    <ImgLang img="db-add-custom-widget-setting.png" desc="Custom widget" />
 
-5. 画面下のメトリクス一覧で、追加するメトリクスの右上に![追加アイコン](/img/ico-add.svg)ボタンを選択します。
+5. 画面下のメトリクス一覧から、追加するメトリクスの右上にある![追加アイコン](/img/ico-add.svg)ボタンを選択します。
 
 6. メトリクスをすべて追加したら<Cmdname sid="save" className="uitext" />ボタンを選択します。
 
 :::note
 
-- 1つ以上のメトリクスを追加できます。 メトリクスを追加する時は、![追加アイコン](/img/ico-add.svg)ボタンを選択します。
+- 最大4つのメトリクスを追加できます。 メトリクスを追加する時は、![追加アイコン](/img/ico-add.svg)ボタンを選択します。
 
 - メトリクスを変更する時は、メトリクス一覧で別のメトリクス項目を選択します。 ![追加アイコン](/img/ico-add.svg)ボタンを選択すると、そのメトリクスが追加されます。
 
@@ -38,11 +38,11 @@
 
 - ![グラフアイコン](/img/ic-equalizer-chart.svg) <Cmdname sid="equalizer" className="uitext" />: 複数のメトリクスの性能を比較できる棒グラフ形式のチャートです。 様々なメトリクスを1つの画面に視覚的に表現することで、全体的な性能状態を簡単に把握できます。
 
-- ![グラフアイコン](/img/ic-pie-chart.svg) <Cmdname sid="pie" className="uitext" />: 複数のメトリクスの全体に対する部門構成比率を確認するのに有用な円形チャートです。
+- ![グラフアイコン](/img/ic-pie-chart.svg) <Cmdname sid="pie" className="uitext" />: 複数のメトリクスの全体に対する部門構成比率を確認するのに役立つ円形チャートです。
 
 - ![テキストアイコン](/img/ic-text-widget.svg) <Cmdname sid="text" className="uitext" />: メトリクスに対する数値をテキスト形式で表示します。
 
-### データ併合方式を選択する
+### データマージ方式を選択する
 
 <Cmdname sid="BTN08346" className="uitext" />画面の<Cmdname sid="TTL08348" className="uitext" />では、エージェントから収集されたメトリクスを表示する方法を選択できます。
 
@@ -56,7 +56,7 @@
 
 :::note
 
-チャートのタイプによって選択できる結合方式は異なる場合があります。
+チャートのタイプによって選択できるマージ方式は異なる場合があります。
 
 :::
 
@@ -78,8 +78,8 @@
 
 追加または変更したメトリクス一覧に表示されたアイコンボタンの機能は、次のとおりです。
 
-- ![削除アイコン](/img/ico-trash.svg) : このメトリクスは、ユーザー定義ウィジェットから除外できます。
+- ![削除アイコン](/img/ico-trash.svg) : 該当メトリクスをカスタムウィジェットから除外できます。
 
-- ![通知アイコン](/img/ic-alert.svg) : そのメトリクスのアラート通知を設定できます。 ボタンを選択すると、<Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" />メニューに移動します。 <Cmdname sid="metrics_event" className="uitext" />設定の詳細については、[次の文書](metric-warning-notice)を参考にしてください。
+- ![通知アイコン](/img/ic-alert.svg) : 該当メトリクスに対するアラート通知を設定できます。 ボタンを選択すると、<Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" />メニューに移動します。 <Cmdname sid="metrics_event" className="uitext" />設定の詳細については、[次の文書](metric-warning-notice)を参考にしてください。
 
 :::

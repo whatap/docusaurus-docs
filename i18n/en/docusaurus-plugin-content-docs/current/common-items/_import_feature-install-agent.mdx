@@ -1,3 +1,5 @@
+{/* 이 문서 넘버링이 1 1 3으로 이어진 이유는 xclude page 활용 문제입니다. 번역 시 주의해 주세요. */}
+
 After creating a **Feature Project** (<code class='Features'>Features</code>), the ***{props.name}*** screen appears. Proceed with installation according to the following instructions. 
 
 1. Check the **project access key**. 
@@ -43,6 +45,52 @@ After creating a **Feature Project** (<code class='Features'>Features</code>), t
 
    </InDoc>
 
+   <InDoc pages="vcenter-introduction">
+
+   Execute the following command to automatically check the user environment and create an installation script on the server where vCenter has been installed. 
+
+   ```bash
+   curl http://repo.whatap.io/telegraf/feature/vcenter/install_vcenter_monitoring.sh -o install_vcenter_monitoring.sh
+   ```
+
+   </InDoc>
+
+   <InDoc pages="nginx-introduction">
+
+   Execute the following command to automatically check the user environment and create an installation script on the server where NGINX has been installed.
+
+   ```bash
+   curl http://repo.whatap.io/telegraf/feature/nginx/install_nginx_monitoring.sh -o install_nginx_monitoring.sh
+   ```
+
+   Execute the following command to install the NGINX agent.
+
+   ```bash
+   chmod +x install_nginx_monitoring.sh
+   sudo ./install_nginx_monitoring.sh "x42ut20rmr8rn-z1kli3trqviqul-x5cm4quee6cdmj" "15.165.146.117"
+   ```
+
+   </InDoc>
+
+   <InDoc pages="apache-introduction">
+
+   Execute the following command to automatically have the system detect the user environment and generate an installation script for the server with APACHE installed.
+
+   ```bash
+   curl http://repo.whatap.io/telegraf/feature/apache/install_apache_monitoring.sh -o install_apache_monitoring.sh
+   ```
+
+   Execute the following command to install the Apache agent.
+
+   ```bash
+   chmod +x install_apache_monitoring.sh
+   sudo ./install_apache_monitoring.sh "x42uu23t8kl3a-z1e71pb8vhbpir-z62lcfeuerbcp2" "15.165.146.117"
+   ```
+
+   </InDoc>
+
+<Xclude pages="nginx-introduction,apache-introduction">
+
 3. After configuring and restarting the agent, **start** **monitoring**.  
 
    <InDoc pages="kafka-introduction">
@@ -80,9 +128,15 @@ After creating a **Feature Project** (<code class='Features'>Features</code>), t
 
    </InDoc>
 
-{/* 
-Feature Project 
+   <InDoc pages="vcenter-introduction">
 
-Kafka
-Aerospike 
-*/}
+   Run the following command to install the WhaTap Server Monitoring Agent and Telegraph Sidecar.
+
+   ```bash
+   chmod +x install_vcenter_monitoring.sh
+   sudo ./install_vcenter_monitoring.sh "x42u520ie21jb-z76vslonvu6qp8-x7dv18dj7fknuq" "15.165.146.117"
+   ```
+
+   </InDoc>
+
+</Xclude>

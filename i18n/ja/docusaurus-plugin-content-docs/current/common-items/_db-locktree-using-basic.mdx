@@ -1,8 +1,10 @@
 <Title hashid="basicusage" level={props.level}>基本的な使い方</Title>
 
-<ProdImg img='db-locktress-basic.png' desc='ロックツリー' />
+<Xclude product="mssql"><ProdImg img='db-locktress-basic.png' desc='Lock tree' /></Xclude>
 
-<Xclude product='postgresql,mysql,altibase,mssql,cubrid'>
+<InDoc product="mssql"><ImgLang img="db-locktress-basic-mssql-v2.png" desc="Lock tree" /></InDoc>
+
+<Xclude product='postgresql,mysql,altibase,mssql,mssql-v1,cubrid'>
 
 目的の![数字1](/img/number-01.png)日付と時間を設定し、[数字2](/img/number-02.png)の一覧からインスタンスを選択してください。設定した時間にロックが発生した場合は、**_lock wait sessions_**と画面下のテーブルに表示されているデータを表示します。
 
@@ -26,15 +28,15 @@
 
 </InDoc>
 
-<InDoc product="mssql,tibero">
+<InDoc product="mssql,mssql-v1,tibero">
 
-1. 画面上段の <Cmdname sid="date" className="uitext" />で照会しようとする日付を選択して時間を設定します。
+1. 画面上段の <Cmdname sid="time" className="uitext" />で照会する日付を選択して時間を設定します。
 
 2. モニタリングするインスタンスを選択します。 
 
 選択したインスタンスで設定した時間中に発生したロック(Lock) 状況を確認できます。
 
-もし設定された時間の間ロック(Lock)が発生した場合は、<UI>lock wait sessions</UI>グラフと下段のテーブルで特定の時間帯にロックが集中するのか、または特定のセッションが継続的にロックを誘発するのかなどを分析できます。
+もし設定された時間の間ロック(Lock)が発生した場合は、<UI>Lock Wait Sessions</UI>グラフと下段のテーブルで特定の時間帯にロックが集中するのか、または特定のセッションが継続的にロックを誘発するのかなどを分析できます。
 
 :::note
 

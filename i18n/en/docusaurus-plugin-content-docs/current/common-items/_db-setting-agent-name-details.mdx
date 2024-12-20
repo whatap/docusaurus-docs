@@ -1,16 +1,42 @@
-<details>
-<summary>Agent Name Setting</summary>
-In the WhaTap monitoring service, the term, "object" is used for comprehensive meaning of a monitoring target, and it is sometimes used interchangeably with the agent. To distinguish the objects to be monitored, the different names must be used. WhaTap identifies the target through the object name and object ID.
+<Title level={props.level} hashid="naming">Agent name setting</Title>
+
+<Title level={props.level + 1}>Automatic configuration</Title>
+
+<Xclude product="oracle-pro">
+
+If you do not set the agent name in the agent configuration (_whatap.conf_), the agent name is automatically determined by combining the IP address and the port number. For example, if the IP address is **10.11.12.13** and the port number is **3000**, the agent name is set to <b>{props.agentType}-12-13-3000</b>.
+
+The key variables that determine the agent name are as follows:
+
+| Configuration     | Description                                                                      |
+| ----------------- | -------------------------------------------------------------------------------- |
+| `{type}`          | The {props.agentType} value is used.                                             |
+| `{ip0}`           | The first byte of the IPv4 address is used. (e.g. **10** in **10**.11.12.13)     |
+| `{ip1}`           | The second byte of the IPv4 address is used. (e.g. **11** in 10.**11**.12.13)    |
+| `{ip2}`           | The third byte of the IPv4 address is used. (e.g. **12** in 10.11.**12**.13)     |
+| `{ip3}`           | The fourth byte of the IPv4 address is used. (e.g. **13** in 10.11.12.**13**)    |
+| `{port}`          | Database server port                                                             |
 
 :::note
 
-- The object (agent) names must be unique on a project basis.
-- Object ID = CRC32 (object name). If the object ID or name has been changed, the previous data is not connected.
+If the IP address is not numeric like RDS, the name is set in the following format: {props.agentType}-`{ip0}`-`{hash}`-`{port}`, where the `{hash}` value is the IP address that has been converted to 4-digit hexadecimal number.
 
 :::
 
-WhaTap basically uses the data collected from database servers to identify each server while collecting monitoring data. Basic information uses the database server as a unique identifier by a combination of database server type, IP address, service port, and such. If necessary, use the name set by the user or change the pattern to a unique value. The agent name must be unique.
+</Xclude>
 
-The reason why the data extracted from the application server is used, is like the following. When a communication loss of the collection server and agent caused by the stop of the database server, network disconnection, or agent problem is restored, the continuity of the data from the reconnected agent is maintained.
+<InDoc product="oracle-pro">
 
-</details>
+If you do not set the agent name in the agent configuration (_whatap.conf_), it is automatically created by combining the hostname in the following way: <b>{props.agentType}-\{hostname\}</b>.
+
+</InDoc>
+
+<Title level={props.level + 1}>Manual configuration</Title>
+
+To set the agent name manually, enter a desired name for the _whatap.name_ or _object_name_ option in the whatap.conf file. The entered name is assigned to the agent name.
+
+```ini title="whatap.conf"
+whatap.name=agent-1234
+# or
+object_name=agent-1234
+```

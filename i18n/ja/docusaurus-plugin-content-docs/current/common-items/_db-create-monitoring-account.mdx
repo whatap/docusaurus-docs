@@ -10,9 +10,46 @@ create user DB_User with password 'DB Password';
 
 </InDoc>
 
+<InDoc product="mssql">
+
+```sql
+create login DB_User with password='DB Password';
+grant view server state to DB_User;
+create user DB_User for login DB_User;
+grant execute to DB_User;
+EXEC sp_configure 'show advanced options', 1;
+RECONFIGURE;
+EXEC sp_configure 'Ole Automation Procedures', 1;
+RECONFIGURE;
+```
+
+- **Kill session使用時の追加権限**
+
+  ```sql
+  grant alter any connection to whatap;
+  ```
+
+- **Azure SQL Database環境でKill session使用時の追加権限**
+
+  ```sql
+  grant kill database connection to whatap;
+  ```
+
+- **<Cmdname sid="side_dbJobInfo" className="uitext" />と<Cmdname sid="side_dbBackupRecoveryHistory" className="uitext" />メニュー機能を利用する際に必要な権限**
+
+  msdbデータベースにアクセスできるように権限を付与
+
+  ```sql
+  USE msdb;
+  CREATE USER DB_User FOR LOGIN DB_User;
+  GRANT SELECT to DB_User;
+  ```
+
+</InDoc>
+
 :::note
 
-<Xclude product="postgresql,mysql,altibase">
+<Xclude product="postgresql,mysql,altibase,mssql">
 
 - 既に存在するアカウントを使用する場合は、[DBユーザーファイルの作成](#create-db-user)に進みます。権限がない場合は、モニタリングを開始できません。
 
@@ -20,7 +57,7 @@ create user DB_User with password 'DB Password';
 
 </Xclude>
 
-<InDoc product="postgresql,mysql,altibase">
+<InDoc product="postgresql,mysql,altibase,mssql">
 
 - 権限を持つアカウントがある場合は、このステップを省略して[次の段階](#check-accesskey)に移ります。
 

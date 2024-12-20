@@ -2,6 +2,7 @@
 id: metrics-app
 title: Application metrics
 description: It describes the application metrics.
+toc_max_heading_level: 2
 keywords:
   - .NET
   - Metrics
@@ -9,17 +10,19 @@ keywords:
   - UI
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import Metricsindex from "../common-items/_metrics-index.mdx";
+import AgentStatus from "../common-items/_agent-status-summary-metrics.mdx";
+import Apmservermerics from "../common-items/_apm-server-merics.mdx";
+import Javaappproccounter from "../common-items/_java-app-proc-counter.mdx";
 
 <Metricsindex />
 
-import Apmservermerics from "../common-items/_apm-server-merics.mdx";
+<div className="metricslist">
+
+<AgentStatus />
 
 <Apmservermerics />
 
-import Javaappproccounter from "../common-items/_java-app-proc-counter.mdx";
-
 <Javaappproccounter />
+
+</div>

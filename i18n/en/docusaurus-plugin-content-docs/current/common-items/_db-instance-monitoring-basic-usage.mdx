@@ -6,7 +6,7 @@
 
   </InDoc>
 
-  <InDoc product='oracle-v1,mssql,tibero'>
+  <InDoc product='oracle-v1,mssql,mssql-v1,tibero'>
 
   You can select an instance and a database included in the instance for data inquiry. The collected data of the selected instance and its database are automatically applied to the ![number2](/img/number-02.png) graph chart and the ![number3](/img/number-03.png) **_Active Sessions_** table.
 
@@ -16,7 +16,7 @@
 
   The horizontal axis of each widget is time, and the vertical axis is the metric number. If you select a specific time period in each widget, <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbTrend" className="uitext" /> appears.
 
-<Xclude product="mssql">
+<Xclude product="mssql,mssql-v1">
 
 - ![Number 3](/img/number-03.png) <Cmdname sid="active_sessions" className="uitext" /> | <Cmdname sid="lock_tree" className="uitext" /> | <Cmdname sid="process_info" className="uitext" />
 
@@ -36,7 +36,7 @@
 
 </Xclude>
 
-<InDoc product="mssql">
+<InDoc product="mssql,mssql-v1">
 
 - ![Number 3](/img/number-03.png) <Cmdname sid="active_sessions" className="uitext" /> | <Cmdname sid="lock_tree" className="uitext" />
 
@@ -62,7 +62,7 @@
 
 - For more information about the columns, see [the following](#column-info).
 
-<Xclude product="mssql">
+<Xclude product="mssql,mssql-v1">
 
 - The <Cmdname sid="process_info" className="uitext" /> can be viewed by additionally configuring the XOS agent. For more information, see [the following](install-agent#apply-xos-agent).
 

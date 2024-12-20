@@ -1,0 +1,46 @@
+---
+id: troubleshooting
+title: インストール問題の解決
+description: データベースエージェントのインストール時に発生する問題を特定できます。
+keywords:
+  - SQL Server
+  - データベース
+  - 問題解決
+  - エージェント
+---
+
+データベースエージェントのインストール時に発生する問題を確認してください。
+
+import Dbcheckfirewallsetting from "../common-items/_db-check-firewall-setting.mdx";
+
+<Dbcheckfirewallsetting />
+
+import Dbhowtocheckfirewal from "../common-items/_db-how-to-check-firewal.mdx";
+
+<Dbhowtocheckfirewal />
+
+## SSL認証関連の問題
+
+エージェントからデータベースに接続する際にSSLセキュリティに関して次のような問題が発生した場合、JDBCに接続する際にSSL 認証を使用しないようにオプションを設定する必要があります。
+
+```txt
+com.microsoft.sqlserver.jdbc.SQLServerException: The driver could not establish a secure connection to SQL Server by using Secure Sockets Layer (SSL) encryption.
+
+com.microsoft.sqlserver.jdbc.SQLServerException: "enctyp1" property is set to "true" and "trustServerCertificate" property is set to "false" but the driver could not establish a secure connection to SQL Server by ising Secure Sockets Layer (SSL) encryption
+```
+
+エージェント設定ファイル(*whatap.conf*)にSSL認証を使用しないように、次のオプションを設定してください。
+
+```ini title="whatap.conf"
+connect_option=encrypt=true;trustServerCertificate=true
+```
+
+## 制約事項
+
+import Dbmultiregioncantselectonepr from "../common-items/_db-multi-region-cant-select-one-pr.mdx";
+
+<Dbmultiregioncantselectonepr />
+
+import Dbcantuseduplicatedname from "../common-items/_db-cant-use-duplicated-name.mdx";
+
+<Dbcantuseduplicatedname />

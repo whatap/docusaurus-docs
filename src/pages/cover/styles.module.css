@@ -1,0 +1,33 @@
+@media print {
+  .cover {
+    transform: scale(2.0) !important;
+    transform-origin: top left;
+    width: 125%;
+  }
+  .cover h1 {
+    position: absolute;
+    top: 250px;
+    font-size: 52px;
+    left: 0px;
+    margin-left: 0;
+    text-align: left;
+    z-index: 199;
+  }
+  .cover .date {
+    position: absolute;
+    top: 340px;
+    right: 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+    z-index: 199;
+  }
+  .cover .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 115%;
+    height: 115%;
+    z-index: 0;
+  }
+}

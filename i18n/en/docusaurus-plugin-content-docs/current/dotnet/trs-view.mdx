@@ -13,3 +13,72 @@ keywords:
 import Trsview from "../common-items/_trs-view.mdx";
 
 <Trsview />
+
+## Exception handling (WARNING) criteria {#waringexception}
+
+The following describes the criteria for exception handling by the .NET agent for errors that occur in the .NET application environment. The .NET agent handles errors only in the following cases:
+
+- In case an unhandled exception occurs in the application environment
+
+- In case Status Code 400 occurs
+
+### Error display on the service screen
+
+![hitmap, Trace analysis](/img/faq/apm-faq-hitmap-error.png)
+
+Most <Cmdname sid="TTL06087" className="uitext" /> that can be seen throuth the <Cmdname sid="AA005" className="uitext" /> widget and <Cmdname sid="TTL06209" className="uitext" /> window are for the <span class="slow">WARNING</span> level.
+
+### Status Code 400 or higher error handling
+
+If the HTTP response code is 400 or more, it is treated as an error even if no exception class occurs. The following is the agent option that sets whether or not to enable error handling based on the HTTP status code. 
+
+```ini title="whatap.conf"
+transaction_status_error_enable=true
+```
+
+:::note
+
+For more information about the `transaction_status_error_enable` option, see [the following](agent-transaction#transaction_status_error_enable).
+
+:::
+
+### Transaction error step INFO processing
+
+Some errors can be displayed as normal or ignored through the agent settings. The level displayed in the <Cmdname sid="AA005" className="uitext" /> widget is <span class="normal">INFO</span> (blue).
+
+If the following conditions are met, they are not treated as errors.
+
+- In case the value of the `transaction_status_error_enable` option is `false`
+
+  ```ini title="whatap.conf"
+  # default true
+  transaction_status_error_enable=false
+  ```
+
+- In case the status code is defined in the `status_ignore` option
+
+  ```ini title="whatap.conf"
+  # Separated by commas(,)
+  status_ignore=400,404,500
+  ```
+
+- In case the combination of URL and status code is defined in the `status_ignore_set` option
+
+  ```ini title="whatap.conf"
+  # URL:StatusCode
+  status_ignore_set=/api/auth/token:401,/health-check:503
+  ```
+
+:::note
+
+- The agent settings can be configured in _whatap.conf_ and they can be viewed in the <Cmdname sid="management" className="uitext" /> &gt; <Cmdname sid="agent_configuration" className="uitext" /> menu. For more information, see [the following](set-agent).
+
+- For more information about the agent configuration options, see the following documents:
+
+  - [`transaction_status_error_enable`](agent-transaction#transaction_status_error_enable)
+
+  - [`status_ignore`](agent-transaction#status_ignore)
+
+  - [`status_ignore_set`](agent-transaction#status_ignore_set)
+
+:::

@@ -1,0 +1,87 @@
+---
+id: ingress-list
+title: Ingress一覧
+description: Ingress一覧メニューをご案内します。
+keywords:
+  - Kubernetes
+  - Kubernetesモニタリング
+  - クラスター
+  - Ingress
+toc_max_heading_level: 2
+---
+
+ホーム画面 &gt; プロジェクト選択 &gt; <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_ingressList" className="uitext" />
+
+:::note 
+
+WhaTap Kubernetesエージェント1.7.13バージョン以降が必要です。 
+
+:::
+
+<Cmdname sid="side_ingressList" className="uitext" />を照会します。 クバネティス外部から流入する要請は、**Ingress**を通じてコンテナ内部のアプリケーションまで最終的にルーティングされ、Ingress設定によって特定のServiceやPodにつながります。 Ingressモニタリングは、クバネティスクラスターに入る外部トラフィックの流れを把握し、管理する上で重要な役割を果たします。
+
+WhaTapの<Cmdname sid="side_ingressList" className="uitext" />は、Ingress別のルーティングポリシーを視覚化した一覧ビューを提供します。 これを通じて、各Ingressがどのようにトラフィックを分配しているかを一目で把握できます。 
+
+## 基本画面ガイド
+
+Ingressポリシーを中心に主なIngress情報とそのポリシーに接続されたPodおよびコンテナの状態別個数を次のように照会できます。 一覧と詳細を見ることで、Ingressポリシー別の接続状態と主要オブジェクトの情報を総合的に調べることができ、また一覧の上段でPodとコンテナのステータスごとのアイコン情報を確認できます。 
+
+<ImgLang img='k8s-ingress-list.png' desc='Ingress リスト基本画面' />
+
+{/* 
+
+:::note
+
+<Cmdname sid="side_ingressList" className="uitext" />一覧の上段でPodとコンテナのステータスごとのアイコン情報を確認できます。
+
+아이콘 정보 예시 넣기 (CSS 추가 필요)
+
+::: 
+
+*/}
+
+:::note 
+
+リスト型メニューの**フィルター**、**カラム選択**案内は同じです。
+
+:::
+
+## フィルター
+
+import K8slistfilter from "../common-items/_k8s-list-filter.mdx";
+
+<K8slistfilter />
+  
+## カラム選択
+
+import K8slistcl from "../common-items/_k8s-list-cl.mdx";
+
+<K8slistcl />
+
+## 詳細を確認
+
+一覧から照会を希望するIngressポリシー項目の![虫眼鏡アイコン](/img/ic-search.svg)<Cmdname sid="display_detail" className="uitext" />アイコンを選択すると、そのIngressポリシーに関する詳細情報を確認できます。 
+
+<ImgLang img='k8s-ingress-list-dt.png' desc='Ingress リスト詳細' />
+
+### 要約
+
+Ingressの基本情報と選択したIngressポリシーに対する<Cmdname sid="overview" className="uitext" />分析を提供します。 Ingressのネームスペース、接続されたホストとパスの設定、トラフィックが転送されるバックエンドサービスの情報などを確認できます。 これにより、外部トラフィックの流れとIngressポリシーの仕組みを確認できます。 また、このポリシーを使用して接続されている主要オブジェクトの関係図を視覚化することで、ポリシー内のリソース関係を一目で把握できます。 
+
+:::note 
+
+<Cmdname sid="overview" className="uitext" />タブの上段で[オブジェクトマニフェスト](object-manifest) 情報を確認できます。
+
+:::
+
+### Service
+
+選択したIngressポリシーに接続した***Service***一覧を提供します。 これを通じて、Ingressがどのようなサービスとつながっているかを確認できます。 各サービスの接続状態とサービスに関する詳細を照会できます。
+
+### Pod
+
+選択したIngressポリシーに接続した<Cmdname sid="kube_pod" className="uitext" />一覧を提供します。 接続したPodの状態と基本情報を確認できます。
+
+### コンテナ
+
+選択したIngressポリシーに接続した<Cmdname sid="container" className="uitext" />一覧を提供します。 Ingressポリシーを介したトラフィックが転送されるコンテナの状態とパフォーマンスを確認できます。

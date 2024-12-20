@@ -8,6 +8,10 @@ keywords:
   - DBX agent
 ---
 
+import V2Note from "../common-items/_import_v2-note.mdx";
+
+<V2Note product="SQL Server" />
+
 Write the settings for the DBX agent in the *whatap.conf* file. For the options that can be set, see the following.
 
 ## Default options
@@ -22,27 +26,77 @@ import Dbagentsettingdatacollection from "../common-items/_db-agent-setting-data
 
 <Dbagentsettingdatacollection />
 
-## Application of AWS RDS CloudWatch{#using-aws-rds}
+## Deadlock-related options
 
-import AWSRDSdesc from '../common-items/_import_aws-rds-desc.mdx';
+The following agent options can be used to read error logs from the `xp_ReadErrorLog` command to check the deadlock information.
 
-<AWSRDSdesc name='db_mssql_counter' />
+- **mslog** <span class='type'>Boolean</span>
 
-import Dbagentaws from "../common-items/_db-agent-aws.mdx";
+  Default `true`
 
-<Dbagentaws />
+  Execute the `xp_ReadErrorLog` command to view the error log.
+
+- **mslog_interval** <span class='type'>Int</span>
+
+  Default `1` (unit: minute, min)
+
+  It searches logs from the previous cycle to the current cycle.
+
+:::tip
+
+**DB configuration to record the deadlock logs**
+
+Trace Flag 1204 must be activated to log deadlocks. Trace flags can affect the behaviors of the server, so activation and deactivation must be performed with caution.
+
+- **Configuration checking method**
+
+  To check if Trace Flag 1204 is activated, execute the following command. You can check whether the trace flag setting status is ON (`1`) or OFF (`0`).
+
+  ```sql
+  DBCC TRACESTATUS;
+  ```
+
+- **Trace Flag 1204 activation** (ON)
+
+  To activate Trace Flag 1204, execute the following command.
+
+  ```sql
+  DBCC TRACEON (1204, -1);
+  ```
+
+  - `1204`: Trace flag to log the deadlock.
+
+  - `-1`: Apply to all servers (global setting)
+
+- **Trace Flag 1204 deactivation** (OFF)
+
+  To deactivate Trace Flag 1204, execute the following command:
+
+  ```sql
+  DBCC TRACEOFF (1204, -1);
+  ```
+
+:::
+
+:::note
+
+- The deadlock-related agent options are supported in [DBX agent 2.2.2](../release-notes/db/dbx-2_2_2) or later.
+
+- `xp_ReadErrorLog` is an extended stored procedure provided by Microsoft SQL Server that supports to query the SQL Server's error logs or agent logs. This allows you to quickly check the SQL Server status, error messages, warnings, or specific events.
+
+- For more information about the `DBCC TRACESTATUS` command, see the [following link](https://learn.microsoft.com/sql/t-sql/database-console-commands/dbcc-tracestatus-transact-sql?view=sql-server-ver16).
+
+- For more information about the `DBCC TRACEON` command, see the [following link](https://learn.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-transact-sql?view=sql-server-ver16).
+
+- For more information about the `DBCC TRACEOFF` command, see the [following link](https://learn.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceoff-transact-sql?view=sql-server-ver16).
+
+:::
 
 {/* AES 256 암호화 적용 */}
 import Dbaes256encrypt from "../common-items/_db-aes-256-encrypt.mdx";
 
 <Dbaes256encrypt />
 
-## Identifying the agent name{#naming}
-
 import Dbsettingagentnamedetails from "../common-items/_db-setting-agent-name-details.mdx";
 
-<Dbsettingagentnamedetails />
-
-import Dbagentdbxnaming from "../common-items/_db-agent-dbx-naming.mdx";
-
-<Dbagentdbxnaming />
+<Dbsettingagentnamedetails level={2} agentType="DBX" />

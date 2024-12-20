@@ -1,0 +1,69 @@
+---
+id: analysis-deadlock
+title: Dead lock
+description: It provides detailed information based on the data collected at an interval of 5 seconds for deadlocks that occurred in SQL Server.
+keywords:
+  - SQL Server
+  - DATABASE
+  - Dead lock
+  - Deadlock
+---
+
+Home &gt; Select Project &gt; <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_deadLock" className="uitext" />
+
+It provides detailed information based on the data collected at an interval of 5 seconds for deadlocks that occurred in SQL Server.
+
+:::note
+
+- **Deadlock** is a situation where two or more sessions are waiting for resources owned by each other and never end. SQL Server detects this deadlock condition and resolves it by forcibly terminating specific transactions. However, frequent deadlocks cause system performance degradation and poor user experience, so proper monitoring and tuning are required.
+
+- This feature is available in [DBX agent 2.2.2](../release-notes/db/dbx-2_2_2) or later.
+
+:::
+
+## Basic usage guide
+
+Users can query deadlock events by selecting a specific time, instance, and database.
+
+<ImgLang img="db-deadlock-basic-mssql-v2.png" desc="Deadlock" />
+
+1. Select the date to view and set the time in <Cmdname sid="time" className="uitext" /> at the top of the screen.
+
+2. In <Cmdname sid="instance" className="uitext" />, select agents (instances) and databases to monitor.
+
+3. Select ![Search icon](/img/ico-btn-search.png).
+
+You can see the deadlocks that occurred during the set period in the selected instance. Hover the mouse over the ***query*** column to preview the SQL statement.
+
+:::note
+
+The query time can be set up to 3 weeks. Select the clock display area to query a random date and time. If you click the text range for date and time, the option appears to select the date and time.
+
+:::
+
+:::tip
+
+Analyze the causes of deadlock occurrence and identify frequent deadlock patterns.
+
+- Redesign queries to minimize duplicate access to the same resources.
+
+- Use appropriate indexes to streamline data access paths.
+
+- Keep transactions short and avoid unnecessary tasks within them.
+
+- If necessary, adjust lock priorities or restructure queries to reduce the potential of conflicts.
+
+:::
+
+## Column guide
+
+| Item               | Description                                                                                                                          |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **Dead Lock Time** | Deadlock occurrence time. This allows you to analyze transactions over a specific period.                                            |
+| **Dead Count**     | Number of deadlocks that occurred in the same period. You can assess the problem severity by determining the frequency of deadlocks. |
+| **State**          | Deadlock event staus. You can check whether the detected deadlock was handled.                                                       |
+| **Query**          | Content of the query that caused the deadlock. It provides important information for query optimization and deadlock resolution.     |
+| **DB Id**          | ID of the database where the deadlock occurred. By identifying the database, the cause of the problem can be narrowed down.          |
+| **HoBT Id**        | ID of the resource (Heap or B-Tree) where the deadlock occurred.                                                                     |
+| **SPID**           | Process ID (Session Process ID) involved in the deadlock. You can identify the session that caused the problem.                      |
+| **Mode**           | It Indicates the lock mode (e.g. shared lock, exclusive lock) where the deadlock occurred.                                           |

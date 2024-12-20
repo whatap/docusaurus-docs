@@ -103,34 +103,34 @@ This category collects the data related to various performance metrics and stati
 
 <div className="c4-20-10-50-10">
 
-| Field name        | Unit        | Description                                                                                                                                                 | Remarks                        |
-| ----------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
-| `active_tx_0`     | Count       | Number of transactions in the section within 3 seconds                                                                                                      | -                              |
-| `active_tx_3`     | Count       | Number of transactions in the section between 3 seconds and 8 seconds                                                                                       | -                              |
-| `active_tx_8`     | Count       | Number of transactions in the section over 8 seconds                                                                                                        | -                              |
-| `active_tx_count` | Count       | Number of all transactions in progress                                                                                                                      | -                              |
-| `apdex_satisfied` | Count       | Number of APDEX satisfactions                                                                                                                               | -                              |
-| `apdex_tolerated` | Count       | Number of APDEX toleration cases                                                                                                                            | -                              |
-| `apdex_total`     | Count       | Total number of APDEX transactions                                                                                                                          | -                              |
-| `arrival_rate`    | Percent     | Transaction request rate                                                                                                                                    | -                              |
-| `httpc_count`     | Count       | Number of HTTP outbound calls                                                                                                                               | -                              |
-| `httpc_error`     | Count       | Number of HTTP outbound call errors                                                                                                                         | -                              |
-| `httpc_time`      | millisecond | Mean time of HTTP outbound calls                                                                                                                            | -                              |
-| `metering`        | Core        | Number of cores on the host where the applications are running                                                                                              | Limit CPU in case of container |
-| `resp_time`       | millisecond | Average response time                                                                                                                                       | -                              |
-| `sql_count`       | Count       | Number of completed SQL cases                                                                                                                               | -                              |
-| `sql_error`       | Count       | Number of SQL errors                                                                                                                                        | -                              |
-| `sql_fetch_count` | Count       | Number of SQL fetches                                                                                                                                       | -                              |
-| `sql_fetch_time`  | millisecond | Execution time of the SQL fetch                                                                                                                             | -                              |
-| `sql_time`        | millisecond | Mean time for SQL execution                                                                                                                                 | -                              |
-| `tps`             | Count       | Number of transactions per second                                                                                                                           | -                              |
-| `tx_count`        | Count       | Number of transactions processed                                                                                                                            | -                              |
-| `tx_dbc_time`     | millisecond | Mean time for DB connection                                                                                                                                 | -                              |
-| `tx_error`        | Count       | Number of transaction errors                                                                                                                                | -                              |
-| `tx_httpc_time`   | millisecond | Mean time of HTTP calls                                                                                                                                     | -                              |
-| `tx_sql_time`     | millisecond | Average of the sum of SQL execution times per transaction                                                                                                   | -                              |
-| `tx_time`         | millisecond | Transaction execution time                                                                                                                                  | -                              |
-| `tx_time_sqr_sum` | Count       | Used to obtain statistical metrics such as sum of squares of transaction execution times and variance or standard deviation of transaction execution times. |                                |
+| Field name        | Unit            | Description                                                                                                                                                 | Remarks                        |
+| ----------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| `active_tx_0`     | Count           | Number of transactions in the section within 3 seconds                                                                                                      | -                              |
+| `active_tx_3`     | Count           | Number of transactions in the section between 3 seconds and 8 seconds                                                                                       | -                              |
+| `active_tx_8`     | Count           | Number of transactions in the section over 8 seconds                                                                                                        | -                              |
+| `active_tx_count` | Count           | Number of all transactions in progress                                                                                                                      | -                              |
+| `apdex_satisfied` | Count           | Number of APDEX satisfactions                                                                                                                               | -                              |
+| `apdex_tolerated` | Count           | Number of APDEX toleration cases                                                                                                                            | -                              |
+| `apdex_total`     | Count           | Total number of APDEX transactions                                                                                                                          | -                              |
+| `arrival_rate`    | Percent         | Transaction request rate                                                                                                                                    | -                              |
+| `httpc_count`     | Count           | Number of HTTP outbound calls                                                                                                                               | -                              |
+| `httpc_error`     | Count           | Number of HTTP outbound call errors                                                                                                                         | -                              |
+| `httpc_time`      | Millisecond(ms) | Mean time of HTTP outbound calls                                                                                                                            | -                              |
+| `metering`        | Core            | Number of cores on the host where the applications are running                                                                                              | Limit CPU in case of container |
+| `resp_time`       | Millisecond(ms) | Average response time                                                                                                                                       | -                              |
+| `sql_count`       | Count           | Number of completed SQL cases                                                                                                                               | -                              |
+| `sql_error`       | Count           | Number of SQL errors                                                                                                                                        | -                              |
+| `sql_fetch_count` | Count           | Number of SQL fetches                                                                                                                                       | -                              |
+| `sql_fetch_time`  | Millisecond(ms) | Execution time of the SQL fetch                                                                                                                             | -                              |
+| `sql_time`        | Millisecond(ms) | Mean time for SQL execution                                                                                                                                 | -                              |
+| `tps`             | Count           | Number of transactions per second                                                                                                                           | -                              |
+| `tx_count`        | Count           | Number of transactions processed                                                                                                                            | -                              |
+| `tx_dbc_time`     | Millisecond(ms) | Mean time for DB connection                                                                                                                                 | -                              |
+| `tx_error`        | Count           | Number of transaction errors                                                                                                                                | -                              |
+| `tx_httpc_time`   | Millisecond(ms) | Mean time of HTTP calls                                                                                                                                     | -                              |
+| `tx_sql_time`     | Millisecond(ms) | Average of the sum of SQL execution times per transaction                                                                                                   | -                              |
+| `tx_time`         | Millisecond(ms) | Transaction execution time                                                                                                                                  | -                              |
+| `tx_time_sqr_sum` | Count           | Used to obtain statistical metrics such as sum of squares of transaction execution times and variance or standard deviation of transaction execution times. |                                |
 
 </div>
 
@@ -155,32 +155,32 @@ This is a category in which the metric of the `app_counter` counter is calculate
 
 <div className="c4-20-10-50-10">
 
-| Field name        | Unit        | Description                                                           | Remarks |
-| ----------------- | ----------- | --------------------------------------------------------------------- | ------- |
-| `active_tx_0`     | Count       | Number of transactions in the section within 3 seconds                | -       |
-| `active_tx_3`     | Count       | Number of transactions in the section between 3 seconds and 8 seconds | -       |
-| `active_tx_8`     | Count       | Number of transactions in the section over 8 seconds                  | -       |
-| `active_tx_count` | Count       | Number of all transactions in progress                                | -       |
-| `apdex`           | number      | APDEX (Application Customer Satisfaction)                             | -       |
-| `apdex100`        | Percent     | Percentage in the`apdex` field                                        | -       |
-| `apdex_satisfied` | Count       | Number of APDEX satisfactions                                         | -       |
-| `apdex_tolerated` | Count       | Number of APDEX toleration cases                                      | -       |
-| `apdex_total`     | Count       | Total number of APDEX transactions                                    | -       |
-| `arrival_rate`    | Percent     | Transaction request rate                                              | -       |
-| `num_of_agent`    | Count       | Number of active agents in the group                                  | -       |
-| `realtime_user`   | Count       | Number of concurrent users                                            | -       |
-| `sql_count`       | Count       | Number of completed SQL cases                                         | -       |
-| `sql_error`       | Count       | Number of SQL errors                                                  | -       |
-| `sql_fetch_count` | Count       | Number of SQL fetches                                                 | -       |
-| `sql_fetch_time`  | millisecond | Execution time of the SQL fetch                                       | -       |
-| `sql_time`        | millisecond | Mean time for SQL execution                                           | -       |
-| `tps`             | Count       | Number of transactions per second                                     | -       |
-| `tx_count`        | Count       | Number of transactions processed                                      | -       |
-| `tx_dbc_time`     | millisecond | Mean time for DB connection                                           | -       |
-| `tx_error`        | Count       | Number of transaction errors                                          | -       |
-| `tx_httpc_time`   | millisecond | Mean time of HTTP calls                                               | -       |
-| `tx_sql_time`     | millisecond | Average of the sum of SQL execution times per transaction             | -       |
-| `tx_time`         | millisecond | Transaction execution time                                            | -       |
+| Field name        | Unit            | Description                                                           | Remarks |
+| ----------------- | --------------- | --------------------------------------------------------------------- | ------- |
+| `active_tx_0`     | Count           | Number of transactions in the section within 3 seconds                | -       |
+| `active_tx_3`     | Count           | Number of transactions in the section between 3 seconds and 8 seconds | -       |
+| `active_tx_8`     | Count           | Number of transactions in the section over 8 seconds                  | -       |
+| `active_tx_count` | Count           | Number of all transactions in progress                                | -       |
+| `apdex`           | number          | APDEX (Application Customer Satisfaction)                             | -       |
+| `apdex100`        | Percent         | Percentage in the`apdex` field                                        | -       |
+| `apdex_satisfied` | Count           | Number of APDEX satisfactions                                         | -       |
+| `apdex_tolerated` | Count           | Number of APDEX toleration cases                                      | -       |
+| `apdex_total`     | Count           | Total number of APDEX transactions                                    | -       |
+| `arrival_rate`    | Percent         | Transaction request rate                                              | -       |
+| `num_of_agent`    | Count           | Number of active agents in the group                                  | -       |
+| `realtime_user`   | Count           | Number of concurrent users                                            | -       |
+| `sql_count`       | Count           | Number of completed SQL cases                                         | -       |
+| `sql_error`       | Count           | Number of SQL errors                                                  | -       |
+| `sql_fetch_count` | Count           | Number of SQL fetches                                                 | -       |
+| `sql_fetch_time`  | Millisecond(ms) | Execution time of the SQL fetch                                       | -       |
+| `sql_time`        | Millisecond(ms) | Mean time for SQL execution                                           | -       |
+| `tps`             | Count           | Number of transactions per second                                     | -       |
+| `tx_count`        | Count           | Number of transactions processed                                      | -       |
+| `tx_dbc_time`     | Millisecond(ms) | Mean time for DB connection                                           | -       |
+| `tx_error`        | Count           | Number of transaction errors                                          | -       |
+| `tx_httpc_time`   | Millisecond(ms) | Mean time of HTTP calls                                               | -       |
+| `tx_sql_time`     | Millisecond(ms) | Average of the sum of SQL execution times per transaction             | -       |
+| `tx_time`         | Millisecond(ms) | Transaction execution time                                            | -       |
 
 </div>
 
@@ -195,32 +195,32 @@ This is a category in which the `app_counter` counter metric is calculated on a 
 
 <div className="c4-20-10-50-10">
 
-| Field name        | Unit        | Description                                                           | Remarks |
-| ----------------- | ----------- | --------------------------------------------------------------------- | ------- |
-| `active_tx_0`     | Count       | Number of transactions in the section within 3 seconds                | -       |
-| `active_tx_3`     | Count       | Number of transactions in the section between 3 seconds and 8 seconds | -       |
-| `active_tx_8`     | Count       | Number of transactions in the section over 8 seconds                  | -       |
-| `active_tx_count` | Count       | Number of all transactions in progress                                | -       |
-| `apdex`           | number      | APDEX (Application Customer Satisfaction)                             | -       |
-| `apdex100`        | Percent     | Percentage in the`apdex` field                                        | -       |
-| `apdex_satisfied` | Count       | Number of APDEX satisfactions                                         | -       |
-| `apdex_tolerated` | Count       | Number of APDEX toleration cases                                      | -       |
-| `apdex_total`     | Count       | Total number of APDEX transactions                                    | -       |
-| `arrival_rate`    | Percent     | Transaction request rate                                              | -       |
-| `num_of_agent`    | Count       | Number of active agents in the project                                | -       |
-| `realtime_user`   | Count       | Number of concurrent users                                            | -       |
-| `sql_count`       | Count       | Number of completed SQL cases                                         | -       |
-| `sql_error`       | Count       | Number of SQL errors                                                  | -       |
-| `sql_fetch_count` | Count       | Number of SQL fetches                                                 | -       |
-| `sql_fetch_time`  | millisecond | Execution time of the SQL fetch                                       | -       |
-| `sql_time`        | millisecond | Mean time for SQL execution                                           | -       |
-| `tps`             | Count       | Number of transactions per second                                     | -       |
-| `tx_count`        | Count       | Number of transactions processed                                      | -       |
-| `tx_dbc_time`     | millisecond | Mean time for DB connection                                           | -       |
-| `tx_error`        | Count       | Number of transaction errors                                          | -       |
-| `tx_httpc_time`   | millisecond | Mean time of HTTP calls                                               | -       |
-| `tx_sql_time`     | millisecond | Average of the sum of SQL execution times per transaction             | -       |
-| `tx_time`         | millisecond | Transaction execution time                                            | -       |
+| Field name        | Unit            | Description                                                           | Remarks |
+| ----------------- | --------------- | --------------------------------------------------------------------- | ------- |
+| `active_tx_0`     | Count           | Number of transactions in the section within 3 seconds                | -       |
+| `active_tx_3`     | Count           | Number of transactions in the section between 3 seconds and 8 seconds | -       |
+| `active_tx_8`     | Count           | Number of transactions in the section over 8 seconds                  | -       |
+| `active_tx_count` | Count           | Number of all transactions in progress                                | -       |
+| `apdex`           | number          | APDEX (Application Customer Satisfaction)                             | -       |
+| `apdex100`        | Percent         | Percentage in the`apdex` field                                        | -       |
+| `apdex_satisfied` | Count           | Number of APDEX satisfactions                                         | -       |
+| `apdex_tolerated` | Count           | Number of APDEX toleration cases                                      | -       |
+| `apdex_total`     | Count           | Total number of APDEX transactions                                    | -       |
+| `arrival_rate`    | Percent         | Transaction request rate                                              | -       |
+| `num_of_agent`    | Count           | Number of active agents in the project                                | -       |
+| `realtime_user`   | Count           | Number of concurrent users                                            | -       |
+| `sql_count`       | Count           | Number of completed SQL cases                                         | -       |
+| `sql_error`       | Count           | Number of SQL errors                                                  | -       |
+| `sql_fetch_count` | Count           | Number of SQL fetches                                                 | -       |
+| `sql_fetch_time`  | Millisecond(ms) | Execution time of the SQL fetch                                       | -       |
+| `sql_time`        | Millisecond(ms) | Mean time for SQL execution                                           | -       |
+| `tps`             | Count           | Number of transactions per second                                     | -       |
+| `tx_count`        | Count           | Number of transactions processed                                      | -       |
+| `tx_dbc_time`     | Millisecond(ms) | Mean time for DB connection                                           | -       |
+| `tx_error`        | Count           | Number of transaction errors                                          | -       |
+| `tx_httpc_time`   | Millisecond(ms) | Mean time of HTTP calls                                               | -       |
+| `tx_sql_time`     | Millisecond(ms) | Average of the sum of SQL execution times per transaction             | -       |
+| `tx_time`         | Millisecond(ms) | Transaction execution time                                            | -       |
 
 </div>
 

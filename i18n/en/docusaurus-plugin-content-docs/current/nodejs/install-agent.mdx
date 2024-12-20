@@ -85,25 +85,21 @@ Server-side rendering (SSR) frameworks such as **Next.js** and **Nuxt.js** requi
 
 Add the following code at the top of the entry point (main module) file of the application. For example, in the Express.js application, _app.js_ and _server.js_ are the entry points (main module). When using a framework like Nest.js, _main.ts_ is the entry point.
 
-```javascript title='Javascript'
+<Tabs groupId="javascript">
+
+<TabItem value="commonjs" label="CommonJS">
+
+```javascript title='CommonJS'
 var whatap = require('whatap').NodeAgent;
 ```
 
-To use ECMAScript (ES), add the following code together.
+</TabItem>
 
-```javascript title='ES'
+<TabItem value="ecmascript" label="ECMAScript Module(ESM)">
+
+```javascript title="ECMAScript Module(ESM)"
 import WhatapAgent from 'whatap';
 WhatapAgent.NodeAgent;
-```
-
-See the following application example:
-
-```javascript
-var WhatapAgent = require('whatap').NodeAgent;
-import http from 'http';
-import setupApp from '../src/app';
-let server = null;
-const port = normalizePort(process.env.PORT || '3000');
 ```
 
 :::note
@@ -112,23 +108,31 @@ Because the agent executable code needs to be run first after starting node.js, 
 
 :::
 
-After installation, see [the following](install-check) to make sure there is no problem.
+</TabItem>
 
-### Separating whatap.conf files for each environment
+</Tabs>
 
-In the following cases, set the file names excluding .conf.
+### Setting agent options by environment
 
-- In case of separating the projects for each environment
-
-- In case the agent options are set differently
-
-- In case of starting by pm2 in Cluster mode
+To apply settings tailored to each environment of the application, you can modify the settings in the entry point file of the application instead of the _whatap.conf_ file. Noting the code below, apply the settings tailored to your environment.
 
 ```javascript
-process.env.WHATAP_CONF = 'whatapdev';
-process.env.WHATAP_NAME = 'NodeAgent-{ip2}-{ip3}-{cluster}';
+process.env.WHATAP_CONF = 'whatapdev'; // Setting for development environment
+process.env.WHATAP_NAME = 'NodeAgent-{ip2}-{ip3}-{cluster}'; //Dynamically configure agent name with IP and cluster info
 var WhatapAgent = require('whatap').NodeAgent;
 ```
+
+- **In case different projects are run for each environment**
+
+  Even for the same application, settings are required for each environment, such as development (dev), test (test), and operation (prod). As in the example above, you can use the `WHATAP_CONF` environment variables to apply settings that are appropriate for the development environment. This allows you to easily manage different settings for each environment.
+
+- **In case you must configure different agent options depending on the environment**
+
+  For development environment, you can increase the logging level. In production environment, you can configure different options for performance optimization. In this case, modify the agent options in the application's entry point file to suit the environment.
+
+- **In case of running applications in cluster mode for PM2** 
+
+  When running multiple application instances in cluster mode, you can apply separate agent options to each individual instance. In this case, you can also configure a flexible monitoring by applying environment-specific settings in the entry point file instead of the configuration file.
 
 :::note
 
@@ -193,6 +197,7 @@ For more information about the options that can be set in Node.js, see [the foll
 
 :::
 
-## Starting the monitoring
+{/* 다음 단계 */}
+import NextSteps from "../common-items/_apm-next-stemp-exclude-java.mdx";
 
-Once the application server has been restarted, the agent starts collecting data.
+<NextSteps />

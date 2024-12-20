@@ -8,13 +8,19 @@ keywords:
   - Real-time Alert List
 ---
 
-Home > **_Real-time Alert List_**
-
-<ImgLang img='rt-notification.png' desc='Real-time Alert List' />
+Home &gt; <Cmdname sid="side_integratedRealtimeAlert" className="uitext" />
 
 You can see the alerts of all projects for which you have permission in real time and check their status at a glance. You can also see them classified by timeline, alert title, project, and application.
 
-The interval to fetch the alert list in real time is 20 seconds. Select **_Refresh_** on the upper right of the screen to newly update the list of alerts that occurred 20 seconds ago.
+<ImgLang img='rt-notification.png' desc='Real-time Alert List' />
+
+The interval to fetch the alert list in real time is 20 seconds. Select <Cmdname sid="refresh" className="uitext" /> on the upper right of the screen to newly update the list of alerts that occurred 20 seconds ago.
+
+:::note
+
+For more information on how to check for real-time notifications in individual projects, see [the following](../java/real-time-notification).
+
+:::
 
 ## Searching the alert
 
@@ -22,19 +28,23 @@ Enter the content to search in the text field on the upper left of the screen, a
 
 ## Filtering by group, project, and product
 
-You can filter the notification list by group, project, or product type. Select **_Project_** on the upper left of the screen. If the **_Project_** window appears on the right of the screen, select items by **_Group_**, **_Project_**, or **_Product Type_**.
+You can filter the notification list by group, project, or product type. Select <Cmdname sid="project" className="uitext" /> on the upper left of the screen. If the <Cmdname sid="project" className="uitext" /> window appears on the right of the screen, select items by <Cmdname sid="group" className="uitext" />, <Cmdname sid="project" className="uitext" />, or <Cmdname sid="productType" className="uitext" />.
 
 <ImgLang img='rt-notification-filter.png' desc='Alert Filtering' />
 
 - Selected items appear on the right of the alert search text field. You can select multiple items.
+
 - To cancel the selection, select the items again.
-- In the **_Project_** window, select ![Close icon](/img/ico-close.svg) or click the outside of the **_project_** window. Then you can see the filtered notification list.
-- In the **_Project_** window, if there are too many items in the list, you can search the desired item through **_Search_**.
+
+- In the <Cmdname sid="project" className="uitext" /> window, select ![Close icon](/img/ico-close.svg) or click the outside of the <Cmdname sid="project" className="uitext" /> window. Then you can see the filtered notification list.
+
+- In the <Cmdname sid="project" className="uitext" /> window, if there are too many items in the list, you can search the desired item through <Cmdname sid="search" className="uitext" />.
+
 - You can also search the alert content with the items filtered.
 
 ## Setting the alert list time
 
-You can check the lists of alerts for each time zone. Select the time selection box on the upper right of the screen, to the left of the **_Refresh_** button. You can select any of **_Last 1 hour_** (Default Value), **_Last 3 hours_**, **_Last 6 hours_**, **_Last 12 hours_**, and **_Last 1 day_**.
+You can check the lists of alerts for each time zone. Select the time selection box on the upper right of the screen, to the left of the <Cmdname sid="refresh" className="uitext" /> button. You can select any of <Cmdname sid="select_1_hour" className="uitext" /> (Default Value), <Cmdname sid="select_3_hour" className="uitext" />, <Cmdname sid="select_6_hour" className="uitext" />, <Cmdname sid="select_12_hour" className="uitext" />, and <Cmdname sid="select_1_day" className="uitext" />.
 
 You can check alerts depending on the selected time zone through the timeline. It is easy to check the time zone for the most frequent alerts.
 
@@ -42,7 +52,7 @@ You can check alerts depending on the selected time zone through the timeline. I
 
 <ImgLang img='rt-notification-grouping.png' desc='Alert Grouping' />
 
-You can sort the notification list by **_Title_**, **_Project_**, or **_Application_**. To ungroup it, select **_Timeline_**.
+You can sort the notification list by <Cmdname sid="title" className="uitext" />, <Cmdname sid="project" className="uitext" />, or <Cmdname sid="application" className="uitext" />. To ungroup it, select <Cmdname sid="timeline" className="uitext" />.
 
 :::note
 
@@ -50,21 +60,41 @@ To turn on or off the sound when a notification occurs, select ![Sound icon](/im
 
 :::
 
-## Excluding from the alert list
+## Clearing the notification list in batch
 
-You can exclude a part of the real-time alert list. 
+From the real-time notification list, all event in progress can be cleared in batch.
 
-1. Search or filter the alerts to exclude so that they can appear in the list. 
+1. Search or filter the alerts to clear so that they can appear in the list. 
 
-2. On the upper right of the screen, select **_Add Acknowledge_**.
+2. Select <Cmdname sid="add_ack_to_project" className="uitext" /> on the upper right of the screen.
 
-3. If the message window appears, select **_Apply_**.
+3. If the message window appears, select <Cmdname sid="DSC08323" className="uitext" />.
 
 :::note
 
-The task takes 30 to 60 seconds to complete.
+- It takes about 30 seconds to 1 minute to end the event resolution.
+
+- The <Cmdname sid="add_ack_to_project" className="uitext" /> feature can generate a large number of clearing notifications for events in progress.
+
+- Even after using the <Cmdname sid="add_ack_to_project" className="uitext" /> feature, if the event rule is enabled and the data exceeds the threshold, the event can occur again.
+
+- The event clearing notification can be disabled through event modification in <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" />. Disable the <Cmdname sid="CNT08320" className="uitext" /> or <Cmdname sid="CNT08326" className="uitext" /> option.
 
 :::
+
+## Downloading the alarm list
+
+You can download the list viewed for the selected time period in CSV format.
+
+1. Select ![csv icon](/img/ic-csv-download-ms.svg) on the upper right of the screen.
+
+   <ImgLang img="rt-notification-download-csv.png" desc="CSV" />
+
+2. Enter a desired value in the <Cmdname sid="maximum_csv_lines" className="uitext" /> option.
+
+3. Select <Cmdname sid="download" className="uitext" />.
+
+The downloaded CSV file name has the format of _notifications_`YYYY-MM-DD`.csv_.
 
 ## Checking the snapshot
 
@@ -78,11 +108,11 @@ For more information about the selected alert, see the **_Snapshot_** window.
 
 If you select ![More icon](/img/ico-more.svg) on the utmost right of each item in the notification list, you can use the following additional functions.
 
-- **_Detail_**: Goes to the related menus of the project where you can check the details and status of the alert.
+- <Cmdname sid="detail" className="uitext" />: Goes to the related menus of the project where you can check the details and status of the alert.
 
-- **_Event History_**: Goes to the **_Event History_** menu of the project where you can check the event message for the notification.
+- <Cmdname sid="event_history" className="uitext" />: Goes to the <Cmdname sid="side_eventHistory" className="uitext" /> menu of the project where you can check the event message for the notification.
 
-- **_Notification Settings_**: Goes to **_Notification Setting_** where you can set the notification reception. For more information about the **_Notification Setting_**, see the following.
+- <Cmdname sid="receive_settings" className="uitext" />: Goes to <Cmdname sid="side_eventNoti" className="uitext" /> where you can set the notification reception. For more information about the <Cmdname sid="side_eventNoti" className="uitext" />, see the following.
 
   <details>
   <summary>Product documentation</summary>
@@ -99,7 +129,7 @@ If you select ![More icon](/img/ico-more.svg) on the utmost right of each item i
 
   </details>
 
-- **_Alert Policy_**: Goes to the **_Event Configuration_** menu of the project where you can set the alert notification. For more information about **_Event Setting_**, see the following.
+- <Cmdname sid="sms_alert_rules" className="uitext" />: Goes to the <Cmdname sid="side_eventSetting" className="uitext" /> menu of the project where you can set the alert notification. For more information about <Cmdname sid="side_eventSetting" className="uitext" />, see the following.
 
   <details>
   <summary>Product documentation</summary>
@@ -116,3 +146,9 @@ If you select ![More icon](/img/ico-more.svg) on the utmost right of each item i
   - Oracle Cloud Monitor > [Metrics alert](../oracle-cloud/metric-warning-notice)
 
   </details>
+
+:::note
+
+Additional features available may differ depending on the event type.
+
+:::

@@ -1,0 +1,133 @@
+## Azure Monitor configuration {#azure}
+
+You can monitor the status and resource usage of the database running in the Azure cloud environment.
+
+### Selecting the service to which you want to add metrics
+
+<ImgLang img="db-cloudsettings-select-service-azure.png" desc="Azure" />
+
+In the first section, select <UI>Azure Monitor</UI>. Install the **Azure Resource Manager** template to collect metrics provided by Azure Monitor.
+
+### Entering parameters
+
+Enter required items before configuring the **Azure Resource Manager**.
+
+<ImgLang img="db-cloudsettings-azure-input-parameters.png" desc="Azure parameter" />
+
+- ***Instance***: Select an instance (agent) to monitor metrics collected from databases running in the Azure cloud environment.
+
+- ***Resource ID***: Enter the resource ID of the database to monitor. This information can be viewed on the monitored database console. See the following image.
+
+  ![Azure resource ID](/img/db-cloudsettings-azure-resourceid.png)
+
+Enter the parameters and then select <Cmdname sid="BTN08639" className="uitext" />. It generates the JSON to configure the **Azure Resource Manager**. Copy the generated JSON content.
+
+### Configuring the Azure Resource Manager
+
+Install the **Azure Resource Manager** template provided by WhaTap. This template allows you to install the Function App that collects Azure Monitor metrics by the WhaTap server. If you select <UI>Azure Resource Manager</UI> <Cmdname sid="setting" className="uitext" />, the installation starts and the configuration process is performed.
+
+<ImgLang img="db-cloudsettings-set-resource-manager.png" desc="Azure Resource Manager" />
+
+1. If you select <UI>Azure Resource Manager</UI> <Cmdname sid="setting" className="uitext" />, the template creation screen for Microsoft Azure appears.
+
+2. Select **Edit Parameters**.
+
+   ![Azure](/img/db-cloudsettings-azure-template.png)
+
+3. Paste the JSON format parameter created through the <Cmdname sid="BTN08639" className="uitext" /> button above.
+
+   <ImgLang img="db-cloudsettings-azure-edit-parameters.png" desc="Edit parameters" />
+
+4. When you select **Save** at the bottom of the screen, the parameters are automatically entered.
+
+5. Select **Resource group**. For **Resource group**, select the group that contains the database to be monitored.
+
+   <ImgLang img="db-cloudsettings-azure-project-details.png" desc="Azure" />
+
+6. Select **Review \+ Create**.
+
+7. In the following screen, select **Create**.
+
+The deployment is processed and all processes are completed.
+
+:::note
+
+- For more information about **Azure Resource Manager**, see [the following link](https://learn.microsoft.com/azure/azure-resource-manager/management/overview).
+
+- For information about metrics supported in Azure Monitor, see [the following link](https://learn.microsoft.com/azure/azure-monitor/reference/metrics-index).
+
+:::
+
+### Setting the required roles
+
+#### Guidance on roles
+
+In order for WhaTap's Function App to properly use the monitoring, the **Monitoring Reader** role must be assigned to the corresponding resource group or subscription. However, assigning this role itself is a task that requires authorization. It requires the **Microsoft.Authorization/roleAssignments/write** role, which is not included in general user roles.
+
+Therefore, to assign the **Monitoring Reader** role, you must have the **Role Based Access Control Administrator** or **User Access Administrator** role, which includes the advanced roles.
+
+:::note
+
+- If the **Monitoring Reader** role was already assigned to the resource group or subscription, you can skip this step.
+
+- For more information about the Azure roles assignment, see [the following link](https://learn.microsoft.com/azure/role-based-access-control/role-assignments-portal#prerequisites).
+
+:::
+
+#### Assigning the roles
+
+For the minimum scope, guidance is provided based on the resource group that is a lower level than subscription.
+
+1. On the group dashboard that is to contain the resources, select **Access control (IAM)** &gt; **Add** &gt; **Add role assignment** in order.
+
+   ![Azure - Add role assignment](/img/db-cloudsettings-azure-add-role.png)
+
+2. On the **Add role assignment** screen, select the **Privileged administrator roles** tab.
+
+   ![Azure - Privileged administrator roles](/img/db-cloudsettings-azure-assignment.png)
+
+3. Select **Role base Access Controle Administator** or **User Access Administrator**.
+
+4. Select **Next** at the bottom of the screen.
+
+5. In the **Assign access to** section, select **User, group, or service principal**, and then select **Select Members** to add users (**User**).
+
+   ![Azure - Select members](/img/db-cloudsettings-azure-assignment-user.png)
+
+6. Select **Next** at the bottom of the screen.
+
+7. Select **Recommended** items and then click **Review + assign**.
+
+   ![Azure - Condtions](/img/db-cloudsettings-azure-conditions.png)
+
+:::note
+
+To select the **fewer privileges** items, allow only the **Monitoring Reader** role.
+
+:::
+
+### Checking the collection metrics
+
+After completing the cloud data connection, the <Cmdname sid="TTL08633" className="uitext" /> section is generated on the screen. You can see a list of instances (agents) connected to the cloud database and the metrics being collected.
+
+<ImgLang img="db-cloudsettings-added-azure-cloud-services.png" desc="Cloud Services" />
+
+Metrics collected from **Azure Monitor** are included in the ***Azure*** category.
+
+![CloudWatch](/img/db-cloudsettings-check-metrics-category-aws.png)
+
+You can check in the following paths.
+
+- <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />: You can select metrics by selecting the ![Settings icon](/img/ico-setting.svg) button on the widget.
+
+- <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" />: You can select metrics by adding custom widgets.
+
+:::note
+
+- For more information on how to change the metrics of a widget in the <Cmdname sid="side_dbMonitoring" className="uitext" /> menu, see [the following](instance-monitoring#selectmetrics).
+
+- For more information on how to add custom widgets in the <Cmdname sid="side_multiInstance" className="uitext" /> menu, see [the following](multi-instance-monitoring#customwidget).
+
+- In <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_metricsSearch" className="uitext" />, select <Cmdname sid="category" className="uitext" /> as **db_azure_database**. You can check the related tags and fields.
+
+:::

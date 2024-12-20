@@ -1,0 +1,39 @@
+---
+id: k8s-1_7_15
+title: Kubernetes Agent v1.7.15
+toc_max_heading_level: 2
+pagination_next: release-notes/k8s/k8s-1_7_14
+displayed_sidebar: releaseSidebar
+---
+
+2024年10月30日
+
+<Status priority='1'>New</Status>  <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentSetting" className="uitext" />メニューでログフィルタリング機能を追加
+
+  特定のコンテナログの収集を制御できるログフィルタリング機能が追加されました。 この機能により、ユーザーはネームスペース、Pod名、コンテナ名などに基づいてログ収集を細分化でき、必要に応じて特定のコンテナのログ収集を許可または遮断できます。
+
+- **log_filter_enabled** <span class='type'>bool</span>
+
+  既定値`false`
+
+  ログフィルターの使用有無を設定します。 
+
+- **log_filter_allow_list** <span class='type'>list</span>
+
+  許可するログの一覧を設定します。 フィルタリングの適用時に含める項目を意味します。 
+
+- **log_filter_deny_list** <span class='type'>list</span>
+
+  除外するログの一覧を設定します。 フィルタリングの適用時に除外する項目を意味します。 
+
+:::note 
+
+ログフィルタリング機能の詳細については、[次の文書](../../kubernetes/log)を参照してください。 
+
+:::
+
+:::info
+
+Agent download: [kube_mon_1.7.15.tar](https://repo.whatap.io/docker/kube_mon_1.7.15.tar)
+
+:::

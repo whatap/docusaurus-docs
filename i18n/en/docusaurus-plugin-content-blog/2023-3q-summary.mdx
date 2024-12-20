@@ -1,0 +1,383 @@
+---
+slug: 2023-3q-summary
+title: Third quarter guidance
+authors: ysj
+date: 2023-10-31T15:10
+toc_max_heading_level: 2
+tags:
+  - New features
+  - 2023
+---
+
+Here’s an overview of new features and notable changes of WhaTap’s 3rd quarter services in 2023. Take a look at new features offered by WhaTap at a glance.
+
+<ImgLang img='changelog/changelog-new3.png' desc='New features' />
+
+{/* truncate */}
+
+{/* db 상품 중 mysql v2 서비스 제공 시점 확인 필요 */}
+
+<div class ='faq'>
+
+| **Common** |
+| ---------- |
+
+> Added **Project flexboard update** role.
+
+| **Application** |
+| --------------- |
+
+> - The <Cmdname sid="TTL06209" className="uitext" /> feature has been newly reorganized.
+> - The <Cmdname sid="side_transaction_map" className="uitext" /> menu map chart has been improved.
+
+| **Server** |
+| ---------- |
+
+> The <Cmdname sid="sms_resource_board" className="uitext" /> and <Cmdname sid="side_eventSetting" className="uitext" /> menus have been improved.
+
+| **Kubernetes** |
+| -------------- |
+
+> - Installation of ***Docker PHP*** has been provided.
+> - The <Cmdname sid="side_integratedContainerMap" className="uitext" /> menu has been provided.
+>   {/* > * <Cmdname sid="side_containerMap" className="uitext" /> 및 <Cmdname sid="side_perfSummary" className="uitext" /> 메뉴가 개선되었습니다. */}
+
+| **Database** |
+| ------------ |
+
+> - The **PostgreSQL** product's <code class="my">V2</code> service has been launched.
+> - The **MySQL** product's <code class="my">V2</code> service has been launched.
+
+| **Browser** |
+| ----------- |
+
+> - The ***Pageload hitmap*** menu has been improved. 
+> - Error details have been added to the <Cmdname sid="side_rumErrorDashboard" className="uitext" /> menu.
+
+| **AWS Log** |
+| ----------- |
+
+> The `AWS Log` monitoring product's **official** service has been launched. 
+
+| **Network** |
+| ----------- |
+
+> **Beta** service of the **Network Performance Monitoring** product has been launched. 
+
+</div>
+
+An overview of changes other than new features for each product, the corresponding release versions, and changes in the agent can be found in the following guide.
+
+<br/>
+<br/>
+
+## `Common`
+
+Notable new features and changes in the `Common` section of WhaTap Q3 2023 include the addition of **Edit Project Flexboard** role and improvements for convenience.
+
+The **Edit Project Flexboard** role has been added, so you need this role to edit the ***Flex Board*** in the project. 
+
+Other updates have been made to improve overall convenience. The <Cmdname sid="BTN06853" className="uitext" /> menu has been added to check WhaTap's service version and product list. 
+
+<LinkImage img='changelog/changelog-whatap-info.png' desc='' className='noneborder' />
+
+In addition, the **WhatsApp** notification configuration has been added in <Cmdname sid="side_eventNoti" className="uitext" /> and the time selection restriction method when generating daily reports in <Cmdname sid="side_integratedReport" className="uitext" /> has been changed. Previously, you could select an end time up to 23:59 of the previous day, but now you can select an end time up to 1 hour before the current time. 
+
+The following overview guide helps you understand what's new and what's not in the Common section for the 3rd quarter in 2023, along with the released versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Common_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-Common.mdx";
+
+<Common_23q3 />
+
+</details>
+<br/>
+
+## `Applicatoin`
+
+We are introducing notable new features and changes in the `Application` product suite in Q3 2023, including the reorganized ***Transaction analysis*** feature and improvements to the <Cmdname sid="side_transaction_map" className="uitext" /> screen. 
+
+The ***Transaction analysis*** feature has been reorganized. Previously, the transaction list was loaded under <Cmdname sid="hitmap" className="uitext" />, but now, the ***Transaction analysis*** pop-up window appears when you drag <Cmdname sid="hitmap" className="uitext" />, making it easier to analyze and compare information details for each section. Additionally, an option has been added to directly view errors only in the transaction list filter.
+
+<LinkImage img='release/release-note-tx-new-feature.png' desc='' className='noneborder' />
+
+<Cmdname sid="side_transaction_map" className="uitext" /> has changed the map design to improve visibility, and the error cases are now displayed first when normal and error transactions overlap.
+
+|                  Before modification                 |                 After modification                 |
+| :--------------------------------------------------: | :------------------------------------------------: |
+| ![before](/img/release/before-transaction-chart.png) | ![after](/img/release/after-transaction-chart.png) |
+
+Additionally, for `.NET` products, the <Cmdname sid="side_stack" className="uitext" /> menu that was available only for `Java` and `Python` products, has been added. You can easily check <Cmdname sid="topstack" className="uitext" />, <Cmdname sid="uniquestack" className="uitext" />, and <Cmdname sid="active_stack" className="uitext" /> through the <Cmdname sid="side_stack" className="uitext" /> menu.
+
+The following overview guide helps you understand new features and major changes in the `Application` product suite in Q3, 2023, along with release versions. 
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Application_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-Application.mdx";
+
+<Application_23q3 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+### `Java`
+
+import Java_agent_23q3 from "../crw-data/crwld-agent-23/_import-agent-23q3-java.mdx";
+
+<Java_agent_23q3 />
+
+### `PHP`
+
+#### <code class='changelog-service'>PHP Agent v2.6.2</code> <code class='changelog-date'>September 13, 2023</code>
+
+- <Status>Feature</Status> Added the large profile processing option.
+
+  - **whatap.large_profile_enabled** <span class='type'>Boolean</span>
+
+    Default `false`
+
+    We can collect up to 10,000 profiles (steps). For a larger collection, it is recommended to use the `split_profile_enabled` option.
+
+  - **whatap.split_profile_enabled** <span class='type'>Boolean</span>
+
+    Default `false`
+
+    It collects more profiles by separating certain amounts of profiles into virtual transactions. Multiple transaction lists are separated for display.
+
+- <Status>Feature</Status> Added the compressed profile data transmission option.
+
+  - **whatap.profile_zip_enabled** <span class='type'>Boolean</span>  Defalut `true`
+
+### `.NET`
+
+#### <code class='changelog-service'>.NET Agent v2.1.1</code> <code class='changelog-date'>July 17, 2023</code>
+
+- <Status>New</Status> The active stack is supported.
+
+- <Status>New</Status> The .Net support environment analysis tool has been added.
+
+#### <code class='changelog-service'>.NET Agent v2.1.2</code> <code class='changelog-date'>July 20, 2023</code>
+
+- <Status>New</Status> WCF is supported.
+
+#### <code class='changelog-service'>.NET Agent v2.1.5</code> <code class='changelog-date'>September 13, 2023</code>
+
+- <Status>New</Status> Added the <code>webservice_method_timeout</code> option to adjust the timeout.
+
+### `Go`
+
+import Go_agent_23q3 from "../crw-data/crwld-agent-23/_import-agent-23q3-golang.mdx";
+
+<Go_agent_23q3 />
+
+</details>
+
+<br/>
+
+{/* ## `Application`, `Container`, `Server`
+
+import ApplicationContainerServer_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-Application-Container-Server.mdx";
+
+<ApplicationContainerServer_23q3 /> */}
+
+## `Server`
+
+For the `Server` product in Q3 2023, the feature to copy the existing event configuration to the current project has been added in <Cmdname sid="side_eventSetting" className="uitext" />, and improvements have been made for user convenience, such as displaying the fatal and warning status separately in the agent status widget in <Cmdname sid="sms_resource_board" className="uitext" />. 
+
+The following overview guide helps you understand new features and major changes in `Server` products in Q3 2023, along with release versions. 
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Server_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-Server.mdx";
+
+<Server_23q3 />
+
+</details>
+
+<br/>
+
+## `Kubernetes`
+
+Notable new features and changes in WhaTap's Q3 2023 `Kubernetes` products include **Docker PHP** installation and the newly added <Cmdname sid="side_integratedContainerMap" className="uitext" /> menu.
+
+{/* ***컨테이너 맵*** 및 <Cmdname sid="side_perfSummary" className="uitext" /> 메뉴의 개선에 대해 소개합니다. */}
+
+It applies the WhaTap monitoring agent to the **PHP application** running on the Docker container and packages the container image. After installing the whatap-php package, you can install the agent by setting the installation scripts and container environment variables. 
+
+The <Cmdname sid="side_integratedContainerMap" className="uitext" /> menu has been newly provided, including the cluster project and namespace project. The unified container map provides additional grouping options for each project, allowing you to view container maps in cluster projects and individual namespace projects.
+
+<LinkImage img='k8s-container-map-unified-whatapproject.png' desc='' className='noneborder' />
+
+The following overview guide helps you understand new features and major changes in the `Kubernetes` products in Q3 2023, along with release versions. 
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Container_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-Container.mdx";
+
+<Container_23q3 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+#### <code class='changelog-service'>Kubernetes Agent v1.3.6</code> <code class='changelog-date'>September 27, 2023</code>
+
+- <Status>Feature</Status> Added the node data (cluster version, node status, etc.) for update of the node list.
+
+#### <code class='changelog-service'>Kubernetes Agent v1.3.7</code> <code class='changelog-date'>September 27, 2023</code>
+
+- <Status>Feature</Status> Added the key value for linking the node list in the application list menu to be reorganized.
+
+</details>
+
+<br/>
+
+## `Database`
+
+WhaTap introduces notable new features and changes to the `Database` product suite in Q3 2023, <code class="my">V2</code> service launching.
+
+In this third quarter, the <code class="my">V2</code> services of the `PostgreSQL` and `MySQL` products have been launched. The <code class="my">V2</code> services have focused on improving convenience. 
+
+RDS and XOS tabs have been separated by product environment and the <Cmdname sid="side_dbMonitoring" className="uitext" /> menu has been improved. For example, the option to save active session table presets and the option to view plans in session details have been added. 
+
+The following overview guide helps you understand new features and major changes in the `Database` product suite in Q3 2023, along with release versions. 
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Database_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-Database.mdx";
+
+<Database_23q3 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+#### DBX
+
+import DBX_agent_23q3 from "../crw-data/crwld-agent-23/_import-agent-23q3-dbx.mdx";
+
+<DBX_agent_23q3 />
+
+#### XOS
+
+import XOS_agent_23q3 from "../crw-data/crwld-agent-23/_import-agent-23q3-xos.mdx";
+
+<XOS_agent_23q3 />
+
+</details>
+
+<br/>
+
+## `Browser`
+
+Notable new features and changes to the `Browser` product in Q3 2023 include ***Pageload hitmap*** menu improvements and <Cmdname sid="side_rumErrorDashboard" className="uitext" /> error details.
+
+In case of ***Pageload Hitmap***, the OS version and client IPs have been added to the detailed pageload data, and the filtering feature has been newly provided.
+
+Now, when you select an error message from the ***Error message table*** list in <Cmdname sid="side_rumErrorDashboard" className="uitext" />, you can view detailed statistical information about the error based on the error message. You can also view error logs that occurred for each time zone.
+
+<LinkImage img='browser-error-details-log.png' desc='Error log branching example' />
+
+The following overview guide helps you understand new features and major changes in `Browser` products in Q3 2023, along with release versions. 
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Browser_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-Browser.mdx";
+
+<Browser_23q3 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+import Browser_agent_23q3 from "../crw-data/crwld-agent-23/_import-agent-23q3-browser.mdx";
+
+<Browser_agent_23q3 />
+
+</details>
+
+<br/>
+
+## `Network`
+
+In the third quarter of 2024, WhaTap officially launched its Beta service of the **Network Performance Monitoring** product, which collects network data for processes to identify congestion and failures between networks and improve users' network performance. For more information about the product, see [the following](https://docs.whatap.io/en/npm/introduction). 
+
+<br/>
+
+{/* <details className='changelog'>
+
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Network_1q from "../crw-data/crwld-service/_import-service-Network.mdx";
+
+<Network_1q />
+
+</div>  */}
+
+{/* ## `CloudWatch`, `AZURE`, `OCI`, `NCP`
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Cloud_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-CloudWatch-AZURE-OCI-NCP.mdx";
+
+<Cloud_23q3 />
+
+</div><br/> */}
+
+## `AWS Log`
+
+WhaTap's `AWS Log` monitoring service has been officially launched in the third quarter of 2023. Without having to go through the cumbersome process of checking each resource in S3 and Log Group, WhaTap `AWS Log` collects various logs generated on AWS and provides the integrated monitoring. For more information about the product, see <a href="../../aws-log/introduction">the following</a>.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import AWSLog_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-AWSLog.mdx";
+
+<AWSLog_23q3 />
+
+</details>
+
+<br/>
+
+## `Log`
+
+Here are notable new features and changes to the `Log` products in Q3 2023. 
+
+Updates have been made to improve overall convenience. The keyword highlighting feature has been added to the <Cmdname sid="side_logSearch" className="uitext" />, <Cmdname sid="side_logExplorer" className="uitext" />, and <Cmdname sid="transaction_log" className="uitext" /> menus. Additionally, the adjacent log search feature has been added to the <Cmdname sid="side_logSearch" className="uitext" /> menu. 
+
+The following overview guide helps you understand new features and major changes in `Log` products in Q3 2023, along with release versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Log_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-Log.mdx";
+
+<Log_23q3 />
+
+</details>
+
+<br/>
+
+{/* ## `실험실`
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Lab_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-Lab.mdx";
+
+<Lab_23q3 />
+
+</div><br/> */}

@@ -1,18 +1,44 @@
-## Filtering the searched results
+<Title level={props.level} hashid="filtering">Filtering the searched results</Title>
 
-### Adding the filter conditions
+<Title level={props.level + 1}>Adding the filter conditions</Title>
 
-You can perform a search by filtering by SQL text, agent name, DB user name, and the like.
+<InDoc pages="stat">
 
-<ImgLang img='db-sql-filter-adding.png' desc='Adding conditions' />
+You can filter the results by SQL text, agent name, or DB user name.
+
+</InDoc>
+
+<InDoc pages="analysis-sql">
+
+You can filter the desired results based on the values ​​of the following items in the searched results.
+
+:::info
+
+- **_sql_id_** 
+
+- **_sql_hash_value_**
+
+- **_after_plan_hash_value_**
+
+- **_before_plan_hash_value_**
+
+:::
+
+</InDoc>
 
 1. In the <Cmdname sid="filter" className="uitext" /> option, select <LinkImage img="ico-add.svg" className="ico" />.
+
+   <InDoc pages="stat"><ImgLang img='db-sql-filter-adding.png' desc='Adding contion' /></InDoc>
+
+   <InDoc pages="analysis-sql,job-info,backup-recovery-history,procedure-stat"><ImgLang img='db-analysis-sql-plan-change-filter-01.png' desc='Adding condition' /></InDoc>
 
 2. In <Cmdname sid="TTL06740" className="uitext" />, select a desired filtering criteria.
 
    - If the value of the selected item is text, you can select any of <Cmdname sid="includes" className="uitext" /> (blue) and <Cmdname sid="excludes" className="uitext" /> (red).
 
-     ![Condition color](/img/db-sql-filter-condition-color.png)
+     <InDoc pages="stat"><ImgLang img="db-sql-filter-condition-color.png" desc="example" multi /></InDoc>
+
+     <InDoc pages="analysis-sql"><ImgLang img="db-sql-analysis-filter-condition-color.png" desc="example" multi /></InDoc>
 
    - If the value of the selected item is number, you can select any condition of `==` (equal to), `>=` (greater than or equal to), and `<=` (less than or equal to).
 
@@ -30,14 +56,20 @@ You can perform a search by filtering by SQL text, agent name, DB user name, and
 
 - To quickly delete the conditions applied to the <Cmdname sid="filter" className="uitext" /> option, select <LinkImage img="ico-remove.svg" className="ico" />.
 
+<InDoc pages="stat">
+
 - The default setting is to exclude if `sqlText` contains 'WhaTap'.
 
   <ImgLang img='db-sql-filter-default.png' desc='WhaTap' />
 
+</InDoc>
+
 :::
 
-### Modifying the filter conditions
+<Title level={props.level + 1}>Modifying the filter conditions</Title>
 
-<ImgLang img='db-sql-filter-modify.png' desc='Edit filter' />
+<InDoc pages="stat"><ImgLang img='db-sql-filter-modify.png' desc='Edit filter' /></InDoc>
+
+<InDoc pages="analysis-sql,job-info,backup-recovery-history,procedure-stat"><ImgLang img='db-sql-analysis-filter-modify.png' desc='Edit filter' /></InDoc>
 
 Click any applied to the <Cmdname sid="filter" className="uitext" /> option. If the <Cmdname sid="TTL06737" className="uitext" /> window appears, modify any desired items and then select <Cmdname sid="apply" className="uitext" />.

@@ -1,0 +1,47 @@
+#### <code class='changelog-service'><a href="../release-notes/java/java-2_2_11">Java Agent v2.2.11</a></code> <code class='changelog-date'>July 10, 2023</code>
+
+- <code class="New">New</code> Tracing the mongodb-reactive
+
+#### <code class='changelog-service'><a href="../release-notes/java/java-2_2_12">Java Agent v2.2.12</a></code> <code class='changelog-date'>July 21, 2023</code>
+
+- <code class="New">New</code> The <b>ignore_http_method</b> option has been added.
+
+#### <code class='changelog-service'><a href="../release-notes/java/java-2_2_13">Java Agent v2.2.13</a></code> <code class='changelog-date'>August 8, 2023</code>
+
+- <code class="New">New</code> Added the hooking option for <b>CompletableFuture</b> tracing.
+
+#### <code class='changelog-service'><a href="../release-notes/java/java-2_2_14">Java Agent v2.2.14</a></code> <code class='changelog-date'>August 17, 2023</code>
+
+- <code class="Feature">Feature</code> Tracing resilience4j has been added.
+
+- <code class="Feature">Feature</code> Tracing undertow has been added.
+
+- <code class="Feature">Feature</code> Added the option to handle SQL exceptions and HTTP call exceptions as custom exceptions.
+
+- <code class="Feature">Feature</code> Upon occurrence of <code>java.sql.SQLException</code>, added the option to display together with error code.
+
+#### <code class='changelog-service'><a href="../release-notes/java/java-2_2_15">Java Agent v2.2.15</a></code> <code class='changelog-date'>August 31, 2023</code>
+
+- <code class="Feature">Feature</code> kafka-clients-2.4.0 tracing
+
+- <code class="Feature">Feature</code> Added the function to ignore <code>java.sql.SQLException</code> with specific error codes.
+
+- <code class="Feature">Feature</code> Added the error stack display function in transactions: The first error stack is displayed when multiple errors occur in transactions.
+
+#### <code class='changelog-service'><a href="../release-notes/java/java-2_2_16">Java Agent v2.2.16</a></code> <code class='changelog-date'>September 8, 2023</code>
+
+- <code class="Feature">Feature</code> Java 20 is supported (Java option is required).
+
+- <code class="Feature">Feature</code> Tracing for Lettuce drivers in Redis.
+
+- <code class="Feature">Feature</code> Included the Lettuce settings in the spring-boot-3.0 configuration
+
+#### <code class='changelog-service'><a href="../release-notes/java/java-2_2_18">Java Agent v2.2.18</a></code> <code class='changelog-date'>September 26, 2023</code>
+
+- <code class="Feature">Feature</code> By setting the super of HttpServlet, the function to start an HTTP service has been added in the class that inherits the class. You can use comma (,) as the delimiter.
+
+- <code class="Feature">Feature</code> db2-11.5 tracing
+
+- <code class="Feature">Feature</code> Oracle database trace settings have been added. Restarting is required after applying the option. The default value is <code>true</code>.
+
+- <code class="Deprecated">Deprecated</code> While tracing HTTP services, excluded the <code>org.apache.catalina.filters.FilterBase</code> class from the default tracing.

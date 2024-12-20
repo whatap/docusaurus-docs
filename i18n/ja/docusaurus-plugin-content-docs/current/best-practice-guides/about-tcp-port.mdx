@@ -98,6 +98,12 @@ createdtime=xxxxxxxxxx
 tcp.check.8080=tcp://127.0.0.1:8080
 ```
 
+{/* 다중 포트 감시 추가 */}
+
+import TcpMulti from "../common-items/_server-tcp-port-multi.mdx";
+
+<TcpMulti />
+
 #### メトリクス照会
 
 設定が完了した場合***分析*** &gt; ***メトリクス照会***メニューで`server_tcpport`カテゴリが追加されます。 当該カテゴリの`isAlive`フィールド値に応じて、メトリクス通知を使用できます。 

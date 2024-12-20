@@ -1,0 +1,131 @@
+---
+id: nginx-introduction
+title: NGINXモニタリング
+description: この文書は、NGINXモニタリング商品の紹介ページです。
+displayed_sidebar: featuremonitorSidebar
+toc_max_heading_level: 2
+keywords:
+  - NGINX
+  - Feature
+---
+
+import InstallFeature from '../common-items/_import_feature-install-agent.mdx';
+import HttpStatus from "../common-items/_import_feature-http-status.mdx";
+import TR from '@site/src/components/TR';
+
+:::note
+
+**Featureプロジェク**<ScrollToLink anchor='feature-project' />
+
+WhaTapは、ユーザーが希望するソフトウェアのモニタリング支援の有無を簡単に確認し、簡単にモニタリングを開始できるように、新しく**Featureプロジェク**(<code class='Features'>Features</code>)を導入しました。 Featureプロジェクは、既存のモニタリング製品を、ユーザーがモニタリングしようとするソフトウェアに合わせてリパッケージし、最適化されたモニタリングソリューションを提供します。 WhaTapのFeatureプロジェクを通じて、サービスの安定性と性能をより効果的に管理します。 
+
+:::
+
+NGINXは高性能HTTPと逆方向プロキシサーバーで、ウェブアプリケーションのためのロードバランシング、キャッシング、HTTPキャッシュなどの機能を提供します。 NGINXは、高い同時処理性能をもとに、ウェブトラフィックを効果的に分散し管理でき、大規模なウェブサイト運営に適しています。
+
+WhaTapは、新しい**フィーチャープロジェクト**方式で***NGINX***モニタリングを提供します。 NGINXサーバーの性能と状態をリアルタイムで追跡し、問題を早期に検知して解決できるようにサポートします。
+
+- **メトリクスモニタリング**: NGINXサーバーの要求処理状態、応答コード、接続状態など様々なメトリクスをリアルタイムでモニタリングします。
+
+- **ダッシュボード**: ダッシュボードを通じて、必要なメトリクスを効率的に照会して分析できます。
+
+WhaTap***NGINX***モニタリングを通じてNGINXサーバーを安定的に運営し、管理してみてください。
+
+## インストール
+
+WhaTapのNGINXモニタリングサービス利用のための基本インストール方法をご案内します。 
+
+WhaTapモニタリングサービスを使用するには、[会員登録](https://www.whatap.io/ja/signup/)後、プロジェクトを作成し、ターゲットサーバーにエージェントをインストールする必要があります。 会員登録に関する詳細は、[次の文書](../account/account-manage)を参照してください。 
+
+:::note 
+
+**サポート環境**<ScrollToLink anchor='NGINX-supported-env' />
+
+WhaTapのNGINXモニタリングエージェントをインストールする前に、サポート環境を確認してください。 
+
+- **NGINX**: NGINX 1.4.x以降
+
+- **Ubuntu**: Ubuntu 12.04以降
+
+- **OS**: Red Hat 6 or equivalent(CentOS, Rocky Linux, Amazon Linux)
+
+- **OSアーキテクチャ**: Amd64/X86_64, Arm64/Aarch64
+
+:::
+
+### Featureプロジェクトを作成する
+
+import CreateFeature from "../common-items/_import_feature-project-create.mdx";
+
+<CreateFeature />
+
+### NGINXエージェントのインストール
+
+<InstallFeature name='NGINXエージェント設定' />
+
+## メインメニュー
+
+### ダッシューボード
+
+ホーム画面 > **Featureプロジェク**(<code class='Features'>Features</code>)選択 > ***NGINX*** > ***NGINX ダッシューボード***
+
+WhaTapが提供する***NGINXダッシュボード***は、ウェブサーバーのリアルタイム性能を一目で確認できる視覚的ツールで、トラフィックパターン、要請処理状況などを効果的にモニタリングできます。 主要メトリクスを通じてNGINXサーバーの性能を分析して管理してみてください。
+
+- ***NGINX Requests Status Code***
+
+  NGINXサーバーが処理したリクエストのステータスコードをリアルタイムでモニタリングします。 2XX、3XX、4XX、5XX、503など、状態コードによる応答数を分類し、リアルタイムで確認します。
+
+  <details>
+  <summary>ダッシュボードのメトリクス案内</summary>
+
+  <HttpStatus />
+
+  </details>
+
+- ***Nginx Metrics***
+
+  NGINXの性能と状態を総合的に示す様々なメトリクスを提供します。 リアルタイムで接続状態と処理状況を追跡できます。
+
+  <details>
+  <summary>ダッシュボードのメトリクス案内</summary>
+
+  - ***NGINX Connections Accepted***: NGINXサーバーが許可した接続数を表示します。 
+
+  - ***NGINX Writing***: クライアントに応答を書いている接続数を追跡します。 
+
+  - ***Active Connections(accepted)***: NGINXサーバーが現在処理中のクライアントとの接続数を表示します。 
+
+  - ***Waiting***: Keep-alive状態で待機中の接続を表示します。 
+
+  - ***Handled Request***: NGIMXサーバーが正常に処理したリクエスト数を表示します。 
+
+  - ***NGINX Requests***: NGIMXサーバーが受信したリクエストの合計数をリアルタイムで追跡します。
+
+  - ***NGINX Reading***: クライアントからのリクエストデータを読み取り中の接続数を表示します。 
+
+  </details>
+
+- ***Domain Throughput***
+
+  ドメイン単位でのトラフィックと性能を追跡できます。 
+
+  <details>
+  <summary>ダッシュボードのメトリクス案内</summary>
+
+  - ***Response Bytes SUM***: 応答として送信された合計バイト数を表示します。 サーバーが処理したトラフィック全体の量をモニタリングできます。
+
+  - ***Latency Average***: 平均の応答遅延時間を表示します。 サーバーの応答速度を評価する重要なメトリクスです。
+
+  </details>
+
+{/* 
+
+- Nginx Connections Accepted: NGINXが受信して許可した接続の合計数を示します。 このメトリクスは、サーバーに入ってくるトラフィックをモニタリングし、どれだけのクライアントがNGINXに接続できるかを把握するのに役立ちます。
+
+- Active Connections (accepted): 現在NGINXサーバーが受け入れたアクティブな接続状態をリアルタイムで表示します。 このメトリクスは、NGINXが現在処理中のクライアントとの接続数を示し、サーバの負荷状態を理解するのに役立ちます。
+
+- Handled Request: NGINXサーバーが正常に処理したリクエストの数を追跡します。 このメトリクスは、リクエストがサーバーでどのように処理されたかを反映しており、特定の時間の間に正常に処理されたリクエストの量を確認できます。
+
+- Nginx Requests: NGINXサーバーが受信したリクエストの合計数を表示します。 このメトリクスには、クライアントがサーバーに送信したすべてのリクエストが含まれ、リクエストの量を把握し、サーバーのトラフィックを理解するのに役立ちます。 
+
+*/}

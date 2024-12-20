@@ -16,9 +16,9 @@ Home &gt; Select Project &gt; <Cmdname sid="side_dashboard" className="uitext" /
 
 **Requirements**
 
-- The Kubernetes cluster project (<code class='my'>CP</code>) requires the **Read role**.
+- The WhaTap Kubernetes agent 1.4.1 or later is required. 
 
-- The WhaTap Kubernetes agent 1.3.7 or later is required. 
+- If it is a Kubernetes cluster project (<code class='my'>CP</code>), you can view the corresponding menu.
 
 :::
 
@@ -77,45 +77,13 @@ If a string type (*String*) metric has a specific string, it is designated as <s
 | MemoryPressure       | `true` / `false`         | `true`       |
 | Unschedulable        | `true` / `false`         | `true`       |
 
-{/* 
-
-- <span class='normal'>Normal</span>: <span class='normal'>Blue</span>
-
-- <span class='slow'>Warning</span>: <span class='slow'>Orange</span>
-
-- <span class='vslow'>Error</span>: <span class='vslow'>Red</span>
-
-*/}
-
 ##### Node status display priority
 
 Its highest priority is the <span class='vslow'>Error</span> section. If any of the metrics falls into the <span class='vslow'>Error</span> section, the node appears in <span class='vslow'>red</span> at first. In the following example, both ![Leader line a](/img/char-a.svg) and ![Leader line b](/img/char-b.svg) nodes are marked as <span class='vslow'>Error</span>. 
 
 ![Node status display priority sc](/img/k8s-node-map-custom-err-col.png)
 
-{/* * **우선 순위** 예시 이미지 사용해서 노드 A, B 비교 */}
-
-{/* 
-
-If a string type (*String*) metric has a specific string, it is designated as <span class='vslow'>Error</span>. For example, if the ***Status (string)*** metric contains a text, `NotReady`, the node is marked as <span class='vslow'>Error</span> and displayed in <span class='vslow'>red</span>. 
-
-*/}
-
-{/* 
-
-:::note 
-
-**Priority**
-
-예시 이미지 사용해서 노드 A, B 비교
-
-::: 
-
-*/}
-
 #### Label
-
-{/* 사용자는 노드 블록 내부에 텍스트 라벨을 설정하여 지정한 주요 정보를 한눈에 볼 수 있습니다. If you set <Cmdname sid="label" className="uitext" /> based on the ***CpuUsedPercent*** metric, you can see the information inside the node block as in the example image above.  */}
 
 <Columns>
 
@@ -207,32 +175,24 @@ In <Cmdname sid="side_nodeMap" className="uitext" />, select a node to view. You
 
 <ImgLang img='k8s-node-map-summary.png' />
 
-#### Target information
+### <Cmdname sid="TTL06782" className="uitext" />{#node-target-info}
 
-In the <Cmdname sid="TTL06782" className="uitext" /> tab, you can check the key properties of a selected node.
+In the <Cmdname sid="TTL06782" className="uitext" /> tab, you can check the key properties of a selected node. You can also move to the [Node list](resource-node-list) and [Container map](container-map) menus.
 
-:::note 
+#### Node summary analysis {#node-summary-analysis}
 
-The ***Labels*** metric is supported starting from Master Agent 1.7.9.
+You can check the summary information of node resource allocation and usage status through ***Node summary analysis***.
 
-:::
+import NodeSummary from "../common-items/_import_k8s-node-summary.mdx";
 
-#### Node configuration
-
-In the <Cmdname sid="TTL08441" className="uitext" type="node"/> tab, you can check the CPU, memory, disk, network configuration, and usage within the node, and the information about Kubernetes system processes such as Container Runtime, kubelet, and kube-proxy.
-
-{/* 노드 내 CPU, 메모리, 디스크, 네트워크 자원 사용 현황을 포함한 상세 정보를 확인할 수 있습니다. */}
-
-#### Metrics
-
-In the <Cmdname sid="metrics" className="uitext" /> tab, you can find key metrics for the selected node and check resource usage patterns. This allows you to quickly identify the resource-related performance optimization and issues.
+<NodeSummary />
 
 :::note 
 
-The ***K8s CPU Request / Allocatable CPU (%)*** widget is supported from Master Agent 1.7.9.
+The ***Labels*** metric is supported in Kubernetes agent 1.7.9 or later.
 
 :::
 
-#### Event
+import K8snodedt from "../common-items/_k8s-node-details.mdx";
 
-In the <Cmdname sid="event" className="uitext" /> tab, you can monitor major events and alerts occurred within the cluster by checking ***K8s Node events*** and ***WhaTap Node events*** that you configured.
+<K8snodedt />

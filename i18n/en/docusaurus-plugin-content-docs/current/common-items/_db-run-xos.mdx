@@ -2,6 +2,8 @@
 
 Run the following batch file on the database server.
 
+<Xclude product="mssql">
+
 ```bash
 $ ./start.sh
 
@@ -9,3 +11,29 @@ $ ./start.sh
 
 $ ./startd.sh # When running in the background
 ```
+
+</Xclude>
+
+<InDoc product="mssql">
+
+```bash
+start.bat
+```
+
+After confirming that there are no errors in the execution log displayed on the screen and terminating the execution, register for the service in the following order.
+
+- **Service registration**
+
+  Run the _install_WindowsService.bat_ file in the xos folder as follows to register in the service. If you do not enter a name after the `create` option, the service is registered under the name, **WhatapXOSAgent** by default.
+
+  ```bash
+  install_WindowsService.bat create WhatapXOSAgent
+  ```
+
+- **Deletion of a service**
+
+  ```bash
+  install_WindowsService.bat delete WhatapXOSAgent
+  ```
+
+</InDoc>

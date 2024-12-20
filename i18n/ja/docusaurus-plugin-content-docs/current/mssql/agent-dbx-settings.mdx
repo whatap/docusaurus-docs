@@ -8,6 +8,10 @@ keywords:
   - DBXエージェント
 ---
 
+import V2Note from "../common-items/_import_v2-note.mdx";
+
+<V2Note product="SQL Server" />
+
 DBXエージェントに必要な設定は、*whatap.conf*ファイルに作成されます。 設定できるオプションについては、次を参照してください。
 
 ## 基本オプション
@@ -22,27 +26,77 @@ import Dbagentsettingdatacollection from "../common-items/_db-agent-setting-data
 
 <Dbagentsettingdatacollection />
 
-## AWS RDS CloudWatch適用{#using-aws-rds}
+## デッドロック(Deadlock) の関連オプション
 
-import AWSRDSdesc from '../common-items/_import_aws-rds-desc.mdx';
+次は`xp_ReadErrorLog`コマンドからエラーログを読み込み、デッドロック(Deadlock) 情報を確認できるエージェントオプションです。
 
-<AWSRDSdesc name='db_mssql_counter' />
+- **mslog** <span class='type'>Boolean</span>
 
-import Dbagentaws from "../common-items/_db-agent-aws.mdx";
+  既定値 `true`
 
-<Dbagentaws />
+  `xp_ReadErrorLog`コマンドを実行して、エラーログを照会します。
+
+- **mslog_interval** <span class='type'>Int</span>
+
+  既定値`1` (単位：分、min)
+
+  以前のサイクルから現在のサイクルまでのログを照会します。
+
+:::tip
+
+**デッドロック(Deadlock) ログを記録するためのDB設定**
+
+デッドロック(Deadlock) ログを記録するには、Trace Flag 1204が有効になっている必要があります。 Trace Flagはサーバーの動作に影響を及ぼす可能性があるため、設定及び解除作業は慎重に行う必要があります。
+
+- **設定確認の方法**
+
+  Trace Flag 1204の有効可否を確認するには、次のコマンドを実行します。 追跡フラグの設定状態がON(`1`)なのか、OFF(`0`)なのか確認できます。
+
+  ```sql
+  DBCC TRACESTATUS;
+  ```
+
+- **Trace Flag 1204有効化**(ON)
+
+  Trace Flag 1204を有効にするには、次のコマンドを実行します。
+
+  ```sql
+  DBCC TRACEON (1204, -1);
+  ```
+
+  - `1204`：Deadlock情報を記録するTrace Flag
+
+  - `-1`：サーバー全体に適用(グローバル設定)
+
+- **Trace Flag 1204無効化**(OFF)
+
+  Trace Flag 1204を無効にするには、以下のコマンドを実行します：
+
+  ```sql
+  DBCC TRACEOFF (1204, -1);
+  ```
+
+:::
+
+:::note
+
+- デッドロック(Deadlock) 関連エージェントオプションは、[DBXエージェント2.2.2バージョン](../release-notes/db/dbx-2_2_2) 以降でサポートします。
+
+- `xp_ReadErrorLog`はMicrosoft SQL Serverで提供する拡張保存プロシージャであり、SQL Serverのエラーログやエージェントログの内容を照会できるようにサポートします。 これにより、SQL Serverのステータス、エラーメッセージ、アラート、または特定のイベントを素早く確認できます。
+
+- `DBCC TRACESTATUS`コマンドについての詳細は、[次のリンク](https://learn.microsoft.com/sql/t-sql/database-console-commands/dbcc-tracestatus-transact-sql?view=sql-server-ver16)を参照してください。
+
+- `DBCC TRACEON`コマンドについての詳細は、[次のリンク](https://learn.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-transact-sql?view=sql-server-ver16)を参照してください。
+
+- `DBCC TRACEOFF`コマンドについての詳細は、[次のリンク](https://learn.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceoff-transact-sql?view=sql-server-ver16)を参照してください。
+
+:::
 
 {/* AES 256 암호화 적용 */}
 import Dbaes256encrypt from "../common-items/_db-aes-256-encrypt.mdx";
 
 <Dbaes256encrypt />
 
-## エージェント名の識別{#naming}
-
 import Dbsettingagentnamedetails from "../common-items/_db-setting-agent-name-details.mdx";
 
-<Dbsettingagentnamedetails />
-
-import Dbagentdbxnaming from "../common-items/_db-agent-dbx-naming.mdx";
-
-<Dbagentdbxnaming />
+<Dbsettingagentnamedetails level={2} agentType="DBX" />

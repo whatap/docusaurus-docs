@@ -1,6 +1,49 @@
 [
   {
     "url": "https://docs.whatap.io/en/release-notes/service/service-2_8_x",
+    "ver": "Service 2.8.5",
+    "date": "2024-09-12",
+    "Lists": [
+      {
+        "ver": "Service 2.8.5",
+        "hash": "service-285",
+        "product": "Kubernetes",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Alert</span> &gt; <span class=\"uitext\">Event Configuration</span>, fixed typo in the <span class=\"uitext\">Unassignable node notification</span> template provided when adding a metric event.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/service/service-2_8_x",
+    "ver": "Service 2.8.4",
+    "date": "2024-09-03",
+    "Lists": [
+      {
+        "ver": "Service 2.8.4",
+        "hash": "service-284",
+        "product": "Common",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Alert</span> &gt; <span class=\"uitext\">Notifications</span>, fixed the issue where if you register <b>Teams Workflow</b> as a 3rd party plugin, it is set to <b>Teams</b>.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/service/service-2_8_x",
+    "ver": "Service 2.8.3",
+    "date": "2024-08-20",
+    "Lists": [
+      {
+        "ver": "Service 2.8.3",
+        "hash": "service-283",
+        "product": "Cloud",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Management</span> &gt; <span class=\"uitext\">Agent Installation</span>, fixed the error that occurs when the <span class=\"uitext\">Confirm</span> button is selected after entering the role and authentication validity period.</p>",
+        "category": "Amazon CloudWatch"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/service/service-2_8_x",
     "ver": "Service 2.8.2",
     "date": "2024-08-29",
     "Lists": [

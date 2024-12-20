@@ -1,0 +1,116 @@
+---
+id: hitmap-notice
+title: AJAXヒットマップのパターン
+description: AJAX分布パターンをマシンラーニングで自動認識し、アラート通知を送信します
+keywords:
+  - Webブラウザ
+  - ヒットマップ
+  - アラート通知
+---
+
+ホーム画面 &gt; プロジェクト選択 &gt; <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" /> &gt; <Cmdname sid="TTL08559" className="uitext" />
+
+AJAX分布パターンをマシンラーニングで自動認識し、アラート通知を送信します。 複雑な条件設定がなくても、イシュー状況を迅速かつ正確に認知できます。 数多くのヒートマップパターンが学習されており、リアルタイムで収集されるデータで学習されたパターンと類似したパターンが発生すると、アラート通知を受信できます。
+
+<ImgLang img="browser-event-ajax-hitmap.png" desc="AJAX Hitmap pattern" />
+
+:::note
+
+- このメニューは、次のメニューパスでもアクセスできます。 ホーム画面 &gt; プロジェクト選択 &gt; ![アイコン](/img/ic-sitemap.svg) <Cmdname sid="sitemap" className="uitext" /> &gt; <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" /> <code class="newfunc">New</code>
+
+- <Cmdname sid="side_eventSetting" className="uitext" /> <code class="newfunc">New</code>メニューについての詳細は、[次の文書](warning-notice-v2)を参照してください。
+
+- <Cmdname sid="ajaxAnalytics" className="uitext" />メニューについての詳細は、[次の文書](analyze-ajax-hitmap)を参照してください。
+
+:::
+
+## 基本オプション{#basicoption}
+
+次のオプションを使用して、通知の受信方法を設定できます。
+
+- <Cmdname sid="hitmap_exc_time" className="uitext" />：設定した時間より短いパターンを無視します。
+
+- <Cmdname sid="silent" className="uitext" />：頻繁な警告通知の発生を防ぐオプションです。 最初の警告通知以降、選択した時間の間には警告通知を送信しません。 また、<Cmdname sid="side_eventHistory" className="uitext" />メニューに残りません。
+
+- <Cmdname sid="event_tag" className="uitext" />：特定のメンバーまたはチームにアラート通知を送信できます。 タグを設定しない場合は、すべてのメンバーに通知を送信します。 タグ設定の詳細については、[次の文書](set-receive-event#set-notice-by-team-or-users)を参照してください。
+
+- <Cmdname sid="save" className="uitext" />：設定した内容を保存して反映します。
+
+## ヒートマップパターン{#hitmappattern}
+
+次のヒートマップパターンが発生したら、アラート通知を送信するように設定できます。 各項目のトグルボタンを選択してアラート通知をオンまたはオフにできます。
+
+<Columns>
+<Column className="text--left width--40">
+
+![横ラインパターン](/img/blog_49_04.png)
+
+</Column>
+<Column className="text--left">
+
+<Cmdname sid="hitmap_pattern_horizontal" className="uitext" />
+
+特定の応答時間が遅延すると、リクエストが集中して終了されるパターンです。 これは、タイムアウト設定によってリクエストが累積したり、特定のAPIの応答遅延が持続的に発生する場合です。
+
+</Column>
+</Columns>
+
+<Columns>
+<Column className="text--left width--40">
+
+![縦ラインパターン](/img/blog_49_05.png)
+
+</Column>
+<Column className="text--left">
+
+<Cmdname sid="hitmap_pattern_vertical" className="uitext" />
+
+特定の時点にリクエストが集中すると、それぞれ異なる応答時間が表示される状態です。 これは、特定のイベントによって一時的な負荷が発生したり、複数の種類のAPI呼び出しを同時に処理する時に発生する可能性があります。
+
+</Column>
+</Columns>
+
+<Columns>
+<Column className="text--left width--40">
+
+![フライングパターン](/img/blog_49_06.png)
+
+</Column>
+<Column className="text--left">
+
+<Cmdname sid="hitmap_pattern_flying" className="uitext" />
+
+応答時間が徐々に増加する症状です。 主な原因としては、サーバーメモリのリークまたはキャッシュ効率の低下、コネクション プールの枯渇などがあります。
+
+</Column>
+</Columns>
+
+<Columns>
+<Column className="text--left width--40">
+
+![過負荷パターン](/img/blog_49_07.png)
+
+</Column>
+<Column className="text--left">
+
+<Cmdname sid="hitmap_pattern_overload" className="uitext" />
+
+このパターンは、リクエストが特定の時間区間に集中的に発生し、高い応答時間を示す特徴があります。 主な原因としては、サーバーリソースの不足またはデータベースの過負荷、ネットワークのボトルネックなどがあります。
+
+</Column>
+</Columns>
+
+<Columns>
+<Column className="text--left width--40">
+
+![暴走パターン](/img/blog_49_08.png)
+
+</Column>
+<Column className="text--left">
+
+<Cmdname sid="hitmap_pattern_flood" className="uitext" />
+
+リクエスト量が急に増加し、応答時間が同時に急増するパターンです。 この現象は、主にDDoS攻撃または特定のイベントによって誘発されたトラフィックの急増、異常なAPI呼び出しに現れることがあります。
+
+</Column>
+</Columns>

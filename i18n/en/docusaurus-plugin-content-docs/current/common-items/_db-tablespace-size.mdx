@@ -182,3 +182,27 @@ The <Cmdname sid="TTL08164" className="uitext" /> section provides the detailed 
 - <Cmdname sid="table_space_size" className="uitext" />: It is the segment size.
 
 </Xclude>
+
+<InDoc product="altibase">
+
+## Checking the segment size {#checkSegmentSize}
+
+<Cmdname sid="TTL08164" className="uitext" /> provides information on the top 50 segments that occupy the most space within the section tablespace. This information allows users to see how much space a specific segment is using. Each segment is detailed based on various properties. This information can be used to find abnormally large segments and perform space optimization if necessary.
+
+<ImgLang img="db-stat-table-space-size-top50-altibase.png" desc="Segment size" />
+
+- **_Tablespace Type_**: Type of tablespace.
+
+- **_Tablespace_**: Name of the tablespace to which the segment belongs. A tablespace is a logical space in the database where data is stored.
+
+- **_Table_**: Name of the table to which the segment belongs. This helps you identify which table is occupying the space.
+
+- **_User_**: Name of the database user account that owns the segment. This allows you to find which user manages the data.
+
+- **_Segment Type_**: Type of segment.
+
+- **_Partition_**: For partitioned tables or indexes, this indicates which partition the segment belongs to. Partitioning is a method to manage large tables by dividing them into smaller units.
+
+- **_mbytes_**: Amount of space in megabytes (MB) that the segment occupies. This allows you to see how much physical storage space each segment is using.
+
+</InDoc>

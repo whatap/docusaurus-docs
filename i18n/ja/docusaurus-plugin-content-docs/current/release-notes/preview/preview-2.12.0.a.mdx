@@ -1,0 +1,101 @@
+---
+id: preview-2_12_0x
+title: Preview 2.12.0.a
+toc_max_heading_level: 2
+---
+
+<head>
+<meta name="robots" content="noindex, nofollow"/>
+</head>
+
+:::note
+
+[preview.whatap.io](https://preview.whatap.io)で、次の新機能と変更した内容を事前に体験できます。 
+
+:::
+
+## Preview 2.12.0.a1
+
+2024年11月28日
+
+<div class='indentTab'>
+
+### `共通`
+
+- <Status priority='1'>Feature</Status> <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_metricsChart" className="uitext" /> <code className="newfunc">New</code>メニューで次の機能を追加
+
+  - ウィジェットの凡例フィルタリング機能
+
+  - ウィジェットの凡例にマウスオーバー時、該当するチャートラインのハイライト機能
+
+- <Status priority='1'>Changed</Status>プロジェクトの<Cmdname sid="side_flexboard" className="uitext" />メニューでダッシュボード一覧の並べ替えを選択するオプションの中から<Cmdname sid="ITM06324" className="uitext" />を除去
+
+- <Status priority='0'>Fixed</Status>すべてのメニューで画面上部のタイトル表記の誤動作を改善
+
+---
+
+### `Application`
+
+<Status priority='0'>Fixed</Status> <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_txSearch" className="uitext" />メニューで経過時間フィルターが適用されない問題を修正
+
+---
+
+### `Kubernetes`
+
+- <Status priority='1'>Feature</Status> <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_etcdDashboard" className="uitext" />メニューに案内メッセージのモーダルを追加
+
+- <Status priority='1'>Feature</Status> <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_etcdDashboard" className="uitext" />メニューに入ると、インストールしたエージェントバージョンがサポートバージョンより低い場合、アップデート案内画面を表示する機能を追加
+
+---
+
+### `Database`
+
+#### 共通
+
+- <Status priority='1'>Fixed</Status> <code className="my">V2</code>プロジェクトの<Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentInstall" className="uitext" />メニューにWindows環境のXOSエージェントインストール案内を修正
+
+  :::note
+
+  - 適用プラットフォーム：**PostgreSQL**、**MySQL**、**CUBRID**、**Altibase**
+
+  :::
+
+- <Status priority='0'>Fixed</Status> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />メニューで<Cmdname sid="session_kill" className="uitext" />機能実行が失敗した時に処理されない問題を修正
+
+#### PostgreSQL
+
+<Status priority='1'>Changed</Status> <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentInstall" className="uitext" />メニューでアカウント作成の基本および追加権限設定の案内を変更
+
+#### Oracle、Oracle Pro
+
+<Status priority='0'>Fixed</Status> <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbSqlAnalysis" className="uitext" />メニューで<UI>Access Statistics</UI>タブのテーブルにデータが出力されない問題を修正
+
+#### MySQL
+
+<Status priority='1'>Changed</Status> <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentInstall" className="uitext" />メニューでJDBCダウンロード案内内容を変更
+
+---
+
+### `Log`
+
+<Status priority='0'>Fixed</Status>ログの有効化案内モーダルの閉じるボタンを表示するように修正
+
+</div>
+
+## Preview 2.12.0.a0
+
+2024年11月21日
+
+<div class='indentTab'>
+
+### `Kubernetes`
+
+- <Status priority='1'>Feature</Status> <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_ingressList" className="uitext" />メニューの詳細情報にアプリケーション情報を追加
+
+- <Status priority='1'>Feature</Status>次のメニュー経路の<Cmdname sid="TTL08422" className="uitext" />画面で各メニューに移動できるリンクをリソース 一覧に追加
+
+  - <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_nodeTimeline" className="uitext" />
+
+  - <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_ingressList" className="uitext" />
+
+</div>

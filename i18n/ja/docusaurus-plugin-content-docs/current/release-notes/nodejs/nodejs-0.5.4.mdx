@@ -1,0 +1,39 @@
+---
+id: nodejs-0_5_4
+title: Node.js Agent v0.5.4
+toc_max_heading_level: 2
+pagination_next: release-notes/nodejs/nodejs-0_5_2
+displayed_sidebar: releaseSidebar
+---
+
+2024年11月13日
+
+- <Status priority='1'>New</Status>アプリケーションのパフォーマンスとネットワークエラーを監視するためのエージェントオプションを追加
+
+  - **profile_error_httpc_time_max** <span class='type'>Number</span>
+
+    既定値`10000`
+
+    HTTPC実行時間が指定された値を超える場合、TOO SLOWエラーで処理します。 `0`に設定すると、エラー処理を行いません。
+
+  - **profile_error_sql_time_max** <span class='type'>Number</span> 
+
+    既定値`30000`
+
+    SQL実行時間が設定した値を超えると、TOO SLOWエラーで処理します。`0`に設定する場合、エラー処理を行いません。
+
+  - **profile_error_sql_fetch_max** <span class='type'>Number</span>
+
+    既定値`10000`
+
+    SQL結果件数が設定した値を超えると、TOO MANY RECORDSエラーで処理します。 `0`に設定する場合、エラー処理を行いません。
+
+  - **ignore_http_lost_connection** <span class='type'>Boolean</span>
+
+    既定値`false`
+
+    `true`に設定する場合、Lost connectionエラーを収集しません。
+
+import DownloadNode from './_import_dl-nodejs-agent.mdx';
+
+<DownloadNode ver="0.5.4" />

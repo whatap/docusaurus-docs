@@ -9,6 +9,67 @@ keywords:
   - データベース
 ---
 
-import LinkedProject from "../common-items/_linked-projects.mdx";
+{/* description */}
+import LinkprojectDesc from "../common-items/_linked-projects-desc.mdx";
 
-<LinkedProject />
+<LinkprojectDesc />
+
+{/* 권한 설정하기 */}
+import Setrole from "../common-items/_import_linked-projects-role-oracle.mdx";
+
+<Setrole />
+
+{/* 연계 프로젝트 추가하기 */}
+import Addproject from "../common-items/_linked-projects-add.mdx";
+
+<Addproject />
+
+## エージェントオプションを設定する
+
+データベースプロジェクトとの連携分析のため、以下のようにエージェント設定ファイル(*whatap.conf*)にオプションを設定する必要があります。 または、<Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentSetting" className="uitext" />メニューで設定できます。
+
+```ini title="whatap.conf"
+dbc_sid_enabled=true
+hook_db_native_enabled=true
+debug_dbc_sid_enabled=true
+```
+
+- **dbc_sid_enabled** <span class='type'>bool</span> 
+
+  既定値`false`
+
+  SID発行のためのオプションです。 連携分析のために値を`true`に設定します。 **必須**オプションです。
+
+- **hook_db_native_enabled** <span class='type'>bool</span> 
+
+  既定値`false`
+
+  トランザクションで使用するDBの種類を抽出するためのオプションです。 連携分析のために値を`true`に設定します。 **必須**オプションです。
+
+- **debug_dbc_sid_enabled** <span class='type'>bool</span> 
+
+  既定値`false`
+
+  JavaエージェントログにSID関連情報をロギングするオプションで、選択オプションです。 
+
+:::note
+
+<Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentSetting" className="uitext" />
+
+![Agent settings](/img/linked-projects-agent-settings.png)
+
+:::
+
+{/* 연계 프로젝트 확인하기 */}
+import APMtoDBLinkedProject from "../common-items/_linked-projects-apm2db.mdx";
+
+<APMtoDBLinkedProject />
+
+{/* import LinkedProject from "../common-items/_linked-projects.mdx"; */}
+
+{/* <LinkedProject /> */}
+
+{/* 연계 프로젝트 삭제하기 */}
+import RemoveProject from "../common-items/_linked-projects-remove.mdx";
+
+<RemoveProject />

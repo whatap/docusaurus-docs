@@ -2,6 +2,7 @@
 id: metrics-server
 title: Server metrics
 description: It guides you to the server monitoring metrics.
+toc_max_heading_level: 2
 keywords:
   - Server
   - Metrics
@@ -17,16 +18,20 @@ import Metricsindex from "../common-items/_metrics-index.mdx";
 
 It guides you to the server monitoring metrics.
 
-## server_base
+import AgentStatus from "../common-items/_agent-status-summary-metrics.mdx";
 
-----
+<div className="metricslist">
+
+<AgentStatus />
+
+## server_base
 
 It is the metric for server resources.
 
 - Collection interval: 5 seconds
 - Statistical data: 5 minutes, 1 hour
 
-#### Tags {#server_base-tags}
+### Tags {#server_base-tags}
 
 | Tag name  | Description                | Remarks |
 | --------- | -------------------------- | ------- |
@@ -36,7 +41,7 @@ It is the metric for server resources.
 | okindName | Server type name           | -       |
 | os        | OS type (Linux or Windows) | -       |
 
-#### Fields {#server_base-fields}
+### Fields {#server_base-fields}
 
 | Field name           | Unit            | Description                                  | Remarks |
 | -------------------- | --------------- | -------------------------------------------- | ------- |
@@ -82,14 +87,12 @@ It is the metric for server resources.
 
 ## server_cpu_core
 
-----
-
 Metrics for each server CPU core
 
 - Collection interval: 5 seconds
 - Statistical data: -
 
-#### Tags {#server_cpu_core-tags}
+### Tags {#server_cpu_core-tags}
 
 | Tag name | Description                | Remarks |
 | -------- | -------------------------- | ------- |
@@ -98,7 +101,7 @@ Metrics for each server CPU core
 | oname    | Server name                | -       |
 | os       | OS type (Linux or Windows) | -       |
 
-#### Fields {#server_cpu_core-fields}
+### Fields {#server_cpu_core-fields}
 
 | Field name           | Unit            | Description                      | Remarks |
 | -------------------- | --------------- | -------------------------------- | ------- |
@@ -117,14 +120,12 @@ Metrics for each server CPU core
 
 ## server_disk
 
-----
-
 It has metrics for each file system mounted on each server.
 
 - Collection interval: 5 seconds
 - Statistical data: 5 minutes, 1 hour
 
-#### Tags {#server_disk-tags}
+### Tags {#server_disk-tags}
 
 | Tag name       | Description                    | Remarks |
 | -------------- | ------------------------------ | ------- |
@@ -136,7 +137,7 @@ It has metrics for each file system mounted on each server.
 | oname          | Server name                    | -       |
 | os             | OS type (Linux or Windows)     | -       |
 
-#### Fields {#server_disk-fields}
+### Fields {#server_disk-fields}
 
 | Field name       | Unit            | Description                                                             | Remarks |
 | ---------------- | --------------- | ----------------------------------------------------------------------- | ------- |
@@ -160,14 +161,12 @@ It has metrics for each file system mounted on each server.
 
 ## server_network
 
-----
-
 Network interface metrics for each server
 
 - Collection interval: 5 seconds
 - Statistical data: 5 minutes, 1 hour
 
-#### Tags {#server_network-tags}
+### Tags {#server_network-tags}
 
 | Tag name | Description                    | Remarks |
 | -------- | ------------------------------ | ------- |
@@ -178,7 +177,7 @@ Network interface metrics for each server
 | oname    | Server name                    | -       |
 | os       | OS type (Linux or Windows)     | -       |
 
-#### Fields {#server_network-fields}
+### Fields {#server_network-fields}
 
 | Field name     | Unit            | Description      | Remarks |
 | -------------- | --------------- | ---------------- | ------- |
@@ -197,14 +196,12 @@ Network interface metrics for each server
 
 ## server_netstat
 
-----
-
 It provides the network protocol statistics for each server.
 
 - Collection interval: 5 seconds
 - Statistical data: 5 minutes, 1 hour
 
-#### Tags {#server_netstat-tags}
+### Tags {#server_netstat-tags}
 
 | Tag name                        | Description                     | Remarks |
 | ------------------------------- | ------------------------------- | ------- |
@@ -223,7 +220,7 @@ It provides the network protocol statistics for each server.
 | whatap_product                  | WhaTap product type             | -       |
 | whatap_version                  | WhaTap agent version            | -       |
 
-#### Fields {#server_netstat-fields}
+### Fields {#server_netstat-fields}
 
 | Field name             | Unit            | Description                        | Remarks |
 | ---------------------- | --------------- | ---------------------------------- | ------- |
@@ -242,14 +239,12 @@ It provides the network protocol statistics for each server.
 
 ## server_process
 
-----
-
 It has the server process information.
 
 - Collection interval: 20 seconds
 - Statistical data: 5 minutes
 
-#### Tags {#server_process-tags}
+### Tags {#server_process-tags}
 
 | Tag name | Description                     | Remarks |
 | -------- | ------------------------------- | ------- |
@@ -261,7 +256,7 @@ It has the server process information.
 | oname    | Server name                     | -       |
 | user     | Linux user name for the process | -       |
 
-#### Fields {#server_process-fields}
+### Fields {#server_process-fields}
 
 | Field name          | Unit            | Description                          | Remarks |
 | ------------------- | --------------- | ------------------------------------ | ------- |
@@ -283,6 +278,8 @@ It has the server process information.
 | wiopsAccmulated     | Positive number | WhaTap only                          | Common  |
 | rss                 | Byte            | RSS memory size                      | Common  |
 | rssAccmulated       | Byte            | WhaTap only                          | Common  |
+
+</div>
 
 ## References
 

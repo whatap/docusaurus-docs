@@ -1,0 +1,388 @@
+---
+slug: 2023-4q-summary
+title: 第4四半期のご案内
+authors: ysj
+date: 2023-12-31T15:20
+toc_max_heading_level: 2
+tags:
+  - 新しい機能
+  - 2023
+---
+
+WhaTapの2023年第4四半期のサービス新規機能および注目すべき変更事項の概要をご案内します。 WhaTapが新たに提供する機能を一目でご覧ください。
+
+<ImgLang img='changelog/changelog-new3.png' desc='新しい機能' />
+
+{/* truncate */}
+
+<div class ='faq'>
+
+| **共通** |
+| ------ |
+
+> - **WhaTapモバイルアプリ**を新たに発売しました。
+> - 利便性向上のために<Cmdname sid="platform_catalog" className="uitext" />および一部メニューの画面を改善しました。 
+> - <Cmdname sid="side_maintenancePlan" className="uitext" />メニュー<code class="my">V2</code>を提供します。
+
+{/* > * <Cmdname sid="side_paymentInformation" className="uitext" /> 및 <Cmdname sid="side_agentSetting" className="uitext" /> 메뉴 등의 화면이 개선되었습니다. */}
+
+| **Application** |
+| --------------- |
+
+> - <Cmdname sid="TTL06209" className="uitext" />機能が改編されました。
+> - <Cmdname sid="side_dashboard" className="uitext" />がプリセット方式に改編されました。
+
+| **Server** |
+| ---------- |
+
+> <Cmdname sid="event_tag" className="uitext" />オプションを提供します。
+
+| **Kubernetes** |
+| -------------- |
+
+> - <Cmdname sid="side_containerMap" className="uitext" />メニュー画面を改善しました。
+> - <Cmdname sid="side_resource" className="uitext" />下位一覧メニューが追加されました。
+
+{/* > * 통합 컨테이너 맵
+
+> - 메뉴 간 동선 개편 */}
+
+| **Database** |
+| ------------ |
+
+> `PostgreSQL`と`MySQL`製品<code class="my">V2</code>正式転換および該当<code class="my">V2</code>サービスの改善が行われました。 
+
+| **Browser** |
+| ----------- |
+
+> <Cmdname sid="side_ajaxAnalytics" className="uitext" />メニューを提供します。
+
+{/* 
+|**Network**|
+|---|
+
+> **ネットワークパフォーマンスモニタリング**(Network Performance Monitoring) 製品**ベータ**サービスが発売されました。  */}
+
+</div>
+
+商品別の新規機能以外の変更事項の概要および当該リリースバージョン、エージェントの変更事項は、次の案内で確認できます。
+
+<br/>
+<br/>
+
+## `共通`
+
+WhaTap2023年第4四半期`共通`部分の注目すべき新規機能および変更事項でWhaTap**モバイルアプリ**の発売、画面改善事項および整備計画<code class="my">V2</code>提供についてご紹介します。
+
+今回の第4四半期にWhaTap**モバイルアプリ**が新しく発売されました。 アプリを通じてWhaTapモニタリングサービスの<Cmdname sid="side_dashboard" className="uitext" />主要チャートを確認したり、リアルタイムで通知を受信できます。 また、OTP機能を活用してログイン時に2次認証ツールとして活用できます。 今後のアップデートにより、サポート範囲を拡大する予定です。
+
+![モバイルアプリsc cl](/img/changelog/changelog-mobile-app.png)
+
+より良いユーザーエクスペリエンスと利便性を向上させるために、サービス画面を改善しました。 WhaTapモニタリングサービスの定期リリースのニュースや緊急点検などが確認できる**サービスのお知らせ**機能が追加され、商品カタログ画面が改編され、サイドバーメニューで商品紹介情報が確認できます。 
+
+その他<Cmdname sid="side_paymentInformation" className="uitext" />および<Cmdname sid="side_agentSetting" className="uitext" />など一部のメニュー画面も改善しました。 <Cmdname sid="side_paymentInformation" className="uitext" />メニューの場合、支払い情報の入力時に通貨の選択を提供します。 <Cmdname sid="side_agentSetting" className="uitext" />メニューの場合、オプションの一覧を簡素化して可読性を高め、オプション作成時に適用された最終オプション項目だけが見えるように変更されました。
+
+既存<Cmdname sid="side_maintenancePlan" className="uitext" />を改編した新規<Cmdname sid="side_maintenancePlan" className="uitext" /> <code class="my">V2</code>を提供します。 新規<Cmdname sid="side_maintenancePlan" className="uitext" />を通じて、エージェントごとに整備計画を追加でき、サーバープロジェクトでも繰り返しオプションを使用できます。 ただし、既存の整備計画と新規整備計画は互換性がありません。 
+
+![メンテナンス計画sc cl](/img/changelog/changelog-maintenance-plan.png)
+
+次の概要案内を通じて、2023年第4四半期の共通部分の新規機能および主要変更事項を該当リリースバージョンと共に確認してみてください。
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Common_23q4 from "../crw-data/crwld-service-23q4/_import-23q4-service-Common.mdx";
+
+<Common_23q4 />
+
+</details>
+
+:::note 
+
+- モバイルアプリについての詳細は、[次の文書](../../mobile-app)を参照してください。 リンクを選択するか、QRコードをスキャンしてモバイルアプリをダウンロードしてください。
+
+  | [iOS](https://apps.apple.com/us/app/whatap-mobile/id6450067434) | [Android](https://play.google.com/store/apps/details?id=io.whatap.lion) |
+  | :-------------------------------------------------------------: | :---------------------------------------------------------------------: |
+  |              ![QR](/img/mobile/whatap-app-ios.png)              |                ![QR](/img/mobile/whatap-app-android.png)                |
+
+- 新規<Cmdname sid="side_maintenancePlan" className="uitext" />についての詳細は、[次の文書](https://docs.whatap.io/management/maintenance#maintenance-v2)を参照してください。 
+
+:::
+
+<br/>
+
+## `Applicatoin`
+
+WhaTap2023年第4四半期`Application`製品群の注目すべき新機能と変更事項により<Cmdname sid="hitmap" className="uitext" />および<Cmdname sid="side_dashboard" className="uitext" />高度化についてご紹介します。 
+
+<Cmdname sid="hitmap" className="uitext" />高度化作業の一環として、<Cmdname sid="hitmap" className="uitext" />ドラッグの時に<Cmdname sid="TTL06209" className="uitext" />画面が改編されました。 <Cmdname sid="multi_transaction" className="uitext" />タブにプロジェクトフィルター機能が追加され、また***トランザクションログ***タブでログデータが照会されない場合、状況に合わせて案内メッセージを出力します。 例えば、ログデータがない場合、エージェントの未設定で収集ができなかった場合、ログが非アクティブになっている場合をそれぞれ確認できます。
+
+<Cmdname sid="application_dashboard" className="uitext" />を改編しました。 時間選択者オプションが追加され、リアルタイムだけでなく**過去データ**を照会できます。 そして、ダッシュボード内のユーザーは好きなようにウィジェットを追加と削除でき、サイズも調整できます。 編集したウィジェットの位置、サイズ、レイアウトを保存して読み込める**プリセット**機能が追加されました。
+
+|                      過去のデータ照会                      |
+| :------------------------------------------------: |
+|      ![](/img/release/none-realtime-mode.png)      |
+|                  **ダッシュボードのプリセット**                 |
+| ![](/img/release/apm-dashboard-preset-feature.png) |
+
+また、一部のアプリケーション重複メトリクスの名称について、統一化および標準化作業が行われました。 例えばURL、トランザクション、トランザクション名で使用されていたメトリクス名を<Cmdname sid="side_tx" className="uitext" />に統一しました。 また、既存のHTTPC、HTTP呼び出し、HTTPC件数などで使用されていたメトリクス名を<Cmdname sid="httpc_count" className="uitext" />に統一しました。 その他にも多数全般的な用語標準化が行われました。 
+
+以下の概要案内により、2023年第4四半期`Application`製品群の新規機能および主要変更事項を当該リリースバージョンと共に確認してみてください。 
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Applicatoin_23q4 from "../crw-data/crwld-service-23q4/_import-23q4-service-Application.mdx";
+
+<Applicatoin_23q4 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>エージェントガイド</b></summary>
+
+### `Java`
+
+import Java_agent_23q4 from "../crw-data/crwld-agent-23/_import-agent-23q4-java.mdx";
+
+<Java_agent_23q4 />
+
+{/* ### `PHP`
+
+import PHP_agent_23q4 from "../crw-data/crwld-agent-23/_import-agent-23q4-php.mdx";
+
+<PHP_agent_23q4 />
+
+### `Python`
+
+import Python_agent_23q4 from "../crw-data/crwld-agent-23/_import-agent-23q4-python.mdx";
+
+<Python_agent_23q4 /> */}
+
+### `Node.js`
+
+import Node_agent_23q4 from "../crw-data/crwld-agent-23/_import-agent-23q4-nodejs.mdx";
+
+<Node_agent_23q4 />
+
+### `.NET`
+
+import DOTNET_agent_23q4 from "../crw-data/crwld-agent-23/_import-agent-23q4-dotnet.mdx";
+
+<DOTNET_agent_23q4 />
+
+{/* ### `Go`
+
+import Go_agent_23q4 from "../crw-data/crwld-agent-23/_import-agent-23q4-golang.mdx";
+
+<Go_agent_23q4 /> */}
+
+</details>
+
+<br/>
+
+## `Server`
+
+WhaTap2023年第4四半期`Server`製品の注目すべき新機能と変更事項により<Cmdname sid="side_serverDetail" className="uitext" />および<Cmdname sid="side_eventSetting" className="uitext" />メニューの改善点をご紹介します。
+
+<Cmdname sid="side_serverDetail" className="uitext" />メニューでチャート内のx軸表示単位を時間ベースに変更し、日付ベースビューの可読性を高めました。
+
+<Cmdname sid="side_eventSetting" className="uitext" />メニュー内のサーバーやプロセスイベントにプロジェクト特定メンバーまたはチームを対象に、通知受信可否を設定できる<Cmdname sid="event_tag" className="uitext" />オプションが追加されました。 また、基本通知名を修正できるようになり、基本通知の場合、`基本`タグを別途表示します。
+
+以下の概要案内により、2023年第4四半期`Server`製品の新規機能および主な変更事項を当該リリースバージョンと一緒に確認してみてください。 
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Server_23q4 from "../crw-data/crwld-service-23q4/_import-23q4-service-Server.mdx";
+
+<Server_23q4 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>エージェントガイド</b></summary>
+
+import Server_agent_23q4 from "../crw-data/crwld-agent-23/_import-agent-23q4-server.mdx";
+
+<Server_agent_23q4 />
+
+</details>
+
+<br/>
+
+## `Kubernetes`
+
+WhaTap2023年第4四半期`Kubernetes`商品の注目すべき新機能と変更事項により<Cmdname sid="side_containerMap" className="uitext" />改善および追加された<Cmdname sid="side_resource" className="uitext" />下位一覧メニューについて紹介します。 
+
+{/* 와탭 쿠버네티스 모니터링 상품의 경우 통합 컨테이너 맵 개발 및 메뉴 간 동선 개편 */}
+
+WhaTapのKubernetesモニタリングの<Cmdname sid="side_containerMap" className="uitext" />は、継続的に高度化作業が行われています。 この第4四半期には、詳細表示の画面でコンテナ上で実行中のアプリケーションの呼び出しの流れと外部呼び出しの状態を確認できる<Cmdname sid="TTL06891" className="uitext" />タブが新たに追加されました。 
+
+<ImgLang img='k8s-container-map-call-info-app.png' desc='App 呼び出しフローチャート分岐の例' />
+
+また、コンテナとPodビューの両方は、ブロックカラー表示のメトリクスにアプリケーションと関連したフィールド一覧を表示(`app_counter`)を選択できます。 そして、1分間消えたコンテナおよびPodのブロックを表示する機能が追加されました。 
+
+それだけでなく<Cmdname sid="side_resource" className="uitext" />下位の一覧メニューが改編および新たに追加されました。 <Cmdname sid="side_nodeList" className="uitext" />メニューには、ノード情報メトリクス、フィルター検索機能が追加されました。 また、時間更新間隔が1分から10秒に変更されました。 クラスターに関するバージョン情報や各種オブジェクト情報を一目で確認できる<Cmdname sid="side_clusterOverview" className="uitext" />メニューが新たに追加されました。 
+
+新たにネームスペースプロジェクトの<Cmdname sid="side_lab" className="uitext" />に<Cmdname sid="pendingPod" className="uitext" />メニューが追加されました。 <Cmdname sid="pendingPod" className="uitext" />メニューは、Pending状態に置かれたPodを素早く把握するための実験機能です。 
+
+以下の概要案内により、2023年第4四半期`Kubernetes`製品の新規機能および主な変更事項を当該リリースバージョンと一緒に確認してみてください。 
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Kubernetes_23q4 from "../crw-data/crwld-service-23q4/_import-23q4-service-Kubernetes.mdx";
+
+<Kubernetes_23q4 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>エージェントガイド</b></summary>
+
+#### <code class='changelog-service'>Kubernetes Agent v1.3.8</code> <code class='changelog-date'>2023年10月04日</code>
+
+- <Status>Feature</Status>Pod一覧の機能開発のためのデータ追加収集(podIp, age, restartCount)
+
+#### <code class='changelog-service'>Kubernetes Agent v1.4.1</code> <code class='changelog-date'>2023年11月08日</code>
+
+- <Status>Feature</Status>Kubernetesのクラスター情報の追加
+
+#### <code class='changelog-service'>Kubernetes Agent v1.4.2</code> <code class='changelog-date'>2023年11月16日</code>
+
+- <Status>Feature</Status><code>kube_pod</code>カテゴリに収集データを追加
+
+  - <code>qosClass</code>: Podに対するサービス品質
+  - <code>startTime</code>: Pod開始時刻
+  - <code>podHash</code>: Pod名のハッシュ値
+  - <code>con_cpu_limit_total</code>: Pod内部コンテナのcpu limitの合計
+  - <code>con_mem_alloc_fail_total_count</code>: Pod内部コンテナのmemory割り当て失敗数の合計
+
+</details>
+
+<br/>
+
+## `Database`
+
+WhaTap2023年第4四半期`Database`製品群の注目すべき新機能と変更点を次のように紹介します。 
+
+この第4四半期に`Database`製品群のうち**PostgreSQL**と**MySQL**製品<code class="my">V2</code>サービスが、正式サービスに切り替えられました。 そして既存**MS SQL Server**商品の名前を**SQL Server**に変更しました。
+{/* 먼저 **PostgreSQL**에 뒤이어 이번 4분기에 `Database` 상품군 중 **MySQL** 상품 <code class="my">V2</code> 서비스가 정식 서비스로 전환되었습니다. そして既存**MS SQL Server**商品の名前を**SQL Server**に変更しました。  */}
+
+`Database`製品群の共通でユーザー利便性向上のため<Cmdname sid="TTL06224" className="uitext" />メニュー画面のUIが改善されました。 クエリー照会領域とPlan照会領域の配置をユーザーが修正でき、パラメータバインドを基本的に実行するように変更されました。 また<Cmdname sid="side_dbMonitoring" className="uitext" />および<Cmdname sid="side_multiInstance" className="uitext" />メニューでアクティブセッションテーブルを閉じてグラフチャートをより広く確認できます。
+
+以下の概要案内により、2023年第4四半期`Database`製品群の新規機能および主要変更事項を当該リリースバージョンと一緒に確認してみてください。 
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Database_23q4 from "../crw-data/crwld-service-23q4/_import-23q4-service-Database.mdx";
+
+<Database_23q4 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>エージェントガイド</b></summary>
+
+#### DBX
+
+import DBX_agent_23q4 from "../crw-data/crwld-agent-23/_import-agent-23q4-dbx.mdx";
+
+<DBX_agent_23q4 />
+
+#### XOS
+
+import XOS_agent_23q4 from "../crw-data/crwld-agent-23/_import-agent-23q4-xos.mdx";
+
+<XOS_agent_23q4 />
+
+</details>
+
+<br/>
+
+## `URL`
+
+WhaTap2023年第4四半期`URL`製品の場合、モニタリングデータを収集する間隔を選択できるUIが新たに追加されました。 
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import URL_23q4 from "../crw-data/crwld-service-23q4/_import-23q4-service-URL.mdx";
+
+<URL_23q4 />
+
+</details>
+
+<br/>
+
+## `Browser`
+
+WhaTap2023年第4四半期`Browser` 製品の注目すべき新機能として<Cmdname sid="side_ajaxAnalytics" className="uitext" />をご紹介します。
+
+Asynchronous JavaScript and XML(**AJAX**)は非同期方式でデータを交換し、ウェブページを更新する技術です。 ユーザーエクスペリエンスを改善し、サーバーへの要求を減らすメリットを持つAJAXはJavaScriptコードで実装されるため、モニタリングが必要です。 
+
+WhaTapの`Browser`モニタリングが提供する<Cmdname sid="side_ajaxAnalytics" className="uitext" />メニューを通じて、時間に応じたAJAXイベントの応答時間をヒットマップチャートで確認でき、各イベント区間別の詳細時間情報、AJAX要請URLと呼び出しページ情報、エラーメッセージとステータスコードなどの詳細情報を照会できます。 
+
+![Ajaxヒットマップsc cl](/img/changelog/changelog-browser-ajax.png)
+
+以下の概要案内により、2023年第4四半期`Browser`商品の新規機能および主な変更事項を当該リリースバージョンと一緒に確認してみてください。 
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Browser_23q4 from "../crw-data/crwld-service-23q4/_import-23q4-service-Browser.mdx";
+
+<Browser_23q4 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>エージェントガイド</b></summary>
+
+import Browser_agent_23q4 from "../crw-data/crwld-agent-23/_import-agent-23q4-browser.mdx";
+
+<Browser_agent_23q4 />
+
+</details>
+
+<br/>
+
+## `Cloud`
+
+WhaTap2023年第4四半期`Cloud`商品の場合、プロジェクト内でユーザーが行う相互作用を検知し、ユーザーの行動に対する洞察を提供する<Cmdname sid="side_userBehavior" className="uitext" />メニューが新たに追加されました。 
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Cloud_23q4 from "../crw-data/crwld-service-23q4/_import-23q4-service-Cloud.mdx";
+
+<Cloud_23q4 />
+
+</details>
+
+<br/>
+
+## `Log`
+
+WhaTap2023年第4四半期`Log`製品の注目すべき新機能および変更点を次のように紹介します。
+
+<Cmdname sid="side_logSearch" className="uitext" />メニューでログ検索フィルター文法を案内する**ガイドUI**が追加されました。 ガイドUIを通じて検索値を入力する時、対応する検索文法を確認できます。
+
+<ImgLang img='log-filter-ui1.png' desc='ログフィルタcl分岐の例'/>
+
+そして、タイムスタンプとログだけを確認できるように全体画面の切り替え機能が追加され、ログ1次パーサー設定のタブでパーサー追加時に、ログ検出条件の検索値入力後、予約語に対するアクティブ性検証が追加されました。 
+
+以下の概要案内により、2023年第4四半期`Log`製品の新規機能および主な変更事項を当該リリースバージョンと一緒に確認してみてください。 
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Log_23q4 from "../crw-data/crwld-service-23q4/_import-23q4-service-Log.mdx";
+
+<Log_23q4 />
+
+</details>
+
+<br/>

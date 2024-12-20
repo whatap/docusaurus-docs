@@ -16,37 +16,15 @@ Home &gt; Select Project &gt; <Cmdname sid="side_cluster" className="uitext" /> 
 
 **Requirements**
 
-- The Kubernetes cluster project (<code class='my'>CP</code>) requires the **Read role**.
-
 - The WhaTap Kubernetes agent 1.7.11 or later is required. Timeline data is provided from the time point collected in version 1.7.11 or later. It reflects the data collected after update of the agent.
 
-  {/* 
-
-  The timeline displays the data collected in version 1.7.11 or later.
-
-  > For example, if a node was created at 9:00 and the agent was updated at 9:15, it is displayed on the timeline from 9:15. 
-
-  */}
+- If it is a Kubernetes cluster project (<code class='my'>CP</code>), you can view the corresponding menu.
 
 :::
-
-{/* 
-
-In <Cmdname sid="side_nodeTimeline" className="uitext" />, you can trace node status over time. Through this, you can determine when a disappeared node was removed and what state the node was in at that time.
-
-*/}
 
 The <Cmdname sid="side_nodeTimeline" className="uitext" /> menu provides the feature to trace changes in node state over time. Through this, you can visually identify when a disappeared node was removed and what state the node was in at that time. It is useful for analyzing issues that occurred during cluster operation or checking the past situations.
 
 ## Basic screen guide
-
-{/* 
-
-When you enter the <Cmdname sid="side_nodeTimeline" className="uitext" /> menu, a list of nodes collected over the past 7 days is displayed as follows.
-
-- If you hover your mouse over the timeline, the start and end times for the section appears together with the node status.  
-
-*/}
 
 When you enter the <Cmdname sid="side_nodeTimeline" className="uitext" /> menu, a list of nodes collected over the past 7 days is displayed as follows. You can visually see the state changes of nodes along the time axis. If you hover your mouse over each time zone, the start and end times for the zone appears as tooltips together with the node's status (***Ready***, ***NotReady***, etc.).
 
@@ -55,14 +33,6 @@ When you enter the <Cmdname sid="side_nodeTimeline" className="uitext" /> menu, 
 You can adjust the time range by dragging the zone on the timeline. Set a desired period to check the past data. 
 
 <ImgLang img='k8s-node-timeline-drag.png' />
-
-{/* 
-
-If you select a specific period on the timeline, you can see the node status during the period in detail through ***Display Detail***. You can adjust the time range by dragging the zone. Set a desired period to check the past data. For more information, see the detailed guidance below.  
-
-<ImgLang img='k8s-node-timeline-drag.gif' />
-
-*/}
 
 Additionally, when you select a specific period, you can check the node status during the period in detail through **Display Detail**. For more information, see the [Node timeline detail](#node-timeline-details) guidance. 
 
@@ -81,8 +51,6 @@ Node timeline details can be checked by selecting a specific zone or node as fol
 - You can view detailed information of a node at the time point through the **Display Detail** window on the right by selecting a zone to view. 
 
 - You can select a node name to view from the list on the left of the chart and view the overall status of the node during the query period through the **Display Detail** window on the right. 
-
-{/* 노드 이름을 선택하여 오른쪽 **상세 보기** 창을 통해 해당 노드의 전체 상태를 볼 수 있습니다. You can visually see the status changes from the node creation to the present. */}
 
 ### <Cmdname sid="TTL08441" className="uitext" type="node" />
 
@@ -126,12 +94,6 @@ It provides a summary of the node configuration and overall resource usage selec
 
 :::
 
-{/* <Cmdname sid="TTL08441" className="uitext" type="node" /> 탭에서 노드가 해당 시간 구간에서 어떤 상태였는지 요약 정보를 제공합니다. You can check the overall resource usage along with the operating status of the node. If you click CPU, memory, disk, or network, the <Cmdname sid="metrics" className="uitext" /> tab appears that can display the usage trend for the query period.  */}
-
-{/* \* ***AVG***: 조회 기간 동안 평균 사용량을 확인할 수 있습니다. 
-
-- ***MAX***: You can check the maximum usage during the query period.  */}
-
 ### <Cmdname sid="resource" className="uitext" />
 
 <Cmdname sid="resource" className="uitext" /> In the tab, you can see the list of ***Pods*** scheduled on the selected node and the ***containers*** and ***applications*** running in those Pods. The information appears reflecting 1 minute of resource data as of the end of the selected time zone. This allows you to more clearly identify the node status at the time point and the operation status of each Pod, container, and application.
@@ -143,8 +105,6 @@ It provides a summary of the node configuration and overall resource usage selec
 You can check the resource usage trend of the node select in the <Cmdname sid="metrics" className="uitext" /> tab. You can see the usage changes in ***CPU***, ***memory***, ***network***, and ***disk*** based on the average (***AVG***) and maximum (***MAX***) values during the query period.
 
 <ImgLang img='k8s-node-timeline-metrics.png' />
-
-{/* 이러한 데이터를 통해 특정 기간 동안 발생한 자원 사용 패턴을 분석하고, 이상 징후를 파악할 수 있습니다. */}
 
 - ***AVG***: Average usage for the query period.
 

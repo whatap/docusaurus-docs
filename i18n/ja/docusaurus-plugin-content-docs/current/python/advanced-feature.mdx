@@ -32,6 +32,41 @@ object_name default: {type}-{ip2}-{ip3}-{process}
 | process  | app_process_name         |
 | hostname | ホスト名                     |
 
+## OpenFile Descriptorの使用量収集{#open-file-descriptor-usage-collection}
+
+Python WebアプリケーションでOpen File Descriptorの使用量をモニタリングすることは、システムリソース管理に不可欠です。ファイルディスクリプターは、システムで同時に表示できるファイルの数を制限する重要なリソースであるため、使用量が限界に達すると、アプリケーションで新しいファイルを表示できなくなり、エラーが発生する可能性があります。これらの問題は、特にマルチスレッドおよびマルチプロセス環境で頻繁に発生します。
+
+また、ファイルディスクリプターのリーク発生時、資源枯渇によりシステム性能が低下し、安定性が損なわれる可能性があります。この機能は、ファイルディスクリプターの使用量をモニタリングして使用量の高い時点を把握し、必要に応じてファイルディスクリプターの限界を増加させたり、リークを解決するのに役立ちます。
+
+:::note 
+
+**要求事項**
+
+WhaTap Pythonエージェント1.7.2バージョン以降が必要です。 
+
+:::
+
+### 活性化オプション
+
+次の例を参照して*whatap.conf*ファイルを修正します。 
+
+```ini
+#収集機能on/off設定
+open_file_descriptor_enabled=true
+
+#収集の周期設定で省略時、規定値60秒
+open_file_descriptor_interval=60
+```
+
+### 収集メトリクス
+
+| 名前                   | 説明                               |
+| -------------------- | -------------------------------- |
+| `current_nofile_pct` | 現在のOpen File Descriptor使用量比率(%)  |
+| `currnet_nofile`     | 現在のOpen File Descriptorの個数       |
+| `max_nofile`         | プロセスの最大Open File Descriptorの許容個数 |
+| `pid`                | プロセスID                           |
+
 ## AES256暗号化の適用
 
 WhaTapアプリケーションモニタリングエージェントは、収集されたデータを暗号化し、サーバーに送信します。データの重要度や設定に応じて変更できます。  

@@ -1,6 +1,8 @@
 Some metrics collected by Kubernetes are the same as those of server and application monitoring.
 
-### Container(`container`) metric {#container}
+<div class="metricslist-k8s">
+
+## Container(`container`) metric {#container}
 
 The `container` category collects all custom labels set on the container's pods as tags.
 
@@ -8,7 +10,7 @@ The `container` category collects all custom labels set on the container's pods 
 - Collection interval: 5 seconds
 - Statistical data: 5 minutes
 
-#### Tags {#container-tags}
+### Tags {#container-tags}
 
 | Tag name         | Description                                                                       |   Remarks    |
 | ---------------- | --------------------------------------------------------------------------------- | :----------: |
@@ -37,7 +39,7 @@ The `container` category collects all custom labels set on the container's pods 
 | replicaSetName   | Name of the container's replica set                                               |       -      |
 | whatap_project   | Name of the WhaTap project to which the container belongs                         |       -      |
 
-#### Fields {#container-fields}
+### Fields {#container-fields}
 
 | Field name              | Unit            | Shortname, Name, Description                                                                                                                                   |
 | ----------------------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -169,7 +171,7 @@ The `container` category collects all custom labels set on the container's pods 
 | ^                       | ^               | Container Current Status                                                                                                                                       |
 | ^                       | ^               | Container State Information<br/>① running: Displays the uptime information<br/>② waiting/terminated: Displays the reason of the state                          |
 
-### Kubernetes node (`kube_node`) metric {#kube_node}
+## Kubernetes node (`kube_node`) metric {#kube_node}
 
 The `kube_node` category collects all custom labels set on the node as tags.
 
@@ -177,13 +179,13 @@ The `kube_node` category collects all custom labels set on the node as tags.
 - Collection interval: 5 seconds
 - Statistical data: 5 minutes, 1 hour
 
-#### Tags {#kube_node-tags}
+### Tags {#kube_node-tags}
 
 | Tag name   | Description      | Remarks |
 | ---------- | ---------------- | ------- |
 | nodeName   | Node name        | -       |
 
-#### Fields {#kube_node-fields}
+### Fields {#kube_node-fields}
 
 | Field name             | Unit                 | Description                                   | Remarks |
 | ---------------------- | -------------------- | --------------------------------------------- | ------- |
@@ -196,7 +198,7 @@ The `kube_node` category collects all custom labels set on the node as tags.
 | request_cpu            | Millicore            | Sum of node CPU requests                      | -       |
 | request_memory         | Byte                 | Sum of node memory requests                   | -       |
 
-### Kubernetes event (`kube_event`) metric {#kube_event}
+## Kubernetes event (`kube_event`) metric {#kube_event}
 
 The `kube_event` category collects cluster-wide data for cluster projects, and collects data only for events that occurred in the namespace for namespace projects.
 
@@ -204,7 +206,7 @@ The `kube_event` category collects cluster-wide data for cluster projects, and c
 - Collection interval: 5 seconds
 - Statistical data: 5 minutes, 1 hour
 
-#### Tags {#kube_event-tags}
+### Tags {#kube_event-tags}
 
 | Tag name     | Description              | Remarks                                            |
 | ------------ | ------------------------ | -------------------------------------------------- |
@@ -216,7 +218,7 @@ The `kube_event` category collects cluster-wide data for cluster projects, and c
 | type         | Event type               | Warning or normal                                  |
 | uid          | UID                      | Object on which the event occurred                 |
 
-#### Fields {#kube_event-fields}
+### Fields {#kube_event-fields}
 
 | Field name                    | Unit              | Description                              | Remarks |
 | ----------------------------- | ----------------- | ---------------------------------------- | ------- |
@@ -231,7 +233,7 @@ The `kube_event` category collects cluster-wide data for cluster projects, and c
 | reporting_instance            | String            | Instance that reports the current event  | -       |
 | series_last_observed_time     | Positive number   | Series last observed time                | -       |
 
-### Kubernetes Cluster (`kube_stat`) metric {#kube_stat}
+## Kubernetes Cluster (`kube_stat`) metric {#kube_stat}
 
 The `kube_stat` category collects all the clusters for the cluster project, and the namespace projects collects objects associated with the namespace.
 
@@ -239,13 +241,13 @@ The `kube_stat` category collects all the clusters for the cluster project, and 
 - Collection interval: 5 seconds
 - Statistical data: 5 minutes, 1 hour
 
-#### Tags {#kube_stat-tags}
+### Tags {#kube_stat-tags}
 
 | Tag name | Description      | Remarks     |
 | -------- | ---------------- | ----------- |
 | name     | kube_stat        | Fixed value |
 
-#### Fields {#kube_stat-fields}
+### Fields {#kube_stat-fields}
 
 | Field name                       | Unit                 | Description                                                                                                                                                             | Remarks                   |
 | -------------------------------- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
@@ -272,7 +274,7 @@ The `kube_stat` category collects all the clusters for the cluster project, and 
 | unavailable_pod                  | Positive number      | Number of pods whose phase is not in Running state (Pending, Failed, Succedded)                                                                                         | -                         |
 | waiting_containers               | Positive number      | Waiting container count                                                                                                                                                 | -                         |
 
-### Pod (`kube_pod`) metric {#kube_pod}
+## Pod (`kube_pod`) metric {#kube_pod}
 
 The `kube_pod` category collects all custom labels set on the Pod as tags.
 
@@ -280,7 +282,7 @@ The `kube_pod` category collects all custom labels set on the Pod as tags.
 - Collection interval: 5 seconds
 - Statistical data: 5 minutes
 
-#### Tags {#kube_pod-tags}
+### Tags {#kube_pod-tags}
 
 | Tag name             | Description                                                                                        | Remarks      |
 | -------------------- | -------------------------------------------------------------------------------------------------- | ------------ |
@@ -307,7 +309,7 @@ The `kube_pod` category collects all custom labels set on the Pod as tags.
 | replicaSetName       | ReplicaSet name of the Pod                                                                         | -            |
 | whatap_project       | Name of the WhaTap project to which the Pod belongs                                                | -            |
 
-#### Fields {#kube_pod-fields}
+### Fields {#kube_pod-fields}
 
 | Field name           | Unit       | (Shortname, Name, Description)                                                                                                                    |
 | -------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -327,8 +329,8 @@ The `kube_pod` category collects all custom labels set on the Pod as tags.
 | ^                    | ^          | Pod CPU Usage by Limit (%)                                                                                                                        |
 | ^                    | ^          | Container CPU utilization by limit                                                                                                                |
 | cpu_per_request      | Percent    | CpuByRequest                                                                                                                                      |
-| ^                    | ^          | Pod CPU Usage by Limit (%)                                                                                                                        |
-| ^                    | ^          | Container CPU utilization by limit                                                                                                                |
+| ^                    | ^          | Pod CPU Usage by Request (%)                                                                                                                      |
+| ^                    | ^          | Total CPU utilization based on the CPU requests                                                                                                   |
 | cpu_quota_percent    | Percent    | CpuLimitByNode                                                                                                                                    |
 | ^                    | ^          | Pod CPU Limit by Node (%)                                                                                                                         |
 | ^                    | ^          | Pod CPU limit quota against node CPU<br/>If the limit is not set, the total CPU cores of the node where the Pod is running appears in percentage. |
@@ -436,7 +438,7 @@ The following fields are reserved for internal use.
 | sless_info               | Number of events that are not informative in the metric      | -       |
 | sless_warning            | Number of events that are not for warning in the metric      | -       |
 
-### Kubernetes Pod Statistics (`kube_pod_stat`) metric {#kube_pod_stat}
+## Kubernetes Pod Statistics (`kube_pod_stat`) metric {#kube_pod_stat}
 
 The `kube_pod_stat` category cluster project collects data for all clusters, and the namespace project collects data only for pods that belong to the namespace.
 
@@ -444,14 +446,14 @@ The `kube_pod_stat` category cluster project collects data for all clusters, and
 - Collection interval: 5 seconds
 - Statistical data: 5 minutes, 1 hour
 
-#### Tags {#kube_pod_stat-tags}
+### Tags {#kube_pod_stat-tags}
 
 | Tag name | Description              | Remarks                                                                                                                   |
 | -------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
 | kind     | Type                     | The cluster project has cluster as the fixed value, and the namespace projects collect only for Deployment or ReplicaSet. |
 | name     | Kubernetes resource name | The cluster project has no name value and the namespace projects have the name for Deployment or ReplicaSet.              |
 
-#### Fields {#kube_pod_stat-fields}
+### Fields {#kube_pod_stat-fields}
 
 | Field name            | Unit                 | Description                                                                                                                                                             | Remarks |
 | --------------------- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
@@ -466,7 +468,7 @@ The `kube_pod_stat` category cluster project collects data for all clusters, and
 | stopped_container     | Positive number      | Stopped Container Count                                                                                                                                                 | -       |
 | waiting_container     | Positive number      | Waiting container count                                                                                                                                                 | -       |
 
-### Kubernetes Horizontal Pod Autoscaler (HPA) (`kube_hpa_stat`) metric {#kube_hpa_stat}
+## Kubernetes Horizontal Pod Autoscaler (HPA) (`kube_hpa_stat`) metric {#kube_hpa_stat}
 
 Metric collection starts only when HPA is added to the ClusterRole used by WhaTap.
 
@@ -474,13 +476,13 @@ Metric collection starts only when HPA is added to the ClusterRole used by WhaTa
 - Collection interval: 5 seconds
 - Statistical data: 5 minutes, 1 hour
 
-#### Tags {#kube_hpa_stat-tags}
+### Tags {#kube_hpa_stat-tags}
 
 | Tag name | Description     | Remarks |
 | -------- | --------------- | ------- |
 | name     | HPA name        | -       |
 
-#### Fields {#kube_hpa_stat-fields}
+### Fields {#kube_hpa_stat-fields}
 
 | Field name                | Unit                 | Description                                 | Remarks |
 | ------------------------- | -------------------- | ------------------------------------------- | ------- |
@@ -489,3 +491,126 @@ Metric collection starts only when HPA is added to the ClusterRole used by WhaTa
 | lastScaleTime             | Positive number      | Last scaled TimeStamp                       | -       |
 | maxReplicas               | Positive number      | Maximum Replica Count                       | -       |
 | minReplicas               | Positive number      | Minimum Replica Count                       | -       |
+
+## Process (`kube_process`) metrics {#kube_process}
+
+:::note 
+
+Kubernetes agent 1.7.12 or later is required. For more information about agent updates, see [the following](agent-update). 
+
+:::
+
+Kubernetes-related processes that exist in the node are collected during monitoring. 
+
+- Target: Cluster project, Namespace project 
+
+- Collection interval: 5 seconds 
+
+- Statistical data: 5 minutes 
+
+### Tags {#kube_process_stat-tags}
+
+| Tag name   | Description                               | Type      | Remarks                                                  |
+| ---------- | ----------------------------------------- | --------- | -------------------------------------------------------- |
+| ppid       | Parent process ID                         | String    | /proc/[pid]/status::PPid                                 |
+| pid        | Process ID                                | String    | /proc/[pid]/status::Pid                                  |
+| cmd1       | Command name                              | String    | /proc/[pid]/status::Name                                 |
+| cmd2       | Command line (full command and arguments) | String    | /proc/[pid]/cmdline                                      |
+| user       | User ID or username                       | String    | /proc/[pid]/status::Uid                                  |
+| onodeName  | Node name of the process                  | String    | Environment variable of the container system (`NODE_IP`) |
+| createTime | Process start time                        | Timestamp | Field calculated through /proc/uptime                    |
+
+### Fields {#kube_process_stat-fields}
+
+| Field name          | Description                                    | Unit        | Type   | Remarks                                    |
+| ------------------- | ---------------------------------------------- | ----------- | ------ | ------------------------------------------ |
+| cpu                 | CPU Utilization                                | Percent (%) | float  | Field calculated through /proc/[pid]/stat  |
+| memory              | Memory utilization                             | Percent (%) | float  | Field calculated through /proc/[pid]/statm |
+| rss                 | Actual memory usage (Resident Set Size)        | Byte (B)    | long   | /proc/[pid]/status::VmRSS                  |
+| uid                 | User ID or username                            | -           | String | /proc/[pid]/status::Uid                    |
+| state               | Process status                                 | -           | String | /proc/[pid]/status::State                  |
+| SharedMemory        | Shared memory size                             | Byte (B)    | long   | Field calculated through /proc/[pid]/statm |
+| openFileDescriptors | Number of file descriptors open by the process | -           | int    | Field calculated through /proc/[pid]/fd    |
+| vmSize              | Virtual memory size                            | Byte (B)    | long   | /proc/[pid]/status의 VmSize                 |
+| threads             | Number of threads created by the process       | -           | int    | /proc/[pid]/status의 Threads                |
+
+#### Linux process status in the Kubernetes environment
+
+On Linux, the `State` field in the _/proc/[pid]/status_ file displays the current state of the process. The meanings of each status are as follows:
+
+| Code             | Description         | Description detail                                                                                    |
+| ---------------- | ------------------- | ----------------------------------------------------------------------------------------------------- |
+| R (Running)      | Running             | The process is running or ready to run.                                                               |
+| S (Sleeping)     | Waiting             | Interruptible sleep state, waiting for an event.                                                      |
+| D (Disk Sleep)   | Disk sleeping       | Non-interruptible sleep state, waiting for an I/O operation.                                          |
+| R (Zombie)       | Zombie state        | The process has been terminated, but the parent process has not yet collected its termination status. |
+| T (Stopped)      | Stopped             | The process is stopped by a job control signal (such as SIGSTOP) or debugger.                         |
+| t (Tracing stop) | Tracing stopped     | The state in which tracing is performed by the debugger (indicated by a lowercase t).                 |
+| X (Dead)         | Dead state          | The process is dead (usually invisible).                                                              |
+| x (Dead)         | Dead state          | The kernel thread is dead (usually invisible).                                                        |
+| K (WakeKill)     | Forcibly terminated | Wake-up signal is ignored and immediately dead.                                                       |
+| W (Waking)       | Waking              | The process is being woken up after receiving a wake-up signal.                                       |
+| I (Idle)         | Idle state          | Kernel thread is idle (usually invisible to user space processes).                                    |
+
+:::note 
+
+Because Kubernetes manages the resources of containers and nodes efficiently, many processes running in containers are actually in waiting state. As a result, most processes may be in `Sleeping` state.
+
+:::
+
+## Agent status (`agent_status_summary`) metrics {#agent_status_summary}
+
+This category collects metrics related to agent status every 10 seconds.
+
+### Fields {#agent_status_summary_filed}
+
+| Field name    |       Unit      | Description                                              | Remarks                                     |
+| ------------- | :-------------: | -------------------------------------------------------- | ------------------------------------------- |
+| `inActTime`   | Millisecond(ms) | Amount of time the agent remains inactive                | -                                           |
+| `isActive`    |        -        | Whether the agent is active or not                       | `true` / `false`                            |
+| `isRestart`   |        -        | Whether the agent is restarted or not                    | `true` / `false`                            |
+| `lastActTime` | Millisecond(ms) | Time when the agent was last activated                   | `0`: If disabled                            |
+| `oid`         |        -        | Unique IDs for each agent in the project                 | -                                           |
+| `oType`       |        -        | Agent type                                               | `1`: Application agent / `2`: See `subType` |
+| `startTime`   | Millisecond(ms) | Timestamp indicating the time when the agent was started | -                                           |
+| `subType`     |        -        | Agent type                                               | `9`: Node agent / `10`: Master agent        |
+
+## Ingress (`kube_ingress`) metric {#kube_ingress}
+
+:::note 
+
+Kubernetes agent 1.7.13 or later is required. For more information about agent updates, see [the following](agent-update). 
+
+:::
+
+It is collected when monitoring metadata and the related information for Ingress resources. 
+
+- Target: Cluster project, Namespace project 
+
+- Collection interval: 30 seconds 
+
+- Statistical data: 5 minutes 
+
+### Tags {#kube_ingress-tags}
+
+| Tag name                 | Description                          | Unit            | Type   |
+| ------------------------ | ------------------------------------ | --------------- | ------ |
+| `ingressUid`             | Unique ID of the Ingress resource    | -               | String |
+| `ingressName`            | Name of the Ingress resource         | -               | String |
+| `ingressNamespace`       | Namespace of the Ingress resource    | -               | String |
+| `creationTimeMillis`     | Created time of the Ingress resource | Millisecond(ms) | Long   |
+| `ingressClassName`       | Name of the Ingress class            | -               | String |
+| `ingressLoadBalancerIps` | IP of the Ingress load balancer      | -               | List   |
+
+### Fields {#kube_ingress-fields}
+
+| Field name           | Description                                                                           | Unit | Type |
+| -------------------- | ------------------------------------------------------------------------------------- | ---- | ---- |
+| `host`               | Host name that the Ingress resource listens to<br/> (if `*`, it applies to all hosts) | -    | List |
+| `path`               | Request path under a specific host                                                    | -    | List |
+| `backendServiceName` | Name of the service passed to the backend                                             | -    | List |
+| `backendServicePort` | Port number passed to the backend                                                     | -    | List |
+| `backendServiceUid`  | URL of the service passed to the backend                                              | -    | List |
+| `pathType`           | Path matching method (e.g. `Prefix`, `Exact`)                                         | -    | List |
+
+</div>

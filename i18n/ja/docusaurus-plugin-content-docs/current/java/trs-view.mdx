@@ -40,29 +40,33 @@ JDBC接続呼び出しやSQL実行呼び出し時に発生するエラーはエ�
 
 HTTP呼び出し中に発生するエラーは、`SLOW_HTTPC`、`httpc error`などの形で表示されます。
 
-### WhaTapエラー処理
+### WhaTapで定義したエラー処理
 
 WhaTapモニタリングサービスでは、特定の条件に従ってエラーとして処理します。
 
-- **TOO_MANY_RECORDS**：fetch件数10000件以上
+- **TOO_MANY_RECORDS**：fetch件数10,000件以上
 
-- **SLOW_SQL**：SQL時間30000ms以上
+  関連するエージェントオプションについては、次の文書を参照してください。[`profile_error_jdbc_fetch_max=10000`](agent-dbsql#profile_error_jdbc_fetch_max)
 
-- **SLOW_HTTPC**：HTTP call経過時間が10000ms以上
+- **SLOW_SQL**：SQL時間30,000ms以上
+
+  関連するエージェントオプションについては、次の文書を参照してください。[`profile_error_sql_time_max=30000`](agent-dbsql#profile_error_sql_time_max)
+
+- **SLOW_HTTPC**：HTTP call経過時間が10,000ms以上
+
+  関連するエージェントオプションについては、次の文書を参照してください。[`profile_error_httpc_time_max=10000`](agent-httpcapicall#profile_error_httpc_time_max)
 
 - **httpc error**：HTTP call status code 400以上の場合
 
+  関連するエージェントオプションについては、次の文書を参照してください。[`httpc_status_error_enable=true`](agent-transaction#httpc_status_error_enable)
+
 - **status error**：トランザクションstatus code 400以上の場合
+
+  関連するエージェントオプションについては、次の文書を参照してください。[`transaction_status_error_enable=true`](agent-transaction#transaction_status_error_enable)
 
 ### トランザクションエラー段階のINFO処理
 
 エージェント設定により、一部のエラーを正常な状態で表示または無視できます。<Cmdname sid="AA005" className="uitext" />ウィジェットで表示されるレベルは、<span class="normal">INFO</span>(青)です。
-
-:::note
-
-エージェント設定は、*whatap.conf*ファイルを編集するか<Cmdname sid="management" className="uitext" /> &gt; <Cmdname sid="agent_configuration" className="uitext" />メニューで確認できます。詳しい内容は、[次の文書](../java/set-agent)を参考にしてください。
-
-:::
 
 - `biz_exceptions`：レコードエラー表示
 
@@ -99,3 +103,19 @@ WhaTapモニタリングサービスでは、特定の条件に従ってエラ�
   ```ini title="whatap.conf"
   httpc_status_url_ignore_set=/api/posts/test/timeout:408,/api/apache/httpclient/posts/timeout:500
   ```
+
+:::note
+
+エージェント設定は、*whatap.conf*ファイルを編集するか<Cmdname sid="management" className="uitext" /> &gt; <Cmdname sid="agent_configuration" className="uitext" />メニューで確認できます。詳しい内容は、[次の文書](set-agent)を参照してください。
+
+:::
+
+### メソッド例外処理
+
+`hook_method_patterns`、`hook_service_patterns`オプションで設定したメソッドが実行中にExceptionを発生させる場合、当該例外はエラーとして処理されます。 
+
+:::note 
+
+Try-Catch構文を使用してメソッド内部でExceptionを処理した場合、Javaエージェントは当該Exceptionを収集対象から除外し、エラーとして処理しません。
+
+:::

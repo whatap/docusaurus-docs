@@ -26,9 +26,12 @@ Javaエージェントを通じて追跡しているフレームワーク、ま�
 | フレームワーク/オープンソース           | バージョン                   | 設定                              |                                  エージェント最低バージョン                                  | 備考                                                                                                                                      |
 | ------------------------- | ----------------------- | ------------------------------- | :-----------------------------------------------------------------------------: | --------------------------------------------------------------------------------------------------------------------------------------- |
 | apache-camel-cxf          | camel-cxf-3.15以降        | `weaving=camel-cxf-3.15`        |   <Link to="../release-notes/java/java-2_2_27" target="_blank">v2.2.27</Link>   | -                                                                                                                                       |
+| apache-camel-netty        | camel-netty4 2.25以降     | `weaving=camel-netty4-2.25`     |   <Link to="../release-notes/java/java-2_2_42" target="_blank">v2.2.42</Link>   | -                                                                                                                                       |
 | apache-camel-seda         | camel-seda-2.22以降       | `weaving=camel-seda-2.22`       |   <Link to="../release-notes/java/java-2_2_20" target="_blank">v2.2.20</Link>   | -                                                                                                                                       |
 | ^                         | camel-seda-3.2以降        | `weaving=camel-seda-3.2`        |   <Link to="../release-notes/java/java-2_2_20" target="_blank">v2.2.20</Link>   | -                                                                                                                                       |
 | db2                       | db2-11.5以降              | `weaving=db2-11.5`              |   <Link to="../release-notes/java/java-2_2_18" target="_blank">v2.2.18</Link>   | -                                                                                                                                       |
+| dynamodb                  | dynamodb-1.11           | `weaving=dynamodb-1.11`         |   <Link to="../release-notes/java/java-2_2_39" target="_blank">v2.2.39</Link>   | -                                                                                                                                       |
+| ^                         | dynamodb-2.25           | `weaving=dynamodb-2.25`         |   <Link to="../release-notes/java/java-2_2_39" target="_blank">v2.2.39</Link>   | -                                                                                                                                       |
 | feign-client              | feign-11以降              | `weaving=feign-11`              |    <Link to="../release-notes/java/java-2_2_6" target="_blank">v2.2.6</Link>    | -                                                                                                                                       |
 | hystrix                   | hystrix-1.5以降           | `weaving=hystrix-1.5`           | <Link to="../release-notes/java/java-2_0#v20_21" target="_blank">v2.0_21</Link> | -                                                                                                                                       |
 | kafka                     | kafka-clients-2.4.0以降   | `weaving=kafka-clients-2.4.0`   |   <Link to="../release-notes/java/java-2_2_15" target="_blank">v2.2.15</Link>   | -                                                                                                                                       |
@@ -51,7 +54,7 @@ Javaエージェントを通じて追跡しているフレームワーク、ま�
 | ^                         | okhttp3以降               | `weaving=okhttp3`               | <Link to="../release-notes/java/java-2_0#v20_15" target="_blank">v2.0_15</Link> | -                                                                                                                                       |
 | ^                         | okhttp3-4.4             | `weaving=okhttp3-4.4`           |    <Link to="../release-notes/java/java-2_2_9" target="_blank">v2.2.9</Link>    | -                                                                                                                                       |
 | rabbitmq                  | reactor-rabbitmq-1.2以降  | `weaving=reactor-rabbitmq-1.2`  | <Link to="../release-notes/java/java-2_0#v20_06" target="_blank">v2.0_06</Link> | -                                                                                                                                       |
-| retrofit                  | retrofit2-2.5以降         | `weaving=retrofit-2.5`          |                                        -                                        | （リリース予定）                                                                                                                                |
+| retrofit                  | retrofit-2.5以降          | `weaving=retrofit-2.5`          |   <Link to="../release-notes/java/java-2_2_39" target="_blank">v2.2.39</Link>   | okhttp設定と同時使用不可                                                                                                                         |
 | ribbon                    | ribbon                  | `weaving=ribbon`                |   <Link to="../release-notes/java/java-2_2_10" target="_blank">v2.2.10</Link>   | -                                                                                                                                       |
 | spring-boot               | spring-boot-2.1以降       | `weaving=spring-boot-2.1`       |   <Link to="../release-notes/java/java-2_2_23" target="_blank">v2.2.23</Link>   | kafka-clients、r2dbc-mysql、spring-cloud-gateway、spring-webflux、tomcat9、undertowを含む。                                                      |
 | ^                         | spring-boot-2.5以降       | `weaving=spring-boot-2.5`       |    <Link to="../release-notes/java/java-2_2_9" target="_blank">v2.2.9</Link>    | kafka-clients、r2dbc-mysql、redis(lettuce)、spring-cloud-gateway、spring-webflux、tomcat9、undertowを含む。                                       |
@@ -61,16 +64,19 @@ Javaエージェントを通じて追跡しているフレームワーク、ま�
 | tomcat                    | tomcat9                 | `weaving=tomcat9`               |    <Link to="../release-notes/java/java-2_2_5" target="_blank">v2.2.5</Link>    | -                                                                                                                                       |
 | ^                         | tomcat10                | `weaving=tomcat10`              |    <Link to="../release-notes/java/java-2_2_5" target="_blank">v2.2.5</Link>    | -                                                                                                                                       |
 | undertow                  | undertow-2.3以降          | `weaving=undertow-2.3`          |   <Link to="../release-notes/java/java-2_2_14" target="_blank">v2.2.14</Link>   | -                                                                                                                                       |
+| ^                         | undertow-2.2以降          | `weaving=undertow-2.2`          |   <Link to="../release-notes/java/java-2_2_39" target="_blank">v2.2.39</Link>   | -                                                                                                                                       |
+| vertx                     | vertx-3.5.3             | `weaving=vertx-3.5.3`           |   <Link to="../release-notes/java/java-2_2_42" target="_blank">v2.2.42</Link>   | -                                                                                                                                       |
+| ^                         | vertx-4.5               | `weaving=vertx-4.5`             |   <Link to="../release-notes/java/java-2_2_39" target="_blank">v2.2.39</Link>   | -                                                                                                                                       |
 
 </div>
 
-## JavaエージェントのCVEフォルスポジティブ防止
+## JavaエージェントのCVE誤検知防止
 
-JavaエージェントのCVE脆弱性のフォルスポジティブ防止と不要なライブラリクラスの削除方法をご案内します。
+JavaエージェントのCVE脆弱性の誤検知防止と不要なライブラリクラスの削除方法を案内します。
 
 CVE脆弱性が検出されても、Javaエージェントが実際に脆弱ではない可能性があります。 Javaアプリケーションで使用するライブラリ情報をモニタリングするために、エージェントには様々なライブラリクラスが含まれていますが、実際に使用しないとロードされません。 Javaアプリケーションで特定のクラスがロードされる時だけ追跡クラスとメソッドが結合され、モニタリングが行われるからです。
 
-従って、CVE脆弱性検査時にソフトウェアの名前とバージョンのみに基づいて警告が発生することがあります。 複数のライブラリが検出されても、実際のアプリケーションでそのライブラリを使用しなければ脆弱性が露出されないため、必ずしも脆弱な状態ではありません。
+従って、CVE脆弱性検査時にソフトウェアの名前とバージョンのみに基づいて警告が発生することがあります。 複数のライブラリが検出されても、実際にアプリケーションでそのライブラリを使用しなければ脆弱性がオープンされないため、必ずしも脆弱な状態ではありません。
 
 もしJavaアプリケーションで該当バージョンを使用せずに追跡クラスを削除する場合は、以下のコマンドを実行してください。 ただし、Javaエージェントがアップデートされるたびに削除作業を再度実行する必要があります。
 

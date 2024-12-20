@@ -1,0 +1,53 @@
+---
+id: monitoring-intro
+title: SQL Server V1モニタリング
+description: WhaTapデータベースモニタリングサービス（DBX）は、Queryベースでデータを収集し、性能モニタリングサービスを提供します。
+displayed_sidebar: mssqlV1Sidebar
+hide_table_of_contents: false
+keywords:
+  - SQL Server
+  - データベース
+  - モニタリング
+  - DBX
+---
+
+import CommonCont from '../common-items/_import_db-specification-common.mdx';
+import Dbspecification from "../common-items/_db-specification.mdx";
+import Dbintroductiondesc from "../common-items/_db-introduction-desc.mdx";
+
+<Dbintroductiondesc />
+
+## 特長
+
+<CommonCont />
+
+<Dbspecification />
+
+## 対応機能
+
+次に利用可能な機能一覧です。 他の製品や対応機能を比較したい場合は、[次の文書](../support-env#compare-db)を参照してください。
+
+| カテゴリ       | 機能区分                        |             サポートの有無             |
+| ---------- | --------------------------- | :-----------------------------: |
+| Monitoring | Instance List               | <span class='emoji-ok'>✅</span> |
+| ^          | Instance Monitoring         | <span class='emoji-ok'>✅</span> |
+| ^          | Multi Database(tenant) 機能   | <span class='emoji-ok'>✅</span> |
+| ^          | Slow Query                  | <span class='emoji-no'>❌</span> |
+| Analysis   | Trends                      | <span class='emoji-ok'>✅</span> |
+| ^          | Trends Compare              | <span class='emoji-ok'>✅</span> |
+| ^          | Lock Tree                   | <span class='emoji-ok'>✅</span> |
+| ^          | Parallel Query Tree         | <span class='emoji-no'>❌</span> |
+| ^          | Dead Lock                   | <span class='emoji-no'>❌</span> |
+| ^          | DB Parameter                | <span class='emoji-ok'>✅</span> |
+| Statistics | SQL Stat                    | <span class='emoji-ok'>✅</span> |
+| ^          | Table Size                  |              サポート予定             |
+| ^          | Database(TableSpace) Size   |              サポート予定             |
+| ^          | SGA Size                    | <span class='emoji-no'>❌</span> |
+| Report     | Daily/Weekly/Monthly Report | <span class='emoji-ok'>✅</span> |
+| Event      | Event List                  | <span class='emoji-ok'>✅</span> |
+| ^          | Event Stat                  | <span class='emoji-ok'>✅</span> |
+| ^          | Event Setting               | <span class='emoji-ok'>✅</span> |
+| ^          | Notification                | <span class='emoji-ok'>✅</span> |
+| Management | Agent Setup                 | <span class='emoji-ok'>✅</span> |
+| ^          | Agent List                  | <span class='emoji-ok'>✅</span> |
+| ^          | Project Management          | <span class='emoji-ok'>✅</span> |

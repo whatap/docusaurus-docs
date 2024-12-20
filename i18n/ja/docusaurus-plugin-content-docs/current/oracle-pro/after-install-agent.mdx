@@ -15,15 +15,26 @@ import Dbcheckagentlog from "../common-items/_db-check-agent-log.mdx";
 
 <Dbcheckagentlog />
 
+:::info
+
+DMXエージェントを実行すると、**dmx**、**prx**プロセスが実行されます。
+
+:::
+
 {/* 로그 확인하기 */}
 import Dbcheckdblogs from "../common-items/_db-check-db-logs.mdx";
 
 <Dbcheckdblogs />
 
-{/* 에이전트 프로세스 확인하기 */}
-import Dbcheckagentprocess from "../common-items/_db-check-agent-process.mdx";
+## エージェントプロセスの確認
 
-<Dbcheckagentprocess />
+次のコマンドを通じて、動作中のWhaTap DMXエージェントプロセスとprxプロセスを確認できます。
+
+```bash
+$ ps -ef|grep dmx
+
+$ ps -ef|grep prx
+```
 
 {/* 모니터링 확인하기 */}
 import Dbcheckmonitoringagentlists from "../common-items/_db-check-monitoring-agent-lists.mdx";

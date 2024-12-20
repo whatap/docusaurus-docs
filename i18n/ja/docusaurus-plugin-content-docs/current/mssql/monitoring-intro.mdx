@@ -1,6 +1,6 @@
 ---
 id: monitoring-intro
-title: SQL Serverモニタリング
+title: SQL Server V2モニタリング
 description: WhaTapデータベースモニタリングサービス（DBX）は、Queryベースでデータを収集し、性能モニタリングサービスを提供します。
 displayed_sidebar: mssqlSidebar
 hide_table_of_contents: false
@@ -14,18 +14,31 @@ keywords:
 import CommonCont from '../common-items/_import_db-specification-common.mdx';
 import Dbspecification from "../common-items/_db-specification.mdx";
 import Dbintroductiondesc from "../common-items/_db-introduction-desc.mdx";
+import NewFeature from '../common-items/_import_db-v2-new-feature.mdx';
+
+import V2Note from "../common-items/_import_v2-note.mdx";
+
+<V2Note product="SQL Server" />
 
 <Dbintroductiondesc />
 
-## 特長
+## SQL Serverモニタリングの特長
 
 <CommonCont />
 
 <Dbspecification />
 
+---
+
+## データベースモニタリングV2の新機能{#new-feature}
+
+<NewFeature product='SQL SErver' ver='2.2.0' />
+
+---
+
 ## 対応機能
 
-次に使用可能な機能の一部です。他の製品や対応機能を比較したい場合は、[次の文書](../support-env#compare-db)を参照してください。
+次に利用可能な機能一覧です。
 
 | カテゴリ       | 機能区分                        |             サポートの有無             |
 | ---------- | --------------------------- | :-----------------------------: |
@@ -40,8 +53,7 @@ import Dbintroductiondesc from "../common-items/_db-introduction-desc.mdx";
 | ^          | Dead Lock                   | <span class='emoji-no'>❌</span> |
 | ^          | DB Parameter                | <span class='emoji-ok'>✅</span> |
 | Statistics | SQL Stat                    | <span class='emoji-ok'>✅</span> |
-| ^          | Table Size                  |              サポート予定             |
-| ^          | Database(TableSpace) Size   |              サポート予定             |
+| ^          | Database(TableSpace) Size   | <span class='emoji-ok'>✅</span> |
 | ^          | SGA Size                    | <span class='emoji-no'>❌</span> |
 | Report     | Daily/Weekly/Monthly Report | <span class='emoji-ok'>✅</span> |
 | Event      | Event List                  | <span class='emoji-ok'>✅</span> |

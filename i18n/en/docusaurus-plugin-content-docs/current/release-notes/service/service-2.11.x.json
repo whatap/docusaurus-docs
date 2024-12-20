@@ -1,0 +1,503 @@
+[
+  {
+    "url": "https://docs.whatap.io/en/release-notes/service/service-2_11_x",
+    "ver": "Service 2.11.2",
+    "date": "2024-11-28",
+    "Lists": [
+      {
+        "ver": "Service 2.11.2",
+        "hash": "service-2112",
+        "product": "Application",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Analysis</span> &gt; <span class=\"uitext\">Transaction Search</span>, fixed the issue where the elapsed time filter is not applied.</p>"
+      },
+      {
+        "ver": "Service 2.11.2",
+        "hash": "service-2112",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"1\">Fixed</code> In the <span class=\"uitext\">Management</span> &gt; <span class=\"uitext\">Agent Installation</span> of the <code class=\"my\">V2</code> project, modified the XOS agent installation guide for the Windows environment.</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "Service 2.11.2",
+        "hash": "service-2112",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring a Database Instance</span>, fixed the issue where the <span class=\"uitext\">Session kill</span> feature execution failure is not processed properly.</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "Service 2.11.2",
+        "hash": "service-2112",
+        "product": "Database",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> In <span class=\"uitext\">Management</span> &gt; <span class=\"uitext\">Agent Installation</span>, changed the configuration guide to account creation basic and additional role settings.</p>",
+        "category": "PostgreSQL"
+      },
+      {
+        "ver": "Service 2.11.2",
+        "hash": "service-2112",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Analysis</span> &gt; <span class=\"uitext\">SQL Analysis</span>, fixed the issue where data is not output to the table in the <span class=\"uitext\">Access Statistics</span> tab.</p>",
+        "category": "Oracle, Oracle Pro"
+      },
+      {
+        "ver": "Service 2.11.2",
+        "hash": "service-2112",
+        "product": "Database",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> In <span class=\"uitext\">Management</span> &gt; <span class=\"uitext\">Agent Installation</span>, changed the guide to the JDBC download.</p>",
+        "category": "MySQL"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/service/service-2_11_x",
+    "ver": "Service 2.11.1",
+    "date": "2024-11-27",
+    "Lists": [
+      {
+        "ver": "Service 2.11.1",
+        "hash": "service-2111",
+        "product": "Server",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Server Inventory Map</span>: Fixed the issue where the list of recommended values does not appear when applying filters on the group's Display Detail screen.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/service/service-2_11_x",
+    "ver": "Service 2.11.0",
+    "date": "2024-11-27",
+    "Lists": [
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Release of new features",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the <span class=\"uitext\">Server Inventory Map</span> menu that supports the clouds and enterprise on-premise infrastructure.</p>",
+        "category": "Server"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Release of new features",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the <span class=\"uitext\">etcd Dashboard</span> menu to monitor the etcd component which plays a role of cluster status related data storage in the Kubernetes environment.</p>",
+        "category": "Kubernetes"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Release of new features",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Launched the <strong>SQL Server</strong> <code class=\"my\">V2</code> service.</p>",
+        "category": "Database"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Release of new features",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the <span class=\"uitext\">IP Load Statistics</span> menu that can analyze the statistics based on the IP address group.</p>",
+        "category": "Browser"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Common",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the No column in the table list of the <span class=\"uitext\">Alert</span> &gt; <span class=\"uitext\">Event Configuration</span> <code class=\"newfunc\">New</code> menu.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Common",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In <span class=\"uitext\">Alert</span> &gt; <span class=\"uitext\">Event History</span>, provided the <span class=\"uitext\">View only events in progress</span> feature.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Common",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In <span class=\"uitext\">Real-time Alert List</span>, added the CSV download feature.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Common",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In <span class=\"uitext\">My Usage</span> &gt; <span class=\"uitext\">Project Subscription Status</span>, added the billing unit summary for the entire project and individual projects.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Common",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> On the <span class=\"uitext\">Project list</span> screen, additionally provided the mouse hover style within the <img loading=\"lazy\" src=\"/en/img/ic-setting.svg\" alt=\"설정 아이콘\" width=\"auto\" height=\"auto\"> configuration dropdown menu.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Common",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"0\">Feature</code> Added multilingual support for the WhaTap User Training Application form (Google Form).</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Common",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> In <span class=\"uitext\">Alert</span> &gt; <span class=\"uitext\">Event Configuration</span>, changed the event settings list to be exported as JSON as searched.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Common",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> In <span class=\"uitext\">My profile</span> &gt; <span class=\"uitext\">SSO Integrations</span>, changed the guidance message limited to Okta.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Common",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> When entering the service notice, changed the header title from <b>Notice</b> to <span class=\"uitext\">Service Notice</span>.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Common",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Integrated Flex Board</span> or <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Flex Board</span>, fixed the issue where widgets are not displayed in print mode when the dashboard has a responsive layout.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Common",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Flex Board</span>, fixed the issue where metrics containing special characters are displayed in a unified way.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Common",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Stat/Report</span> &gt; <span class=\"uitext\">SQL Statistics</span>, fixed the issue where unnecessary horizontal scrolling occurs.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Common",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Alert</span> &gt; <span class=\"uitext\">Event Configuration</span>, fixed the broken text issue in the metrics event guide.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Common",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In the <span class=\"uitext\">My profile</span> &gt; <span class=\"uitext\">Alert notification setting</span> section, fixed the issue where notification does not end when a query error occurs.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Common",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the issue where selecting an organization with the side menu collapsed and having a favorited flex board would cause the organization selection to be deselected when selecting the <span class=\"uitext\">Integrated Flex Board</span> menu.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Common",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Changed dark themes in Select box elements on the pagination UI.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Application",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In <span class=\"uitext\">Analysis</span> &gt; <span class=\"uitext\">Multiple Transaction Trace</span>, added the feature to disable the <img decoding=\"async\" loading=\"lazy\" alt=\"Search icon\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAdCAYAAAAgqdWEAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMC1jMDAwIDc5LjE3MWMyN2ZhYiwgMjAyMi8wOC8xNi0yMjozNTo0MSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo5NGYxMDZkYi1mOWQ1LTRkNWItYjg1Mi01N2E4OWQ4N2NiODAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RkM0RjAyQzM1MTBFMTFFRDk1NTBFNTZGQjUwMkEyQzYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RkM0RjAyQzI1MTBFMTFFRDk1NTBFNTZGQjUwMkEyQzYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI0LjAgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDphMzM1ZWVmNC1mYjZhLTRkNzctOWI5MS0yZDViNTU2OTE4YTQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OTRmMTA2ZGItZjlkNS00ZDViLWI4NTItNTdhODlkODdjYjgwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+xFhE8QAAA2NJREFUeNrMl0tIVGEUx//fd2fm3nGaZHwkA+KjFylBWG5amG10GRGW9AKjRVFRCSJEQUPRokioNulCAhFsV2LiKogIwl7SoiyVsdJ8Vb5G5z3f1/luumk12lynw2WGy1zm/L7z+J9zmZRy4u1gIs/XEV78OC5g0xjostwSEojTR6mXw3fYcO3aok2y15/j83suL7rBgeI8bj4opfUwbOnAw5MCoOv5DVdAG8luvPR1RuqbCUSsAcTfluNmmA5J+MdFlA8Q2cZcjrhAWkz5Vf4VB3dQgUik15R/xcFV7mSaaZR/xcH/9U9SeRDbarpAUJ5HpgVkhO6X4pyZzZDjYogl1ghG04DpRYm5XxKHKm3YV26HywkMjAnc64nBPyxQULh6eUgahpOPnwGJBYrGk6sZ2LvDhukFIEhtWbWToa5Kx/nmEDpexFDs5dZGJhKTCISBRw1OE+Ts/RAePIubVWfYgYcXDbRecELjEh29CRR4Vt6lSR9hbFbi+G4NVWU2HL0dRHtXFN4sIN8D2DWJGl8IbwYTuFLrhJ2OGFuFbvGkW4+iUlvhwMB3gc6XceQVa9BtzJxluW6OGNVO0+MICjYwVJdwTAWkNTBqqAkHQyZ1y3xQQvw1TNUYcdDvs4t/ALLWUVfFLYqMjZ5iVDOfRhIo26TByABmCIovAdmpyySlsWKbRrUFvKKu8mRYBKPMlcnQ1B2lAgVaTuoI07rhnxCYmJMY9gtkehnqDxjo7o2i/wvdZzDruimXQt9PJ/a1h+E7ZmB7iw3NPREMEFRlqYb6/QZ0BzA+Q3pE7R+MSLh0tqJNYEWil0/6cas7ZgLcrHPi7imnOXVVeNueRjFFqWo8qMPjAk7fCUN4AbfBTMVOKYzqKFU7RTkMne/i6Hq/gHJS2zxKX983gbFRWgGoXlQdNdTocFOxn2kNmxEy7Cz1kVmW+CLaP9QM+kAR6hsF1uu0JRJYiIr8WlsEBqXrRLWOwuwohmhPUaKY1NwrOReYp293qlbJWFzS5gZku1R6JBykRUnOqQBHCk05tZNzDwlgMCrNhUlaVcBJAxGEqT1W6cxaGF9e+dJpy6svj9LgSTOL6V9x8K30vuT/IUwNSYcpv8q/4uDXjxj08gIM0ZxR4VqrlC37Un6Vf8XB/qd37d8CDAAmlWmEg71//QAAAABJRU5ErkJggg==\" width=\"35\" height=\"29\" class=\"img_ev3q\"> button in the following situations:</p>",
+        "details": "<ul>\n<li>\n<p>In case the filter values (MTID/CUSTID, time, selected project) as the previous search are set</p>\n</li>\n<li>\n<p>In case any of the filter values (MTID/CUSTID, time, selected project) is not entered</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Application",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In the <span class=\"uitext\">Record summary</span> tab of the <span class=\"uitext\">Trace analysis</span> window, modified the following:</p>",
+        "details": "<ul>\n<li>\n<p>Fixed the issue where the error step field is exposed even though it is not an error transaction.</p>\n</li>\n<li>\n<p>Modified to display the Pod name and container ID fields as separate groups.</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Application",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Modified the following items in the <span class=\"uitext\">Table view</span> tab of the <span class=\"uitext\">Trace analysis</span> window.</p>",
+        "details": "<ul>\n<li>\n<p>Fixed the issue where the bind variable mapping is activated even when the password is not released during the <span class=\"uitext\">SQL details</span> query.</p>\n</li>\n<li>\n<p>Fixed the issue where the height of SQL step is output greater than the actual.</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Application",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Analysis</span> &gt; <span class=\"uitext\">Multiple Transaction Trace</span>, modified the following:</p>",
+        "details": "<ul>\n<li>\n<p>Fixed the issue where the project name appears different from the actual one.</p>\n</li>\n<li>\n<p>Fixed the issue where the selected project is not reflected in searches.</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Application",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Analysis</span> &gt; <span class=\"uitext\">Transaction Search</span>, fixed the issue where values cannot be deleted when there is only one digit in the numeric input form (elapsed time, number of HTTP calls, number of SQLs, number of SQL patches).</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Application",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Management</span> &gt; <span class=\"uitext\">Agent CONF.</span> for the <strong>Java</strong> platform, changed the default value of the <code>sigar_enabled</code> option from <code>true</code> to <code>false</code>.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Application",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Modified the English guide on <code>encrypt_level</code> among application agent settings for <strong>Java</strong>, <strong>Node.js</strong>, and <strong>Python</strong> products.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Server",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> In <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Flex Board</span>, modified the oname tag to be included optionally in the id when creating a widget by using fields in the <code>server_disk</code> and <code>server_process</code> categories.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Server",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Changed the <span class=\"uitext\">Server List</span> &gt; <span class=\"uitext\">Server Inventory</span> menu name to <span class=\"uitext\">Server inventory</span>.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Server",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Modified the UI in <span class=\"uitext\">Alert</span> &gt; <span class=\"uitext\">Event History</span>.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Server",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> In <span class=\"uitext\">Real-time Alert List</span>, modified to go to the event <span class=\"uitext\">Detail</span> screen upon selection of an event.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Kubernetes",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In <span class=\"uitext\">Cluster</span> &gt; <span class=\"uitext\">Kubernetes Event</span>, added the following features:</p>",
+        "details": "<ul>\n<li>\n<p>Display Detail feature (Suggestions, adjacent logs, event timelines)</p>\n</li>\n<li>\n<p>Displayed the numbers of types and reasons, and differentiated the type in the timely event count chart.</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Kubernetes",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In <span class=\"uitext\">Container Map</span> 및 <span class=\"uitext\">Integrated Container Map</span>, added the feature to identify containers with external project agents installed and move the corresponding projects.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Kubernetes",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Changed the <span class=\"uitext\">Metrics</span> tab of the <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Container Map</span> menu to a new metrics dashboard.</p>",
+        "details": "<ul>\n<li>\n<p>Limited not to select the time range (fixed to 10 minutes).</p>\n</li>\n<li>\n<p>Changed the <span class=\"uitext\">Container CPU Total Usage</span> widget in the container view and the <span class=\"uitext\">CPU Total Usage</span> widget in the Pod view from cores to <b>millicores</b>.</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Kubernetes",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the issue where the metrics dashboard repeatedly reloads when there are a large number of containers.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Kubernetes",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Sitemap</span> &gt; <span class=\"uitext\">Instance Topology</span>, fixed the issue where the links in the context menu do not work.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Database",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In <span class=\"uitext\">Alert</span> &gt; <span class=\"uitext\">Event History</span>, added the feature to go to the <span class=\"uitext\">Monitoring a Database Instance</span> menu when an event name is selected.</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Database",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Changed the <span class=\"uitext\">ThreadStat</span> value in the Active session correlation analysis screen to text.</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring a Database Instance</span>, fixed the issue where column changes in the <span class=\"uitext\">Active sessions</span> table are not applied to the CSV data.</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In the <span class=\"uitext\">Select a metric</span> window of the <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring a Database Instance</span> menu, modified to go to the <span class=\"uitext\">Event Configuration</span> <code class=\"newfunc\">New</code> menu when the <img decoding=\"async\" loading=\"lazy\" alt=\"Event configuration icon\" src=\"data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iU1ZHSW5saW5lLXN2ZyIgc3R5bGU9IndpZHRoOiAyNnB4O2hlaWdodDogMjZweDsiIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggNTkuMSAoODYxNDQpIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPCEtLSA8dGl0bGU+aWMtZXZlbnQ8L3RpdGxlPiAtLT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9Ikljb24tU2V0IiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iV2hhVGFwX0ljb25fU2V0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNjguMDAwMDAwLCAtMjM5MS4wMDAwMDApIiBmaWxsPSIjNzk3OTc5Ij4KICAgICAgICAgICAgPGcgaWQ9ImFwcGxpY2F0aW9uLWljb25zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MC4wMDAwMDAsIDIzNDYuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8ZyBpZD0iaWMtZXZlbnQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI4LjAwMDAwMCwgNDUuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMi4wMDAwMDAsIDEuMDAwMDAwKSIgaWQ9IkNvbWJpbmVkLVNoYXBlIj4KICAgICAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTcsMTkgTDEzLDE5IEMxMywyMC42NTY4NTQyIDExLjY1Njg1NDIsMjIgMTAsMjIgQzguNDAyMzE5MTIsMjIgNy4wOTYzMzkxMiwyMC43NTEwOCA3LjAwNTA5MjY5LDE5LjE3NjI3MjggTDcsMTkgTDEzLDE5IFogTTEwLDAgQzExLjEwNDU2OTUsMCAxMiwwLjg5NTQzMDUgMTIsMiBDMTIsMi4wOTY5NzY1MyAxMS45OTMwOTc5LDIuMTkyMzQwOTkgMTEuOTc5NzU4MiwyLjI4NTYyODk1IEMxNC44ODE4MDcyLDMuMTM4MTQ1MzcgMTcsNS44MjE3MDc0NyAxNyw5IEwxNywxNSBMMTksMTUgQzE5LjU1MjI4NDcsMTUgMjAsMTUuNDQ3NzE1MyAyMCwxNiBDMjAsMTYuNTUyMjg0NyAxOS41NTIyODQ3LDE3IDE5LDE3IEwxLDE3IEMwLjQ0NzcxNTI1LDE3IDYuNzYzNTM3NTFlLTE3LDE2LjU1MjI4NDcgMCwxNiBDLTYuNzYzNTM3NTFlLTE3LDE1LjQ0NzcxNTMgMC40NDc3MTUyNSwxNSAxLDE1IEwzLDE1IEwzLDkgTDMuMDA0MDU5MDIsOC43NTkzNTAyNSBDMy4xMDc4NTc5NSw1LjY4Njg3MzI3IDUuMTkxNzI1NDIsMy4xMTY1MDAwNCA4LjAxOTkwNDkxLDIuMjgzOTg3MDYgQzguMDA2OTAyMDYsMi4xOTIzNDA5OSA4LDIuMDk2OTc2NTMgOCwyIEM4LDAuODk1NDMwNSA4Ljg5NTQzMDUsMCAxMCwwIFogTTEwLDQgQzcuMzAyODE1OCw0IDUuMDkzNjkxMTksNi4xMzk5ODcwNyA1LjAwMzc3NDU5LDguNzkzMDc5MjggTDUsOSBMNSwxNSBMMTUsMTUgTDE1LDkgQzE1LDYuMjM4NTc2MjUgMTIuNzYxNDIzNyw0IDEwLDQgWiI+PC9wYXRoPgogICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+\" width=\"24\" height=\"24\" class=\"img_ev3q\"> event configuration is selected.</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Stat/Report</span> &gt; <span class=\"uitext\">SQL Statistics</span>, removed the borderlines from the chart area.</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> When you select an event that exists in a real-time notification, modified to go to the <span class=\"uitext\">Monitoring a Database Instance</span> menu and view the data based on the event occurrence time.</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> On the metric selection screen in the <span class=\"uitext\">Analysis</span> &gt; <span class=\"uitext\">Counts Trend Comparison</span> menu, fixed the issue where the metric does not appear.</p>",
+        "category": "Database V2"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Stat/Report</span> &gt; <span class=\"uitext\">SQL Statistics</span>, fixed the issue where empty queries are retrieved.</p>",
+        "category": "PostgreSQL"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Database",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the <span class=\"uitext\">Disk Usage</span> widget in the <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring Multiple Instances</span> menu.</p>",
+        "category": "Oracle, Oracle Pro"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Database",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In <span class=\"uitext\">Analysis</span> &gt; <span class=\"uitext\">SQL Analysis</span>, added the following features:</p>",
+        "category": "Oracle, Oracle Pro",
+        "details": "<ul>\n<li>\n<p>Filtering feature to search by <code>sql_id</code>, <code>sql_hash_value</code>, and <code>PLAN_HASH_VALUE</code> in the <span class=\"uitext\">Plan Change History</span> tab.</p>\n</li>\n<li>\n<p>In the <span class=\"uitext\">Plan Change History</span> tab, a new window appears when checking the Plan Diff.</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Database",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> In the <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring Multiple Instances</span> menu, modified the following:</p>",
+        "category": "Oracle, Oracle Pro",
+        "details": "<ul>\n<li>\n<p><span class=\"uitext\">Disk Usage</span> Modified the UI for margins in the widget's expanded view.</p>\n</li>\n<li>\n<p>Changed the window so that <code>sid</code> and <code>serial#</code> are maintained even when the session ends in the <span class=\"uitext\">Session detail</span> window.</p>\n</li>\n<li>\n<p>Added the <code>sql_hash_value</code> value in <span class=\"uitext\">Session Info</span> on the <span class=\"uitext\">Session detail</span> window.</p>\n</li>\n<li>\n<p>Changed the <span class=\"uitext\">Session Info</span> of the <span class=\"uitext\">Session detail</span> window to display the <code>command</code> value as the status name.</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Database",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Changed the UI of the <span class=\"uitext\">Runtime Plan</span> tab on the <span class=\"uitext\">SQL details</span> pop-up window in the <span class=\"uitext\">Stat/Report</span> &gt; <span class=\"uitext\">SQL Statistics</span> menu.</p>",
+        "category": "Oracle, Oracle Pro"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In the <span class=\"uitext\">Plan Change History</span> tab of the <span class=\"uitext\">Analysis</span> &gt; <span class=\"uitext\">SQL Analysis</span> menu, modified the chart to clearly distinguish data occurring over time.</p>",
+        "category": "Oracle, Oracle Pro"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Changed the query range when searching for plans on the <span class=\"uitext\">SQL details</span> pop-up window in the <span class=\"uitext\">Stat/Report</span> &gt; <span class=\"uitext\">SQL Statistics</span> menu.</p>",
+        "category": "Oracle, Oracle Pro"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Browser",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the <span class=\"uitext\">Session replay</span> billing in <span class=\"uitext\">My usage</span> &gt; <span class=\"uitext\">Metering</span> and <span class=\"uitext\">Invoice Preview History</span>.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Browser",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the <span class=\"uitext\">AJAX hitmap pattern</span> notification setting in the <span class=\"uitext\">Alert</span> &gt; <span class=\"uitext\">Event Configuration</span> menu.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Log",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In <span class=\"uitext\">Log</span> &gt; <span class=\"uitext\">Log Configuration</span>, added and modified the following features:</p>",
+        "details": "<ul>\n<li>\n<p>Added the feature to change the log data retention period by entering it directly.</p>\n</li>\n<li>\n<p>Modified the display method for log data retention periods.</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Log",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Changed the limit number of log filter favorites from 10 to 50.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Log",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Changed the design of <span class=\"uitext\">Getting started with log monitoring</span> of the <span class=\"uitext\">Log Configuration</span> menu.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Log",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Changed the spacing between tags in the <span class=\"uitext\">Log long-term archive statistics</span> edit screen.</p>"
+      },
+      {
+        "ver": "Service 2.11.0",
+        "hash": "service-2110",
+        "product": "Log",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Modified the save button to be disabled when there are no changes in the log retention period setting.</p>"
+      }
+    ]
+  }
+]

@@ -1,0 +1,139 @@
+## containerStdOutログフィルターの設定
+
+ホーム画面 &gt; プロジェクト選択 &gt; <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentSetting" className="uitext" />
+
+Kubernetesログで必要な情報を選別するためのフィルタリングオプションを案内します。 フィルタリングにより、許可または除外するログを設定できます。 <Cmdname sid="side_agentSetting" className="uitext" />メニューで<Cmdname sid="write_options" className="uitext" />方式で<Cmdname sid="direct_input" className="uitext" />を選択します。
+
+<ImgLang img='k8s-log-filter-settings.png' desc='Kunernetesログフィルタの設定' />
+
+### ログネーミングのルール
+
+Kubernetes containerStdOutログはノードの*/var/log/containers/*パスの下位に生成されます。 次のようなネーミングルールに従っています。
+
+```bash
+<podName>_<namespace>_<containerName>-<containerId>.log
+```
+
+### ログフィルターオプション
+
+- **log_filter_enabled** <span class='type'>bool</span>
+
+  既定値`false`
+
+  ログフィルターの使用有無を設定します。 
+
+- **log_filter_allow_list** <span class='type'>list</span>
+
+  許可するログの一覧を設定します。 フィルタリングの適用時に含める項目を意味します。 
+
+- **log_filter_deny_list** <span class='type'>list</span>
+
+  除外するログの一覧を設定します。 フィルタリングの適用時に除外する項目を意味します。 
+
+### ログフィルター動作
+
+`log_filter_enabled`オプションが有効になっている場合にのみ、ログフィルターが動作します。 該当オプションの値が`true`に設定された状態で、`log_filter_allow_list`および`log_filter_deny_list`を通じてログを選択的に収集できます。 
+
+ログフィルターはブラックリストベースで動作します。 例えば、`log_filter_enabled`活性化した後`log_filter_allow_list`オプションに追加する項目を設定しない場合、デフォルトではすべてのコンテナーのログ収集がブロックされます。 
+
+また、ログフィルターはallowルールよりdenyルールの優先順位が高いです。 同一の項目がallowとdenyの両方に設定されている場合、denyルールが優先的に適用され、そのログは収集されません。
+
+### ログフィルターの例
+
+#### 単一ネームスペースログの収集
+
+- **許容** ***log_filter_allow_list*** `*_infra_*`
+
+`infra`ネームスペースに存在するすべてのコンテナが収集対象として特定されます。
+
+#### マルチネームスペースログの収集
+
+- **許容** ***log_filter_allow_list*** `*_infra_*、*_monitoring_*`
+
+`infra`、`monitoring`ネームスペースに存在するすべてのコンテナが収集対象として特定されます。
+
+#### 特定の単語を含むPodを除く
+
+- **許容** ***log_filter_allow_list*** `*_*_*`
+
+- **除外** ***log_filter_deny_list*** `*prod*_*_*`
+
+すべてのコンテナが収集対象として特定されますが、`podName`に`prod`が含まれているログは除外されます。
+
+#### 特定の単語を含むPodログの収集
+
+- **許容** ***log_filter_allow_list*** `*prod*_*_*`
+
+`podName`に`prod`が含まれるPodのログのみが収集されます。
+
+#### マルチネームスペースログの収集と特定の単語を含むPodを除く
+
+- **許容** ***log_filter_allow_list*** `*_infra_*、*_monitoring_*`
+
+- **除外** ***log_filter_deny_list*** `*prod*_*_*`
+
+`infra`、`monitoring`ネームスペースのログが収集され、`podName`に`prod`が含まれているログは除外されます。
+
+#### コンテナ名内の特定の単語で始まるコンテナログを除外
+
+- **許容** ***log_filter_allow_list*** `*_*_db-*`
+
+すべてのネームスペースで`containerName`が`db`で始まるコンテナのログは除外されます。
+
+{/* 
+
+### Kubernetesエージェントのログフィルター
+
+#### ログネーミングのルール
+
+Kubernetesログは、コンテナベースで収集されます。 ノードの/var/log/containers/パスの下位にある次のネーミングルールに従って生成されます。
+
+```bash
+<podName>_<namespace>_<containerName>-<containerId>.log
+```
+
+#### ログフィルターオプション
+
+- **log_filter_enabled** <span class='type'>bool</span>
+
+  既定値`false`
+
+  ログフィルターの使用有無を設定します。 
+
+- **log_filter_allow_list** <span class='type'>list</span>
+
+  許可するログの一覧を設定します。 フィルタリングの適用時に含める項目を意味します。 
+
+- **log_filter_deny_list** <span class='type'>list</span>
+
+  除外するログの一覧を設定します。 フィルタリングの適用時に除外する項目を意味します。 
+
+#### ログフィルター動作
+
+#### ログフィルターの例
+
+### コンテナ標準出力のログフィルター
+
+コンテナ標準出力(containerStdOut) ログで必要な情報を選別するためのフィルタリングオプションを案内します。 フィルタリングにより、許可または除外するログを設定できます。 
+
+#### エージェント設定
+
+<Cmdname sid="side_agentSetting" className="uitext" />
+
+#### コンテナ標準出力のログフィルターオプション
+
+- **log_filter_enabled** <span class='type'>bool</span>
+
+  既定値`false`
+
+  ログフィルターの使用有無を設定します。 
+
+- **log_filter_allow_list** <span class='type'>list</span>
+
+  許可するログの一覧を設定します。 フィルタリングの適用時に含める項目を意味します。 
+
+- **log_filter_deny_list** <span class='type'>list</span>
+
+  除外するログの一覧を設定します。 フィルタリングの適用時に除外する項目を意味します。  
+
+*/}

@@ -1,0 +1,187 @@
+{
+  "myapp_portal": {
+    "en": "My Apps portal",
+    "ja": "マイ アプリのポータル",
+    "ko": "내 앱 포털"
+  },
+  "myapps": {
+    "en": "My Apps",
+    "ja": "マイ アプリ",
+    "ko": "내 앱"
+  },
+  "myAccount": {
+    "en": "My Account",
+    "ja": "マイ アカウント",
+    "ko": "내 계정"
+  },
+  "entraAppDashboard": {
+    "en": "Apps dashboard",
+    "ja": "アプリ ダッシュボード",
+    "ko": "앱 대시보드"
+  },
+  "entraIdentity": {
+    "en": "Identity",
+    "ja": "ID",
+    "ko": "ID"
+  },
+  "entraApplication": {
+    "en": "Applications",
+    "ja": "アプリケーション",
+    "ko": "애플리케이션"
+  },
+  "entraEntApp": {
+    "en": "Enterprise applications",
+    "ja": "エンタープライズ アプリケーション",
+    "ko": "엔터프라이즈 애플리케이션"
+  },
+  "entraNewApp": {
+    "en": "New application",
+    "ja": "新しいアプリケーション",
+    "ko": "새로운 애플리케이션"
+  },
+  "entraCreateMyApp": {
+    "en": "Create your own application",
+    "ja": "独自のアプリケーションの作成",
+    "ko": "자신만의 애플리케이션을 만드세요."
+  },
+  "entraOtherApp": {
+    "en": "Integrate any other application you don't find in the gallery (Non-gallery)",
+    "ja": "ギャラリーに見つからないその他のアプリケーションを統合します (ギャラリー以外)",
+    "ko": "갤러리에 없는 다른 애플리케이션 통합(비갤러리)"
+  },
+  "entrabtnCreate": {
+    "en": "Create",
+    "ja": "作成",
+    "ko": "만들기"
+  },
+  "entraAssignUsergroup": {
+    "en": "Assign users and groups",
+    "ja": "ユーザーとグループの割り当て",
+    "ko": "사용자 및 그룹 할당"
+  },
+  "entraAddUsergroup": {
+    "en": "Add user/group",
+    "ja": "ユーザーまたはグループの追加",
+    "ko": "사용자/그룹 추가"
+  },
+  "entraAddAssign": {
+    "en": "Add Assignment",
+    "ja": "割り当ての追加",
+    "ko": "할당 추가"
+  },
+  "entraNoneAssign": {
+    "en": "None Selected",
+    "ja": "選択されていません",
+    "ko": "선택된 항목 없음"
+  },
+  "entraSelect": {
+    "en": "Select",
+    "ja": "選択",
+    "ko": "선택"
+  },
+  "entraAssign": {
+    "en": "Assign",
+    "ja": "割り当て",
+    "ko": "할당"
+  },
+  "entraOverview": {
+    "en": "Overview",
+    "ja": "概要",
+    "ko": "개요"
+  },
+  "entraSignonset": {
+    "en": "Set up single sign on",
+    "ja": "シングル サインオンの設定",
+    "ko": "Single Sign On 설정"
+  },
+  "entraSelectsso": {
+    "en": "Select a single sign-on method",
+    "ja": "シングル サインオン方式の選択",
+    "ko": "Single Sign On 방법 선택"
+  },
+  "entraSaml": {
+    "en": "SAML",
+    "ja": "SAML",
+    "ko": "SAML"
+  },
+  "entraBasicSaml": {
+    "en": "Basic SAML Configuration",
+    "ja": "基本的な SAML 構成",
+    "ko": "기본 SAML 구성"
+  },
+  "entraBtnEdit": {
+    "en": "Edit",
+    "ja": "編集",
+    "ko": "편집"
+  },
+  "entraAddId": {
+    "en": "Add identifier",
+    "ja": "識別子の追加",
+    "ko": "식별자 추가"
+  },
+  "entraAddIdfiedl": {
+    "en": "Enter an identifier",
+    "ja": "識別子を入力してください",
+    "ko": "식별자 입력"
+  },
+  "entraAddurl": {
+    "en": "Add reply URL",
+    "ja": "応答 URL の追加",
+    "ko": "답장 URL 추가"
+  },
+  "entraAddurlfield": {
+    "en": "Enter a reply URL",
+    "ja": "応答 URL を入力してください",
+    "ko": "회신 URL 입력"
+  },
+  "entraBtnsave": {
+    "en": "Save",
+    "ja": "保存",
+    "ko": "저장"
+  },
+  "entraBtnsave": {
+    "en": "Save",
+    "ja": "保存",
+    "ko": "저장"
+  },
+  "entraAttrclaim": {
+    "en": "Attributes & Claim",
+    "ja": "属性とクレーム",
+    "ko": "특성 및 클레임"
+  },
+  "entraUniqueId": {
+    "en": "Unique User Identifier (Name ID)",
+    "ja": "一意のユーザー識別子 (名前 ID)",
+    "ko": "고유한 사용자 Id(이름 ID)"
+  },
+  "entraSourceattr": {
+    "en": "Source attribute",
+    "ja": "ソース属性",
+    "ko": "원본 특성"
+  },
+  "entraSamlCerti": {
+    "en": "SAML Certificates",
+    "ja": "SAML 証明書",
+    "ko": "SAML 인증서"
+  },
+  "entraMetadata": {
+    "en": "App Federation Metadata Url",
+    "ja": "アプリのフェデレーション メタデータ URL",
+    "ko": "앱 페더레이션 메타데이터 URL"
+  },
+  "entraTest": {
+    "en": "Test Single Sign-On",
+    "ja": "シングル サインオンをTest",
+    "ko": "Test Single Sign-On 사용"
+  },
+  "entraBtnTest": {
+    "en": "Test",
+    "ja": "Test",
+    "ko": "Test"
+  },
+  "entraBtnLogtest": {
+    "en": "Test sign in",
+    "ja": "サインインのテスト",
+    "ko": "로그인 테스트"
+  }
+}

@@ -1,0 +1,125 @@
+## Template {#template}
+
+We provide templates for metrics events so that users can easily set alert notifications.
+
+### Metrics event templates {#template-metrics}
+
+In the <Cmdname sid="event_statistic" className="uitext" /> &gt; <Cmdname sid="event_setting" className="uitext" /> &gt; <Cmdname sid="metrics" className="uitext" /> tab, select <span class="uitext">+</span> <Cmdname sid="add_notification" className="uitext" /> from the <Cmdname sid="metrics" className="uitext" /> section. Select a desired item in the <Cmdname sid="template" className="uitext" /> option. The following is a list of available templates.
+
+:::note
+
+<Cmdname sid="metrics_event_rules" className="uitext" /> of the selected template can be directly changed by users.
+
+:::
+
+<Xclude product="redis">
+
+- <Cmdname sid="cpu_usage" className="uitext" /><span class="uitext">_Warning</span>
+
+  Condition: `cpu(xos)` \> 70
+
+  If the CPU utilization exceeds 70% in an individual instance, a <span class='slow'>Warning</span> level notification is sent.
+
+- <Cmdname sid="memory_usage" className="uitext" /><span class="uitext">_Warning</span>
+
+  Condition: `mem(xos)` \> 70
+
+  If the memory usage exceeds 70% in an individual instance, a <span class='slow'>Warning</span> level notification is sent.
+
+</Xclude>
+
+<Xclude product="redis,mongodb">
+
+- ***Active Session_Warning***
+
+  Condition: `active_sessions` \> 30
+
+  If the number of active sessions in an individual instance exceeds 30, a <span class='slow'>Warning</span> level notification is sent.
+
+- ***Lock Wait_Warning***
+
+  Condition: `lock_wait_sessions` \> 3
+
+  If the number of waiting sessions in an individual instance exceeds 3, a <span class='slow'>Warning</span> level notification is sent.
+
+- ***Long Query_Warning***
+
+  Condition: `long_running_sessions` \> 3
+
+  If the number of long-running sessions in an individual instance exceeds 30, a <span class='slow'>Warning</span> level notification is sent.
+
+</Xclude>
+
+<InDoc product="postgresql">
+
+- <Cmdname sid="TTL07136" className="uitext" /><span class="uitext">_Warning</span>
+
+  Condition: (`total_sessions` / `max_connections` \* 100) \> 90
+
+  If the number of long-running sessions in an individual instance exceeds 80%, a <span class='slow'>Warning</span> level notification is sent.
+
+- <Cmdname sid="TTL07137" className="uitext" /><span class="uitext">_Warning</span>
+
+  Condition: `blks_hit_ratio` \<\= 80
+
+  If the memory block hit ratio in an individual instance is 80% or less, a <span class='slow'>Warning</span> level notification is sent.
+
+- <Cmdname sid="TTL07138" className="uitext" /><span class="uitext">_Warning</span>
+
+  Condition: `replication_delay` \>\= 10
+
+  If the delay in an individual instance being reflected to the replication database is greater than 10 seconds, a <span class='slow'>Warning</span> level notification is sent.
+
+</InDoc>
+
+<InDoc product="oracle,oracle-v1,oracle-pro">
+
+- <Cmdname sid="TTL08553" className="uitext" /><span class="uitext">_Warning</span>
+
+  Condition: `(used / size * 100 >= 90) && (datfile == 'ALL')`
+
+  If the tablespace utilization is 90% or more, a <span class='slow'>Warning</span> level notification is sent.
+
+</InDoc>
+
+<InDoc product="redis">
+
+- <span className="uitext">Redis</span> <Cmdname sid="memory_usage" className="uitext" /><span class="uitext">_Warning</span>
+
+  Condition: (`used_memory` \/ `maxmemory` \* 100) \> 80
+
+  If the memory utilization exceeds 80% in an individual instance, a <span class='slow'>Warning</span> level notification is sent.
+
+- ***evicted key_Warning***
+
+  Condition: `evicted_keys` \> 10
+
+  If more than 10 keys are removed from an individual instance, a <span class='slow'>Warning</span> level notification is sent.
+
+</InDoc>
+
+<InDoc product="mongodb">
+
+- ***Active Connection_Warning***
+
+  Condition: `active$connections` \> 30
+
+  If the number of active client connections on an individual instance exceeds 30, a <span class='slow'>Warning</span> level notification is sent.
+
+</InDoc>
+
+<InDoc product="postgresql">
+
+### Composite metrics event templates{#composite-metrics-template}
+
+In the <Cmdname sid="event_statistic" className="uitext" /> &gt; <Cmdname sid="event_setting" className="uitext" /> &gt; <Cmdname sid="metrics" className="uitext" /> tab, select <span class="uitext">+</span> <Cmdname sid="add_notification" className="uitext" /> from the <Cmdname sid="composite_metrics" className="uitext" /> section. Select a desired item in the <Cmdname sid="template" className="uitext" /> option. The following is a list of available templates.
+
+- ***Replication Broken***
+
+  If the replication status in an individual instance is Broken or Fallover, a <span class='vslow'>Critical</span> level notification is sent.
+
+- <Cmdname sid="TTL07141" className="uitext" />
+
+  If there are more than 2 sessions that have not committed for 60 seconds or more, a <span class='slow'>Warning</span> level notification is sent.
+
+</InDoc>

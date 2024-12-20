@@ -1,3 +1,15 @@
+- **db_param_enabled** <span class='type'>Boolean</span>
+
+  既定値 `true`
+
+  DBパラメータの収集有無を設定します。
+
+- **conn_fail_count** <span class='type'>Int</span>
+
+  既定値 `15`
+
+  15回連続コネクションエラーが発生した時に通知を送信します。希望する回数を入力して、通知の発生基準を調整できます。
+
 <InDoc product ='mysql'>
 
 - **deadlock_interval** <span class='type'>Int</span>
@@ -32,9 +44,9 @@
 
 - **long_run_session_sec** <span class='type'>Second</span>
 
-  既定値`10`
+  既定値`10` (単位：秒)
 
-  設定した時間より長く実行されているセッションをlong runセッションとして処理します。(単位：秒)
+  設定した時間より長く実行されているセッションを、long runセッションで処理します。
 
 </Xclude>
 
@@ -86,6 +98,18 @@
 
   :::
 
+- **statements_min_row** <span class='type'>Int</span>
+
+  既定値`10000` (row)
+
+  <Cmdname sid="side_pgStat" className="uitext" />メニューで使用するデータ収集の基準です。`pg_stat_statements`を照会してrows値が`statements_min_row`より大きい場合に収集します。
+
+  :::note
+
+  <Cmdname sid="side_pgStat" className="uitext" />メニュについての詳細は、[次の文書](pg-sql-stat)を参照してください。
+
+  :::
+
 </InDoc>
 
 <Xclude product='cubrid,redis,mongodb'>
@@ -105,6 +129,20 @@
   既定値`1`
 
   `2`が設定されている場合、sysセッション(root、system user、event_scheduler)はactive sessionで表示されません。`1`を設定すると、sysセッションは表示されますが、total runtimeから除外されます。
+
+- **statements_min_row** <span class='type'>Int</span>
+
+  既定値`10000` (row)
+
+  <Cmdname sid="side_mysqlStat" className="uitext" />メニューで使用するデータを収集する基準です。`performance_schema.events_statements_summary_by_digest`を照会し、次の合計値が`statements_min_row`より大きい場合に収集します。
+
+  > `sum_rows_affected` + `sum_rows_sent` + `sum_rows_examined`
+
+  :::note
+
+  <Cmdname sid="side_mysqlStat" className="uitext" />メニューについての詳細は、[次の文書](mysql-sql-stat)を参照してください。
+
+  :::
 
 </InDoc>
 
@@ -213,7 +251,7 @@
 
   既定値`false`
 
-  データファイルの追加やテーブルスペースの変更時に発生するテーブルスペースのロック(tablespace lock)をモニタリングするには、当該オプション値を`true`に変更してください。
+  データファイルの追加やテーブルスペースの変更時に発生するテーブルスペースのロック(tablespace lock)をモニタリングするには、当該オプション値を`true`に変更します。
 
 </InDoc>
 
@@ -224,5 +262,81 @@
   既定値`0`
 
   xview収集時、クエリの実行時間が設定された時間よりも長くかかる場合にのみ収集します。デフォルトとしては、実行時間が0秒以上のすべてのクエリを収集します。
+
+</InDoc>
+
+<InDoc product="mssql">
+
+- **filegroup** <span class='type'>Boolean</span>
+
+  既定値 `true`
+
+  ファイルグループ(filegroup) サイズの収集可否を設定します。
+
+- **filegroup_interval** <span class='type'>Int</span>
+
+  既定値`60` (単位：秒、sec)
+
+  ファイルグループ(filegroup) サイズ収集間隔を設定します。
+
+- **procedure_stats** <span class='type'>Boolean</span>
+
+  既定値 `true`
+
+  プロシージャ統計情報の収集可否を設定します。
+
+- **procedure_interval** <span class='type'>Int</span>
+
+  既定値`1` (単位：時間、hour)
+
+  プロシージャ統計情報の収集間隔を設定します。
+
+- **procedure_stat_row_limit** <span class='type'>Int</span>
+
+  既定値`10000`
+
+  プロシージャ統計情報の収集条件を設定します。平均実行時間順、上位10000件(既定値)を基準に収集します。
+
+- **query_stats** <span class='type'>Boolean</span>
+
+  既定値 `true`
+
+  クエリ統計情報の収集可否を設定します。
+
+- **query_interval** <span class='type'>Int</span>
+
+  既定値`1` (単位：時間、hour)
+
+  クエリ統計情報の収集間隔を設定します。
+
+- **query_stat_row_limit** <span class='type'>Int</span>
+
+  既定値`10000`
+
+  クエリ統計情報の収集条件を設定します。平均実行時間順、上位10000件(既定値)を基準に収集します。
+
+- **backup_row_limit** <span class='type'>Int</span>
+
+  既定値`50`
+
+  バックアップ履歴の収集件数を50件(既定値)に制限します。
+
+- **restore_row_limit** <span class='type'>Int</span>
+
+  既定値`50`
+
+  復旧履歴の収集件数を50件(既定値)に制限します。
+
+- **job_info_row_limit** <span class='type'>Int</span>
+
+  既定値`50`
+
+  Job実行履歴の収集件数を50件(既定値)に制限します。
+
+- **job_history_row_limit** <span class='type'>Int</span>
+
+  既定値`50`
+
+  Job履歴の収集件数を50件(既定値)に制限します。
 
 </InDoc>

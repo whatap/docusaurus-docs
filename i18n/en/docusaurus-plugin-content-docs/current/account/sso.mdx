@@ -1,6 +1,6 @@
 ---
 id: sso
-title: SSO account linking
+title: Single Sign-On integration
 description: Conveniently manage accounts by using an ID and password through SSO account linking.
 keywords:
   - SSO
@@ -9,7 +9,7 @@ keywords:
 displayed_sidebar: manageSidebar
 ---
 
-You can integrate WhaTap Monitoring with **Okta**, a cloud-based solution for managing user accounts and access permissions. The **Okta** solution allows you to log on to numerous applications with a single account in high-level security environments. You can log on to the WhaTap services with the **Okta** account in your organization and use the services with the given roles.
+The **Single Sign-On** (**SSO**) solution builds a system that allows access to various applications with a single account. You can build a system that accesses to an external application with a WhaTap monitoring service account, or connects to the WhaTap monitoring service with an organization account or an external application account.
 
 :::tip
 
@@ -19,188 +19,8 @@ You can integrate WhaTap Monitoring with **Okta**, a cloud-based solution for ma
 
 :::
 
-:::note
+The WhaTap monitoring service provides the following link methods:
 
-To enable the log on to WhaTap, a user must have an **Okta** account.
+import DocCardList from '@theme/DocCardList';
 
-:::
-
-## Okta integration {#integrateokta}
-
-Follow the instructions below to configure the Okta integration with the WhaTap monitoring service.
-
-### Issuing an SSO key from WhaTap {#generatessokey}
-
-1. Log in the WhaTap monitoring service (https://service.whatap.io).
-
-2. Select the profile icon on the upper right of the screen.
-
-3. If a pop-up menu appears, select <Cmdname sid="MNU07360" className="uitext" />.
-
-4. In the menu on the right of the screen, select <Cmdname sid="ssoIntegrations" className="uitext" />.
-
-5. Enter the key name in <Cmdname sid="BTN07473" className="uitext" /> within the **_Service provider ID (WhaTap)_** section.
-
-   The key name can be entered by the user.
-
-   <ImgLang img='sso-service-key.png' desc='Service provider ID' />
-
-6. Select <Cmdname sid="BTN07473" className="uitext" />.
-
-7. In <Cmdname sid="TTL07478" className="uitext" />, check the values for <span class="uitext">EntityID</span> and <span class="uitext">Sign-On URL</span> and then copy them.
-
-   <ImgLang img='sso-check-sso-info.png' desc='sso-info' />
-
-:::note
-
-- Up to 5 SSO keys can be issued, and each has its own unique authentication data. 
-
-- Select <Cmdname sid="BTN07476" className="uitext" />, add the SSO key, and then proceed with the next procedure.
-
-- For the added SSO information, select and check the list box in **_Key Name_**.
-
-:::
-
-### Configuring the Okta authentication {#settingokta}
-
-1. Access the **Okta Admin page**.
-
-2. Go to **Applcations** &gt; **Applications**.
-
-3. Select **Create App Integration**.
-
-4. If the **Create a new app integration** pop-up window appears, click **SAML 2.0** and then select **Next**.
-
-5. Enter the value for **App name** and then select **Next**.
-
-6. Enter the **General** items in the **SAML Settings** section sequentially.
-
-   ![Okta - SAML Settings](/img/okta-samil-settings-general.png)
-
-   - **Single sign-on URL**: Enter the **_Sign-On URL_** among the SSO-related data issued from WhaTap.
-
-   - **Audience URI** (**SP Entity ID**): Enter the value for **_EntityID_** from the SSO data issued from WhaTap.
-
-   - In the **Application username** list, select **Email**.
-
-7. In **Attribute Statements** (**optional**), enter `email` in **Name** and then select **user.email** in **Value**.
-
-   ![Okta - Attribute Statements](/img/okta-attribute-statements.png)
-
-8. Select **Next**.
-
-9. In the following screen, select **I'm an Okta customer adding an internal app** and then select **Finish**.
-
-### Copying the Okta meta data {#copymetadata}
-
-1. Access the **Okta Admin page**.
-
-2. Go to **Applcations** &gt; **Applications**.
-
-3. Select the **Sign On** tab.
-
-4. In **Metadata URL**, select **Copy**.
-
-   ![Metadata URL](/img/okta-sign-on.png)
-
-5. To register the copied value, go to the WhaTap's <Cmdname sid="ssoIntegrations" className="uitext" /> menu.
-
-### Registering the external Idp in WhaTap {#registerexternalidp}
-
-1. In the WhaTap monitoring service, go to <Cmdname sid="ssoIntegrations" className="uitext" />.
-
-2. In the <Cmdname sid="TTL07484" className="uitext" /> section, select <Cmdname sid="BTN07491" className="uitext" />.
-
-   <ImgLang img='sso-externalidp-button.png' desc='External IdP' />
-
-3. If the <Cmdname sid="BTN07491" className="uitext" /> window appears, paste the <b>Metadata URL</b> copied from <b>Okta</b> to <span class="uitext">Metadata</span>.
-
-4. Select <Cmdname sid="BTN07494" className="uitext" /> to automatically convert the authentication data.
-
-5. Select <Cmdname sid="save" className="uitext" />.
-
-The SSO linking is now finished.
-
-## Assigning users
-
-1. Access the **Okta Admin page**.
-
-2. Go to **Applcations** &gt; **Applications**.
-
-3. Select the application added from the list.
-
-4. Select the **Assignments** tab.
-
-5. Click **Assign** and then select **Assign to People** (or **Assign to Groups**).
-
-   ![Assignments](/img/sso-assignments-assign.png)
-
-6. Assign desired users.
-
-   ![Assignments](/img/sso-assignments-assign-people.png)
-
-7. Select **Save and Go Back**.
-
-   ![Assignments](/img/sso-assignments-assign-save.png)
-
-8. Finish all the steps and then select **_Done_**.
-
-   ![Assignments](/img/sso-assignments-assign-done.png)
-
-## Checking the SSO linking {#checksso}
-
-1. Access the **Okta Admin page**.
-
-2. Go to **Applcations** &gt; **Applications**.
-
-3. Select the application added from the list.
-
-4. Select the **General** tab.
-
-5. Scroll down to **App Embed Link**.
-
-   ![Okta - App Embed Link](/img/okta-app-embed-link.png)
-
-6. Copy the URL in **Embed Link**.
-
-7. Go to the copied URL in your web browser.
-
-If you can log on to the WhaTap monitoring service, the connection is successful.
-
-:::note
-
-- If SSO has been linked for the first time, it is required to register the link information (automatic) through password authentication when the email account exists in WhaTap.
-
-- If you have no email address, registration of WhaTap membership and link information is automatically performed after entry of the required data.
-
-:::
-
-## Deleting the SSO key
-
-1. In the WhaTap monitoring service, go to <Cmdname sid="ssoIntegrations" className="uitext" />.
-
-2. In the **_Service provider ID (WhaTap)_** section, select the **_Key Name_** to delete from <Cmdname sid="TTL07478" className="uitext" />.
-
-   <ImgLang img='sso-delete-sso-key.png' desc='Delete SSO Key' />
-
-3. Select <Cmdname sid="BTN07481" className="uitext" />.
-
-4. If the deletion confirmation window appears, select <Cmdname sid="BTN07481" className="uitext" />.
-
-## Modifying/deleting an external IdP
-
-1. In the WhaTap monitoring service, go to <Cmdname sid="ssoIntegrations" className="uitext" />.
-
-2. In the <Cmdname sid="TTL07484" className="uitext" /> section, select <Cmdname sid="BTN07490" className="uitext" />.
-
-3. If the <Cmdname sid="BTN07490" className="uitext" /> window appears, paste the <b>Okta meta data</b> to <span class="uitext">Meatadata</span>.
-
-4. Select <Cmdname sid="BTN07494" className="uitext" /> to automatically convert the authentication data.
-
-5. Select <Cmdname sid="save" className="uitext" />.
-
-:::tip
-
-To delete the **External IdP** information, click <Cmdname sid="BTN07490" className="uitext" /> and then select <Cmdname sid="delete" className="uitext" /> in the pop-up window.
-
-:::
+<DocCardList/>

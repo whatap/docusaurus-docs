@@ -548,3 +548,149 @@ func End(methodCtx *MethodCtx, err error) error
 ```go title="Go"
 func Trace(ctx context.Context, name string, elapsed int, err error) error
 ```
+
+## Log {#log}
+
+### Configuring the agent
+
+Set agent options in the _whatap.conf_ file before running the application.
+
+```ini title="whatap.conf"
+# Enable all log collection
+logsink_enabled=true
+
+# Enable stdout collection
+logsink_stdout_enabled=true
+
+# Enable stderr collection
+logsink_stderr_enabled=true
+
+# Optional. This is a setting for compressing data. 
+logsin_zip_enabled=true
+```
+
+### Before initializing the logging library
+
+You must call the `trace.Init()` function before initializing the logging library. It internally wraps `os.Stdout` and `os.Stderr`. Afterwards, the log library automatically collects logs when `os.Stdout` and `os.Stderr` have been set.
+
+### After initializing the logging library
+
+After initializing the logging library, you can set the **io.Writer** wrapped through a separate configuration function.
+
+- `logsink.GetWriterHookStdout()`: It returns **io.Writer** that has wrapped `os.Stderr`. It collects the log by using the WhaTap log while outputting to `os.Stdout`.
+
+- `logsink.GetWriterHookStderr()`: It returns **io.Writer** that has wrapped `os.Stderr`. The wrapped **io.Writer** outputs to `os.Stderr` and collects the log contents by using the WhaTap log.
+
+### API
+
+- It returns **io.Writer** that has wrapped `os.Stdout`.
+
+  ```go
+  func GetWriterHookStdout() io.Writer
+  ```
+
+- It returns **io.Writer** that has wrapped `os.Stderr`.
+
+  ```go
+  func GetWriterHookStderr() io.Writer
+  ```
+
+See the following package-specific code example:
+
+#### log package
+
+The log package sets `os.Stderr` at the **import** time (in the `init` function). Because the `trace.Init` function cannot be called first, set the wrapped **io.Writer** (`os.Stderr`) through the `log.SetOutput` function.
+
+The output using the `print` function of the log package used afterwards maintains in `os.Stderr` through the wrapped **io.Writer**, while collecting the log contents at the same time by using the WhaTap log.
+
+```go title="log package"
+import (
+    "log"
+    "github.com/whatap/go-api/logsink"
+)
+
+...
+
+if logsink.GetWriterHookStderr() != nil {
+    // set single writer
+    log.SetOutput(logsink.GetWriterHookStderr())	
+    
+    // set multi writer 
+    multi := io.MultiWriter(file, logsink.GetWriterFromStderr())
+    log.SetOutput(logsink.GetWriterHookStderr())
+}
+
+// 
+log.Println("aaaaa")
+...
+```
+
+#### go.uber.org/zap
+
+If you call the `trace.Init()` function before setting `os.Stdout`, logs are collected automatically. It collects logs by using the WhaTap log while outputting to `os.Stdout`.
+
+```go title="go.uber.org/zap"
+import (
+    "github.com/whatap/go-api/trace"
+    "github.com/whatap/go-api/logsink"
+    
+    "go.uber.org/zap"
+    "go.uber.org/zap/zapcore"
+)
+
+func main() {
+    trace.Init(nil)
+    //It must be executed before closing the app.
+    defer trace.Shutdown()
+
+    // fmt.Println("Logger stdout=", os.Stdout, zapcore.AddSync(os.Stdout))
+    consoleCore := zapcore.NewCore(
+        zapcore.NewConsoleEncoder(consoleEncoderConfig), 
+        zapcore.AddSync(os.Stdout),                      
+        zap.InfoLevel,
+    )
+
+    // Menggabungkan core file dan console
+    core := zapcore.NewTee(consoleCore)
+    Log = zap.New(core, zap.AddCaller(), zap.AddStacktrace(zapcore.ErrorLevel))
+    Log.Info("logger started")
+
+    ...
+}
+```
+
+#### github.com/sirupsen/logrus
+
+The wrapped **io.Writer** outputs to `os.Stderr` and collects the log contents by using the WhaTap log.
+
+```go title="github.com/sirupsen/logrus"
+package main
+
+import (
+    "time"
+
+    log "github.com/sirupsen/logrus"
+
+    "github.com/whatap/go-api/logsink"
+    "github.com/whatap/go-api/trace"
+)
+
+func main() {
+    trace.Init(nil)
+    defer trace.Shutdown()
+
+    //In WhaTap, set io.Writer wrapping os.Stderr as the output of logrus
+    if logsink.GetWriterHookStderr() != nil {
+        log.SetOutput(logsink.GetWriterHookStderr())
+    }
+
+    for i := 0; i < 100; i++ {
+        log.WithFields(log.Fields{
+            "animal":  "tiger",
+            "habitat": "mountain",
+        }).Info("Index:[", i, "] A tiger appears")
+
+        time.Sleep(100 * time.Millisecond)
+    }
+}
+```

@@ -1,0 +1,224 @@
+---
+id: ipload-stat
+title: IP Load Statistics
+description: The IP load statistics provide load performance data for each IP address connected to the website.
+keywords:
+  - Browser Monitoring
+  - IP Load
+  - Statistic
+---
+
+{/* Note */}
+import TimequeryNotes from "../common-items/_browser-stat-time-query-note.mdx"
+
+Home &gt; Select Project &gt; <Cmdname sid="side_statistics" className="uitext" /> &gt; <Cmdname sid="side_ipLoadStatistics" className="uitext" />
+
+The <Cmdname sid="side_ipLoadStatistics" className="uitext" /> menu provides load performance information for each IP address connected to the website. This allows you to check IP addresses with poor performance and identify IP addresses that require improvement. It provides statistical information based on the average, maximum, minimum, and percentile values. It also filters and analyzes the time data in detail during page loading for each IP address by using the navigation timing data.
+
+**IP load time** is the total time taken for a specific IP from loading all resources (CSS, JS, images, fonts, etc.) of the website to rendering all contents. To collect this data, the browser agent uses the **Navigation Timing API** that is a web API provided by the browser.
+
+:::note
+
+For more information about the data collected in <Cmdname sid="side_ipLoadStatistics" className="uitext" />, see [the following](collect-data#pageloadtime).
+
+:::
+
+## Basic usage guide
+
+It provides performance metrics for each page accessed from a specific IP address. For each IP address, you can see various performance metrics such as **IP load time**, **DOM load time**, **network delay time**, and **resource load time**. This allows you to evaluate the performance of each IP address and determine whether it has been optimized.
+
+<ImgLang img="browser-ipload-statistics.png" desc="Page load statistics" />
+
+1. Set the date and time to view the performance metrics in <Cmdname sid="time" className="uitext" />.
+
+2. Select the desired criteria in <Cmdname sid="TTL08276" className="uitext" />.
+
+3. Select ![Search icon](/img/ic-search-on-press.svg) on the upper right of the screen.
+
+You can see the performance metrics of the time range searched for through graph charts and lists in each section. If you hover the mouse over the graph chart in each section, the metric information for the time zone appears.
+
+:::note
+
+For more information about <Cmdname sid="TTL08276" className="uitext" />, see [the following](#statcriteria).
+
+:::
+
+{/* 조회 시간 설정하기 */}
+import Settime from "../common-items/_browser-stat-set-time.mdx";
+
+<Settime/>
+
+### Selecting the statistical criteria {#statcriteria}
+
+<Cmdname sid="TTL08276" className="uitext" /> is an option that allows users to check the statistical metrics to analyze based on the following selection criteria:
+
+- <Cmdname sid="merge_avg" className="uitext" />: It provides statistics by calculating the average load times for each IP address.
+
+- <Cmdname sid="merge_max" className="uitext" />: It provides statistics based on the maximum load times for each IP address. It indicates that you can identify which IP address has the most inefficient page load time.
+
+- <Cmdname sid="merge_min" className="uitext" />: It provides statistics based on the minimum load times for each IP address. This allows you to identify which IP address has been loaded under the most optimal conditions. It is useful when setting the performance optimization goals.
+
+- <Cmdname sid="ITM08291" className="uitext" />: It provides statistics of the load times for each IP address percentile.
+
+  - <Cmdname sid="TTL08288" className="uitext" replace="95" />: It is the slowest 5% of IP load times, which represents the experience of the top 5% of users who experienced the slowest IP load times.
+
+  - <Cmdname sid="TTL08288" className="uitext" replace="90" />: It corresponds to the slowest 10% of IP load time, and is useful to identify performance issues primarily among slow user group.
+
+  - <Cmdname sid="TTL08288" className="uitext" replace="75" />: It displays the top 25% of IP load times that are slower than the bottom 75%.
+
+  - <Cmdname sid="TTL08288" className="uitext" replace="50" />: The median means that half of all IP addresses loaded the page faster than the time, and half of them loaded the page slower.
+
+{/* Tip */}
+import CriteriaTip from "../common-items/_browser-stat-criteria-tip.mdx";
+
+<CriteriaTip/>
+
+### Downloading the viewed result
+
+You can download the searched data as a CSV format file. Select ![Download icon](/img/ic-csv-download-ms.svg) on the upper right of the screen. The CSV file name has the format of *IP*LoadStatistics*`YYYYMMDD_HHMMSS`.csv*.
+
+## Screen layout
+
+### <Cmdname sid="TTL08672" /> {#TTL08672}
+
+It is the IP load performance trend chart over time. This graph allows you to see if there have been any performance fluctuations over a specific period. 
+
+- If you select the blue bar graph for a specific time, the data can be viewed in the <Cmdname sid="TTL08306" className="uitext" />, <Cmdname sid="TTL08304" className="uitext" />, <Cmdname sid="TTL08558" className="uitext" /> sections for the selected time range.
+
+  <ImgLang img="browser-statistics-ipload-trend-select-time.png" desc="IP load performance trend" />
+
+- Depending on the options selected in <Cmdname sid="TTL08276" className="uitext" />, the items displayed in the chart are changed.
+
+#### <Cmdname sid="TTL08276" />: <Cmdname sid="merge_avg" />/<Cmdname sid="merge_max" />/<Cmdname sid="merge_min" /> {#Statisticalcriteria}
+
+<ImgLang img="browser-statistics-ipload-trend.png" desc="Page load performance trend" />
+
+- The blue bar graph is the number of pages loaded for a specific time zone.
+
+- The purple line graph is the average page loading time for the time zone.
+
+#### <Cmdname sid="TTL08276" />: <Cmdname sid="ITM08291" /> {#percent}
+
+<ImgLang img="browser-statistics-ipload-trend-pecent.png" desc="Page load performance trend" />
+
+- Blue represents <Cmdname sid="TTL08288" className="uitext" replace="50" />, purple <Cmdname sid="TTL08288" className="uitext" replace="75" />, orange <Cmdname sid="TTL08288" className="uitext" replace="90" />, and green <Cmdname sid="TTL08288" className="uitext" replace="95" />.
+
+- The blue bar graph is the number of pages loaded for a specific time zone.
+
+### <Cmdname sid="TTL08673" /> {#TTL08673}
+
+IP addresses are grouped by 5-minute or 1-hour intervals and the top 10 IP groups with the longest page load times per unit are displayed in a time series graph. This graph displays the IP addresses sorted in descending order of the page load time.
+
+<ImgLang img="browser-statistics-ipload-time-top.png" desc="IP load time Top10" />
+
+- The bar chart at the bottom of the section displays the average values for each IP address in the time series graph.
+
+- If <Cmdname sid="TTL08276" className="uitext" /> is <Cmdname sid="merge_avg" className="uitext" /> or <Cmdname sid="merge_max" className="uitext" />, <Cmdname sid="merge_min" className="uitext" />, the elapsed time is expressed with the selected reference value.
+
+- If <Cmdname sid="TTL08276" className="uitext" /> is <Cmdname sid="ITM08291" className="uitext" />, the elapsed time is expressed as <Cmdname sid="TTL08288" className="uitext" replace="95" />.
+
+- If data is not collected in continuous time intervals but exists only in specific intervals, a bar graph is displayed only.
+
+### <Cmdname sid="TTL08674" /> {#TTL08674}
+
+IP addresses are grouped by 5-minute or 1-hour intervals and the top 10 IP groups with the greatest page load counts per unit are displayed in a time series graph. This graph displays the IP addresses sorted in descending order of the page load count.
+
+<ImgLang img="browser-statistics-ipload-count-top.png" desc="IP load count Top10" />
+
+- The bar chart at the bottom of the section displays the sum values for each page group in the time series graph.
+
+- If data is not collected in continuous time intervals but exists only in specific intervals, a bar graph is displayed only.
+
+### <Cmdname sid="TTL08558" /> {#TTL08558}
+
+It is a list where you can check various performance metrics based on the IP group.
+
+<ImgLang img="browser-statistics-ipload-group-list.png" desc="IP list" />
+
+- If you select <Cmdname sid="TTL08276" className="uitext" /> as <Cmdname sid="ITM08291" className="uitext" />, you can additionally check the number of cases for each IP group and the elapsed time for <Cmdname sid="TTL08288" className="uitext" replace="50" />, <Cmdname sid="TTL08288" className="uitext" replace="75" />, <Cmdname sid="TTL08288" className="uitext" replace="90" />, and <Cmdname sid="TTL08288" className="uitext" replace="95" />.
+
+- When you select ![Detail icon](/img/ico-detail-view.svg) <Cmdname sid="detail" className="uitext" /> on the utmost left of the list, the <Cmdname sid="TTL08663" className="uitext" /> screen appears. You can check detailed statistical information of the selected IP group through the <Cmdname sid="TTL08663" className="uitext" /> screen. For more information, see [the following](#TTL08663).
+
+- You can go to the <Cmdname sid="side_userSessionEventSearch" className="uitext" /> menu by selecting ![Right arrow icon](/img/right-arrow.svg) in the <Cmdname sid="ip" className="uitext" /> column. You can check the results by applying the selected page group URL and query time as filters.
+
+- ![Column Icon](/img/ic-column.svg) <Cmdname sid="BTN06441" className="uitext" />: You can hide the table header columns or add desired items. You can also change the column order. For more information, see [the following](#setcolumn).
+
+<TimequeryNotes sid="side_ipLoadStatistics" img="browser-statistics-ipgroup-header.png" />
+
+### <Cmdname sid="TTL08663" /> {#TTL08663}
+
+You can check detailed statistical information of the selected IP group.
+
+- <Cmdname sid="TTL08676" className="uitext" />
+
+  <ImgLang img="browser-statistics-ipload-timeline.png" desc="IP load timeline" />
+
+  It provides the overall IP loading performance information for the web applications. It displays the page load times and the average times for each load step. You can see the overall performance of your browser applications through this. For more information, see [the following](dashboard#pageloadtimeline).
+
+  :::note
+
+  If <Cmdname sid="TTL08276" className="uitext" /> is <Cmdname sid="ITM08291" className="uitext" />, the IP load performance is displayed as a percentage. Blue represents <Cmdname sid="TTL08288" className="uitext" replace="50" />, purple <Cmdname sid="TTL08288" className="uitext" replace="75" />, orange <Cmdname sid="TTL08288" className="uitext" replace="90" />, and green <Cmdname sid="TTL08288" className="uitext" replace="95" />.
+
+  :::
+
+- <Cmdname sid="TTL08804" className="uitext" />
+
+  <ImgLang img="browser-statistics-ipload-time.png" desc="IP load time" />
+
+  You can check the page load time over time for the selected IP group. You can select various performance metrics from the selection box. For more information about the performance metrics, see [the following](#columninfo).
+
+  :::note
+
+  If <Cmdname sid="TTL08276" className="uitext" /> is <Cmdname sid="ITM08291" className="uitext" />, the IP load times for each percentile are provided.
+
+  :::
+
+- <Cmdname sid="TTL08805" className="uitext" />
+
+  <ImgLang img="browser-statistics-ipload-count.png" desc="IP load count" />
+
+  You can check the page load count over time for the selected IP group.
+
+- <Cmdname sid="TTL08558" className="uitext" />
+
+  <ImgLang img="browser-statistics-ip-group-list.png" desc="IP group list" />
+
+  It is a list of tables that provide a quick overview of various performance metrics based on the IP address. You can go to the <Cmdname sid="side_userSessionEventSearch" className="uitext" /> menu by selecting ![Right arrow icon](/img/right-arrow.svg) in the <Cmdname sid="TTL08558" className="uitext" /> column. You can check the results by applying the selected IP address and query time as filters.
+
+  <TimequeryNotes sid="TTL08558" img="browser-statistics-ipgroup-header.png" />
+
+{/* 데이터 수집 제한 */}
+import DatacollectInfo from "../common-items/_browser-stat-data-info.mdx";
+
+<DatacollectInfo/>
+
+## Filtering the searched results
+
+You can filter the retrieved statistical data based on <Cmdname sid="ip" className="uitext" /> or <Cmdname sid="TTL08292" className="uitext" replace="ms" /> to focus on analyzing the desired content.
+
+### IP address filter
+
+You can select a specific IP address to view its performance data. Select a desired IP group in the <Cmdname sid="ip" className="uitext" /> option.
+
+<ImgLang img="browser-statistics-ip-group-filter.png" desc="Page group" />
+
+:::note
+
+You can select up to 3 IP addresses.
+
+:::
+
+{/* 성능 지표 필터 */}
+import PermetricsFilter from "../common-items/_browser-stat-perf-metrics-filter.mdx";
+
+<PermetricsFilter/>
+
+{/* 컬럼 설정하기 */}
+import Coumnsetting from "../common-items/_browser-stat-column-setting.mdx";
+
+<Coumnsetting/>
+
+{/* 컬럼 및 용어 안내 */}
+import Statcolumn from "../common-items/_browser-stat-column-info.mdx";
+
+<Statcolumn/>

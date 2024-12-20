@@ -53,7 +53,7 @@ kubectl delete clusterrole whatap
 
 ### `whatap-monitoring`ネームスペースが使用できない場合{#whatap-monitoring-namespace-unavailable}
 
-基本的にWhaTap Kubernetesエージェントは`whatap-monitoring`ネームスペースにインストールされます。 ただし、当該ネームスペースが使用できない場合、またはユーザーが特定のネームスペースを指定する必要がある場合は、次の手順を参考にして、必要なネームスペースにエージェントのインストールを進めてください。 
+基本的にWhaTap Kubernetesエージェントは`whatap-monitoring`ネームスペースにインストールされます。 ただし、該当ネームスペースが使用できない場合、またはユーザーが特定のネームスペースを指定する必要がある場合は、次の手順を参考にして、必要なネームスペースにエージェントをインストールします。 
 
 #### 事前準備
 
@@ -75,7 +75,7 @@ kubectl delete clusterrole whatap
 
 #### インストール手順
 
-使用したいネームスペース名を`<namespace>`に入力し、次のコマンドを実行してエージェントをインストールします。 
+使用するネームスペース名を`<namespace>`に入力し、次のコマンドを実行してエージェントをインストールします。 
 
 ```bash
 helm install whatap-kube-agent whatap/kube --create-namespace --namespace <namespace> --set namespaceOverrideEnabled=true --wait -f values.yaml
@@ -146,7 +146,7 @@ WhaTapノードエージェント**1.2.0以降**(2022年11月21日リリース) 
 
 ### コンテナマップにJavaモニタリングデータが表示されない場合
 
-ユーザーKubernetes環境でCgroupsの設定や管理方法によっては、特定の状況でコンテナIDを確保できない問題が発生する可能性があります。 WhaTapは、このような状況に対応するために、Kubernetesモニタリングのコンテナとアプリケーション間のマッピングメカニズムを変更しました。 当該変更事項の場合は、WhaTap**Kubernetesエージェント1.7.7**バージョンと**Javaエージェント2.2.33**バージョンから適用され、Cgroupsの影響でコンテナIDが漏れる問題を解決します。 
+Kubernetes環境でCgroupsの設定や管理方法によっては、特定の状況でコンテナIDを確保できない問題が発生する可能性があります。 WhaTapは、このような状況に対応するために、Kubernetesモニタリングのコンテナとアプリケーション間のマッピングメカニズムを変更しました。 当該変更事項の場合は、WhaTap**Kubernetesエージェント1.7.7**バージョンと**Javaエージェント2.2.33**バージョンから適用され、Cgroupsの影響でコンテナIDが漏れる問題を解決します。 
 
 {/* 사용자 쿠버네티스 환경에 따라 내부 Cgroups의 영향으로 컨테이너 ID를 확보하지 못하는 경우가 발생할 수 있습니다. WhaTapは、このような状況に対応するために、Kubernetesモニタリングのコンテナとアプリケーション間のマッピングメカニズムを変更しました。 当該変更事項の場合は、Kubernetesエージェント1.7.7およびJavaエージェント2.2.33バージョンから適用されました。  */}
 

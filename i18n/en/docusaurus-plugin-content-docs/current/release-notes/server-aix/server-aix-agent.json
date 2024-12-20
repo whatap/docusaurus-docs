@@ -1,13 +1,62 @@
 [
   {
-    "url": "https://docs.whatap.io/en/release-notes/server/server-aix-1_2_7",
+    "url": "https://docs.whatap.io/en/release-notes/server-aix/server-aix-1_3_5",
+    "ver": "v1.3.5",
+    "date": "2024-10-17",
+    "Lists": [
+      {
+        "ver": "v1.3.5",
+        "hash": "v135",
+        "product": "Server AIX Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"1\">Fixed</code> Fixed the issue where the Oname fixing option does not work.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server-aix/server-aix-1_3_6",
+    "ver": "v1.3.6",
+    "date": "2024-11-11",
+    "Lists": [
+      {
+        "ver": "v1.3.6",
+        "hash": "v136",
+        "product": "Server AIX Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the issue where network data is not collected when the OS language set is Korean.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server-aix/server-aix-1_3_4",
+    "ver": "v1.3.4",
+    "date": "2024-09-19",
+    "Lists": [
+      {
+        "ver": "v1.3.4",
+        "hash": "v134",
+        "product": "Server AIX Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the feature to collect server configuration data.</p>"
+      },
+      {
+        "ver": "v1.3.4",
+        "hash": "v134",
+        "product": "Server AIX Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Improved to fix the OID value after initial startup of the agent.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server-aix/server-aix-1_2_7",
     "ver": "v1.2.7",
     "date": "2024-04-09",
     "Lists": [
       {
         "ver": "v1.2.7",
         "hash": "v127",
-        "product": "Server Agent AIX",
+        "product": "Server AIX Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the AIX server CPU logical core analysis error: fixed the over-measurement error related to the process CPU.</p>"
       }

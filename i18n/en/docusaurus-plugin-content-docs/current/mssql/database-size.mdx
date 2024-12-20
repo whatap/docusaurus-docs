@@ -1,0 +1,127 @@
+---
+id: database-size
+title: Database size
+description: It aggregates the table sizes for each SQL server database and provides the trend information in chart format.
+keywords:
+  - SQL Server
+  - DATABASE
+  - Database size
+---
+
+Home &gt; Select Project &gt; <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbSize" className="uitext" />
+
+It aggregates the sizes of tables for each database and provides trend data in a chart. You can identify and manage the trend in database capacity growth. You can prepare for rapid capacity increases by identifying them in advance.
+
+Database size can affect the performance. You can prepare to troubleshoot performance issues because the increase in size can delay the query execution. It is also required to identify and prevent problems in advance that may increase the size due to incorrect queries or database structure issues.
+
+The trend in database size helps you understand usage patterns and data growth. You can predict future capacity requirements and take possible actions. Monitoring these changes helps you optimize the resources and costs.
+
+## Basic screen guide
+
+<ImgLang img='db-database-size-mssql.png' desc='Database size'/>
+
+1. Set the time to search in <Cmdname sid="time" className="uitext" />. You can also select a lookup time by clicking the green button.
+
+2. Select a target to view in <Cmdname sid="instance" className="uitext" />.
+
+3. Select ![Search icon](/img/ico-btn-search.png).
+
+:::note
+
+- The lookup time can be set up to 62 days. In case of a view for 3 days or more, the graph displays the daily average.
+
+- Select the clock display area to query a random date and time. If you click the text range for date and time, the option appears to select the date and time.
+
+:::
+
+## <Cmdname sid="TTL06025" /> {#TTL06025}
+
+It displays a graph for the changes in storage capacity of the database over the query time. This allows you to see the increase or decrease trend of the database size at a glance.
+
+- You can predict data growth patterns by checking the storage increase trend of a specific database.
+
+- By comparing storage capacity changes across multiple databases, you can identify which databases are consuming the most storage.
+
+<ImgLang img='db-database-size-select-db-mssql.png' desc='Database size'/>
+
+The chart displays the sizes for each database in different color. Hover your mouse over the chart and move it left and right to view the details. You can see information details on the sizes for each database at a specific time point through the tooltip.
+
+- **Time Axis** (X-axis): Time at which database storage changes are recorded.
+
+- **Capacity Axis** (Y-axis): Total database size (unit: MiB). It visually displays how the database's capacity changes over time.
+
+## <Cmdname sid="TTL06026" /> {#TTL06026}
+
+You can check the storage capacity and usage for databases and file groups in detail. Analyze the efficiency of the storage space through the database file size, usage, maximum size, and the like, and take proactive measures when the capacity is running low.
+
+<ImgLang img='db-database-size-details-db-mssql.png' desc='Database size'/>
+
+- You can expand the tree structure to see the usage for each database and file group.
+
+- You can analyze the data growth by comparing usage changes in the same database over different time zones.
+
+- You can proactively prevent storage space shortages by checking databases or file groups with high <UI>USAGE</UI>.
+
+### Guide to columns
+
+For more information about each column in the <Cmdname sid="TTL06026" className="uitext" /> section, see the following.
+
+- ***DB NAME/FILE GROUP***: Database name and the filegroup name of the database. The structure of each database and file group can be expanded or collapsed in tree format.
+
+- ***MAX SIZE***: Pre-defined maximum size of database or file group. <UI>UNLIMITED</UI> indicates that there is no size limit.
+
+- ***SIZE***: It represents the total size of the current database or file group.
+
+- ***USED***: It is the actual amount of storage space in use.
+
+- ***USAGE***: It displays the utilization in percentage (%). It is the ratio of utilized capacity to the total database size. If the utilization is high, consider securing the additional capacity.
+
+- ***CHANGED AMOUNT***: It displays the change in usage over the query time range.
+
+## <Cmdname sid="TTL06572" /> {#TTL06572}
+
+If you select a database in the <Cmdname sid="TTL06026" className="uitext" /> section, you can check the list of sizes for each table corresponding to the top 50 sizes in the database. It provides information about the top 50 tables that use the most storage space. This allows you to identify and optimize the tables that hold large amounts of data.
+
+<ImgLang img='db-database-size-top50-mssql.png' desc='Database size'/>
+
+- By quickly identifying which tables are using the most storage space, you can optimize the data structure or manage the storage.
+
+- By checking the <UI>UNUSED SPACE SIZE</UI> value, you can identify the tables that are taking up much free space unnecessarily.
+
+- By comparing the number of rows in each table, you can identify the tables with unusually large amounts of data and perform further analysis and tuning.
+
+:::note
+
+To change the order of table columns or hide specific columns in the <Cmdname sid="TTL06572" className="uitext" /> section, select ![Column icon](/img/ico-column.svg) on the upper right. For more information about the column configuration, see [the following](instance-monitoring#change-column).
+
+:::
+
+### Viewing the object details
+
+<UI>TABLENAME</UI> When a column is selected, the <UI>Object Detail</UI> window appears, where you can see detailed information about the objects in the table.
+
+To use the <UI>Object Detail</UI> feature, grant users appropriate object query roles in SQL Server. You can set roles by executing the following command.
+
+```sql
+grant view any definition to {DB_User};
+```
+
+### Guide to columns
+
+For more information about each column in the <Cmdname sid="TTL06572" className="uitext" /> section, see the following.
+
+- ***DB***: Name of the database to which the table belongs.
+
+- ***FILEGROUP***: Name of the file group where the table is stored.
+
+- ***SCHEMANAME***: Name of the schema to which the table belongs.
+
+- ***TABLENAME***: Name of the table. When a table name is clicked, the <UI>Object Detail</UI> window appears, where you can see detailed information about the object.
+
+- ***TOTAL SPACE SIZE***: Total size of storage space (MiB) used by the tables.
+
+- ***USED SPACE SIZE***: Size of space (in MiB) used in the table.
+
+- ***UNUSED SPACE SIZE***: Size of free space (in MiB) not used in the table. If this value is large, you may need to optimize the table structure or clean up the data.
+
+- ***ROWS***: Number of data rows stored in the table.

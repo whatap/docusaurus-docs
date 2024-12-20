@@ -1,6 +1,6 @@
 ---
 id: analysis-count-trend
-title: カウントの推移と比較
+title: カウント推移の比較
 description: データベースの稼働の推移を確認し、比較できます。
 keywords:
   - SQL Server
@@ -9,26 +9,41 @@ keywords:
   - カウント推移
 ---
 
-データベース運用の推移を確認して比較できる<Cmdname sid="side_dbTrend" className="uitext" />および<Cmdname sid="side_dbTrendComparison" className="uitext" />メニューについてご案内します。
+import V2Note from "../common-items/_import_v2-note.mdx";
 
-import ProdImg from '@site/src/components/ChangeImgName.js';
+<V2Note product="SQL Server" />
 
-{/* 카운트 추이 */}
-import Dbcounttrenddesc from "../common-items/_db-count-trend-desc.mdx";
+{/* description*/}
+import Dbv2counttrenddesc from "../common-items/_db-v2-count-trend-desc.mdx";
 
-<Dbcounttrenddesc />
+<Dbv2counttrenddesc />
 
-{/* 카운트 추이 비교 */}
-import Dbcomparecounttrendv2 from "../common-items/_db-compare-count-trend-v2.mdx";
+{/* ## 기본 화면 안내*/}
+import Dbv2counttrendbasicusage from "../common-items/_db-v2-count-trend-basic-usage.mdx";
 
-<Dbcomparecounttrendv2 />
+<Dbv2counttrendbasicusage />
 
-{/* 차트 및 액티브 세션 영역 활용하기 */}
-import Dbusingchartactivesessionarea from "../common-items/_db-using-chart-activesession-area.mdx";
+{/* ### 비교 대상 선택하기*/}
+import Dbv2counttrendselectinstance from "../common-items/_db-v2-count-trend-select-instance.mdx";
 
-<Dbusingchartactivesessionarea />
+<Dbv2counttrendselectinstance />
+
+{/* ### 액티브 세션 정보 비교하기*/}
+import Dbv2counttrendcompare from "../common-items/_db-v2-count-trend-compare.mdx";
+
+<Dbv2counttrendcompare />
+
+{/* ### 특정 시간 비교하기*/}
+import Dbv2counttrendcomparetime from "../common-items/_db-v2-count-trend-compare-time.mdx";
+
+<Dbv2counttrendcomparetime />
+
+{/*## 프리셋*/}
+import Dbv2counttrendspreset from "../common-items/_db-v2-count-trends-preset.mdx";
+
+<Dbv2counttrendspreset />
 
 {/* 컬럼 정보 안내 */}
-import Mssqlcolumn from "../common-items/_db-mssql-column.mdx";
+import Mssqlcolumn from "../common-items/_db-mssql-v2-column.mdx";
 
 <Mssqlcolumn level={2} />

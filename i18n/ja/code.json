@@ -509,5 +509,285 @@
   "theme.blog.newFeatures": {
     "message": "新しい機能",
     "description": "Navbar item with label 새로운 기능"
+  },
+  "index.pages.metaTitle": {
+    "message": "リアルタイム・オブザーバビリティ・プラットフォーム | WhaTap Docs"
+  },
+  "index.pages.register": {
+    "message": "サインアップ"
+  },
+  "index.pages.register.desc": {
+    "message": "WhaTapモニタリングサービスを利用するには、会員登録を行ってください。 15日間無料体験できます。"
+  },
+  "index.pages.project": {
+    "message": "プロジェクト作成"
+  },
+  "index.pages.project.desc": {
+    "message": "プロジェクトを作成し、アクセスキーを発行してください。"
+  },
+  "index.pages.agentInstall": {
+    "message": "エージェントインストール"
+  },
+  "index.pages.agentInstall.desc": {
+    "message": "監視対象にエージェントをインストールします。"
+  },
+  "index.pages.viewDashboard": {
+    "message": "ダッシューボード照会"
+  },
+  "index.pages.viewDashboard.desc": {
+    "message": "エージェントをインストール後、データがWhaTapサーバーに送信されると、ダッシューボードメニューからプロジェクトの全体の状況をリアルタイムで確認することができます。"
+  },
+  "index.pages.welcome.para": {
+    "message": "WhaTapのDocsページへようこそ。"
+  },
+  "index.pages.welcome.recommend": {
+    "message": "推奨ドキュメント："
+  },
+  "index.pages.section.gettingStart": {
+    "message": "始める前に"
+  },
+  "index.pages.section.gettingStart.whatapOverview": {
+    "message": "WhaTapモニタリングサービス"
+  },
+  "index.pages.section.gettingStart.whatapOverview.desc": {
+    "message": "様々なプラットフォームに対応する統合モニタリング"
+  },
+  "index.pages.section.gettingStart.support": {
+    "message": "サポート環境"
+  },
+  "index.pages.section.gettingStart.support.desc": {
+    "message": "サービスを利用する前にサポート環境を確認してください。"
+  },
+  "index.pages.section.gettingStart.home": {
+    "message": "ホーム画面"
+  },
+  "index.pages.section.gettingStart.home.desc": {
+    "message": "サービスの初期画面の使い方をご案内します。"
+  },
+  "index.pages.section.gettingStart.mobileApp": {
+    "message": "モバイルアプリ"
+  },
+  "index.pages.section.gettingStart.mobileApp.desc": {
+    "message": "モバイルアプリの使い方をご案内します。"
+  },
+  "index.pages.section.product": {
+    "message": "サービス"
+  },
+  "index.pages.section.product.java": {
+    "message": "WAS、バッチアプリケーション等、JVM環境で動作するすべてのアプリケーションに適応できます。"
+  },
+  "index.pages.section.product.nodejs": {
+    "message": "非同期式のトランザクション分析によって、単一スレッドのフローを10秒間隔で分析し、ボトルネックやエラー内容が把握できます。"
+  },
+  "index.pages.section.product.php": {
+    "message": "PHP8.3、Alpine Linuxまで適用可能で、プロフィールからSQL、HTTPコール、Redisコール情報が確認できます。"
+  },
+  "index.pages.section.product.python": {
+    "message": "ウェブフレームワーク、サーバー、バッチ等主なアプリケーションに適用可能で、DBクエリ、外部呼出しをトレースして遅延区間を識別します。"
+  },
+  "index.pages.section.product.dotnet": {
+    "message": ".NETフレームワーク4.5に対応し、.NETベースのIIS、Console、サービス、Windowsアプリケーションをモニタリングします。"
+  },
+  "index.pages.section.product.go": {
+    "message": "Go APIを使ってGoアプリケーションのウェブ呼出し、応答トランザクション、一般のトランザクション、SQL、HTTPコール等がトレースできます。"
+  },
+  "index.pages.section.product.server": {
+    "message": "物理サーバーやクラウド、スケールアウト環境にも適用できます。それに、大規模リソースや使用率の高いクリティカルリソースのモニタリングとインベントリ管理ができます。"
+  },
+  "index.pages.section.product.k8s": {
+    "message": "Monitors Kubernetes clusters, nodes, applications, and logs at a glance."
+  },
+  "index.pages.section.product.postgresql": {
+    "message": "性能指標、SQL、Lock、Slow SQLを監視し、推移分析や比較ができます。"
+  },
+  "index.pages.section.product.oracle": {
+    "message": "DBの性能指標、SQL、Lock、パラレルクエリ情報を監視し、推移分析や比較ができます。"
+  },
+  "index.pages.section.product.oraclePro": {
+    "message": "データベースサーバーのメモリに直接アクセスして、負荷なく1秒間に数十回まで性能情報をモニタリングできます。"
+  },
+  "index.pages.section.product.mysql": {
+    "message": "MySQL、MariaDBの性能指標、SQL、Lock、Slow SQLを監視し、推移分析や比較ができます。"
+  },
+  "index.pages.section.product.mssql": {
+    "message": "性能指標、SQL、Lock情報を監視し、推移分析や比較ができます。"
+  },
+  "index.pages.section.product.tibero": {
+    "message": "DBの性能指標、SQL、Lock、パラレルクエリ情報を監視し、推移分析や比較ができます。"
+  },
+  "index.pages.section.product.cubrid": {
+    "message": "DBの性能指標、SQL、Lock、パラレルクエリ情報を監視し、推移分析や比較ができます。"
+  },
+  "index.pages.section.product.altibase": {
+    "message": "DBの性能指標、SQL、Lock、パラレルクエリ情報を監視し、推移分析や比較ができます。"
+  },
+  "index.pages.section.product.redis": {
+    "message": "DBの性能指標を監視し、推移分析や比較ができます。"
+  },
+  "index.pages.section.product.mongodb": {
+    "message": "DBの性能指標を監視し、推移分析や比較ができます。"
+  },
+  "index.pages.section.product.url": {
+    "message": "サイトへ接続するエンドユーザー観点から、HTTPステータスコードで接続エラーを自動で確認できます。"
+  },
+  "index.pages.section.product.browser": {
+    "message": "ウェブアプリケーションへ接続したエンドユーザーのインタラクションに関する性能を監視し、分析します。"
+  },
+  "index.pages.section.product.awsCloudWatch": {
+    "message": "Amazon CloudWatch APIを通して周期的にメトリクスを検索し、保存します。."
+  },
+  "index.pages.section.product.awsEcs": {
+    "message": "META APIとcgroupディレクトリを通してDockerコンテナ別のリソース使用量をリアルタイムで収集します。"
+  },
+  "index.pages.section.product.awsLog": {
+    "message": "AWS Resourceから生成されAWS S3、AWS CloudWatch Log Groupに保存されるログを収集し、保存します。"
+  },
+  "index.pages.section.product.azure": {
+    "message": "Azure Monitor APIを通して周期的にメトリクスを検索し、保存します。"
+  },
+  "index.pages.section.product.ncloud": {
+    "message": "Naver Cloud Monitoring APIを通して周期的にメトリクスを検索し、保存します。"
+  },
+  "index.pages.section.product.oci": {
+    "message": "Oracle Cloud Monitor APIを通して周期的にメトリックスを検索し、保存します。"
+  },
+  "index.pages.section.product.network": {
+    "message": "プロセスのネットワーク通信情報を可視化し、パフォーマンス分析と障害の特定に使用します。"
+  },
+  "index.pages.section.product.feature": {
+    "message": "既存のモニタリング製品を、ユーザーがモニタリングしようとするソフトウェアに合わせてリパッケージし、最適化されたモニタリングソリューションを提供します。"
+  },
+  "index.pages.section.management": {
+    "message": "管理"
+  },
+  "index.pages.section.management.account": {
+    "message": "アカウント管理"
+  },
+  "index.pages.section.management.account.desc": {
+    "message": "会員登録を通じてアカウントを作成し、管理してください。"
+  },
+  "index.pages.section.management.multiFactor": {
+    "message": "マルチファクター認証"
+  },
+  "index.pages.section.management.multiFactor.desc": {
+    "message": "マルチファクター認証を使用して、アカウントとサービスに対するセキュリティを強化できます"
+  },
+  "index.pages.section.management.sso": {
+    "message": "SSOアカウント連携"
+  },
+  "index.pages.section.management.sso.desc": {
+    "message": "1つのIDとパスワードを利用して、簡単にログインしてください。"
+  },
+  "index.pages.section.management.billing": {
+    "message": "課金"
+  },
+  "index.pages.section.management.billing.desc": {
+    "message": "トライアルで無料で始めて必要なだけご利用ください。"
+  },
+  "index.pages.section.management.project": {
+    "message": "プロジェクト管理"
+  },
+  "index.pages.section.management.project.desc": {
+    "message": "プロジェクトはモニタリング単位を意味します。プロジェクトについて確認してください。"
+  },
+  "index.pages.section.management.organize": {
+    "message": "統合管理"
+  },
+  "index.pages.section.management.organize.desc": {
+    "message": "組織やグループ、プロジェクトを体系的に管理することができます。"
+  },
+  "index.pages.section.management.maintenance": {
+    "message": "メンテナンス計画"
+  },
+  "index.pages.section.management.maintenance.desc": {
+    "message": "登録したメンテナンス時間に受信設定した通知を一時停止できます。"
+  },
+  "index.pages.section.management.userbehavior": {
+    "message": "ユーザー行為"
+  },
+  "index.pages.section.management.userbehavior.desc": {
+    "message": "プロジェクト内で実行中のユーザーの行動を追跡することができます。"
+  },
+  "index.pages.section.updates": {
+    "message": "最新アップデート"
+  },
+  "index.pages.section.updates.news": {
+    "message": "新しい機能"
+  },
+  "index.pages.section.updates.news.desc": {
+    "message": "新しくリリースされた機能をご確認ください。"
+  },
+  "index.pages.section.updates.release": {
+    "message": "リリースノート"
+  },
+  "index.pages.section.updates.release.desc": {
+    "message": "最新のリリース情報を素早く確認してください。"
+  },
+  "index.pages.section.reference": {
+    "message": "参照"
+  },
+  "index.pages.section.reference.openApi": {
+    "message": "Open API"
+  },
+  "index.pages.section.reference.openApi.desc": {
+    "message": "Open APIを通じてモニタリングデータを抽出することができます。"
+  },
+  "index.pages.section.reference.proxy": {
+    "message": "ソフトウェアプロキシ"
+  },
+  "index.pages.section.reference.proxy.desc": {
+    "message": "外部ネットワークへのアクセスを遮断し、単一のチャネルでWhaTapにデータを送信することができます。"
+  },
+  "index.pages.section.reference.docs": {
+    "message": "技術文書の案内"
+  },
+  "index.pages.section.reference.docs.desc": {
+    "message": "WhaTap Docsページの活用方法をご案内します。"
+  },
+  "index.pages.section.reference.license": {
+    "message": "ライセンス"
+  },
+  "index.pages.section.reference.license.desc": {
+    "message": "オープンソースライセンスと使用されるライブラリーについて説明します。"
+  },
+  "index.pages.section.reference.faq": {
+    "message": "FAQ"
+  },
+  "index.pages.section.reference.faq.desc": {
+    "message": "WhaTapモニタリングサービスを使用する際に発生しうる、一般的な問題に対する解決方法を提供します。"
+  },
+  "index.pages.section.learn": {
+    "message": "学習する"
+  },
+  "index.pages.section.learn.learning": {
+    "message": "WhaTap活用"
+  },
+  "index.pages.section.learn.learning.desc": {
+    "message": "迅速な理解と効率的な利用のために活用ガイドを提供します。"
+  },
+  "index.pages.section.learn.mxql": {
+    "message": "MXQL"
+  },
+  "index.pages.section.learn.mxql.desc": {
+    "message": "MXQLは、メトリクスを柔軟に検索するためのクエリ言語です。"
+  },
+  "index.pages.section.learn.metrics": {
+    "message": "メトリクス"
+  },
+  "index.pages.section.learn.metrics.desc": {
+    "message": "メトリクスは、モニタリング対象から収集されたデータです。"
+  },
+  "index.pages.section.learn.glossary": {
+    "message": "用語辞典"
+  },
+  "index.pages.section.learn.glossary.desc": {
+    "message": "モニタリングサービスをより便利に利用できるように用語辞典を提供します。"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "This author has not written any posts yet.",
+    "description": "The text for authors with 0 blog post"
+  },
+  "pages.dbfunctions.title": {
+    "message": "データベースごとのサポート機能の比較"
   }
 }

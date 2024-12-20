@@ -1,0 +1,17 @@
+:::note
+
+- When you move from the <Cmdname sid={props.sid} className="uitext" /> menu to the <Cmdname sid="side_userSessionEventSearch" className="uitext" /> menu, the data before and after the specific time range may also be included.
+
+  - **View for 2 hours or more**: Data is searched every 1 hour, with 1 hour added before and after the query time range.
+
+    > For example, if you search for 3 hours from **11:00 to 14:00** on October 21, 2024, the actual search range is extended to **5 hours** from **10:00 to 15:00** on October 21, 2024.
+
+  - **Query within 2 hours**: Data is retrieved every 5 minutes, with 5 minutes added before and after the query time range.
+
+    > For example, if you search for 30 minutes from **11:00 to 11:30** on October 21, 2024, the actual search range is extended to **40 minutes** from **10:55 to 11:35** on October 21, 2024.
+
+- If you hover your mouse over a column header in the table, the detailed information about the column is provided in a tooltip format. For more information about column entries, see [the following](#columninfo).
+
+  <ImgLang img={props.img} desc="Tooltip" />
+
+:::

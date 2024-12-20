@@ -1,0 +1,131 @@
+---
+id: nginx-introduction
+title: NGINX monitoring
+description: This document introduces the NGINX monitoring product.
+displayed_sidebar: featuremonitorSidebar
+toc_max_heading_level: 2
+keywords:
+  - NGINX
+  - Feature
+---
+
+import InstallFeature from '../common-items/_import_feature-install-agent.mdx';
+import HttpStatus from "../common-items/_import_feature-http-status.mdx";
+import TR from '@site/src/components/TR';
+
+:::note
+
+**Feature Project**<ScrollToLink anchor='feature-project' />
+
+WhaTap newly introduced **Feature Project** (<code class='Features'>Features</code>) so that users can easily check whether the desired software supports monitoring and easily start monitoring. The Feature Project provides an optimized monitoring solution by repackaging existing monitoring products to fit the software to monitor. Manage your services for stability and performance more effectively through the WhaTap's Feature Project. 
+
+:::
+
+NGINX is a high-performance HTTP and reverse proxy server that provides load balancing, caching, and HTTP cache features for web applications. NGINX is suitable for operating large-scale websites because it can effectively distribute and manage web traffic based on high concurrent processing performance.
+
+WhaTap provides the ***NGINX*** monitoring with a new **Feature Project** method. It traces the overall performance and status of the NGINX server to help you find and resolve issues early as possible.
+
+- **Metric Monitoring**: It monitors various metrics of the NGINX server in real time, including request processing status, response codes, and connection status.
+
+- **Dashboard**: You can efficiently view and analyze the required metrics through the dashboard.
+
+Operate and manage your NGINX server stably through WhaTap ***NGINX*** Monitoring.
+
+## Installation
+
+The following guides you to the basic installation method for using the WhaTap NGINX monitoring service. 
+
+To use the WhaTap monitoring service, after [Sign up](https://www.whatap.io/en/signup/), create a project and then install the agent to the target server. For more information about membership registration, see [the following](../account/account-manage). 
+
+:::note 
+
+**Supported environment**<ScrollToLink anchor='NGINX-supported-env' />
+
+Before installing the WhaTap NGINX monitoring agent, check the support environment. 
+
+- **NGINX**: NGINX 1.4.x or later
+
+- **Ubuntu**: Ubuntu 12.04 or later
+
+- **OS**: Red Hat 6 or equivalent (CentOS, Rocky Linux, Amazon Linux)
+
+- **OS Architecture**: Amd64/X86_64, Arm64/Aarch64
+
+:::
+
+### Creating a Feature Project
+
+import CreateFeature from "../common-items/_import_feature-project-create.mdx";
+
+<CreateFeature />
+
+### NGINX agent installation
+
+<InstallFeature name='NGINX agent Installation' />
+
+## Learn about the main features
+
+### Dashboard
+
+Home > Select **Feature Project** (<code class='Features'>Feature</code>) > ***NGINX*** > ***NGINX Dashboard***
+
+***NGINX Dashboard*** provided by WhaTap is a visual tool that allows you to check the real-time performance of the web server at a glance, and effectively monitor traffic patterns, request processing status, and such. Analyze and manage the NGINX server performance with key metrics.
+
+- ***NGINX Requests Status Code***
+
+  It monitors the status codes of requests processed by the NGINX server in real time. It classifies and checks the number of responses by status code such as 2XX, 3XX, 4XX, 5XX, 503 in real time.
+
+  <details>
+  <summary>Guide to dashboard metrics</summary>
+
+  <HttpStatus />
+
+  </details>
+
+- ***Nginx Metrics***
+
+  It provides various metrics that comprehensively display the performance and status of NGINX. You can trace the connection status and processing details in real time.
+
+  <details>
+  <summary>Guide to dashboard metrics</summary>
+
+  - ***NGINX Connections Accepted***: It displays the number of connections allowed by the NGINX server. 
+
+  - ***NGINX Writing***: It traces the numbers of connections that write responses to clients. 
+
+  - ***Active Connections(accepted)***: It displays the number of client connections handled by the NGINX server. 
+
+  - ***Waiting***: It displays connections waiting in keep-alive status. 
+
+  - ***Handled Request***: It displays the number of requests successfully handled by the NGIMX server. 
+
+  - ***NGINX Requests***: It traces the total number of requests received by the NGIMX server in real time.
+
+  - ***NGINX Reading***: It displays the number of connections that are reading the request data from clients. 
+
+  </details>
+
+- ***Domain Throughput***
+
+  You can trace the traffic and performance at the domain level. 
+
+  <details>
+  <summary>Guide to dashboard metrics</summary>
+
+  - ***Response Bytes SUM***: It displays the total bytes transmitted in the response. You can monitor the total traffic handled by the server.
+
+  - ***Latency Average***: It displays the average response delay time. It is an important metric to evaluate the response speed of the server.
+
+  </details>
+
+{/* 
+
+- Nginx Connections Accepted: Total number of connections received and accepted by NGINX. This metric is useful for monitoring incoming traffic to the server and determining how many clients can connect to NGINX.
+
+- Active Connections (accepted): It displays the current status of active connections accepted by the NGINX server in real time. This metric displays the number of client connections handled by NGINX, which helps you check the server load.
+
+- Handled Request: It traces the number of requests successfully handled by the NGINX server. This metric reflects how requests are handled by the server, and tells you how many requests have been successfully handled over a given time.
+
+- Nginx Requests: It displays the total number of requests received by the NGINX server. This metric includes all requests sent by clients to the server, helping you determine the volume of requests and check the traffic on the server. 
+
+*/}

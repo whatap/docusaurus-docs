@@ -1,7 +1,7 @@
 ---
 id: agent-httpcapicall
 title: HTTPC, API Call
-description: The following explains how to set options for the Java agent to collect and analyze data for HTTP outbound calls and API calls. Various options for fine monitoring are provided such as TOO SLOW error handling, CPU and memory usage tracing, stack trace recording upon each call, and URL normalization. This allows developers to efficiently manage their applications' external dependencies and identify performance issues.
+description: The following explains how to set options for the Java agent to collect and analyze the data related to HTTP outbound calls and API calls. It provides various options for detailed monitoring, such as SLOW_HTTPC error handling, CPU and memory usage tracing, stack trace records upon calls, and URL normalization. This allows developers to efficiently manage external dependencies for applications and identify performance issues.
 keywords:
   - Java
   - Application
@@ -10,13 +10,13 @@ keywords:
   - Agent
 ---
 
-The following explains how to set options for the Java agent to collect and analyze data for HTTP outbound calls and API calls. Various options for fine monitoring are provided such as TOO SLOW error handling, CPU and memory usage tracing, stack trace recording upon each call, and URL normalization. This allows developers to efficiently manage their applications' external dependencies and identify performance issues.
+The following explains how to set options for the Java agent to collect and analyze the data related to HTTP outbound calls and API calls. It provides various options for detailed monitoring, such as **SLOW_HTTPC** error handling, CPU and memory usage tracing, stack trace records upon calls, and URL normalization. This allows developers to efficiently manage external dependencies for applications and identify performance issues.
 
-- **profile_error_httpc_time_max** <span class='type'>Int</span>
+- **profile_error_httpc_time_max** <span class='type'>Int</span> <ScrollToLink anchor='profile_error_httpc_time_max' />
 
   Default `10000`
 
-  If the HTTPC execution time exceeds the set value, it is treated as TOO SLOW error. If it is set to `0`, it is not treated as an error.
+  If the HTTPC execution time exceeds the specified value, it is handled as the **SLOW_HTTPC** error. If set to `0`, it is not treated as an error.
 
 - **profile_httpc_resource_enabled** <span class='type'>Boolean</span>
 

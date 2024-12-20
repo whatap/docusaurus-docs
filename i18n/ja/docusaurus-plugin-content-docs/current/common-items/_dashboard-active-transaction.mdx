@@ -12,6 +12,16 @@
 
 実行中のトランザクションのURL、SQL、HTTP呼び出し情報から異常トランザクションをすばやく特定し、詳細なトレースを通じて遅延部分を詳細に分析できます。
 
+<InDoc product="java">
+
+:::tip
+
+<Cmdname sid="side_correlatedProjectManagement" className="uitext" />メニューを通じて、データベースプロジェクトを追加すると、現在進行中のトランザクションと連携したデータベースのSQL性能を照会できます。<Cmdname sid="side_correlatedProjectManagement" className="uitext" />メニューと連携プロジェクトの分析についての詳細は、[次の文書](linked-projects)を参照してください。
+
+:::
+
+</InDoc>
+
 ## 画面構成
 
 <ImgLang img='dashboard-active-transaction.png' desc='アクティブトランザクション' />
@@ -39,6 +49,8 @@
   - <Cmdname sid="refresh_all" className="uitext" />：進行中のトランザクションの情報を更新できます。
 
   - <Cmdname sid="stop_thread" className="uitext" />：進行中のトランザクションを停止できます。スレッド中止のためには、<Cmdname sid="secret_key" className="uitext" />が必要です。<Cmdname sid="secret_key" className="uitext" />についての詳細は、<Link to="install-agent#security">次の文書</Link>を参考にしてください。
+
+  - <Cmdname sid="BTN08518" className="uitext" />: 進行中のトランザクションに連携されたデータベースのSQL性能を照会できます。選択したトランザクションで連携プロジェクトへSQLを実行したトランザクションである場合にのみ表示されます。連携プロジェクトの追加と管理についての詳細は、[次の文書](linked-projects)を参照してください。
 
   :::tip
 

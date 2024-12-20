@@ -1,0 +1,28 @@
+## カラムと用語案内{#columninfo}
+
+<div className="c3-20-15-65 tableScroll">
+
+| カラム                                                | 単位      | 説明                                                                                                                     |
+| -------------------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------- |
+| <Cmdname sid="backend_time" className="uitext" />  | ミリ秒     | ページロード中にバックエンドで処理された平均時間を示し、`startTime`から`responseEnd`までかかった時間を意味します。                                                  |
+| <Cmdname sid="frontend_time" className="uitext" /> | ミリ秒     | ページロード中のフロントエンド領域の平均処理時間を示し、`domInteractive`から`loadEventEnd`までかかった時間を意味します。                                            |
+| <Cmdname sid="ITM08283" className="uitext" />      | ミリ秒     | ブラウザがウェブページを読み込む際、リダイレクト過程でかかった平均時間を表示し、`redirectStart`から`redirectEnd`までかかった時間を意味します。                                  |
+| <Cmdname sid="cache_time" className="uitext" />    | ミリ秒     | ブラウザがウェブページを読み込む際にキャッシュされたリソースを検索するのに必要な平均時間を示し、`fetchStart`から`domainLookupStart`までかかった時間を意味します。                       |
+| <Cmdname sid="ITM08284" className="uitext" />      | ミリ秒     | ブラウザがWebページを読み込む際に、Webサイトのドメインを照会するのに必要な平均時間を示し、`domainLookupStart`から`domainLookupEnd`までかかった時間を意味します。                  |
+| <Cmdname sid="connect_time" className="uitext" />  | ミリ秒     | ブラウザがサーバーとのネットワーク接続にかかった平均時間を示し、`connectStart`から`connectEnd`までかかった時間を意味します。                                            |
+| <Cmdname sid="ssl_time" className="uitext" />      | ミリ秒     | ブラウザがウェブページをロードする際に、TCPハンドシェイクでかかった平均時間で、`secureConnectionStart`から`connectEnd`までの時間を意味します。                             |
+| <Cmdname sid="ITM08285" className="uitext" />      | ミリ秒     | ブラウザがウェブページを読み込む際にネットワーク要求を送信した後、サーバーから最初のバイト(byte)が受信されるまでにかかった平均時間を示し、`requestStart`から`responseStart`までかかった時間を意味します。 |
+| <Cmdname sid="download_time" className="uitext" /> | ミリ秒     | ブラウザがウェブページを読み込む際にサーバーからリソースをダウンロードするのにかかった平均時間を示し、`responseStart`から`responseEnd`までの時間を意味します。                          |
+| <Cmdname sid="ITM08286" className="uitext" />      | ミリ秒     | ウェブページが初期コンテンツをレンダリングし、相互作用できる状態になるまでの平均時間を示し、`domContentLoadedEventStart`から`domContentLoadedEventEnd`までかかった時間を意味します。  |
+| <Cmdname sid="domload_time" className="uitext" />  | ミリ秒     | ウェブページのすべてのリソースをロードし、レンダリングが完了した後、ユーザーが相互作用できる状態までの平均時間を示し、`loadEventStart`から`loadEventEnd`までかかった時間を意味します。             |
+| <Cmdname sid="render_time" className="uitext" />   | ミリ秒     | サーバーからダウンロードしたリソースを画面にレンダリングし、ページロードイベントを完了するのにかかった平均時間を示し、`domInteractive`から`domComplete`までかかった時間を意味します。              |
+| <Cmdname sid="TTL08498" className="uitext" />      | ミリ秒     | ブラウザで測定するloadイベントが完了する平均時間を示し、開始から`loadEventEnd`までかかった時間を意味します。                                                        |
+| <Cmdname sid="TTL06361" className="uitext" />      | ミリ秒     | ブラウザがウェブページを完全に読み込むのにかかった平均時間を示し、`loadEventEnd`の後、追加のインタラクションを完了するまでの時間です。 ブラウザエージェントが測定したページのロード完了時間を意味します。           |
+| <Cmdname sid="count" className="uitext" />         | 件数      | ページのロード数です。                                                                                                            |
+| <Cmdname sid="page_group" className="uitext" />    | URLテキスト | URLパス(URL Path)を、正規表現式で正規化して提供する統計グループです。 詳細については、[次の文書](before-starting#page-group)を参照してください。                         |
+| <Cmdname sid="TTL08449" className="uitext" />      | URLテキスト | 正規表現式で正規化していないURLパス(URL Path)です。                                                                                       |
+| <Cmdname sid="browser" className="uitext" />       | テキスト    | Chrome、Edge、Safariなど、エンドユーザーが使用したブラウザの種類です。                                                                            |
+| <Cmdname sid="os" className="uitext" />            | テキスト    | macOS、Windows、Linuxなど、エンドユーザーが使用したデバイスのOSの種類です。                                                                        |
+| <Cmdname sid="device" className="uitext" />        | テキスト    | Desktop、Mobile、Tabletなど、エンドユーザーが使用したデバイスの種類です。                                                                         |
+
+</div>

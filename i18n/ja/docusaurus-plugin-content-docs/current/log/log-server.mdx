@@ -40,7 +40,7 @@ WhaTapモニタリングサービスのホーム画面からプロジェクト�
   cd /usr/whatap/infra
   sudo mkdir extension
 
-  cat >extension/logsink.conf<<EOL
+  cat <<EOL | sudo tee extension/logsink.conf > /dev/null
   [[inputs.logsink]]
     category = "serverlog"
     ## ログ発生量統計の別途データとしての送信有無
@@ -109,7 +109,7 @@ WhaTapモニタリングサービスのホーム画面からプロジェクト�
   Restart-Service "Whatap Infra"
   ```
 
-### オプション設定
+### オプション設定 {#server-log-settings}
 
 - `stats_enabled`：収集状態データの収集有無を設定します。既定値は`false`です。値を`true`に設定してください。`true`に設定すると次の`stats_category`で設定したカテゴリ(`logsink_stats`)で統計データが作成されます。
 
@@ -139,6 +139,12 @@ WhaTapモニタリングサービスのホーム画面からプロジェクト�
 import Logserverwindowsevent from "../common-items/_log-server-windows-event.mdx";
 
 <Logserverwindowsevent />
+
+### 複数のファイルを指定および分離{#multiple-file-specification-and-separation}
+
+import Logservermultifilecategory from "../common-items/_log-server-multi-file-category.mdx";
+
+<Logservermultifilecategory />
 
 ## ログモニタリングの活性化
 

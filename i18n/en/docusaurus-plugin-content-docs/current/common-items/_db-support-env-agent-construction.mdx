@@ -4,6 +4,8 @@ The WhaTap database monitoring service consists of an agent and a collection ser
 
 - WhaTap database monitoring service can perform monitoring on a separate agent server without installing an agent on the database server. Monitoring can be applied flexibly according to the user environment.
 
+  <Xclude product="cubrid,cubrid-v1">
+
   <div class='db-agent'>
 
   |           Possible to install a separate agent server           |             Possible to install on the DB server             | Possible to perform DB resource monitoring (XOS) |
@@ -11,6 +13,20 @@ The WhaTap database monitoring service consists of an agent and a collection ser
   | <ImgLang img='dbx-install-agent-on-agent-server.png' desc='' /> | <ImgLang img='dbx-install-agent-on-db-server.png' desc='' /> |      <ImgLang img='xos-agent.png' desc='' />     |
 
   </div>
+
+  </Xclude>
+
+  <InDoc product="cubrid,cubrid-v1">
+
+  <div class='db-agent'>
+
+  |               Possible to install a separate agent server              |                 Possible to install on the DB server                | Possible to perform DB resource monitoring (XOS) |
+  | :--------------------------------------------------------------------: | :-----------------------------------------------------------------: | :----------------------------------------------: |
+  | <ImgLang img='dbx-install-agent-on-agent-server-cubrid.png' desc='' /> | <ImgLang img='dbx-install-agent-on-db-server-cubrid.png' desc='' /> |  <ImgLang img='xos-agent-cubrid.png' desc='' />  |
+
+  </div>
+
+  </InDoc>
 
 - The XOS agent is an optional add-on agent that can monitor the process usage of the database server. To monitor the process usage of the database server, run a separate agent on the database server to collect data.
 
@@ -26,7 +42,7 @@ The WhaTap database monitoring service consists of an agent and a collection ser
 
 </Xclude>
 
-<InDoc product="mssql">
+<InDoc product="mssql,mssql-v1">
 
 The WhaTap database monitoring service consists of an agent and a collection server, and the data is encrypted for security between the agent and the collection server. It is made without an external library so there is no need to restart the system for installation and update.
 

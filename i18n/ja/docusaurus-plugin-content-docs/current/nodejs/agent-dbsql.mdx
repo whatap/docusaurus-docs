@@ -10,7 +10,7 @@ keywords:
 
 Node.jsエージェントのDB、SQL関連オプションを提供します。
 
-- **profile_sql_param_enabled** <span class='type'>Boolean</span><ScrollToLink anchor='profile-sql-param' />
+- **profile_sql_param_enabled** <span class='type'>Boolean</span> <ScrollToLink anchor='profile-sql-param' />
 
   既定値`false`
 
@@ -22,11 +22,17 @@ Node.jsエージェントのDB、SQL関連オプションを提供します。
 
   トレース履歴にDBConnectionオープン情報を記録します。
 
-- **profile_error_sql_time_max** <span class='type'>Int</span>
+- **profile_error_sql_fetch_max** <span class='type'>Int</span> <ScrollToLink anchor='profile_error_sql_fetch_max' />
+
+  既定値`10000`
+
+  SQL Fetch Count(呼び出し件数)が設定した値を超えると、**TOO_MANY_RECORDS**エラーで処理します。`0`に設定するとエラー処理されません。
+
+- **profile_error_sql_time_max** <span class='type'>Int</span> <ScrollToLink anchor='profile_error_sql_time_max' />
 
   既定値`30000`
 
-  SQLの実行時間が設定値を超えると、TOO SLOWエラーとして処理されます。`0`に設定する場合、エラー処理は実行されません。
+  SQLの実行時間が設定した値を超えると、**SLOW_SQL**エラーで処理されます。`0`に設定する場合、エラー処理は実行されません。
 
 - **trace_sql_normalize_enabled** <span class='type'>Boolean</span>
 

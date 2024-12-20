@@ -87,7 +87,7 @@ import Transactionprofileactivecolor from "../common-items/_transaction-profile-
 
 The following are options for managing and monitoring exceptions that occur in applications. You can set whether to ignore specific exceptions or treat them as errors if the HTTP status code is an error. The exception-handled items appear as normal transactions in the <Cmdname sid="side_hitmap" className="uitext" /> or <Cmdname sid="TTL06209" className="uitext" /> window.
 
-- **httpc_status_ignore** <span class='type'>String</span>
+- **httpc_status_ignore** <span class='type'>String</span> <ScrollToLink anchor='httpc_status_ignore' />
 
   If the HTTP status code is an error (`HTTPC_ERROR`), it can be ignored. When listing multiple values, use comma (,) as the delimiter.
 
@@ -101,7 +101,7 @@ The following are options for managing and monitoring exceptions that occur in a
 
   :::
 
-- **httpc_status_ignore_set** <span class='type'>String</span>
+- **httpc_status_ignore_set** <span class='type'>String</span> <ScrollToLink anchor='httpc_status_ignore_set' />
 
   `whatap.error.HTTPC_ERROR` is ignored. For multiple values, use comma (,) as the delimiter.
 
@@ -169,6 +169,12 @@ import Transactionprofilehttp from "../common-items/_transaction-profile-http.md
 
   :::
 
+- **ignore_http_lost_connection** <span class='type'>Boolean</span>
+
+  Default `false`
+
+  If it is set to `true`, Lost connection errors are not collected.
+
 - **profile_http_header_ignore_keys** <span class='type'>String</span>
 
   Default `Cookie,cookie,accept,user-agent,referer`
@@ -179,7 +185,7 @@ import Transactionprofilehttp from "../common-items/_transaction-profile-http.md
 
   Only the parameter corresponding to the set key is recorded. To register multiple items, use comma (,) as the delimiter. If not specified, all parameters are recorded.
 
-- **status_ignore** <span class='type'>String</span>
+- **status_ignore** <span class='type'>String</span> <ScrollToLink anchor='status_ignore' />
 
   You can set the HTTP status codes to ignore. For multiple values, use comma (,) as the delimiter.
 
@@ -188,7 +194,7 @@ import Transactionprofilehttp from "../common-items/_transaction-profile-http.md
   status_ignore=408,500
   ```
 
-- **status_ignore_set** <span class='type'>String</span>
+- **status_ignore_set** <span class='type'>String</span> <ScrollToLink anchor='status_ignore_set' />
 
   Among HTTP status return codes, you can set the codes to ignore on a URL basis.
 
@@ -197,7 +203,7 @@ import Transactionprofilehttp from "../common-items/_transaction-profile-http.md
   status_ignore_set=/api/test/timeout/{time}:408,/error:500
   ```
 
-- **transaction_status_error_enable** <span class='type'>Boolean</span>
+- **transaction_status_error_enable** <span class='type'>Boolean</span> <ScrollToLink anchor='transaction_status_error_enable' />
 
   Default `true`
 

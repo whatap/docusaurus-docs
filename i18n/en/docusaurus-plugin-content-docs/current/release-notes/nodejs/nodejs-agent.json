@@ -1,79 +1,5 @@
 [
   {
-    "url": "https://docs.whatap.io/en/release-notes/nodejs/nodejs-0_4_98",
-    "ver": "v0.4.98",
-    "date": "2024-07-09",
-    "Lists": [
-      {
-        "ver": "v0.4.98",
-        "hash": "v0498",
-        "product": "Node.js Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\">New</code> Added the agent configuration options to collect transaction statistics by IP address.</p>",
-        "details": "<blockquote>\n<p><strong>stat_ipurl_enabled</strong> <span class=\"type\">Boolean</span>, Default <code>false</code></p>\n</blockquote>"
-      },
-      {
-        "ver": "v0.4.98",
-        "hash": "v0498",
-        "product": "Node.js Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Modified to apply the license and server host to both environment variables and <em>whatap.conf</em> file.</p>",
-        "details": "<p>When applied to both the environment variables and <em>whatap.conf</em> file, they are configured based on the environment variable's value.</p>"
-      },
-      {
-        "ver": "v0.4.98",
-        "hash": "v0498",
-        "product": "Node.js Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Modified the ONODE value creation logic when setting the ONODE NAME.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/nodejs/nodejs-0_4_97",
-    "ver": "v0.4.97",
-    "date": "2024-06-03",
-    "Lists": [
-      {
-        "ver": "v0.4.97",
-        "hash": "v0497",
-        "product": "Node.js Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\">New</code> Whether or not to use the Kubernetes environment can be applied as an environment variable.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/nodejs/nodejs-0_5_1",
-    "ver": "v0.5.1",
-    "date": "2024-08-28",
-    "Lists": [
-      {
-        "ver": "v0.5.1",
-        "hash": "v051",
-        "product": "Node.js Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the agent option to create the agent name (ONAME) by adding the port number (e.g. NODE-14-103-3000).</p>",
-        "details": "<blockquote>\n<p><strong>oname_port_postfix_enabled</strong> <span class=\"type\">Boolean</span> Default <code>false</code></p>\n</blockquote>"
-      },
-      {
-        "ver": "v0.5.1",
-        "hash": "v051",
-        "product": "Node.js Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the agent option for log monitoring.</p>",
-        "details": "<ul>\n<li>\n<p><strong>logsink_enabled</strong> <span class=\"type\">Boolean</span></p>\n<p>Default <code>false</code></p>\n<p>Set whether or not to enable the log monitoring.</p>\n</li>\n<li>\n<p><strong>logsink_trace_txid_enabled</strong> <span class=\"type\">Boolean</span></p>\n<p>Default <code>true</code></p>\n<p>Set whether or not to expose the log tab of the transaction trace by inserting the transaction ID into the logs.</p>\n</li>\n<li>\n<p><strong>logsink_limit_content_enabled</strong> <span class=\"type\">Boolean</span></p>\n<p>Default <code>true</code></p>\n<p>Set whether or not to limit the maximum size for log messages.</p>\n</li>\n<li>\n<p><strong>logsink_limit_content_length</strong> <span class=\"type\">Number</span></p>\n<p>Default <code>10,000</code></p>\n<p>Set the maximum length of the log message. This value is applied only when the <code>logsink_limit_content_enabled</code> option is set to <code>true</code>.</p>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v0.5.1",
-        "hash": "v051",
-        "product": "Node.js Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Modified to output an error message when an exception occurs while monitoring the fetch function in the global package.</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/en/release-notes/nodejs/nodejs-0_4_96",
     "ver": "v0.4.96",
     "date": "2024-05-30",
@@ -117,6 +43,36 @@
     ]
   },
   {
+    "url": "https://docs.whatap.io/en/release-notes/nodejs/nodejs-0_5_1",
+    "ver": "v0.5.1",
+    "date": "2024-08-28",
+    "Lists": [
+      {
+        "ver": "v0.5.1",
+        "hash": "v051",
+        "product": "Node.js Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the agent option to create the agent name (ONAME) by adding the port number (e.g. NODE-14-103-3000).</p>",
+        "details": "<blockquote>\n<p><strong>oname_port_postfix_enabled</strong> <span class=\"type\">Boolean</span> Default <code>false</code></p>\n</blockquote>"
+      },
+      {
+        "ver": "v0.5.1",
+        "hash": "v051",
+        "product": "Node.js Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the agent option for log monitoring.</p>",
+        "details": "<ul>\n<li>\n<p><strong>logsink_enabled</strong> <span class=\"type\">Boolean</span></p>\n<p>Default <code>false</code></p>\n<p>Set whether or not to enable the log monitoring.</p>\n</li>\n<li>\n<p><strong>logsink_trace_txid_enabled</strong> <span class=\"type\">Boolean</span></p>\n<p>Default <code>true</code></p>\n<p>Set whether or not to expose the log tab of the transaction trace by inserting the transaction ID into the logs.</p>\n</li>\n<li>\n<p><strong>logsink_limit_content_enabled</strong> <span class=\"type\">Boolean</span></p>\n<p>Default <code>true</code></p>\n<p>Set whether or not to limit the maximum size for log messages.</p>\n</li>\n<li>\n<p><strong>logsink_limit_content_length</strong> <span class=\"type\">Number</span></p>\n<p>Default <code>10,000</code></p>\n<p>Set the maximum length of the log message. This value is applied only when the <code>logsink_limit_content_enabled</code> option is set to <code>true</code>.</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v0.5.1",
+        "hash": "v051",
+        "product": "Node.js Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Modified to output an error message when an exception occurs while monitoring the fetch function in the global package.</p>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/en/release-notes/nodejs/nodejs-0_4_95",
     "ver": "v0.4.95",
     "date": "2024-04-29",
@@ -127,7 +83,7 @@
         "product": "Node.js Agent",
         "type": "Feature",
         "desc": "<p><code class=\"Feature\">Feature</code> Added the agent option for compressed transmission of the profile data.</p>",
-        "details": "<p><strong>profile_zip_enabled</strong> <span class=\"type\">Boolean</span></p>"
+        "details": "<p><strong>profile_zip_enabled</strong> <span class=\"type\">Boolean</span></p>"
       },
       {
         "ver": "v0.4.95",
@@ -140,40 +96,76 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/nodejs/nodejs-0_4_94",
-    "ver": "v0.4.94",
-    "date": "2024-03-07",
+    "url": "https://docs.whatap.io/en/release-notes/nodejs/nodejs-0_4_97",
+    "ver": "v0.4.97",
+    "date": "2024-06-03",
     "Lists": [
       {
-        "ver": "v0.4.94",
-        "hash": "v0494",
+        "ver": "v0.4.97",
+        "hash": "v0497",
         "product": "Node.js Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Added the <a href=\"http://socket.io\" target=\"_blank\" rel=\"noopener noreferrer\">socket.io</a> monitoring module.</p>",
-        "details": "<p>Using the <code>trace_sampling_enabled</code> and <code>trace_sampling_tps</code> options, you can see the sampled data. Make it untraceable by adding the <code>/socket.io</code> path to the <code>trace_ignore_url_prefix</code> option.</p>"
+        "type": "New",
+        "desc": "<p><code class=\"New\">New</code> Whether or not to use the Kubernetes environment can be applied as an environment variable.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/nodejs/nodejs-0_4_98",
+    "ver": "v0.4.98",
+    "date": "2024-07-09",
+    "Lists": [
+      {
+        "ver": "v0.4.98",
+        "hash": "v0498",
+        "product": "Node.js Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\">New</code> Added the agent configuration options to collect transaction statistics by IP address.</p>",
+        "details": "<blockquote>\n<p><strong>stat_ipurl_enabled</strong> <span class=\"type\">Boolean</span>, Default <code>false</code></p>\n</blockquote>"
       },
       {
-        "ver": "v0.4.94",
-        "hash": "v0494",
-        "product": "Node.js Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Added the agent setting options.</p>",
-        "details": "<ul>\n<li>\n<p><strong>profile_http_header_ignore_keys</strong> <span class=\"type\">String</span></p>\n<p>Default <code>Cookie,cookie,accept,user-agent,referer</code></p>\n<p>You can specify the HTTP header name to exclude from collection. The set HTTP header names are excluded from collection, and they are marked with \"#.\"</p>\n</li>\n<li>\n<p><strong>profile_http_parameter_keys</strong> <span class=\"type\">String</span></p>\n<p>Only the parameters corresponding to the set key are recorded. For multiple values, use comma (,) as the delimiter. If not specified, all parameters are recorded.</p>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v0.4.94",
-        "hash": "v0494",
+        "ver": "v0.4.98",
+        "hash": "v0498",
         "product": "Node.js Agent",
         "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> In case the <code>profile_http_parameter_enabled</code> option is set to <code>true</code></p>",
-        "details": "<ul>\n<li>Modified not to output the body data of an HTTP request.</li>\n<li>Modified to encrypt HTTP parameters and decrypt them with the <em>paramkey.txt</em> value.</li>\n</ul>"
+        "desc": "<p><code class=\"Changed\">Changed</code> Modified to apply the license and server host to both environment variables and <em>whatap.conf</em> file.</p>",
+        "details": "<p>When applied to both the environment variables and <em>whatap.conf</em> file, they are configured based on the environment variable's value.</p>"
       },
       {
-        "ver": "v0.4.94",
-        "hash": "v0494",
+        "ver": "v0.4.98",
+        "hash": "v0498",
+        "product": "Node.js Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Modified the ONODE value creation logic when setting the ONODE NAME.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/nodejs/nodejs-0_5_4",
+    "ver": "v0.5.4",
+    "date": "2024-11-13",
+    "Lists": [
+      {
+        "ver": "v0.5.4",
+        "hash": "v054",
+        "product": "Node.js Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the agent option for monitoring the application performance and network errors.</p>",
+        "details": "<ul>\n<li>\n<p><strong>profile_error_httpc_time_max</strong> <span class=\"type\">Number</span></p>\n<p>Default <code>10000</code></p>\n<p>If the HTTPC execution time exceeds the specified value, it is treated as the TOO SLOW error. If it is set to <code>0</code>, error handling is not performed.</p>\n</li>\n<li>\n<p><strong>profile_error_sql_time_max</strong> <span class=\"type\">Number</span></p>\n<p>Default <code>30000</code></p>\n<p>If the SQL execution time exceeds the specified value, it is treated as the TOO SLOW error.<code>If it is set to </code>0`, it is not treated as an error.</p>\n</li>\n<li>\n<p><strong>profile_error_sql_fetch_max</strong> <span class=\"type\">Number</span></p>\n<p>Default <code>10000</code></p>\n<p>If the number of SQL results exceeds the specified value, it is treated as the TOO MANY RECORDS error. <code>If it is set to </code>0`, it is not treated as an error.</p>\n</li>\n<li>\n<p><strong>ignore_http_lost_connection</strong> <span class=\"type\">Boolean</span></p>\n<p>Default <code>false</code></p>\n<p>If it is set to <code>true</code>, Lost connection errors are not collected.</p>\n</li>\n</ul>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/nodejs/nodejs-0_5_2",
+    "ver": "v0.5.2",
+    "date": "2024-10-17",
+    "Lists": [
+      {
+        "ver": "v0.5.2",
+        "hash": "v052",
         "product": "Node.js Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the Mongoose monitoring exception error.</p>"
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Modified the SQL profile.</p>",
+        "details": "<ul>\n<li>\n<p>If a SQL query error occurs, the error stack is displayed at the bottom of the profile.</p>\n</li>\n<li>\n<p>The modified SQL module is as follows. <strong>MySQL</strong>, <strong>MariaDB</strong>, <strong>PostgreSQL</strong>, <strong>SQL Server</strong></p>\n</li>\n</ul>"
       }
     ]
   },
@@ -222,24 +214,82 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/nodejs/nodejs-0_4_90",
-    "ver": "v0.4.90",
-    "date": "2024-02-05",
+    "url": "https://docs.whatap.io/en/release-notes/nodejs/nodejs-0_4_88",
+    "ver": "v0.4.88",
+    "date": "2024-01-11",
     "Lists": [
       {
-        "ver": "v0.4.90",
-        "hash": "v0490",
+        "ver": "v0.4.88",
+        "hash": "v0488",
+        "product": "Node.js Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> When the <code>trace_http_client_ip_header_key=x-forwarded-for</code> option has been set and multiple IPs are passed to the <code>x-forwarded-for</code> value via the header, modified to set the IP to the first value (based on comma).</p>"
+      },
+      {
+        "ver": "v0.4.88",
+        "hash": "v0488",
+        "product": "Node.js Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Modified the TCP and UDP socket monitoring.</p>"
+      },
+      {
+        "ver": "v0.4.88",
+        "hash": "v0488",
+        "product": "Node.js Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> When the value of the <code>profile_http_header_enabled</code> option is <code>true</code>, modified the display method of the profile's header values (JSON → key=value\\n).</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/nodejs/nodejs-0_4_94",
+    "ver": "v0.4.94",
+    "date": "2024-03-07",
+    "Lists": [
+      {
+        "ver": "v0.4.94",
+        "hash": "v0494",
+        "product": "Node.js Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Added the <a href=\"http://socket.io\" target=\"_blank\" rel=\"noopener noreferrer\">socket.io</a> monitoring module.</p>",
+        "details": "<p>Using the <code>trace_sampling_enabled</code> and <code>trace_sampling_tps</code> options, you can see the sampled data. Make it untraceable by adding the <code>/socket.io</code> path to the <code>trace_ignore_url_prefix</code> option.</p>"
+      },
+      {
+        "ver": "v0.4.94",
+        "hash": "v0494",
         "product": "Node.js Agent",
         "type": "Feature",
         "desc": "<p><code class=\"Feature\">Feature</code> Added the agent setting options.</p>",
-        "details": "<ul>\n<li>\n<p><strong>httpc_not_found_ignore</strong> <span class=\"type\">Boolean</span></p>\n<p>Default <code>false</code></p>\n<p>If more than 50 Not Found errors occur in a certain time (<code>httpc_not_found_ignore_time</code>), monitoring detection is ignored.</p>\n</li>\n<li>\n<p><strong>httpc_not_found_ignore_time</strong> <span class=\"type\">Milisecond</span></p>\n<p>Default <code>300000</code></p>\n<p>If the value of <code>httpc_not_found_ignore</code> is <code>true</code>, set the time to ignore the Not Found errors.</p>\n</li>\n</ul>"
+        "details": "<ul>\n<li>\n<p><strong>profile_http_header_ignore_keys</strong> <span class=\"type\">String</span></p>\n<p>Default <code>Cookie,cookie,accept,user-agent,referer</code></p>\n<p>You can specify the HTTP header name to exclude from collection. The set HTTP header names are excluded from collection, and they are marked with \"#.\"</p>\n</li>\n<li>\n<p><strong>profile_http_parameter_keys</strong> <span class=\"type\">String</span></p>\n<p>Only the parameters corresponding to the set key are recorded. For multiple values, use comma (,) as the delimiter. If not specified, all parameters are recorded.</p>\n</li>\n</ul>"
       },
       {
-        "ver": "v0.4.90",
-        "hash": "v0490",
+        "ver": "v0.4.94",
+        "hash": "v0494",
+        "product": "Node.js Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> In case the <code>profile_http_parameter_enabled</code> option is set to <code>true</code></p>",
+        "details": "<ul>\n<li>Modified not to output the body data of an HTTP request.</li>\n<li>Modified to encrypt HTTP parameters and decrypt them with the <em>paramkey.txt</em> value.</li>\n</ul>"
+      },
+      {
+        "ver": "v0.4.94",
+        "hash": "v0494",
         "product": "Node.js Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the issue where the Mongoose tracking does not work.</p>"
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the Mongoose monitoring exception error.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/nodejs/nodejs-0_4_89",
+    "ver": "v0.4.89",
+    "date": "2024-01-22",
+    "Lists": [
+      {
+        "ver": "v0.4.89",
+        "hash": "v0489",
+        "product": "Node.js Agent",
+        "type": "Fixed",
+        "desc": "<li><code class=\"Fixed\">Fixed</code> Fixed the ONODE setting error.</li>"
       }
     ]
   },
@@ -273,44 +323,24 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/nodejs/nodejs-0_4_88",
-    "ver": "v0.4.88",
-    "date": "2024-01-11",
+    "url": "https://docs.whatap.io/en/release-notes/nodejs/nodejs-0_4_90",
+    "ver": "v0.4.90",
+    "date": "2024-02-05",
     "Lists": [
       {
-        "ver": "v0.4.88",
-        "hash": "v0488",
+        "ver": "v0.4.90",
+        "hash": "v0490",
         "product": "Node.js Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> When the <code>trace_http_client_ip_header_key=x-forwarded-for</code> option has been set and multiple IPs are passed to the <code>x-forwarded-for</code> value via the header, modified to set the IP to the first value (based on comma).</p>"
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Added the agent setting options.</p>",
+        "details": "<ul>\n<li>\n<p><strong>httpc_not_found_ignore</strong> <span class=\"type\">Boolean</span></p>\n<p>Default <code>false</code></p>\n<p>If more than 50 Not Found errors occur in a certain time (<code>httpc_not_found_ignore_time</code>), monitoring detection is ignored.</p>\n</li>\n<li>\n<p><strong>httpc_not_found_ignore_time</strong> <span class=\"type\">Milisecond</span></p>\n<p>Default <code>300000</code></p>\n<p>If the value of <code>httpc_not_found_ignore</code> is <code>true</code>, set the time to ignore the Not Found errors.</p>\n</li>\n</ul>"
       },
       {
-        "ver": "v0.4.88",
-        "hash": "v0488",
+        "ver": "v0.4.90",
+        "hash": "v0490",
         "product": "Node.js Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Modified the TCP and UDP socket monitoring.</p>"
-      },
-      {
-        "ver": "v0.4.88",
-        "hash": "v0488",
-        "product": "Node.js Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> When the value of the <code>profile_http_header_enabled</code> option is <code>true</code>, modified the display method of the profile's header values (JSON → key=value\\n).</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/nodejs/nodejs-0_4_89",
-    "ver": "v0.4.89",
-    "date": "2024-01-22",
-    "Lists": [
-      {
-        "ver": "v0.4.89",
-        "hash": "v0489",
-        "product": "Node.js Agent",
-        "type": "Fixed",
-        "desc": "<li><code class=\"Fixed\">Fixed</code> Fixed the ONODE setting error.</li>"
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the issue where the Mongoose tracking does not work.</p>"
       }
     ]
   }

@@ -12,6 +12,13 @@ Database metrics are a comprehensive collection of database workloads and resour
 
 For more information about columns, see [the link](https://technet.tmax.co.kr/upload/download/online/tibero/pver-20220224-000002/index.html).
 
+import AgentStatus from "../common-items/_agent-status-summary-metrics.mdx";
+import Xosmetrics from "../common-items/_db-xos-metrics.mdx";
+
+<div className="metricslist">
+
+<AgentStatus />
+
 ## db_tibero_counter {#db_tibero_counter}
 
 ### Tags {#db_tibero_counter-tags}
@@ -113,6 +120,6 @@ The following lists the fields that are collected in the `db_tibero_counter` cat
 | `WE_WTHR_START_total_timeouts`         | Number of timeouts while waiting for threads to start.                        |
 | `WE_WTHR_START_total_waits`            | Total number of waits for threads to start.                                   |
 
-import Xosmetrics from "../common-items/_db-xos-metrics.mdx";
-
 <Xosmetrics />
+
+</div>

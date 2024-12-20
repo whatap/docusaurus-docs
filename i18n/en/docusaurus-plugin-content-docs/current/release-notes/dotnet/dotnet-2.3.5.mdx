@@ -1,0 +1,157 @@
+---
+id: dotnet-2_3_5
+title: .NET Agent v2.3.5
+toc_max_heading_level: 2
+pagination_next: release-notes/dotnet/dotnet-2_3_4
+displayed_sidebar: releaseSidebar
+---
+
+November 4, 2024
+
+- <Status priority='1'>New</Status> Added the User Transaction feature in .NET Core.
+
+  - See the following example: If you do not need to monitor the number of users, enter an empty string in the user identification field.
+
+    ```C
+    using System;
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Start tracing (domain, Url, user identification)
+            WhatapDiagnostic.TraceStart("127.0.0.1", "/api/test", "user123");
+
+            try
+            {
+                // Start step
+                WhatapDiagnostic.StepStart("test Step");
+
+                // User code area
+
+                // End step
+                WhatapDiagnostic.StepStop();
+            }
+            catch (Exception ex)
+            {
+                // Log exceptions in diagnostic information upon an exception
+                WhatapDiagnostic.SetExceptionForTrace(ex);
+            }
+            finally
+            {
+                // End tracing
+                WhatapDiagnostic.TraceStop();
+            }
+        }
+    }
+
+    ```
+
+    :::note 
+
+    Supporting the .NET Framework is in preparation. 
+
+    :::
+
+  - The WhatapDiagnostic code is as follows. The format does not matter, as long as the content of `diagnosticSource.Write(…)` is correct.
+
+    ```C
+    using System.Diagnostics;å
+
+    public static class WhatapDiagnostic
+    {
+        private static readonly DiagnosticSource diagnosticSource = new DiagnosticListener("WhatapDiagnosticListener");
+
+        public static void TraceStart(string host, string url, string userId)
+        {
+            if (diagnosticSource.IsEnabled("Whatap.Diagnostic.Trace.Start"))
+            {
+                diagnosticSource.Write("Whatap.Diagnostic.Trace.Start", new { Host = host, Url = url, UserId = userId });
+                Console.WriteLine("Whatap.Diagnostic.Trace.Start!");
+            }
+        }
+
+        public static void SetExceptionForTrace(Exception exception)
+        {
+            if (diagnosticSource.IsEnabled("Whatap.Diagnostic.Trace.Exception"))
+            {
+                diagnosticSource.Write("Whatap.Diagnostic.Trace.Exception", exception);
+            }
+        }
+
+        public static void StepStart(string message)
+        {
+            diagnosticSource.Write("Whatap.Diagnostic.Step.Start", message);
+        }
+
+        public static void StepStop()
+        {
+            diagnosticSource.Write("Whatap.Diagnostic.Step.Stop", new { });
+        }
+
+        public static void TraceStop()
+        {
+            if (diagnosticSource.IsEnabled("Whatap.Diagnostic.Trace.Stop"))
+            {
+                diagnosticSource.Write("Whatap.Diagnostic.Trace.Stop", new { });
+            }
+        }
+
+        public static void UserLog(string message)
+        {
+            if (diagnosticSource.IsEnabled("Whatap.Diagnostic.UserLog"))
+            {
+                diagnosticSource.Write("Whatap.Diagnostic.UserLog", message);
+            }
+        }
+    }
+    ```
+
+- <Status priority='1'>New</Status> Supported the Method hook.
+
+  - You can monitor by specifying the method name. See the following configuration. 
+
+    ```C
+    hook_methods_enabled=true
+    hook_methods_prefix=System.Net.Http.HttpClient., System.Net.WebRequest., System.Data., System.Net.Http.
+    hook_methods_ignores=get,set
+    ```
+
+    - Set the value of the `hook_methods_enabled` option to `true`. 
+
+    - The value of the `hook_methods_prefix` option becomes the monitoring target when the first part of the option value matches. Separate with comma (,).
+
+    - The value of the `hook_methods_ignore` option is excluded from monitoring when the first part of the value matches. 
+
+- <Status priority='1'>New</Status> Added the feature to support the WebClient.DownloadString method monitoring.
+
+- <Status priority='1'>Changed</Status> Processed the response body option.
+
+  - Added the enabling option instead of the default setting because the string encoding-related error was found. 
+
+  - The default value of the `profile_http_response_body_enabled` option is `false`.
+
+  :::note 
+
+  Support for string encoding is under development. 
+
+  :::
+
+- <Status priority='1'>Changed</Status> Changed the Redis output format for the .NET Framework version.
+
+  - The decoration effect has been applied to match the output method of .Net Core. 
+
+- <Status priority='1'>Deprecate</Status> Removed the `trace_db_command_methods` option.
+
+  - This option is currently not required due to automatic processing of monitoring targets. 
+
+  - The methods excluded from monitoring can be processed using the Method hook. 
+
+    ```C
+    hook_methods_enabled=true
+    hook_methods_prefix=System.Data., ...
+    ```
+
+import DownloadAgent from "./_download-dotnet-agent.mdx";
+
+<DownloadAgent />

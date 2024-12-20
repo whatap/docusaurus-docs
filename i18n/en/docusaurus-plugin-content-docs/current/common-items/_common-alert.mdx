@@ -1,0 +1,77 @@
+WhaTap Monitoring provides common events that are automatically detected and generated across the platform. This document describes the types of events that occur in the system, the occurrence conditions, and the method how to respond.
+
+## EVENT_BLOCKED_BY_SYSTEM
+
+If excessive events occur in a short period of time in the project, the WhaTap system detects them, block the events, and send the following message to users. If the event is blocked, check the event settings.
+
+<ImgLang img="common-alert-event-blocked-by-system.png" desc="EVENT_BLOCKED_BY_SYSTEM" className="width-600" />
+
+### Blocking criteria
+
+The criteria for blocking events are as follows:
+
+1. If an agent has **10** events within **1 minute**, the events from the agent are blocked.
+
+2. If there are **3** or more** agents blocking events within **1 minute** in case of **1\*\*, the events are blocked for all projects.
+
+3. If **100** events occur within **1 minute** in a project, events occurring across all projects are blocked.
+
+### How to release blocking
+
+If events are blocked by the system, no events must occur from the target agent or project within 1 minute. 
+
+- Disable all the events set in <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" />. **You must check the event settings and then adjust the thresholds to avoid excessive events**.
+
+- You can use the <Cmdname sid="simulation" className="uitext" /> feature before configuring an event to predict the occurrence number of events.
+
+:::note
+
+For more information about <Cmdname sid="side_eventSetting" className="uitext" />, see the following.
+
+<InDoc product="java,php,python,nodejs,dotnet,golang">
+
+- <a href="warning-notice"><Cmdname sid="side_eventSetting" className="uitext" /> &gt; <Cmdname sid="application" className="uitext" /></a>
+
+</InDoc>
+
+<InDoc product="server">
+
+- <a href="warning-notice"><Cmdname sid="side_eventSetting" className="uitext" /> &gt; <Cmdname sid="server" className="uitext" /></a>
+
+</InDoc>
+
+<InDoc product="kubernetes">
+
+- <a href="container-warning-notice"><Cmdname sid="side_eventSetting" className="uitext" /> &gt; <Cmdname sid="container" className="uitext" /></a>
+
+</InDoc>
+
+<InDoc product="postgresql,oracle,oracle-v1,oracle-pro,mysql,mssql,mssql-v1,tibero,cubrid,cubrid-v1,altibase,altibase-v1,redis,mongodb">
+
+- <a href="warning-notice"><Cmdname sid="side_eventSetting" className="uitext" /> &gt; <Cmdname sid="database" className="uitext" /></a>
+
+</InDoc>
+
+<Xclude product="amazon-cloudwatch,amazon-ecs,azure,oracle-cloud,ncloud,aws-log,log">
+
+- <a href="metric-warning-notice"><Cmdname sid="side_eventSetting" className="uitext" /> &gt; <Cmdname sid="metrics" className="uitext" /></a>
+
+- <a href="warning-notice-v2"><Cmdname sid="side_eventSetting" className="uitext" /> <code className="newfunc">New</code> &gt; <Cmdname sid="default" className="uitext" /></a>
+
+- <a href="metric-warning-notice-new"><Cmdname sid="side_eventSetting" className="uitext" /> <code className="newfunc">New</code> &gt; <Cmdname sid="metrics" className="uitext" /></a>
+
+</Xclude>
+
+<InDoc product="amazon-cloudwatch,amazon-ecs,azure,oracle-cloud,ncloud">
+
+<a href="metric-warning-notice"><Cmdname sid="side_eventSetting" className="uitext" /> &gt; <Cmdname sid="metrics" className="uitext" /></a>
+
+</InDoc>
+
+<InDoc product="aws-log,log">
+
+<a href="set-notice"><Cmdname sid="side_eventSetting" className="uitext" /> &gt; <Cmdname sid="log" className="uitext" /></a>
+
+</InDoc>
+
+:::

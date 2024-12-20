@@ -16,9 +16,9 @@ import Dbstructureofagent from "../common-items/_db-structure-of-agent.mdx";
 
 <Dbstructureofagent />
 
-## Default agent settings
+## DMX agent configuration
 
-Write the settings for the DBX agent in the *whatap.conf* file. For the options that can be set, see the following.
+Enter the settings required for the DMX agent in the *whatap.conf* file. For the options that can be set, see the following.
 
 ### Default options
 
@@ -54,9 +54,15 @@ import Dbagentdbxbasicoption from "../common-items/_db-agent-dbx-basic-option.md
 
   :::note
 
-  Oracle Pro monitoring can collect data almost in real time through memory access, but **Active session**, **stat**, and **event** metrics are collected in queries.
+  Oracle Pro collects active sessions and SQL data at an interval of 1/20 second through memory access. Because the stats are generated based on the data collected in this manner, data loss is minimized. When transmitting the current DB status according to the `interval` option, the stat, event, SQL stat, xview, lock, and PQ are read directly from memory for quick processing. On the other hand, the binds, DB parameters, plans, tables, table spaces, and wait classes are collected through queries.
 
   :::
+
+- **conn_fail_count** <span class='type'>Int</span>
+
+  Default `15`
+
+  It sends a notification when 15 consecutive connection errors occur. You can adjust the notification occurrence criteria by entering the desired number.
 
 - **stat** <span class='type'>String</span>
 
@@ -176,9 +182,9 @@ import Dbagentdbxbasicoption from "../common-items/_db-agent-dbx-basic-option.md
 
 ### Applying the AES 256 encryption
 
-The WhaTap DBX agent transfers the collected data to the server after encryption. You can change this depending on the importance of the data or setting. Basically, the XOR operation and encryption through the AES algorithm are used, and encryption and decryption are performed by dividing the plain text into 128-bit units. It can be expanded up to 256 bits depending on the setting.
+WhaTap DMX agent encrypts the collected data and transmits the encrypted data to the server. You can change this depending on the importance of the data or setting. Basically, the XOR operation and encryption through the AES algorithm are used, and encryption and decryption are performed by dividing the plain text into 128-bit units. It can be expanded up to 256 bits depending on the setting.
 
-Add the following options to the *whatap.conf* file in the path where the WhaTap DBX agent has been installed.
+Add the following options to the *whatap.conf* file in the path where the WhaTap DMX agent was installed.
 
 ```ini title='whatap.conf' {3} showLineNumbers
 cypher_level=256
@@ -186,17 +192,11 @@ cypher_level=256
 
 Add the settings and then restart the agent.
 
-### Identifying the agent name {#naming}
-
 import Dbsettingagentnamedetails from "../common-items/_db-setting-agent-name-details.mdx";
 
-<Dbsettingagentnamedetails />
+<Dbsettingagentnamedetails level={3} agentType="DMX" />
 
-import Dbagentdbxnaming from "../common-items/_db-agent-dbx-naming.mdx";
-
-<Dbagentdbxnaming />
-
-## Additional agent configuration {#xosconf}
+## XOS agent configuration {#xosconf}
 
 You can additionally monitor resources on the database server by setting the following options in the *xos.conf* file. To use this option, set the `xos` option to `true` in the *whatap.conf* file.
 
@@ -261,3 +261,24 @@ You can additionally monitor resources on the database server by setting the fol
   ```ini title='xos.conf'
   file=/opt/oracle/log
   ```
+
+## prx process options
+
+The **prx** process monitors the **dmx** process and restarts it when it is abnormally crashed or excessive CPU or memory is used. You can set the reboot criteria through the following options:
+
+```ini title="prx.conf"
+cpu_limit=10
+mem_limit=500000 
+```
+
+- **cpu_limit**
+
+  Default `10` (unit: %)
+
+  Restarts the **dmx** process if the CPU utilization exceeds the specified value.
+
+- **mem_limit**
+
+  Default `500000` (500 MB, unit: KB)
+
+  Restarts the **dmx** process if the memory usage exceeds the specified value.

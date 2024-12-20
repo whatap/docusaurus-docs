@@ -9,6 +9,67 @@ keywords:
   - DATABASE
 ---
 
-import LinkedProject from "../common-items/_linked-projects.mdx";
+{/* description */}
+import LinkprojectDesc from "../common-items/_linked-projects-desc.mdx";
 
-<LinkedProject />
+<LinkprojectDesc />
+
+{/* 권한 설정하기 */}
+import Setrole from "../common-items/_import_linked-projects-role-oracle.mdx";
+
+<Setrole />
+
+{/* 연계 프로젝트 추가하기 */}
+import Addproject from "../common-items/_linked-projects-add.mdx";
+
+<Addproject />
+
+## Setting the agent options
+
+For the database project and associated analysis, set the options in the agent configuration file (*whatap.conf*) as follows. Or configuration is possible in <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentSetting" className="uitext" />.
+
+```ini title="whatap.conf"
+dbc_sid_enabled=true
+hook_db_native_enabled=true
+debug_dbc_sid_enabled=true
+```
+
+- **dbc_sid_enabled** <span class='type'>bool</span> 
+
+  Default `false`
+
+  This option is used to issue an SID. Set the value to `true` for associated analysis. It is the **Required** option.
+
+- **hook_db_native_enabled** <span class='type'>bool</span> 
+
+  Default `false`
+
+  This option is used to extract the DB type used in the transaction. Set the value to `true` for associated analysis. It is the **Required** option.
+
+- **debug_dbc_sid_enabled** <span class='type'>bool</span> 
+
+  Default `false`
+
+  It is optional to write the SID-related information to the Java agent log. 
+
+:::note
+
+<Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentSetting" className="uitext" />
+
+![Agent settings](/img/linked-projects-agent-settings.png)
+
+:::
+
+{/* 연계 프로젝트 확인하기 */}
+import APMtoDBLinkedProject from "../common-items/_linked-projects-apm2db.mdx";
+
+<APMtoDBLinkedProject />
+
+{/* import LinkedProject from "../common-items/_linked-projects.mdx"; */}
+
+{/* <LinkedProject /> */}
+
+{/* 연계 프로젝트 삭제하기 */}
+import RemoveProject from "../common-items/_linked-projects-remove.mdx";
+
+<RemoveProject />

@@ -1,0 +1,525 @@
+---
+id: service-2_10_x
+title: Service 2.10.X
+toc_max_heading_level: 2
+pagination_next: release-notes/service/service-2_9_x
+displayed_sidebar: releaseSidebar
+---
+
+## Service 2.10.10
+
+November 22, 2024
+
+<div class='indentTab'>
+
+### `Database`
+
+<Status priority='0'>Fixed</Status> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" />, fixed the data duplication issue in <UI>SQL Elapse Map</UI> widget.
+
+</div>
+
+## Service 2.10.9
+
+November 18, 2024
+
+<div class='indentTab'>
+
+### `Common`
+
+<Status priority='0'>Fixed</Status> Fixed the issue where the search in the organization do not work normally after moving <Cmdname sid="goto_alertTemplate" className="uitext" />.
+
+</div>
+
+## Service 2.10.8
+
+November 13, 2024
+
+<div class='indentTab'>
+
+### `Server`
+
+<Status priority='0'>Fixed</Status>  In <Cmdname sid="side_serverList" className="uitext" /> &gt; <Cmdname sid="side_serverInventory" className="uitext" />, fixed the issue where custom columns are not saved after modification.
+
+</div>
+
+## Service 2.10.7
+
+November 11, 2024
+
+<div class='indentTab'>
+
+### `Common`
+
+<Status priority='0'>Fixed</Status> In <Cmdname sid="side_myUsage" className="uitext" /> &gt; <Cmdname sid="side_paymentInformation" className="uitext" />, fixed the issue where the AWS Marketplace resubscription button is not activated.
+
+</div>
+
+## Service 2.10.6
+
+November 8, 2024
+
+<div class='indentTab'>
+
+### `Server`
+
+<Status priority='1'>Changed</Status> Improved the deletion feature of <Cmdname sid="side_serverList" className="uitext" /> &gt; <Cmdname sid="side_serverInventory" className="uitext" /> by replacing it with an API that leaves user action logs.
+
+</div>
+
+## Service 2.10.5
+
+November 7, 2024
+
+<div className="indentTab">
+
+### `Common`
+
+- <Status priority='1'>Feature</Status> The inactive agent search feature is provided when searching for <UI>Agent/IP</UI> in the integrated search of side menus.
+
+- <Status priority='1'>Feature</Status> In <Cmdname sid="side_myUsage" className="uitext" /> &gt; <Cmdname sid="side_paymentInformation" className="uitext" />, provided the AWS resubscription feature.
+
+- <Status priority='1'>Changed</Status> In <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_metricsChart" className="uitext" /> <code className="newfunc">New</code>, improved the data display format for widgets to display up to two decimal places.
+
+---
+
+### `Database`
+
+#### Database <code class='my'>V1</code>
+
+<Status priority='0'>Fixed</Status> In <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbLockTree" className="uitext" />, fixed the issue where query text is not visible when the <Cmdname sid="TTL06224" className="uitext" /> window pops up.
+
+</div>
+
+## Service 2.10.3
+
+November 1, 2024
+
+<div className="indentTab">
+
+### `Database`
+
+#### MySQL
+
+<Status priority='0'>Fixed</Status> In <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_mysqlStat" className="uitext" />, fixed the issue where the filter does not work normally.
+
+#### PostgreSQL
+
+<Status priority='0'>Fixed</Status> In <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_pgStat" className="uitext" />, fixed the issue where the filter does not work normally.
+
+</div>
+
+## Service 2.10.2
+
+October 31, 2024
+
+<div className="indentTab">
+
+### `Common`
+
+<Status priority='0'>Fixed</Status> In <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" /> <code className="newfunc">New</code>, fixed the issue where the confirmation widow does not appear even if the <Cmdname sid="overwrite" className="uitext" /> button is clicked when using the <Cmdname sid="BTN07761" className="uitext" /> feature.
+
+</div>
+
+## Service 2.10.1
+
+October 31, 2024
+
+<div className="indentTab">
+
+### `Kubernetes`
+
+- <Status priority='0'>Feature</Status> In <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_ingressList" className="uitext" />, the feature to display the agent update guidance screen has been added, when the Kubernetes agent version is lower than 1.7.13.
+
+- <Status priority='0'>Fixed</Status> Fixed the issue where the container's Stdout/Stderr logs are not displayed in <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_containerMap" className="uitext" /> for a namespace project.
+
+---
+
+### `Database`
+
+<Status priority='0'>Fixed</Status> Removed the <UI>elapse</UI> column from <Cmdname sid="active_sessions" className="uitext" /> table in the following menus.
+
+- <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />
+
+- <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" />
+
+- <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbTrendComparison" className="uitext" />
+
+- <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbWaitAnalysis" className="uitext" />
+
+:::note
+
+Applied platforms: **PostgreSQL**, **Oracle** <code className="my">V2</code>, **Oracle Pro**
+
+:::
+
+---
+
+### `Cloud`
+
+<Status priority='0'>Fixed</Status> Fixed the problem where the <UI>Cpu_total_millis</UI> and <UI>Mem_workingset</UI> widgets are not drawn in <UI>Amazon ECS</UI> &gt; <UI>Service</UI>.
+
+</div>
+
+## Service 2.10.0
+
+October 30, 2024
+
+<div className="indentTab">
+
+### Release of new features
+
+It provides a guide to the new features released in Service 2.10.0.
+
+#### Kubernetes
+
+<Status priority='1'>New</Status> Added the <Cmdname sid="side_ingressList" className="uitext" /> menu to monitor metadata and the related information about Ingress resources.
+
+:::note
+
+It can be checked in the <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_ingressList" className="uitext" /> path.
+
+:::
+
+#### Database
+
+- <Status priority='1'>New</Status> Added the <Cmdname sid="side_dbCloudSetting" className="uitext" /> menu to collect and monitor resource status data of the cloud database server.
+
+  :::note
+
+  - The supported cloud services and products are as follows: Only <code className="my">V2</code> projects are supported.
+
+    - **Azure Monitor**: **PostgreSQL**, **MySQL**
+
+    - **AWS CloudWatch**: **PostgreSQL**, **Oracle**, **MySQL**
+
+  - It can be checked in the <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_dbCloudSetting" className="uitext" /> path. For more information, see [the following](../../postgresql/cloudsettings).
+
+  :::
+
+- <Status priority='1'>New</Status> In the <code className="my">V2</code> project for **MySQL** and **PostgreSQL** platforms, added the real-time session linked analysis feature with **Java** platform projects.
+
+  :::note
+
+  For more information about the linked analysis, see the following. [MySQL](../../mysql/linked-projects), [PostgreSQL](../../postgresql/linked-projects)
+
+  :::
+
+#### Browser
+
+<Status priority='1'>New</Status> Added the <Cmdname sid="TTL08376" className="uitext" /> menu that provides statistics on the page load performance for each URL path.
+
+:::note
+
+This feature can be seen in the <Cmdname sid="side_statistics" className="uitext" /> &gt; <Cmdname sid="TTL08376" className="uitext" /> path. For more information, see [the following](../../browser/pageload-stat).
+
+:::
+
+---
+
+### `Common`
+
+- <Status priority='1'>Feature</Status> In <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventHistory" className="uitext" />, added the event processed history feature and changed the UI.
+
+  :::note
+
+  The **Server** product features have been expanded to all products. For more information about the addition of the event processing feature, see [the following](../../java/set-event-history#alertacknowledge).
+
+  :::
+
+- <Status priority='1'>Changed</Status> In <Cmdname sid="side_integratedFlexboard" className="uitext" /> 또는 <Cmdname sid="side_flexboard" className="uitext" />, changed the vertical alignment of the displayed guidance message to the center, if there is no dashboard or the list is being loaded.
+
+- <Status priority='1'>Changed</Status> In <Cmdname sid="TTL06656" className="uitext" /> of <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventNoti" className="uitext" />, updated the content in the <UI>Webhook JSON</UI> input field.
+
+  - Added the `uuid`, `okind`, and `onode` keys.
+
+  - In case of **Server** products, added the `serverAlertPolicyName` key.
+
+  :::note
+
+  For more information about <Cmdname sid="TTL06656" className="uitext" />, see [the following](../../java/set-receive-event#add3rdparty).
+
+  :::
+
+- <Status priority='1'>Changed</Status> In <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_metricsChart" className="uitext" /> <code className="newfunc">New</code>, changed to search for metrics with the category and field name.
+
+- <Status priority='1'>Changed</Status> In the <Cmdname sid="metrics" className="uitext" /> of the <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" /> <code className="newfunc">New</code> menu, applied a new UI for event addition and modification and event list display.
+
+- <Status priority='1'>Changed</Status> Changed the icon of the <Cmdname sid="language" className="uitext" /> setting menu.
+
+- <Status priority='0'>Fixed</Status> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_flexboard" className="uitext" />, on the dashboard with a responsive layout, fixed the issue where the widgets are not displayed in Print mode.
+
+- <Status priority='0'>Fixed</Status> Fixed the issue where the selected organization is occasionally deselected by clicking <Cmdname sid="BTN06900" className="uitext" /> on the product introduction screen.
+
+- <Status priority='0'>Fixed</Status> Fixed the Japanese message display error when there is a time unit restriction in the time selector.
+
+  > 選択できる最大時間は3<b>時</b>です。 → 選択できる最大時間は3<b>時間</b>です。
+
+---
+
+### `Application`
+
+- <Status priority='1'>Feature</Status> In **Java** platform projects, added the analysis feature that relates the **MySQL** and **PostgreSQL** projects and real-time and historical transactions.
+
+  :::note
+
+  For more information about the linked analysis, see [the following](../../java/linked-projects).
+
+  :::
+
+- <Status priority='0'>Fixed</Status> Fixed the issue where agent aliases are not searched in submenus of <Cmdname sid="side_statistics" className="uitext" />.
+
+- <Status priority='0'>Fixed</Status> Fixed the issue where the Select button on the right of the agent search field in submenus of <Cmdname sid="side_statistics" className="uitext" /> is not applied.
+
+  ![](/img/release/release-apm-statistics-btn-select.png)
+
+- <Status priority='0'>Fixed</Status> Fixed the whiteout occurred when the <Cmdname sid="active_stack" className="uitext" /> button is selected in the <Cmdname sid="TTL06126" className="uitext" /> tab of the <Cmdname sid="TTL06209" className="uitext" /> window.
+
+- <Status priority='0'>Fixed</Status> In <Cmdname sid="side_integratedFlexboard" className="uitext" /> or <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_flexboard" className="uitext" />, fixed the issue where PDF files are drawn abnormally when downloaded in some environments.
+
+---
+
+### `Server`
+
+- <Status priority='1'>Changed</Status> In <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentInstall" className="uitext" />, changed to the installation instructions in the **Solaris** operating system environment.
+
+  - Provided the download links for each **Solaris** version.
+
+  - Changed to the installation method using the *install.sh* script file.
+
+- <Status priority='0'>Fixed</Status> Fixed the issue where the guidance text in the filter input field in <Cmdname sid="side_serverList" className="uitext" /> &gt; <Cmdname sid="side_serverInventory" className="uitext" /> is cut off when the language setting is Japanese.
+
+- <Status priority='0'>Fixed</Status> In <Cmdname sid="side_serverList" className="uitext" /> &gt; <Cmdname sid="side_serverInventory" className="uitext" />, fixed the issue where values ​​entered in custom fields are not saved intermittently.
+
+- <Status priority='0'>Fixed</Status> In <Cmdname sid="getting_started_log_monitoring" className="uitext" /> of <Cmdname sid="side_log" className="uitext" /> &gt; <Cmdname sid="side_logSetting" className="uitext" />, modified the Linux (shell) agent configuration commands.
+
+- <Status priority='0'>Fixed</Status> In <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentInstall" className="uitext" />, fixed typos and link errors in the agent installation content for the <UI>HP-UX</UI> environment.
+
+- <Status priority='1'>Deprecated</Status> In the <Cmdname sid="BTN06441" className="uitext" /> feature of <Cmdname sid="side_serverList" className="uitext" /> &gt; <Cmdname sid="side_serverInventory" className="uitext" />, removed the sorting option.
+
+---
+
+### `Kubernetes`
+
+- <Status priority='1'>Feature</Status> Added the node summary analysis feature in the following menus.
+
+  - <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_containerMap" className="uitext" />
+
+  - <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_nodeMap" className="uitext" />
+
+  :::note
+
+  This feature is supported in [Kubernetes Agent Master 1.4.1](../k8s/k8s-1_4_1) or later.
+
+  :::
+
+- <Status priority='1'>Feature</Status> Added process information to the following menu paths:
+
+  - <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_nodeMap" className="uitext" />
+
+  - <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_nodeList" className="uitext" /> &gt; ![Display Detail icon](/img/ico-detail-view.svg) <Cmdname sid="BTN06342" className="uitext" />
+
+  :::note
+
+  This feature applies only to cluster projects and is supported on [Kubernetes agent 1.7.14](../k8s/k8s-1_7_14) or later.
+
+  :::
+
+- <Status priority='1'>Feature</Status> In <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_nodeList" className="uitext" />, added new columns.
+
+  - <Cmdname sid="TTL06705" className="uitext" />: AllocatablePods, DiskPressure, MemoryPressure, PIDPressure, Unschedulable, HasKubelet
+
+  - <Cmdname sid="cpu" className="uitext" />: AllocatableCpu
+
+  - <Cmdname sid="memory" className="uitext" />: AllocatableMemory
+
+- <Status priority='1'>Feature</Status> In the <Cmdname sid="TTL07451" className="uitext" /> widget of <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_clusterOverview" className="uitext" />, added the link to move to the <Cmdname sid="side_objectManifest" className="uitext" /> menu.
+
+- <Status priority='1'>Feature</Status> Added the QoS class guidance popover to the QoS class related the guidance to Pod in the following menu path:
+
+  - <Cmdname sid="side_workload" className="uitext" /> &gt; <Cmdname sid="side_pendingPod" className="uitext" />
+
+  - <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_podInitPerf" className="uitext" />
+
+- <Status priority='1'>Feature</Status> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_clusterOverview" className="uitext" />, added the widget to display the node status count and its trend.
+
+- <Status priority='1'>Changed</Status> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_clusterOverview" className="uitext" />, changed metrics in the following widgets.
+
+  - <Cmdname sid="TTL07212" className="uitext" />
+
+    Before change: Running, Waiting, Stoppped 
+
+    After change: Total, Running, Waiting, Terminated
+
+  - <Cmdname sid="TTL07213" className="uitext" />
+
+    Before change: Available, Unavailable, Desired 
+
+    After change: Total, Running, Pending, Succeeded, Failed, Unknown
+
+- <Status priority='1'>Changed</Status> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_perfSummary" className="uitext" />, removed the following widgets.
+
+  - <Cmdname sid="TTL06713" className="uitext" /> widget in the cluster project
+
+  - <Cmdname sid="TTL07447" className="uitext" /> widget in the namespace project
+
+- <Status priority='1'>Changed</Status> Supplemented the container status and application information to the container summary analysis of <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_containerMap" className="uitext" />.
+
+- <Status priority='1'>Changed</Status> In <Cmdname sid="side_container" className="uitext" /> &gt; <Cmdname sid="side_containerList" className="uitext" />, modified to diplay the selected deployment details by default, when you go to the <Cmdname sid="side_deploymentList" className="uitext" /> menu through the <UI>Deployment</UI> column.
+
+- <Status priority='1'>Changed</Status> In <Cmdname sid="side_container" className="uitext" /> &gt; <Cmdname sid="side_containerList" className="uitext" />, changed the UI for comparison.
+
+  ![Changed](/img/release/release-changed-container.png)
+
+- <Status priority='1'>Changed</Status> In <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_nodeTimeline" className="uitext" />, modified the minimum selectable time unit to be fixed to 5 minutes.
+
+- <Status priority='1'>Changed</Status> In <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_nodeDiskList" className="uitext" />, modified to move to the <Cmdname sid="side_nodeDetail" className="uitext" /> menu when ![Right arrow icon](/img/right-arrow.svg) is selected in the <UI>OnodeName</UI> column.
+
+- <Status priority='1'>Changed</Status> Changed the location of <Cmdname sid="side_workload" className="uitext" /> &gt; <Cmdname sid="side_kubeServiceList" className="uitext" /> to under <Cmdname sid="side_cluster" className="uitext" />.
+
+- <Status priority='1'>Changed</Status> In <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentInstall" className="uitext" />, added description of the agent version (Stable, Preview).
+
+- <Status priority='0'>Fixed</Status> In the summary view of <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_containerMap" className="uitext" />, fixed the memory leak issue that occurs in the <Cmdname sid="trace" className="uitext" /> tab and charts.
+
+- <Status priority='0'>Fixed</Status> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_nodeMap" className="uitext" />, fixed the following:
+
+  - Changed the agent supportable version from v1.3.7 to <b>v1.4.1</b>.
+
+  - Style bug fixes: Text theme errors, broken option area
+
+  - Fixed the issue where node data is not displayed properly when querying the past data.
+
+  - Removed unnecessary normal settings during threshold configuration.
+
+---
+
+### `Database`
+
+#### Common
+
+- <Status priority='1'>Feature</Status> In <Cmdname sid="side_lab" className="uitext" /> &gt; <Cmdname sid="side_dbScriptManager" className="uitext" />, added the default sorting feature to the script list.
+
+- <Status priority='1'>Feature</Status> In <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" /> <code className="oldfunc">Old</code>, added the metrics event template.
+
+  :::note
+
+  This additional feature is applied to products for **Altibase**, **CUBRID**, **MySQL**, **SQL Server**, **Oracle**, **Oracle pro**, **Redis**, and **MongoDB**.
+
+  :::
+
+- <Status priority='1'>Changed</Status> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" />, changed the message that appears when more than 4 metrics are added to the custom widget.
+
+- <Status priority='1'>Changed</Status> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />, modified to change the table data when the time for the time selector is changed.
+
+- <Status priority='1'>Fixed</Status> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" />, fixed the issue where the graph in the <UI>SQL Elapse Map</UI> widget is not displayed when stopping the real-time query and querying the past data.
+
+- <Status priority='1'>Fixed</Status> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_instanceList" className="uitext" />, fixed the issue where the selected instance is not applied, when you go to the <Cmdname sid="side_multiInstance" className="uitext" /> menu by clicking <Cmdname sid="multi_view" className="uitext" />.
+
+- <Status priority='0'>Fixed</Status> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />, modified to display the message, '<Cmdname sid="NTC06152" className="uitext" />' if the response value is `FAIL - Invalid paramkey` when using the <Cmdname sid="session_kill" className="uitext" /> feature.
+
+- <Status priority='0'>Fixed</Status> Fixed the whiteout that occurs when entering <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbSqlStat" className="uitext" /> menu through the copied link.
+
+- <Status priority='0'>Fixed</Status> In <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" /> <code className="newfunc">New</code>, added the percent unit (%) into the metrics template.
+
+- <Status priority='1'>Fixed</Status> In <Cmdname sid="side_lab" className="uitext" /> &gt; <Cmdname sid="side_dbScriptManager" className="uitext" />, modified the following:
+
+  - Changed the script SQL default format setting to `false`.
+
+  - Modified to display the left and right scrolls when there are too many script results.
+
+  - Modified the agent path in the guidance message displayed when there is no script list to display the path for each platform.
+
+- <Status priority='0'>Fixed</Status> In the side menu, removed the <Cmdname sid="side_logViewer" className="uitext" /> and <Cmdname sid="side_fileLogAlert" className="uitext" /> menus and modified to check in <Cmdname sid="sitemap" className="uitext" />.
+
+- <Status priority='0'>Fixed</Status> Fixed the issue where organization information is released when entering a project to which the agent is not installed.
+
+- <Status priority='0'>Fixed</Status> In <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbTrendComparison" className="uitext" />, fixed the following:
+
+  - Modified to display chart colors differently between original and compared dates.
+
+  - Fixed the tooltip not to display the previous date.
+
+    > e.g. Previous: **2024-10-29 18:38:29** / Present: ***Compare Time: 18:38:29***
+
+  - Modified the tooltip to display the date and metrics.
+
+    e.g. Previous: **Innodb_buffer_pool_read_requests** / Present: ***Innodb_buffer_pool_read_requests (2024-10-29)***
+
+- <Status priority='0'>Fixed</Status> Hided the <Cmdname sid="side_lab" className="uitext" /> &gt; <Cmdname sid="side_dbScriptManager" className="uitext" /> menu on the Redis and MongoDB platforms.
+
+#### Oracle <code className="my">V2</code>, Oracle Pro
+
+- <Status priority='1'>Feature</Status> In <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_tableSpace" className="uitext" />, added the TOTAL row into the <Cmdname sid="table_space_detail" className="uitext" /> table.
+
+- <Status priority='0'>Fixed</Status> Modified to check the Oracle CPU core count within a 3-hour range.
+
+- <Status priority='0'>Fixed</Status> In <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbLockTree" className="uitext" />, changed the <b>event#</b> column name to <UI>event</UI>.
+
+#### Oracle Pro
+
+<Status priority='0'>Changed</Status> In <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentInstall" className="uitext" />, modified the button style when <UI>installed for a non-Oracle account</UI>.
+
+#### MySQL, PostgreSQL
+
+- <Status priority='1'>Changed</Status> In <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentInstall" className="uitext" />, changed the RDS option setting to <Cmdname sid="side_dbCloudSetting" className="uitext" /> menu link.
+
+- <Status priority='1'>Changed</Status> Changed the UI in <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbSize" className="uitext" /> (from the bar chart to the stacked series chart).
+
+#### Altibase
+
+- <Status priority='1'>Feature</Status> In <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_tableSpace" className="uitext" />, added a table to check the segment size.
+
+- <Status priority='1'>Deprecated</Status> In <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentInstall" className="uitext" />, removed the RDS option settings.
+
+#### CUBRID
+
+- <Status priority='1'>Feature</Status> In <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbSize" className="uitext" />, added the TOTAL row into the <Cmdname sid="table_space_detail" className="uitext" /> table.
+
+- <Status priority='0'>Fixed</Status> In <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="TTL06026" className="uitext" /> for the <code className="my">V2</code> project, fixed the whiteout occurrence.
+
+#### MongoDB
+
+<Status priority='1'>Changed</Status> Changed the UI in <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbSize" className="uitext" /> (from the bar chart to the stacked series chart).
+
+---
+
+### `URL`
+
+<Status priority='1'>Feature</Status> In <Cmdname sid="add_url" className="uitext" />, added the IP guidance in the <Cmdname sid="check_location" className="uitext" /> section.
+
+:::note
+
+For more information about the guide to regional IPs, see [the following](../../url/url-install#select-confirm-region).
+
+:::
+
+---
+
+### `Network`
+
+<Status priority='0'>Fixed</Status> Fixed the issue where the icons in <Cmdname sid="side_lab" className="uitext" /> do not appear properly when the side menu is in collapse mode.
+
+---
+
+### `Log`
+
+- <Status priority='1'>Feature</Status> In <Cmdname sid="side_logTail" className="uitext" />, supported the drop-down feature to add tags as search filters when tags in the log are clicked.
+
+  ![](/img/release/release-log-live-tail-filter.png)
+
+  :::note
+
+  The <Cmdname sid="copy" className="uitext" />, <Cmdname sid="search" className="uitext" />, and <Cmdname sid="exclusion_search" className="uitext" /> options are supported.
+
+  :::
+
+- <Status priority='1'>Feature</Status> In <Cmdname sid="side_logSearch" className="uitext" /> 및 <Cmdname sid="side_logTail" className="uitext" />, added the feature to register desired search conditions as favorites.
+
+- <Status priority='1'>Changed</Status> In <Cmdname sid="log_parser_setting_primary" className="uitext" /> of <Cmdname sid="side_log" className="uitext" /> &gt; <Cmdname sid="side_logSetting" className="uitext" />, adjusted the workflow to allow parser patterns to be applied upon successful simulation and performance measurement.
+
+- <Status priority='0'>Fixed</Status> In <Cmdname sid="side_logExplorer" className="uitext" />, modified to filter the list of candidates for the tag value ​​that matches a keyword.
+
+- <Status priority='0'>Fixed</Status> Fixed the issue where filtering is disabled when the list is updated while a value is entered in the filter input field of the <Cmdname sid="side_logExplorer" className="uitext" /> menu
+
+- <Status priority='0'>Fixed</Status> Fixed the issue where `ctrl+z` does not work in the pattern input field when running the <Cmdname sid="simulation" className="uitext" /> feature after entering a pattern in <Cmdname sid="log_parser_setting_primary" className="uitext" /> of the <Cmdname sid="side_logSetting" className="uitext" /> menu.
+
+</div>

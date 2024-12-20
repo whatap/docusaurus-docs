@@ -1,19 +1,5 @@
 [
   {
-    "url": "https://docs.whatap.io/ja/release-notes/server-aix/server-aix-1_2_7",
-    "ver": "v1.2.7",
-    "date": "2024-04-09",
-    "Lists": [
-      {
-        "ver": "v1.2.7",
-        "hash": "v127",
-        "product": "Server AIX Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code>AIXサーバーCPU Logical Core分析エラーの修正: プロセスCPUに関連して過度に測定される不具合を修正</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/ja/release-notes/server-aix/server-aix-1_3_4",
     "ver": "v1.3.4",
     "date": "2024-09-19",
@@ -30,7 +16,49 @@
         "hash": "v134",
         "product": "Server AIX Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>エージェントを最初に駆動した後、OID値を固定するように改善</p>"
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>エージェントを最初に開始した後、OID値を固定するように改善</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/server-aix/server-aix-1_3_6",
+    "ver": "v1.3.6",
+    "date": "2024-11-11",
+    "Lists": [
+      {
+        "ver": "v1.3.6",
+        "hash": "v136",
+        "product": "Server AIX Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>OS言語セットがハングルの場合、Network情報が収集されない現象を修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/server-aix/server-aix-1_2_7",
+    "ver": "v1.2.7",
+    "date": "2024-04-09",
+    "Lists": [
+      {
+        "ver": "v1.2.7",
+        "hash": "v127",
+        "product": "Server AIX Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code>AIXサーバーCPU Logical Core分析エラーの修正: プロセスCPUに関連して過度に測定される不具合を修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/server-aix/server-aix-1_3_5",
+    "ver": "v1.3.5",
+    "date": "2024-10-17",
+    "Lists": [
+      {
+        "ver": "v1.3.5",
+        "hash": "v135",
+        "product": "Server AIX Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"1\">Fixed</code>Oname固定オプションの未動作を修正</p>"
       }
     ]
   }

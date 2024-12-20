@@ -55,7 +55,7 @@ import K8slistcl from "../common-items/_k8s-list-cl.mdx";
 
 ## 比較する
 
-**_比較_**オプションにより、複数のノードの主な指標に対する比較チャートを確認できます。リストから照会を希望するノードの**_比較_**カラムのチェックボックスを選択すると、次のように右側にそのノードの詳細情報を比較する画面が表示されます。 
+**_比較_**オプションにより、複数のノードの主な指標に対する比較チャートを確認できます。リストから照会するノードの**_比較_**カラムのチェックボックスを選択すると、次のように右側にそのノードの詳細情報を比較する画面が表示されます。 
 
 <ImgLang img='k8s-resource-node-list-compare.png' desc='比較する' />
 
@@ -63,82 +63,6 @@ import K8slistcl from "../common-items/_k8s-list-cl.mdx";
 
 ノードの詳細は**_詳細_**オプションを使用して、選択したノードに関する詳細情報を確認できます。一覧から照会を希望するノード**_詳細_**カラムの![詳細アイコン](/img/ico-detail-view.svg)アイコンを選択すると、右側にそのノードの詳細画面が表示されます。 
 
-### <Cmdname sid="TTL08441" className="uitext" type="node" />
+import K8snodedt from "../common-items/_k8s-node-details.mdx";
 
-<Cmdname sid="TTL08441" className="uitext" type="node" />タブで選択したノード構成と全体的なリソース使用量情報を要約して提供します。そのノードのハードウェアおよびソフトウェアの構成要素を総合的に確認できます。ユーザーは、ノードのリソース使用状況と各構成要素の状態を把握し、パフォーマンスと運用安定性をモニタリングできます。
-
-<ImgLang img='k8s-node-timeline-config.png' />
-
-- **ノードシステム仕様**
-
-  - **_Architecture_**：ノードが使用しているハードウェアアーキテクチャ
-
-  - **_Image_**：ノードが実行中のオペレーティングシステムのイメージ情報
-
-  - **_CapacityMemory_**：ノードの総メモリ容量
-
-  - **_CapacityCpu_**：ノードの総CPU容量
-
-- **ソフトウェア構成** 
-
-  - **_Container Runtime_**：ノードで使用されるコンテナランタイムのバージョン情報 
-
-  - **_kubelet_**：ノードで実行中のクバネティスkubeletのバージョン情報 
-
-  - **_kube-proxy_**：ネットワーク管理の役割を果たすkube-proxyのバージョン情報 
-
-- **リソースの使用状況** 
-
-  - **_CPU_**：ノードのCPU使用量
-
-  - **_メモリ_**：ノードのメモリ使用量
-
-  - **_ディスク_**：ノードで使用中のディスク容量と使用比率
-
-  - **_ネットワーク_**：ネットワークの伝送量 
-
-:::note 
-
-- CPU、メモリ、ディスク、ネットワークをクリックすると、照会期間中の使用量の推移が確認できる<Cmdname sid="metrics" className="uitext" />タブに移動します。 
-
-- **_AVG_**、**_MAX_**ボタンをクリックして、照会期間中の平均使用量と最大使用量を確認できます。
-
-:::
-
-:::note 
-
-**_ノード構成_**タブはクラスタープロジェクト(<code class='my'>CP</code>)の場合、照会できます。 
-
-:::
-
-### <Cmdname sid="resource" className="uitext" />
-
-<Cmdname sid="resource" className="uitext" />タブで選択したノードにスケジューリングされた***Pod***およびそのPodで実行中の***コンテナ***と***アプリケーション***一覧を確認できます。この情報は選択した時間区間の最後の時点に基づいて、1分間のリソースデータを反映して表示します。これにより、その時点のノード状態と各Pod、コンテナ、アプリケーションの動作状態をより明確に把握できます。
-
-<ImgLang img='k8s-node-timeline-resource.png' />
-
-### <Cmdname sid="metrics" className="uitext" />
-
-<Cmdname sid="metrics" className="uitext" />タブで選択したノードのリソース使用量の推移を確認できます。照会期間中の平均(***AVG***)、最大値(***MAX***)を基準に***CPU***、***メモリ***、***ネットワーク***、***ディスク***使用量の変化を照会できます。
-
-<ImgLang img='k8s-node-timeline-metrics.png' />
-
-- **_AVG_**：照会期間中の平均使用量
-
-- **_MAX_**：照会期間中の最大使用量
-
-- **_Total_**：複数のネットワークインターフェイスの全体トラフィック使用量の合計
-
-- **_In/Out_**：特定のネットワークインタフェースのInbound(受信) およびOutbound(送信) トラフィックの使用量
-
-### <Cmdname sid="trace" className="uitext" />
-
-<Cmdname sid="trace" className="uitext" />タブで選択したノードで実行中のアプリケーショントレース情報を確認できます。
-
-<ImgLang img='k8s-resource-node-list-trace.png' />
-
-### <Cmdname sid="event" className="uitext" />
-
-<Cmdname sid="event" className="uitext" />タブで選択したノードで発生した***K8s Nodeイベント***と***WhaTap Nodeイベント***を確認できます。***K8s Nodeイベント***はノードの状態変化を含むクラスター内の重要な作業記録を含み、***WhaTap Nodeイベント***はユーザーが設定したアラート通知の基準に基づくイベント発生情報を提供します。
-
-<ImgLang img='k8s-node-timeline-event.png' />
+<K8snodedt />

@@ -9,15 +9,17 @@ keywords:
   - Cluster
 ---
 
-Home > Select Project > **_Dashboard_** > **_Cluster Summary_**
-
-You can check summary information about the cluster. You can integrate the data separated by the namespace project.
+Home &gt; Select Project &gt; <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_clusterOverview" className="uitext" />
 
 :::note
 
-You can check the **_Cluster summary_** menu only if it is a cluster project.
+**Requirements**
+
+You can see the <Cmdname sid="side_clusterOverview" className="uitext" /> menu only for the Kubernetes cluster project (<code class='my'>CP</code>).
 
 :::
+
+You can check summary information about the cluster. You can integrate the data separated by the namespace project.
 
 ## Cluster object
 
@@ -49,37 +51,41 @@ You can check versions related to the cluster and the number of Kubernetes objec
 
 - Data at an interval of 5 seconds. When viewing real-time data, the data is called once every 5 seconds.
 
-#### Number of nodes
-
-- Data at an interval of 5 seconds. When viewing real-time data, the data is called once every 5 seconds.
-
-#### Number of Pods
-
-- Data at an interval of 5 seconds. When viewing real-time data, the data is called once every 5 seconds.
-
-- **_Available Pods_**: Indicates the number of Pods allocated to the node. 
-
-- **_Unavailable Pods_**: Indicates the number of Pods that are not allocated to the node.
-
-- **_Desired Pods_**: Indicates the number of intended Pods. 
-
-  > **_Available Pods_** + **_Unavailable Pods_**
-
 #### Number of Containers
 
 - You can check the number of containers by status. 
 
 - Data at an interval of 5 seconds. When viewing real-time data, the data is called once every 5 seconds.
 
+#### Number of Pods
+
+- You can check the number of Pods by status. 
+
+- Data at an interval of 5 seconds. When viewing real-time data, the data is called once every 5 seconds.
+
+{/* \* **_Available Pods_**: 노드에 할당된 Pod들의 개수를 의미합니다. 
+
+- **_Unavailable Pods_**: Indicates the number of Pods that are not allocated to the node.
+
+- **_Desired Pods_**: Indicates the number of intended Pods. 
+
+  > **_Available Pods_** + **_Unavailable Pods_** */}
+
+#### Number of nodes
+
+- You can check the number of nodes by status. 
+
+- Data at an interval of 5 seconds. When viewing real-time data, the data is called once every 5 seconds.
+
 #### Kubernetes Object list
 
-- You can check the Kubernetes object list (**_Deployment_**, **_ReplicaSet_**, **_Namespace_**, **_StatefulSet_**).
+- You can see the list of Kubernetes objects.
 
 - Data at an interval of 5 minutes. When viewing real-time data, the data is called once every 3 minutes.
 
 #### Object count trend
 
-- You can see how the number of Kubernetes objects (**_Deployment_**, **_ReplicaSet_**, **_Namespace_**, **_StatefulSet_**) has changed over 24 hours.
+- You can see how the number of Kubernetes objects has changed over the past 24 hours.
 
 - Data at an interval of 5 minutes. When viewing real-time data, the data is called once every 3 minutes.
 

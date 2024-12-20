@@ -29,8 +29,14 @@
   $TARGET_IP="127.0.0.1"
   #以下の変数にモニタリング対象ポート番号を指定します。
   $TARGET_PORT="80"
-  Add-Content -Path "C:\Program Files\WhatapInfra\whatap.conf" -Value "tcp.check.$TARGET_PORT=tcp://$TARGET_IP:$TARGET_PORT"
+  Add-Content -Path "C:\Program Files\WhatapInfra\whatap.conf" -Value "tcp.check.${TARGET_PORT}=tcp://${TARGET_IP}:${TARGET_PORT}"
   ```
 
   </TabItem>
   </Tabs>
+
+{/* 다중 포트 감시 추가 */}
+
+import TcpMulti from "../common-items/_server-tcp-port-multi.mdx";
+
+<TcpMulti />

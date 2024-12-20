@@ -1,56 +1,5 @@
 [
   {
-    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_3_1",
-    "ver": "v2.3.1",
-    "date": "2024-08-26",
-    "Lists": [
-      {
-        "ver": "v2.3.1",
-        "hash": "v231",
-        "product": ".NET Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code>トランザクション外部で発生するトレース情報の収集機能を追加</p>",
-        "details": "<ul>\n<li>\n<p><strong>expand_transaction_level</strong> <span class=\"type\">Boolean</span></p>\n<p>既定値<code>false</code></p>\n<p>オプション値を<code>true</code>に設定すると、トランザクションの外部から発生するSQL、HTTPの呼び出しをトランザクションとして扱い、ヒートマップに表示します。</p>\n</li>\n<li>\n<p><strong>expand_transaction_basetime</strong> <span class=\"type\">Int</span></p>\n<p>既定値<code>1000</code>(1秒)/最小値<code>100</code>(0.1秒)</p>\n<p><code>expand_transaction_level</code>オプションが<code>true</code>である場合、設定した時間より応答時間が長くかかる場合にのみデータを収集します。 毎秒最大100件まで収集します。</p>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v2.3.1",
-        "hash": "v231",
-        "product": ".NET Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> DB接続情報の表示：データベースを使用するトランザクションは、データベース接続情報を表示する機能を追加</p>"
-      },
-      {
-        "ver": "v2.3.1",
-        "hash": "v231",
-        "product": ".NET Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code>エラーでない場合でもトランザクションのステータスコードを表示するように修正</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_7",
-    "ver": "v2.2.7",
-    "date": "2024-06-10",
-    "Lists": [
-      {
-        "ver": "v2.2.7",
-        "hash": "v227",
-        "product": ".NET Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code>対応環境の分析ツール(<a href=\"https://repo.whatap.io/windows/WhaTapDotnetScan.exe\" target=\"_blank\" rel=\"noopener noreferrer\">WhaTapDotnetScan.exe</a>)改善</p>",
-        "details": "<ul>\n<li>\n<p>ドットネットが設置されていない環境でも実行できるように改善</p>\n</li>\n<li>\n<p>旧バージョンのドットネットランタイムを使用したり、ドットネットランタイムがインストールされていない場合に発生するエラーを修正</p>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v2.2.7",
-        "hash": "v227",
-        "product": ".NET Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code>処理許容量を超えたトランザクションを除去する過程で、開始時点だけが残り、終了時点が削除されるバグを修正</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_3_0",
     "ver": "v2.3.0",
     "date": "2024-07-31",
@@ -72,6 +21,35 @@
     ]
   },
   {
+    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_3_1",
+    "ver": "v2.3.1",
+    "date": "2024-08-26",
+    "Lists": [
+      {
+        "ver": "v2.3.1",
+        "hash": "v231",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code>トランザクション外部で発生するトレース情報の収集機能を追加</p>",
+        "details": "<ul>\n<li>\n<p><strong>expand_transaction_level</strong> <span class=\"type\">Boolean</span></p>\n<p>既定値<code>false</code></p>\n<p>オプション値を<code>true</code>に設定すると、トランザクションの外部から発生するSQL、HTTPの呼び出しをトランザクションとして扱い、ヒットマップに表示します。</p>\n</li>\n<li>\n<p><strong>expand_transaction_basetime</strong> <span class=\"type\">Int</span></p>\n<p>既定値<code>1000</code>(1秒)/最小値<code>100</code>(0.1秒)</p>\n<p><code>expand_transaction_level</code>オプションが<code>true</code>である場合、設定した時間より応答時間が長くかかる場合にのみデータを収集します。 毎秒最大100件まで収集します。</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.3.1",
+        "hash": "v231",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> DB接続情報の表示：データベースを使用するトランザクションは、データベース接続情報を表示する機能を追加</p>"
+      },
+      {
+        "ver": "v2.3.1",
+        "hash": "v231",
+        "product": ".NET Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code>エラーでない場合でもトランザクションのステータスコードを表示するように修正</p>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_9",
     "ver": "v2.2.9",
     "date": "2024-07-05",
@@ -82,63 +60,6 @@
         "product": ".NET Agent",
         "type": "Feature",
         "desc": "<p><code class=\"Feature\">Feature</code>マルチトランザクションのモニタリングに対応: WhaTapモニタリングプラットフォームのプロジェクトとして登録されたアプリケーションサービス間の呼び出しを追跡できます。</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_3_3",
-    "ver": "v2.3.3",
-    "date": "2024-09-25",
-    "Lists": [
-      {
-        "ver": "v2.3.3",
-        "hash": "v233",
-        "product": ".NET Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> .NET CoreからSQLパラメータモニタリング対応を追加</p>"
-      },
-      {
-        "ver": "v2.3.3",
-        "hash": "v233",
-        "product": ".NET Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> .NET CoreからStored Procedureモニタリング対応を追加</p>"
-      },
-      {
-        "ver": "v2.3.3",
-        "hash": "v233",
-        "product": ".NET Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> <code>System.Net.Http.HttpClient.SendAsync</code>モニタリング対応を追加</p>"
-      },
-      {
-        "ver": "v2.3.3",
-        "hash": "v233",
-        "product": ".NET Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> .NET Coreバージョンのエージェントをインストールした後、削除しない状態で、.NET Frameworkバージョンを追加インストールするとアクティブスタックが収集されないバグを修正</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_8",
-    "ver": "v2.2.8",
-    "date": "2024-06-19",
-    "Lists": [
-      {
-        "ver": "v2.2.8",
-        "hash": "v228",
-        "product": ".NET Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\">New</code> .NET 6、7、8バージョンの追加対応</p>",
-        "details": "<ul>\n<li>\n<p>ASP.NET core対応</p>\n</li>\n<li>\n<p>HTTP Call、Redis、WCF client、ユーザーログ、Active Stack、SQL対応</p>\n</li>\n<li>\n<p>別のインストールリンクでダウンロードします。 <a href=\"https://repo.whatap.io/windows/whatap_dotnet_core.exe\" target=\"_blank\" rel=\"noopener noreferrer\">whatap_dotnet_core.exe</a></p>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v2.2.8",
-        "hash": "v228",
-        "product": ".NET Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> <code>trace_http_client_ip_header_key</code>オプションのデフォルト値を<code>X-Forwarded-For</code>に変更</p>"
       }
     ]
   },
@@ -180,74 +101,173 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_4",
-    "ver": "v2.2.4",
-    "date": "2024-03-30",
+    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_3_3",
+    "ver": "v2.3.3",
+    "date": "2024-09-25",
     "Lists": [
       {
-        "ver": "v2.2.4",
-        "hash": "v224",
+        "ver": "v2.3.3",
+        "hash": "v233",
         "product": ".NET Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code>バイトコードの処理プロセス性能を改善</p>"
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> .NET CoreからSQLパラメータモニタリング対応を追加</p>"
       },
       {
-        "ver": "v2.2.4",
-        "hash": "v224",
+        "ver": "v2.3.3",
+        "hash": "v233",
         "product": ".NET Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code>ログの処理プロセス性能を改善</p>"
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> .NET CoreからStored Procedureモニタリング対応を追加</p>"
       },
       {
-        "ver": "v2.2.4",
-        "hash": "v224",
+        "ver": "v2.3.3",
+        "hash": "v233",
         "product": ".NET Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code>UDPパケットプロセス性能を改善</p>"
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> <code>System.Net.Http.HttpClient.SendAsync</code>モニタリング対応を追加</p>"
       },
       {
-        "ver": "v2.2.4",
-        "hash": "v224",
+        "ver": "v2.3.3",
+        "hash": "v233",
         "product": ".NET Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> <a href=\"http://ASP.NET\" target=\"_blank\" rel=\"noopener noreferrer\">ASP.NET</a>MVCライブラリの処理プロセス性能を改善</p>"
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> .NET Coreバージョンのエージェントをインストールした後、削除しない状態で、.NET Frameworkバージョンを追加インストールするとアクティブスタックが収集されないバグを修正</p>"
       }
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_1",
-    "ver": "v2.2.1",
-    "date": "2024-04-09",
+    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_3_6",
+    "ver": "v2.3.6",
+    "date": "2024-11-25",
     "Lists": [
       {
-        "ver": "v2.2.1",
-        "hash": "v221",
+        "ver": "v2.3.6",
+        "hash": "v236",
         "product": ".NET Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code>エージェントオプションの追加</p>",
-        "details": "<ul>\n<li>\n<p><strong>prepend_app_pool_name</strong> <span class=\"type\">Boolean</span></p>\n<p>既定値<code>false</code></p>\n<p>オプション値を<code>true</code>に設定すると、トランザクションのURLの前にアプリケーションのフルネームを表示します。</p>\n</li>\n</ul>"
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code>エージェントオプションの追加</p>",
+        "details": "<p><strong>webservice_method_prefix_realtime</strong> <span class=\"type\">Boolean</span></p>"
       },
       {
-        "ver": "v2.2.1",
-        "hash": "v221",
+        "ver": "v2.3.6",
+        "hash": "v236",
         "product": ".NET Agent",
         "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code>古いバージョンの互換性を高めるためにインストールファイルを分離</p>",
-        "details": "<ul>\n<li>\n<p>.NET 4.6.1バージョン以降のランタイムを使用する場合: <a href=\"https://repo.whatap.io/windows/whatap_dotnet.exe\" target=\"_blank\" rel=\"noopener noreferrer\">whatap_dotnet.exe</a></p>\n</li>\n<li>\n<p>.NET 4.6.1バージョン未満のランタイムを使用するか、Windows Server 2012未満の場合: <a href=\"https://repo.whatap.io/windows/whatap_dotnet_450.exe\" target=\"_blank\" rel=\"noopener noreferrer\">whatap_dotnet_450.exe</a></p>\n<div class=\"theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary\"><div class=\"admonitionHeading_Gvgb\"><span class=\"admonitionIcon_Rf37\"><svg viewbox=\"0 0 14 16\"><path fill-rule=\"evenodd\" d=\"M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z\"></path></svg></span>ノート</div><div class=\"admonitionContent_BuS1\"><p>Windows Server 2008 R2から対応します。</p></div></div>\n</li>\n</ul>"
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> <code>webservice_method_prefix</code>オプションで収集するトランザクション処理方式の変更</p>",
+        "details": "<ul>\n<li>\n<p>再帰的な呼び出しによるエラーの発生を防止するために、トランザクション内で収集される他の<code>webservice_method_prefix</code>メソッドは無視するように修正</p>\n</li>\n<li>\n<p>完了していないトランザクションは無視するように修正</p>\n</li>\n</ul>"
       },
       {
-        "ver": "v2.2.1",
-        "hash": "v221",
+        "ver": "v2.3.6",
+        "hash": "v236",
+        "product": ".NET Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code>個別にダウンロードを提供していた.NET Frameworkと.NET Core環境のインストーラの併合</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_3_4",
+    "ver": "v2.3.4",
+    "date": "2024-10-02",
+    "Lists": [
+      {
+        "ver": "v2.3.4",
+        "hash": "v234",
         "product": ".NET Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> <code>webservice_method_enabled</code>オプション：メソッドが重複して実行される場合にモニタリングされないバグを修正</p>"
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>最近追加されたモニタリング対象の中でCancellationToken関連メソッドを一時削除</p>"
       },
       {
-        "ver": "v2.2.1",
-        "hash": "v221",
+        "ver": "v2.3.4",
+        "hash": "v234",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> .NET Coreで<code>expand_transaction_level</code>設定サポートの追加</p>",
+        "details": "<ul>\n<li>\n<p><strong>expand_transaction_level</strong> <span class=\"type\">Boolean</span></p>\n<p>デフォルト値 <code>false</code></p>\n<p>そのオプションを<code>true</code>に設定すると、トランザクションの外部から発生するSQLおよびHTTPの呼び出しをトランザクションと見なし、ヒットマップに表示します。</p>\n</li>\n<li>\n<p><strong>expand_transaction_basetime</strong> <span class=\"type\">Int</span></p>\n<p>デフォルト値 <code>1000</code>ms (1秒)</p>\n<p><code>expand_transaction_level</code> オプションが <code>true</code>に設定されている場合、指定した時間よりも応答時間のかかるリクエストのみがデータを収集します。 毎秒最大100件のデータを収集します。 最小値は <code>100</code> msで0.1秒です。</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.3.4",
+        "hash": "v234",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code>Desktop applicationモニタリング対応を追加</p>",
+        "details": "<ul>\n<li>\n<p><code>expand_transaction_level</code>オプションの値を<code>true</code>に設定します。</p>\n</li>\n<li>\n<p>アプリケーションを実行する前に、次のコマンドをプロンプトに入力します。</p>\n<div class=\"language-csharp codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-csharp codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token class-name\" style=\"color:rgb(255, 203, 107)\">SET</span><span class=\"token plain\"> COR_PROFILER</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\">D76F1D76</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">-</span><span class=\"token plain\">A9E0</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">-</span><span class=\"token plain\">4C87</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">-</span><span class=\"token number\" style=\"color:rgb(247, 140, 108)\">874F</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">-</span><span class=\"token plain\">C0AD93D4229B</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token class-name\" style=\"color:rgb(255, 203, 107)\">SET</span><span class=\"token plain\"> COR_ENABLE_PROFILING</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token number\" style=\"color:rgb(247, 140, 108)\">1</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token class-name\" style=\"color:rgb(255, 203, 107)\">SET</span><span class=\"token plain\"> CORECLR_PROFILER</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\">21CAE18A</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">-</span><span class=\"token number\" style=\"color:rgb(247, 140, 108)\">4E44</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">-</span><span class=\"token number\" style=\"color:rgb(247, 140, 108)\">4578</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">-</span><span class=\"token plain\">83FD</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">-</span><span class=\"token plain\">0576AAA47E68</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token class-name\" style=\"color:rgb(255, 203, 107)\">SET</span><span class=\"token plain\"> CORECLR_ENABLE_PROFILING</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token number\" style=\"color:rgb(247, 140, 108)\">1</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token class-name\" style=\"color:rgb(255, 203, 107)\">SET</span><span class=\"token plain\"> DOTNET_STARTUP_HOOKS</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token plain\">C</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">:</span><span class=\"token plain\">\\Program Files\\WhaTap </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">NET\\core\\Whatap</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">Startup</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">NetCore</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">dll</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token class-name\" style=\"color:rgb(255, 203, 107)\">SET</span><span class=\"token plain\"> WHATAP_TRACE_IIS_ONLY</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token number\" style=\"color:rgb(247, 140, 108)\">0</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token class-name\" style=\"color:rgb(255, 203, 107)\">SET</span><span class=\"token plain\"> EXPAND_TRANSACTION_LEVEL</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token number\" style=\"color:rgb(247, 140, 108)\">1</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token class-name\" style=\"color:rgb(255, 203, 107)\">SET</span><span class=\"token plain\"> EXPAND_TRANSACTION_BASETIME</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token number\" style=\"color:rgb(247, 140, 108)\">100</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n<li>\n<p>コマンドの実行後、対象アプリケーションを実行します。</p>\n</li>\n</ul>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_3_5",
+    "ver": "v2.3.5",
+    "date": "2024-11-04",
+    "Lists": [
+      {
+        "ver": "v2.3.5",
+        "hash": "v235",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> .NET CoreでUser Transaction機能を追加</p>",
+        "details": "<ul>\n<li>\n<p>次の例を参照にしてください。 接続者数のモニタリングが必要ない場合は、ユーザー識別項目に空の文字列を入力します。</p>\n<div class=\"language-C language-c codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-c codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">using System</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">class Program</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token keyword\" style=\"font-style:italic\">static</span><span class=\"token plain\"> </span><span class=\"token keyword\" style=\"font-style:italic\">void</span><span class=\"token plain\"> </span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">Main</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">string</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">[</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">]</span><span class=\"token plain\"> args</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token comment\" style=\"color:rgb(105, 112, 152);font-style:italic\">//トレース開始(ドメイン、Url、ユーザー識別)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        WhatapDiagnostic</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">TraceStart</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"127.0.0.1\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> </span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"/api/test\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> </span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"user123\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        try</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            </span><span class=\"token comment\" style=\"color:rgb(105, 112, 152);font-style:italic\">//ステップ開始</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            WhatapDiagnostic</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">StepStart</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"test Step\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            </span><span class=\"token comment\" style=\"color:rgb(105, 112, 152);font-style:italic\">//ユーザーコード領域</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            </span><span class=\"token comment\" style=\"color:rgb(105, 112, 152);font-style:italic\">//ステップ終了</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            WhatapDiagnostic</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">StepStop</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">catch</span><span class=\"token plain\"> </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">Exception ex</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            </span><span class=\"token comment\" style=\"color:rgb(105, 112, 152);font-style:italic\">//例外発生時の診断情報に例外を記録</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            WhatapDiagnostic</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">SetExceptionForTrace</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">ex</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        finally</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            </span><span class=\"token comment\" style=\"color:rgb(105, 112, 152);font-style:italic\">//トレース終了</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            WhatapDiagnostic</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">TraceStop</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n<div class=\"theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary\"><div class=\"admonitionHeading_Gvgb\"><span class=\"admonitionIcon_Rf37\"><svg viewbox=\"0 0 14 16\"><path fill-rule=\"evenodd\" d=\"M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z\"></path></svg></span>ノート</div><div class=\"admonitionContent_BuS1\"><p>.NET Frameworkは準備中です。</p></div></div>\n</li>\n<li>\n<p>WhatapDiagnosticコードは次の通りです。 形式に関係なく<code>diagnosticSource.Write(…)</code>内容だけ正確であればいいです。</p>\n<div class=\"language-C language-c codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-c codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">using System</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">Diagnostics</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\">å</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">public </span><span class=\"token keyword\" style=\"font-style:italic\">static</span><span class=\"token plain\"> class WhatapDiagnostic</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    private </span><span class=\"token keyword\" style=\"font-style:italic\">static</span><span class=\"token plain\"> readonly DiagnosticSource diagnosticSource </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token plain\"> new </span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">DiagnosticListener</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"WhatapDiagnosticListener\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    public </span><span class=\"token keyword\" style=\"font-style:italic\">static</span><span class=\"token plain\"> </span><span class=\"token keyword\" style=\"font-style:italic\">void</span><span class=\"token plain\"> </span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">TraceStart</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">string host</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> string url</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> string userId</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token keyword\" style=\"font-style:italic\">if</span><span class=\"token plain\"> </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">diagnosticSource</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">IsEnabled</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.Trace.Start\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            diagnosticSource</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">Write</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.Trace.Start\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> new </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"> Host </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token plain\"> host</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> Url </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token plain\"> url</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> UserId </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token plain\"> userId </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            Console</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">WriteLine</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.Trace.Start!\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    public </span><span class=\"token keyword\" style=\"font-style:italic\">static</span><span class=\"token plain\"> </span><span class=\"token keyword\" style=\"font-style:italic\">void</span><span class=\"token plain\"> </span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">SetExceptionForTrace</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">Exception exception</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token keyword\" style=\"font-style:italic\">if</span><span class=\"token plain\"> </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">diagnosticSource</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">IsEnabled</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.Trace.Exception\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            diagnosticSource</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">Write</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.Trace.Exception\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> exception</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    public </span><span class=\"token keyword\" style=\"font-style:italic\">static</span><span class=\"token plain\"> </span><span class=\"token keyword\" style=\"font-style:italic\">void</span><span class=\"token plain\"> </span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">StepStart</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">string message</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        diagnosticSource</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">Write</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.Step.Start\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> message</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    public </span><span class=\"token keyword\" style=\"font-style:italic\">static</span><span class=\"token plain\"> </span><span class=\"token keyword\" style=\"font-style:italic\">void</span><span class=\"token plain\"> </span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">StepStop</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        diagnosticSource</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">Write</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.Step.Stop\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> new </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"> </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    public </span><span class=\"token keyword\" style=\"font-style:italic\">static</span><span class=\"token plain\"> </span><span class=\"token keyword\" style=\"font-style:italic\">void</span><span class=\"token plain\"> </span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">TraceStop</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token keyword\" style=\"font-style:italic\">if</span><span class=\"token plain\"> </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">diagnosticSource</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">IsEnabled</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.Trace.Stop\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            diagnosticSource</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">Write</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.Trace.Stop\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> new </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"> </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    public </span><span class=\"token keyword\" style=\"font-style:italic\">static</span><span class=\"token plain\"> </span><span class=\"token keyword\" style=\"font-style:italic\">void</span><span class=\"token plain\"> </span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">UserLog</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">string message</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token keyword\" style=\"font-style:italic\">if</span><span class=\"token plain\"> </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">diagnosticSource</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">IsEnabled</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.UserLog\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            diagnosticSource</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">Write</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.UserLog\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> message</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.3.5",
+        "hash": "v235",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Method hookのサポート</p>",
+        "details": "<ul>\n<li>\n<p>メソッド名を指定してモニタリングできます。 次の設定を参照してください。</p>\n<div class=\"language-C language-c codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-c codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">hook_methods_enabled</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token plain\">true</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">hook_methods_prefix</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token plain\">System</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">Net</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">Http</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">HttpClient</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> System</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">Net</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">WebRequest</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> System</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">Data</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> System</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">Net</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">Http</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">hook_methods_ignores</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token plain\">get</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\">set</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n<ul>\n<li>\n<p><code>hook_methods_enabled</code>オプションの値を<code>true</code>に設定します。</p>\n</li>\n<li>\n<p><code>hook_methods_prefix</code>オプションの値は、先頭の一致時にモニタリングの対象となります。 コンマ(,)で分離します。</p>\n</li>\n<li>\n<p><code>hook_methods_ignore</code>オプションの値は、先頭の一致時にモニタリング対象から除外されます。</p>\n</li>\n</ul>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.3.5",
+        "hash": "v235",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> WebClient.DownloadStringメソッドモニタリングサポートの追加</p>"
+      },
+      {
+        "ver": "v2.3.5",
+        "hash": "v235",
+        "product": ".NET Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> response bodyのオプション処理</p>",
+        "details": "<ul>\n<li>\n<p>文字列エンコードに関連するエラーが発見され、デフォルト設定の代わりに有効オプションが追加されました。</p>\n</li>\n<li>\n<p><code>profile_http_response_body_enabled</code>オプションのデフォルト値は<code>false</code>です。</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.3.5",
+        "hash": "v235",
+        "product": ".NET Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> .NET FrameworkバージョンのRedis出力フォーマットの変更</p>",
+        "details": "<ul>\n<li>.Net Coreの出力方式と統一して飾り効果が適用されました。</li>\n</ul>"
+      },
+      {
+        "ver": "v2.3.5",
+        "hash": "v235",
+        "product": ".NET Agent",
+        "type": "Deprecate",
+        "desc": "<p><code class=\"Deprecate\" type=\"1\">Deprecate</code> <code>trace_db_command_methods</code>オプションの削除</p>",
+        "details": "<ul>\n<li>\n<p>モニタリング対象の自動処理により、現在そのオプションは必要ありません。</p>\n</li>\n<li>\n<p>モニタリング対象から除外されたメソッドは、Method hookを利用して処理できます。</p>\n<div class=\"language-C language-c codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-c codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">hook_methods_enabled</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token plain\">true</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">hook_methods_prefix</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token plain\">System</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">Data</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n</ul>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_7",
+    "ver": "v2.2.7",
+    "date": "2024-06-10",
+    "Lists": [
+      {
+        "ver": "v2.2.7",
+        "hash": "v227",
+        "product": ".NET Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code>対応環境の分析ツール(<a href=\"https://repo.whatap.io/windows/WhaTapDotnetScan.exe\" target=\"_blank\" rel=\"noopener noreferrer\">WhaTapDotnetScan.exe</a>)改善</p>",
+        "details": "<ul>\n<li>\n<p>ドットネットが設置されていない環境でも実行できるように改善</p>\n</li>\n<li>\n<p>旧バージョンのドットネットランタイムを使用したり、ドットネットランタイムがインストールされていない場合に発生するエラーを修正</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.7",
+        "hash": "v227",
         "product": ".NET Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code>32ビットドットネットランタイムで<em>whatap.conf</em>ファイルが見つからない問題を修正</p>"
+        "desc": "<p><code class=\"Fixed\">Fixed</code>処理許容量を超えたトランザクションを除去する過程で、開始時点だけが残り、終了時点が削除されるバグを修正</p>"
       }
     ]
   },
@@ -267,16 +287,24 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_5",
-    "ver": "v2.2.5",
-    "date": "2024-05-08",
+    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_8",
+    "ver": "v2.2.8",
+    "date": "2024-06-19",
     "Lists": [
       {
-        "ver": "v2.2.5",
-        "hash": "v225",
+        "ver": "v2.2.8",
+        "hash": "v228",
         "product": ".NET Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code>サーバーのCPU性能に余裕がない時、モニタリングメッセージが遅延して蓄積され、ボトルネックを加速する不具合を修正</p>"
+        "type": "New",
+        "desc": "<p><code class=\"New\">New</code> .NET 6、7、8バージョンの追加対応</p>",
+        "details": "<ul>\n<li>\n<p>ASP.NET core対応</p>\n</li>\n<li>\n<p>HTTP Call、Redis、WCF client、ユーザーログ、Active Stack、SQL対応</p>\n</li>\n<li>\n<p>別のインストールリンクでダウンロードします。 <a href=\"https://repo.whatap.io/windows/whatap_dotnet_core.exe\" target=\"_blank\" rel=\"noopener noreferrer\">whatap_dotnet_core.exe</a></p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.8",
+        "hash": "v228",
+        "product": ".NET Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> <code>trace_http_client_ip_header_key</code>オプションのデフォルト値を<code>X-Forwarded-For</code>に変更</p>"
       }
     ]
   },
@@ -323,6 +351,41 @@
     ]
   },
   {
+    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_4",
+    "ver": "v2.2.4",
+    "date": "2024-03-30",
+    "Lists": [
+      {
+        "ver": "v2.2.4",
+        "hash": "v224",
+        "product": ".NET Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code>バイトコードの処理プロセス性能を改善</p>"
+      },
+      {
+        "ver": "v2.2.4",
+        "hash": "v224",
+        "product": ".NET Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code>ログの処理プロセス性能を改善</p>"
+      },
+      {
+        "ver": "v2.2.4",
+        "hash": "v224",
+        "product": ".NET Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code>UDPパケットプロセス性能を改善</p>"
+      },
+      {
+        "ver": "v2.2.4",
+        "hash": "v224",
+        "product": ".NET Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> <a href=\"http://ASP.NET\" target=\"_blank\" rel=\"noopener noreferrer\">ASP.NET</a>MVCライブラリの処理プロセス性能を改善</p>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_6",
     "ver": "v2.2.6",
     "date": "2024-05-24",
@@ -342,6 +405,57 @@
         "type": "Changed",
         "desc": "<p><code class=\"Changed\">Changed</code> <code>System.Data.Common.DbCommand</code>モニタリング可否をエージェント設定オプションとして選択するように変更</p>",
         "details": "<ul>\n<li>\n<p>一部の顧客の場合、古いアセンブリの影響でエラーが発生する現象が見つかりました。 エラーを再現する完璧な原因が見つからなかったため、モニタリングの対象から除外しました。</p>\n</li>\n<li>\n<p>モニタリングの対象に追加するには、次のエージェントオプションを設定してIISを再起動します。</p>\n<div class=\"theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success\"><div class=\"admonitionHeading_Gvgb\"><span class=\"admonitionIcon_Rf37\"><svg viewbox=\"0 0 12 16\"><path fill-rule=\"evenodd\" d=\"M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z\"></path></svg></span>Tips</div><div class=\"admonitionContent_BuS1\"><p><strong>trace_db_command_methods</strong> <span class=\"type\">String</span></p><p>モニタリングするメソッド名を入力します。 2つ以上の値を設定するには、コンマ (,)を区切り文字として利用します。 すべてのメソッドをモニタリングするには、以下のように適用します。</p><div class=\"language-ini codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockTitle_Ktv7\">whatap.conf</div><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-ini codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token key attr-name\" style=\"color:rgb(255, 203, 107)\">trace_db_command_methods</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">=</span><span class=\"token value attr-value\">ExecuteReader, ExecuteReaderAsync, ExecuteNonQuery, ExecuteNonQueryAsync, ExecuteScalar, ExecuteScalarAsync</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div></div></div>\n</li>\n</ul>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_5",
+    "ver": "v2.2.5",
+    "date": "2024-05-08",
+    "Lists": [
+      {
+        "ver": "v2.2.5",
+        "hash": "v225",
+        "product": ".NET Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code>サーバーのCPU性能に余裕がない時、モニタリングメッセージが遅延して蓄積され、ボトルネックを加速する不具合を修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_1",
+    "ver": "v2.2.1",
+    "date": "2024-04-09",
+    "Lists": [
+      {
+        "ver": "v2.2.1",
+        "hash": "v221",
+        "product": ".NET Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code>エージェントオプションの追加</p>",
+        "details": "<ul>\n<li>\n<p><strong>prepend_app_pool_name</strong> <span class=\"type\">Boolean</span></p>\n<p>既定値<code>false</code></p>\n<p>オプション値を<code>true</code>に設定すると、トランザクションのURLの前にアプリケーションのフルネームを表示します。</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.1",
+        "hash": "v221",
+        "product": ".NET Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code>古いバージョンの互換性を高めるためにインストールファイルを分離</p>",
+        "details": "<ul>\n<li>\n<p>.NET 4.6.1バージョン以降のランタイムを使用する場合: <a href=\"https://repo.whatap.io/windows/whatap_dotnet.exe\" target=\"_blank\" rel=\"noopener noreferrer\">whatap_dotnet.exe</a></p>\n</li>\n<li>\n<p>.NET 4.6.1バージョン未満のランタイムを使用するか、Windows Server 2012未満の場合: <a href=\"https://repo.whatap.io/windows/whatap_dotnet_450.exe\" target=\"_blank\" rel=\"noopener noreferrer\">whatap_dotnet_450.exe</a></p>\n<div class=\"theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary\"><div class=\"admonitionHeading_Gvgb\"><span class=\"admonitionIcon_Rf37\"><svg viewbox=\"0 0 14 16\"><path fill-rule=\"evenodd\" d=\"M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z\"></path></svg></span>ノート</div><div class=\"admonitionContent_BuS1\"><p>Windows Server 2008 R2から対応します。</p></div></div>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.1",
+        "hash": "v221",
+        "product": ".NET Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> <code>webservice_method_enabled</code>オプション：メソッドが重複して実行される場合にモニタリングされないバグを修正</p>"
+      },
+      {
+        "ver": "v2.2.1",
+        "hash": "v221",
+        "product": ".NET Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code>32ビットドットネットランタイムで<em>whatap.conf</em>ファイルが見つからない問題を修正</p>"
       }
     ]
   }

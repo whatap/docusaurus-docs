@@ -1,0 +1,139 @@
+---
+id: golang-0_4_3
+title: Go Agent v0.4.3
+toc_max_heading_level: 2
+pagination_next: release-notes/golang/golang-0_4_2
+displayed_sidebar: releaseSidebar
+---
+
+October 16, 2024
+
+<Status priority='1'>Fixed</Status> Fixed the error collecting `os.Stdout` and `os.Stderr` logs.
+
+- It modified the `trace.Init` function to enable log collection. It changes to run before other log libraries if possible. 
+    
+- The function has been added that allows to use **io.Writer** that wraps `os.Stdout` and `os.Stderr`.
+
+---
+
+Below are instructions to use the changed log collection feature.
+
+<Steps>
+
+## Configuring the agent
+
+Set agent options in the *whatap.conf* file before running the application.
+
+```ini title="whatap.conf"
+logsink_enabled=true
+
+# Enable stdout collection
+logsink_stdout_enabled=true
+
+# Enable stderr collection
+logsink_stderr_enabled=true
+
+# Optional. This is a setting for compressing data. 
+logsin_zip_enabled=true
+```
+
+## Before initializing the logging library
+
+First, you have to call the `trace.Init()` function. It internally wraps `os.Stdout` and `os.Stderr`. Afterwards, the log library automatically collects logs when `os.Stdout` and `os.Stderr` have been set.
+
+### Example of the zap library
+
+If you call the `trace.Init()` function before setting `os.Stdout`, logs are collected automatically. It collects logs by using the WhaTap log while outputting to `os.Stdout`.
+
+```go title="zap library example"
+import (
+    "github.com/whatap/go-api/trace"
+    "github.com/whatap/go-api/logsink"
+    
+    "go.uber.org/zap"
+    "go.uber.org/zap/zapcore"
+)
+
+func main() {
+    trace.Init(nil)
+    //It must be executed before closing the app.
+    defer trace.Shutdown()
+
+    // fmt.Println("Logger stdout=", os.Stdout, zapcore.AddSync(os.Stdout))
+    consoleCore := zapcore.NewCore(
+        zapcore.NewConsoleEncoder(consoleEncoderConfig), 
+        zapcore.AddSync(os.Stdout),                      
+        zap.InfoLevel,
+    )
+
+    // Menggabungkan core file dan console
+    core := zapcore.NewTee(consoleCore)
+    Log = zap.New(core, zap.AddCaller(), zap.AddStacktrace(zapcore.ErrorLevel))
+    Log.Info("logger started")
+
+    ...
+}
+```
+
+## After initializing the logging library
+
+You can set the **io.Writer** wrapped through the configuration function in the logging library.
+
+- `logsink.GetWriterHookStdout()`: It returns **io.Writer** that has wrapped `os.Stderr`. It collects the log by using the WhaTap log while outputting to `os.Stdout`.
+
+- `logsink.GetWriterHookStderr()`: It returns **io.Writer** that has wrapped `os.Stderr`. The wrapped **io.Writer** outputs to `os.Stderr` and collects the log contents by using the WhaTap log.
+
+- The log package
+
+  sets `os.Stderr` at the **import** time (in the `init` function). Because the `trace.Init` function cannot be called first, set the wrapped **io.Writer** (`os.Stderr`) through the `log.SetOutput` function.
+
+The output using the `print` function of the log package used afterwards is output to `os.Stderr` through the wrapped **io.Writer** and the log contents are collected as WhaTap logs. 
+
+```go title="log package"
+import (
+	"log"
+	"github.com/whatap/go-api/logsink"
+)
+
+...
+
+if logsink.GetWriterHookStderr() != nil {
+    // set single writer
+    log.SetOutput(logsink.GetWriterHookStderr())	
+    
+    // set multi writer 
+    multi := io.MultiWriter(file, logsink.GetWriterFromStderr())
+    log.SetOutput(logsink.GetWriterHookStderr())
+}
+
+// 
+log.Println("aaaaa")
+
+...
+
+```
+
+</Steps>
+
+:::info
+
+**Download**
+
+- go-api(import library)
+
+  ```bash
+  go get github.com/whatap/go-api@v0.4.3
+  ```
+
+- Service agent
+
+  | OS Name                         | File format | Architecture |                                      Download                                      |
+  | ------------------------------- | :---------: | :----------: | :--------------------------------------------------------------------------------: |
+  | Red Hat / CentOS / Amazon linux |     RPM     |    x86 x64   |  [Download](https://repo.whatap.io/centos/6/x86_64/whatap-agent-0.4-3.x86_64.rpm)  |
+  | \^                              |      \^     |    aarch64   | [Download](https://repo.whatap.io/centos/7/aarch64/whatap-agent-0.4-3.aarch64.rpm) |
+  | Ubuntu 12 and above / Debian    |     DEB     |     amd64    |   [Download](https://repo.whatap.io/debian/unstable/whatap-agent_0.4.3_amd64.deb)  |
+  | \^                              |      \^     |     arm64    |   [Download](https://repo.whatap.io/debian/unstable/whatap-agent_0.4.3_arm64.deb)  |
+  | Alpine linux                    |   tar gzip  |    x86 x64   |     [Download](https://repo.whatap.io/alpine/x86_64/whatap-agent-0.4.3.tar.gz)     |
+  | \^                              |      \^     |    aarch64   |     [Download](https://repo.whatap.io/alpine/aarch64/whatap-agent-0.4.3.tar.gz)    |
+
+:::

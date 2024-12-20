@@ -85,25 +85,21 @@ import Accesskeyv2 from "../getting-started/_accesskey-v2.mdx";
 
 アプリケーションの進入点(メインモジュール)ファイルの最上段に次のコードを追加してください。例えばExpress.jsアプリケーションでは*app.js*または*server.js*ファイルが進入点(メインモジュール)です。Nest.jsといったフレームワークを使用する場合は、*main.ts*ファイルなどです。
 
-```javascript title='Javascript'
+<Tabs groupId="javascript">
+
+<TabItem value="commonjs" label="CommonJS">
+
+```javascript title='CommonJS'
 var whatap = require('whatap').NodeAgent;
 ```
 
-ECMAScript(ES)を使用している場合、次のコードを追加してください。
+</TabItem>
 
-```javascript title='ES'
+<TabItem value="ecmascript" label="ECMAScript Module(ESM)">
+
+```javascript title="ECMAScript Module(ESM)"
 import WhatapAgent from 'whatap';
 WhatapAgent.NodeAgent;
-```
-
-次の適用例を参照してください。
-
-```javascript
-var WhatapAgent = require('whatap').NodeAgent;
-import http from 'http';
-import setupApp from '../src/app';
-let server = null;
-const port = normalizePort(process.env.PORT || '3000');
 ```
 
 :::note
@@ -112,23 +108,31 @@ const port = normalizePort(process.env.PORT || '3000');
 
 :::
 
-インストールが完了したら、[次の文書](install-check)を確認して問題がないことを確認してください。
+</TabItem>
 
-### 環境別にwhatap.confファイルを区分して使用する
+</Tabs>
 
-次の場合に該当する場合は、.confを除いたファイル名を設定してください。
+### 環境ごとのエージェントオプションを設定する
 
-- 環境別にプロジェクトを分割している場合
-
-- 異なるエージェントのオプションを設定する場合
-
-- pm2でクラスター(Cluster) モードを起動する場合
+アプリケーションの各環境に合わせた設定を適用すべき時は、*whatap.conf*ファイルの代わりに、アプリケーションのエントリポイントファイルから設定を変更できます。以下のコードを参考にして環境に合わせた設定を適用します。
 
 ```javascript
-process.env.WHATAP_CONF = 'whatapdev';
-process.env.WHATAP_NAME = 'NodeAgent-{ip2}-{ip3}-{cluster}';
+process.env.WHATAP_CONF = 'whatapdev'; // Setting for development environment
+process.env.WHATAP_NAME = 'NodeAgent-{ip2}-{ip3}-{cluster}'; //Dynamically configure agent name with IP and cluster info
 var WhatapAgent = require('whatap').NodeAgent;
 ```
+
+- **環境ごとに異なるプロジェクトを実行する場合**：
+
+  同じアプリケーションでも開発(dev)、テスト(test)、運営(prod) など各環境に合わせた設定が必要です。上の例のように`WHATAP_CONF`環境変数を使用し、開発環境に適した設定を適用できます。これにより、環境ごとに異なる設定を簡単に管理できます。
+
+- **エージェントオプションを環境に応じて異なる設定にする必要がある場合**：
+
+  開発環境ではロギングレベルを高め、運用環境ではパフォーマンスを最適化するために異なるオプションを設定できます。この場合、アプリケーションのエントリポイントファイルで、各環境に合わせてエージェントオプションを修正します。
+
+- **PM2のクラスター モードでアプリケーションを実行する場合**： 
+
+  クラスター モードで複数のアプリケーションインスタンスを実行する時、個々のインスタンスごとに別途のエージェントオプションを適用できます。この場合も、設定ファイルの代わりにエントリーポイントファイルで環境別設定を適用し、柔軟なモニタリングを構成できます。
 
 :::note
 
@@ -193,6 +197,7 @@ Node.jsで設定できるオプションの詳細については、[次の文書
 
 :::
 
-## モニタリングの開始
+{/* 다음 단계 */}
+import NextSteps from "../common-items/_apm-next-stemp-exclude-java.mdx";
 
-アプリケーションサーバーを再起動すると、エージェントが情報収集を開始します。
+<NextSteps />

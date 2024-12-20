@@ -10,6 +10,12 @@ keywords:
 
 This guide describes the agent options that configure the traffic throttling options for Java application servers. The following includes the features to limit the maximum number of concurrent requests for applications and control service accesses based on specific users or URLs. It provides various options such as sending custom messages, setting URL redirections, and enabling event notifications, to ensure stability of applications under overload situations.
 
+:::note
+
+The throttling option of the Java agent applies to only Servlet-based applications. The servers that support this option are servlets such as Tomcat, Weblogic, and Undertow. However, the latest version of Spring does not support this option.
+
+:::
+
 - **throttle_enabled** <span class='type'>Boolean</span>
 
   Default `false`

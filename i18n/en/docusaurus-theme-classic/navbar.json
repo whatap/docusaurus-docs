@@ -3,9 +3,9 @@
     "message": "Getting started",
     "description": "Navbar item with label 시작하기"
   },
-  "item.label.상품별 문서 바로가기": {
+  "item.label.상품": {
     "message": "Product",
-    "description": "Navbar item with label 상품별 문서 바로가기"
+    "description": "Navbar item with label 상품"
   },
   "item.label.Java 모니터링": {
     "message": "Java Monitoring",
@@ -258,5 +258,37 @@
   "item.label.Oracle Pro": {
     "message": "Oracle Pro",
     "description": "Navbar item with label Oracle Pro"
+  },
+  "item.label.SQL Server V2 모니터링": {
+    "message": "SQL Server V2 Monitoring",
+    "description": "Navbar item with label SQL Server V2 모니터링"
+  },
+  "item.label.SQL Server V1 모니터링": {
+    "message": "SQL Server V1 Monitoring",
+    "description": "Navbar item with label SQL Server V1 모니터링"
+  },
+  "item.label.CUBRID V2 모니터링": {
+    "message": "CUBRID V2 Monitoring",
+    "description": "Navbar item with label CUBRID V2 모니터링"
+  },
+  "item.label.CUBRID V1 모니터링": {
+    "message": "CUBRID V1 Monitoring",
+    "description": "Navbar item with label CUBRID V1 모니터링"
+  },
+  "item.label.Altibase V2 모니터링": {
+    "message": "Altibase V2 Monitoring",
+    "description": "Navbar item with label Altibase V2 모니터링"
+  },
+  "item.label.Altibase V1 모니터링": {
+    "message": "Altibase V1 Monitoring",
+    "description": "Navbar item with label Altibase V1 모니터링"
+  },
+  "item.label.Learning": {
+    "message": "Learning",
+    "description": "Navbar item with label Learning"
+  },
+  "item.label.What's New": {
+    "message": "What's New",
+    "description": "Navbar item with label What's New"
   }
 }

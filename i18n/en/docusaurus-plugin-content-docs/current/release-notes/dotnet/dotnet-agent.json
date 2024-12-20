@@ -1,105 +1,5 @@
 [
   {
-    "url": "https://docs.whatap.io/en/release-notes/dotnet/dotnet-2_2_4",
-    "ver": "v2.2.4",
-    "date": "2024-04-30",
-    "Lists": [
-      {
-        "ver": "v2.2.4",
-        "hash": "v224",
-        "product": ".NET Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Improved the bytecode processing performance.</p>"
-      },
-      {
-        "ver": "v2.2.4",
-        "hash": "v224",
-        "product": ".NET Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Improved the log processing performance.</p>"
-      },
-      {
-        "ver": "v2.2.4",
-        "hash": "v224",
-        "product": ".NET Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Improved the UDP packet processing performance.</p>"
-      },
-      {
-        "ver": "v2.2.4",
-        "hash": "v224",
-        "product": ".NET Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Improved the <a href=\"http://ASP.NET\" target=\"_blank\" rel=\"noopener noreferrer\">ASP.NET</a> MVC library processing performance.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/dotnet/dotnet-2_3_0",
-    "ver": "v2.3.0",
-    "date": "2024-07-31",
-    "Lists": [
-      {
-        "ver": "v2.3.0",
-        "hash": "v230",
-        "product": ".NET Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the error where SQL and HTTP monitoring are missing in <a href=\"/en/release-notes/dotnet/dotnet-2_2_9\">v2.2.9</a>.</p>"
-      },
-      {
-        "ver": "v2.3.0",
-        "hash": "v230",
-        "product": ".NET Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Improved the issue where UDP packets are corrupted when packet processing is delayed.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/dotnet/dotnet-2_2_8",
-    "ver": "v2.2.8",
-    "date": "2024-06-19",
-    "Lists": [
-      {
-        "ver": "v2.2.8",
-        "hash": "v228",
-        "product": ".NET Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\">New</code> Additionally supported .NET 6, 7, and 8.</p>",
-        "details": "<ul>\n<li>\n<p>Supported the ASP.NET core.</p>\n</li>\n<li>\n<p>Supported the HTTP call, Redis, WCF client, user log, Active Stack, and SQL.</p>\n</li>\n<li>\n<p>Download it by using a separate installation link. <a href=\"https://repo.whatap.io/windows/whatap_dotnet_core.exe\" target=\"_blank\" rel=\"noopener noreferrer\">whatap_dotnet_core.exe</a></p>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v2.2.8",
-        "hash": "v228",
-        "product": ".NET Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Changed the default value of the <code>trace_http_client_ip_header_key</code> option to <code>X-Forwarded-For</code>.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/dotnet/dotnet-2_2_7",
-    "ver": "v2.2.7",
-    "date": "2024-06-10",
-    "Lists": [
-      {
-        "ver": "v2.2.7",
-        "hash": "v227",
-        "product": ".NET Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Improved the support environment analysis tool (<a href=\"https://repo.whatap.io/windows/WhaTapDotnetScan.exe\" target=\"_blank\" rel=\"noopener noreferrer\">WhaTapDotnetScan.exe</a>).</p>",
-        "details": "<ul>\n<li>\n<p>Improved so that it can run even in environments where .NET has not been installed.</p>\n</li>\n<li>\n<p>Fixed the error that occurs when using a lower version of the .NET runtime or when the .NET runtime has not been installed.</p>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v2.2.7",
-        "hash": "v227",
-        "product": ".NET Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the bug where the end point is deleted, leaving only the start point during removal of transactions that exceeded the processing allowance.</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/en/release-notes/dotnet/dotnet-2_2_9",
     "ver": "v2.2.9",
     "date": "2024-07-05",
@@ -143,31 +43,209 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/dotnet/dotnet-2_2_5",
-    "ver": "v2.2.5",
-    "date": "2024-05-08",
+    "url": "https://docs.whatap.io/en/release-notes/dotnet/dotnet-2_3_6",
+    "ver": "v2.3.6",
+    "date": "2024-11-25",
     "Lists": [
       {
-        "ver": "v2.2.5",
-        "hash": "v225",
+        "ver": "v2.3.6",
+        "hash": "v236",
         "product": ".NET Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the error that accelerates bottlenecks because monitoring messages have been delayed and piled up when the server's CPU performance is limited.</p>"
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the agent options.</p>",
+        "details": "<p><strong>webservice_method_prefix_realtime</strong> <span class=\"type\">Boolean</span></p>"
+      },
+      {
+        "ver": "v2.3.6",
+        "hash": "v236",
+        "product": ".NET Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Changed the processing method for the transactions collected through the <code>webservice_method_prefix</code> option.</p>",
+        "details": "<ul>\n<li>\n<p>Modified to ignore the <code>webservice_method_prefix</code> methods collected within transactions to prevent errors caused by recursive calls.</p>\n</li>\n<li>\n<p>Modified to ignore unfinished transactions.</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.3.6",
+        "hash": "v236",
+        "product": ".NET Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Merged installers for .NET Framework and .NET Core environments provided for separate downloads.</p>"
       }
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/dotnet/dotnet-2_2_3",
-    "ver": "v2.2.3",
-    "date": "2024-04-24",
+    "url": "https://docs.whatap.io/en/release-notes/dotnet/dotnet-2_3_0",
+    "ver": "v2.3.0",
+    "date": "2024-07-31",
     "Lists": [
       {
-        "ver": "v2.2.3",
-        "hash": "v223",
+        "ver": "v2.3.0",
+        "hash": "v230",
         "product": ".NET Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the bug where the CPU usage increases under specific conditions during Rest API monitoring.</p>",
-        "details": "<ul>\n<li>\n<p>The bug was fixed because the CPU usage increased for specific customers.</p>\n</li>\n<li>\n<p>Even for the customers with no symptom, it is recommended to upgrade the agent. It helps improve performance.</p>\n</li>\n</ul>"
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the error where SQL and HTTP monitoring are missing in <a href=\"/en/release-notes/dotnet/dotnet-2_2_9\">v2.2.9</a>.</p>"
+      },
+      {
+        "ver": "v2.3.0",
+        "hash": "v230",
+        "product": ".NET Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Improved the issue where UDP packets are corrupted when packet processing is delayed.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/dotnet/dotnet-2_3_2",
+    "ver": "v2.3.2",
+    "date": "2024-09-05",
+    "Lists": [
+      {
+        "ver": "v2.3.2",
+        "hash": "v232",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the agent option to set suffix of URLs to exclude from transaction collection.</p>",
+        "details": "<p><strong>trace_ignore_url_suffix</strong> <span class=\"type\">String</span></p>"
+      },
+      {
+        "ver": "v2.3.2",
+        "hash": "v232",
+        "product": ".NET Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Added the parameterized query tracing feature.</p>"
+      },
+      {
+        "ver": "v2.3.2",
+        "hash": "v232",
+        "product": ".NET Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the error occurring in the status code display of REST API transactions.</p>"
+      },
+      {
+        "ver": "v2.3.2",
+        "hash": "v232",
+        "product": ".NET Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Added the methods related to <code>System.Data.Common.DbCommand</code> that are not included in monitoring.</p>",
+        "details": "<p>Added some missing overloaded methods among the following asynchronous methods.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/dotnet/dotnet-2_3_3",
+    "ver": "v2.3.3",
+    "date": "2024-09-25",
+    "Lists": [
+      {
+        "ver": "v2.3.3",
+        "hash": "v233",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added support for SQL parameter monitoring in .NET Core.</p>"
+      },
+      {
+        "ver": "v2.3.3",
+        "hash": "v233",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added support for Stored Procedure monitoring in .NET Core.</p>"
+      },
+      {
+        "ver": "v2.3.3",
+        "hash": "v233",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Supported the <code>System.Net.Http.HttpClient.SendAsync</code> monitoring.</p>"
+      },
+      {
+        "ver": "v2.3.3",
+        "hash": "v233",
+        "product": ".NET Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the bug where active stacks are not collected when additionally installing the .NET framework version without uninstalling the .NET Core version of the agent.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/dotnet/dotnet-2_3_4",
+    "ver": "v2.3.4",
+    "date": "2024-10-02",
+    "Lists": [
+      {
+        "ver": "v2.3.4",
+        "hash": "v234",
+        "product": ".NET Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Temporarily removed the CancellationToken-related methods from recently added monitoring targets.</p>"
+      },
+      {
+        "ver": "v2.3.4",
+        "hash": "v234",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added support for setting the <code>expand_transaction_level</code> in .NET Core.</p>",
+        "details": "<ul>\n<li>\n<p><strong>expand_transaction_level</strong> <span class=\"type\">Boolean</span></p>\n<p>Default <code>false</code></p>\n<p>If you set this option to <code>true</code>, SQL and HTTP calls that occur outside transactions are considered transactions and they are displayed in the hitmap.</p>\n</li>\n<li>\n<p><strong>expand_transaction_basetime</strong> <span class=\"type\">Int</span></p>\n<p>Default <code>1000</code> ms (1 second)</p>\n<p>When the <code>expand_transaction_level</code> option is set to <code>true</code>, data is collected only for requests that take longer to respond than the specified time. It collects up to 100 items per second. The minimum value is <code>100</code> ms (0.1 second).</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.3.4",
+        "hash": "v234",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added support for desktop application monitoring.</p>",
+        "details": "<ul>\n<li>\n<p>Set the value of the <code>expand_transaction_level</code> option to <code>true</code>.</p>\n</li>\n<li>\n<p>Before running the application, enter the following command at the prompt:</p>\n<div class=\"language-csharp codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-csharp codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token class-name\" style=\"color:rgb(255, 203, 107)\">SET</span><span class=\"token plain\"> COR_PROFILER</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\">D76F1D76</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">-</span><span class=\"token plain\">A9E0</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">-</span><span class=\"token plain\">4C87</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">-</span><span class=\"token number\" style=\"color:rgb(247, 140, 108)\">874F</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">-</span><span class=\"token plain\">C0AD93D4229B</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token class-name\" style=\"color:rgb(255, 203, 107)\">SET</span><span class=\"token plain\"> COR_ENABLE_PROFILING</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token number\" style=\"color:rgb(247, 140, 108)\">1</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token class-name\" style=\"color:rgb(255, 203, 107)\">SET</span><span class=\"token plain\"> CORECLR_PROFILER</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\">21CAE18A</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">-</span><span class=\"token number\" style=\"color:rgb(247, 140, 108)\">4E44</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">-</span><span class=\"token number\" style=\"color:rgb(247, 140, 108)\">4578</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">-</span><span class=\"token plain\">83FD</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">-</span><span class=\"token plain\">0576AAA47E68</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token class-name\" style=\"color:rgb(255, 203, 107)\">SET</span><span class=\"token plain\"> CORECLR_ENABLE_PROFILING</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token number\" style=\"color:rgb(247, 140, 108)\">1</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token class-name\" style=\"color:rgb(255, 203, 107)\">SET</span><span class=\"token plain\"> DOTNET_STARTUP_HOOKS</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token plain\">C</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">:</span><span class=\"token plain\">\\Program Files\\WhaTap </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">NET\\core\\Whatap</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">Startup</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">NetCore</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">dll</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token class-name\" style=\"color:rgb(255, 203, 107)\">SET</span><span class=\"token plain\"> WHATAP_TRACE_IIS_ONLY</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token number\" style=\"color:rgb(247, 140, 108)\">0</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token class-name\" style=\"color:rgb(255, 203, 107)\">SET</span><span class=\"token plain\"> EXPAND_TRANSACTION_LEVEL</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token number\" style=\"color:rgb(247, 140, 108)\">1</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token class-name\" style=\"color:rgb(255, 203, 107)\">SET</span><span class=\"token plain\"> EXPAND_TRANSACTION_BASETIME</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token number\" style=\"color:rgb(247, 140, 108)\">100</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"Copy code to clipboard\" title=\"Copy\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n<li>\n<p>After executing the command, run the target application.</p>\n</li>\n</ul>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/dotnet/dotnet-2_3_5",
+    "ver": "v2.3.5",
+    "date": "2024-11-04",
+    "Lists": [
+      {
+        "ver": "v2.3.5",
+        "hash": "v235",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the User Transaction feature in .NET Core.</p>",
+        "details": "<ul>\n<li>\n<p>See the following example: If you do not need to monitor the number of users, enter an empty string in the user identification field.</p>\n<div class=\"language-C language-c codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-c codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">using System</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">class Program</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token keyword\" style=\"font-style:italic\">static</span><span class=\"token plain\"> </span><span class=\"token keyword\" style=\"font-style:italic\">void</span><span class=\"token plain\"> </span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">Main</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">string</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">[</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">]</span><span class=\"token plain\"> args</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token comment\" style=\"color:rgb(105, 112, 152);font-style:italic\">// Start tracing (domain, Url, user identification)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        WhatapDiagnostic</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">TraceStart</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"127.0.0.1\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> </span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"/api/test\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> </span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"user123\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        try</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            </span><span class=\"token comment\" style=\"color:rgb(105, 112, 152);font-style:italic\">// Start step</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            WhatapDiagnostic</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">StepStart</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"test Step\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            </span><span class=\"token comment\" style=\"color:rgb(105, 112, 152);font-style:italic\">// User code area</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            </span><span class=\"token comment\" style=\"color:rgb(105, 112, 152);font-style:italic\">// End step</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            WhatapDiagnostic</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">StepStop</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">catch</span><span class=\"token plain\"> </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">Exception ex</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            </span><span class=\"token comment\" style=\"color:rgb(105, 112, 152);font-style:italic\">// Log exceptions in diagnostic information upon an exception</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            WhatapDiagnostic</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">SetExceptionForTrace</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">ex</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        finally</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            </span><span class=\"token comment\" style=\"color:rgb(105, 112, 152);font-style:italic\">// End tracing</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            WhatapDiagnostic</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">TraceStop</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"Copy code to clipboard\" title=\"Copy\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n<div class=\"theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary\"><div class=\"admonitionHeading_Gvgb\"><span class=\"admonitionIcon_Rf37\"><svg viewbox=\"0 0 14 16\"><path fill-rule=\"evenodd\" d=\"M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z\"></path></svg></span>Note</div><div class=\"admonitionContent_BuS1\"><p>Supporting the .NET Framework is in preparation.</p></div></div>\n</li>\n<li>\n<p>The WhatapDiagnostic code is as follows. The format does not matter, as long as the content of <code>diagnosticSource.Write(…)</code> is correct.</p>\n<div class=\"language-C language-c codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-c codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">using System</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">Diagnostics</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\">å</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">public </span><span class=\"token keyword\" style=\"font-style:italic\">static</span><span class=\"token plain\"> class WhatapDiagnostic</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    private </span><span class=\"token keyword\" style=\"font-style:italic\">static</span><span class=\"token plain\"> readonly DiagnosticSource diagnosticSource </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token plain\"> new </span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">DiagnosticListener</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"WhatapDiagnosticListener\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    public </span><span class=\"token keyword\" style=\"font-style:italic\">static</span><span class=\"token plain\"> </span><span class=\"token keyword\" style=\"font-style:italic\">void</span><span class=\"token plain\"> </span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">TraceStart</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">string host</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> string url</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> string userId</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token keyword\" style=\"font-style:italic\">if</span><span class=\"token plain\"> </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">diagnosticSource</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">IsEnabled</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.Trace.Start\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            diagnosticSource</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">Write</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.Trace.Start\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> new </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"> Host </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token plain\"> host</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> Url </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token plain\"> url</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> UserId </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token plain\"> userId </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            Console</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">WriteLine</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.Trace.Start!\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    public </span><span class=\"token keyword\" style=\"font-style:italic\">static</span><span class=\"token plain\"> </span><span class=\"token keyword\" style=\"font-style:italic\">void</span><span class=\"token plain\"> </span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">SetExceptionForTrace</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">Exception exception</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token keyword\" style=\"font-style:italic\">if</span><span class=\"token plain\"> </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">diagnosticSource</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">IsEnabled</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.Trace.Exception\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            diagnosticSource</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">Write</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.Trace.Exception\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> exception</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    public </span><span class=\"token keyword\" style=\"font-style:italic\">static</span><span class=\"token plain\"> </span><span class=\"token keyword\" style=\"font-style:italic\">void</span><span class=\"token plain\"> </span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">StepStart</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">string message</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        diagnosticSource</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">Write</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.Step.Start\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> message</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    public </span><span class=\"token keyword\" style=\"font-style:italic\">static</span><span class=\"token plain\"> </span><span class=\"token keyword\" style=\"font-style:italic\">void</span><span class=\"token plain\"> </span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">StepStop</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        diagnosticSource</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">Write</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.Step.Stop\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> new </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"> </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    public </span><span class=\"token keyword\" style=\"font-style:italic\">static</span><span class=\"token plain\"> </span><span class=\"token keyword\" style=\"font-style:italic\">void</span><span class=\"token plain\"> </span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">TraceStop</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token keyword\" style=\"font-style:italic\">if</span><span class=\"token plain\"> </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">diagnosticSource</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">IsEnabled</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.Trace.Stop\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            diagnosticSource</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">Write</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.Trace.Stop\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> new </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"> </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\" style=\"display:inline-block\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    public </span><span class=\"token keyword\" style=\"font-style:italic\">static</span><span class=\"token plain\"> </span><span class=\"token keyword\" style=\"font-style:italic\">void</span><span class=\"token plain\"> </span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">UserLog</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">string message</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token keyword\" style=\"font-style:italic\">if</span><span class=\"token plain\"> </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token plain\">diagnosticSource</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">IsEnabled</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.UserLog\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">            diagnosticSource</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token function\" style=\"color:rgb(130, 170, 255)\">Write</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">(</span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"Whatap.Diagnostic.UserLog\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> message</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">)</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">;</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">        </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">    </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\"></span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"Copy code to clipboard\" title=\"Copy\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.3.5",
+        "hash": "v235",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Supported the Method hook.</p>",
+        "details": "<ul>\n<li>\n<p>You can monitor by specifying the method name. See the following configuration.</p>\n<div class=\"language-C language-c codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-c codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">hook_methods_enabled</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token plain\">true</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">hook_methods_prefix</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token plain\">System</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">Net</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">Http</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">HttpClient</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> System</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">Net</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">WebRequest</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> System</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">Data</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> System</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">Net</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">Http</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\"></span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">hook_methods_ignores</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token plain\">get</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\">set</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"Copy code to clipboard\" title=\"Copy\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n<ul>\n<li>\n<p>Set the value of the <code>hook_methods_enabled</code> option to <code>true</code>.</p>\n</li>\n<li>\n<p>The value of the <code>hook_methods_prefix</code> option becomes the monitoring target when the first part of the option value matches. Separate with comma (,).</p>\n</li>\n<li>\n<p>The value of the <code>hook_methods_ignore</code> option is excluded from monitoring when the first part of the value matches.</p>\n</li>\n</ul>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.3.5",
+        "hash": "v235",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the feature to support the WebClient.DownloadString method monitoring.</p>"
+      },
+      {
+        "ver": "v2.3.5",
+        "hash": "v235",
+        "product": ".NET Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Processed the response body option.</p>",
+        "details": "<ul>\n<li>\n<p>Added the enabling option instead of the default setting because the string encoding-related error was found.</p>\n</li>\n<li>\n<p>The default value of the <code>profile_http_response_body_enabled</code> option is <code>false</code>.</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.3.5",
+        "hash": "v235",
+        "product": ".NET Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Changed the Redis output format for the .NET Framework version.</p>",
+        "details": "<ul>\n<li>The decoration effect has been applied to match the output method of .Net Core.</li>\n</ul>"
+      },
+      {
+        "ver": "v2.3.5",
+        "hash": "v235",
+        "product": ".NET Agent",
+        "type": "Deprecate",
+        "desc": "<p><code class=\"Deprecate\" type=\"1\">Deprecate</code> Removed the <code>trace_db_command_methods</code> option.</p>",
+        "details": "<ul>\n<li>\n<p>This option is currently not required due to automatic processing of monitoring targets.</p>\n</li>\n<li>\n<p>The methods excluded from monitoring can be processed using the Method hook.</p>\n<div class=\"language-C language-c codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-c codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">hook_methods_enabled</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token plain\">true</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">hook_methods_prefix</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">=</span><span class=\"token plain\">System</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token plain\">Data</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">.</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"Copy code to clipboard\" title=\"Copy\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n</ul>"
       }
     ]
   },
@@ -191,6 +269,41 @@
         "type": "Changed",
         "desc": "<p><code class=\"Changed\">Changed</code> Modified to select the agent configuration's option to set whether to monitor <code>System.Data.Common.DbCommand</code>.</p>",
         "details": "<ul>\n<li>\n<p>Some customers found that errors occurred due to outdated assemblies. Because we could not find a perfect cause to reproduce the error, it was excluded from monitoring.</p>\n</li>\n<li>\n<p>To add it as the monitoring target, set the following agent option and restart IIS.</p>\n<div class=\"theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success\"><div class=\"admonitionHeading_Gvgb\"><span class=\"admonitionIcon_Rf37\"><svg viewbox=\"0 0 12 16\"><path fill-rule=\"evenodd\" d=\"M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z\"></path></svg></span>Tip</div><div class=\"admonitionContent_BuS1\"><p><strong>trace_db_command_methods</strong> <span class=\"type\">String</span></p><p>Enter the name of the method to monitor. To set multiple values, use comma (,) as the delimiter. To monitor all methods, apply as follows:</p><div class=\"language-ini codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockTitle_Ktv7\">whatap.conf</div><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-ini codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token key attr-name\" style=\"color:rgb(255, 203, 107)\">trace_db_command_methods</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">=</span><span class=\"token value attr-value\">ExecuteReader, ExecuteReaderAsync, ExecuteNonQuery, ExecuteNonQueryAsync, ExecuteScalar, ExecuteScalarAsync</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"Copy code to clipboard\" title=\"Copy\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div></div></div>\n</li>\n</ul>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/dotnet/dotnet-2_2_4",
+    "ver": "v2.2.4",
+    "date": "2024-04-30",
+    "Lists": [
+      {
+        "ver": "v2.2.4",
+        "hash": "v224",
+        "product": ".NET Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Improved the bytecode processing performance.</p>"
+      },
+      {
+        "ver": "v2.2.4",
+        "hash": "v224",
+        "product": ".NET Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Improved the log processing performance.</p>"
+      },
+      {
+        "ver": "v2.2.4",
+        "hash": "v224",
+        "product": ".NET Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Improved the UDP packet processing performance.</p>"
+      },
+      {
+        "ver": "v2.2.4",
+        "hash": "v224",
+        "product": ".NET Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Improved the <a href=\"http://ASP.NET\" target=\"_blank\" rel=\"noopener noreferrer\">ASP.NET</a> MVC library processing performance.</p>"
       }
     ]
   },
@@ -237,6 +350,42 @@
     ]
   },
   {
+    "url": "https://docs.whatap.io/en/release-notes/dotnet/dotnet-2_2_5",
+    "ver": "v2.2.5",
+    "date": "2024-05-08",
+    "Lists": [
+      {
+        "ver": "v2.2.5",
+        "hash": "v225",
+        "product": ".NET Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the error that accelerates bottlenecks because monitoring messages have been delayed and piled up when the server's CPU performance is limited.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/dotnet/dotnet-2_2_8",
+    "ver": "v2.2.8",
+    "date": "2024-06-19",
+    "Lists": [
+      {
+        "ver": "v2.2.8",
+        "hash": "v228",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\">New</code> Additionally supported .NET 6, 7, and 8.</p>",
+        "details": "<ul>\n<li>\n<p>Supported the ASP.NET core.</p>\n</li>\n<li>\n<p>Supported the HTTP call, Redis, WCF client, user log, Active Stack, and SQL.</p>\n</li>\n<li>\n<p>Download it by using a separate installation link. <a href=\"https://repo.whatap.io/windows/whatap_dotnet_core.exe\" target=\"_blank\" rel=\"noopener noreferrer\">whatap_dotnet_core.exe</a></p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.8",
+        "hash": "v228",
+        "product": ".NET Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Changed the default value of the <code>trace_http_client_ip_header_key</code> option to <code>X-Forwarded-For</code>.</p>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/en/release-notes/dotnet/dotnet-2_2_1",
     "ver": "v2.2.1",
     "date": "2024-04-09",
@@ -270,6 +419,43 @@
         "product": ".NET Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the issue where the <em>whatap.conf</em> file is not found in the 32-bit .NET runtime.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/dotnet/dotnet-2_2_3",
+    "ver": "v2.2.3",
+    "date": "2024-04-24",
+    "Lists": [
+      {
+        "ver": "v2.2.3",
+        "hash": "v223",
+        "product": ".NET Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the bug where the CPU usage increases under specific conditions during Rest API monitoring.</p>",
+        "details": "<ul>\n<li>\n<p>The bug was fixed because the CPU usage increased for specific customers.</p>\n</li>\n<li>\n<p>Even for the customers with no symptom, it is recommended to upgrade the agent. It helps improve performance.</p>\n</li>\n</ul>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/dotnet/dotnet-2_2_7",
+    "ver": "v2.2.7",
+    "date": "2024-06-10",
+    "Lists": [
+      {
+        "ver": "v2.2.7",
+        "hash": "v227",
+        "product": ".NET Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Improved the support environment analysis tool (<a href=\"https://repo.whatap.io/windows/WhaTapDotnetScan.exe\" target=\"_blank\" rel=\"noopener noreferrer\">WhaTapDotnetScan.exe</a>).</p>",
+        "details": "<ul>\n<li>\n<p>Improved so that it can run even in environments where .NET has not been installed.</p>\n</li>\n<li>\n<p>Fixed the error that occurs when using a lower version of the .NET runtime or when the .NET runtime has not been installed.</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.7",
+        "hash": "v227",
+        "product": ".NET Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the bug where the end point is deleted, leaving only the start point during removal of transactions that exceeded the processing allowance.</p>"
       }
     ]
   }

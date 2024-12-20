@@ -13,3 +13,123 @@ keywords:
 import Trsview from "../common-items/_trs-view.mdx";
 
 <Trsview />
+
+## 例外処理(WARNING) の基準{#waringexception}
+
+Node.jsアプリケーション環境で発生するエラーをNode.jsエージェントが例外処理する基準について案内します。Node.jsエージェントは、次の基準の場合にのみエラー処理を行います。
+
+- Status Code 400以上のエラー処理
+
+- HTTP callエラー処理
+
+- WhaTapで定義したエラー処理
+
+### サービス画面でのエラー表示
+
+![hitmap, Trace analysis](/img/faq/apm-faq-hitmap-error.png)
+
+<Cmdname sid="AA005" className="uitext" />ウィジェット、<Cmdname sid="TTL06209" className="uitext" />画面から確認できる<Cmdname sid="TTL06087" className="uitext" />は、殆ど<span class="slow">WARNING</span>レベルに該当します。
+
+### Status Code 400以上のエラー処理
+
+HTTP応答コードが400以上の場合は、例外クラス(Exception Class)が発生しなくてもエラーとして処理します。以下は、HTTPステータスコードベースのエラー処理の有効可否を設定するエージェントオプションです。 
+
+```ini title="whatap.conf"
+transaction_status_error_enable=true
+```
+
+:::note
+
+`transaction_status_error_enable`オプションの詳細については、[次の文書](agent-transaction#transaction_status_error_enable)を参照してください。
+
+:::
+
+### HTTP callエラー処理
+
+HTTP呼び出し中に発生するエラーは、`SLOW_HTTPC`、`httpc error`などの形で表示されます。
+
+### WhaTapで定義したエラー処理
+
+WhaTapモニタリングサービスでは、特定の条件に従ってエラーとして処理します。
+
+- **TOO_MANY_RECORDS**：fetch件数10,000件以上
+
+  関連するエージェントオプションについては、次の文書を参照してください。[`profile_error_sql_fetch_max=10000`](agent-dbsql#profile_error_sql_fetch_max)
+
+- **SLOW_SQL**：SQL時間30,000ms以上
+
+  関連するエージェントオプションについては、次の文書を参照してください。[`profile_error_sql_time_max=30000`](agent-dbsql#profile_error_sql_time_max)
+
+- **SLOW_HTTPC**：HTTP call経過時間が10,000ms以上
+
+  関連するエージェントオプションについては、次の文書を参照してください。[`profile_error_httpc_time_max=10000`](agent-httpcapicall#profile_error_httpc_time_max)
+
+- **httpc error**：HTTP call status code 400以上の場合
+
+  :::note
+
+  **httpc error**はエージェント設定なしで自動収集します。
+
+  :::
+
+- **status error**：トランザクションstatus code 400以上の場合
+
+  関連するエージェントオプションについては、次の文書を参照してください。[`transaction_status_error_enable=true`](agent-transaction#transaction_status_error_enable)
+
+### トランザクションエラー段階のINFO処理
+
+エージェント設定により、一部のエラーを正常な状態で表示または無視できます。<Cmdname sid="AA005" className="uitext" />ウィジェットで表示されるレベルは、<span class="normal">INFO</span>(青)です。
+
+次の条件に該当する場合、エラー処理は行われません。
+
+- `transaction_status_error_enable`オプションの値が`false`である場合
+
+  ```ini title="whatap.conf"
+  # default true
+  transaction_status_error_enable=false
+  ```
+
+- `status_ignore`オプションに定義したトランザクションのステータスコードである場合
+
+  ```ini title="whatap.conf"
+  # Separated by commas(,)
+  status_ignore=400,404,500
+  ```
+
+- `status_ignore_set`オプションに定義した特定トランザクションのURLとステータスコードの組み合わせの場合
+
+  ```ini title="whatap.conf"
+  # URL:StatusCode
+  status_ignore_set=/api/posts/test/timeout:200,/error:500
+  ```
+
+- `httpc_status_ignore`オプションに定義したHTTPステータスコードの場合
+
+  ```ini title="whatap.conf"
+  # Separated by commas(,)
+  httpc_status_ignore=400,404,500
+  ```
+
+- `httpc_status_ignore_set`オプションに定義したURLとHTTPステータスコードの組み合わせの場合
+
+  ```ini title="whatap.conf"
+  httpc_status_ignore_set=/api/posts/test/timeout:408,/api/apache/httpclient/posts/timeout:500
+  ```
+
+:::note
+
+- エージェント設定は、*whatap.conf*ファイルを編集するか<Cmdname sid="management" className="uitext" /> &gt; <Cmdname sid="agent_configuration" className="uitext" />メニューで確認できます。詳しい内容は、[次の文書](set-agent)を参照してください。
+
+- エージェント設定オプションの詳細については、次の文書を参照してください。
+
+  - [`transaction_status_error_enable`](agent-transaction#transaction_status_error_enable)
+
+  - [`status_ignore`](agent-transaction#status_ignore)
+
+  - [`status_ignore_set`](agent-transaction#status_ignore_set)
+
+  - [`httpc_status_ignore`](agent-transaction#httpc_status_ignore)
+
+  - [`httpc_status_ignore_set`](agent-transaction#httpc_status_ignore_set)
+
+:::

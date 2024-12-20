@@ -10,7 +10,7 @@ keywords:
 
 The following provides the options related to the Node.js agent DB and SQL.
 
-- **profile_sql_param_enabled** <span class='type'>Boolean</span><ScrollToLink anchor='profile-sql-param' />
+- **profile_sql_param_enabled** <span class='type'>Boolean</span> <ScrollToLink anchor='profile-sql-param' />
 
   Default `false`
 
@@ -22,11 +22,17 @@ The following provides the options related to the Node.js agent DB and SQL.
 
   It records DB connection open data in the trace details.
 
-- **profile_error_sql_time_max** <span class='type'>Int</span>
+- **profile_error_sql_fetch_max** <span class='type'>Int</span> <ScrollToLink anchor='profile_error_sql_fetch_max' />
+
+  Default `10000`
+
+  When the SQL Fetch Count (number of calls) exceeds the set value, it is treated as the **TOO_MANY_RECORDS** error. If it is set to `0`, it is not treated as an error.
+
+- **profile_error_sql_time_max** <span class='type'>Int</span> <ScrollToLink anchor='profile_error_sql_time_max' />
 
   Default `30000`
 
-  If the SQL execution time exceeds the set value, it is treated as TOO SLOW error. If it is set to `0`, it is not treated as an error.
+  When the SQL execution time exceeds the set value, it is treated as the **SLOW_SQL** error. If it is set to `0`, it is not treated as an error.
 
 - **trace_sql_normalize_enabled** <span class='type'>Boolean</span>
 

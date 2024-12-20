@@ -1,0 +1,117 @@
+### <Cmdname sid="TTL08441" className="uitext" type="node" />
+
+<Cmdname sid="TTL08441" className="uitext" type="node" />タブで選択したノード構成と全体的なリソース使用量の情報を要約して提供します。 そのノードのハードウェアとソフトウェアの構成要素を総合的に確認できます。 ユーザーはノードのリソース使用状況と各構成要素の状態を把握し、パフォーマンスと運用安定性をモニタリングできます。
+
+<ImgLang img='k8s-node-timeline-config.png' />
+
+- **ノードシステム仕様**
+
+  - ***Architecture***：ノードが使用しているハードウェアアーキテクチャ
+
+  - ***Image***：ノードが実行中のオペレーティングシステムのイメージ情報
+
+  - ***CapacityMemory***：ノードの総メモリ容量
+
+  - ***CapacityCpu***：ノードの総CPU容量
+
+- **ソフトウェア構成** 
+
+  - ***Container Runtime***：ノードで使用されるコンテナランタイムのバージョン情報 
+
+  - ***kubelet***：ノードで実行中のクバネティスkubeletのバージョン情報 
+
+  - ***kube-proxy***：ネットワーク管理の役割を果たすkube-proxyのバージョン情報 
+
+- **リソースの使用状況** 
+
+  - ***CPU***：ノードのCPU使用量
+
+  - ***メモリ***：ノードのメモリ使用量
+
+  - ***ディスク***：ノードで使用中のディスク容量と使用比率
+
+  - ***ネットワーク***：ネットワークの伝送量 
+
+:::note 
+
+- CPU、メモリ、ディスク、ネットワークをクリックすると、照会期間中の使用量の推移が確認できる<Cmdname sid="metrics" className="uitext" />タブに移動します。 
+
+- ***AVG***、***MAX***ボタンをクリックして、照会期間中の平均使用量と最大使用量を確認できます。
+
+:::
+
+<InDoc pages="resource-node-list">
+
+:::note 
+
+***ノード構成***タブはクラスタープロジェクト(<code class='my'>CP</code>)の場合、照会できます。 
+
+:::
+
+</InDoc>
+
+<InDoc pages="resource-node-list">
+
+### <Cmdname sid="resource" className="uitext" />
+
+<Cmdname sid="resource" className="uitext" />タブで選択したノードにスケジューリングされた***Pod***およびそのPodで実行中の***コンテナ***と***アプリケーション***一覧を確認できます。 その情報は、選択した時間区間の最後の時点を基準に1時間のリソースデータを反映して表示します。 これにより、その時点のノード状態と各Pod、コンテナ、アプリケーションの動作状態をより明確に把握できます。
+
+<ImgLang img='k8s-node-timeline-resource.png' />
+
+</InDoc>
+
+### <Cmdname sid="process" className="uitext" />
+
+<Cmdname sid="process" className="uitext" />タブで選択したノード内部にある主要なKubernetes管理プロセス情報を確認できます。 プロセスの問題によって引き起こされるクラスター障害を予防し、ダウンタイムを最小限にできます。
+
+<ImgLang img='k8s-node-process.png' />
+
+#### プロセス詳細{#k8s-node-process-details}
+
+- プロセス一覧の左側<Cmdname sid="TTL08422" className="uitext" />カラムで![詳細を見るアイコン](/img/ico-detail-view.svg)アイコンを選択すると、そのプロセスに関する詳細情報を確認できます。 
+
+- ***AVG***または***MAX***ボタンをクリックして、3日以上の長期データ照会時に読み込む統計データの合算方式を選択できます。
+
+- プロセスの主要な情報値をクリックすると、その値がコピーされます。 
+
+:::note 
+
+<Cmdname sid="process" className="uitext" />タブは、Kubernetesエージェントバージョン1.7.14以降からサポートします。
+
+:::
+
+### <Cmdname sid="metrics" className="uitext" />
+
+<Cmdname sid="metrics" className="uitext" />タブで選択したノードのリソース使用量の推移を確認できます。 照会期間中の平均(***AVG***)、最大値(***MAX***)を基準に***CPU***、***メモリ***、***ネットワーク***、***ディスク***使用量の変化を照会できます。
+
+<ImgLang img='k8s-node-timeline-metrics.png' />
+
+- ***AVG***：照会期間中の平均使用量
+
+- ***MAX***：照会期間中の最大使用量
+
+- ***Total***：複数のネットワークインターフェイスの全体トラフィック使用量の合計
+
+- ***In/Out***：特定のネットワークインタフェースのInbound(受信) およびOutbound(送信) トラフィックの使用量
+
+:::note 
+
+***K8s CPU Request / Allocatable CPU (%)***ウィジェットは、Kubernetesエージェントバージョン1.7.10以降からサポートします。
+
+:::
+
+<InDoc pages="resource-node-list">
+
+### <Cmdname sid="trace" className="uitext" />
+
+<Cmdname sid="trace" className="uitext" />タブで選択したノードで実行中のアプリケーショントレース情報を確認できます。
+
+<ImgLang img='k8s-resource-node-list-trace.png' />
+
+</InDoc>
+
+### <Cmdname sid="event" className="uitext" />
+
+<Cmdname sid="event" className="uitext" />タブで選択したノードで発生した***K8s Nodeイベント***と***WhaTap Nodeイベント***を確認できます。 ***K8s Nodeイベント***はノードの状態変化を含めて、クラスターの重要な作業記録を提供し、***WhaTap Nodeイベント***はユーザーが設定したアラート通知の基準に基づくイベント発生情報を提供します。
+
+<ImgLang img='k8s-node-timeline-event.png' />

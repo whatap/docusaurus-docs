@@ -1,10 +1,10 @@
-## 基本イベントを共有する {#share-basic-event}
+## <Cmdname sid={props.sid} />イベントを共有する{#share-eventjson}
 
-基本イベント設定をJSONファイルとして保存し、他のユーザーと設定を共有したり、他のユーザーの設定を読み込むことができます。
+<Cmdname sid={props.sid} />イベント設定をJSONファイルとして保存し、他のユーザーと設定を共有したり、他のユーザーの設定をインポートできます。
 
 ### エクスポート {#export-json}
 
-1. 画面右上の<span class="uitext">JSON</span> <LinkImage img="ico-export.svg" className="ico" />ボタンを選択します。 
+1. 画面右上に<span class="uitext">JSON</span> <LinkImage img="ico-export.svg" className="ico" />ボタンを選択します。 
 
 2. JSON編集ウィンドウが表示されたら<LinkImage img="ico-export.svg" className="ico" /> <Cmdname sid="export" className="uitext" />ボタンを選択してください。
 
@@ -12,13 +12,15 @@
 
 :::note
 
-JSONファイル名は、*event-rules-`YYYY`-`MM`-`DD`.json*の形式です。
+- JSONファイル名は、*event-rules-`YYYY`-`MM`-`DD`.json*の形式です。
+
+- イベントを検索した後、エクスポート機能を利用すると、検索した一覧のみJSONファイルでダウンロードできます。
 
 :::
 
 ### インポート {#import-json}
 
-1. 画面右上の<LinkImage img="ico-import.svg" className="ico" />ボタンを選択してください。
+1. 画面右上の<LinkImage img="ico-import.svg" className="ico" />ボタンを選択します。
 
 2. <Cmdname sid="export" className="uitext" />機能でダウンロードしたJSONファイルを選択してください。
 

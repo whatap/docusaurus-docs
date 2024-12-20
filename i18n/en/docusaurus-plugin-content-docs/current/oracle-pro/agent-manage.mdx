@@ -15,10 +15,9 @@ keywords:
 
 ## Agent deletion
 
-{/* 에이전트 설치 서버에서 삭제하기 */}
-import Dbuninstallagentinstalledserver from "../common-items/_db-uninstall-agent-installed-server.mdx";
+### Deleting from the server where the agent have been installed
 
-<Dbuninstallagentinstalledserver />
+Among Java processes running on the server, it terminates the processes that contain the string, `whatap.agent.dmx`. Run *stop.sh* from the path where you installed the agent. Afterwards, delete the agent file and user permission registered in the agent.
 
 {/* 서비스 화면에서 삭제하기 */}
 import Dbunistallagentinservice from "../common-items/_db-unistall-agent-in-service.mdx";

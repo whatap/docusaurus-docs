@@ -1,0 +1,105 @@
+---
+id: job-info
+title: ジョブ遂行内訳
+description: SQL Serverで実行された作業(Job)に関する情報を提供します。
+keywords:
+  - SQL Server
+  - ジョブ遂行内訳
+---
+
+ホーム画面 &gt; プロジェクト選択 &gt; <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbJobInfo" className="uitext" />
+
+SQL Serverで実行された作業(Job)に関する情報を提供します。 画面上段の<UI>Job</UI>セクションでは、全体Job一覧および関連情報を表示し、下段の<UI>Job History</UI>セクションでは、上段で選択したJobの実行履歴を詳細に確認できます。 これにより、Job管理および実行状態をモニタリングできます。
+
+<ImgLang img="db-job-info-mssql.png" desc="ジョブ遂行内訳" />
+
+- Jobが失敗した場合、失敗した段階とメッセージを分析して問題を解決します。 例えば、データベース接続の問題やスクリプトエラーを特定できます。
+
+- `run_duration`項目を分析することで、実行時間の長いフェーズを最適化したり、並列実行などを考慮できます。
+
+- 無効化されたJobを確認し、必要に応じて有効化したり、不要なJobを削除して管理効率を向上できます。
+
+:::note
+
+- **Job**は**SQL Server Agent**によって管理される作業単位で、特定の作業(例：データベースのバックアップ、データの整理、クエリの実行など)を自動的に実行するように構成されたプロセスを指します。 **Job**は、管理者が反復的または一定の間隔で実行すべきタスクを自動化するのに役立ちます。 詳細については、[次のリンク](https://learn.microsoft.com/sql/ssms/agent/create-a-job?view=sql-server-ver16)を参照してください。
+
+- JobはSQL Server 2016バージョン以降からサポートし、Expressバージョンはサポートしません。
+
+:::
+
+## 基本的な使い方
+
+1. 画面上段の<Cmdname sid="instance" className="uitext" />オプションで照会したい対象を選択します。 
+
+2. <UI>Job</UI>セクションのJob一覧で照会したい項目を選択します。
+
+3. <UI>Job History</UI>セクションに選択したJobの実行履歴が表示されます。
+
+:::note
+
+Job一覧に照会しようとする項目がなければ![更新アイコン](/img/ico-refresh.png)ボタンを選択します。
+
+:::
+
+## セクション別画面の案内
+
+### Job
+
+SQL Serverで登録されたJobの基本情報を提供します。 Jobの生成/修正時間、実行状態および通知設定などを確認できます。 提供するカラム項目の詳細については、以下を参照してください。
+
+- ***job_id***：Jobの固有識別子(UUID)です。
+
+- ***job_name***：Job名です。
+
+- ***enabled***：Jobの有効可否です。 有効状態であれば<UI>yes</UI>、無効状態であれば<UI>no</UI>と表示します。
+
+- ***description***：Jobについての説明です。 説明がなければ<UI>No description available</UI>に表示します。
+
+- ***date_created***：Jobが生成された日付および時間です。
+
+- ***date_modified***：Jobが最後に修正された日付と時間です。
+
+- ***notify_level_eventlog***：Job実行結果によるイベントログの通知設定レベルです。
+
+- ***notify_level_email***：Job実行結果によるメール通知設定レベルです。
+
+:::note
+
+Job一覧は最大50件まで照会できます。
+
+:::
+
+### Job History
+
+<UI>Job</UI>セクションで選択したJobの実行履歴を詳細に確認できます。 Jobの各段階(Step)別の実行結果とメッセージ、実行時間、所要時間が含まれます。 提供するカラム項目の詳細については、以下を参照してください。
+
+- ***step_id***：Job内に実行された段階の固有識別子です。
+
+- ***step_name***：実行された段階の名前です。
+
+- ***run_status***：段階の実行結果です。
+
+- ***messages***：段階の実行中に発生したメッセージです。 成功またはエラーに関する詳細情報を含めます。
+
+- ***run_date***：段階が実行された日付です。
+
+- ***run_duration***：段階が最後に実行された時の時間(hhmmss)です。
+
+- ***last_run_retries***：段階の最後実行での再試行回数です。
+
+- ***last_run_outcome***：段階の以前の実行結果です。
+
+{/* 필터 조건추가하기*/}
+import Dbsqlfilter from "../common-items/_db-sql-filter.mdx";
+
+<Dbsqlfilter level={2} />
+
+## 照会結果をダウンロードする
+
+各セクション別の照会結果をCSVファイル形式でダウンロードできます。 画面上段の![csvアイコン](/img/ic-csv-download-ms.svg)ボタンをクリックし<UI>Job Info</UI>または<UI>Job History</UI>を選択します。
+
+ダウンロードしたCSVファイルの名前形式は次の通りです。
+
+- <UI>Job Info</UI>: *job\_info\_`YYYY-MM-DD_HH-MM-SS`.csv*
+
+- <UI>Job History</UI>: *job\_history\_`YYYY-MM-DD_HH-MM-SS`.csv*

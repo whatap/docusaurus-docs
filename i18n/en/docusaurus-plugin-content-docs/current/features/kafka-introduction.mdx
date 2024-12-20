@@ -65,39 +65,6 @@ import CreateFeature from "../common-items/_import_feature-project-create.mdx";
 
 <InstallFeature name='KAFKA Agent Installation' />
 
-{/* **피쳐 프로젝트**(<code class='Features'>Features</code>) 생성 후 자동으로 **_KAFKA 에이전트 설치_** 화면으로 이동합니다. Proceed with installation according to the following instructions. 
-
-1. Check the **project access key**. 
-
-   Project access key is the unique ID for activating the WhaTap services. Select <code class='my'>Getting the access key</code>. 
-
-2. Create the **installation script**. 
-
-   Execute the following command to automatically check the user environment and create an installation script on the server where KAFKA has been installed. 
-
-   ```bash
-   curl http://repo.whatap.io/telegraf/feature/kafka/install_kafka_monitoring.sh -o install_kafka_monitoring.sh
-   ```
-
-   Execute the following command to install the KAFKA agent.
-
-   ```bash
-   chmod +x install_kafka_monitoring.sh
-   sudo ./install_kafka_monitoring.sh "x604pf485d1kk-z6q14nuc509pk3-x39moealrfodum" "13.124.11.223/13.209.172.35"
-   ```
-
-3. After configuring and restarting the agent, **start** **monitoring**.  
-
-   To configure the Jolokia agent in KAFKA, execute the following command and then restart it.
-
-   ````bash
-   #cd {kafka home directory}/bin
-   sed -i '/^#!/a export KAFKA_OPTS='\''-javaagent:/usr/whatap/infra/feature/jolokia-agent-jvm-2.0.1-javaagent.jar=port=8778,host=127.0.0.1'\''' kafka-server-start.sh
-   ./kafka-server-stop.sh
-   ./kafka-server-start.sh
-   ``` */}
-   ````
-
 ## Learn about the main features
 
 ### Custom dashboard

@@ -206,11 +206,23 @@ You can see the application information through the agent installed on the appli
 
 The failure status that can be checked through the transaction, can be recognized through the priority response time. If a transaction in progress does not end, this should be considered a failure. WhaTap divides sections for display by the time of the progress status. <span class='normal'>Blue (Normal)</span> means transactions within the specified response time, <span class='slow'>Orange (Slow)</span> means slow transactions with the response time of around 8 seconds, and <span class='vslow'>Red (Very slow)</span> means transactions with the response time that is twice as slow as normal. This allows you to intuitively recognize failures as fast as possible.
 
+:::tip
+
+If you add a database project through the <Cmdname sid="side_correlatedProjectManagement" className="uitext" /> menu for the Java platform, you can see the performance metrics of the project linked in the following widget.
+
+- <Cmdname sid="AA001" className="uitext" />, <Cmdname sid="AA002" className="uitext" />: You can view the SQL performance of the database associated with the active transaction.
+
+- <Cmdname sid="AA005" className="uitext" />: You can view performance metrics of the database associated with transactions in the past.
+
+For more information about adding and analyzing the linked project, see [the following](../java/linked-projects).
+
+:::
+
 ##### <Cmdname sid="AA001" />
 
 ![Active transaction speed](/img/speedmeter.png)
 
-You can see the status of active transactions (middle area) and completed transactions (right area). The water drop icon passing from left to right means a transaction. 
+You can see the status of active transactions (middle area) and completed transactions (right area). The water drop icon passing from left to right means a transaction. If you click a chart area, a pop-up window appears where you can see a list of active transactions. If you select one of the transaction lists, you can view the transaction details, SQL query, and call stack information.
 
 - Area on the left
 

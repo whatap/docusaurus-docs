@@ -1,15 +1,15 @@
 ---
 id: apply-agent
-title: ブラウザーエージェントの適用
-description: WebアプリケーションにWhaTapブラウザーエージェントを適用し、ブラウザーのモニタリングを開始してください。
+title: ブラウザエージェントの適用
+description: WebアプリケーションにWhaTap Browser Monitoringエージェントを適用し、ブラウザモニタリングを開始します。
 keywords:
-  - Browserモニタリング
+  - Browser Monitoring
   - エージェント
 ---
 
 import TR from '@site/src/components/TR';
 
-WhaTapブラウザーモニタリングサービスを使用するには、[会員登録](https://www.whatap.io/ja/signup/)後、プロジェクトを作成し、WebアプリケーションにWhaTapブラウザーエージェントを適用する必要があります。
+WhaTap Browser Monitoringサービスを使用するには、[会員登録](https://www.whatap.io/ja/signup/)後、プロジェクトを作成し、WebアプリケーションにWhaTap Browser Monitoringエージェントを適用する必要があります。
 
 次の動画ガイドを参照してください。
 
@@ -23,32 +23,32 @@ import Accesskey from "../getting-started/_accesskey.mdx";
 
 <Accesskey />
 
-## WhaTapブラウザーエージェントのインストール
+## WhaTap Browser Monitoringエージェントのインストール
 
-エージェントのインストール画面の指示に従って、Webアプリケーションに適用するWhaTapブラウザーエージェントコードを適用してください。
+エージェントのインストール画面の指示に従って、Webアプリケーションに適用するWhaTap Browser Monitoringエージェントのコードを適用します。
 
-<ImgLang img='rum-apply-agent.png' desc='WhaTapブラウザーエージェントのインストール' />
+<ImgLang img='rum-apply-agent.png' desc='WhaTap Browser Monitoringエージェントのインストール' />
 
 ### ![](/img/number-01.png)データ収集サンプリング
 
-WhaTapブラウザーエージェントは、ユーザーセッションを基準にデータを収集します。 収集する全体セッションの割合を0から100の範囲で設定できます。
+WhaTap Browser Monitoringエージェントは、ユーザーセッションを基準にデータを収集します。 収集する全体セッションの割合を0から100の範囲で設定できます。
 
-### ![](/img/number-02.png)WhaTapブラウザーエージェントスクリプト
+### ![](/img/number-02.png)WhaTap Browser Monitoringエージェントスクリプト
 
-WhaTapブラウザーエージェントは、インラインスクリプトの形式で提供します。 インストールガイドで提供するスクリプトコードを、モニタリング対象のすべてのHTML ページの`<head>`タグの先頭に追加してください。
+WhaTap Browser Monitoringエージェントは、インラインスクリプトの形式で提供します。 インストールガイドで提供するスクリプトコードを、モニタリング対象のすべてのHTML ページの`<head>`タグの先頭に追加してください。
 
 次の2つの方法のいずれかを選択して、エージェントを適用してください。
 
-- **_Async_**(非同期ロード): WebアプリケーションにWhaTapブラウザーエージェントを非同期形式でロードします。 
+- **_Async_**(非同期ロード): WebアプリケーションにWhaTap Browser Monitoringエージェントを非同期形式でロードします。 
   - ウェブアプリケーションのロード性能に影響しません。 
-  - ブラウザーエージェントがロードされる前に発生したAJAX、エラーなどのデータが欠落する可能性があります。
-- **_Sync_**(同期ロード): WebアプリケーションにWhaTapブラウザーエージェントを同期形式でロードします。
+  - Browser Monitoringエージェントがロードされる前に発生したAJAX、エラーなどのデータが欠落する可能性があります。
+- **_Sync_**(同期ロード): WebアプリケーションにWhaTap Browser Monitoringエージェントを同期形式でロードします。
   - ウェブアプリケーションのロード時にすべてのデータを収集することをお勧めします。 
   - ウェブアプリケーションのロードに影響を与える可能性があります。
 
-## WhaTapブラウザーエージェントのオプション設定 {#setting-agent}
+## WhaTap Browser Monitoringエージェントのオプション設定 {#setting-agent}
 
-WhaTapブラウザーエージェントに適用するオプションを設定します。 オプションは、インストールスクリプトのConfigオブジェクトで設定できます。 プロジェクトアクセスキー、ユーザーセッション全体の割合、収集から除外リソースドメインなどを設定できます。
+WhaTap Browser Monitoringエージェントに適用するオプションを設定します。 オプションは、インストールスクリプトのConfigオブジェクトで設定できます。 プロジェクトアクセスキー、ユーザーセッション全体の割合、収集から除外リソースドメインなどを設定できます。
 
 ```javascript title='config example' showLineNumbers
 config: {
@@ -80,11 +80,11 @@ config: {
 
 - **ユーザー定義イベントを収集する**
 
-  ブラウザーモニタリングを通じてウェブサービスの問題点を把握し、ユーザー体験を改善するために、ウェブページで発生するイベントのうち、開発者と運営者が希望するイベントを追加で収集できるインターフェースを提供します。 ユーザー定義イベントを収集する方法の詳細については、[次の文書](collect-custom-events)を参照してください。
+  Browser Monitoringを通じてウェブサービスの問題点を把握し、ユーザー体験を改善するために、ウェブページで発生するイベントのうち、開発者と運営者が希望するイベントを追加で収集できるインターフェースを提供します。 ユーザー定義イベントを収集する方法の詳細については、[次の文書](collect-custom-events)を参照してください。
 
 - **実際のユーザーIDを設定する**
 
-  ブラウザーモニタリングでは、実際のユーザーIDやEメールなどでユーザーIDを設定し、データを収集できます。 実際のログインIDに基づいてユーザーセッションの性能とイベントの情報やブラウザーのエラー情報を確認して問題を把握できます。 詳細については、[次の文書](set-real-user-id)を参考にしてください。
+  Browser Monitoringでは、実際のユーザーIDやEメールなどでユーザーIDを設定し、データを収集できます。 実際のログインIDに基づいてユーザーセッションの性能とイベントの情報やブラウザーのエラー情報を確認して問題を把握できます。 詳細については、[次の文書](set-real-user-id)を参考にしてください。
 
 - **セッションリプレイを設定する**
 
@@ -92,4 +92,4 @@ config: {
 
 - **モニタリングの開始**
 
-  [WhaTapモニタリングサービス](https://service.whatap.io)ページに移動し、ブラウザーモニタリングを開始します。 先に作成したプロジェクトを選択し<Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_rumDashboard" className="uitext" />メニューに移動してください。 モニタリング状況を確認できます。 <Cmdname sid="side_rumDashboard" className="uitext" />メニューの詳細については、[次の文書](dashboard)を参照にしてください。
+  [WhaTapモニタリングサービス](https://service.whatap.io)ページに移動し、Browser Monitoringを開始します。 先に作成したプロジェクトを選択し<Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_rumDashboard" className="uitext" />メニューに移動してください。 モニタリング状況を確認できます。 <Cmdname sid="side_rumDashboard" className="uitext" />メニューの詳細については、[次の文書](dashboard)を参照にしてください。

@@ -6,7 +6,7 @@
 cd /usr/whatap/infra
 sudo mkdir extension
 
-cat >extension/logsink.conf<<EOL
+cat <<EOL | sudo tee extension/logsink.conf > /dev/null
 [[inputs.logsink]]
   category = "serverlog"
   ## ログ発生量統計の別途データとしての送信有無
@@ -43,19 +43,19 @@ New-Item -type "Directory" -Path "C:\Program Files\WhatapInfra\extension"
 $contentToAdd = @"
 [[inputs.logsink]]
 category = "serverlog"
-## ログ発生量統計の別途データとしての送信有無
+## ログ発生量統計の個別データの送信有無
 stats_enabled = true 
-## 対数発生量の統計カテゴリ
+## ログ発生量の統計カテゴリ
 stats_category = "logsink_stats"
-## ログファイルパス(path)にアスタリスク(*)が含まれ、除外するログ非対象ファイル名設定 
+## ログファイルのパス(path)にアスタリスク(*)が含まれ、除外するログの非対象ファイル名の設定
 excludeNames = [ ".gz",".zip" ] 
 [[inputs.logsink.file]]
-## ログファイル指定時、日付パターン(strftime.org)指定可能
+## ログファイルを指定する場合、日付パターン(strftime.org)を指定できます
 path = "c:\\whatap\\logs%Y-%m-%d_.log"
 disabled = false
 encoding = "shift-jis"
 [[inputs.logsink.file]]
-## 行単位ログでそのキーワードを検索する時、以前のログにマージ
+## 行単位のログでキーワードを検索する場合は、以前のログにマージ
 nowrap_keywords = ["Caused by:", "Test"]
 "@
 
@@ -64,7 +64,7 @@ New-Item -path "C:\Program Files\WhatapInfra\extension" -name "logsink.conf" -ty
 Restart-Service "Whatap Infra"
 ```
 
-### オプション設定
+### オプション設定 {#server-log-settings}
 
 - `stats_enabled`：収集状態データの収集有無を設定します。既定値は`false`です。値を`true`に設定してください。`true`に設定すると次の`stats_category`で設定したカテゴリ(`logsink_stats`)で統計データが作成されます。
 

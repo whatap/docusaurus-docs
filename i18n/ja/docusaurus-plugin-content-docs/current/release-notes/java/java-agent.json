@@ -1,5 +1,404 @@
 [
   {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_41",
+    "ver": "v2.2.41",
+    "date": "2024-11-08",
+    "Lists": [
+      {
+        "ver": "v2.2.41",
+        "hash": "v2241",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Spring Boot 2.7.0 ~ 3.3.xバージョンでWebFluxトランザクションを追跡する際にサンプリング機能を使用できるように改善</p>"
+      },
+      {
+        "ver": "v2.2.41",
+        "hash": "v2241",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Spring Boot 2.7.0 ~ 3.3.xバージョンでSpring Cloud Gatewayを呼び出す際、連携追跡用ヘッダーがある場合でも、連携追跡が正常に動作するように修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_39",
+    "ver": "v2.2.39",
+    "date": "2024-09-30",
+    "Lists": [
+      {
+        "ver": "v2.2.39",
+        "hash": "v2239",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code>Java 21対応</p>"
+      },
+      {
+        "ver": "v2.2.39",
+        "hash": "v2239",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code>dyanmodb-1.11追跡</p>"
+      },
+      {
+        "ver": "v2.2.39",
+        "hash": "v2239",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code>dyanmodb-2.25追跡(dynamodb-enhanced)</p>"
+      },
+      {
+        "ver": "v2.2.39",
+        "hash": "v2239",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code>retrofit-2.5追跡</p>"
+      },
+      {
+        "ver": "v2.2.39",
+        "hash": "v2239",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code>undertow-server-2.2、undertow-servlet-2.2追跡</p>"
+      },
+      {
+        "ver": "v2.2.39",
+        "hash": "v2239",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code>vertx-4.5追跡</p>"
+      },
+      {
+        "ver": "v2.2.39",
+        "hash": "v2239",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> http-callから exceptionがある場合でも<code>httpc_status_url_ignore_set</code>、<code>httpc_status_ignore</code>オプションを適用できるように修正</p>"
+      },
+      {
+        "ver": "v2.2.39",
+        "hash": "v2239",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code>overflow発生の時、エージェントログと通知の分離および通知の無効化</p>"
+      },
+      {
+        "ver": "v2.2.39",
+        "hash": "v2239",
+        "product": "Java Agent",
+        "type": "Deprecated",
+        "desc": "<p><code class=\"Deprecated\" type=\"1\">Deprecated</code><code>log_overflow_enabled</code>オプションを廃棄</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_40",
+    "ver": "v2.2.40",
+    "date": "2024-11-06",
+    "Lists": [
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> camel-netty4-2.25追跡</p>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> AWS ECS Fargateメモリ使用率のメトリクス収集</p>",
+        "details": "<ul>\n<li>メモリ使用率の既定値をユーザー定義(task definition) メモリ制限値に設定</li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code>一部のエージェント設定でシステム環境変数による設定をサポート</p>",
+        "details": "<ul>\n<li>\n<p>既存に<em>whatap.conf</em>に設定した場合、既存の設定値が優先され、システム環境変数の値は無視</p>\n<div class=\"language-bash codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-bash codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">エージェント設定              システム環境変数</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">whatap.server.host   </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">&lt;=</span><span class=\"token plain\"> WHATAP_SERVER_HOST</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">whatap.server.port   </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">&lt;=</span><span class=\"token plain\"> WHATAP_SERVER_PORT</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">whatap.okind         </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">&lt;=</span><span class=\"token plain\"> WHATAP_OKIND</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">whtap.micro.enabled  </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">&lt;=</span><span class=\"token plain\"> WHATAP_MICRO_ENABLED</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Spring Boot 2.5 ~ 2.6.xバージョンでWebFluxトランザクションを追跡する際にサンプリング機能を使用できるように改善</p>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>AWS ECS EC2メモリ使用率の既定値をユーザー定義のtask definitionのメモリ制限値に修正</p>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> PostgreSQL使用時の空SQL(Empty SQL) 収集の除去</p>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>トランザクションサンプリング機能を使用時、実際のTPSより高く収集される現象を修正</p>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Spring Boot 2.5 ~ 2.6.xバージョンでSpring Cloud Gatewayを呼び出す際、連携追跡用ヘッダーがある場合でも、連携追跡に問題がないように修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_38",
+    "ver": "v2.2.38",
+    "date": "2024-08-14",
+    "Lists": [
+      {
+        "ver": "v2.2.38",
+        "hash": "v2238",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code>spring-boot-3.2追跡</p>"
+      },
+      {
+        "ver": "v2.2.38",
+        "hash": "v2238",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code>spring-kafka batchを追跡する際、トランザクション名を修正</p>",
+        "details": "<ul>\n<li>\n<p>従来：<code>[kafka] {topic} (cnt: {Number of polls in Kafka})</code></p>\n</li>\n<li>\n<p>修正：<code>[kafka-batch] {topic}</code></p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.38",
+        "hash": "v2238",
+        "product": "Java Agent",
+        "type": "Deprecated",
+        "desc": "<p><code class=\"Deprecated\" type=\"1\">Deprecated</code> lettuceドライバーのkey、paramの追跡を中断</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_43",
+    "ver": "v2.2.43",
+    "date": "2024-12-02",
+    "Lists": [
+      {
+        "ver": "v2.2.43",
+        "hash": "v2243",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> jedis-2.9.0 추적</p>"
+      },
+      {
+        "ver": "v2.2.43",
+        "hash": "v2243",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> vertx-3.5.3 추적 범위 확장</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_44",
+    "ver": "v2.2.44",
+    "date": "2024-12-04",
+    "Lists": [
+      {
+        "ver": "v2.2.44",
+        "hash": "v2244",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<li>\n<p><code class=\"New\" type=\"1\">New</code> vertx-3.9 추적</p>\n<div class=\"language-ini codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockTitle_Ktv7\">whatap.conf</div><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-ini codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token key attr-name\" style=\"color:rgb(255, 203, 107)\">weaving</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">=</span><span class=\"token value attr-value\">vertx-3.9.0</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n<p>vertx-redis 추적하지 않습니다.</p>\n</li>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_42",
+    "ver": "v2.2.42",
+    "date": "2024-11-28",
+    "Lists": [
+      {
+        "ver": "v2.2.42",
+        "hash": "v2242",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> vertx-3.5.3追跡</p>"
+      },
+      {
+        "ver": "v2.2.42",
+        "hash": "v2242",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> camel-netty4-2.25追跡</p>"
+      },
+      {
+        "ver": "v2.2.42",
+        "hash": "v2242",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>コンテナ連携時に発生する一部バグの修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_45",
+    "ver": "v2.2.45",
+    "date": "2024-12-10",
+    "Lists": [
+      {
+        "ver": "v2.2.45",
+        "hash": "v2245",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> mongodb-4.11 추적</p>"
+      },
+      {
+        "ver": "v2.2.45",
+        "hash": "v2245",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> mongodb-5.0 추적</p>"
+      },
+      {
+        "ver": "v2.2.45",
+        "hash": "v2245",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> MongoDB SQL 데이터 변경</p>",
+        "details": "<ul>\n<li>\n<p><strong>기존</strong>: <code>${query}</code> 형식, 파라미터 수집</p>\n<div class=\"language-json codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-json codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token property\">\"find\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> </span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"employee\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> </span><span class=\"token property\">\"filter\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token property\">\"_id\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> </span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"a40b6cc6-e1e6-#b-#ddf-b880e55f25bb\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> </span><span class=\"token property\">\"limit\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> #</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> </span><span class=\"token property\">\"singleBatch\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> </span><span class=\"token boolean\" style=\"color:rgb(255, 88, 116)\">true</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n<li>\n<p><strong>변경</strong>: <code>$database ${query}</code> 형식, 파라미터 제거</p>\n<div class=\"language-json codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-json codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">test </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token property\">\"find\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> employee</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.45",
+        "hash": "v2245",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> <code>weaving=spring-boot-3.2</code> 옵션에서 MongoDB 설정 분리</p>",
+        "details": "<p>mongodb-driver-core 라이브러리의 내부 동작이 버전별로 상이하여 spring-boot 설정에서 분리합니다.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_37",
+    "ver": "v2.2.37",
+    "date": "2024-07-31",
+    "Lists": [
+      {
+        "ver": "v2.2.37",
+        "hash": "v2237",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> spring-boot ExceptionHandlerを通過する例外(exception)が発生すると、以前に発生した例外を置き換え</p>",
+        "details": "<p><span class=\"uitext\">トレース分析</span>画面の<span class=\"uitext\">レコード要約</span>タブで、例外(exception)をspring-bootのExceptionHandlerに登録した例外(exception)で表示できます。</p>"
+      },
+      {
+        "ver": "v2.2.37",
+        "hash": "v2237",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> <code>trace_http_parameter_enabled</code>オプションの値が<code>true</code>時に、HTTPパラメータキーに該当する値(value)がなかったり、HTTPパラメータがない場合<span class=\"uitext\">トレース分析</span>画面でHTTPパラメータステップを生成しないように修正</p>"
+      },
+      {
+        "ver": "v2.2.37",
+        "hash": "v2237",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Windows環境で基本CPU収集ができない問題を修正</p>"
+      },
+      {
+        "ver": "v2.2.37",
+        "hash": "v2237",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Windows環境でsigarライブラリを活用する際に、モニタリングメトリクスが収集されない問題を修正</p>"
+      },
+      {
+        "ver": "v2.2.37",
+        "hash": "v2237",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Windows環境でoshiライブラリを活用する際に、モニタリングメトリクスが収集されない問題を修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_36",
+    "ver": "v2.2.36",
+    "date": "2024-07-18",
+    "Lists": [
+      {
+        "ver": "v2.2.36",
+        "hash": "v2236",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code>ウィービングプラグインコンパイルバージョンとユーザーコードターゲットバージョンが異なる場合、原本クラスを返す設定を追加</p>"
+      },
+      {
+        "ver": "v2.2.36",
+        "hash": "v2236",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Systemログを残す場合、他のトランザクションにそのログが含まれる問題を修正</p>",
+        "details": "<blockquote>\n<p>例）System.out, System.err, hibernate Systemログ (<code>org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement</code>)</p>\n</blockquote>"
+      },
+      {
+        "ver": "v2.2.36",
+        "hash": "v2236",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> logback、log4jの使用時にException stackを含むログが発生した場合、ユーザーのログコンテンツを収集できない問題を修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_35",
+    "ver": "v2.2.35",
+    "date": "2024-06-20",
+    "Lists": [
+      {
+        "ver": "v2.2.35",
+        "hash": "v2235",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> spring-boot-3.0.5以降(spring-webflux-6.0.7以降) バージョンでWebClient使用時、連携追跡機能を追加</p>"
+      },
+      {
+        "ver": "v2.2.35",
+        "hash": "v2235",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> spring-boot-2.5未満でspring-cloud-gatewayを通じてトランザクションを呼び出すと、接続されない問題を修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_34",
+    "ver": "v2.2.34",
+    "date": "2024-06-14",
+    "Lists": [
+      {
+        "ver": "v2.2.34",
+        "hash": "v2234",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> camel-cxf-3.15プラグイン使用時、エージェントログを修正</p>"
+      },
+      {
+        "ver": "v2.2.34",
+        "hash": "v2234",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> <code>heapdump_root</code>オプションに<code>log_root</code>パスが登録される問題を修正</p>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_32",
     "ver": "v2.2.32",
     "date": "2024-04-16",
@@ -59,31 +458,16 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_38",
-    "ver": "v2.2.38",
-    "date": "2024-08-14",
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_30",
+    "ver": "v2.2.30",
+    "date": "2024-03-21",
     "Lists": [
       {
-        "ver": "v2.2.38",
-        "hash": "v2238",
+        "ver": "v2.2.30",
+        "hash": "v2230",
         "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code>spring-boot-3.2追跡</p>"
-      },
-      {
-        "ver": "v2.2.38",
-        "hash": "v2238",
-        "product": "Java Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code>spring-kafka batchを追跡する際、トランザクション名を修正</p>",
-        "details": "<ul>\n<li>\n<p>従来：<code>[kafka] {topic} (cnt: {Number of polls in Kafka})</code></p>\n</li>\n<li>\n<p>修正：<code>[kafka-batch] {topic}</code></p>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v2.2.38",
-        "hash": "v2238",
-        "product": "Java Agent",
-        "type": "Deprecated",
-        "desc": "<p><code class=\"Deprecated\" type=\"1\">Deprecated</code> lettuceドライバーのkey、paramの追跡を中断</p>"
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Java 1.5 ~ 1.7環境でJavaエージェント2.2.28、2.2.29バージョンが動作しない問題を修正</p>"
       }
     ]
   },
@@ -153,116 +537,107 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_34",
-    "ver": "v2.2.34",
-    "date": "2024-06-14",
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_29",
+    "ver": "v2.2.29",
+    "date": "2024-03-15",
     "Lists": [
       {
-        "ver": "v2.2.34",
-        "hash": "v2234",
+        "ver": "v2.2.29",
+        "hash": "v2229",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\">New</code> jboss-logging-3.3ログ収集を追加</p>"
+      },
+      {
+        "ver": "v2.2.29",
+        "hash": "v2229",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> <code>com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal</code>メソッド使用時にSQLデータ収集を追加</p>"
+      },
+      {
+        "ver": "v2.2.29",
+        "hash": "v2229",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Jboss環境でHTTPパラメータ収集時にバグが発生するとトランザクションを終了できない現象を防止</p>"
+      },
+      {
+        "ver": "v2.2.29",
+        "hash": "v2229",
+        "product": "Java Agent",
+        "type": "Deprecated",
+        "desc": "<p><code class=\"Deprecated\">Deprecated</code> <code>env</code>の<b>HOSTNAME</b>データ収集を中断</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_28",
+    "ver": "v2.2.28",
+    "date": "2024-02-27",
+    "Lists": [
+      {
+        "ver": "v2.2.28",
+        "hash": "v2228",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> logback-1.2.8の追跡時にappenderを除外するオプションを追加</p>"
+      },
+      {
+        "ver": "v2.2.28",
+        "hash": "v2228",
+        "product": "Java Agent",
+        "type": "Deprecated",
+        "desc": "<p><code class=\"Deprecated\">Deprecated</code> logback-1.2.8の追跡時に、指定したappenderのみ収集するオプションの使用を中止</p>"
+      },
+      {
+        "ver": "v2.2.28",
+        "hash": "v2228",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> log4j-2.17追跡時にappenderを除外するオプションを追加</p>"
+      },
+      {
+        "ver": "v2.2.28",
+        "hash": "v2228",
+        "product": "Java Agent",
+        "type": "Deprecated",
+        "desc": "<p><code class=\"Deprecated\">Deprecated</code> log4j-2.17追跡時に、指定したappenderのみ収集するオプションの使用を中止</p>"
+      },
+      {
+        "ver": "v2.2.28",
+        "hash": "v2228",
         "product": "Java Agent",
         "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> camel-cxf-3.15プラグイン使用時、エージェントログを修正</p>"
+        "desc": "<p><code class=\"Changed\">Changed</code>コンテナ環境でPod名を設定していない場合、環境変数(<code>env</code>)の<code>HOSTNAME</code>から抽出するように変更</p>"
       },
       {
-        "ver": "v2.2.34",
-        "hash": "v2234",
-        "product": "Java Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> <code>heapdump_root</code>オプションに<code>log_root</code>パスが登録される問題を修正</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_37",
-    "ver": "v2.2.37",
-    "date": "2024-07-31",
-    "Lists": [
-      {
-        "ver": "v2.2.37",
-        "hash": "v2237",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> spring-boot ExceptionHandlerを通過する例外(exception)が発生すると、以前に発生した例外を置き換え</p>",
-        "details": "<p><span class=\"uitext\">トレース分析</span>画面の<span class=\"uitext\">レコード要約</span>タブで、例外(exception)をspring-bootのExceptionHandlerに登録した例外(exception)で表示できます。</p>"
-      },
-      {
-        "ver": "v2.2.37",
-        "hash": "v2237",
+        "ver": "v2.2.28",
+        "hash": "v2228",
         "product": "Java Agent",
         "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> <code>trace_http_parameter_enabled</code>オプションの値が<code>true</code>時に、HTTPパラメータキーに該当する値(value)がなかったり、HTTPパラメータがない場合<span class=\"uitext\">トレース分析</span>画面でHTTPパラメータステップを生成しないように修正</p>"
+        "desc": "<p><code class=\"Changed\">Changed</code> JBoss Connection Poolの接続時にログ数を制限するように修正</p>"
       },
       {
-        "ver": "v2.2.37",
-        "hash": "v2237",
+        "ver": "v2.2.28",
+        "hash": "v2228",
         "product": "Java Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Windows環境で基本CPU収集ができない問題を修正</p>"
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code>統計データの転送時のログを修正</p>"
       },
       {
-        "ver": "v2.2.37",
-        "hash": "v2237",
+        "ver": "v2.2.28",
+        "hash": "v2228",
         "product": "Java Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Windows環境でsigarライブラリを活用する際に、モニタリングメトリクスが収集されない問題を修正</p>"
+        "desc": "<p><code class=\"Fixed\">Fixed</code> <code>trace_sampling_enabled</code>オプションを使用する場合、TPSを過剰に収集する問題を修正</p>"
       },
       {
-        "ver": "v2.2.37",
-        "hash": "v2237",
+        "ver": "v2.2.28",
+        "hash": "v2228",
         "product": "Java Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Windows環境でoshiライブラリを活用する際に、モニタリングメトリクスが収集されない問題を修正</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_35",
-    "ver": "v2.2.35",
-    "date": "2024-06-20",
-    "Lists": [
-      {
-        "ver": "v2.2.35",
-        "hash": "v2235",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> spring-boot-3.0.5以降(spring-webflux-6.0.7以降) バージョンでWebClient使用時、連携追跡機能を追加</p>"
-      },
-      {
-        "ver": "v2.2.35",
-        "hash": "v2235",
-        "product": "Java Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> spring-boot-2.5未満でspring-cloud-gatewayを通じてトランザクションを呼び出すと、接続されない問題を修正</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_36",
-    "ver": "v2.2.36",
-    "date": "2024-07-18",
-    "Lists": [
-      {
-        "ver": "v2.2.36",
-        "hash": "v2236",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code>ウィービングプラグインコンパイルバージョンとユーザーコードターゲットバージョンが異なる場合、原本クラスを返す設定を追加</p>"
-      },
-      {
-        "ver": "v2.2.36",
-        "hash": "v2236",
-        "product": "Java Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Systemログを残す場合、他のトランザクションにそのログが含まれる問題を修正</p>",
-        "details": "<blockquote>\n<p>例）System.out, System.err, hibernate Systemログ (<code>org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement</code>)</p>\n</blockquote>"
-      },
-      {
-        "ver": "v2.2.36",
-        "hash": "v2236",
-        "product": "Java Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> logback、log4jの使用時にException stackを含むログが発生した場合、ユーザーのログコンテンツを収集できない問題を修正</p>"
+        "desc": "<p><code class=\"Fixed\">Fixed</code> spring-boot-3.xのspring-security exception収集時に発生するエラーを修正</p>"
       }
     ]
   },
@@ -337,55 +712,6 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_29",
-    "ver": "v2.2.29",
-    "date": "2024-03-15",
-    "Lists": [
-      {
-        "ver": "v2.2.29",
-        "hash": "v2229",
-        "product": "Java Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\">New</code> jboss-logging-3.3ログ収集を追加</p>"
-      },
-      {
-        "ver": "v2.2.29",
-        "hash": "v2229",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> <code>com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal</code>メソッド使用時にSQLデータ収集を追加</p>"
-      },
-      {
-        "ver": "v2.2.29",
-        "hash": "v2229",
-        "product": "Java Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Jboss環境でHTTPパラメータ収集時にバグが発生するとトランザクションを終了できない現象を防止</p>"
-      },
-      {
-        "ver": "v2.2.29",
-        "hash": "v2229",
-        "product": "Java Agent",
-        "type": "Deprecated",
-        "desc": "<p><code class=\"Deprecated\">Deprecated</code> <code>env</code>の<b>HOSTNAME</b>データ収集を中断</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_30",
-    "ver": "v2.2.30",
-    "date": "2024-03-21",
-    "Lists": [
-      {
-        "ver": "v2.2.30",
-        "hash": "v2230",
-        "product": "Java Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Java 1.5 ~ 1.7環境でJavaエージェント2.2.28、2.2.29バージョンが動作しない問題を修正</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_27",
     "ver": "v2.2.27",
     "date": "2024-02-06",
@@ -445,76 +771,6 @@
         "product": "Java Agent",
         "type": "Deprecate",
         "desc": "<p><code class=\"Deprecate\">Deprecate</code> Lettuceドライバーの使用時、Redisのvalue収集中断</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_28",
-    "ver": "v2.2.28",
-    "date": "2024-02-27",
-    "Lists": [
-      {
-        "ver": "v2.2.28",
-        "hash": "v2228",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> logback-1.2.8の追跡時にappenderを除外するオプションを追加</p>"
-      },
-      {
-        "ver": "v2.2.28",
-        "hash": "v2228",
-        "product": "Java Agent",
-        "type": "Deprecated",
-        "desc": "<p><code class=\"Deprecated\">Deprecated</code> logback-1.2.8の追跡時に、指定したappenderのみ収集するオプションの使用を中止</p>"
-      },
-      {
-        "ver": "v2.2.28",
-        "hash": "v2228",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> log4j-2.17追跡時にappenderを除外するオプションを追加</p>"
-      },
-      {
-        "ver": "v2.2.28",
-        "hash": "v2228",
-        "product": "Java Agent",
-        "type": "Deprecated",
-        "desc": "<p><code class=\"Deprecated\">Deprecated</code> log4j-2.17追跡時に、指定したappenderのみ収集するオプションの使用を中止</p>"
-      },
-      {
-        "ver": "v2.2.28",
-        "hash": "v2228",
-        "product": "Java Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code>コンテナ環境でPod名を設定していない場合、環境変数(<code>env</code>)の<code>HOSTNAME</code>から抽出するように変更</p>"
-      },
-      {
-        "ver": "v2.2.28",
-        "hash": "v2228",
-        "product": "Java Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> JBoss Connection Poolの接続時にログ数を制限するように修正</p>"
-      },
-      {
-        "ver": "v2.2.28",
-        "hash": "v2228",
-        "product": "Java Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code>統計データの転送時のログを修正</p>"
-      },
-      {
-        "ver": "v2.2.28",
-        "hash": "v2228",
-        "product": "Java Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> <code>trace_sampling_enabled</code>オプションを使用する場合、TPSを過剰に収集する問題を修正</p>"
-      },
-      {
-        "ver": "v2.2.28",
-        "hash": "v2228",
-        "product": "Java Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> spring-boot-3.xのspring-security exception収集時に発生するエラーを修正</p>"
       }
     ]
   }

@@ -1,0 +1,194 @@
+## AWS CloudWatch設定{#awscloudwatch}
+
+AWSクラウド環境で実行中のデータベースの状態とリソース使用状況をモニタリングできます。
+
+### メトリクスを追加するサービスを選択する
+
+<Xclude product="oracle,mssql"><ImgLang img="db-cloudsettings-select-service.png" desc="Select service" /></Xclude>
+
+<InDoc product="oracle,mssql"><ImgLang img="db-cloudsettings-select-service-oracle.png" desc="Select service" /></InDoc>
+
+最初のセクションで<UI>AWS CloudWatch</UI>を選択してください。 **AWS CloudFormation**テンプレートをインストールしてAmazon CloudWatchメトリクスを収集します。
+
+### パラメータを入力する
+
+**AWS Cloud Formation**設定を進める前に、必須項目を入力します。
+
+<ImgLang img="db-cloudsettings-input-parameters.png" desc="Parameters" />
+
+- ***DB Identifier***: モニタリングするAWSデータベースインスタンスの識別子を入力します。
+
+  :::note
+
+  Amazon RDSサービスで生成したDatabaseインスタンスの**DB identifier**値を入力します。
+
+  ![DB Identifire](/img/db-cloudsettings-input-parameters-db-identifier.png)
+
+  :::
+
+- ***Instance***: AWSクラウド環境で実行中のデータベースから収集したメトリクスをモニタリングするインスタンス(エージェント)を選択します。
+
+- ***Interval***: メトリクス収集間隔を選択します。 (60秒/300秒)
+
+### AWS CloudFormationを設定する
+
+WhaTapで提供する**AWS CloudFormation**テンプレートをインストールします。 このテンプレートを使用して、CloudWatchメトリクスをWhaTapで収集できます。 <UI>AWS CloudFormation</UI> <Cmdname sid="setting" className="uitext" />ボタンを選択すると、インストールを開始し、設定プロセスを実行できます。
+
+<ImgLang img="db-cloudsettings-set-cloud-formation.png" desc="AWS CloudFormation" />
+
+1. <UI>AWS CloudFormation</UI> <Cmdname sid="setting" className="uitext" />ボタンを選択すると、**AWS CloudFormation**設定画面に移動します。
+
+2. **Stack name**と**Parameters**セクションで自動的に満たされた項目の値を確認します。
+
+3. 画面の一番下に位置した**Create stack**ボタンを選択します。
+
+:::note
+
+- **AWS CloudFormation**についての詳細は[次のリンク](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html)を参照してください。
+
+- **Amazon RDS**に対する**Amazon CloudWatch**メトリクス情報は、[次のリンク](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-metrics.html)を参照してください。
+
+:::
+
+### 必要権限を設定する
+
+**CloudFormation**スタック(stack)を生成するには、次のAWS権限を設定する必要があります。
+
+<details>
+
+<summary>AWS権限の案内(JSON)</summary>
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateStack",
+        "cloudformation:UpdateStack",
+        "cloudformation:DeleteStack",
+        "cloudformation:DescribeStacks",
+        "cloudformation:DescribeStackResources",
+        "cloudformation:GetTemplateSummary",
+        "cloudformation:DescribeStackEvents",
+        "cloudformation:ListStacks",
+        "cloudformation:ListStackResources"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "lambda:CreateFunction",
+        "lambda:UpdateFunctionCode",
+        "lambda:UpdateFunctionConfiguration",
+        "lambda:InvokeFunction",
+        "lambda:DeleteFunction",
+        "lambda:GetFunction",
+        "lambda:GetFunctionConfiguration",
+        "lambda:ListFunctions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "events:PutRule",
+        "events:PutTargets",
+        "events:RemoveTargets",
+        "events:DeleteRule",
+        "events:DescribeRule",
+        "events:EnableRule",
+        "events:DisableRule"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateRole",
+        "iam:AttachRolePolicy",
+        "iam:PutRolePolicy",
+        "iam:GetRole",
+        "iam:DeleteRole",
+        "iam:PassRole",
+        "iam:ListRoles"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricData"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": "arn:aws:s3:::repo.whatap.io/agent/db/WhaTapRDSMonitoring.zip"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "scheduler:GetSchedule",
+        "scheduler:ListSchedules",
+        "scheduler:CreateSchedule"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
+
+</details>
+
+1. **AWS権限案内**のJSON内容をコピーします。
+
+2. IAMで**CloudFormation**スタック(stack)を生成する**User**を選択します。
+
+3. **Create inline policy**を選択します。
+
+   ![AWS](/img/db-cloudsettings-aws-iam-policy.png)
+
+4. **JSON**選択後、コピーした権限を貼り付けてpolicyを登録します。
+
+   ![AWS](/img/db-cloudsettings-aws-iam-policy-json.png)
+
+### 収集メトリクスを確認する
+
+クラウドデーターベース接続を完了すると、画面に<Cmdname sid="TTL08633" className="uitext" />セクションが生成されます。 クラウドデータベースに接続されたインスタンス(エージェント) および収集されるメトリクスの一覧を確認できます。
+
+<ImgLang img="db-cloudsettings-added-aws-cloud-services.png" desc="Cloud Services" />
+
+**AWS CloudWatch**から収集したメトリクスは***CloudWatch***カテゴリに含まれます。
+
+![CloudWatch](/img/db-cloudsettings-check-metrics-category-aws.png)
+
+次のメニューパスで確認できます。
+
+- <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />: ウィジェットの![設定アイコン](/img/ico-setting.svg)ボタンを選択してメトリクスを選択できます。
+
+- <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" />: ユーザー定義ウィジェットを追加してメトリクスを選択できます。
+
+:::note
+
+- <Cmdname sid="side_dbMonitoring" className="uitext" />メニューでウィジェットのメトリクスを変更する方法は、[次の文書](instance-monitoring#selectmetrics)を参照してください。
+
+- <Cmdname sid="side_multiInstance" className="uitext" />メニューでユーザー定義ウィジェットを追加する方法は、[次の文書](multi-instance-monitoring#customwidget)を参照してください。
+
+- <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_metricsSearch" className="uitext" />メニューで<Cmdname sid="category" className="uitext" />項目を**db_aws_rds**に選択します。 関連したタグとフィールド情報を確認できます。
+
+:::

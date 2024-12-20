@@ -1,0 +1,139 @@
+---
+id: golang-0_4_3
+title: Go Agent v0.4.3
+toc_max_heading_level: 2
+pagination_next: release-notes/golang/golang-0_4_2
+displayed_sidebar: releaseSidebar
+---
+
+2024年10月16日
+
+<Status priority='1'>Fixed</Status>`os.Stdout`、`os.Stderr`ログ収集エラーを修正
+
+- `trace.Init`関数でログ収集機能を有効にするように修正します。 できるだけ他のログライブラリよりも先に実行できるように変更します。 
+    
+- `os.Stdout`、`os.Stderr`をラッピングした**io.Writer**が使用できる関数を追加しました。
+
+---
+
+以下は、変更されたログ収集機能の使用についてのご案内です。
+
+<Steps>
+
+## エージェント設定
+
+アプリケーション実行前に*whatap.conf*ファイルにエージェントオプションを設定ます。
+
+```ini title="whatap.conf"
+logsink_enabled=true
+
+# Enable stdout collection
+logsink_stdout_enabled=true
+
+# Enable stderr collection
+logsink_stderr_enabled=true
+
+# Optional. This is a setting for compressing data. 
+logsin_zip_enabled=true
+```
+
+## ログライブラリの初期化前
+
+先に`trace.Init()`関数を呼び出す必要があります。 内部的に`os.Stdout`、`os.Stderr`をラッピングします。 その後、ログライブラリが`os.Stdout`、`os.Stderr`を設定すると、自動的にログを収集します。
+
+### zapライブラリの例
+
+`os.Stdout`を設定する前に`trace.Init()`関数を呼び出すと、自動的にログを収集します。 `os.Stdout`出力は維持しながら、同時にWhaTapログに収集します。
+
+```go title="zap library example"
+import (
+    "github.com/whatap/go-api/trace"
+    "github.com/whatap/go-api/logsink"
+    
+    "go.uber.org/zap"
+    "go.uber.org/zap/zapcore"
+)
+
+func main() {
+    trace.Init(nil)
+    //It must be executed before closing the app.
+    defer trace.Shutdown()
+
+    // fmt.Println("Logger stdout=", os.Stdout, zapcore.AddSync(os.Stdout))
+    consoleCore := zapcore.NewCore(
+        zapcore.NewConsoleEncoder(consoleEncoderConfig), 
+        zapcore.AddSync(os.Stdout),                      
+        zap.InfoLevel,
+    )
+
+    // Menggabungkan core file dan console
+    core := zapcore.NewTee(consoleCore)
+    Log = zap.New(core, zap.AddCaller(), zap.AddStacktrace(zapcore.ErrorLevel))
+    Log.Info("logger started")
+
+    ...
+}
+```
+
+## ログライブラリの初期化以降
+
+ログライブラリの設定関数によってラッピングした**io.Writer**を設定できます。
+
+- `logsink.GetWriterHookStdout()`：`os.Stderr`をラッピングした**io.Writer**を返します。 `os.Stdout`に出力すると同時に、そのログをWhaTapログに収集します。
+
+- `logsink.GetWriterHookStderr()`：`os.Stderr`をラッピングした**io.Writer**を返します。 ラッピングした**io.Writer**は`os.Stderr`に出力後、ログの内容をWhaTapログに収集します。
+
+- logパッケージ
+
+  **import**視点(`init` 関数)で`os.Stderr`を設定します。 `trace.Init`関数を先に呼び出すことができないため、ラッピングした**io.Writer**(`os.Stderr`)を`log.SetOutput`関数を通じて設定します。
+
+以後使用されるlogパッケージの`print`関数を使用した出力は、ラッピングした **io.Writer**を通じて`os.Stderr`に出力後、ログの内容をWhaTapログに収集します。 
+
+```go title="log package"
+import (
+	"log"
+	"github.com/whatap/go-api/logsink"
+)
+
+...
+
+if logsink.GetWriterHookStderr() != nil {
+    // set single writer
+    log.SetOutput(logsink.GetWriterHookStderr())	
+    
+    // set multi writer 
+    multi := io.MultiWriter(file, logsink.GetWriterFromStderr())
+    log.SetOutput(logsink.GetWriterHookStderr())
+}
+
+// 
+log.Println("aaaaa")
+
+...
+
+```
+
+</Steps>
+
+:::info
+
+**ダウンロード**
+
+- go-api(import library)
+
+  ```bash
+  go get github.com/whatap/go-api@v0.4.3
+  ```
+
+- サービスエージェント
+
+  | OS名                             |  ファイル形式  | アーキテクチャ |                                      ダウンロード                                      |
+  | ------------------------------- | :------: | :-----: | :------------------------------------------------------------------------------: |
+  | Red Hat / CentOS / Amazon linux |    RPM   | x86 x64 |  [ダウンロード](https://repo.whatap.io/centos/6/x86_64/whatap-agent-0.4-3.x86_64.rpm)  |
+  | \^                              |    \^    | aarch64 | [ダウンロード](https://repo.whatap.io/centos/7/aarch64/whatap-agent-0.4-3.aarch64.rpm) |
+  | Ubuntu 12 and above / Debian    |    DEB   |  amd64  |   [ダウンロード](https://repo.whatap.io/debian/unstable/whatap-agent_0.4.3_amd64.deb)  |
+  | \^                              |    \^    |  arm64  |   [ダウンロード](https://repo.whatap.io/debian/unstable/whatap-agent_0.4.3_arm64.deb)  |
+  | Alpine linux                    | tar gzip | x86 x64 |     [ダウンロード](https://repo.whatap.io/alpine/x86_64/whatap-agent-0.4.3.tar.gz)     |
+  | \^                              |    \^    | aarch64 |     [ダウンロード](https://repo.whatap.io/alpine/aarch64/whatap-agent-0.4.3.tar.gz)    |
+
+:::

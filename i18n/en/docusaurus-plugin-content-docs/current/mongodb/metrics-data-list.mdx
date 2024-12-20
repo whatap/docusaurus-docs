@@ -12,6 +12,13 @@ Database metrics are comprehensive data collected for database workloads and res
 
 MongoDB collects key metrics from `db.serverStatus`, and the following lists the descriptions for the collected key metrics: For more information about other metrics, see [the following](https://www.mongodb.com/docs/manual/reference/command/serverStatus/#output/).
 
+import AgentStatus from "../common-items/_agent-status-summary-metrics.mdx";
+import Xosmetrics from "../common-items/_db-xos-metrics.mdx";
+
+<div className="metricslist">
+
+<AgentStatus />
+
 ## db_mongodb_counter {#db_mongodb_counter}
 
 ### Tags {#db_mongodb_counter-tags}
@@ -123,6 +130,6 @@ WhaTap basically stores the client-related information.
 
 :::
 
-import Xosmetrics from "../common-items/_db-xos-metrics.mdx";
-
 <Xosmetrics />
+
+</div>

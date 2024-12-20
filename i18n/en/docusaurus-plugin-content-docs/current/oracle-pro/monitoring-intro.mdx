@@ -26,35 +26,50 @@ Another important feature of the Oracle Pro monitoring product is that data coll
 
 Ultimately, WhaTap's Oracle Pro monitoring product is an essential technology for improving the efficiency and accuracy of database monitoring, while minimizing system load and ensuring business continuity. This provides a foundation for companies to make faster, more accurate, and more reliable decisions.
 
-import Dbspecification from "../common-items/_db-specification.mdx";
+- **Memory access method**
 
-<Dbspecification />
+  WhaTap Oracle Pro collects data by directly accessing the DB server memory using the **Direct Memory Access** (DMA) technology. It overcomes the limitations of the existing query methods and provides fast and efficient data collection without server overload.
+
+- **Load-free monitoring data collection**
+
+  Oracle Pro accesses the DB server memory directly to extract data, and collects the performance data 20 times per second with little server load. This supports stable and efficient monitoring even in high-performance DB environments.
+
+- **Precise SQL performance data collection**
+
+  Oracle Pro collects data 20 times per second, enabling precise analysis and providing much more detailed information than the 5-second interval SQL collection of the existing query-based method. This allows administrators to identify issues in real time and respond immediately.
+
+- **Monitoring analysis possible even when the DB is in Hang status**
+
+  Oracle Pro does not stop collecting data even in case of DB failure or hang situations. This ensures data continuity and enables analysis and response even upon a failure, maximizing the system stability and availability.
 
 ## Supported functions
 
-The following are available features. To compare with other products and supported features, see [the following](../support-env#compare-db).
+The following are available features.
 
-| Category   | Function type               |                                   Oracle                                  |
-| ---------- | --------------------------- | :-----------------------------------------------------------------------: |
-| Monitoring | Instance List               |                      <span class='emoji-ok'>✅</span>                      |
-| ^          | Instance Monitoring         |                      <span class='emoji-ok'>✅</span>                      |
-| ^          | Multi DataBase (tenant)     | <span class='emoji-ok'>✅</span><br/>12c or later, in case of multi tenant |
-| ^          | Slow Query                  |                      <span class='emoji-no'>❌</span>                      |
-| Analysis   | Trends                      |                      <span class='emoji-ok'>✅</span>                      |
-| ^          | Trends Compare              |                      <span class='emoji-ok'>✅</span>                      |
-| ^          | Lock Tree                   |                      <span class='emoji-ok'>✅</span>                      |
-| ^          | Parallel Query Tree         |                      <span class='emoji-ok'>✅</span>                      |
-| ^          | Dead Lock                   |                      <span class='emoji-no'>❌</span>                      |
-| ^          | DB Parameters               |                      <span class='emoji-ok'>✅</span>                      |
-| Statistics | SQL Stat                    |                      <span class='emoji-ok'>✅</span>                      |
-| ^          | Table Size                  |                             Scheduled support                             |
-| ^          | Database (TableSpace) Size  |                      <span class='emoji-ok'>✅</span>                      |
-| ^          | SGA Size                    |                      <span class='emoji-ok'>✅</span>                      |
-| Report     | Daily/Weekly/Monthly Report |                      <span class='emoji-ok'>✅</span>                      |
-| Event      | Event List                  |                      <span class='emoji-ok'>✅</span>                      |
-| ^          | Event Stat                  |                      <span class='emoji-ok'>✅</span>                      |
-| ^          | Event Setting               |                      <span class='emoji-ok'>✅</span>                      |
-| ^          | Notification                |                      <span class='emoji-ok'>✅</span>                      |
-| Management | Agent Setup                 |                      <span class='emoji-ok'>✅</span>                      |
-| ^          | Agent List                  |                      <span class='emoji-ok'>✅</span>                      |
-| ^          | Project Management          |                      <span class='emoji-ok'>✅</span>                      |
+| Category   | Function type               |                                                         Supportable or not                                                         |
+| ---------- | --------------------------- | :--------------------------------------------------------------------------------------------------------------------------------: |
+| Monitoring | Instance List               |                                                   <span class='emoji-ok'>✅</span>                                                  |
+| ^          | Instance Monitoring         |                                                   <span class='emoji-ok'>✅</span>                                                  |
+| ^          | Multi DataBase (tenant)     |                              <span class='emoji-ok'>✅</span><br/>12c or later, in case of multi tenant                             |
+| ^          | Slow Query                  |                                                   <span class='emoji-no'>❌</span>                                                  |
+| Analysis   | Trends Compare              |                                                   <span class='emoji-ok'>✅</span>                                                  |
+| ^          | Lock Tree                   |                                                   <span class='emoji-ok'>✅</span>                                                  |
+| ^          | Session History             |                                                   <span class='emoji-ok'>✅</span>                                                  |
+| ^          | Wait Analysis               |                                                   <span class='emoji-ok'>✅</span>                                                  |
+| ^          | SQL Analysis                |                                                   <span class='emoji-ok'>✅</span>                                                  |
+| ^          | Top SQL Comparison          |                                                   <span class='emoji-ok'>✅</span>                                                  |
+| ^          | Parallel Query Tree         |                                                   <span class='emoji-ok'>✅</span>                                                  |
+| ^          | Dead Lock                   |                                              It is supported through log monitoring.                                               |
+| ^          | DB Parameters               |                                                   <span class='emoji-ok'>✅</span>                                                  |
+| Statistics | SQL Stat                    |                                                   <span class='emoji-ok'>✅</span>                                                  |
+| ^          | Table Size                  | It is supported in <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_tableSpace" className="uitext" />. |
+| ^          | Database (TableSpace) Size  |                                                   <span class='emoji-ok'>✅</span>                                                  |
+| ^          | SGA Size                    |                                                   <span class='emoji-ok'>✅</span>                                                  |
+| Report     | Daily/Weekly/Monthly Report |                                                   <span class='emoji-ok'>✅</span>                                                  |
+| Event      | Event List                  |                                                   <span class='emoji-ok'>✅</span>                                                  |
+| ^          | Event Stat                  |                                                   <span class='emoji-ok'>✅</span>                                                  |
+| ^          | Event Setting               |                                                   <span class='emoji-ok'>✅</span>                                                  |
+| ^          | Notification                |                                                   <span class='emoji-ok'>✅</span>                                                  |
+| Management | Agent Setup                 |                                                   <span class='emoji-ok'>✅</span>                                                  |
+| ^          | Agent List                  |                                                   <span class='emoji-ok'>✅</span>                                                  |
+| ^          | Project Management          |                                                   <span class='emoji-ok'>✅</span>                                                  |

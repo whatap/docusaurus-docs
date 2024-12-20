@@ -362,24 +362,7 @@ ps -ef | grep whatap_python
 
 </Steps>
 
-## 次の段階
+{/* 다음 단계 */}
+import NextSteps from "../common-items/_apm-next-stemp-exclude-java.mdx";
 
-<div className="nextstep">
-
-- **インストールの点検**
-
-  プロジェクトの生成とエージェントのインストールまですべて適用した場合は、[次の文書](install-check)で点検事項を確認します。
-
-- **インストール問題の解決**
-
-  エージェントをインストールする際に発生する可能性のある様々な問題と、これを解決するための具体的なガイドを提供します。詳細については、[次の文書](agent-troubleshooting)を参照してください。
-
-- **エージェント設定**
-
-  エージェント設定(*whatap.conf*)ファイルにオプションを適用することで、モニタリングの様々な機能を提供します。デフォルト設定から、サーバーの接続とデータ転送の設定、複数のアプリケーションサーバーの設定ファイルの管理方法、トランザクションの追跡などが含まれます。詳細については、[次の文書](set-agent)を参照してください。
-
-- **モニタリングの開始**
-
-  すべての設定を完了してから、次のアプリケーションサーバーを再起動します。エージェントが情報収集を開始します。まず、<Cmdname sid="side_appDashboard" className="uitext" />メニューでモニタリングデータが収集されているか確認します。<Cmdname sid="side_appDashboard" className="uitext" />についての詳細は、[次の文書](dashboard)を参照してください。
-
-</div>
+<NextSteps />

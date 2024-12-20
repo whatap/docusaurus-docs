@@ -1,3 +1,15 @@
+- **db_param_enabled** <span class='type'>Boolean</span>
+
+  Default `true`
+
+  It sets whether or not to collect the DB parameters.
+
+- **conn_fail_count** <span class='type'>Int</span>
+
+  Default `15`
+
+  It sends a notification when the connection error occurs consecutively 15 times. You can adjust the notification trigger criteria by entering the desired number.
+
 <InDoc product ='mysql'>
 
 - **deadlock_interval** <span class='type'>Int</span>
@@ -32,9 +44,9 @@
 
 - **long_run_session_sec** <span class='type'>Second</span>
 
-  Default `10`
+  Default `10` (unit: second)
 
-  The session running longer than the set time is treated as the long run session (unit: second).
+  A session that has been running longer than the set time is treated as a long run session.
 
 </Xclude>
 
@@ -86,6 +98,18 @@
 
   :::
 
+- **statements_min_row** <span class='type'>Int</span>
+
+  Default `10000` (row)
+
+  It is the data collection criteria used in the <Cmdname sid="side_pgStat" className="uitext" /> menu. It queries `pg_stat_statements` and collects data if the rows value is greater than `statements_min_row`.
+
+  :::note
+
+  For more information about the <Cmdname sid="side_pgStat" className="uitext" /> menu, see [the following](pg-sql-stat).
+
+  :::
+
 </InDoc>
 
 <Xclude product='cubrid,redis,mongodb'>
@@ -105,6 +129,20 @@
   Default `1`
 
   If set to `2`, the sys sessions (root, system user, event_scheduler) are not visible in the active session. The set value, `1` makes sys sessions visible, but excludes them from the total runtime.
+
+- **statements_min_row** <span class='type'>Int</span>
+
+  Default `10000` (row)
+
+  It is the data collection criteria used in the <Cmdname sid="side_mysqlStat" className="uitext" /> menu. It queries `performance_schema.events_statements_summary_by_digest` and collects data if the following sum is greater than `statements_min_row`.
+
+  > `sum_rows_affected` + `sum_rows_sent` + `sum_rows_examined`
+
+  :::note
+
+  For more information about the <Cmdname sid="side_mysqlStat" className="uitext" /> menu, see [the following](mysql-sql-stat).
+
+  :::
 
 </InDoc>
 
@@ -224,5 +262,81 @@
   Default `0`
 
   When collecting xview, collection is performed only when the query execution time is longer than the set time. The default setting is to collect all queries whose execution time is longer than 0 seconds.
+
+</InDoc>
+
+<InDoc product="mssql">
+
+- **filegroup** <span class='type'>Boolean</span>
+
+  Default `true`
+
+  It sets whether or not to collect the filegroup size.
+
+- **filegroup_interval** <span class='type'>Int</span>
+
+  Default `60` (unit: second, sec)
+
+  It sets the filegroup size collection interval.
+
+- **procedure_stats** <span class='type'>Boolean</span>
+
+  Default `true`
+
+  It sets whether or not to collect the procedure statistics data.
+
+- **procedure_interval** <span class='type'>Int</span>
+
+  Default `1` (unit: time, hour)
+
+  It sets the procedure statistics data collection interval.
+
+- **procedure_stat_row_limit** <span class='type'>Int</span>
+
+  Default `10000`
+
+  It sets the conditions for collecting the procedure statistics data. It collects data based on the top 10,000 cases (default) in order of average execution time.
+
+- **query_stats** <span class='type'>Boolean</span>
+
+  Default `true`
+
+  It sets whether or not to collect the query statistics data.
+
+- **query_interval** <span class='type'>Int</span>
+
+  Default `1` (unit: time, hour)
+
+  It sets whether or not to collect the query statistics data collection interval.
+
+- **query_stat_row_limit** <span class='type'>Int</span>
+
+  Default `10000`
+
+  It sets the query statistics data collection conditions. It collects data based on the top 10,000 cases (default) in order of average execution time.
+
+- **backup_row_limit** <span class='type'>Int</span>
+
+  Default `50`
+
+  The number of backup record collections is limited to 50 (default).
+
+- **restore_row_limit** <span class='type'>Int</span>
+
+  Default `50`
+
+  The number of recovery record collections is limited to 50 (default).
+
+- **job_info_row_limit** <span class='type'>Int</span>
+
+  Default `50`
+
+  The number of job execution record collections is limited to 50 (default).
+
+- **job_history_row_limit** <span class='type'>Int</span>
+
+  Default `50`
+
+  The number of job history collections is limited to 50 (default).
 
 </InDoc>

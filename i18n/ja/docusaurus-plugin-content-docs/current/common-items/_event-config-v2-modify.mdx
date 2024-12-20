@@ -8,7 +8,7 @@
 
 <ImgLang img='event-config-v2-condition-common.png' desc='イベント条件の定義' />
 
-- <Cmdname sid="run" className="uitext" />：イベント条件を設定してからボタンを選択すると、設定したイベントをシミュレートできます。
+- <Cmdname sid="simulation" className="uitext" />：イベント条件を設定してからボタンを選択すると、設定したイベントの結果を予測できます。
 
   <ImgLang img='event-config-v2-simulation-common.png' desc='イベントシミュレーション' />
 
@@ -40,7 +40,15 @@
 
   :::
 
-- <Cmdname sid="CNT08326" className="uitext" />: イベントが解消されたら<b>RECOVERED</b>ステータスの通知を送信します。
+- <Cmdname sid="CNT08326" className="uitext" />：オプションを有効にすると<Cmdname sid="side_eventHistory" className="uitext" />メニューで<Cmdname sid="in_progress" className="uitext" />のイベントで表示されます。 <span className="vslow">Critical</span>または<span className="slow">Warning</span>レベルのイベントが解消されると、正常(**RECOVERED**) ステータスの通知を受信します。 トグルボタンを選択し、機能をオンまたはオフできます。
+
+  <ImgLang img="metric-warning-notice-new-recovered.png" desc="Resolved notification" />
+
+  :::note
+
+  <Cmdname sid="side_eventHistory" className="uitext" />メニューの詳細は[次の文書](set-event-history)を参照してください。
+
+  :::
 
 :::tip
 
@@ -65,7 +73,7 @@
 
 </InDoc>
 
-<InDoc product="mysql,postgresql,oracle,mssql,cubrid,tibero,altibase,redis,oracle-v1,oracle-pro">
+<InDoc product="mysql,postgresql,oracle,mssql,mssql-v1,cubrid,tibero,altibase,redis,oracle-v1,oracle-pro">
 
 特定のエージェントでのみ発生するイベントを通知で送信するように設定できます。 <Cmdname sid="TLT07556" className="uitext" />アイテムをクリックして、目的のエージェントを選択します。 エージェントを選択し、接続されたDBサーバーのデータベース名(**_DbName_**)を追加で選択することもできます。
 

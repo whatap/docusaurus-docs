@@ -1,4 +1,4 @@
-<Cmdname sid="sms_alert_status" className="uitext" />機能は<Cmdname sid="side_eventSetting" className="uitext" />メニューを通じて追加したイベントが発生した場合、ポップアップ形式でリアルタイムで提供します。 これにより、イベントが発生するとすぐに通知を受け、問題を迅速に認知し、対応できます。 また、既に発生している、または見逃した通知履歴を確認して、リアルタイムでの対応ができなかった状況も把握し、解決できます。
+<Cmdname sid="sms_alert_status" className="uitext" />機能は<Cmdname sid="side_eventSetting" className="uitext" />メニューを通じて追加したイベントが発生した場合、ポップアップ形にリアルタイムで提供します。 これにより、イベントが発生したとたん通知を受け、問題を迅速に認知し、対応できます。 また、既に発生している、または見逃した通知履歴を確認して、リアルタイムでの対応ができなかった状況も把握し、解決できます。
 
 ## リアルタイム通知の確認
 
@@ -14,17 +14,17 @@
 
 ## 通知履歴を確認する
 
-通知履歴を確認するには、プロジェクトを選択して進入した画面の一番上に![通知アイコン](/img/ico-noti.svg)ボタンを選択します。 画面の右側に<Cmdname sid="sms_alert_status" className="uitext" />が表示されます。 現在のプロジェクトの最近24時間の通知を、最大100個まで確認できます。
+通知履歴を確認するには、プロジェクトを選択し、表示される画面の一番上にある![通知アイコン](/img/ico-noti.svg)ボタンを選択します。 画面の右側に<Cmdname sid="sms_alert_status" className="uitext" />が表示されます。 該当プロジェクトの最近24時間の通知を、最大100個まで確認できます。
 
 <ImgLang img="ui-home/main-ui-realtime-notification.png" desc="リアルタイムアラート" />
 
 - 個別のイベント項目を選択すると、関連メニューに移動できます。
 
-- リアルタイム通知画面上段の時間別チャートで希望する時間帯を選択すると、そのイベント項目に移動できます。
+- リアルタイム通知画面の上部にある時間別チャートで時間帯を選択すると、そのイベント項目に移動できます。
 
   <ImgLang img="ui-home/main-ui-realtime-notification-select-time.png" desc="リアルタイムアラート" className="width-400" />
 
-- 全通知履歴を確認するには<Cmdname sid="total_event_history" className="uitext" />ボタンを選択します。 <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventHistory" className="uitext" />メニューに移動します。
+- 通知履歴を確認するには<Cmdname sid="total_event_history" className="uitext" />ボタンを選択します。 <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventHistory" className="uitext" />メニューに移動します。
 
   <ImgLang img="ui-home/main-ui-realtime-notification-all-history.png" desc="リアルタイムアラート" className="width-400" />
 
@@ -36,13 +36,37 @@
 
   :::
 
+## イベントを一括解消する
+
+<Cmdname sid="sms_alert_status" className="uitext" />一覧で進行中のすべてのイベントを一括解消できます。
+
+<ImgLang img="ui-home/main-ui-realtime-notification-resolve.png" desc="イベント一括解消" />
+
+1. 画面右上の![通知アイコン](/img/ico-noti.svg)ボタンを選択します。
+
+2. <Cmdname sid="sms_alert_status" className="uitext" />画面が表示されたら、右上の![通知の解消アイコン](/img/ic-check-circle.svg)ボタンを選択します。
+
+3. メッセージが表示されたら、<Cmdname sid="DSC08323" className="uitext" />ボタンを選択します。
+
+:::note
+
+- イベントの解消作業を完了するまで約30秒から1分ほどかかります。
+
+- <Cmdname sid="add_ack_to_project" className="uitext" />機能を使用すると、現在進行中のイベントの解消通知が大量に発生する可能性があります。
+
+- <Cmdname sid="add_ack_to_project" className="uitext" />機能を使用した後もイベントルールが有効になっており、データがしきい値を超えた場合、イベントは再び発生する可能性があります。
+
+- イベント解消のお知らせは、<Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" />メニューでイベントの修正を通じて無効にできます。 <Cmdname sid="CNT08320" className="uitext" />または<Cmdname sid="CNT08326" className="uitext" />オプションを無効にします。
+
+:::
+
 ## リアルタイム通知を設定する{#setrealtimenoti}
 
-<Cmdname sid="TTL08411" className="uitext" />機能により、一覧に表示される項目を設定できます。 <Cmdname sid="sms_alert_status" className="uitext" />画面右上の![設定アイコン](/img/ico-setting.svg)ボタンを選択します。
+<Cmdname sid="TTL08411" className="uitext" />機能により、一覧に表示される項目を設定できます。 <Cmdname sid="sms_alert_status" className="uitext" />画面右上にある![設定アイコン](/img/ico-setting.svg)ボタンを選択します。
 
 <ImgLang img="ui-home/main-ui-realtime-notification-settings.png" desc="リアルタイム通知設定" />
 
-- <Cmdname sid="ITM08412" className="uitext" />: <Cmdname sid="sms_alert_status" className="uitext" />画面を閉じた状態でも、通知をポップアップ形式で提供します。
+- <Cmdname sid="ITM08412" className="uitext" />: <Cmdname sid="sms_alert_status" className="uitext" />画面を閉じた状態でも、通知をポップアップで提供します。
 
 - <Cmdname sid="ITM08413" className="uitext" />: <Cmdname sid="sms_alert_status" className="uitext" />一覧で解消されたイベントを含めて確認できます。
 

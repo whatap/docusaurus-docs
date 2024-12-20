@@ -3,7 +3,7 @@ id: session-replay
 title: セッションリプレイ
 description: ユーザーがウェブサイトで行うすべてのイベントを記録し、再生できるセッションリプレイ機能を適用する方法を案内します。
 keywords:
-  - Browserモニタリング
+  - Browser Monitoring
   - エージェント
   - セッションリプレイ
 ---
@@ -28,7 +28,7 @@ keywords:
 
 ## エージェントのオプションを適用する{#set-agentoption}
 
-セッションリプレイ機能を適用するには、ブラウザエージェントオプションを適用する必要があります。 次の例題を参照してください。
+セッションリプレイ機能を適用するには、ブラウザエージェントオプションを適用する必要があります。 次のサンプルを参照してください。
 
 ```javascript showLineNumbers {8-10}
 <script>
@@ -55,37 +55,37 @@ keywords:
 
 - **sessionReplaySampleRate** <span class='type'>Int</span>
 
-  全収集セッションのうち、セッションリプレイ収集比率として0から100まで設定できます。 例えば、`sampleRate`が**100**であり、`sessionReplaySampleRate`が**50**であると、全体セッションの中で50%のみセッションリプレイとして記録されます。
+  すべての収集セッションからセッションリプレイを収集する比率を0から100まで設定できます。 例えば、`sampleRate`が**100**であり、`sessionReplaySampleRate`が**50**であると、全体セッションから50%のセッションリプレイが記録されます。
 
-  一方、`sampleRate`が**50**であり、`sessionReplaySampleRate`が**100**であると、全体セッションの50%が収集対象であり、この中で100%がセッションリプレイとして記録されます。
+  一方、`sampleRate`が**50**であり、`sessionReplaySampleRate`が**100**であると、全セッションの50%が収集対象であり、この中で100%がセッションリプレイとして記録されます。
 
 - **sessionReplayMaskAllTexts** <span class='type'>Boolean</span>
 
   既定値 `true`
 
-  値を`false`に設定すると、マスキング処理なしですべてのテキスト データを収集します。
+  値を`false`に設定すると、マスキング処理なしですべてのテキストデータを収集します。
 
 - **sessionReplayMaskAllInputs** <span class='type'>Boolean</span>
 
   既定値 `true`
 
-  値を`false`に設定すると、マスキング処理なしですべて入力(Input) フィールド領域のデータを収集します。
+  値を`false`に設定すると、マスキング処理なしですべて入力(Input)フィールド領域のデータを収集します。
 
 ### 機微情報の収集を除外
 
-機微情報に対する収集の除外方法を基本的に提供します。 画面上のすべてのテキストは、次のようにマスキングされ、収集されます。 ただし、エージェントオプションで`sessionReplayMaskAllTexts`の値が`true`に設定されている必要があります。
+機微情報に対する収集の除外方法を基本的に提供します。 画面上のすべてのテキストは、次のようにマスキングされ、収集されます。 ただし、エージェントオプションで`sessionReplayMaskAllTexts`を`true`に設定する必要があります。
 
 <ImgLang img="browser-session-replay-masking-example.png" desc="Session replay" />
 
 ### 特定の領域をマスキング処理する
 
-テキストの他にも、個人識別情報や機密データが含まれる場合があり、これを保護するために特定の領域をマスキング処理するオプションが提供されます。
+テキストの他にも、個人情報や敏感なデータが含まれる場合があり、これを保護するために特定の領域をマスキング処理するオプションが提供されます。
 
-|                      特定領域に対するマスキング処理                     |                        マスキングを適用していない場合                       |
-| :------------------------------------------------------: | :----------------------------------------------------------: |
-| ![マスキング処理](/img/browser-session-replay-area-masking.png) | ![マスキング未処理](/img/browser-session-replay-no-area-masking.png) |
+|                      特定領域に対するマスキング処理                     |                          マスキングを適用しない場合                         |
+| :------------------------------------------------------: | :------------------------------------------------------------: |
+| ![マスキング処理](/img/browser-session-replay-area-masking.png) | ![マスキング処理しない](/img/browser-session-replay-no-area-masking.png) |
 
-収集対象から除外する領域についてのhtml要素(element)のクラス(`class`)名に`session-replay-block-class`を追加します。 次の例題を参照してください。
+収集対象から除外する領域についてのhtml要素(element)のクラス(`class`)名に`session-replay-block-class`を追加します。 次のサンプルを参照してください。
 
 ```javascript showLineNumbers {1}
 <div class="session-replay-block-class home-header pure-menu pure-menu-horizontal">
@@ -109,7 +109,7 @@ keywords:
 
 ![Text masking](/img/browser-session-replay-text-masking.png)
 
-特定のテキスト領域を収集対象から除外するには、該当html要素(element)のクラス(`class`)名に`session-replay-mask-text-class`を追加します。 次の例題を参照してください。
+特定のテキスト領域を収集対象から除外するには、該当html要素(element)のクラス(`class`)名に`session-replay-mask-text-class`を追加します。 次のサンプルを参照してください。
 
 ```javascript showLineNumbers {1}
 <main class="session-replay-mask-text-class">
@@ -185,7 +185,7 @@ keywords:
 
 ### セッションリプレイのプレーヤー
 
-記録されたユーザー行動イベントを再生して、実際にユーザーが画面をどのように操作したかを確認できます。
+記録されたユーザー行動イベントをリプレイして、実際にユーザーが画面をどのように操作したかを確認できます。
 
 ![セッションリプレイのプレーヤー](/img/browser-session-replay-player.png)
 
@@ -201,7 +201,7 @@ keywords:
 
 ### ユーザーセッション情報 {#TTL07745}
 
-<Cmdname sid="TTL08103" className="uitext" />画面の右側で実際のユーザーのセッション情報を確認できます。
+<Cmdname sid="TTL08103" className="uitext" />画面の右側からユーザーのセッション情報を確認できます。
 
 <ImgLang img="browser-session-replay-user-info.png" desc="ユーザーセッション情報" />
 

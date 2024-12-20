@@ -98,6 +98,12 @@ createdtime=xxxxxxxxxx
 tcp.check.8080=tcp://127.0.0.1:8080
 ```
 
+{/* 다중 포트 감시 추가 */}
+
+import TcpMulti from "../common-items/_server-tcp-port-multi.mdx";
+
+<TcpMulti />
+
 #### Metrics Search
 
 Once setup is completed, the `server_tcpport` category is added to the ***Analyze*** &gt; ***Metrics Search*** menu. Metrics notifications can be used based on the value of the `isAlive` field in the category. 

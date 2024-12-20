@@ -145,7 +145,7 @@ const ImportJson = ({ filePath, product, type, sort, category, platform }) => {
                           )}
                         </div>
                         {
-                          (platform === 'db' && list.category) ? (
+                          ((platform === 'db' && list.category) || list.category) ? (
                             <div className={styles.platform}>
                               {(index === 0 || list.category !== array[index - 1].category) && (
                                 `▸ ${list.category}`

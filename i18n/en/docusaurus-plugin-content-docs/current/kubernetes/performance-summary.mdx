@@ -11,21 +11,13 @@ keywords:
 
 Home > Select Project > **_Dashboard_** > **_Performance Summary_**
 
-Through recent hourly charts, you can check the changes in key Kubernetes metrics such as container/Pod count and node count. The following image is an example of cluster project (<code class='my'>Kubernetes</code>).
+{/* 최근 시간별 차트를 통하여 컨테이너/Pod 수량, 노드 수량 등 쿠버네티스 주요 지표들에 어떤 변화가 있었는지 확인할 수 있습니다. 다음 이미지는 클러스터 프로젝트(<code class='my'>Kubernetes</code>) 예시입니다. */}
+
+The charts for each late time zone display information of the target where the WhaTap node agent and application agent within the project. Information separated by the namespace project can be found in the namespace project. 
 
 <ImgLang img='k8s-performance-summary.png' desc='Performance Summary' />
 
-- **Shortcut option**
-
-  If you select ![More icon](/img/ico-more.svg) **_More_** icon at the upper right of each widget, you can see the ![Shortcut icon](/img/ico-shortcut.svg) **_Shortcut_** option as follows:
-
-  ![Shortcut](/img/k8s-performance-summary-shortcut.png)
-
-- **Line chart configuration option**
-
-  If you select the ![More icon](/img/ico-more.svg) **_More_** icon at the upper right of each line chart widget, you can see the ![Configuration icon](/img/ic-setting.svg) configuration option. For line charts, you can change the ID through the configuration option. The setting is not saved.  
-
-  > For the **_Node CPU (%)_** widget, you can view the data by **_Node_** for example. You can change the metric to view by **_ContainerName_**.
+{/* 
 
 ## Kubernetes cluster integration performance
 
@@ -33,11 +25,19 @@ For a cluster project (<code class='my'>Kubernetes</code>), the ![Leader line 1]
 
 ## Kubernetes namespace performance
 
-For a namespace project (<code class='my'>Namespace</code>), the ![Leader line 1](/img/number-01.png) <UI>Kubernetes namespace performance</UI> area displays the namespace information regardless of installation of the WhaTap node agent. It displays the information about the containers, pods, and nodes for the namespace. 
+For a namespace project (<code class='my'>Namespace</code>), the ![Leader line 1](/img/number-01.png) <UI>Kubernetes namespace performance</UI> area displays the namespace information regardless of installation of the WhaTap node agent. It displays the information about the containers, pods, and nodes for the namespace.  
 
-## Project performance
+*/}
 
-The ![Leader line 2](/img/number-02.png) **_Project performance_** area displays information of the target where the WhaTap node agent and application agent within the project have been installed. Information separated by the namespace project can be found in the namespace project. 
+- **Shortcut option**
+
+  By selecting ![More icon](/img/ico-more.svg) **_More_** icon at the upper right of each widget, you can see the ![Shortcut icon](/img/ico-shortcut.svg) **_Shortcut_** option as follows:
+
+- **Line chart configuration option**
+
+  You can select the ![More icon](/img/ico-more.svg) **_More_** icon at the upper right of each line chart widget, or can directly check the ![Configuration icon](/img/ic-setting.svg) configuration options. For line charts, you can change the ID through the configuration option. The setting is not saved.  
+
+  > For the **_Node CPU (%)_** widget, you can view the data by **_Node_** for example. You can change the metric to view by **_ContainerName_**.
 
 :::note 
 

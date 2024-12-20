@@ -15,9 +15,23 @@ MySQLの`performance_schema`で提供するSQL統計データ(遂行回数、実
 
 :::note
 
+- 1時間毎に`events_statements_summary_by_digest`からデルタ値を計算して収集します。 そのため、設定してから1時間後から収集を開始します。
+
+- 1時間間隔に収集した場合、`sum_timer_wait`基準最大5,000件まで収集します。 
+
 - この機能は、DBXエージェント1.6.10バージョン以降に対応しています。
 
 - `events_statements_summary_by_digest`ビューの詳細については、[次のリンク](https://dev.mysql.com/doc/refman/8.0/en/performance-schema-statement-summary-tables.html)を参照してください。
+
+:::
+
+:::tip
+
+- `events_statements_summary_by_digest`ビューは`performance_schema_digests_size`というデータベースパラメータ値(row数)に影響を受けます。 該当するパラメータ値が`-1`に設定された場合、自動サイズ調整(auto sizing)が行われます。 
+
+- 設定されたパラメータ値に基づいてデータを保存し、設定された容量を超えると、新しいデータは収集されなくなります。 
+
+- そのビューを`TRUNCATE`コマンドで初期化すると、既存に収集されたデータはすべて削除され、新しいデータが記録されます。
 
 :::
 
@@ -45,7 +59,14 @@ MySQLの`performance_schema`で提供するSQL統計データ(遂行回数、実
 
 :::note
 
-1時間毎に`events_statements_summary_by_digest`からデルタ値を計算して収集します。 そのため、設定してから1時間後から収集を開始します。
+データを収集する基準については、以下のDBXエージェントオプションを参照してください。 `performance_schema.events_statements_summary_by_digest`を照会し、次の合計値が'statements_min_row'より大きい場合に収集します。
+
+> `sum_rows_affected` + `sum_rows_sent` + `sum_rows_examined`
+
+```ini title="whatap.conf"
+# default 10000 row
+statements_min_row=10000
+```
 
 :::
 
@@ -101,7 +122,7 @@ import Dbproductsqlstatquerydetails from "../common-items/_db-product-sql-stat-q
 {/* 필터 조건추가하기*/}
 import Dbsqlfilter from "../common-items/_db-sql-filter.mdx";
 
-<Dbsqlfilter />
+<Dbsqlfilter level={2} />
 
 import Dbv2dataeditcolumn from "../common-items/_db-v2-data-edit-column.mdx";
 

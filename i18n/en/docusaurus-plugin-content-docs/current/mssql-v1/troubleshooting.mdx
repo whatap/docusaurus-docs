@@ -1,0 +1,46 @@
+---
+id: troubleshooting
+title: Troubleshooting
+description: You can check the problems that may occur during database agent installation.
+keywords:
+  - SQL Server
+  - DATABASE
+  - Troubleshooting
+  - Agent
+---
+
+Check for possible problems upon database agent installation.
+
+import Dbcheckfirewallsetting from "../common-items/_db-check-firewall-setting.mdx";
+
+<Dbcheckfirewallsetting />
+
+import Dbhowtocheckfirewal from "../common-items/_db-how-to-check-firewal.mdx";
+
+<Dbhowtocheckfirewal />
+
+## SSL authentication-related issues
+
+If you encounter the following SSL security issues when connecting to the database from agents, set the option not to use SSL authentication when connecting JDBC.
+
+```txt
+com.microsoft.sqlserver.jdbc.SQLServerException: The driver could not establish a secure connection to SQL Server by using Secure Sockets Layer (SSL) encryption.
+
+com.microsoft.sqlserver.jdbc.SQLServerException: "enctyp1" property is set to "true" and "trustServerCertificate" property is set to "false" but the driver could not establish a secure connection to SQL Server by ising Secure Sockets Layer (SSL) encryption
+```
+
+Set the following option in the agent configuration file (*whatap.conf*) to disable SSL authentication:
+
+```ini title="whatap.conf"
+connect_option=encrypt=true;trustServerCertificate=true
+```
+
+## Constraints
+
+import Dbmultiregioncantselectonepr from "../common-items/_db-multi-region-cant-select-one-pr.mdx";
+
+<Dbmultiregioncantselectonepr />
+
+import Dbcantuseduplicatedname from "../common-items/_db-cant-use-duplicated-name.mdx";
+
+<Dbcantuseduplicatedname />

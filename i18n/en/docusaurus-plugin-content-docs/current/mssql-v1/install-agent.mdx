@@ -1,0 +1,140 @@
+---
+id: install-agent
+title: Agent Installation
+description: The following guides you to the basic installation method for using the WhaTap database monitoring service.
+keywords:
+  - SQL Server
+  - DATABASE
+  - Agent
+---
+
+The following guides you to the basic installation method for using the WhaTap database monitoring service.
+
+import Agentsignupguide from "../common-items/_agent-signup-guide.mdx";
+
+<Agentsignupguide />
+
+<Youtube ko='e_UpCgapfQY' en='MIo3HRIOt8M' ja='MIo3HRIOt8M' />
+
+import Createprojectv2 from "../getting-started/_create-project-v2.mdx";
+
+<Createprojectv2 />
+
+import Accesskey from "../getting-started/_accesskey.mdx";
+
+<Accesskey />
+
+## Downloading the WhaTap database agent
+
+import Dbinstallagentsteps from "../common-items/_db-install-agent-steps.mdx";
+
+<Dbinstallagentsteps />
+
+3. Enter the unzipped folder and then check the *whatap.conf* file. In *whatap.conf*, enter the project access key, WhaTap server data, and DB connection data.
+
+   ```ini title='whatap.conf'
+   license=Project Access Key
+   whatap.server.host=13.124.11.223/13.209.172.35 // WhaTap Server Info
+
+   dbms=mssql
+   db=master
+   db_ip=Database IP
+   db_port=Database port 
+   ```
+
+   :::note
+
+   **In case the SQL Server and agents are installed in localhost** (**default 1433 port**)
+
+   ```ini title='whatap.conf'
+   dbms=mssql
+   db=master
+   db_ip=127.0.0.1
+   db_port=1433
+   ```
+
+   :::
+
+4. Download the JDBC driver to the following directory. */unzipped folder/jdbc*
+
+   Download the JDBC driver for the OS and version of your database server.
+
+   **MS SQL 2005 or later**
+
+   - [Microsoft JDBC Driver 6.4 for SQL Server](https://www.microsoft.com/en-us/download/details.aspx?id=56615)
+   - [Microsoft JDBC Driver 6.2 for SQL Server](https://www.microsoft.com/en-us/download/details.aspx?id=55539)
+
+:::note
+
+In */unzipped folder/jdbc/README.md*, you can also see the JDBC driver installation paths for each database.
+
+:::
+
+import Dbcreatemonitoringaccount from "../common-items/_db-create-monitoring-account.mdx";
+
+<Dbcreatemonitoringaccount />
+
+```bash showLineNumbers
+create login whatap with password='DB_PASSWORD'; ## Enter the desired password.
+grant view server state to whatap;
+create user whatap for login whatap;
+grant execute to whatap;
+EXEC sp_configure 'show advanced options', 1;
+RECONFIGURE;
+EXEC sp_configure 'Ole Automation Procedures', 1;
+RECONFIGURE;
+ 
+## In case the kill session is used - SQL Server
+grant alter any connection to whatap;
+
+## In case the kill session is used - Azure SQL Database
+grant kill database connection to whatap;
+```
+
+## DB user file creation {#create-db-user}
+
+import Dbcreatedbuserfile from "../common-items/_db-create-db-user-file.mdx";
+
+<Dbcreatedbuserfile />
+
+{/*## 에이전트 실행*/}
+import Dbrunagent from "../common-items/_db-run-agent.mdx";
+
+<Dbrunagent />
+
+{/*## XOS 에이전트 설치*/}
+{/* import Dbinstallxosagent from "../common-items/_db-install-xos-agent.mdx"; */}
+
+## Monitoring ASW CloudWatch resources
+
+Set the following options in the *whatap.conf* file on the agent server. Due to the nature of CloudWatch, it is recommended to call every 60 seconds (`cloud_watch_interval`).
+
+```ini title='whatap.conf'
+aws_region={AWS_RDS_Region_Name}
+aws_arn=arn:aws:iam::999999999999:role/UpdateApp
+cloud_watch=on
+cloud_watch_instance=RDS_DB_Instance_Name
+cloud_watch_interval=60
+cloud_watch_metrics=CPUUtilization,FreeableMemory,FreeStorageSpace,NetworkTransmitThroughput,NetworkReceiveThroughput
+```
+
+Execute the following command to view the AWS CloudWatch metrics. Change the `DB_Instance_Name` and then execute the following command.
+
+```bash
+aws cloudwatch list-metrics --namespace AWS/RDS --dimensions Name=DBInstanceIdentifier,Value={DB_Instance_Name}
+```
+
+:::note
+
+- In <Cmdname sid="side_agentInstall" className="uitext" />, enter values for <UI>AWS RDS Region</UI>, <UI>RDS DB Instance Name</UI>, and <UI>DB Instance Name</UI>. Then the agent options and commands are automatically generated.
+
+- For more information about the AWS CLI installation and update, see [the following link](https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/getting-started-install.html).
+
+- For more information about the AWS CLI configuration, see [the following link](https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-chap-configure.html).
+
+:::
+
+{/* ## 다음 단계 */}
+import NextStep from "../common-items/_db-next-step.mdx";
+
+<NextStep />

@@ -1,6 +1,49 @@
 [
   {
     "url": "https://docs.whatap.io/ja/release-notes/service/service-2_8_x",
+    "ver": "Service 2.8.5",
+    "date": "2024-09-12",
+    "Lists": [
+      {
+        "ver": "Service 2.8.5",
+        "hash": "service-285",
+        "product": "Kubernetes",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">アラート通知</span> &gt; <span class=\"uitext\">イベント設定</span>メニューでメトリックスイベントを追加する時に提供する<span class=\"uitext\">割当て不能ノードのアラート通知</span>テンプレートの誤字を修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/service/service-2_8_x",
+    "ver": "Service 2.8.4",
+    "date": "2024-09-03",
+    "Lists": [
+      {
+        "ver": "Service 2.8.4",
+        "hash": "service-284",
+        "product": "共通",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">アラート通知</span> &gt; <span class=\"uitext\">通知設定</span>メニューで3rdパーティプラグインで<b>Teams Workflow</b>を登録すると <b>Teams</b>に設定される問題を修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/service/service-2_8_x",
+    "ver": "Service 2.8.3",
+    "date": "2024-08-30",
+    "Lists": [
+      {
+        "ver": "Service 2.8.3",
+        "hash": "service-283",
+        "product": "Cloud",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">管理</span> &gt; <span class=\"uitext\">エージェントインストール</span>メニューでroleと認証の有効期限を入力した後、<span class=\"uitext\">確認</span>ボタンを選択すると発生するエラーを修正</p>",
+        "category": "Amazon CloudWatch"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/service/service-2_8_x",
     "ver": "Service 2.8.2",
     "date": "2024-08-29",
     "Lists": [
@@ -40,7 +83,7 @@
         "hash": "service-281",
         "product": "Database",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">統計/レポート</span> &gt; <span class=\"uitext\">SQL統計</span>メニューで、SQLテキストプレビューボックスのサイズを修正</p>"
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">統計/レポート</span> &gt; <span class=\"uitext\">SQL統計</span>メニューで、SQLテキストプレビューのサイズを修正</p>"
       }
     ]
   },
@@ -56,7 +99,7 @@
         "type": "New",
         "desc": "<p><code class=\"New\" type=\"1\">New</code> <span class=\"uitext\">分析</span> &gt; <span class=\"uitext\">メトリクスチャート</span> <code class=\"newfunc\">New</code>メニューを追加</p>",
         "category": "共通",
-        "details": "<ul>\n<li>\n<p>ユーザーが時間、対象、インターバルオプションを設定した後、モニタリングしようとする対象のメトリクスを特定し、チャートを追加できるようにユーザー経験(UX)を改善しました。</p>\n</li>\n<li>\n<p>ダッシュボードに配置されたウィジェットを削除することなく、チャートの照会時間の範囲を変更できます。</p>\n</li>\n<li>\n<p>ダッシュボードに配置されたすべてのウィジェットのオプションを一括で適用できる一括変更機能を提供します。</p>\n</li>\n<li>\n<p>プリセット機能により、ダッシュボードに配置されたウィジェットの情報を保存し、読み込みできます。</p>\n</li>\n<li>\n<p>提供する様々なオプションにより、ダッシュボードのレイアウトやウィジェットの機能を調整できます。</p>\n</li>\n</ul>"
+        "details": "<ul>\n<li>\n<p>ユーザーが時間、対象、インターバルオプションを設定した後、モニタリングする対象のメトリクスを特定し、チャートを追加できるようにユーザー経験(UX)を改善しました。</p>\n</li>\n<li>\n<p>ダッシュボードに配置されたウィジェットを削除することなく、チャートの照会時間の範囲を変更できます。</p>\n</li>\n<li>\n<p>ダッシュボードに配置されたすべてのウィジェットのオプションを一括で適用できる一括変更機能を提供します。</p>\n</li>\n<li>\n<p>プリセット機能により、ダッシュボードに配置されたウィジェットの情報を保存し、読み込みできます。</p>\n</li>\n<li>\n<p>提供する様々なオプションにより、ダッシュボードのレイアウトやウィジェットの機能を調整できます。</p>\n</li>\n</ul>"
       },
       {
         "ver": "Service 2.8.0",
@@ -135,7 +178,7 @@
         "hash": "service-280",
         "product": "共通",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">リーチテキスト</span>ウィジェットの修正画面の開閉過程で保存していない内容が維持される問題を修正</p>",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">リーチテキスト</span>ウィジェットの修正画面の開け閉てする際に保存しなかった内容が維持される問題を修正</p>",
         "category": "統合Flexボード / Flexボード"
       },
       {
@@ -250,14 +293,14 @@
         "type": "Feature",
         "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code>次のメニューパスで、メンバー一覧をCSV形式のファイルにダウンロードできる機能を追加</p>",
         "category": "管理",
-        "details": "<ul>\n<li>\n<p>ホーム画面&gt; プロジェクト選択&gt; <span class=\"uitext\">管理</span> &gt; <span class=\"uitext\">プロジェクトメンバー</span>：<a href=\"/project/project-manage#downlaodmemberlist\">文書参照</a></p>\n</li>\n<li>\n<p>ホーム画面&gt; <span class=\"uitext\">管理</span> &gt; <span class=\"uitext\">統合メンバー</span>：<a href=\"/project/integrated-manage#downlaodmemberlist\">文書参照</a></p>\n</li>\n<li>\n<p>ホーム画面&gt; <span class=\"uitext\">組織管理</span> &gt; <span class=\"uitext\">メンバーリスト</span>：<a href=\"/project/organization#downlaodmemberlist\">文書参照</a></p>\n</li>\n</ul>"
+        "details": "<ul>\n<li>\n<p>ホーム画面&gt; プロジェクト選択&gt; <span class=\"uitext\">管理</span> &gt; <span class=\"uitext\">プロジェクトメンバー</span>：<a href=\"/ja/project/project-manage#downlaodmemberlist\">文書参照</a></p>\n</li>\n<li>\n<p>ホーム画面&gt; <span class=\"uitext\">管理</span> &gt; <span class=\"uitext\">統合メンバー</span>：<a href=\"/ja/project/integrated-manage#downlaodmemberlist\">文書参照</a></p>\n</li>\n<li>\n<p>ホーム画面&gt; <span class=\"uitext\">組織管理</span> &gt; <span class=\"uitext\">メンバーリスト</span>：<a href=\"/ja/project/organization#downlaodmemberlist\">文書参照</a></p>\n</li>\n</ul>"
       },
       {
         "ver": "Service 2.8.0",
         "hash": "service-280",
         "product": "共通",
         "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> <span class=\"uitext\">管理</span> &gt; <span class=\"uitext\">エージェントインストール</span>メニューでアクセスキーに関する注意書きを削除</p>",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> <span class=\"uitext\">管理</span> &gt; <span class=\"uitext\">エージェントインストール</span>メニューでアクセスキーに関する注意メッセージを削除</p>",
         "category": "管理"
       },
       {
@@ -457,7 +500,7 @@
         "hash": "service-280",
         "product": "Server",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">管理</span> &gt; <span class=\"uitext\">エージェントインストール</span>メニューのDebian、Ubuntuオペレーティング システムのインストールガイドに含まれているダウンロード リンクを<strong>http</strong>から<strong>https</strong>に変更</p>"
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">管理</span> &gt; <span class=\"uitext\">エージェントインストール</span>メニューのDebian、Ubuntuのインストールガイドに含まれているダウンロード リンクを<strong>http</strong>から<strong>https</strong>に変更</p>"
       },
       {
         "ver": "Service 2.8.0",
@@ -560,7 +603,7 @@
         "hash": "service-280",
         "product": "Database",
         "type": "Feature",
-        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> <span class=\"uitext\">ダッシューボード</span> &gt; <span class=\"uitext\">マルチインスタンス</span>メニューに、現在進行中のvacuumプロセス数が確認できる<span class=\"uitext\">Vacuum Sessions</span>ウィジェットを追加</p>",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> <span class=\"uitext\">ダッシューボード</span> &gt; <span class=\"uitext\">マルチインスタンス</span>メニューに、進行中のvacuumプロセス数が確認できる<span class=\"uitext\">Vacuum Sessions</span>ウィジェットを追加</p>",
         "category": "PostgreSQL"
       },
       {
@@ -584,7 +627,7 @@
         "hash": "service-280",
         "product": "Database",
         "type": "Feature",
-        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> <span class=\"uitext\">SQL詳細</span>画面の<span class=\"uitext\">Runtime Plan</span>、<span class=\"uitext\">Explain Plan</span>テーブルに<span class=\"uitext\">FILTER_PREDICATES</span>カラムを追加</p>",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> <span class=\"uitext\">SQL詳細</span>ポップアップの<span class=\"uitext\">Runtime Plan</span>、<span class=\"uitext\">Explain Plan</span>テーブルに<span class=\"uitext\">FILTER_PREDICATES</span>カラムを追加</p>",
         "category": "Oracle V2、Oracle Pro"
       },
       {
@@ -600,7 +643,7 @@
         "hash": "service-280",
         "product": "Database",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">統計/レポート</span> &gt; <span class=\"uitext\">SQL統計</span>メニューで<span class=\"uitext\">SQL詳細</span>画面に進入時、<span class=\"uitext\">OBJECT_NAME</span>カラムのリンクが活性化されない問題を修正</p>",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">統計/レポート</span> &gt; <span class=\"uitext\">SQL統計</span>メニューで<span class=\"uitext\">SQL詳細</span>ポップアップを表示する際に、<span class=\"uitext\">OBJECT_NAME</span>カラムのリンクが活性化されない問題を修正</p>",
         "category": "Oracle V2、Oracle Pro"
       },
       {
@@ -658,7 +701,7 @@
       {
         "ver": "Service 2.8.0",
         "hash": "service-280",
-        "product": "ネットワーク",
+        "product": "Network",
         "type": "Changed",
         "desc": "<p><code class=\"Changed\" type=\"0\">Changed</code>ユーザー言語が英語の場合、<span class=\"uitext\">管理</span> &gt; <span class=\"uitext\">エージェントインストール</span>メニューの<span class=\"uitext\">インストール前の注意事項</span>セクションで<b>Version</b>を<span class=\"uitext\">Kernel Version</span>に修正</p>"
       },

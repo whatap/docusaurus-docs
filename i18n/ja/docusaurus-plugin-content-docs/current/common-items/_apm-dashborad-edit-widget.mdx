@@ -8,7 +8,7 @@
 <ImgLang img='apm-dashboard-widget-resize.png' desc='ウィジェットのサイズ変更' />
 </InDoc>
 
-<InDoc product="postgresql,mysql,redis,mongodb,oracle-pro,oracle,altibase,cubrid">
+<InDoc product="postgresql,mysql,redis,mongodb,oracle-pro,oracle,altibase,cubrid,mssql">
 
 ![ウィジェットのサイズ変更](/img/db-dashboard-widget-resize.png)
 
@@ -22,7 +22,7 @@
 <ImgLang img='apm-dashboard-widget-move.png' desc='ウィジェットを移動する' />
 </InDoc>
 
-<InDoc product="postgresql,mysql,redis,mongodb,oracle-pro,oracle,altibase,cubrid">
+<InDoc product="postgresql,mysql,redis,mongodb,oracle-pro,oracle,altibase,cubrid,mssql">
 
 ![ウィジェットの移動](/img/db-dashboard-widget-move.png)
 
@@ -36,7 +36,7 @@
 <ImgLang img='apm-dashboard-widget-remove.png' desc='ウィジェットを削除する' />
 </InDoc>
 
-<InDoc product="postgresql,mysql,redis,mongodb,oracle-pro,oracle,altibase,cubrid">
+<InDoc product="postgresql,mysql,redis,mongodb,oracle-pro,oracle,altibase,cubrid,mssql">
 
 <ImgLang img='db-dashboard-widget-remove.png' desc='ウィジェット削除' />
 
@@ -48,9 +48,11 @@
 
 <InDoc product="java,php,python,nodejs,dotent,golang"><ImgLang img='apm-dashboard-widget-add.png' desc='ウィジェットを追加する' /></InDoc>
 
-<InDoc product="postgresql,mysql,redis,mongodb,oracle-pro,oracle,altibase,cubrid"><ImgLang img="db-dashboard-widget-add.png" desc="ウィジェットを追加する" /></InDoc>
+<InDoc product="postgresql,mysql,redis,mongodb,oracle-pro,oracle,altibase,cubrid,mssql"><ImgLang img="db-dashboard-widget-add.png" desc="ウィジェットを追加する" /></InDoc>
 
 ダッシュボードから空白エリアにマウスカーソルを移動し、マウスの右ボタンをクリックします。 ポップアップメニューから追加するウィジェットを選択します。 希望する場所にウィジェットを配置してサイズを変更します。
+
+<InDoc pages="dashboard">
 
 :::note
 
@@ -58,4 +60,20 @@
 
 - 現在追加できるウィジェットは固定されていますが、今後のアップデートでウィジェットサポートを追加していく計画です。
 
+- ダッシュボードで基本的に提供されるメトリクスの他に、ユーザーが希望するメトリクスを追加できます。 ユーザー定義ウィジェットの詳細については、[次の文書](#customwidget)を参照してください。
+
 :::
+
+</InDoc>
+
+<InDoc pages="multi-instance-monitoring">
+
+:::note
+
+- ダッシュボードに配置できるウィジェットの詳細については、[次の文書](#about-widget)を参考にしてください。
+
+- ダッシュボードで基本的に提供されるメトリクスの他に、ユーザーが希望するメトリクスを追加できます。 ユーザー定義ウィジェットの詳細については、[次の文書](#customwidget)を参照してください。
+
+:::
+
+</InDoc>

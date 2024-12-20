@@ -1,0 +1,102 @@
+---
+id: procedure-stat
+title: Procedure statistics
+description: It provides performance-related information about stored procedures registered in the SQL Server.
+keywords:
+  - SQL Server
+  - Statistic
+  - Procedure statistics
+---
+
+Home &gt; Select Project &gt; <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbProcedureStat" className="uitext" />
+
+It provides performance-related information such as number of executions, total execution time, logical/physical reads and writes for stored procedures registered in the SQL Server. This allows you to monitor the usage and performance for stored procedures and identify them for optimization.
+
+- You can analyze the number of executions and total execution time to identify which procedures are having the most usage.
+
+- I/O performance bottlenecks are detected and optimization targets are identified through logical/physical data for read operations.
+
+- You can identify resource-intensive queries by checking the execution data of queries inside the procedure.
+
+- You can identify inefficient queries by comparing total execution time and CPU usage time.
+
+:::note
+
+**Stored procedures** are a set of pre-written SQL commands to perform specific tasks in the SQL Server. They are reusable and parameterized dynamic operations can be performed. It is beneficial for code management and performance enhancement. For more information, see the [following link](https://learn.microsoft.com/sql/relational-databases/stored-procedures/stored-procedures-database-engine?view=sql-server-ver16).
+
+:::
+
+## Basic usage guide
+
+1. Select the time and date to view data in <Cmdname sid="time" className="uitext" />.
+
+2. Select a target to view data in <Cmdname sid="instance" className="uitext" />.
+
+3. Select ![Search icon](/img/ico-btn-search.png).
+
+4. Check the searched results in the <UI>Procedure Statistics</UI> section and then select the <UI>definition</UI> column.
+
+   <ImgLang img="db-procedure-stat-mssql.png" desc="Procedure statistics" className="width-800" />
+
+5. Individual query execution information for the selected procedures appears in the <UI>Query Statistics</UI> section.
+
+:::note
+
+- You can set the <Cmdname sid="TTL07772" className="uitext" /> or <Cmdname sid="TTL07773" className="uitext" /> option to display the desired results.
+
+- When you select ![Detail icon](/img/ico-detail-view.svg) in the list of the <UI>Procedure Statistic</UI> section, the <UI>Procedure Detail</UI> window appears, where you can see detailed information about the procedure. For more information, see [the following](#procedurestat).
+
+- When you hover the mouse over the <UI>defintion</UI> column, the SQL definition code can be previewed.
+
+:::
+
+## Screen guide by section
+
+- <UI>Procedure Statistics</UI>
+
+  This area displays key statistical information for each procedure, providing overall performance data for procedures, such as number of executions and total execution time. You can identify procedures that have long execution times or many logical/physical reads.
+
+- <UI>Query Statistics</UI>
+
+  In the <UI>Procedure Statistics</UI> section, when you select the <UI>definition</UI> column of a specific procedure, individual query execution information for the procedure appears. You can analyze query statistics to identify queries that are being executed repeatedly.
+
+  <ImgLang img="db-procedure-stat-mssql.png" desc="Procedure statistics" />
+
+  If the <UI>query</UI> column is selected, the <Cmdname sid="TTL06224" className="uitext" /> window appears.
+
+  <ImgLang img="db-sql-details-mssql.png" desc="SQL detail" />
+
+:::note
+
+For more information about the <Cmdname sid="TTL06224" className="uitext" /> window, see [the following](stat#querydetails).
+
+:::
+
+## Checking the procedure information details {#procedurestat}
+
+When you select ![Detail icon](/img/ico-detail-view.svg) in the list of the <UI>Procedure Statistic</UI> section, the <UI>Procedure Detail</UI> window appears, where you can see detailed information about the procedure.
+
+<ImgLang img="db-procedure-stat-details-mssql.png" desc="Procedure Detail" />
+
+- ***Procedure Info***
+
+  You can see information details on the procedure execution performance data such as physical/logical reads, writes, execution count, and maximum/minimum execution times. 
+
+- ***Procedure Definition***
+
+  The SQL definition code of the procedure can be seen.
+
+{/* 필터 조건추가하기*/}
+import Dbsqlfilter from "../common-items/_db-sql-filter.mdx";
+
+<Dbsqlfilter level={2} />
+
+## Downloading the viewed result
+
+You can download the search results for each section in CSV file format. Click ![csv icon](/img/ico-download.svg) on the upper right of the screen and then select <UI>Procedure Statistics</UI> or <UI>Query Statistics</UI>.
+
+The name format of the downloaded CSV file is as follows:
+
+- <UI>Procedure Statistics</UI>: *Procedure\_Statistics\_`YYYYMMDD_HHMMSS`.csv*
+
+- <UI>Query Statistics</UI>: *Query\_Statistics\_`YYYYMMDD_HHMMSS`.csv*

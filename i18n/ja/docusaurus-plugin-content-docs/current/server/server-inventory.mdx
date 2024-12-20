@@ -1,14 +1,16 @@
 ---
 id: server-inventory
-title: サーバー情報
-description: サーバーの構成情報メニューをご案内します。
+title: サーバーインベントリ
+description: サーバーインベントリメニューをご案内します。
 keywords:
-  - サーバー詳細
-  - サーバー情報
+  - サーバーリスト
+  - サーバーインベントリ
   - 分析する
   - UI
   - Server
 ---
+
+{/* 11월에 서버 구성 정보 -> 서버 인벤토리 변경 예정 현재 로케일 미 업데이트라 관련 텍스트만 일부 수정 */}
 
 ホーム画面 &gt; プロジェクト選択 &gt; <Cmdname sid="side_serverList" className="uitext" /> &gt; <Cmdname sid="side_serverInventory" className="uitext" />
 
@@ -114,7 +116,7 @@ WhaTapモニタリングサービスの初期画面でプロジェクトを選�
    - **Linux**
 
      <Tabs>
-     <TabItem value="linux-opt" label="オプション追加命令" default>
+     <TabItem value="linux-opt" label="オプション追加コマンド" default>
 
      ```bash
      grep -q '^hostinfov2.enabled' /usr/whatap/infra/conf/whatap.conf || echo 'hostinfov2.enabled=true' | sudo tee -a /usr/whatap/infra/conf/whatap.conf
@@ -133,7 +135,7 @@ WhaTapモニタリングサービスの初期画面でプロジェクトを選�
    - **Unix** 
 
      <Tabs>
-     <TabItem value="unix-opt" label="オプション追加命令" default>
+     <TabItem value="unix-opt" label="オプション追加コマンド" default>
 
      ```bash title='AIX/Oracle Solaris'
      grep -q '^hostinfov2.enabled' /usr/whatap/infra/conf/whatap.conf || echo 'hostinfov2.enabled=true' | tee -a /usr/whatap/infra/conf/whatap.conf
@@ -157,10 +159,10 @@ WhaTapモニタリングサービスの初期画面でプロジェクトを選�
    - **Windows**
 
      <Tabs>
-     <TabItem value="windows-opt" label="オプション追加命令" default>
+     <TabItem value="windows-opt" label="オプション追加コマンド" default>
 
      ```bash
-     if (-not (Select-String -Path "C:\\Program Files\\WhatapInfra\\whatap.conf" -Pattern "^hostinfov2.enabled" -Quiet)) { Add-Content -Path "C:\\Program Files\\WhatapInfra\\whatap.conf" -Value "hostinfov2.enabled=true" }
+     if (-not (Select-String -Path "C:\Program Files\WhatapInfra\whatap.conf" -Pattern "^hostinfov2.enabled" -Quiet)) { Add-Content -Path "C:\Program Files\WhatapInfra\whatap.conf" -Value "hostinfov2.enabled=true" }
      ```
 
      </TabItem>
@@ -179,11 +181,11 @@ WhaTapモニタリングサービスの初期画面でプロジェクトを選�
 
 <Cmdname sid="side_serverInventory" className="uitext" />メニューは、サーバーの主な構成情報を一覧形式で提供します。 自動的に収集したサーバーの運用および管理に必要な必須情報とユーザー定義項目をともに管理できます。 これにより、サーバー管理者はより体系的かつ効率的にインフラをモニタリングするとともに、運用できます。 フィルターとソート機能を活用して、必要な情報を簡単に検索してみてください。
 
-<ImgLang img='server-inventory.png' desc='サーバー情報' />
+<ImgLang img='server-inventory.png' desc='サーバー インベントリ' />
 
 {/* 
 
-<Cmdname sid="side_serverInventory" className="uitext" />メニューでサーバー構成データを自動的に収集して管理できます。 また、サーバー構成項目をユーザーが定義して追加または修正できます。 これにより、サーバーの運営および管理に必要な重要なデータを一目で把握し、追加の構成管理項目を通じてサーバー管理の効率性を向上させることができます。
+<Cmdname sid="side_serverInventory" className="uitext" />メニューでサーバー構成データを自動的に収集して管理できます。 また、サーバー構成項目をユーザーが定義して追加または修正できます。 これにより、サーバーの運営および管理に必要な重要なデータを一目で把握し、追加の構成管理項目を通じてサーバー管理の効率性を向上できます。
 
 メニューは、サーバーのハードウェアおよびソフトウェアの主な構成情報を一覧形式で提供します。 <Cmdname sid="side_serverInventory" className="uitext" />メニューでサーバーの運用と管理に必要な必須情報の自動収集とともに、カスタム項目による拡張性を提供します。 これにより、サーバー管理者はより体系的かつ効率的にインフラをモニタリングするとともに、管理できます。 フィルターとソート機能を活用して、必要な情報を簡単に検索してみてください。 
 
@@ -191,7 +193,7 @@ WhaTapモニタリングサービスの初期画面でプロジェクトを選�
 
 {/* 이를 통해 다음 예시와 같은 구성 관리가 가능합니다. 
 
-- オペレーション担当者およびサポートベンダー情報
+- システム運用担当者およびサポートベンダー情報
 
 - サーバーの導入日およびその他の管理項目
 
@@ -203,7 +205,7 @@ WhaTapモニタリングサービスの初期画面でプロジェクトを選�
 
 > 例、<code class='filter'>サーバー名</code><code class='filter center'>==</code><code class='filter'>server04</code>
 
-フィルター入力後、 <Cmdname sid="BTN06223" className="uitext" /> ボタンをクリックすると![指示線2](/img/number-02.png)サーバー構成情報一覧領域でフィルタリングされた一覧を照会できます。 
+フィルター入力後<Cmdname sid="BTN06223" className="uitext" />ボタンをクリックすると、![指示線2](/img/number-02.png)サーバー インベントリ一覧領域でフィルタリングされた一覧を照会できます。 
 
 {/* 컬럼 조건 특정 후 조회 선택해야 적용 */}
 
@@ -234,7 +236,7 @@ WhaTapモニタリングサービスの初期画面でプロジェクトを選�
 
 ![指示線2](/img/number-02.png)領域上段の![カラムアイコン](/img/ic-column.svg)<Cmdname sid="column_settings" className="uitext" />ボタンをクリックします。 次のようにカラムを選択してカスタムカラムを追加した後、下にある<Cmdname sid="BTN06053" className="uitext" />ボタンをクリックしてカラムの設定を保存します。 
 
-<ImgLang img='server-inventory-cl.png' desc='サーバー情報カラム設定' />
+<ImgLang img='server-inventory-cl.png' desc='サーバー インベントリカラム設定' />
 
 - **カラム選択** 
 
@@ -252,11 +254,11 @@ WhaTapモニタリングサービスの初期画面でプロジェクトを選�
 
 ### CSVダウンロード
 
-![指示線2](/img/number-02.png)領域の上段にある![ダウンロードアイコン](/img/ico-download.svg)<Cmdname sid="download" className="uitext" />ボタンを選択して、収集されたサーバーの構成情報を*CSV*ファイル形式でダウンロードできます。 
+![指示線2](/img/number-02.png)領域上段の![ダウンロードアイコン](/img/ico-download.svg) <Cmdname sid="download" className="uitext" />ボタンを選択して、収集されたサーバーインベントリを*CSV*ファイル形式でダウンロードできます。 
 
 ### 修正
 
-![指示線2](/img/number-02.png)領域の上段にある![修正アイコン](/img/ic-edit.svg)<Cmdname sid="edit" className="uitext" />ボタンを選択して、サーバー構成情報の一覧を修正できます。 
+![指示線2](/img/number-02.png)領域上段の![修正アイコン](/img/ic-edit.svg) <Cmdname sid="edit" className="uitext" />ボタンを選択して、サーバーインベントリの一覧を修正できます。 
 
 - <Cmdname sid="TTL08183" className="uitext" />と<Cmdname sid="TTL08184" className="uitext" />カラムの内容を設定できます。
 

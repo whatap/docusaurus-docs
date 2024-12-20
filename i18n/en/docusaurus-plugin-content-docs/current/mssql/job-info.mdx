@@ -1,0 +1,105 @@
+---
+id: job-info
+title: Job Information
+description: The following provides information about jobs executed by SQL Server.
+keywords:
+  - SQL Server
+  - Job Information
+---
+
+Home &gt; Select Project &gt; <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbJobInfo" className="uitext" />
+
+The following provides information about jobs executed by SQL Server. The <UI>Job</UI> section at the top of the screen displays the entire job list and related information, while the <UI>Job History</UI> section at the bottom provides the detailed execution history of the job selected at the top. This allows you to manage the jobs and monitor their execution status.
+
+<ImgLang img="db-job-info-mssql.png" desc="Job Information" />
+
+- If a job fails, analyze the failed step and message to resolve the issue. For example, you can identify the database connection problems or script errors.
+
+- You can analyze the `run_duration` to optimize the steps with long execution times or consider parallel execution.
+
+- You can check inactive jobs and activate them if necessary or delete unnecessary jobs to improve the management efficiency.
+
+:::note
+
+- A **Job** is a unit of work managed by **SQL Server Agent** and it is a process that is configured to automatically perform specific tasks (e.g. database backup, data cleanup, query execution). **Job** is useful for automating tasks that need to be performed repeatedly or at regular intervals. For more information, see the [following link](https://learn.microsoft.com/sql/ssms/agent/create-a-job?view=sql-server-ver16).
+
+- Jobs are supported in SQL Server 2016 or later, and are not supported in the Express version.
+
+:::
+
+## Basic usage guide
+
+1. Select a target to query from the <Cmdname sid="instance" className="uitext" /> options at the top of the screen. 
+
+2. In the <UI>Job</UI> section, select an item to view from the job list.
+
+3. The <UI>Job History</UI> section displays the execution history of the selected Job.
+
+:::note
+
+If there is no item to view in the job list, select ![Refresh icon](/img/ico-refresh.png).
+
+:::
+
+## Screen guide by section
+
+### Job
+
+It provides basic information of the job registered in SQL Server. You can check the job's creation/modification time, execution status, and notification settings. For more information about the provided columns, see the following:
+
+- ***job_id***: Unique identifier (UUID) of the job.
+
+- ***job_name***: Name of the job.
+
+- ***enabled***: Whether the job is enabled or not. If enabled, it displays <UI>yes</UI>. Otherwise, it displays <UI>no</UI>.
+
+- ***description***: Description of the job. If there is no description, it displays <UI>No description available</UI>.
+
+- ***date_created***: Job created date and time.
+
+- ***date_modified***: Date and time when the job was last modified.
+
+- ***notify_level_eventlog***: It is the level of event log notification setting based on the job execution result.
+
+- ***notify_level_email***: It is the level of email notification setting based on the job execution result.
+
+:::note
+
+You can search up to 50 jobs.
+
+:::
+
+### Job History
+
+You can check the execution record details of the selected job in the <UI>Job</UI> section. It contains the execution results, messages, execution times, and durations for each step of the job. For more information about the provided columns, see the following:
+
+- ***step_id***: Unique identifier for the step executed in the job.
+
+- ***step_name***: Name of the executed step.
+
+- ***run_status***: It is the step execution result.
+
+- ***messages***: Messages occurred during the step execution. It includes detailed information about success or error.
+
+- ***run_date***: Step execution date.
+
+- ***run_duration***: Time (hhmmss) when the step was last executed.
+
+- ***last_run_retries***: Number of retry attempts on the last execution of the step.
+
+- ***last_run_outcome***: Previous execution result of the step.
+
+{/* 필터 조건추가하기*/}
+import Dbsqlfilter from "../common-items/_db-sql-filter.mdx";
+
+<Dbsqlfilter level={2} />
+
+## Downloading the viewed result
+
+You can download the search results for each section in CSV file format. Click ![csv icon](/img/ic-csv-download-ms.svg) at the top of the screen and then select <UI>Job Info</UI> or <UI>Job History</UI>.
+
+The name format of the downloaded CSV file is as follows:
+
+- <UI>Job Info</UI>: *job\_info\_`YYYY-MM-DD_HH-MM-SS`.csv*
+
+- <UI>Job History</UI>: *job\_history\_`YYYY-MM-DD_HH-MM-SS`.csv*

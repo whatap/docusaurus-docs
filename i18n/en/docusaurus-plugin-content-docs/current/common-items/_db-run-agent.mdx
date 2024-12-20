@@ -2,7 +2,7 @@
 
 Execute a shell script (or batch file) from the path where you have installed the agent.
 
-<Xclude product='oracle-pro'>
+<Xclude product='oracle-pro,mssql'>
 
 <Tabs groupId='os'>
 
@@ -59,5 +59,60 @@ To use it like a daemon, execute the following command. However, it works only i
 ```bash
 ./startd.sh
 ```
+
+</InDoc>
+
+<InDoc product="mssql">
+
+<Tabs groupId='os'>
+<TabItem value="windows" label="Windows">
+
+```bash
+start.bat
+```
+
+Check whether there are any errors in the execution log displayed on the screen, and check whether a chart appears normally on the dashboard screen (<Cmdname sid="side_instanceList" className="uitext" />). If there is no problem, press Ctrl+C to terminate the execution, and then register it as a Windows service in the following order.
+
+### Registering a service
+
+Execute the following command to register a service.
+
+```bash
+install_WindowsService.bat create WhatapDBXAgent
+```
+
+When a service is registered, you can check it in the service management tools as shown below. Find the service, right-click it, and then select the Start option to start the service.
+
+![Register a service](/img/mssql-register-windows-service.png)
+
+:::note
+
+In **Control Panel** > **Windows Tools** > **Services** (services.msc), you can start or stop the **WhatapDBXAgent** service. Depending on the Windows version, the **service** path may differ.
+
+:::
+
+### Deleting a service
+
+Execute the following command to delete a service.
+
+```bash
+install_WindowsService.bat delete WhatapDBXAgent
+```
+
+</TabItem>
+<TabItem value="linux" label="Linux" default>
+
+```bash
+./start.sh
+```
+
+To use it like a daemon, execute the following command. However, it works only in the environment where **nohup** has been installed.
+
+```bash
+./startd.sh
+```
+
+</TabItem>
+</Tabs>
 
 </InDoc>

@@ -1,0 +1,13 @@
+:::note 
+
+**Multi-port monitoring**<ScrollToLink anchor='tcp-port-multi' />
+
+To monitor multiple ports, additional configuration is required in the *whatap.conf* file. See the following example:
+
+```ini title='whatap.conf'
+# port 8080, port 80 
+tcp.check.8080=tcp://127.0.0.1:8080
+tcp.check.80=tcp://127.0.0.1:80
+```
+
+:::

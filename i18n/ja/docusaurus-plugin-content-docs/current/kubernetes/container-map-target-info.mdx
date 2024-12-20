@@ -8,48 +8,54 @@ keywords:
   - 対象情報
 ---
 
-ホーム画面 &gt; プロジェクト選択 &gt; <Cmdname sid="dashboard" className="uitext" /> &gt; <Cmdname sid="containerMap" className="uitext" /> &gt; 対象選択後<Cmdname sid="BTN07712" className="uitext" />画面へアクセス>左<b>対象情報一覧</b>確認
+ホーム画面 &gt; プロジェクト選択 &gt; <Cmdname sid="dashboard" className="uitext" /> &gt; <Cmdname sid="containerMap" className="uitext" /> &gt; 対象選択後<Cmdname sid="BTN07712" className="uitext" />画面へアクセス > 左の<b>対象情報</b>を確認
 
 <ImgLang img='k8s-container-detail.png' desc='詳細分析画面' />
 
-コンテナビューまたはPodビューでブロックは、各コンテナまたはPodを意味します。 ![number 1](/img/number-01.png) **要約情報カード**内で対象追加選択時![指示線2](/img/number-02.png) **対象情報**と![number 3](/img/number-03.png)領域内のそれぞれの詳細タブを通じて、選択した対象に関する情報を確認できます。 
+コンテナビューまたはPodビューでブロックは、各コンテナまたはPodを意味します。 ![number 1](/img/number-01.png) **要約情報カード**で対象を追加で選択すると、![指示線2](/img/number-02.png) **対象情報一覧**と![number 3](/img/number-03.png)領域の各情報タブから、選択した対象に関する情報を確認できます。 
 
 :::note 
 
-![指示線2](/img/number-02.png) **対象情報一覧**上段の***選択項目を見る***チェックボックスを選択すると、次のように選択されたコンテナまたはPodのみ表示されます。 
+![指示線2](/img/number-02.png) **対象情報一覧**の上段にある***選択のみ表示***チェックボックスを選択すると、次のように選択されたコンテナまたはPodのみ表示されます。 
 
 <ImgLang img='k8s-container-detail-list-selected.png' desc='選択のみ表示' />
 
 :::
 
-ブロック選択後<Cmdname sid="BTN07712" className="uitext" />内の![指示線2](/img/number-02.png) **対象情報一覧**を通じて、![指示線a](/img/char-a.svg)以下のように選択したコンテナまたはPodが実行中のノード、所属するネームスペース、およびオブジェクトマニフェストなどの詳細な対象情報を確認したり、一覧メニューに移動できます。 
+ブロック選択後、<Cmdname sid="BTN07712" className="uitext" />画面の![指示線2](/img/number-02.png) **対象情報一覧**から、![指示線a](/img/char-a.svg)のように項目を開くと選択されたコンテナまたはPodの実行中のノード、所属されたネームスペース、Object Manifestなどの詳細な情報を確認したり、一覧メニューに移動できます。 
 
 import TargetInfo from "../common-items/_import_k8s-container-map-target-resource-info.mdx";
 
 <TargetInfo />
 
-### コンテナ要約分析とPod要約分析{#kube-resource-summary-analysis}
+### クバネティス状態の要約分析{#kube-summary-analysis}
 
-<Cmdname sid="TTL08230" className="uitext" />と<Cmdname sid="TTL08317" className="uitext" type="kube_pod"/>はKubernetes環境で各コンテナとPodの性能とリソースに対する分析報告書を提供します。 クラスターとネームスペースのコンテナおよびPodのリソース割り当ておよび使用状況をリアルタイムでモニタリングし、レポート内の提案を参考にして効果的に対応できます。
+クバネティス環境における各コンテナ、Pod、ノードのパフォーマンスとリソースに関する要約分析レポートを提供します。 クラスターとネームスペースのコンテナ、Pod、ノードのリソース割り当てと使用状況をリアルタイムでモニタリングし、レポート内の提案を参考にして効果的に対応できます。 
 
 :::note 
 
-現在、各要約分析機能は韓国語のみで提供しています。 
+現在、要約分析機能は韓国語でのみ提供しています。 
 
 :::
 
 #### コンテナ要約分析{#container-summary-analysis}
 
-- 基本情報: コンテナの起動時間、再起動回数、属するPodおよびネームスペース情報を提供します。
+- 基本情報: コンテナの起動時間、再起動回数、Podおよびネームスペース情報を提供します。
 
-- コンテナイメージ: 現在使用中のコンテナイメージと同じ画像を使用している他のコンテナの数およびリソース全体の使用量を確認できます。
+- コンテナイメージ: 使用中のコンテナイメージと同じイメージを使用している他のコンテナの数およびリソース全体の使用量を確認できます。
 
 - ノード情報: コンテナが実行されるノードのOS、IPアドレス、CPUコア数、メモリサイズなどのハードウェア情報を提供します。
 
-- リソース使用状況: コンテナのCPUとメモリリソースの使用量、設定された限度(Limit) およびリクエスト(Request) 値と比較した使用率を提供します。
+- リソース使用状況: コンテナのCPUとメモリリソースの使用量、設定された限度(Limit)および要請(Request)の数と比較した使用率を提供します。
 
 #### Pod要約分析 {#pod-summary-analysis}
 
 import PodSummary from "../common-items/_import_k8s-pod-summary-analysis.mdx";
 
 <PodSummary />
+
+#### Nodeの要約分析{#node-summary-analysis}
+
+import NodeSummary from "../common-items/_import_k8s-node-summary.mdx";
+
+<NodeSummary />

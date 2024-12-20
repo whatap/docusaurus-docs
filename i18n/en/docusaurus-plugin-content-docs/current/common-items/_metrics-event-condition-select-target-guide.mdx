@@ -40,21 +40,21 @@ For the event generation conditions and selection of event targets on metrics al
   id == '123' or oid == "123"
   ```
 
-### Available operators
+### List of available operators {#operatortype}
 
-|   Operator      | Usage                           | Description                                                                                                           |
-| :-------------: | ------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-|    \=\=         | operand1\=\= operand2           | It checks whether operand1 is equal to operand2.                                                                      |
-|    !\=          | operand1 !\= operand2           | It checks whether operand1 and operand2 have different values.                                                        |
-| <span>\></span> | operand1 &gt; operand2          | Check whether the operand1 value is greater than the operand2 value.                                                  |
-|    \>\=         | operand1 \>\= operand2          | Checks whether the operand1 value is greater than or equal to the operand2 value.                                     |
-|     \<          | operand1 \< operand2            | Check whether the operand1 value is less than the operand2 value.                                                     |
-|    \<\=         | operand1 \<\= operand2          | Check whether the operand1 value is less than or equal to the operand2 value.                                         |
-|    like         | operand1 like operand2          | Search with patterns whether operand1 includes operand2.                                                              |
-|    \&\&         | expression1 \&\& expression2    | Check whether expression1 and expression2 are all `true`.                                                             |
-|    and          | expression1 and expression2     | Check whether expression1 and expression2 are all `true`.<br/>The operator plays the same role as **&&**.             |
-|    \|\|         | expression1 \|\| expression2    | Check whether expression1 and expression2 are all `true`.                                                             |
-|     or          | expression1 or expression2      | Check whether expression1 and expression2 are all `true`.<br/>The operator plays the same role as **\|\|**.           |
+|   Operator        | Usage                                     | Description                                                                                                                     |
+| :---------------: | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+|    `==`           | operand1 `==` operand2                    | It checks whether operand1 is equal to operand2.                                                                                |
+|    `!=`           | operand1 `!=` operand2                    | It checks whether operand1 and operand2 have different values.                                                                  |
+|     `>`           | operand1 `>` operand2                     | Check whether the operand1 value is greater than the operand2 value.                                                            |
+|    `>=`           | operand1 `>=` operand2                    | Checks whether the operand1 value is greater than or equal to the operand2 value.                                               |
+|     `<`           | operand1 `<` operand2                     | Check whether the operand1 value is less than the operand2 value.                                                               |
+|    `<=`           | operand1 `<=` operand2                    | Check whether the operand1 value is less than or equal to the operand2 value.                                                   |
+|    `like`         | operand1 `like` operand2                  | Search with patterns whether operand1 includes operand2.                                                                        |
+|    `&&`           | expression1 `&&` expression2              | Check whether expression1 and expression2 are all `true`.                                                                       |
+|    `and`          | expression1 `and` expression2             | Check whether expression1 and expression2 are all `true`.<br/>The operator plays the same role as <b>\&\&</b>.                  |
+| <code>\|\|</code> | expression1 <code>\|\|</code> expression2 | Check whether expression1 and expression2 are all `true`.                                                                       |
+|    `or`           | expression1 `or` expression2              | Check whether expression1 and expression2 are all `true`.<br/>The operator plays the same role as <b>\|\|</b>.                  |
 
 #### Usage of like
 

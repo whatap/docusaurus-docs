@@ -1,0 +1,41 @@
+#### <code class='changelog-service'><a href="../release-notes/java/java-2_2_26">Java Agent v2.2.26</a></code> <code class='changelog-date'>2024年01月11日</code>
+
+- <code class="Feature">Feature</code> spring-boot-2.5以降でreactor-kafka-1.3を追跡
+
+- <code class="Feature">Feature</code> spring-boot-2.5以降でRxJava使用時、RxJavaのscheduleを追跡
+
+- <code class="Feature">Feature</code> spring-boot-3.0以降でRxJava3使用時、RxJava3のscheduleを追跡
+
+- <code class="Feature">Feature</code>エージェントログに<code>threadName</code>、<code>className</code>, <code>methodName</code>、<code>lineNumber</code>を収集して表示
+
+- <code class="Feature">Feature</code>エージェントログの形式を修正
+
+- <code class="Feature">Feature</code> Tiberoの<code>CallableStatement</code>を追跡
+
+#### <code class='changelog-service'><a href="../release-notes/java/java-2_2_27">Java Agent v2.2.27</a></code> <code class='changelog-date'>2024年02月06日</code>
+
+- <code class="Feature">Feature</code> mule-3.9.5追跡範囲の拡大
+
+- <code class="Feature">Feature</code> camel-cxf-3.15追跡
+
+- <code class="Feature">Feature</code> <code>OracleCallableStatement</code>追跡追加
+
+- <code class="Deprecate">Deprecate</code> Lettuceドライバーの使用時、Redisのvalue収集中断
+
+#### <code class='changelog-service'><a href="../release-notes/java/java-2_2_28">Java Agent v2.2.28</a></code> <code class='changelog-date'>2024年02月27日</code>
+
+- <code class="Feature">Feature</code> logback-1.2.8の追跡時にappenderを除外するオプションを追加
+
+- <code class="Deprecated">Deprecated</code> logback-1.2.8の追跡時に、指定したappenderのみ収集するオプションの使用を中止
+
+- <code class="Feature">Feature</code> log4j-2.17追跡時にappenderを除外するオプションを追加
+
+- <code class="Deprecated">Deprecated</code> log4j-2.17追跡時に、指定したappenderのみ収集するオプションの使用を中止
+
+#### <code class='changelog-service'><a href="../release-notes/java/java-2_2_29">Java Agent v2.2.29</a></code> <code class='changelog-date'>2024年03月15日</code>
+
+- <code class="New">New</code> jboss-logging-3.3ログ収集を追加
+
+- <code class="Feature">Feature</code> <code>com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal</code>メソッド使用時にSQLデータ収集を追加
+
+- <code class="Deprecated">Deprecated</code> <code>env</code>の<b>HOSTNAME</b>データ収集を中断

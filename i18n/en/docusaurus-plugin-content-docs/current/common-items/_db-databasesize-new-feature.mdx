@@ -65,45 +65,71 @@ grant usage on schema {schema_name} to whatap;
 
 ## Checking the changes over time
 
-If you select the graph bar at a specific time in <Cmdname sid="TTL06025" className="uitext" />, you can see the database size trend and change amounts from the start time to the selected time in a list.
-
 <ProdImg img='db-database-size-select-db.png' desc='데이터베이스 사이즈'/>
+
+- <Cmdname sid="TTL06025" className="uitext" />
+
+  You can visually see the changes in the total size and usage of the database over time. The chart displays the sizes for each database in different color. Hover your mouse over the chart and move it left and right to view the details. You can see information details on the sizes for each database at a specific time point through the tooltip.
+
+- <Cmdname sid="TTL06026" className="uitext" />
+
+  It provides capacity details for each database in a table format. You can check the names (**DB NAME**) for each database, total capacity (**TOTAL**), and changed amount (**CHANGED**). If you select a database, you can see information details in the <Cmdname sid="TTL06572" className="uitext" /> section.
 
 ## Checking the sizes for each table
 
-If you select a database in <Cmdname sid="TTL06026" className="uitext" />, you can see the list of sizes for each table in the top 50.
+If you select a database in the <Cmdname sid="TTL06026" className="uitext" /> section, you can check the list of sizes for each table corresponding to the top 50 sizes in the database.
 
 <ProdImg img='db-database-size-top50.png' desc='데이터베이스 사이즈'/>
 
 <InDoc product='mysql'>
 
-It displays **DATA SIZE**, **INDEX SIZE**, **ROWS** for each table by default. This is the information for `information_schema.tables` and may differ from the actual size. To see the **FILE SIZE** of `information_schema.innodb_tablespaces`, set the following option in the DBX agent. This size is close to the actual size.
-
-```ini title='whatap.conf'
-table_filesize=true
-```
+It displays the data size (**DATA SIZE**), index size (**INDEX SIZE**), and number of rows (**ROWS**) for each table in the database by default. You can check the changes in the start time and end time for the query. This allows you to easily detect large tables and supports management efforts for capacity optimization.
 
 :::note
 
-It targets the tables for which the monitoring account has the query role. For more information about the monitoring account creation, see [the following](install-agent#uid).
+- The information in the <Cmdname sid="TTL06026" className="uitext" /> section may differ from the actual size because it is the information on `information_schema.tables`. To check the file size (**FILE SIZE**) of `information_schema.innodb_tablespaces`, set the following option to the DBX agent. This size is close to the actual size.
+
+  ```ini title='whatap.conf'
+  table_filesize=true
+  ```
+
+- It targets the tables for which the monitoring account has the query role. For more information about the monitoring account creation, see [the following](install-agent#uid).
 
 :::
 
 </InDoc>
 
-<InDoc product='postgresql,mysql'>
+<InDoc product='postgresql'>
 
-It displays **DATA SIZE** and **INDEX SIZE** for each table. In the table list of the <Cmdname sid="TTL06572" className="uitext" /> section, select the <span class="uitext">TABLENAME</span> column. Then the **_Object detail_** window appears for **columns** and **index** items.
+You can query the schema name (**SCHEMANAME**), table name (**TABLENAME**), table size (**TABLE SIZE**), index size (**INDEX SIZE**), and total capacity (**TOTAL SIZE**) for each table in the database. You can check the changes in the start time and end time for the query. This allows you to easily detect large tables and supports management efforts for capacity optimization.
 
-<ImgLang img='db-database-size-objectdetail-postgresql.png' desc='Object detail' />
+</InDoc>
+
+<Xclude product="mongodb">
+
+When you select the <span class="uitext">TABLENAME</span> column in the table list of the <Cmdname sid="TTL06572" className="uitext" /> section, the ***Object Detail*** window appears, where you can check the configuration of **column** and **index**.
+
+<ProdImg img='db-database-size-objectdetail.png' desc='Object detail' />
+
+</Xclude>
 
 :::note
 
-This function is supported in DBX agent 1.6.15 or later. For more information about the database roles and related settings, see [the following](install-agent#uid).
+<InDoc product="postgresql">
 
-:::
+- This function is supported in DBX agent 1.6.15 or later. For more information about the database roles and related settings, see [the following](install-agent#uid).
 
 </InDoc>
+
+<InDoc product="mongodb">
+
+- This function is supported in DBX agent 1.7.0 or later. For more information about the related agent configuration, see [the following](agent-dbx-settings#collectdata).
+
+</InDoc>
+
+- To change the order of table columns or hide specific columns in the <Cmdname sid="TTL06572" className="uitext" /> section, select ![Column icon](/img/ico-column.svg) on the upper right. For more information about the column configuration, see [the following](instance-monitoring#change-column).
+
+:::
 
 ## Downloading the viewed data
 

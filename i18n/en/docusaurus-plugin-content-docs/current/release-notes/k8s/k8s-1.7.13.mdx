@@ -1,0 +1,34 @@
+---
+id: k8s-1_7_13
+title: Kubernetes Agent v1.7.13
+toc_max_heading_level: 2
+pagination_next: release-notes/k8s/k8s-1_7_12
+displayed_sidebar: releaseSidebar
+---
+
+October 21, 2024
+
+- <Status priority='1'>New</Status> Added the <Cmdname sid="side_analysis" className="uitext" /> > <Cmdname sid="side_metricsSearch" className="uitext" /> `kube_ingress` category.
+
+  It collects the metadata and the related information for Ingress resources. This category is scheduled to be used for implementation of dashboards related to Ingress lists and routing policies.
+
+  :::note 
+
+  For more information about the Ingress (`kube_ingress`) category, see [the following](../../kubernetes/metrics-kubernetes/#kube_ingress). 
+  ::: 
+
+- <Status priority='1'>New</Status> Added the container identification-related metrics in the <Cmdname sid="side_analysis" className="uitext" /> > <Cmdname sid="side_metricsSearch" className="uitext" /> `kube_oom_event` category.
+
+  You can identify containers when an OOMKilled event occurs by adding values for ***namespace***, ***podUid***, and ***containerName*** as ***tags***.
+
+- <Status priority='1'>New</Status> Added the port-related metrics to the <Cmdname sid="side_analysis" className="uitext" /> > <Cmdname sid="side_metricsSearch" className="uitext" /> `container` category.
+
+  The metrics related to **containerPort** used by containers have been added. Kubernetes services perform routing based on container ports within the Pod, so these metrics can be used to express relationships between services, Pods, and containers.
+
+:::info
+
+Agent download: [kube_mon_1.7.13.tar](https://repo.whatap.io/docker/kube_mon_1.7.13.tar)
+
+:::
+
+{/* 기존에는 Pod 이름을 표기하는 ***name*** ***필드***만 존재하여 OOMKilled 이벤트가 발생한 컨테이너를 특정하기 어려웠습니다.  */}

@@ -1,26 +1,28 @@
 ホーム画面 &gt; プロジェクト選択 &gt; <Cmdname sid="event_statistic" className="uitext" /> &gt; <Cmdname sid="event_history" className="uitext" />
 
-警告通知の履歴を確認できます。過去1年間の履歴を表示できます。各項目を設定し、![表示アイコン](/img/ico-btn-search.png)ボタンをクリックします。
+特定の時間、モニタリング対象で発生したイベントの詳細を確認できます。モニタリング対象で発生した問題の根本原因を分析したり、性能低下およびエラー発生時点のシステム状態を把握できます。
 
-<InDoc product='java,php,nodejs,python,dotnet,golang,log'><ImgLang img='event-history.png' desc='イベント履歴' /></InDoc>
+<Xclude product='kubernetes,browser'><ImgLang img='event-history.png' desc='イベント履歴' /></Xclude>
 
 <InDoc product='kubernetes'><ImgLang img='k8s-event-history.png' desc='イベント履歴' /></InDoc>
 
-<InDoc product='postgresql,oracle,mysql,mssql,tibero,cubrid,altibase,redis,mongodb,oracle-pro,oracle-v1'><ImgLang img='db-event-history.png' desc='イベント履歴' /></InDoc>
-
 <InDoc product='browser'><ImgLang img='browser-event-history.png' desc='イベント履歴' /></InDoc>
 
-<InDoc product='npm'><ImgLang img='npm-event-history.png' desc='イベント履歴' /></InDoc>
-
-<InDoc product='amazon-cloudwatch,amazon-ecs,aws-log,azure,ncloud,oracle-cloud'><ImgLang img='cloud-event-history.png' desc='イベント履歴' /></InDoc>
+イベント一覧に表示される項目は、<Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" />メニューで設定したイベントが表示されます。画面右上の<Cmdname sid="event_setting" className="uitext" />ボタンを選択すると、そのメニューに移動できます。
 
 :::note
 
-選択したプロジェクトによって、画面イメージが異なる場合があります。
+- 最近1年以内の履歴まで照会できます。
+
+- 選択したプロジェクトによって、画面イメージが異なる場合があります。
 
 :::
 
-- <Cmdname sid="time_selector" className="uitext" />
+## イベント履歴を照会する{#eventview}
+
+次のオプションを順番に設定した後、![検索アイコン](/img/ico-btn-search.png)ボタンを選択します。設定したオプションを基準にイベント記録を照会できます。
+
+- <Cmdname sid="time_selector" className="uitext" />: 照会しようとしているイベントの時間範囲を設定できます。<Cmdname sid="event_time" className="uitext" />を基準に照会します。
 
   - 右側の緑色のボタンを選択して表示時間を選択することができます。
 
@@ -28,74 +30,98 @@
 
   - 詳細な時間を選択するには、日付または時間の領域を選択してください。詳細な時間を設定し、<Cmdname sid="apply" className="uitext" />ボタンを選択します。
 
-- <Cmdname sid="filter" className="uitext" />: <Cmdname sid="title" className="uitext" />または<Cmdname sid="message" className="uitext" />内容に基づいてイベント履歴をフィルタリングできます。
+- <Cmdname sid="filter" className="uitext" />: <Cmdname sid="event_title" className="uitext" />または<Cmdname sid="message" className="uitext" />内容に基づいて入力した文字列を含むイベントの一覧をフィルタリングできます。
 
-<InDoc product='java,php,nodejs,python,dotnet,golang,log'>
+<Xclude product="browser">
 
-- <Cmdname sid="application" className="uitext" />：プロジェクトに含まれるエージェントを選択できます。
-
-</InDoc>
-
-<InDoc product='postgresql,oracle,mysql,mssql,tibero,cubrid,altibase,redis,mongodb,oracle-v1'>
-
-- <Cmdname sid="database" className="uitext" />：プロジェクトに含まれるエージェントを選択できます。
-
-</InDoc>
-
-<InDoc product='kubernetes'>
-
-- <Cmdname sid="container" className="uitext" />：プロジェクトに含まれるエージェントを選択できます。
-
-</InDoc>
-
-<InDoc product='browser,npm,amazon-cloudwatch,amazon-ecs,aws-log,azure,ncloud,oracle-cloud'>
-
-- <Cmdname sid="agent" className="uitext" />：プロジェクトに含まれるエージェントを選択できます。
-
-</InDoc>
-
-- **_CSV_**：参照したイベント履歴結果をcsvファイルとして保存することができます。<Cmdname sid="maximum_csv_lines" className="uitext" />を入力し <Cmdname sid="download" className="uitext" /> ボタンを選択してください。
-
-- <Cmdname sid="column_select" className="uitext" />：取得されたイベント履歴の結果の列項目を追加することができます。
-
-- <Cmdname sid="event_setting" className="uitext" />: <Cmdname sid="event_statistic" className="uitext" /> &gt; <Cmdname sid="event_setting" className="uitext" />メニューに移動します。
-
-- <Cmdname sid="title" className="uitext" /> / <Cmdname sid="message" className="uitext" />: <Cmdname sid="event_setting" className="uitext" />メニューで追加したイベントの<Cmdname sid="event_name" className="uitext" />と<Cmdname sid="message" className="uitext" />項目の内容です。
-
-  <Xclude product="amazon-cloudwatch,amazon-ecs,aws-log,azure,browser,log,ncloud,npm,oracle-cloud">
-
-  :::note
-
-  - イベント追加の詳細については、[次の文書](metric-warning-notice)を参考にしてください。
-
-  - 通知メッセージのユーザー定義の詳細については、[次の文書](set-notification-message)を参考にしてください。
-
-  :::
-
-  </Xclude>
-
-- <Cmdname sid="event_time" className="uitext" />: イベントが発生した時刻です。
-
-  - イベントが解消されずに進行中である場合、<Cmdname sid="in_progress" className="uitext" />タグが表示されます。
-
-  - 整備中である場合、イベントが発生すると<Cmdname sid="ITM07315" className="uitext" />タグが表示されます。
-
-  :::note
-
-  <Cmdname sid="sms_maintenance" className="uitext" />メニューの詳細については、<Link to="../management/maintenance">次の文書</Link>を参考にしてください。
-
-  :::
-
-- <Cmdname sid="TTL06583" className="uitext" />: 設定したイベントが解消された時刻です。当該カラムが見えない場合は、<Cmdname sid="column_select" className="uitext" />ボタンをクリックし<Cmdname sid="TTL06583" className="uitext" />を選択します。
-
-<Xclude product="postgresql,oracle,mysql,mssql,tibero,cubrid,altibase,redis,mongodb,oracle-v1">
-
-- <Cmdname sid="application" className="uitext" />: <Cmdname sid="event_setting" className="uitext" />メニューでイベントを追加して<Cmdname sid="alert_object_filtering" className="uitext" />項目を設定すると表示されます。
+- <Cmdname sid="agent" className="uitext" />: 特定のエージェントで発生したイベントのみを選択してフィルタリングできます。
 
 </Xclude>
 
-<InDoc product='postgresql,oracle,mysql,mssql,tibero,cubrid,altibase,redis,mongodb,oracle-v1'>
+## イベント一覧を確認する{#eventlist}
 
-- <Cmdname sid="instance" className="uitext" />: <Cmdname sid="event_setting" className="uitext" />メニューでイベントを追加して<Cmdname sid="alert_object_filtering" className="uitext" />項目を設定すると表示されます。
+以下はイベント一覧に表示される項目についての説明です。
 
-</InDoc>
+- <Cmdname sid="event_title" className="uitext" />: <Cmdname sid="event_setting" className="uitext" />メニューで追加したイベントのタイトルです。
+
+- <Cmdname sid="event_time" className="uitext" />: イベントが発生した時刻です。
+
+  - <Cmdname sid="sms_alert_acknowledge" className="uitext" />: 処理履歴を登録すると、そのイベントの繰り返し通知を停止できます。詳細については、[次の文書](#alertacknowledge)を参照してください。
+
+  - イベントが解消されずに進行中であれば<Cmdname sid="in_progress" className="uitext" />タグが表示されます。
+
+  - <Cmdname sid="sms_maintenance" className="uitext" />メニューで登録した整備時間にイベントが発生すると、<Cmdname sid="ITM07315" className="uitext" />タグが表示されます。このイベントは通知を送信しません。
+
+- <Cmdname sid="TTL06583" className="uitext" />: 発生したイベントが解消された時刻です。
+
+<Xclude product="browser">
+
+- <Cmdname sid="oname" className="uitext" />: <Cmdname sid="event_setting" className="uitext" />メニューでイベントを追加する時、<Cmdname sid="TTL07363" className="uitext" />項目を設定すると表示されます。
+
+</Xclude>
+
+- <Cmdname sid="message" className="uitext" />: <Cmdname sid="event_setting" className="uitext" />メニューで追加したイベントの詳細です。
+
+<Xclude product="amazon-cloudwatch,amazon-ecs,aws-log,azure,log,ncloud,oracle-cloud">
+
+:::note
+
+- イベントの追加の詳細については、次の文書を参照してください。
+
+  - [<Cmdname sid="default" />](warning-notice-v2)
+
+  - [<Cmdname sid="metrics" />](metric-warning-notice) / [<Cmdname sid="metrics" />](metric-warning-notice-new) <code className="newfunc">New</code>
+
+- 通知メッセージは、ユーザーが必要に応じてカスタマイズできます。詳細については、[次の文書](set-notification-message)を参照してください。
+
+- <Cmdname sid="sms_maintenance" className="uitext" />メニューの詳細については、<Link to="../management/maintenance">次の文書</Link>を参考にしてください。
+
+:::
+
+</Xclude>
+
+## 処理履歴を登録する{#alertacknowledge}
+
+処理履歴を登録すると、イベント処理状況のアップデートと履歴管理が簡単にできます。
+
+:::caution
+
+処理履歴を登録すると、当該イベントの<Cmdname sid="TTL06149" className="uitext" />は中止となります。<Cmdname sid="TTL06149" className="uitext" />についての詳細は、[次の文書](set-receive-event#escalation)を参照してください。
+
+:::
+
+1. 処理履歴を登録するイベントで<Cmdname sid="sms_alert_acknowledge" className="uitext" />ボタンを選択します。
+
+2. <Cmdname sid="sms_alert_acknowledge_add" className="uitext" />画面が表示されたら、処理履歴を入力します。
+
+   <ImgLang img="event-history-add-acknowledge.png" desc="処理内容を追加" />
+
+3. <Cmdname sid="registration" className="uitext" />ボタンを選択します。
+
+登録した処理履歴は、<Cmdname sid="TTL08669" className="uitext" />に一覧として表示されます。作成時間と作成者、詳細を確認できます。
+
+<ImgLang img="event-history-add-acknowledge-history.png" desc="処理履歴詳細" />
+
+イベント一覧で追加した処理履歴の個数を確認できます。
+
+<ImgLang img="event-history-add-acknowledge-added.png" desc="処理履歴" />
+
+:::note
+
+処理履歴は最大255 byteまで入力できます。
+
+:::
+
+## 付加機能を利用する{#additionaloption}
+
+- <Cmdname sid="BTN06441" className="uitext" />: イベント一覧のカラム項目を追加と削除、順序を変更できます。
+
+- **_CSV_**：参照したイベント履歴結果をcsvファイルとして保存することができます。<Cmdname sid="maximum_csv_lines" className="uitext" />を入力し <Cmdname sid="download" className="uitext" /> ボタンを選択してください。
+
+- <Cmdname sid="event_setting" className="uitext" />: <Cmdname sid="event_statistic" className="uitext" /> &gt; <Cmdname sid="event_setting" className="uitext" />メニューに移動します。
+
+- <Cmdname sid="exclude_resolved_alerts" className="uitext" />：イベント記録一覧で**進行中のイベント**のみ照会できます。
+
+import Dbv2dataeditcolumn from "../common-items/_db-v2-data-edit-column.mdx";
+
+<Dbv2dataeditcolumn level={3} />

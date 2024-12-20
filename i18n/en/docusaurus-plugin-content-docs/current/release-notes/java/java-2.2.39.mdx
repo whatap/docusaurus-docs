@@ -1,0 +1,70 @@
+---
+id: java-2_2_39
+title: Java Agent v2.2.39
+toc_max_heading_level: 2
+pagination_next: release-notes/java/java-2_2_38
+displayed_sidebar: releaseSidebar
+---
+
+September 30, 2024
+
+- <Status priority='1'>Feature</Status> Supported Java 21.
+
+- <Status priority='1'>Feature</Status> Traced dyanmodb-1.11.
+
+  ```ini title="whatap.conf"
+  # requires restart
+  weaving=dynamodb-1.11
+  ```
+
+- <Status priority='1'>Feature</Status> Traced dyanmodb-2.25 (dynamodb-enhanced).
+
+  ```ini title="whatap.conf"
+  # requires restart
+  weaving=dynamodb-2.25
+  ```
+
+- <Status priority='1'>Feature</Status> Traced retrofit-2.5.
+
+  ```ini title="whatap.conf"
+  # requires restart
+  weaving=retrofit-2.5
+  ```
+
+- <Status priority='1'>Feature</Status> Traced undertow-server-2.2 and undertow-servlet-2.2.
+
+  ```ini title="whatap.conf"
+  # requires restart
+  weaving=undertow-2.2
+  ```
+
+- <Status priority='1'>Feature</Status> Traced vertx-4.5.
+
+  ```ini title="whatap.conf"
+  # requires restart
+  weaving=vertx-4.5
+  ```
+
+- <Status priority='1'>Changed</Status> Modified to apply `httpc_status_url_ignore_set` and `httpc_status_ignore` options even when there is an exception in http-call.
+
+- <Status priority='1'>Changed</Status> Modified to separate the agent logs and notifications, and then disable notifications when an overflow occurs.
+
+  ```ini title="whatap.conf"
+  # default: true
+  overflow_log_enabled=true
+
+  # default: false
+  overflow_event_enabled=false
+  ```
+
+- <Status priority='1'>Deprecated</Status> Deprecated the `log_overflow_enabled` option.
+
+  ```ini title="whatap.conf"
+  # default: true
+  # deprecated
+  log_overflow_enabled=true
+  ```
+
+import DownloadJava from './_import_dl-java-agent.mdx';
+
+<DownloadJava ver="2.2.39" />

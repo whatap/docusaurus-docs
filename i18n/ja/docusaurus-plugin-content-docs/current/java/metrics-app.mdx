@@ -10,21 +10,22 @@ keywords:
   - UI
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import Metricsindex from "../common-items/_metrics-index.mdx";
+import AgentStatus from "../common-items/_agent-status-summary-metrics.mdx";
+import Apmservermerics from "../common-items/_apm-server-merics.mdx";
+import Javaappproccounter from "../common-items/_java-app-proc-counter.mdx";
+import Javajavamemory from "../common-items/_java-java-memory.mdx";
 
 <Metricsindex />
 
-import Apmservermerics from "../common-items/_apm-server-merics.mdx";
+<div className="metricslist">
+
+<AgentStatus />
 
 <Apmservermerics />
 
-import Javaappproccounter from "../common-items/_java-app-proc-counter.mdx";
-
 <Javaappproccounter />
 
-import Javajavamemory from "../common-items/_java-java-memory.mdx";
-
 <Javajavamemory />
+
+</div>

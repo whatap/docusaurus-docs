@@ -1,4 +1,14 @@
+<Xclude product="cubrid,cubrid-v1">
+
 ## XOSエージェントのインストール及びその他のオプションを適用する{#apply-xos-agent}
+
+</Xclude>
+
+<InDoc product="cubrid,cubrid-v1">
+
+## XOSエージェントのインストール(選択事項) {#apply-cubrid-xos-agent}
+
+</InDoc>
 
 データベースサーバーのリソースをさらにモニタリングする場合は、データベースサーバーに別のXOSエージェントを実行してデータを収集できます。
 
@@ -8,152 +18,93 @@
 
 - 追加エージェントのインストールは、必須ではなく**選択事項**です。
 
-<InDoc product="postgresql,mysql,oracle,oracle-v1,cubrid,redis,mongodb,altibase,mssql">
+<Xclude product="oracle-pro">
 
 - XOSエージェント設定オプションの詳細については、[次の文書](agent-xos-settings)を参照してください。
 
+</Xclude>
+
+<InDoc product="postgresql,mysql,oracle,mssql">
+
+- クラウドサービスが提供するモニタリングメトリクスを、データベースプロジェクトのダッシュボードで追加で収集してモニタリングするには、[次の文書](cloudsettings)を参照してください。
+
 </InDoc>
 
 :::
 
-<InDoc product="postgresql,mysql,oracle,oracle-v1,tibero,altibase,altibase-v1,mssql">
+<Xclude product="cubrid,cubrid-v1"><ImgLang img='xos-agent.png' desc='' /></Xclude>
 
-<Tabs groupId="dbXos">
-<TabItem value="xos" label="XOS">
+<InDoc product="cubrid,cubrid-v1"><ImgLang img='xos-agent-cubrid.png' desc='' /></InDoc>
 
-<ImgLang img='xos-agent.png' desc='' />
+### whatap.confファイルを設定する
 
-1. DBXエージェントがインストールされたパスの*whatap.conf*ファイルに次のオプションを設定します。
-
-   ```ini title='whatap.conf'
-   xos=1
-   xos_port=3002
-   ```
-
-2. *xos*フォルダー(`/解凍されたフォルダ/xos/`)をデータベースサーバーに移動してください。
-
-3. データベースサーバーに移動し、*xos*パスの*xos.conf*ファイルに次のオプションを設定します。
-
-   ```ini title='xos.conf'
-   dbx_ip={DB_Agent_IP}
-   dbx_port=3002 # default 3002
-   cpu_limit=0
-   mem_limit=10240
-   ```
-
-   :::tip
-
-   <Cmdname sid="side_agentInstall" className="uitext" />メニューの<UI>DB Agent IP</UI>、<UI>DB Agent Port</UI>項目にDB情報を入力すると、エージェントオプションを自動生成できます。
-
-   :::
-
-4. XOSエージェントの実行権限を付与します。
-
-   ```bash
-   chmod +x ./whatap.agent.xos*
-   ```
-
-5. XOSエージェントを実行します。
-
-   ```bash
-   ./start.sh
-   ```
-
-:::note
-
-- DBXエージェントでモニタリングしたデータを転送するために`dbx_port`に設定したポート(default 3002)が開放されている必要があります。 (**UDP Outbound**)
-
-- XOSエージェントをバックグラウンドで実行するには、_./startd.sh_ファイルを実行します。
-
-:::
-
-</TabItem>
-<TabItem value="rds" label="RDS : AWS CloudWatch">
-
-エージェントサーバーにある*whatap.conf*ファイルに次のオプションを設定してください。 CloudWatch特性上、60秒(`cloud_watch_interval`)ごとの呼び出しをお勧めします。
+DBXエージェントがインストールされたパスの*whatap.conf*ファイルに次のオプションを設定します。
 
 ```ini title='whatap.conf'
-aws_region={AWS_RDS_Region_Name}
-aws_arn=arn:aws:iam::999999999999:role/UpdateApp
-cloud_watch=on
-cloud_watch_instance=RDS_DB_Instance_Name
-cloud_watch_interval=60
-cloud_watch_metrics=CPUUtilization,FreeableMemory,FreeStorageSpace,NetworkTransmitThroughput,NetworkReceiveThroughput
+xos=1
+xos_port=3002
 ```
 
-AWS CloudWatch指標照会のために次のコマンドを実行します。 `DB_Instance_Name`項目を変更してコマンドを実行します。
+*xos*フォルダー(`/解凍されたフォルダ/xos/`)をデータベースサーバーに移動してください。
 
-```bash
-aws cloudwatch list-metrics --namespace AWS/RDS --dimensions Name=DBInstanceIdentifier,Value={DB_Instance_Name}
+### xos.confファイルを設定する
+
+データベースサーバーに移動し、*xos*パスの*xos.conf*ファイルに次のオプションを設定します。
+
+```ini title='xos.conf'
+dbx_ip={DB_Agent_IP}
+dbx_port=3002 # default 3002
+cpu_limit=0
+mem_limit=10240
 ```
 
-:::note
+:::tip
 
-- <Cmdname sid="side_agentInstall" className="uitext" />メニューの<UI>AWS RDS Region</UI>、<UI>RDS DB Instance Name</UI>、<UI>DB Instance Name</UI>項目に必要な情報を入力すると、エージェントオプションとコマンドを自動的に作成できます。
-
-<InDoc product="postgresql,oracle,mysql,redis,mongodb">
-
-- AWS認証のための`aws_arn`オプションの詳細については、[次の文書](agent-dbx-settings#using-aws-rds)を参考にしてください。
-
-</InDoc>
-
-- AWS CLIのインストールとアップデートの詳細については、[次のリンク](https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/getting-started-install.html)を参考にしてください。
-
-- AWS CLIの設定の詳細については、[次のリンク](https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-chap-configure.html)を参考にしてください。
+<Cmdname sid="side_agentInstall" className="uitext" />メニューの<UI>DB Agent IP</UI>、<UI>DB Agent Port</UI>項目にDB情報を入力すると、エージェントオプションを自動生成できます。
 
 :::
+
+### XOSエージェントを実行する
+
+import Xoslinux from "../common-items/_db-install-xos-agent-linux.mdx";
+import Xoswindows from "../common-items/_db-install-xos-agent-windows.mdx";
+
+<Xclude product="oracle,oracle-v1,mssql,mssql-v1,tibero,redis,mongodb">
+
+<Tabs groupId='os'>
+<TabItem value='linux' label='Linux' default>
+
+<Xoslinux/>
+
+</TabItem>
+<TabItem value='windows' label='Windows'>
+
+<Xoswindows/>
+
+</TabItem>
+</Tabs>
+
+</Xclude>
+
+<InDoc product="mssql,mssql-v1">
+
+<Tabs groupId='os'>
+<TabItem value='windows' label='Windows'>
+
+<Xoswindows/>
+
+</TabItem>
+<TabItem value='linux' label='Linux' default>
+
+<Xoslinux/>
 
 </TabItem>
 </Tabs>
 
 </InDoc>
 
-<InDoc product="redis,mongodb,cubrid">
+<InDoc product="oracle,oracle-v1,tibero,redis,mongodb">
 
-<ImgLang img='xos-agent.png' desc='' />
-
-1. DBXエージェントがインストールされたパスの*whatap.conf*ファイルに次のオプションを設定します。
-
-   ```ini title='whatap.conf'
-   xos=1
-   xos_port=3002
-   ```
-
-2. *xos*フォルダー(`/解凍されたフォルダ/xos/`)をデータベースサーバーに移動してください。
-
-3. データベースサーバーに移動し、*xos*パスの*xos.conf*ファイルに次のオプションを設定します。
-
-   ```ini title='xos.conf'
-   dbx_ip={DB_Agent_IP}
-   dbx_port=3002 # default 3002
-   cpu_limit=0
-   mem_limit=10240
-   ```
-
-   :::tip
-
-   <Cmdname sid="side_agentInstall" className="uitext" />メニューの<UI>DB Agent IP</UI>、<UI>DB Agent Port</UI>項目にDB情報を入力すると、エージェントオプションを自動生成できます。
-
-   :::
-
-4. XOSエージェントの実行権限を付与します。
-
-   ```bash
-   chmod +x ./whatap.agent.xos*
-   ```
-
-5. XOSエージェントを実行します。
-
-   ```bash
-   ./start.sh
-   ```
-
-:::note
-
-- DBXエージェントでモニタリングしたデータを転送するために`dbx_port`に設定したポート(default 3002)が開放されている必要があります。 (**UDP Outbound**)
-
-- XOSエージェントをバックグラウンドで実行するには、_./startd.sh_ファイルを実行します。
-
-:::
+<Xoslinux/>
 
 </InDoc>

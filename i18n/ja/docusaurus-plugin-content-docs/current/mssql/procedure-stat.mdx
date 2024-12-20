@@ -1,0 +1,102 @@
+---
+id: procedure-stat
+title: プロシージャ統計
+description: SQL Serverに登録された保存プロシージャ(Stored Procedure)の性能に関する情報を提供します。
+keywords:
+  - SQL Server
+  - 統計
+  - プロシージャ統計
+---
+
+ホーム画面 &gt; プロジェクト選択 &gt; <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbProcedureStat" className="uitext" />
+
+SQL Serverに登録された保存プロシージャ(Stored Procedure)の実行回数、合計実行時間、論理的/物理的読み込みと書き込みなどの性能関連情報を提供します。 これにより、ストレージプロシージャの使用量と性能をモニタリングし、最適化が必要なプロシージャを識別できます。
+
+- 実行回数と合計実行時間を分析して、使用量の多いプロシージャを確認できます。
+
+- 論理的/物理的読み込みデータを通じてI/O性能ボトルネックを探知し、最適化対象を識別します。
+
+- プロシージャ内部クエリの実行データを確認して、リソースを大量に消費するクエリを識別できます。
+
+- 合計実行時間とCPU使用時間を比較して、非効率的なクエリを識別できます。
+
+:::note
+
+**保存プロシージャ**は、SQLサーバーで特定のタスクを実行するために事前に作成されたSQLコマンドのセットです。 再利用可能で、パラメータ化された動的なタスクを実行できるため、コード管理と性能の向上に有利です。 詳細については、[次のリンク](https://learn.microsoft.com/sql/relational-databases/stored-procedures/stored-procedures-database-engine?view=sql-server-ver16)を参照してください。
+
+:::
+
+## 基本的な使い方
+
+1. <Cmdname sid="time" className="uitext" />から、データを照会する時間と日付を指定してください。
+
+2. <Cmdname sid="instance" className="uitext" />から、データを照会する対象を選択してください。
+
+3. ![検索アイコン](/img/ico-btn-search.png)ボタンを選択してください。
+
+4. <UI>Procedure Statistics</UI>セクションで照会された結果を確認し<UI>definition</UI>カラム項目を選択します。
+
+   <ImgLang img="db-procedure-stat-mssql.png" desc="プロシージャ統計" className="width-800" />
+
+5. 選択したプロシージャに対する個別のクエリ実行情報が<UI>Query Statistics</UI>セクションに表示されます。
+
+:::note
+
+- 希望する結果が表示されるよう<Cmdname sid="TTL07772" className="uitext" />または<Cmdname sid="TTL07773" className="uitext" />オプションを設定できます。
+
+- <UI>Procedure Statistic</UI>セクションの一覧で![詳細アイコン](/img/ico-detail-view.svg)ボタンをタップすると、そのプロシージャに関する詳細情報が確認できる<UI>Procedure Detail</UI>ウィンドウが表示されます。 詳細については、[次の文書](#procedurestat)を参照してください。
+
+- <UI>defintion</UI>カラム項目にマウスをオーバーすると、SQL定義コードをプレビューできます。
+
+:::
+
+## セクション別画面の案内
+
+- <UI>Procedure Statistics</UI>
+
+  プロシージャ別の主要統計情報を表示する領域で、実行回数、合計実行時間などプロシージャの全般的な性能データを提供します。 実行時間が長いか、論理的/物理的読み込みが多いプロシージャを識別できます。
+
+- <UI>Query Statistics</UI>
+
+  <UI>Procedure Statistics</UI>セクションで特定のプロシージャの<UI>definition</UI>カラムを選択すると、そのプロシージャに対する個別のクエリ実行情報が表示されます。 クエリ統計を分析して、繰り返し実行されるクエリを確認できます。
+
+  <ImgLang img="db-procedure-stat-mssql.png" desc="プロシージャ統計" />
+
+  <UI>query</UI>カラム項目を選択すると、<Cmdname sid="TTL06224" className="uitext" />ウィンドウを確認できます。
+
+  <ImgLang img="db-sql-details-mssql.png" desc="SQL詳細" />
+
+:::note
+
+<Cmdname sid="TTL06224" className="uitext" />画面についての詳細は、[次の文書](stat#querydetails)を参照してください。
+
+:::
+
+## プロシージャの詳細情報を確認する{#procedurestat}
+
+<UI>Procedure Statistic</UI>セクションの一覧で![詳細アイコン](/img/ico-detail-view.svg)ボタンをタップすると、そのプロシージャに関する詳細情報が確認できる<UI>Procedure Detail</UI>ウィンドウが表示されます。
+
+<ImgLang img="db-procedure-stat-details-mssql.png" desc="Procedure Detail" />
+
+- ***Procedure Info***
+
+  論理的/物理的な読み込み、書き込み、実行回数、最大/最小実行時間など、プロシージャの実行性能データを含む詳細情報を確認できます。 
+
+- ***Procedure Definition***
+
+  当該プロシージャのSQL定義コードを確認できます。
+
+{/* 필터 조건추가하기*/}
+import Dbsqlfilter from "../common-items/_db-sql-filter.mdx";
+
+<Dbsqlfilter level={2} />
+
+## 照会結果をダウンロードする
+
+各セクション別の照会結果をCSVファイル形式でダウンロードできます。 画面右上の![csvアイコン](/img/ico-download.svg)ボタンをクリックし<UI>Procedure Statistics</UI>または<UI>Query Statistics</UI>を選択します。
+
+ダウンロードしたCSVファイルの名前形式は次の通りです。
+
+- <UI>Procedure Statistics</UI>: *Procedure\_Statistics\_`YYYYMMDD_HHMMSS`.csv*
+
+- <UI>Query Statistics</UI>: *Query\_Statistics\_`YYYYMMDD_HHMMSS`.csv*

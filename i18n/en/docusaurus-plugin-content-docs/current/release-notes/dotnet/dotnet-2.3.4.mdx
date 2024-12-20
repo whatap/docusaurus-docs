@@ -1,0 +1,56 @@
+---
+id: dotnet-2_3_4
+title: .NET Agent v2.3.4
+toc_max_heading_level: 2
+pagination_next: release-notes/dotnet/dotnet-2_3_3
+displayed_sidebar: releaseSidebar
+---
+
+October 2, 2024
+
+- <Status priority='0'>Fixed</Status> Temporarily removed the CancellationToken-related methods from recently added monitoring targets.
+
+- <Status priority='1'>New</Status> Added support for setting the `expand_transaction_level` in .NET Core.
+
+  - **expand_transaction_level** <span class='type'>Boolean</span>
+
+    Default `false`
+
+    If you set this option to `true`, SQL and HTTP calls that occur outside transactions are considered transactions and they are displayed in the hitmap.
+
+  - **expand_transaction_basetime** <span class='type'>Int</span>
+
+    Default `1000` ms (1 second)
+
+    When the `expand_transaction_level` option is set to `true`, data is collected only for requests that take longer to respond than the specified time. It collects up to 100 items per second. The minimum value is `100` ms (0.1 second).
+
+- <Status priority='1'>New</Status> Added support for desktop application monitoring.
+
+  - Set the value of the `expand_transaction_level` option to `true`.
+
+  - Before running the application, enter the following command at the prompt:
+
+    ```csharp
+    SET COR_PROFILER={D76F1D76-A9E0-4C87-874F-C0AD93D4229B}
+    SET COR_ENABLE_PROFILING=1
+
+    SET CORECLR_PROFILER={21CAE18A-4E44-4578-83FD-0576AAA47E68}
+    SET CORECLR_ENABLE_PROFILING=1
+    SET DOTNET_STARTUP_HOOKS=C:\Program Files\WhaTap .NET\core\Whatap.Startup.NetCore.dll
+
+    SET WHATAP_TRACE_IIS_ONLY=0
+    SET EXPAND_TRANSACTION_LEVEL=1
+    SET EXPAND_TRANSACTION_BASETIME=100
+    ```
+
+  - After executing the command, run the target application. 
+
+  :::note 
+
+  Support for desktop application monitoring is in Beta stage and the upgrade is scheduled for the monitoring scope and usability.
+
+  :::
+
+import DownloadAgent from "./_download-dotnet-agent.mdx";
+
+<DownloadAgent />

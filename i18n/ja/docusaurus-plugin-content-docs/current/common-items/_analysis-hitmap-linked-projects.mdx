@@ -1,14 +1,14 @@
 ### 連携プロジェクトメトリクスの確認
 
-データベースモニタリング(DPM) プロジェクトとアプリケーションのモニタリング(APM) プロジェクトを生成した場合、2つのプロジェクトを連携してDPMで収集したモニタリングデータをAPMプロジェクトで確認できます。 <Cmdname sid="hitmap_transaction" className="uitext" />セクションの右上の<Cmdname sid="BTN08519" className="uitext" />機能により、トランザクションの照会中に連携したプロジェクトの性能メトリクスを一緒に確認できます。
+データベースモニタリング(DPM) プロジェクトとアプリケーションのモニタリング(APM) プロジェクトを生成した場合、2つのプロジェクトを連携してDPMで収集したモニタリングデータをAPMプロジェクトで確認できます。 <Cmdname sid="hitmap_transaction" className="uitext" />セクションの右上にある<Cmdname sid="BTN08519" className="uitext" />機能で、トランザクションの照会中に連携したプロジェクトの性能メトリクスを一緒に確認できます。
 
-<Cmdname sid="BTN08519" className="uitext" />機能は、APMプロジェクトでトランザクションを分析する際に、遅いSQLを発見した場合、似たような複数のDBを使用する環境で、正確にどのDBで問題が発生したのか確認しにくい状況に役立ちます。
+<Cmdname sid="BTN08519" className="uitext" />機能は、APMプロジェクトでトランザクションを分析する際に、遅いSQLがある場合、類似な複数のDBを使用する環境から、正確に問題が発生したDBを把握しにくい状況に役立ちます。
 
 <ImgLang img="linked-project-db-hitmap.png" desc="ヒットマップ" />
 
 1. トランザクションを照会する時間と<Cmdname sid="application" className="uitext" />を設定した後![検索アイコン](/img/ico-btn-search.png)ボタンを選択します。
 
-2. <Cmdname sid="hitmap_transaction" className="uitext" />セクションで右上の<Cmdname sid="BTN08519" className="uitext" />ボタンを選択します。
+2. <Cmdname sid="hitmap_transaction" className="uitext" />セクションで右上にある<Cmdname sid="BTN08519" className="uitext" />ボタンを選択します。
 
 3. 連携プロジェクトのメトリクスを確認できる新しい画面が表示されます。
 
@@ -22,9 +22,9 @@
 
 :::note
 
-- <Cmdname sid="hitmap_transaction" className="uitext" />セクションの<Cmdname sid="BTN08519" className="uitext" />ボタンは、関連するプロジェクトがある場合にのみ表示されます。 連携プロジェクトの追加についての詳細は、[次の文書](linked-projects#addlinkproject)を参照してください。
+- <Cmdname sid="hitmap_transaction" className="uitext" />セクションの<Cmdname sid="BTN08519" className="uitext" />ボタンは、連携されたプロジェクトがある場合にのみ表示されます。 連携プロジェクトの追加についての詳細は、[次の文書](linked-projects#addlinkproject)を参照してください。
 
-- 左の<Cmdname sid="TTL07151" className="uitext" />一覧上段の<Cmdname sid="add" className="uitext" />ボタンをタップしてプロジェクトを追加できます。
+- 左の<Cmdname sid="TTL07151" className="uitext" />一覧の上にある<Cmdname sid="add" className="uitext" />ボタンを選択するとプロジェクトを追加できます。
 
 - <Cmdname sid="BTN08444" className="uitext" />ボタンは、<Cmdname sid="all" className="uitext" />を選択した状態では無効になります。
 

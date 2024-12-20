@@ -1,50 +1,22 @@
-ホーム画面 &gt; プロジェクト選択 &gt; <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_correlatedProjectManagement" className="uitext" />
-
-データベースモニタリング(DPM) プロジェクトとアプリケーションのモニタリング(APM) プロジェクトを生成した場合、2つのプロジェクトを連携してDPMで収集したモニタリングデータをAPMプロジェクトで確認できます。
-
-<ImgLang img="linked-project-management.png" desc="相関プロジェクト管理" />
-
-<Cmdname sid="side_correlatedProjectManagement" className="uitext" />機能を使用すると、製品または機器中心のモニタリングを超えて、複数のプロジェクト間のモニタリングデータを統合して確認できます。 これは、アプリケーション、データベースなど、 様々なシステムコンポーネントがどのように相互作用するかを分析するのに役立ちます。 特に、性能低下が発生した時に装備の問題なのか個別アプリケーションの問題なのか迅速に把握でき、問題解決時間を大幅に短縮できます。 <Cmdname sid="side_correlatedProjectManagement" className="uitext" />これにより、ユーザーシステム単位で性能データを総合的に分析し、より可視的なインサイトを確保できます。
-
-:::note
-
-**開始前の参考事項**
-
-対応するデータベース: PostgreSQL、Oracle、MySQL、SQL Server、CUBRID、Altibase、Redis、MongoDB
-
-:::
-
-## 連携プロジェクトを追加する {#addlinkproject}
-
-1. <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_correlatedProjectManagement" className="uitext" />メニューに移動します。
-
-2. <Cmdname sid="TTL07015" className="uitext" />セクションで<Cmdname sid="project_selection" className="uitext" />入力欄を選択します。
-
-   <ImgLang img="linked-project-management-add-project.png" desc="相関プロジェクト管理" />
-
-3. 選択できるプロジェクトの一覧が表示されたら、連携するプロジェクトを選択します。 文字列を入力して、一致するプロジェクトを検索もできます。
-
-4. プロジェクトを1つ以上選択した後に有効になった<Cmdname sid="add" className="uitext" />ボタンを選択します。
-
-<Cmdname sid="TTL07016" className="uitext" />に選択したプロジェクトが追加されます。
+<InDoc product="java,php,python,nodejs,dotnet,golang">
 
 ## 連携プロジェクトのメトリクスを確認する{#checklinkedproject}
 
-追加した連携プロジェクトに関連するメトリクスは<Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_hitmap" className="uitext" />メニューで確認できます。 トランザクションの照会中に連携したプロジェクトの性能メトリクスを一緒に確認できます。
+追加した連携プロジェクトに関連するメトリクスは<Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_hitmap" className="uitext" />メニューで確認できます。 トランザクションを照会する際に連携されたプロジェクトの性能メトリクスを一緒に確認できます。
 
-この機能は、APMプロジェクトでトランザクションを分析する際、遅いSQLを発見した場合、似たような複数のDBを使用する環境で正確にどのDBで問題が発生したのか確認しにくい状況に役立ちます。
+この機能は、APMプロジェクトでトランザクションを分析する際に、SLOW SQLがあった場合、類似な複数のDBを使用する環境で、正確にどのDBで問題が発生したのかを確認しにくい状況に役立ちます。
 
 <ImgLang img="linked-project-db-hitmap.png" desc="ヒットマップ" />
 
 1. トランザクションを照会する時間と<Cmdname sid="application" className="uitext" />を設定した後![検索アイコン](/img/ico-btn-search.png)ボタンを選択します。
 
-2. <Cmdname sid="hitmap_transaction" className="uitext" />セクションで右上の<Cmdname sid="BTN08519" className="uitext" />ボタンを選択します。
+2. <Cmdname sid="hitmap_transaction" className="uitext" />セクションで右上にある<Cmdname sid="BTN08519" className="uitext" />ボタンを選択します。
 
 3. 連携プロジェクトのメトリクスを確認できる新しい画面が表示されます。
 
    <ImgLang img="linked-project-db-instance-dahboard.png" desc="連携プロジェクト" />
 
-左の一覧で連携プロジェクトを選択し、<Cmdname sid="TTL08442" className="uitext" />セクションのメトリクスを確認します。 
+左の一覧で連携プロジェクトを選択し、<Cmdname sid="TTL08442" className="uitext" />セクションのメトリクスを確認します。 <Cmdname sid="TTL08442" className="uitext" />では、アプリケーションで実行されたトランザクションに連携されたデータベースの主要な性能メトリクスを確認できます。
 
 <ImgLang img="linked-project-db-instance-dahboard-select-instance.png" desc="連携プロジェクト" />
 
@@ -52,9 +24,9 @@
 
 :::note
 
-- <Cmdname sid="hitmap_transaction" className="uitext" />セクションの<Cmdname sid="BTN08519" className="uitext" />ボタンは、関連するプロジェクトがある場合にのみ表示されます。 連携プロジェクトの追加についての詳細は[次の文書](#addlinkproject)を参照してください。
+- <Cmdname sid="hitmap_transaction" className="uitext" />セクションの<Cmdname sid="BTN08519" className="uitext" />ボタンは、連携されたプロジェクトがある場合にのみ表示されます。 連携プロジェクトの追加についての詳細は[次の文書](#addlinkproject)を参照してください。
 
-- 左の<Cmdname sid="TTL07151" className="uitext" />一覧上段の<Cmdname sid="add" className="uitext" />ボタンをタップしてプロジェクトを追加できます。
+- 左の<Cmdname sid="TTL07151" className="uitext" />一覧の上にある<Cmdname sid="add" className="uitext" />ボタンを選択するとプロジェクトを追加できます。
 
 - <Cmdname sid="BTN08444" className="uitext" />ボタンは、<Cmdname sid="all" className="uitext" />を選択した状態では無効になります。
 
@@ -64,12 +36,86 @@
 
 :::
 
-## 連携プロジェクトを削除する{#removelinkedproject}
+</InDoc>
 
-1. <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_correlatedProjectManagement" className="uitext" />メニューに移動します。
+<InDoc product="postgresql,oracle,oracle-pro,mysql">
 
-2. <Cmdname sid="TTL07016" className="uitext" />セクションで連携を解除しようとするプロジェクトを削除するには、一覧の一番右にある![削除アイコン](/img/ico-trash.svg)ボタンを選択します。
+## 連携プロジェクトを確認する{#checklinkedproject}
 
-3. 確認メッセージが表示されたら<Cmdname sid="delete" className="uitext" />ボタンを選択してください。
+データベースで有効になったセッション(アクティブセッション)と連動したアプリケーションのアクティブトランザクションに関する詳細情報をリアルタイムで提供します。 ユーザーは、トランザクションURLおよびデータベース接続情報、DBタイプ、HTTPメソッド、実行時間などの基本情報とともに、トランザクションID、スレッドID、クライアントIP、CPU使用時間などの具体的なメトリクスを確認できます。 また、SQLクエリの実行時間、呼び出されたSQLの数、DB接続時間などもモニタリングでき、システムの性能を総合的に分析できます。
 
-<Cmdname sid="TTL07016" className="uitext" />セクションで削除したプロジェクトは除外されます。
+特に、スタックトレースによるコールスタック(Call stack) 情報とSQLクエリを一緒に提供し、問題発生時の詳細な原因を追跡して解決するのに役立ちます。 これにより、アプリケーションとデータベース間の相互作用を深く分析し、性能のボトルネック現象を迅速に診断できます。
+
+### アクティブトランザクションを追跡する{#tracingtx}
+
+<Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />メニューに移動します。 連携分析機能は、リアルタイム照会状態でのみ確認できます。
+
+<ProdImg img="db-linked-project-instance-monitoring.png" desc="연계 분석" />
+
+1. <Cmdname sid="instance" className="uitext" />オプションで照会したいインスタンス(エージェント)を選択します。
+
+2. <Cmdname sid="active_sessions" className="uitext" />テーブル一覧で連携分析しようとするアクティブセッション項目の![連携アイコン](/img/ic-correlations.svg)ボタンを選択します。
+
+3. 選択したアクティブセッションに関連するトランザクション情報を提供する<Cmdname sid="TTL07046" className="uitext" />画面が表示されます。
+
+<Cmdname sid="TTL07151" className="uitext" />一覧でご希望のプロジェクトを選択し、連携分析情報を確認します。
+
+:::note
+
+- 画面右上の<Cmdname sid="BTN08404" className="uitext" />ボタンを選択すると、当該プロジェクトの<Cmdname sid="side_appDashboard" className="uitext" />メニューに移動できます。
+
+- 選択したアクティブセッションに連携されたトランザクションがない場合、<Cmdname sid="no_data" className="uitext" />として画面に表示されます。
+
+:::
+
+### <Cmdname sid="TTL07046" />画面案内{#TTL07046}
+
+<Cmdname sid="TTL07046" className="uitext" />画面では、アクティブトランザクションに関する詳細情報およびCall Stack、SQL文を確認できます。
+
+#### ***Active Transaction***
+
+連携したアクティブトランザクションの詳細を確認できます。
+
+<ImgLang img="db-linked-project-detail-active-tx.png" desc="Active Transaction" />
+
+- ***DB Connection***: データベース接続URLです。
+
+- ***Thread ID***: そのトランザクションを処理するために使用されたスレッドの固有識別子です。
+
+- ***Sid***: 選択したアクティブセッションのIDです。
+
+  <InDoc product="postgresql">
+
+  :::note
+
+  ***Sid***は<Cmdname sid="active_sessions" className="uitext" />テーブルで<UI>PID</UI>項目と同じ値です。 APMプロジェクトでSQL情報の<UI>SID</UI>項目とも同じです。
+
+  <ImgLang img="db-linked-projects-postgresql-pid-sid.png" desc="SID" />
+
+  :::
+
+  </InDoc>
+
+- ***Thread Stat***: スレッドの現在の状態です。
+
+- ***DB Type***: 連携したデータベースプラットフォームの種類です。
+
+:::note
+
+その他の項目についての詳細は、[次の文書](java/dashboard-hitmap-trace#anlaysis-trace-record-summary)を参照してください。
+
+:::
+
+#### ***Call Stack***
+
+メソッドや関数呼び出しの順序を追跡する情報を提供します。
+
+<ImgLang img="db-linked-project-detail-call-stack.png" desc="Call Stack" />
+
+#### ***SQL***
+
+連携されたアクティブトランザクションによって実行されたSQLクエリです。
+
+<ImgLang img="db-linked-project-detail-sql.png" desc="SQL" />
+
+</InDoc>

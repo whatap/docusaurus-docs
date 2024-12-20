@@ -62,7 +62,8 @@ The following configuration requires restart of the agent.
 
     [[inputs.logsink.file]]
       ## When searching for the keyword in the line-by-line log, merge it with the previous log.
-      nowrap_keywords = ["Caused by:", "Test"]EOL
+      nowrap_keywords = ["Caused by:", "Test"]
+  EOL
 
   sudo service whatap-infra restart
   ```
@@ -100,6 +101,7 @@ The following configuration requires restart of the agent.
   [[inputs.logsink.file]]
   ## When searching for the keyword in the line-by-line log, merge it with the previous log. 
   nowrap_keywords = ["Caused by:", "Test"]
+
   "@
 
   New-Item -path "C:\Program Files\WhatapInfra\extension" -name "logsink.conf" -type "file" -value $contentToAdd -Force
@@ -107,7 +109,7 @@ The following configuration requires restart of the agent.
   Restart-Service "Whatap Infra"
   ```
 
-### Configuring options
+### Configuring options {#server-log-settings}
 
 - `stats_enabled`: Set whether or not to collect the collection status data. The default value is `false`. The value must be set to `true`. If set to `true`, statistical data is generated in the category (`logsink_stats`) set in the following `stats_category`.
 
@@ -137,6 +139,12 @@ The following configuration requires restart of the agent.
 import Logserverwindowsevent from "../common-items/_log-server-windows-event.mdx";
 
 <Logserverwindowsevent />
+
+### Specifying and separating multiple files{#multiple-file-specification-and-separation}
+
+import Logservermultifilecategory from "../common-items/_log-server-multi-file-category.mdx";
+
+<Logservermultifilecategory />
 
 ## Enabling the log monitoring
 

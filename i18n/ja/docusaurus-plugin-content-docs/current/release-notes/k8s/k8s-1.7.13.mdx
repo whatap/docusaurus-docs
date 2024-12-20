@@ -1,0 +1,34 @@
+---
+id: k8s-1_7_13
+title: Kubernetes Agent v1.7.13
+toc_max_heading_level: 2
+pagination_next: release-notes/k8s/k8s-1_7_12
+displayed_sidebar: releaseSidebar
+---
+
+2024年10月21日
+
+- <Status priority='1'>New</Status> <Cmdname sid="side_analysis" className="uitext" /> > <Cmdname sid="side_metricsSearch" className="uitext" />`kube_ingress`カテゴリを追加
+
+  Ingressリソースに関するメタデータと関連情報を収集します。 そのカテゴリは、今後Ingressリストおよびルーティング ポリシーに関連するダッシュボードの実現に活用される予定です。
+
+  :::note 
+
+  Ingress(`kube_ingress`)カテゴリの詳細は、[次の文書](../../kubernetes/metrics-kubernetes/#kube_ingress)を参照してください。 
+  ::: 
+
+- <Status priority='1'>New</Status> <Cmdname sid="side_analysis" className="uitext" /> > <Cmdname sid="side_metricsSearch" className="uitext" />`kube_oom_event`カテゴリにコンテナ識別関連のメトリクスを追加
+
+  ***タグ***で***namespace***、***podUid***、***containerName***値を追加し、OOMKilledイベントの発生時にコンテナの識別が可能です。
+
+- <Status priority='1'>New</Status> <Cmdname sid="side_analysis" className="uitext" /> > <Cmdname sid="side_metricsSearch" className="uitext" />`container`カテゴリにポート情報関連のメトリクスを追加
+
+  コンテナが使用する**containerPort**に関連するメトリクスを追加しました。 クバネティスサービスは、Pod内のコンテナポートに基づいてルーティングを実行するため、そのメトリクスを通じてサービス、Pod、コンテナ間の関係を表現できます。
+
+:::info
+
+Agent download: [kube_mon_1.7.13.tar](https://repo.whatap.io/docker/kube_mon_1.7.13.tar)
+
+:::
+
+{/* 기존에는 Pod 이름을 표기하는 ***name*** ***필드***만 존재하여 OOMKilled 이벤트가 발생한 컨테이너를 특정하기 어려웠습니다.  */}

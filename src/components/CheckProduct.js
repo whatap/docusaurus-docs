@@ -46,6 +46,8 @@ export default function CheckProduct() {
         product = '-oracle';
     } else if (cProdt === 'mysql') {
         product = '-mysql';
+    } else if (cProdt === 'mssql-v1') {
+        product = '-mssql';
     } else if (cProdt === 'mssql') {
         product = '-mssql';
     } else if (cProdt === 'tibero') {

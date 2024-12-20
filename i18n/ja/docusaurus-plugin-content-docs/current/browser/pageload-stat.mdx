@@ -1,0 +1,269 @@
+---
+id: pageload-stat
+title: ページロード統計
+description: ページロード統計は、ウェブサイトのページURLパスごとにロード性能情報を提供します。
+keywords:
+  - Browser Monitoring
+  - ページロード
+  - 統計
+---
+
+{/* Note */}
+import TimequeryNotes from "../common-items/_browser-stat-time-query-note.mdx"
+
+ホーム画面 &gt; プロジェクト選択 &gt; <Cmdname sid="side_statistics" className="uitext" /> &gt; <Cmdname sid="side_pageLoadStatistics" className="uitext" />
+
+<Cmdname sid="side_pageLoadStatistics" className="uitext" />メニューは、ウェブサイト上のページごとのロード性能情報を提供します。 このメニューを通じて各ページがロードされる過程を詳細に追跡でき、性能が低下したページを識別し、改善されたページの成果を分析できます。 また、ウェブアプリケーションのユーザーエクスペリエンスを改善するための有用な情報を取得できます。
+
+- ページURLパスごとのロード性能の統計を提供します。
+
+- 平均値、最大値、最小値、百分位数ベースの統計を確認できます。
+
+- ページロードプロセスの詳細時間のフィルターを使用して、性能を集中的に分析できます。
+
+- Navigation Timing APIを通じてページロードの各段階別時間を収集し、統計を提供します。
+
+:::note
+
+<Cmdname sid="side_pageLoadStatistics" className="uitext" />メニューで収集するデータの詳細については、[次の文書](collect-data#pageloadtime)を参照してください。
+
+:::
+
+## 基本的な使い方
+
+ページのURL経路を基準に**ページロード時間**と**DOMロード時間**、**ネットワーク遅延時間**、**リソースロード時間**など様々な性能メトリクスを確認できます。 これにより、各ページの性能状態を評価し、最適化可否を判断できます。
+
+<ImgLang img="browser-pageload-statistics.png" desc="ページロード統計" />
+
+1. <Cmdname sid="time" className="uitext" />で性能メトリクスを照会する日時を設定します。
+
+2. <Cmdname sid="TTL08276" className="uitext" />でご希望の基準を選択します。
+
+3. 画面右上の![検索アイコン](/img/ic-search-on-press.svg)ボタンを選択します。
+
+照会した時間範囲の性能メトリクスを各セクションでグラフチャートと一覧を通じて確認できます。 各セクションのグラフチャートでマウスをオーバーすると、その時間帯のメトリクス情報を確認できます。
+
+:::note
+
+<Cmdname sid="TTL08276" className="uitext" />についての詳細は、[次の文書](#statcriteria)を参照してください。
+
+:::
+
+### 照会時間の設定
+
+<Cmdname sid="time" className="uitext" />で性能メトリクスを照会する日時を設定します。
+
+- 一番右の緑のボタンを選択すると、様々な時間範囲を選択できます。 
+
+  <ImgLang img="browser-statistics-set-time-select-options.png" className="width-600" desc="時間設定" />
+
+- ![左方向アイコン](/img/left-arrow.svg)または![右方向アイコン](/img/right-arrow.svg)ボタンを選択して時間を移動できます。 移動間隔は、右側に設定された時間間隔です。
+
+- 日付と時間を手動で選択するには、日付と時間領域をクリックしてください。
+
+  <ImgLang img="browser-statistics-set-custom-time.png" desc="時間設定" />
+
+:::note
+
+- 最大選択できる時間は3日であり、最小選択できる時間は5分です。
+
+- 2時間以下の範囲を選択すると、5分単位でデータを照会し、2時間を超えると1時間単位でデータを照会します。
+
+:::
+
+### 統計基準を選択する{#statcriteria}
+
+<Cmdname sid="TTL08276" className="uitext" />は、ユーザーが分析しようとする統計メトリクスを次に選択した基準で確認できるオプションです。
+
+- <Cmdname sid="merge_avg" className="uitext" />: 各ページの平均ロード時間を計算して統計を提供します。
+
+- <Cmdname sid="merge_max" className="uitext" />: 各ページの最大ロード時間に基づいて統計を提供します。 つまり、ページロード時間が最も非効率的なページURLを把握できます。
+
+- <Cmdname sid="merge_min" className="uitext" />: 各ページの最小ロード時間に基づいて統計を提供します。 これにより、最適な条件でロードされたページURLを確認できます。 または、性能の最適化目標を設定する時に役立ちます。
+
+- <Cmdname sid="ITM08291" className="uitext" />: 各ページの百分位数ベースのロード時間の統計を提供します。
+
+  - <Cmdname sid="TTL08288" className="uitext" replace="95" />: 最も遅い5%のページロード時間であり、ページロード時間が最も遅かった上位5%のユーザー経験を意味します。
+
+  - <Cmdname sid="TTL08288" className="uitext" replace="90" />: 最も遅い10%ユーザーのページへのロード時間で、主に遅いユーザーグループの性能問題を特定する時に役立ちます。
+
+  - <Cmdname sid="TTL08288" className="uitext" replace="75" />: ページのロード時間が下位75%より遅い上位25%のユーザーのロード時間をを表示します。
+
+  - <Cmdname sid="TTL08288" className="uitext" replace="50" />: 中間値であり、全体ユーザーの半分はその時間より早くページをロードし、半分はより遅くロードしたことを意味します。
+
+{/* Tip */}
+import CriteriaTip from "../common-items/_browser-stat-criteria-tip.mdx";
+
+<CriteriaTip/>
+
+### 照会結果をダウンロードする
+
+照会したデータをCSV形式のファイルでダウンロードできます。 画面右上の![ダウンロードアイコン](/img/ic-csv-download-ms.svg)ボタンを選択します。 CSVファイル名は*LoadStatistics_`YYYYMMDD_HHMMSS`.csv*形式です。
+
+## 画面構成
+
+### <Cmdname sid="TTL08305" /> {#TTL08305}
+
+ページロード回数と性能メトリクス(応答時間)の時間帯別推移を視覚化したチャートです。 このグラフにより、特定の時間帯に性能の変動有無を確認できます。 
+
+- 特定の時間の青い棒グラフを選択すると<Cmdname sid="TTL08306" className="uitext" />と<Cmdname sid="TTL08304" className="uitext" />、<Cmdname sid="TTL08445" className="uitext" />セクションのデータを選択した時間範囲に合わせて照会できます。
+
+  <ImgLang img="browser-statistics-pageload-trend-select-time.png" desc="ページロードの性能推移" />
+
+- <Cmdname sid="TTL08276" className="uitext" />で選択したオプションによって、チャートに表示される項目は変更されます。
+
+#### <Cmdname sid="TTL08276" />: <Cmdname sid="merge_avg" />/<Cmdname sid="merge_max" />/<Cmdname sid="merge_min" /> {#Statisticalcriteria}
+
+<ImgLang img="browser-statistics-pageload-trend.png" desc="ページロードの性能推移" />
+
+- 青色の棒グラフは、特定の時間帯にロードされたページの数です。
+
+- 紫色の線グラフは、その時間帯の平均ページのロード時間です。
+
+#### <Cmdname sid="TTL08276" />: <Cmdname sid="ITM08291" /> {#percent}
+
+<ImgLang img="browser-statistics-pageload-trend-pecent.png" desc="ページロードの性能推移" />
+
+- 青色は<Cmdname sid="TTL08288" className="uitext" replace="50" />、紫色は<Cmdname sid="TTL08288" className="uitext" replace="75" />、オレンジ色は<Cmdname sid="TTL08288" className="uitext" replace="90" />、緑色は<Cmdname sid="TTL08288" className="uitext" replace="95" />を示します。
+
+- 青色の棒グラフは、特定の時間帯にロードされたページの数です。
+
+### <Cmdname sid="TTL08306" /> {#TTL08306}
+
+5分または1時間間隔でページグループをグループ化し、単位ごとのページロード時間が最も長い上位10ページグループを時系列グラフで表示します。 このグラフは、ページのロード時間が長い順にソートして表示します。
+
+<ImgLang img="browser-statistics-pageload-time-top.png" desc="ページロード時間 Top10" />
+
+- セクションの下部にある棒グラフは、時系列グラフで表現されるデータのページグループごとの平均値です。
+
+- <Cmdname sid="TTL08276" className="uitext" />が、<Cmdname sid="merge_avg" className="uitext" />または<Cmdname sid="merge_max" className="uitext" />、<Cmdname sid="merge_min" className="uitext" />であれば、選択した基準値で経過時間を表現します。
+
+- <Cmdname sid="TTL08276" className="uitext" />が、<Cmdname sid="ITM08291" className="uitext" />であれば、経過時間を<Cmdname sid="TTL08288" className="uitext" replace="95" />で表現します。
+
+- データが連続した時間区間として収集されず、特定の区間にのみ存在する場合、棒グラフのみが表示されます。
+
+### <Cmdname sid="TTL08304" /> {#TTL08304}
+
+5分または1時間間隔でページグループをグループ化し、単位別のページロード数が最も多い上位10ページグループを時系列グラフで表示します。 このグラフは、ページロード数の多い順にソートして表示します。
+
+<ImgLang img="browser-statistics-pageload-count-top.png" desc="ページロード数 Top10" />
+
+- セクションの下部にある棒グラフは、時系列グラフで表現されるデータのページグループごとの合計値です。
+
+- データが連続した時間区間として収集されず、特定の区間にのみ存在する場合、棒グラフのみが表示されます。
+
+### <Cmdname sid="TTL08445" /> {#TTL08445}
+
+ページグループを基準に様々な性能メトリクスを確認できる一覧です。
+
+<ImgLang img="browser-statistics-pageload-group-list.png" desc="ページグループリスト" />
+
+- <Cmdname sid="TTL08276" className="uitext" />を<Cmdname sid="ITM08291" className="uitext" />で選択すると、ページグループごとの件数と<Cmdname sid="TTL08288" className="uitext" replace="50" />、<Cmdname sid="TTL08288" className="uitext" replace="75" />、<Cmdname sid="TTL08288" className="uitext" replace="90" />、<Cmdname sid="TTL08288" className="uitext" replace="95" />に対する経過時間を追加で確認できます。
+
+- 一覧の一番左の![詳細アイコン](/img/ico-detail-view.svg) <Cmdname sid="detail" className="uitext" />ボタンを選択すると<Cmdname sid="TTL08448" className="uitext" />画面が表示されます。 <Cmdname sid="TTL08448" className="uitext" />画面を通じて選択したページグループの詳細な統計情報を確認できます。 詳細については、[次の文書](#TTL08448)を参照してください。
+
+- <Cmdname sid="page_group" className="uitext" />カラムの![右方向アイコン](/img/right-arrow.svg)ボタンを選択すると<Cmdname sid="side_userSessionEventSearch" className="uitext" />メニューに移動できます。 選択したページのグループURLと照会時間を、フィルターで適用した結果を確認できます。
+
+- ![カラムアイコン](/img/ic-column.svg) <Cmdname sid="BTN06441" className="uitext" />: テーブルヘッダーカラムを非表示にしたり、必要な項目を追加できます。 カラムの順序を変更することもできます。 詳細については、[次の文書](#setcolumn)を参照してください。
+
+<TimequeryNotes sid="side_pageLoadStatistics" img="browser-statistics-pagegroup-header.png" />
+
+### <Cmdname sid="TTL08448" /> {#TTL08448}
+
+選択したページグループの詳細な統計情報を確認できます。
+
+- <Cmdname sid="TTL08447" className="uitext" />
+
+  <ImgLang img="browser-statistics-pageload-timeline.png" desc="Page load timeline" />
+
+  ウェブアプリケーションの全体ページロードの性能情報を提供します。 ページロード時間と読み込み段階別プロセスを平均時間で示します。 これにより、ブラウザーアプリケーションの全体的な性能を把握できます。 詳細については、[次の文書](dashboard#pageloadtimeline)を参照してください。
+
+  :::note
+
+  <Cmdname sid="TTL08276" className="uitext" />が<Cmdname sid="ITM08291" className="uitext" />であれば、ページロード性能をパーセンテージで表示します。 青色は<Cmdname sid="TTL08288" className="uitext" replace="50" />、紫色は<Cmdname sid="TTL08288" className="uitext" replace="75" />、オレンジ色は<Cmdname sid="TTL08288" className="uitext" replace="90" />、緑色は<Cmdname sid="TTL08288" className="uitext" replace="95" />を示します。
+
+  :::
+
+- <Cmdname sid="TTL06932" className="uitext" />
+
+  <ImgLang img="browser-statistics-pageload-time.png" desc="Page load time" />
+
+  選択したページグループの時間に応じたページのロード時間を確認できます。 選択ボックスで様々な性能メトリクスを選択できます。 性能メトリクスの詳細については、[次の文書](#columninfo)を参照してください。
+
+  :::note
+
+  <Cmdname sid="TTL08276" className="uitext" />が<Cmdname sid="ITM08291" className="uitext" />であれば、パーセンテージごとのページのロード時間を提供します。
+
+  :::
+
+- <Cmdname sid="TTL06931" className="uitext" />
+
+  <ImgLang img="browser-statistics-pageload-count.png" desc="Page load count" />
+
+  選択したページグループの時間に応じたページのロード数を確認できます。
+
+- <Cmdname sid="TTL08374" className="uitext" type="browser" /> / <Cmdname sid="TTL08374" className="uitext" type="os" /> / <Cmdname sid="TTL08374" className="uitext" type="device" />
+
+  <ImgLang img="browser-statistics-pageload-top10.png" desc="Page load top10" />
+
+  ページへのロード件数に基づいて、上位10のブラウザ、OS、デバイス項目を円形グラフで提供します。 これにより、ウェブアプリケーションを利用するユーザーの環境を把握できます。
+
+- <Cmdname sid="TTL08375" className="uitext" type="browser" /> / <Cmdname sid="TTL08375" className="uitext" type="os" /> / <Cmdname sid="TTL08375" className="uitext" type="device" />
+
+  <ImgLang img="browser-statistics-pageload-time-top10.png" desc="Page load top10" />
+
+  ブラウザ、OS、デバイスごとのページのロード時間を提供します。 これにより、ページへのロード時間が遅くなるユーザーの環境を把握できます。
+
+  :::note
+
+  各セクションの右上の![テーブルアイコン](/img/ic-table.svg)ボタンを選択すると、テーブル一覧形式に変更できます。 テーブル一覧形式では、経過時間と詳細時間に関する追加情報を提供します。 再びグラフ形式に変更するには、![グラフアイコン](/img/ic-bar-chart.svg)ボタンを選択します。
+
+  :::
+
+- <Cmdname sid="TTL08446" className="uitext" />
+
+  <ImgLang img="browser-statistics-pagel-url-path-list.png" desc="Page load top10" />
+
+  ページURLパス(Path)を基準に様々な性能メトリクスを一目で確認できるテーブル一覧です。 正規表現式で、グループ化していないURL pathに基づいて一覧を提供します。 
+
+  - 一覧の一番左の![詳細アイコン](/img/ico-detail-view.svg) <Cmdname sid="detail" className="uitext" />ボタンを選択すると、ページURL path基準<Cmdname sid="TTL08448" className="uitext" />画面を確認できます。 
+
+  - <Cmdname sid="TTL08449" className="uitext" />カラムの![右方向アイコン](/img/right-arrow.svg)ボタンを選択すると、<Cmdname sid="side_userSessionEventSearch" className="uitext" />メニューに移動できます。 選択したページのグループURLと照会時間を、フィルターで適用した結果を確認できます。
+
+  <TimequeryNotes sid="TTL08446" img="browser-statistics-pageurlpath-header.png" />
+
+{/* 데이터 수집 제한 */}
+import DatacollectInfo from "../common-items/_browser-stat-data-info.mdx";
+
+<DatacollectInfo/>
+
+## 参照結果フィルタリング
+
+照会した統計データを<Cmdname sid="page_group" className="uitext" />または<Cmdname sid="TTL08292" className="uitext" replace="ms" />を基準にフィルタリングして、必要な内容を集中分析できます。
+
+### ページグループフィルター
+
+特定のURLに関連するページを選択して性能データを照会できます。 <Cmdname sid="page_group" className="uitext" />オプションで、目的のページグループ項目を選択します。
+
+<ImgLang img="browser-statistics-page-group-filter.png" desc="ページグループ" />
+
+:::note
+
+ページグループは最大3つまで選択できます。
+
+:::
+
+{/* 성능 지표 필터 */}
+import PermetricsFilter from "../common-items/_browser-stat-perf-metrics-filter.mdx";
+
+<PermetricsFilter/>
+
+{/* 컬럼 설정하기 */}
+import Coumnsetting from "../common-items/_browser-stat-column-setting.mdx";
+
+<Coumnsetting/>
+
+{/* 컬럼 및 용어 안내 */}
+import Statcolumn from "../common-items/_browser-stat-column-info.mdx";
+
+<Statcolumn/>

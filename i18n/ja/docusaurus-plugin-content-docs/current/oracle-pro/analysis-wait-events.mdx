@@ -14,14 +14,87 @@ import ShortDesc from "../common-items/_db-analysis-wait-event-short-desc.mdx";
 
 <ShortDesc />
 
-{/* ## 기본 화면 안내 */}
-import WaiteventBasicguide from "../common-items/_db-analysis-wait-event-basic-guide.mdx";
+## 基本画面ガイド
 
-<WaiteventBasicguide />
+照会する<Cmdname sid="time" className="uitext" />と<Cmdname sid="instance" className="uitext" />を選択します。 設定した時間とインスタンスに該当する待機情報を確認することができます。 照会期間中に待機(遅延)が頻繁に発生したアクティブセッションがあったら、どのようなタイプの待機イベントが発生したのかを分析するのに活用できます。
+
+<ImgLang img='db-analysis-wait-oracle.png' desc='Wait分析' />
+
+真ん中の時系列チャートでは、時間帯別Wait Classの分布及びセッション数を視覚的に表示します。 これにより、特定の時間帯の待機イベントの増加パターンを確認できます。 ***Wait(time)***、***Wait(count)***、***Latch***、***Enqueue***、***Stat***、***Cpu***、***Memory***、***Session Count***などの分析カテゴリを選択できます。
+
+時系列チャートで![数字1](/img/number-01.png)詳細時間を選択すると、その時間のアクティブセッションを照会でき、Waitイベントが発生したSQL文を確認できます。
+
+<Columns>
+<Column className="text--left width--50">
+
+![Wait Class](/img/db-analysis-wait-class-oracle.png)
+
+</Column>
+
+<Column className="text--left">
+
+***Wait Class***
+
+円形チャートを通じて待機イベントをWait Class別に分類して視覚化します。 これにより、主要な待機イベントの原因を素早く特定できます。 Wait Classが異常に高い場合は、そのClassに関するリソースを集中的にチェックします。
+
+</Column>
+</Columns>
+
+<Columns>
+<Column className="text--left width--50">
+
+![Wait Event Top 5](/img/db-analysis-wait-top5-oracle.png)
+
+</Column>
+
+<Column className="text--left">
+
+***Wait Event Top 5***
+
+発生頻度の高い待機イベントを上位5つまで表示します。 各待機イベントの割合(%)を通じて、どのイベントがシステムの性能に最も大きな影響を及ぼすかを把握でき、システムのボトルネック現象が何かを確認するのに役立ちます。
+
+</Column>
+</Columns>
+
+<Columns>
+<Column className="text--left width--50">
+
+![Stat Top 5](/img/db-analysis-wait-stat-top5-oracle.png)
+
+</Column>
+
+<Column className="text--left">
+
+***Stat Top 5***
+
+主要Statデータのうち上位5つを割合(%)に表示します。 データベースで最も影響を及ぼすタスクやリソースの使用状況を素早く理解できます。
+
+</Column>
+</Columns>
+
+:::tip
+
+- Wait分析結果は原因診断を助けるツールとして活用され、実際の問題解決はDBAの判断によって実行されます。
+
+- 時間範囲を適切に調整して、問題が発生した時間帯を正確に分析する必要があります。
+
+- Wait Class及びイベントの特性を事前に熟知すれば、分析速度が速くなります。
+
+:::
+
+:::note
+
+- ***Active Session***セクションの一覧で***instance***カラム項目を選択すると、<Cmdname sid="side_dbMonitoring" className="uitext" />メニューに移動します。 <Cmdname sid="side_dbMonitoring" className="uitext" />メニューの詳細は[次の文書](instance-monitoring)を参照してください。
+
+- ***Active Session***セクションの一覧でセッション項目を選択すると、<Cmdname sid="session_detail" className="uitext" />画面が表示されます。 <Cmdname sid="session_detail" className="uitext" />画面についての詳細は、[次の文書](multi-instance-monitoring#session-details)を参照してください。
+
+- ***Active Session***セクションの一覧で***query***カラム項目を選択すると、<Cmdname sid="TTL06224" className="uitext" /> 画面が表示されます。 <Cmdname sid="TTL06224" className="uitext" />画面の詳細については[次の文書](multi-instance-monitoring#query-details)を参照してください。
+
+:::
 
 import Dbtabledatafiltering from "../common-items/_db-table-data-filtering.mdx";
 
-<Dbtabledatafiltering level={3} />
+<Dbtabledatafiltering level={2} />
 
 import Dbv2dataeditcolumn from "../common-items/_db-v2-data-edit-column.mdx";
 

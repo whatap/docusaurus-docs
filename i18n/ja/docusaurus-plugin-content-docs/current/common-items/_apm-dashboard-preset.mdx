@@ -36,6 +36,20 @@
 
 </InDoc>
 
+<InDoc product="mssql">
+
+ダッシュボードからユーザーが設定したウィジェットの設定とレイアウト状態を保存して読み込むことができます。 ウィジェットのサイズを調整し、希望する場所に配置して新しいプリセットを作成できます。
+
+**_Default_**：主要DBメトリクスとXOSメトリクスで構成されたプリセットです。
+
+:::note
+
+基本プリセット(<Cmdname sid="kube_default" className="uitext" />)は変更できません。
+
+:::
+
+</InDoc>
+
 ### 新しいプリセットを作成する{#newpreset}
 
 1. ダッシュボードから、希望する形にウィジェットを配置してみてください。 サイズを変更して、頻繁に確認するウィジェットのみを配置することもできます。
@@ -46,7 +60,7 @@
 
    <InDoc product="java,python,php,nodejs,dotnet,golang"><ImgLang img='apm-dashboard-preset-save.png' desc='プリセット保存' /></InDoc>
 
-   <InDoc product="postgresql,mysql,oracle,oracle-pro,redis,mongodb,altibase,cubrid"><ImgLang img='db-dashboard-preset-save.png' desc='プリセット保存' /></InDoc>
+   <InDoc product="postgresql,mysql,oracle,oracle-pro,redis,mongodb,altibase,cubrid,mssql"><ImgLang img='db-dashboard-preset-save.png' desc='Preset' /></InDoc>
 
    エージェント選択履歴を一緒に保存するには、<Cmdname sid="ITM07345" className="uitext" />を選択してください。
 

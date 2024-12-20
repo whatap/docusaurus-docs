@@ -25,76 +25,7 @@ import Metricseventconditionselecttargetguide from "../common-items/_metrics-eve
 
 <Metricseventconditionselecttargetguide />
 
-## テンプレート{#template}
+{/* ## 템플릿 */}
+import Template from "../common-items/_metrics-warning-notice-db.mdx";
 
-ユーザーがアラート通知を簡単に設定できるように、メトリクスおよび複合メトリクスイベントのテンプレートを提供します。
-
-### メトリクスイベントテンプレート{#template-metrics}
-
-<Cmdname sid="event_statistic" className="uitext" />&gt;<Cmdname sid="event_setting" className="uitext" />&gt;<Cmdname sid="metrics" className="uitext" />タブで<Cmdname sid="metrics" className="uitext" />セクションの<span class="uitext">+</span><Cmdname sid="add_notification" className="uitext" />ボタンを選択してください。<Cmdname sid="template" className="uitext" />オプションから目的の項目を選択してください。次のとおり選択できるテンプレートの一覧です。
-
-:::note
-
-選択したテンプレートの<Cmdname sid="metrics_event_rules" className="uitext" />はユーザーが修正できます。
-
-:::
-
-- <p><Cmdname sid="cpu_usage" className="uitext" /><span class="uitext">_Warning</span></p>
-
-  条件：`cpu(xos)` > 70
-
-  個々のインスタンスでCPU使用率が70%を超えると、<span class='slow'>Warning</span>(アラート) レベルの通知が送信されます。
-
-- <p><Cmdname sid="memory_usage" className="uitext" /><span class="uitext">_Warning</span></p>
-
-  条件：`mem(xos)` > 70
-
-  個々のインスタンスでメモリ使用量が70%を超えると、<span class='slow'>Warning</span>(アラート) レベルの通知が送信されます。
-
-- **_Active Session_Warning_**
-
-  条件：`active_sessions` > 30
-
-  個々のインスタンスでアクティブなセッション数が 30 を超えると、<span class='slow'>Warning</span>(アラート) レベルの通知が送信されます。
-
-- **_Lock Wait_Warning_**
-
-  条件：`lock_wait_sessions` > 3
-
-  個々のインスタンスで待機中のセッション数が 3 つ以上を超えると、<span class='slow'>Warning</span>(アラート) レベルの通知が送信されます。
-
-- **_Long Query_Warning_**
-
-  条件：`long_running_sessions` > 3
-
-  個々のインスタンスで実行時間の長いセッション数が 3 つ以上を超えると、<span class='slow'>Warning</span>(アラート) レベルの通知が送信されます。
-
-- <p><Cmdname sid="TTL07136" className="uitext" /><span class="uitext">_Warning</span></p>
-
-  条件：(`total_sessions` / `max_connections` \* 100) > 90
-
-  個々のインスタンスで実行時間の長いクエリ数が80%を超えると、<span class='slow'>Warning</span>(アラート) レベルの通知が送信されます。
-
-- <p><Cmdname sid="TTL07137" className="uitext" /><span class="uitext">_Warning</span></p>
-
-  条件：`blks_hit_ratio` \<\= 80
-
-  個々のインスタンスでMemory Block Hit率が80%以下の場合、<span class='slow'>Warning</span>(アラート) レベルの通知が送信されます。
-
-- <p><Cmdname sid="TTL07138" className="uitext" /><span class="uitext">_Warning</span></p>
-
-  条件：`replication_delay` \>\= 10
-
-  個々のインスタンスでreplicationデータベースに反映される遅延時間が10秒以上ある場合、<span class='slow'>Warning</span>(アラート) レベルの通知が送信されます。
-
-### 複合メトリクスのイベントテンプレート{#composite-metrics-template}
-
-<Cmdname sid="event_statistic" className="uitext" />&gt;<Cmdname sid="event_setting" className="uitext" />&gt;<Cmdname sid="metrics" className="uitext" />タブで<Cmdname sid="composite_metrics" className="uitext" />セクションの<span class="uitext">+</span> <Cmdname sid="add_notification" className="uitext" />ボタンを選択してください。<Cmdname sid="template" className="uitext" />オプションから目的の項目を選択してください。以下は選択できるテンプレートの一覧です。
-
-- **_Replication Broken_**
-
-  個々のエージェントのReplcation状態がBrokenまたはFalloverの場合、<span class='vslow'>Critical</span>(危険) レベルの通知が送信されます。
-
-- <p><Cmdname sid="TTL07141" className="uitext" /></p>
-
-  60秒以上コミットされていないセッションが 2 つ以上を超えると、<span class='slow'>Warning</span>(アラート) レベルの通知が送信されます。
+<Template />

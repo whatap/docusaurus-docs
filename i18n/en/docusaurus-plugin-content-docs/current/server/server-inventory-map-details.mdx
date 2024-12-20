@@ -1,0 +1,136 @@
+---
+id: server-inventory-map-details
+title: Server inventory map details
+description: The following explains how to view the server inventory map details.
+keywords:
+  - Dashboard
+  - Server inventory map
+  - Analysis
+  - Server
+---
+
+Home &gt; Select Project &gt; <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_serverInventoryMap" className="uitext" />
+
+You can check detailed information about the server group selected from the <Cmdname sid="side_serverInventoryMap" className="uitext" /> menu on the ***Display Detail*** screen. Click ![Display Detail icon](/img/ico-detail-mode.svg) ***Display Detail*** on the upper right of the **View summary** panel. The server group information in Display Detail is updated in real time.
+
+<ImgLang img='server-inventory-map-details.png' desc='Server inventory map view detail' />
+
+- You can check the group data query time and refresh cycle through the **time selector** at the top, and you can stop or resume refreshing data. 
+
+- In the left area, you can see the **server group cards** and **server list**.
+
+- In each tab on the right, you can see the ***server inventory***, ***file system information***, and ***metrics information***. 
+
+## Server group cards and list
+
+Key summary information on the selected server group can be viewed through the server group cards and list. 
+
+- If you hover the mouse over a server in the chart area within the server group card, a popover with summary information of the selected server appears. 
+
+- You can specify a target server to query from the chart area and server list within the server group card. 
+
+- You can select up to 10 servers, and you can check information of the selected server in each tab on the right when you select a target server. 
+
+## Server Inventory
+
+You can check the detailed configuration of the selected server in list format in the <Cmdname sid="TTL08767" className="uitext" /> tab. If no server is selected, the server configuration information for all servers in the server group appears. The information and configuration that can be viewed in the <Cmdname sid="side_serverInventory" className="uitext" /> menu are the same. 
+
+### Filtering
+
+{/* 필터 설정 시 드로워 제거가 안되어서 바로 추가가 안됨.. */}
+
+The <Cmdname sid="side_serverInventory" className="uitext" /> menu provides the server filtering feature based on the column list set in the menu.
+
+- ***Filter key***: Filters can be set based on the default collection columns provided in the <Cmdname sid="side_serverInventory" className="uitext" /> menu and user-defined custom columns.
+
+  - Default collection columns: Items automatically collected from <Cmdname sid="side_serverInventory" className="uitext" /> are ***server type***, ***default group***, ***OS type***, ***OS version***, ***model***, and ***serial*** columns.
+
+  - Custom columns: They are the items added and managed on a project basis.
+
+- ***Filter condition***: Filter conditions can be set as string conditions such as matched, mismatched, included, and excluded. All filters are string-based, and numeric conditions (e.g. `≥`, `≤`) are not supported.
+
+### Column Settings
+
+{/* 수정 권한 제거 예정, 조회 권한만! */}
+
+{/* 
+
+The ***column settings*** can be modified in the <Cmdname sid="side_serverInventory" className="uitext" /> menu. 
+
+*/}
+
+In the ***column settings*** of the <Cmdname sid="TTL08767" className="uitext" /> tab in the ***Display Detail*** of <Cmdname sid="side_serverInventoryMap" className="uitext" />, you can set the **display status** and **order** of the columns in the list. The display status and order are set separately from the <Cmdname sid="side_serverInventory" className="uitext" /> menu.
+
+:::note
+
+Adding and modifying custom columns are possible through the <Cmdname sid="side_serverInventory" className="uitext" /> menu. 
+
+:::
+
+### Download CSV
+
+You can download the collected server configuration data in *CSV* file format by selecting ![Download icon](/img/ico-download.svg) <Cmdname sid="download" className="uitext" /> at the top. 
+
+## File system information
+
+In the <Cmdname sid="TTL08666" className="uitext" /> tab, you can see the file system information of the server selected from the server group cards or list on the left in list format. If no server is selected, the file system information for all servers in the server group appears. 
+
+| Type                  | Description                                                                                                               |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| ***Mount Point***     | It displays the name of the mounted file system. In the Windows environment, it displays the name of the drive partition. |
+| ***Total Space(GB)*** | It displays the total storage space allocated to the file system in GB.                                                   |
+| ***Used Space(GB)***  | It displays the storage space currently used on the file system in GB.                                                    |
+| ***Used(%)***         | It displays the percentage of storage space in use compared to the total storage space on the file system.                |
+| ***i-node Used(%)***  | It displays the percentage of i-nodes allocated to the file system that are in use.                                       |
+
+:::note 
+
+**i-node**
+
+An i-node is a space in the file system that stores the data about files and directories. When this usage reaches 100%, you can no longer write files, even if Used (%) is not 100%.
+
+:::
+
+{/* 파일 시스템에 할당된 i-node 중 사용 중인 i-node의 비율을 백분율로 표시합니다. An i-node is a unit that stores data about files and directories in the file system. When its percentage reaches 100%, no additional files can be created even if Used (%) is not 100%. */}
+
+### Filtering
+
+The server filtering feature is provided. ***Filter Key*** provides the ***Server Name*** and ***Mount Point***. The filtering ***conditions*** can be set as a string such as matched, mismatched, included, and excluded.
+
+### Download CSV
+
+You can download the collected file system information in *CSV* file format by selecting ![Download icon](/img/ico-download.svg) <Cmdname sid="download" className="uitext" /> at the top. 
+
+{/* 문자열 기반 필터 ***조건***으로 일치, 불일치, 포함 및 미포함을 선택할 수 있습니다.  */}
+
+## Metrics
+
+You can see the performance metrics charts for the server selected from the server group cards or list on the left in the <Cmdname sid="metrics" className="uitext" /> tab. If no server is selected, the performance metrics chart for the top 50 servers within that server group appears. 
+
+| Name                              | Description                                                                                                                                             | Remarks                                      |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| ***[CPU] User + Sys (%)***        | It displays the sum of the usage in user mode (User) and kernel mode (Sys) out of the total CPU usage, indicating the utilization of all CPU resources. | -                                            |
+| ***[CPU] User (%)***              | The percentage of CPU consumed by processes running in user mode.                                                                                       | -                                            |
+| ***[CPU] Sys (%)***               | The percentage of CPU consumed by processes running in kernel mode.                                                                                     | -                                            |
+| ***[CPU] Wait (%)***              | The percentage of time when the CPU is idle, waiting for an I/O operation, such as the disk and network.                                                | -                                            |
+| ***[System] Runqueue***           | It is the number of processes (or threads) that are ready to run but have not yet been assigned CPU.                                                    | -                                            |
+| ***[System] Blockqueue***         | This indicates the number of processes (or threads) in the queue for I/O, paging, and such.                                                             | Windows excluded                             |
+| ***[System] Forks***              | It displays the number of tasks that generate new processes per second.                                                                                 | Windows excluded                             |
+| ***[System] Interrupts***         | It displays the number of cases per second where the CPU handled hardware interrupts.                                                                   | -                                            |
+| ***[System] SystemCall***         | It displays the number of cases per second where the kernel processed system calls.                                                                     | Linux excluded                               |
+| ***[System] ContextSwitch***      | It displays the number of cases per second where switching occurs between processes.                                                                    | -                                            |
+| ***[MEM] Used+Cache(%)***         | It displays the total ratio of Used memory and Cached memory among the total memory.                                                                    | For Windows, <UI>[MEM] Used(%)</UI> appears. |
+| ***[MEM] Used(%)***               | It is the memory utilization indicating the ratio of memory use by user processes or kernel, excluding the buffer and cache areas.                      | -                                            |
+| ***[MEM] Cache(%)***              | It displays the ratio of cached memory use to quickly serve frequently accessed files or data.                                                          | Windows excluded                             |
+| ***[Swap] Used(%)***              | It is the size of the swap in use expressed as a percentage.                                                                                            | -                                            |
+| ***[MEM] SwapIn***                | It displays the number of pages moved from the swap (paging space) area of ​​the disk into memory.                                                      | -                                            |
+| ***[MEM] SwapOut***               | It displays the number of pages moved from the memory to the disk swap (paging space) area.                                                             | -                                            |
+| ***[MEM] FilesystemIn***          | It displays the number of pages loaded into memory based on the read operation on the file system.                                                      | -                                            |
+| ***[MEM] FilesystemOut***         | It displays the number of pages written to disk based on the write operation on the file system.                                                        | -                                            |
+| ***[NET] Rx+Tx (bps)***           | It is the value expressed in bps for the sum of the data received (Rx) and transmitted (Tx).                                                            | -                                            |
+| ***[NET] Rx+Tx (pps)***           | It is the value expressed in packets per second (pps) for the sum of the data received (Rx) and transmitted (Tx).                                       | -                                            |
+| ***[Disk] Read + Write (bytes)*** | It displays the sum of the data read and written on the disk in bytes.                                                                                  | -                                            |
+| ***[Disk] Read + Write (IOPS)***  | It displays the number of disk read and write operations in the unit of IOPS (Input/Output Operations Per Second).                                      | -                                            |
+| ***[Process] TotalCount***        | It displays the current total number of processes.                                                                                                      | -                                            |
+| ***[Thread] TotalCount***         | It displays the current total number of threads.                                                                                                        | -                                            |
+| ***[Defunct] TotalCount***        | It displays the current total number of defunct processes.                                                                                              | -                                            |

@@ -1,0 +1,49 @@
+## agent_status_summary {#agent_status_summary}
+
+This category collects metrics related to agent status every 10 seconds.
+
+### Fields {#agent_status_summary_filed}
+
+<Xclude product="server,kubernetes">
+
+| Field name    |       Unit      | Description                                   | Remarks          |
+| ------------- | :-------------: | --------------------------------------------- | ---------------- |
+| `inActTime`   | Millisecond(ms) | Amount of time the agent remains inactive     | -                |
+| `isActive`    |        -        | Whether the agent is active or not            | `true` / `false` |
+| `isRestart`   |        -        | Whether the agent has been recently restarted | `true` / `false` |
+| `lastActTime` | Millisecond(ms) | Time when the agent was last activated        | `0`: If disabled |
+| `oid`         |        -        | Unique IDs for each agent in the project      | -                |
+| `startTime`   | Millisecond(ms) | Timestamp when the agent was started.         | -                |
+
+</Xclude>
+
+<InDoc product="server">
+
+| Field name    |       Unit      | Description                                    | Remarks          |
+| ------------- | :-------------: | ---------------------------------------------- | ---------------- |
+| `inActTime`   | Millisecond(ms) | Amount of time the agent remains inactive      | -                |
+| `isActive`    |        -        | Whether the agent is active or not             | `true` / `false` |
+| `isRebooted`  |        -        | Whether the server has been recently restarted | `true` / `false` |
+| `lastActTime` | Millisecond(ms) | Time when the agent was last activated         | `0`: If disabled |
+| `oid`         |        -        | Unique IDs for each agent in the project       | -                |
+| `startTime`   | Millisecond(ms) | Timestamp when the agent was started.          | -                |
+| `status`      |        -        | Status of the current agent                    | -                |
+| `uptime`      |   Second (sec)  | Server's uptime                                | -                |
+
+:::note
+
+The values ​​in the `status` field are distinguished as follows:
+
+- `ok`: The server is in normal status where it is active.
+
+- `inactive`: The server is disabled.
+
+- `warning`: A warning event is in progress on the server.
+
+- `fatal`: A critical event is in progress on the server.
+
+- `paused`: The agent has paused data collection.
+
+:::
+
+</InDoc>

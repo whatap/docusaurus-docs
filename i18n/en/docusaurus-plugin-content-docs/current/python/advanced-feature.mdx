@@ -32,6 +32,41 @@ The same name must not be used for registered application servers in the project
 | process       | app_process_name                                                    |
 | hostname      | Host name                                                           |
 
+## Open File Descriptor usage collection {#open-file-descriptor-usage-collection}
+
+Monitoring the Open File Descriptor usage by the Python web application is essential for managing system resources. File descriptors are critical resources that limit the number of files that can be opened simultaneously on the system. If the usage reaches the limit, the application cannot open new files, which can cause errors. This problem frequently happens in multi-threaded and multi-process environments.
+
+Additionally, the file descriptor leakage may degrade system performance and compromise stability due to resource exhaustion. This feature monitors and identify the file descriptor usage status when its usage is high and helps you increase the file descriptor limitation or resolve the leakage issues if necessary.
+
+:::note 
+
+**Requirements**
+
+WhaTap Python agent 1.7.2 or later is required. 
+
+:::
+
+### Activation options
+
+Modify the _whatap.conf_ file referencing the following example. 
+
+```ini
+#Setting the collection feather to on or off
+open_file_descriptor_enabled=true
+
+#Default value is set to 60 seconds when the collection cycle is omitted
+open_file_descriptor_interval=60
+```
+
+### Collection metrics
+
+| Name                 | Description                                                    |
+| -------------------- | -------------------------------------------------------------- |
+| `current_nofile_pct` | Usage rate of the current Open File Descriptor (%)             |
+| `currnet_nofile`     | Number of current open file descriptors                        |
+| `max_nofile`         | Number of allowed maximum open file descriptors of the process |
+| `pid`                | Process ID                                                     |
+
 ## Applying the AES 256 encryption
 
 The WhaTap application monitoring agent transfers the collected data after encryption. You can change this depending on the importance of the data or setting.  

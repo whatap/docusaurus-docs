@@ -1,0 +1,295 @@
+---
+id: foreign-project
+title: External project integration and configuration
+description: The following provides a guide to external project integration.
+keywords:
+  - Kubernetes
+  - Kubernetes Monitoring
+  - Dashboard
+  - External project
+toc_max_heading_level: 2
+---
+
+Home &gt; Select Project &gt; <Cmdname sid="dashboard" className="uitext" /> &gt; <Cmdname sid="side_containerMap" className="uitext" />
+
+:::note 
+
+The WhaTap Kubernetes agent 1.7.16 or later is required. 
+
+:::
+
+{/* 쿠버네티스 환경에서의 애플리케이션과 데이터베이스를 프로젝트 단위로 모니터링할 수 있는 기능을 제공합니다.  */}
+
+{/* 와탭은 다양한 모니터링 서비스를 프로젝트 단위로 제공하고 있습니다. You can build an integrated monitoring scheme by linking the Kubernetes projects with external projects. This integration requires a process of creating a project, setting a license, and activating the agent integration option, which can implement an integrated monitoring environment. */}
+
+WhaTap provides various monitoring services on a project basis. The **External project integration** feature allows you to integrate external projects related to Pods in the Kubernetes projects. 
+
+{/* 외부 프로젝트 연동을 위해서는 에이전트 설정 및 사용자 정의 리소스 내 환경변수 설정이 필요합니다. Build an integrated monitoring scheme by linking the Kubernetes projects with external projects.  */}
+
+To link to an external project, you need to configure the Kubernetes agent and a Pod to link to. Build an integrated monitoring scheme by linking the Kubernetes projects with external projects. 
+
+{/* 외부 프로젝트 연동 기능은 쿠버네티스 프로젝트의 **파드(Pod)**와 관계된 외부 프로젝트를 연결하여 통합적인 모니터링 환경을 제공합니다. To enable this feature, you must perform two tasks: configuring the Kubernetes agent and configuring the Pods to link to. */}
+
+## External project integration
+
+When the external project integration feature is enabled, the project logo appears on the linked containers and Pods as follows. This makes it easy to visually see which external projects are linked. You can also navigate to the project via the button within the Summary View panel by clicking the block. 
+
+<p align="center">
+
+<ImgLang img='k8s-foreign-project-container-map.png' desc='Container map from external project examples' />
+
+</p>
+
+{/* ## 외부 프로젝트 연동 활성화  */}
+
+## External project configuration
+
+### Agent CONFIG.
+
+You must change the whatap-node-agent DaemonSet setting of the whatap-monitoring namespace in the *YAML* file for installation of the Kubernetes agent. In particular, you must add the following environment variables into the env section of the whatap-node-agent container.
+
+```yaml
+- name: "collect_foreign_project"
+  value: "true"
+```
+
+#### Example
+
+Below is an example of the *YAML* file with environment variables added. Because there may be significant differences from the *YAML* file in the operation environment, see the example and then modify only the required parts before use. The highlighted lines are environment variables added. 
+
+```yaml {75,76}
+apiVersion: "apps/v1"
+kind: "DaemonSet"
+metadata:
+  labels:
+    name: "whatap-node-agent"
+  name: "whatap-node-agent"
+  namespace: "whatap-monitoring"
+spec:
+  selector:
+    matchLabels:
+      name: "whatap-node-agent"
+  template:
+    metadata:
+      labels:
+        name: "whatap-node-agent"
+    spec:
+      containers:
+      - command:
+        - "/data/agent/node/cadvisor_helper"
+        - "-port"
+        - "6801"
+        env:
+        - name: "NODE_NAME"
+          valueFrom:
+            fieldRef:
+              fieldPath: "spec.nodeName"
+        image: "whatap/kube_mon_dev:foreign-2"
+        name: "whatap-node-helper"
+        ports:
+        - containerPort: 6801
+          name: "helperport"
+        resources:
+          limits:
+            cpu: "200m"
+            memory: "350Mi"
+          requests:
+            cpu: "100m"
+            memory: "100Mi"
+        volumeMounts:
+        - mountPath: "/rootfs"
+          name: "rootfs"
+          readOnly: true
+        - mountPath: "/sys"
+          name: "hostsys"
+          readOnly: true
+        - mountPath: "/dev/disk"
+          name: "hostdiskdevice"
+          readOnly: true
+        - mountPath: "/run/containerd/containerd.sock"
+          name: "containerddomainsocket"
+      - command:
+        - "/bin/entrypoint.sh"
+        env:
+        - name: "NODE_IP"
+          valueFrom:
+            fieldRef:
+              fieldPath: "status.hostIP"
+        - name: "NODE_NAME"
+          valueFrom:
+            fieldRef:
+              fieldPath: "spec.nodeName"
+        - name: "WHATAP_LICENSE"
+          value: "x6050rs80f4eg-x1g0egm9rjb3mg-z7p9533a2ea87e"
+        - name: "WHATAP_HOST"
+          value: "13.124.11.223/13.209.172.35"
+        - name: "WHATAP_PORT"
+          value: "6600"
+        - name: "HOST_PREFIX"
+          value: "/rootfs"
+        - name: "WHATP_MEM_LIMIT"
+          valueFrom:
+            resourceFieldRef:
+              containerName: "whatap-node-agent"
+              resource: "limits.memory"
+        - name: "collect_foreign_project"
+          value: "true"
+        image: "whatap/kube_mon_dev:foreign-2"
+        name: "whatap-node-agent"
+        ports:
+        - containerPort: 6600
+          name: "nodeport"
+        resources:
+          limits:
+            cpu: "200m"
+            memory: "350Mi"
+          requests:
+            cpu: "100m"
+            memory: "300Mi"
+        volumeMounts:
+        - mountPath: "/rootfs"
+          name: "rootfs"
+          readOnly: true
+        - mountPath: "/bin/entrypoint.sh"
+          name: "start-script-volume"
+          readOnly: true
+          subPath: "entrypoint.sh"
+        - mountPath: "/whatap_conf"
+          name: "whatap-config-volume"
+      initContainers:
+      - command:
+        - "/data/agent/tools/whatap_debugger"
+        - "run"
+        image: "whatap/kube_mon_dev:foreign-2"
+        name: "whatap-node-debug"
+        volumeMounts:
+        - mountPath: "/rootfs"
+          name: "rootfs"
+          readOnly: true
+      serviceAccount: "whatap"
+      tolerations:
+      - effect: "NoSchedule"
+        key: "node-role.kubernetes.io/master"
+      - effect: "NoSchedule"
+        key: "node-role.kubernetes.io/control-plane"
+      volumes:
+      - hostPath:
+          path: "/"
+        name: "rootfs"
+      - hostPath:
+          path: "/sys"
+        name: "hostsys"
+      - hostPath:
+          path: "/dev/disk"
+        name: "hostdiskdevice"
+      - configMap:
+          defaultMode: 448
+          name: "node-start-script"
+        name: "start-script-volume"
+      - emptyDir: {}
+        name: "whatap-config-volume"
+      - hostPath:
+          path: "/run/containerd/containerd.sock"
+        name: "containerddomainsocket"
+```
+
+### Configuring the Pod to be linked
+
+Modify the settings of the Pod to link to. For example, in order to integrate the Redis Pod, add the following environment variables to the env section of the Redis container. 
+
+```yaml
+- name: "license"
+  value: "here_is_whatap_license"
+- name: "whatap_platform"
+  value: "redis"
+```
+
+- `here_is_whatap_license `: Enter the license information of the external project. 
+
+- `whatap_platform`: Enter the platform of the external project to link to.
+
+#### Example
+
+Below is an example of the *YAML* file in which environment variables are added to the Redis Pod configuration. The highlighted lines are environment variables added. 
+
+```yaml {31-34}
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: redis-cluster
+  namespace: backend
+spec:
+  serviceName: redis-cluster-svc
+  replicas: 6
+  selector:
+    matchLabels:
+      app: redis-cluster
+  template:
+    metadata:
+      labels:
+        app: redis-cluster
+    spec:
+      containers:
+      - name: redis
+        image: redis:5.0.1-alpine
+        ports:
+        - containerPort: 6379
+          name: client
+        - containerPort: 16379
+          name: gossip
+        command: ["/conf/update-node.sh", "redis-server", "/conf/redis.conf"]
+        env:
+        - name: POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: license
+          value: x6050s081i709-z2lhh7gpi3bdr4-x7jovr61kumi5k
+        - name: whatap_platform
+          value: redis
+        volumeMounts:
+        - name: conf
+          mountPath: /conf
+          readOnly: false
+        - name: data
+          mountPath: /data
+          readOnly: false
+```
+
+## Checking the external project to link to
+
+{/* 
+
+After configuring an external project integration, go to the <Cmdname sid="side_metricsSearch" className="uitext" /> menu. If the **container_foreign_project_mapping** category appears when you click ***Select category*** as shown below, it indicates that the integration has been made successfully. 
+
+<p align="center">
+
+<ImgLang img='k8s-foreign-project-check.png' desc='Check external project application' />
+
+</p>
+
+If the `container_foreign_project_mapping` category appears when you click ***Select category*** as shown in the example image, it indicates that the integration has been made successfully. 
+
+*/}
+
+<Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_metricsSearch" className="uitext" />
+
+<Columns>
+
+<Column className="text--left width--50">
+
+<ImgLang img='k8s-foreign-project-check.png' desc='Check external project application' />
+
+</Column>
+
+<Column className="text--left">
+
+After configuring an external project integration, go to the <Cmdname sid="side_metricsSearch" className="uitext" /> menu. Click ***Select Category*** as shown in the example image. 
+
+If the following category appears, it indicates that the integration has been made successfully.
+
+> `container_foreign_project_mapping`
+
+</Column>
+
+</Columns>

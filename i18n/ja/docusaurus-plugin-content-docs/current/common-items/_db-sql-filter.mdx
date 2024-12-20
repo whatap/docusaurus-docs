@@ -1,18 +1,44 @@
-## 参照結果フィルタリング
+<Title level={props.level} hashid="filtering">参照結果フィルタリング</Title>
 
-### フィルター条件を追加する
+<Title level={props.level + 1}>フィルター条件を追加する</Title>
 
-照会された結果からSQLテキスト値またはエージェント名、DBユーザー名などを基準にフィルタリングし、希望する結果を照会できます。
+<InDoc pages="stat">
 
-<ImgLang img='db-sql-filter-adding.png' desc='条件を追加する' />
+照会された結果からSQLテキスト値またはエージェント名、DBユーザー名などに基づいて希望するフィルタリングが可能です。
+
+</InDoc>
+
+<InDoc pages="analysis-sql">
+
+照会された結果で次の項目の値に基づいて、希望する結果をフィルタリングできます。
+
+:::info
+
+- **_sql_id_** 
+
+- **_sql_hash_value_**
+
+- **_after_plan_hash_value_**
+
+- **_before_plan_hash_value_**
+
+:::
+
+</InDoc>
 
 1. <Cmdname sid="filter" className="uitext" />オプションで<LinkImage img="ico-add.svg" className="ico" />ボタンを選択します。
+
+   <InDoc pages="stat"><ImgLang img='db-sql-filter-adding.png' desc='条件を追加する' /></InDoc>
+
+   <InDoc pages="analysis-sql,job-info,backup-recovery-history,procedure-stat"><ImgLang img='db-analysis-sql-plan-change-filter-01.png' desc='条件を追加する' /></InDoc>
 
 2. <Cmdname sid="TTL06740" className="uitext" />項目で目的のフィルタリング基準を選択します。
 
    - 選択した項目の値が文字に該当する場合は<Cmdname sid="includes" className="uitext" />(青)、<Cmdname sid="excludes" className="uitext" />(赤) の条件を選択できます。
 
-     ![条件色](/img/db-sql-filter-condition-color.png)
+     <InDoc pages="stat"><ImgLang img="db-sql-filter-condition-color.png" desc="example" multi /></InDoc>
+
+     <InDoc pages="analysis-sql"><ImgLang img="db-sql-analysis-filter-condition-color.png" desc="example" multi /></InDoc>
 
    - 選択した項目の値が数字に該当する場合は`==`(等しい), `>=`(より大きいか等しい), `<=`(より小さいか等しい) 条件を選択できます。
 
@@ -30,14 +56,20 @@
 
 - <Cmdname sid="filter" className="uitext" />オプションに適用された条件をすばやく削除するには、<LinkImage img="ico-remove.svg" className="ico" />ボタンを選択します。
 
+<InDoc pages="stat">
+
 - `sqlText`に「WhaTap」が含まれている場合は、除外するようにデフォルトで設定されています。
 
   <ImgLang img='db-sql-filter-default.png' desc='WhaTap' />
 
+</InDoc>
+
 :::
 
-### フィルター条件を修正する
+<Title level={props.level + 1}>フィルター条件を修正する</Title>
 
-<ImgLang img='db-sql-filter-modify.png' desc='フィルターの修正' />
+<InDoc pages="stat"><ImgLang img='db-sql-filter-modify.png' desc='フィルターの修正' /></InDoc>
+
+<InDoc pages="analysis-sql,job-info,backup-recovery-history,procedure-stat"><ImgLang img='db-sql-analysis-filter-modify.png' desc='フィルターの修正' /></InDoc>
 
 <Cmdname sid="filter" className="uitext" />オプションに適用されている項目をクリックします。 <Cmdname sid="TTL06737" className="uitext" />画面が表示されたら、必要な項目を修正し<Cmdname sid="apply" className="uitext" />ボタンを選択します。

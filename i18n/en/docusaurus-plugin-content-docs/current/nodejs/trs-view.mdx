@@ -13,3 +13,123 @@ keywords:
 import Trsview from "../common-items/_trs-view.mdx";
 
 <Trsview />
+
+## Exception handling (WARNING) criteria {#waringexception}
+
+The criteria for Node.js agent exception handling for errors that occur in the Node.js application environment are explained. The Node.js agent handles errors only in the following cases:
+
+- Status Code 400 or higher error handling
+
+- Error handling for HTTP calls
+
+- Handling the errors defined in WhaTap
+
+### Error display on the service screen
+
+![hitmap, Trace analysis](/img/faq/apm-faq-hitmap-error.png)
+
+Most <Cmdname sid="TTL06087" className="uitext" /> that can be seen throuth the <Cmdname sid="AA005" className="uitext" /> widget and <Cmdname sid="TTL06209" className="uitext" /> window are for the <span class="slow">WARNING</span> level.
+
+### Status Code 400 or higher error handling
+
+If the HTTP response code is 400 or more, it is treated as an error even if no exception class occurs. The following is the agent option that sets whether or not to enable error handling based on the HTTP status code. 
+
+```ini title="whatap.conf"
+transaction_status_error_enable=true
+```
+
+:::note
+
+For more information about the `transaction_status_error_enable` option, see [the following](agent-transaction#transaction_status_error_enable).
+
+:::
+
+### Error handling for HTTP calls
+
+The errors that occur during HTTP calls appear in the `SLOW_HTTPC` or `httpc error` format.
+
+### Handling the errors defined in WhaTap
+
+The WhaTap monitoring service handles errors depending on specific conditions.
+
+- **TOO_MANY_RECORDS**: The number of fetches is 10,000 or more.
+
+  For the related agent options, see the following: [`profile_error_sql_fetch_max=10000`](agent-dbsql#profile_error_sql_fetch_max)
+
+- **SLOW_SQL**: SQL time is 30,000 ms or more.
+
+  For the related agent options, see the following document: [`profile_error_sql_time_max=30000`](agent-dbsql#profile_error_sql_time_max)
+
+- **SLOW_HTTPC**: The elapsed time for the HTTP call is 10,000 ms or more.
+
+  For the related agent options, see the following document: [`profile_error_httpc_time_max=10000`](agent-httpcapicall#profile_error_httpc_time_max)
+
+- **httpc error**: HTTP call status code of 400 or more
+
+  :::note
+
+  **httpc error** is automatically collected without agent configuration.
+
+  :::
+
+- **status error**: Transaction status code of 400 or more
+
+  For the related agent options, see the following document: [`transaction_status_error_enable=true`](agent-transaction#transaction_status_error_enable)
+
+### Transaction error step INFO processing
+
+Some errors can be displayed as normal or ignored through the agent settings. The level displayed in the <Cmdname sid="AA005" className="uitext" /> widget is <span class="normal">INFO</span> (blue).
+
+If the following conditions are met, they are not treated as errors.
+
+- In case the value of the `transaction_status_error_enable` option is `false`
+
+  ```ini title="whatap.conf"
+  # default true
+  transaction_status_error_enable=false
+  ```
+
+- In case the status code of the transaction is defined in the `status_ignore` option
+
+  ```ini title="whatap.conf"
+  # Separated by commas(,)
+  status_ignore=400,404,500
+  ```
+
+- In case the URL and status code are combined for a specific transaction defined in the `status_ignore_set` option
+
+  ```ini title="whatap.conf"
+  # URL:StatusCode
+  status_ignore_set=/api/posts/test/timeout:200,/error:500
+  ```
+
+- In case the HTTP status code is defined in the `httpc_status_ignore` option
+
+  ```ini title="whatap.conf"
+  # Separated by commas(,)
+  httpc_status_ignore=400,404,500
+  ```
+
+- In case the URL and HTTP status code are combined for the `httpc_status_ignore_set` option
+
+  ```ini title="whatap.conf"
+  httpc_status_ignore_set=/api/posts/test/timeout:408,/api/apache/httpclient/posts/timeout:500
+  ```
+
+:::note
+
+- The agent settings can be configured in _whatap.conf_ and they can be viewed in the <Cmdname sid="management" className="uitext" /> &gt; <Cmdname sid="agent_configuration" className="uitext" /> menu. For more information, see [the following](set-agent).
+
+- For more information about the agent configuration options, see the following documents:
+
+  - [`transaction_status_error_enable`](agent-transaction#transaction_status_error_enable)
+
+  - [`status_ignore`](agent-transaction#status_ignore)
+
+  - [`status_ignore_set`](agent-transaction#status_ignore_set)
+
+  - [`httpc_status_ignore`](agent-transaction#httpc_status_ignore)
+
+  - [`httpc_status_ignore_set`](agent-transaction#httpc_status_ignore_set)
+
+:::

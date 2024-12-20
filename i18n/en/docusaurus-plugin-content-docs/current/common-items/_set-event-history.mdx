@@ -1,26 +1,28 @@
 Home &gt; Select Project &gt; <Cmdname sid="event_statistic" className="uitext" /> &gt; <Cmdname sid="event_history" className="uitext" />
 
-You can check the history of alerts. You can search up to the last one year's history. Set each item and then select ![View icon](/img/ico-btn-search.png).
+You can check the details of events that occurred in the monitoring target during a specific time period. You can analyze the root cause of problems that occurred in the monitoring target or identify the system status upon performance degradation or error.
 
-<InDoc product='java,php,nodejs,python,dotnet,golang,log'><ImgLang img='event-history.png' desc='Event History' /></InDoc>
+<Xclude product='kubernetes,browser'><ImgLang img='event-history.png' desc='Event history' /></Xclude>
 
 <InDoc product='kubernetes'><ImgLang img='k8s-event-history.png' desc='Event History' /></InDoc>
 
-<InDoc product='postgresql,oracle,mysql,mssql,tibero,cubrid,altibase,redis,mongodb,oracle-pro,oracle-v1'><ImgLang img='db-event-history.png' desc='Event History' /></InDoc>
-
 <InDoc product='browser'><ImgLang img='browser-event-history.png' desc='Event History' /></InDoc>
 
-<InDoc product='npm'><ImgLang img='npm-event-history.png' desc='Event History' /></InDoc>
-
-<InDoc product='amazon-cloudwatch,amazon-ecs,aws-log,azure,ncloud,oracle-cloud'><ImgLang img='cloud-event-history.png' desc='Event History' /></InDoc>
+The items displayed in the event list are the ones set in <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" />. You can move to the corresponding menu by selecting <Cmdname sid="event_setting" className="uitext" /> on the upper right of the screen.
 
 :::note
 
-The screen images may differ depending on the selected project.
+- You can search up to the last one year's history.
+
+- The screen images may differ depending on the selected project.
 
 :::
 
-- <Cmdname sid="time_selector" className="uitext" />
+## Viewing the event records {#eventview}
+
+Set the following options in order and then select ![Search icon](/img/ico-btn-search.png). You can search event records based on the set options.
+
+- <Cmdname sid="time_selector" className="uitext" />: You can set the time range for events to search for. It searches based on <Cmdname sid="event_time" className="uitext" />.
 
   - You can select the lookup time by selecting the green button on the right.
 
@@ -28,74 +30,98 @@ The screen images may differ depending on the selected project.
 
   - To select a detailed time, select a date or time zone. Set the detailed time and then select <Cmdname sid="apply" className="uitext" />.
 
-- Based on <Cmdname sid="filter" className="uitext" />: <Cmdname sid="title" className="uitext" /> or <Cmdname sid="message" className="uitext" />, you can filter event records.
+- <Cmdname sid="filter" className="uitext" />: It filters the list of events that contain the entered string based on the content of <Cmdname sid="event_title" className="uitext" /> or <Cmdname sid="message" className="uitext" />.
 
-<InDoc product='java,php,nodejs,python,dotnet,golang,log'>
+<Xclude product="browser">
 
-- <Cmdname sid="application" className="uitext" />: You can select an agent included in the project.
-
-</InDoc>
-
-<InDoc product='postgresql,oracle,mysql,mssql,tibero,cubrid,altibase,redis,mongodb,oracle-v1'>
-
-- <Cmdname sid="database" className="uitext" />: You can select an agent included in the project.
-
-</InDoc>
-
-<InDoc product='kubernetes'>
-
-- <Cmdname sid="container" className="uitext" />: You can select an agent included in the project.
-
-</InDoc>
-
-<InDoc product='browser,npm,amazon-cloudwatch,amazon-ecs,aws-log,azure,ncloud,oracle-cloud'>
-
-- <Cmdname sid="agent" className="uitext" />: You can select an agent included in the project.
-
-</InDoc>
-
-- **_CSV_**: You can save the viewed event records as a CSV file. Enter the <Cmdname sid="maximum_csv_lines" className="uitext" /> and then select <Cmdname sid="download" className="uitext" />.
-
-- <Cmdname sid="column_select" className="uitext" />: You can add columns to the viewed event records.
-
-- <Cmdname sid="event_setting" className="uitext" />: Go to <Cmdname sid="event_statistic" className="uitext" /> &gt; <Cmdname sid="event_setting" className="uitext" />.
-
-- They are <Cmdname sid="event_name" className="uitext" /> and <Cmdname sid="message" className="uitext" /> for the event added in <Cmdname sid="title" className="uitext" /> / <Cmdname sid="message" className="uitext" />: <Cmdname sid="event_setting" className="uitext" />.
-
-  <Xclude product="amazon-cloudwatch,amazon-ecs,aws-log,azure,browser,log,ncloud,npm,oracle-cloud">
-
-  :::note
-
-  - For more information about addition of events, see [the following](metric-warning-notice).
-
-  - For more information about the notification message customization, see [the following](set-notification-message).
-
-  :::
-
-  </Xclude>
-
-- <Cmdname sid="event_time" className="uitext" />: Event occurred time.
-
-  - If an event is in progress and not resolved, the <Cmdname sid="in_progress" className="uitext" /> tag appears.
-
-  - If an event occurs during maintenance, the <Cmdname sid="ITM07315" className="uitext" /> tag appears.
-
-  :::note
-
-  For more information about <Cmdname sid="sms_maintenance" className="uitext" />, see <Link to="../management/maintenance">the following</Link>.
-
-  :::
-
-- <Cmdname sid="TTL06583" className="uitext" />: Resolved time of the set event. If the column does not appear, click <Cmdname sid="column_select" className="uitext" /> and then select <Cmdname sid="TTL06583" className="uitext" />.
-
-<Xclude product="postgresql,oracle,mysql,mssql,tibero,cubrid,altibase,redis,mongodb,oracle-v1">
-
-- <Cmdname sid="application" className="uitext" />: When adding an event in <Cmdname sid="event_setting" className="uitext" />, it appears if the <Cmdname sid="alert_object_filtering" className="uitext" /> item is set.
+- <Cmdname sid="agent" className="uitext" />: Filtering can be made by selecting only the events that occurred on a specific agent.
 
 </Xclude>
 
-<InDoc product='postgresql,oracle,mysql,mssql,tibero,cubrid,altibase,redis,mongodb,oracle-v1'>
+## Viewing the event list {#eventlist}
 
-- <Cmdname sid="instance" className="uitext" />: When adding an event in <Cmdname sid="event_setting" className="uitext" />, it appears if the <Cmdname sid="alert_object_filtering" className="uitext" /> item is set.
+The following are descriptions of the items that appear in the event list.
 
-</InDoc>
+- <Cmdname sid="event_title" className="uitext" />: Title of the event added in the <Cmdname sid="event_setting" className="uitext" /> menu.
+
+- <Cmdname sid="event_time" className="uitext" />: Event occurred time.
+
+  - <Cmdname sid="sms_alert_acknowledge" className="uitext" />: You can stop sending repeated notifications for the target event by registering the processed records. For more information, see [the following](#alertacknowledge).
+
+  - If an event is in progress and not resolved, the <Cmdname sid="in_progress" className="uitext" /> tag appears.
+
+  - <Cmdname sid="sms_maintenance" className="uitext" /> If an event occurs during the maintenance time registered in the menu, the <Cmdname sid="ITM07315" className="uitext" /> tag appears. This event does not send a notification.
+
+- <Cmdname sid="TTL06583" className="uitext" />: Time when the event that occurred was resolved.
+
+<Xclude product="browser">
+
+- <Cmdname sid="oname" className="uitext" />: When adding an event in <Cmdname sid="event_setting" className="uitext" />, it appears if <Cmdname sid="TTL07363" className="uitext" /> is set.
+
+</Xclude>
+
+- <Cmdname sid="message" className="uitext" />: Details of the event added in the <Cmdname sid="event_setting" className="uitext" /> menu.
+
+<Xclude product="amazon-cloudwatch,amazon-ecs,aws-log,azure,log,ncloud,oracle-cloud">
+
+:::note
+
+- For more information about the event addition, see the following:
+
+  - [<Cmdname sid="default" />](warning-notice-v2)
+
+  - [<Cmdname sid="metrics" />](metric-warning-notice) / [<Cmdname sid="metrics" />](metric-warning-notice-new) <code className="newfunc">New</code>
+
+- The notification message can be customized to the taste of user. For more information, see [the following](set-notification-message).
+
+- For more information about <Cmdname sid="sms_maintenance" className="uitext" />, see <Link to="../management/maintenance">the following</Link>.
+
+:::
+
+</Xclude>
+
+## Registering the processed records {#alertacknowledge}
+
+When you register the processing history, it makes it easy to update the event processing status and manage its history.
+
+:::caution
+
+When you register the processing history, the <Cmdname sid="TTL06149" className="uitext" /> of the event is suspended. For more information about <Cmdname sid="TTL06149" className="uitext" />, see [the following](set-receive-event#escalation).
+
+:::
+
+1. In the event to handle the processing history, select <Cmdname sid="sms_alert_acknowledge" className="uitext" />.
+
+2. When the <Cmdname sid="sms_alert_acknowledge_add" className="uitext" /> window appears, enter the processed results.
+
+   <ImgLang img="event-history-add-acknowledge.png" desc="Add acknowledge content" />
+
+3. Select <Cmdname sid="registration" className="uitext" />.
+
+The registered processing history appears as a list in <Cmdname sid="TTL08669" className="uitext" />. You can check the creation time, author, and details.
+
+<ImgLang img="event-history-add-acknowledge-history.png" desc="Acknowledge details" />
+
+You can check the number of processed records added in the event list.
+
+<ImgLang img="event-history-add-acknowledge-added.png" desc="Acknowledge" />
+
+:::note
+
+Processed details can be entered up to 255 Bytes.
+
+:::
+
+## Using additional options {#additionaloption}
+
+- <Cmdname sid="BTN06441" className="uitext" />: You can add, delete, and change the order of columns in the event list.
+
+- **_CSV_**: You can save the viewed event records as a CSV file. Enter the <Cmdname sid="maximum_csv_lines" className="uitext" /> and then select <Cmdname sid="download" className="uitext" />.
+
+- <Cmdname sid="event_setting" className="uitext" />: Go to <Cmdname sid="event_statistic" className="uitext" /> &gt; <Cmdname sid="event_setting" className="uitext" />.
+
+- <Cmdname sid="exclude_resolved_alerts" className="uitext" />: You can view only the **ongoing events** in the event history list.
+
+import Dbv2dataeditcolumn from "../common-items/_db-v2-data-edit-column.mdx";
+
+<Dbv2dataeditcolumn level={3} />

@@ -15,7 +15,7 @@ export default function Component() {
             indexUid: 'whatap',
             container: '#docsearch',
             searchParams: { 
-                filter: [`lang = ${currentLocale}`],
+                filter: [`lang = ${currentLocale} AND hierarchy_lvl0!=Documentation`],
                 limit: 30, 
                 cropLength: 20,
             },

@@ -1,0 +1,245 @@
+## Checking the metrics of the linked project {#checklinkedproject}
+
+Metrics related to the added project can be checked in the following menu path. 
+
+- <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_appDashboard" className="uitext" />
+
+- <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multi_active_tx" className="uitext" />
+
+- <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_hitmap" className="uitext" />
+
+:::note
+
+- For more information about the <Cmdname sid="side_appDashboard" className="uitext" /> menu, see [the following](dashboard-intro).
+
+- For more information about the <Cmdname sid="side_multi_active_tx" className="uitext" /> menu, see [the following](dashboard-active-transaction).
+
+- For more information about <Cmdname sid="side_hitmap" className="uitext" />, see [the following](analysis-hitmap).
+
+:::
+
+### <Cmdname sid="side_appDashboard" />
+
+You can check the linked projects through the following widget in the <Cmdname sid="side_appDashboard" className="uitext" /> menu.
+
+- <Cmdname sid="AA001" className="uitext" />
+
+- <Cmdname sid="AA002" className="uitext" />
+
+- <Cmdname sid="AA005" className="uitext" />
+
+#### <Cmdname sid="AA001" /> / <Cmdname sid="AA002" /> widget
+
+You can query the SQL performance of the database associated with active transactions. Go to <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_appDashboard" className="uitext" />.
+
+<ImgLang img="linked-projects-check-widget-01.png" desc="Correlated project" />
+
+<ImgLang img="linked-projects-check-widget-02.png" desc="Correlated project" />
+
+1. On the dashboard, click the chart area of ​​the <Cmdname sid="AA001" className="uitext" /> or <Cmdname sid="AA002" className="uitext" /> widget.
+
+2. When the <Cmdname sid="acttx" className="uitext" /> window appears, select transactions.
+
+3. When the transaction details window appears, select <Cmdname sid="BTN08518" className="uitext" /> on the upper right.
+
+4. When the <Cmdname sid="TTL07860" className="uitext" /> window appears, check the related metrics.
+
+:::note
+
+- The <Cmdname sid="BTN08518" className="uitext" /> button appears in the transaction details window only when the DB of the database project registered for linked analysis has executed the SQL of the selected transaction.
+
+- For more information about the <Cmdname sid="TTL07860" className="uitext" /> window, see [the following](#TTL07860).
+
+- The databases that support this feature are **PostgreSQL**, **Oracle**, **Oracle Pro**, and **MySQL** platforms.
+
+:::
+
+#### <Cmdname sid="AA005" /> Widget
+
+You can view performance metrics of the database associated with transactions from the past. Go to <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_appDashboard" className="uitext" />.
+
+##### Checking in the DB connection step
+
+<ImgLang img="linked-projects-check-widget-03.png" desc="Correlated project" />
+
+<ImgLang img="linked-projects-check-widget-04.png" desc="Correlated project" />
+
+1. Drag the chart area of ​​the <Cmdname sid="AA005" className="uitext" /> widget on the dashboard.
+
+2. When the <Cmdname sid="TTL06209" className="uitext" /> window appears, select a transaction to view.
+
+3. When the transaction details appear on the right, select the <Cmdname sid="TTL06126" className="uitext" /> tab.
+
+4. In the DB Connection step, select ![Correlation icon](/img/ic-correlations.svg).
+
+5. When the <Cmdname sid="TTL08442" className="uitext" /> window of the linked project appears, check the related metrics.
+
+:::note
+
+- The ![Link icon](/img/ic-correlations.svg) button appears on the <Cmdname sid="TTL06126" className="uitext" /> tab only when the DB of the database project registered for linked analysis executes the SQL statement of the selected transaction.
+
+- For more information about the <Cmdname sid="TTL08442" className="uitext" /> window, see [the following](#TTL08442).
+
+- For more information about the <Cmdname sid="TTL06209" className="uitext" /> window, see [the following](dashboard-hitmap-trace).
+
+- The databases that support this feature are **PostgreSQL**, **Oracle**, **Oracle Pro**, and **MySQL** platforms.
+
+:::
+
+##### Checking in the SQL step
+
+<ImgLang img="linked-projects-check-widget-03.png" desc="Correlated project" />
+
+<ImgLang img="linked-projects-check-widget-06.png" desc="Correlated project" />
+
+1. Drag the chart area of ​​the <Cmdname sid="AA005" className="uitext" /> widget on the dashboard.
+
+2. When the <Cmdname sid="TTL06209" className="uitext" /> window appears, select a transaction to view.
+
+3. When the transaction details appear on the right, select the <Cmdname sid="TTL06126" className="uitext" /> tab.
+
+4. Select a SQL statement in the SQL step.
+
+5. If the <UI>SQL</UI> window appears, select <Cmdname sid="BTN08518" className="uitext" />.
+
+6. When the <Cmdname sid="TTL07860" className="uitext" /> window appears, check the related metrics.
+
+:::note
+
+- The <Cmdname sid="BTN08518" className="uitext" /> button appears in the <UI>SQL</UI> window only when the DB of the database project registered for linked analysis executes the SQL statement of the selected transaction.
+
+- For more information about the <Cmdname sid="TTL07860" className="uitext" /> window, see [the following](#TTL07860).
+
+- The databases that support this feature are **PostgreSQL**, **Oracle**, **Oracle Pro**, and **MySQL** platforms.
+
+- On the **PostgreSQL** platform, the <UI>PID</UI> entry in the <Cmdname sid="active_sessions" className="uitext" /> table is the same as the <UI>SID</UI> entry.
+
+  <ImgLang img="apm-linked-projects-postgresql-pid-sid.png" desc="SID" />
+
+:::
+
+### <Cmdname sid="side_multi_active_tx" />
+
+You can query the SQL performance of the database associated with active transactions. Go to <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multi_active_tx" className="uitext" />.
+
+<ImgLang img="linked-projects-check-widget-05.png" desc="Correlated project" />
+
+1. Select a desired transaction to view from the transaction list.
+
+2. When the <Cmdname sid="acttx" className="uitext" /> window appears, select <Cmdname sid="BTN08518" className="uitext" /> on the upper right.
+
+3. When the <Cmdname sid="TTL07860" className="uitext" /> window appears, check the related metrics.
+
+:::note
+
+- The <Cmdname sid="BTN08518" className="uitext" /> button appears in the <Cmdname sid="acttx" className="uitext" /> window only when the DB of the database project registered for linked analysis executes the SQL of the selected transaction.
+
+- For more information about the <Cmdname sid="TTL07860" className="uitext" /> window, see [the following](#TTL07860).
+
+- The databases that support this feature are **PostgreSQL**, **Oracle**, **Oracle Pro**, and **MySQL** platforms.
+
+:::
+
+### <Cmdname sid="side_hitmap" />
+
+You can also see performance metrics for the linked project while viewing transactions. This feature is useful when analyzing transactions in the APM project. When you found a slow SQL, it is difficult to determine exactly in which DB the problem occurred in the environment using multiple similar DBs.
+
+<ImgLang img="linked-project-db-hitmap.png" desc="Hitmap" />
+
+1. Set the time and <Cmdname sid="application" className="uitext" /> for viewing the transactions, and then select ![Search Icon](/img/ico-btn-search.png).
+
+2. In the <Cmdname sid="hitmap_transaction" className="uitext" /> section, select <Cmdname sid="BTN08519" className="uitext" /> on the upper right.
+
+3. A new window appears where you can check the metrics for the correlated project.
+
+   <ImgLang img="linked-project-db-instance-dahboard.png" desc="Correlated project" />
+
+Select the correlated project from the left list and then check the metrics in the <Cmdname sid="TTL08442" className="uitext" /> section. 
+
+:::note
+
+For more information about the <Cmdname sid="TTL08442" className="uitext" /> window, see [the following](#TTL08442).
+
+:::
+
+## <Cmdname sid="TTL07860" /> {#TTL07860}
+
+<Cmdname sid="TTL07860" className="uitext" /> allows you to check the SQL performance of the database associated with the current transaction in the application.
+
+<ImgLang img="linked-projects-database-info.png" desc="Correlated DB information" />
+
+- The charts at the top of the screen provide charts for key metrics of the database. You can also select other metrics by selecting the checkbox.
+
+- The ***Session Info / Lock Tree*** section provides various details for the database session.
+
+  <details>
+
+  <summary>Session Info / Lock Tree</summary>
+
+  - ***query_hash***: Unique hash value for the SQL query in progress.
+
+  - ***user***: User name connected to the database.
+
+  - ***db***: Name of the connected database.
+
+  - ***runtime***: Time (in milliseconds) that the session has been run.
+
+  - ***query_param***: Parameter used in the query.
+
+  - ***thread_id***: Unique identifier of the thread connected to this session.
+
+  - ***name***: Name associated with the session.
+
+  - ***rows***: Number of rows processed in the executed query.
+
+  - ***state***: State of the session.
+
+  - ***id***: Unique identifier of the current session.
+
+  - ***host***: IP address of the server in which the database is running.
+
+  - ***command***: It indicates the currently executing command or task.
+
+  - ***os_id***: ID of the session used in the operating system.
+
+  - ***type***: Type of the session.
+
+  - ***connection_type***: Database connection type.
+
+  - ***time***: Started time of the session.
+
+  - ***oid***: Unique ID of the instance (agent) to which the session belongs.
+
+  </details>
+
+- The ***SQL Text*** tab displays the actual content of the executed SQL query.
+
+  - ***Default Bind***: You can bind the part set as a variable in the query sentence to the default value.
+
+  - ***Reset Bind***: You can release the bound default value and check the variable.
+
+  - ***Formatting***: You can improve readability by applying indentation and formatting to a SQL query statement.
+
+- ***Plan***: Plan information can be checked. Enter **DB Name**, **User Name**, and **Password**, and then select ![Search icon](/img/ico-btn-search.png).
+
+## <Cmdname sid="TTL08442" /> {#TTL08442}
+
+<Cmdname sid="TTL08442" className="uitext" /> allows you to view key performance metrics of the database associated with the transactions executed in the application.
+
+<ImgLang img="linked-project-db-instance-dahboard-select-instance.png" desc="Correlated project" />
+
+To navigate to the dashboard menu for a selected project, select an instance and then click <Cmdname sid="BTN08444" className="uitext" /> on the upper right. Go to <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />.
+
+:::note
+
+- The <Cmdname sid="hitmap_transaction" className="uitext" /> button in the <Cmdname sid="BTN08519" className="uitext" /> section appears only when there is an associated project. For more information about adding a correlated project, see [the following](#addlinkproject).
+
+- You can add a project by selecting <Cmdname sid="TTL07151" className="uitext" /> at the top of the left <Cmdname sid="add" className="uitext" /> list.
+
+- The <Cmdname sid="BTN08444" className="uitext" /> button is disabled when <Cmdname sid="all" className="uitext" /> is selected.
+
+  <ImgLang img="linked-project-db-instance-dahboard-not-allowed-btn.png" desc="Instance Dashboard" />
+
+- Depending on the database product type, you can navigate to the <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbTrend" className="uitext" /> menu.
+
+:::

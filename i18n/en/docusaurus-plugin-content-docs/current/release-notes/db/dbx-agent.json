@@ -1,110 +1,448 @@
 [
   {
-    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_9_3",
-    "ver": "v1.9.3",
-    "date": "2024-08-08",
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-2_2_4",
+    "ver": "v2.2.4",
+    "date": "2024-11-27",
     "Lists": [
       {
-        "ver": "v1.9.3",
-        "hash": "v193",
+        "ver": "v2.2.4",
+        "hash": "v224",
+        "product": "DBX",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> 액티브 세션(active session)에 Full Text 추가</p>",
+        "category": "SQL Server"
+      },
+      {
+        "ver": "v2.2.4",
+        "hash": "v224",
         "product": "DBX",
         "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Modified not to collect lock information when the sid of the holder and waiter is the same.</p>",
-        "category": "Oracle"
-      },
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> 로그 포맷 변경 및 전송</p>",
+        "category": "SQL Server",
+        "details": "<ul>\n<li>\n<p><code>#DB</code> 카테고리로 <code>EXEC xp_ReadErrorLog</code> 내용을 1분마다 전송하도록 변경</p>\n</li>\n<li>\n<p>XOS 에이전트를 설치하지 않아도 에러 로그 조회할 수 있도록</p>\n</li>\n</ul>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-2_2_3",
+    "ver": "v2.2.3",
+    "date": "2024-11-26",
+    "Lists": [
       {
-        "ver": "v1.9.3",
-        "hash": "v193",
+        "ver": "v2.2.3",
+        "hash": "v223",
         "product": "DBX",
         "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Added the <code>isV2</code> field in the <code>DbAgentInfoPack</code> category.</p>",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> 액티브 세션(active session)의 command를 string 형식으로 수정</p>",
+        "category": "Oracle"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-2_2_0",
+    "ver": "v2.2.0",
+    "date": "2024-11-19",
+    "Lists": [
+      {
+        "ver": "v2.2.0",
+        "hash": "v220",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Changed the TextPack SQL clear time point.</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "v2.2.0",
+        "hash": "v220",
+        "product": "DBX",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the feature for SQL Server V2 monitoring.</p>",
+        "category": "SQL Server",
+        "details": "<ul>\n<li>\n<p>Added the database size.</p>\n</li>\n<li>\n<p>Added the filegroup size.</p>\n</li>\n<li>\n<p>Added the table size.</p>\n</li>\n<li>\n<p>Adding the object layout</p>\n</li>\n<li>\n<p>Adding the backup and recovery history</p>\n</li>\n<li>\n<p>Adding the job information and history</p>\n</li>\n<li>\n<p>Adding the procedure statistics</p>\n</li>\n<li>\n<p>Adding the query statistics</p>\n</li>\n<li>\n<p>Modified <strong>Full text</strong> in the active session to <strong>Request text</strong>.</p>\n</li>\n</ul>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-2_2_6",
+    "ver": "v2.2.6",
+    "date": "2024-12-02",
+    "Lists": [
+      {
+        "ver": "v2.2.6",
+        "hash": "v226",
+        "product": "DBX",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Segment 정보 수집을 위한 에이전트 옵션 추가</p>",
+        "category": "Altibase",
+        "details": "<ul>\n<li>\n<p><strong>segments</strong> <span class=\"type\">Boolean</span></p>\n<p>기본값 <code>true</code></p>\n<p>세그먼트 사이즈 정보를 수집합니다. <span class=\"uitext\">Stat/Report</span> &gt; <span class=\"uitext\">Tablespace Size</span> 메뉴에서 해당 데이터베이스 또는 테이블스페이스를 선택하면 사이즈 정보를 확인할 수 있습니다.</p>\n</li>\n<li>\n<p><strong>segments_min_size</strong> <span class=\"type\">Int</span></p>\n<p>기본값 <code>10</code> (단위: MB)</p>\n<p>세그먼트 사이즈 정보를 수집하는 최소 단위로 기본값은 10MB 입니다. 세그먼트 사이즈 정보를 수집할 때 설정한 값보다 작은 크기의 세그먼트 사이즈 정보는 수집하지 않습니다.</p>\n</li>\n<li>\n<p><strong>segments_hour</strong> <span class=\"type\">Int</span></p>\n<p>기본값 <code>5</code></p>\n<p>세그먼트 사이즈 정보를 수집하는 시각을 설정합니다. 기본값으로 <code>5</code>이며 새벽 5시에 수집을 시작합니다.</p>\n</li>\n</ul>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-2_2_5",
+    "ver": "v2.2.5",
+    "date": "2024-11-29",
+    "Lists": [
+      {
+        "ver": "v2.2.5",
+        "hash": "v225",
+        "product": "DBX",
+        "type": "Deprecated",
+        "desc": "<p><code class=\"Deprecated\" type=\"1\">Deprecated</code> <strong>db_oracle_tables</strong> 카테고리 제거</p>",
         "category": "Oracle"
       },
       {
-        "ver": "v1.9.3",
-        "hash": "v193",
+        "ver": "v2.2.5",
+        "hash": "v225",
         "product": "DBX",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Removed spaces from the <code>pq_sessions</code> and <code>lock_wait_sessions</code> metrics names.</p>",
-        "category": "Oracle"
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Azure SQL Server로부터 backup, restore, job 정보 수집 에러 수정</p>",
+        "category": "SQL Server"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-2_2_7",
+    "ver": "v2.2.7",
+    "date": "2024-12-07",
+    "Lists": [
+      {
+        "ver": "v2.2.7",
+        "hash": "v227",
+        "product": "DBX",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> 리터럴 파라미터 수집을 위한 에이전트 옵션 추가</p>",
+        "category": "MySQL",
+        "details": "<p><strong>save_literal_param</strong> <span class=\"type\">Boolean</span></p>"
       },
       {
-        "ver": "v1.9.3",
-        "hash": "v193",
+        "ver": "v2.2.7",
+        "hash": "v227",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> <strong>db_mysql_statements</strong> 전송 시 1시간에 최대 5000건 제한 추가</p>",
+        "category": "MySQL"
+      },
+      {
+        "ver": "v2.2.7",
+        "hash": "v227",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> <strong>db_postgresql_statements</strong> 전송 시 1시간에 최대 5000건 제한 추가</p>",
+        "category": "Postgres"
+      },
+      {
+        "ver": "v2.2.7",
+        "hash": "v227",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> 오브젝트 정보 실시간 조회 기능 수정</p>",
+        "category": "Oracle",
+        "details": "<ul>\n<li>\n<p>인덱스 컬럼 순서 변경</p>\n</li>\n<li>\n<p>시퀀스 레이아웃 조회 기능 추가</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.7",
+        "hash": "v227",
         "product": "DBX",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the bug where the ALL value is incorrect in the <code>db_mysql_tables</code> category.</p>",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> saving plan 버그 수정</p>",
+        "category": "Oracle"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-2_2_2",
+    "ver": "v2.2.2",
+    "date": "2024-11-21",
+    "Lists": [
+      {
+        "ver": "v2.2.2",
+        "hash": "v222",
+        "product": "DBX",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the agent option to detect deadlocks.</p>",
+        "category": "### SQL Server",
+        "details": "<ul>\n<li>\n<p><strong>mslog</strong> <span class=\"type\">Boolean</span></p>\n<p>Default <code>true</code></p>\n<p>Execute the <code>xp_ReadErrorLog</code> command to view the error log.</p>\n</li>\n<li>\n<p><strong>mslog_interval</strong> <span class=\"type\">Int</span></p>\n<p>Default <code>1</code> (unit: minute, min)</p>\n<p>It searches logs from the previous cycle to the current cycle.</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.2",
+        "hash": "v222",
+        "product": "DBX",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the <code>Uptime</code> metric.</p>",
+        "category": "### SQL Server"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-2_1_7",
+    "ver": "v2.1.7",
+    "date": "2024-11-14",
+    "Lists": [
+      {
+        "ver": "v2.1.7",
+        "hash": "v217",
+        "product": "DBX",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the real-time parameter query error.</p>",
         "category": "MySQL"
       }
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_9_0",
-    "ver": "v1.9.0",
-    "date": "2024-07-04",
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-2_1_4",
+    "ver": "v2.1.4",
+    "date": "2024-11-01",
     "Lists": [
       {
-        "ver": "v1.9.0",
-        "hash": "v190",
+        "ver": "v2.1.4",
+        "hash": "v214",
+        "product": "DBX",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the <code>port_check</code> feature.</p>",
+        "category": "Common",
+        "details": "<p>The XOS agent performs periodic connection tests with the port number and sends the port list upon failure.</p>"
+      },
+      {
+        "ver": "v2.1.4",
+        "hash": "v214",
+        "product": "DBX",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the XOS agent in the Windows environment.</p>",
+        "category": "Common"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-2_1_6",
+    "ver": "v2.1.6",
+    "date": "2024-11-11",
+    "Lists": [
+      {
+        "ver": "v2.1.6",
+        "hash": "v216",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> <code>db_mysql_statements</code> (<span class=\"uitext\">MYSQL SQL Statistics</span>) limits data collection to a maximum of 5,000.</p>",
+        "category": "MySQL"
+      },
+      {
+        "ver": "v2.1.6",
+        "hash": "v216",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> <code>db_postgresql_statements</code>(<span class=\"uitext\">PG SQL Statistics</span>) limits data collection to a maximum of 5,000.</p>",
+        "category": "PostgreSQL"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-2_1_5",
+    "ver": "v2.1.5",
+    "date": "2024-11-07",
+    "Lists": [
+      {
+        "ver": "v2.1.5",
+        "hash": "v215",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"0\">Changed</code> Added the <code>whatap</code> comment to MySQL collection queries.</p>",
+        "category": "MySQL"
+      },
+      {
+        "ver": "v2.1.5",
+        "hash": "v215",
+        "product": "DBX",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Improved the SQL statistics storage handling and fixed the digest null exception handling.</p>",
+        "category": "MySQL"
+      },
+      {
+        "ver": "v2.1.5",
+        "hash": "v215",
+        "product": "DBX",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Improved the SQL statistics storage handling.</p>",
+        "category": "PostgreSQL"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-2_1_3",
+    "ver": "v2.1.3",
+    "date": "2024-10-23",
+    "Lists": [
+      {
+        "ver": "v2.1.3",
+        "hash": "v213",
+        "product": "DBX",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the option not to collect DB parameters.</p>",
+        "category": "Common"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-2_1_1",
+    "ver": "v2.1.1",
+    "date": "2024-09-30",
+    "Lists": [
+      {
+        "ver": "v2.1.1",
+        "hash": "v211",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Modified to collect without specifying the <code>cluster_name</code> option in agent configuration (<em>whatap.conf</em>).</p>",
+        "category": "Redis"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-2_0_2",
+    "ver": "v2.0.2",
+    "date": "2024-08-30",
+    "Lists": [
+      {
+        "ver": "v2.0.2",
+        "hash": "v202",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Changed the real-time call API (<code>DBX_USER_SCRIPT</code>) name to <code>DBX_SCRIPT_RUN</code>.</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "v2.0.2",
+        "hash": "v202",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Changed the pg table size collection function from <code>pg_relation_size()</code> to <code>pg_table_size()</code>.</p>",
+        "category": "PostgreSQL"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-2_1_2",
+    "ver": "v2.1.2",
+    "date": "2024-10-08",
+    "Lists": [
+      {
+        "ver": "v2.1.2",
+        "hash": "v212",
+        "product": "DBX",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In <span class=\"uitext\">Log File Viewer</span>, added the default options to search for <em>whatap.conf</em> and <em>whatap.log</em>.</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "v2.1.2",
+        "hash": "v212",
+        "product": "DBX",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed typo in the <code>segments_min_size</code> option name.</p>",
+        "category": "Oracle"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-2_1_0",
+    "ver": "v2.1.0",
+    "date": "2024-09-30",
+    "Lists": [
+      {
+        "ver": "v2.1.0",
+        "hash": "v210",
         "product": "DBX",
         "type": "New",
-        "desc": "<p><code class=\"New\">New</code> Added new features following the Oracle V2 release.</p>",
-        "category": "Oracle",
-        "details": "<ul>\n<li>\n<p>If the <code>ora_hidden_param=true</code> option is set, the hidden parameter feature is added.</p>\n</li>\n<li>\n<p>If the <code>ora_invalid_object=true</code> option is set, invalid objects are collected.</p>\n</li>\n<li>\n<p>If the <code>ora_unusable_index=true</code> option is set, unsable indexes are collected.</p>\n</li>\n<li>\n<p>Added the plan change checking and saving features.</p>\n</li>\n<li>\n<p>Added the bind parameter saving feature.</p>\n</li>\n<li>\n<p>Segments sizes are collected.</p>\n</li>\n<li>\n<p>Added <code>sorts (disk)</code> and <code>user rollbacks</code> metrics.</p>\n</li>\n</ul>"
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the CUBRID <code class=\"my\">V2</code> feature.</p>",
+        "category": "CUBRID",
+        "details": "<ul>\n<li>\n<p>Changed to the tag count pack and added collection information.</p>\n</li>\n<li>\n<p>It is compatible with lower versions.</p>\n</li>\n</ul>"
       }
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_9_4",
-    "ver": "v1.9.4",
-    "date": "2024-08-08",
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-2_0_1",
+    "ver": "v2.0.1",
+    "date": "2024-08-23",
     "Lists": [
       {
-        "ver": "v1.9.4",
-        "hash": "v194",
+        "ver": "v2.0.1",
+        "hash": "v201",
         "product": "DBX",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the bug where data in the <code>db_mysql_sqlstat</code> category is accumulated.</p>",
-        "category": "MySQL"
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Modified the agent option names for MySQL, PostgreSQL, Altibase, and Oracle products.</p>",
+        "category": "Common",
+        "details": "<ul>\n<li>\n<p><code>xviewSkipSession</code> → <code>xview_min_sec</code></p>\n</li>\n<li>\n<p><code>tablespaceLock</code> → <code>tablespace_lock</code></p>\n</li>\n</ul>"
       },
       {
-        "ver": "v1.9.4",
-        "hash": "v194",
+        "ver": "v2.0.1",
+        "hash": "v201",
+        "product": "DBX",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the Altibase <code class=\"my\">V2</code> feature.</p>",
+        "category": "Altibase",
+        "details": "<ul>\n<li>\n<p>Changed to the tag count pack and added collection information.</p>\n</li>\n<li>\n<p>It is compatible with lower versions.</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.0.1",
+        "hash": "v201",
         "product": "DBX",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the bug where data in the <code>db_oracle_sqlstat</code> category is accumulated.</p>",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Restored the fix not to collect <code>v$osstat</code> metric in the AIX environment and modified it to process only the metrics that are collected.</p>",
         "category": "Oracle"
       },
       {
-        "ver": "v1.9.4",
-        "hash": "v194",
+        "ver": "v2.0.1",
+        "hash": "v201",
         "product": "DBX",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Modified not to collect the Cpu_cores data.</p>",
-        "category": "Tibero"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_9_2",
-    "ver": "v1.9.2",
-    "date": "2024-07-30",
-    "Lists": [
-      {
-        "ver": "v1.9.2",
-        "hash": "v192",
-        "product": "DBX",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Added <code>object_owner</code> and removed <code>other_xml</code> in the <code>db_oracle_plan_save</code> category.</p>",
-        "category": "Oracle"
-      },
-      {
-        "ver": "v1.9.2",
-        "hash": "v192",
-        "product": "DBX",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Changed the uptime format for DB parameters.</p>",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the master processing bug during <code>pg_basebackup</code>.</p>",
         "category": "PostgreSQL"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-2_2_1",
+    "ver": "v2.2.1",
+    "date": "2024-11-20",
+    "Lists": [
+      {
+        "ver": "v2.2.1",
+        "hash": "v221",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Added the <code>return</code> value if an error occurs when querying the plan.</p>",
+        "category": "Common"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_9_5",
+    "ver": "v1.9.5",
+    "date": "2024-08-13",
+    "Lists": [
+      {
+        "ver": "v1.9.5",
+        "hash": "v195",
+        "product": "DBX",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the RAC metric.</p>",
+        "category": "Oracle"
+      },
+      {
+        "ver": "v1.9.5",
+        "hash": "v195",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Modified not to collect the <code>osstat</code> data in the AIX Oracle environment.</p>",
+        "category": "Oracle"
+      },
+      {
+        "ver": "v1.9.5",
+        "hash": "v195",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Modified to collect the <code>osstat</code> data depending on the Tibero version.</p>",
+        "category": "Tibero"
       }
     ]
   },
@@ -140,26 +478,33 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_9_1",
-    "ver": "v1.9.1",
-    "date": "2024-07-19",
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_9_4",
+    "ver": "v1.9.4",
+    "date": "2024-08-08",
     "Lists": [
       {
-        "ver": "v1.9.1",
-        "hash": "v191",
+        "ver": "v1.9.4",
+        "hash": "v194",
         "product": "DBX",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the status for the Too big data notification.</p>",
-        "category": "Common",
-        "details": "<p>Added the status to allow the agent to generate a notification when the pack size exceeds 5 MB when transferring data.</p>"
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the bug where data in the <code>db_mysql_sqlstat</code> category is accumulated.</p>",
+        "category": "MySQL"
       },
       {
-        "ver": "v1.9.1",
-        "hash": "v191",
+        "ver": "v1.9.4",
+        "hash": "v194",
         "product": "DBX",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the feature to collect the DB size and collection information.</p>",
-        "category": "Mongodb"
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the bug where data in the <code>db_oracle_sqlstat</code> category is accumulated.</p>",
+        "category": "Oracle"
+      },
+      {
+        "ver": "v1.9.4",
+        "hash": "v194",
+        "product": "DBX",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Modified not to collect the Cpu_cores data.</p>",
+        "category": "Tibero"
       }
     ]
   },
@@ -203,33 +548,104 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_9_5",
-    "ver": "v1.9.5",
-    "date": "2024-08-13",
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_9_3",
+    "ver": "v1.9.3",
+    "date": "2024-08-08",
     "Lists": [
       {
-        "ver": "v1.9.5",
-        "hash": "v195",
+        "ver": "v1.9.3",
+        "hash": "v193",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Modified not to collect lock information when the sid of the holder and waiter is the same.</p>",
+        "category": "Oracle"
+      },
+      {
+        "ver": "v1.9.3",
+        "hash": "v193",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Added the <code>isV2</code> field in the <code>DbAgentInfoPack</code> category.</p>",
+        "category": "Oracle"
+      },
+      {
+        "ver": "v1.9.3",
+        "hash": "v193",
+        "product": "DBX",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Removed spaces from the <code>pq_sessions</code> and <code>lock_wait_sessions</code> metrics names.</p>",
+        "category": "Oracle"
+      },
+      {
+        "ver": "v1.9.3",
+        "hash": "v193",
+        "product": "DBX",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the bug where the ALL value is incorrect in the <code>db_mysql_tables</code> category.</p>",
+        "category": "MySQL"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_9_1",
+    "ver": "v1.9.1",
+    "date": "2024-07-19",
+    "Lists": [
+      {
+        "ver": "v1.9.1",
+        "hash": "v191",
         "product": "DBX",
         "type": "Feature",
-        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the RAC metric.</p>",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the status for the Too big data notification.</p>",
+        "category": "Common",
+        "details": "<p>Added the status to allow the agent to generate a notification when the pack size exceeds 5 MB when transferring data.</p>"
+      },
+      {
+        "ver": "v1.9.1",
+        "hash": "v191",
+        "product": "DBX",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the feature to collect the DB size and collection information.</p>",
+        "category": "Mongodb"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_9_0",
+    "ver": "v1.9.0",
+    "date": "2024-07-04",
+    "Lists": [
+      {
+        "ver": "v1.9.0",
+        "hash": "v190",
+        "product": "DBX",
+        "type": "New",
+        "desc": "<p><code class=\"New\">New</code> Added new features following the Oracle V2 release.</p>",
+        "category": "Oracle",
+        "details": "<ul>\n<li>\n<p>If the <code>ora_hidden_param=true</code> option is set, the hidden parameter feature is added.</p>\n</li>\n<li>\n<p>If the <code>ora_invalid_object=true</code> option is set, invalid objects are collected.</p>\n</li>\n<li>\n<p>If the <code>ora_unusable_index=true</code> option is set, unsable indexes are collected.</p>\n</li>\n<li>\n<p>Added the plan change checking and saving features.</p>\n</li>\n<li>\n<p>Added the bind parameter saving feature.</p>\n</li>\n<li>\n<p>Segments sizes are collected.</p>\n</li>\n<li>\n<p>Added <code>sorts (disk)</code> and <code>user rollbacks</code> metrics.</p>\n</li>\n</ul>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_9_2",
+    "ver": "v1.9.2",
+    "date": "2024-07-30",
+    "Lists": [
+      {
+        "ver": "v1.9.2",
+        "hash": "v192",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Added <code>object_owner</code> and removed <code>other_xml</code> in the <code>db_oracle_plan_save</code> category.</p>",
         "category": "Oracle"
       },
       {
-        "ver": "v1.9.5",
-        "hash": "v195",
+        "ver": "v1.9.2",
+        "hash": "v192",
         "product": "DBX",
         "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Modified not to collect the <code>osstat</code> data in the AIX Oracle environment.</p>",
-        "category": "Oracle"
-      },
-      {
-        "ver": "v1.9.5",
-        "hash": "v195",
-        "product": "DBX",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Modified to collect the <code>osstat</code> data depending on the Tibero version.</p>",
-        "category": "Tibero"
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Changed the uptime format for DB parameters.</p>",
+        "category": "PostgreSQL"
       }
     ]
   },
@@ -249,49 +665,6 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_8_1",
-    "ver": "v1.8.1",
-    "date": "2024-06-27",
-    "Lists": [
-      {
-        "ver": "v1.8.1",
-        "hash": "v181",
-        "product": "DBX",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Updated the XOS agent v1.1.8f.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_7_6",
-    "ver": "v1.7.6",
-    "date": "2024-05-20",
-    "Lists": [
-      {
-        "ver": "v1.7.6",
-        "hash": "v176",
-        "product": "DBX",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Fixed Status On in Autoscale EventPack.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_7_5",
-    "ver": "v1.7.5",
-    "date": "2024-05-17",
-    "Lists": [
-      {
-        "ver": "v1.7.5",
-        "hash": "v175",
-        "product": "DBX",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Modified to send <code>fatal count</code> upon DB Connection Failed.</p>",
-        "category": "MongoDB, Redis"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_7_8",
     "ver": "v1.7.8",
     "date": "2024-06-21",
@@ -306,79 +679,16 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_7_7",
-    "ver": "v1.7.7",
-    "date": "2024-06-18",
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_8_1",
+    "ver": "v1.8.1",
+    "date": "2024-06-27",
     "Lists": [
       {
-        "ver": "v1.7.7",
-        "hash": "v177",
-        "product": "DBX",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the replication delay bug in PostgreSQL 9.6.</p>",
-        "category": "PostgreSQL"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_7_1",
-    "ver": "v1.7.1",
-    "date": "2024-03-28",
-    "Lists": [
-      {
-        "ver": "v1.7.1",
-        "hash": "v171",
-        "product": "DBX",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Added a comment to the queries performed by Whatap to indicate that they are collection queries.</p>",
-        "category": "Postgresql, Oracle"
-      },
-      {
-        "ver": "v1.7.1",
-        "hash": "v171",
-        "product": "DBX",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the <strong>process</strong> and <strong>replication delay</strong> processing bugs in <strong>DocumentDB</strong>.</p>",
-        "category": "MongoDB"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_7_4",
-    "ver": "v1.7.4",
-    "date": "2024-05-16",
-    "Lists": [
-      {
-        "ver": "v1.7.4",
-        "hash": "v174",
+        "ver": "v1.8.1",
+        "hash": "v181",
         "product": "DBX",
         "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> In <span class=\"uitext\">Management</span> &gt; <span class=\"uitext\">Agent List</span>, added <strong>Agent IP</strong> (agent IP address).</p>",
-        "category": "Common"
-      },
-      {
-        "ver": "v1.7.4",
-        "hash": "v174",
-        "product": "DBX",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Modified the <strong>DB connection failed</strong> text.</p>",
-        "category": "Common"
-      },
-      {
-        "ver": "v1.7.4",
-        "hash": "v174",
-        "product": "DBX",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Modified not to create HeapDumpFile upon occurrence of OOM.</p>",
-        "category": "Common"
-      },
-      {
-        "ver": "v1.7.4",
-        "hash": "v174",
-        "product": "DBX",
-        "type": "Feature",
-        "desc": "<li><code class=\"Feature\">Feature</code> Added the alerts: <strong>connection fail</strong> / <strong>success</strong>.</li>",
-        "category": "MongoDB, Redis"
+        "desc": "<p><code class=\"Feature\">Feature</code> Updated the XOS agent v1.1.8f.</p>"
       }
     ]
   },
@@ -422,6 +732,112 @@
     ]
   },
   {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_7_6",
+    "ver": "v1.7.6",
+    "date": "2024-05-20",
+    "Lists": [
+      {
+        "ver": "v1.7.6",
+        "hash": "v176",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Fixed Status On in Autoscale EventPack.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_7_7",
+    "ver": "v1.7.7",
+    "date": "2024-06-18",
+    "Lists": [
+      {
+        "ver": "v1.7.7",
+        "hash": "v177",
+        "product": "DBX",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the replication delay bug in PostgreSQL 9.6.</p>",
+        "category": "PostgreSQL"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_7_4",
+    "ver": "v1.7.4",
+    "date": "2024-05-16",
+    "Lists": [
+      {
+        "ver": "v1.7.4",
+        "hash": "v174",
+        "product": "DBX",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> In <span class=\"uitext\">Management</span> &gt; <span class=\"uitext\">Agent List</span>, added <strong>Agent IP</strong> (agent IP address).</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "v1.7.4",
+        "hash": "v174",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Modified the <strong>DB connection failed</strong> text.</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "v1.7.4",
+        "hash": "v174",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Modified not to create HeapDumpFile upon occurrence of OOM.</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "v1.7.4",
+        "hash": "v174",
+        "product": "DBX",
+        "type": "Feature",
+        "desc": "<li><code class=\"Feature\">Feature</code> Added the alerts: <strong>connection fail</strong> / <strong>success</strong>.</li>",
+        "category": "MongoDB, Redis"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_7_1",
+    "ver": "v1.7.1",
+    "date": "2024-03-28",
+    "Lists": [
+      {
+        "ver": "v1.7.1",
+        "hash": "v171",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Added a comment to the queries performed by Whatap to indicate that they are collection queries.</p>",
+        "category": "Postgresql, Oracle"
+      },
+      {
+        "ver": "v1.7.1",
+        "hash": "v171",
+        "product": "DBX",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the <strong>process</strong> and <strong>replication delay</strong> processing bugs in <strong>DocumentDB</strong>.</p>",
+        "category": "MongoDB"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_7_5",
+    "ver": "v1.7.5",
+    "date": "2024-05-17",
+    "Lists": [
+      {
+        "ver": "v1.7.5",
+        "hash": "v175",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Modified to send <code>fatal count</code> upon DB Connection Failed.</p>",
+        "category": "MongoDB, Redis"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_7_0",
     "ver": "v1.7.0",
     "date": "2024-03-25",
@@ -451,21 +867,6 @@
         "desc": "<p><code class=\"Feature\">Feature</code> Added Redis <code class=\"my\">V2</code></p>",
         "category": "Redis",
         "details": "<ul>\n<li>\n<p>Category name unification</p>\n<ul>\n<li><code>agentinfo</code> → <code>db_agentinfo</code></li>\n<li><code>session</code> → <code>db_redis_active_session</code></li>\n<li><code>stat</code> → <code>db_redis_couter</code></li>\n</ul>\n</li>\n<li>\n<p>Added the <code>db_redis_clusterinfo</code>, <code>db_redis_clusternodes</code>, <code>db_redis_master</code>, and <code>db_redis_slave</code> categories.</p>\n</li>\n<li>\n<p>The xos metrics (<code>xos_cpu</code>, <code>xos_mem</code>, etc.) that were previously indicated with underscores, are also sent along with values including parentheses for product uniformity.</p>\n</li>\n</ul>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_6_32",
-    "ver": "v1.6.32",
-    "date": "2024-03-11",
-    "Lists": [
-      {
-        "ver": "v1.6.32",
-        "hash": "v1632",
-        "product": "DBX",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Modified the database parameter's real-time inquiry logic and added the data for <code>unit</code>, <code>start_time</code>, and <code>uptime</code>.</p>",
-        "category": "PostgreSQL"
       }
     ]
   },
@@ -516,6 +917,20 @@
     ]
   },
   {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_6_30",
+    "ver": "v1.6.30",
+    "date": "2024-02-29",
+    "Lists": [
+      {
+        "ver": "v1.6.30",
+        "hash": "v1630",
+        "product": "DBX",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Added the event resolution notification feature.</p>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_6_33",
     "ver": "v1.6.33",
     "date": "2024-03-13",
@@ -531,16 +946,17 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_6_31",
-    "ver": "v1.6.31",
-    "date": "2024-03-04",
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_6_32",
+    "ver": "v1.6.32",
+    "date": "2024-03-11",
     "Lists": [
       {
-        "ver": "v1.6.31",
-        "hash": "v1631",
+        "ver": "v1.6.32",
+        "hash": "v1632",
         "product": "DBX",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Modified to receive a resolution notification by default when the agent restarts after termination.</p>"
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Modified the database parameter's real-time inquiry logic and added the data for <code>unit</code>, <code>start_time</code>, and <code>uptime</code>.</p>",
+        "category": "PostgreSQL"
       }
     ]
   },
@@ -569,16 +985,31 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_6_30",
-    "ver": "v1.6.30",
-    "date": "2024-02-29",
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_6_24",
+    "ver": "v1.6.24",
+    "date": "2024-02-21",
     "Lists": [
       {
-        "ver": "v1.6.30",
-        "hash": "v1630",
+        "ver": "v1.6.24",
+        "hash": "v1624",
         "product": "DBX",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Added the event resolution notification feature.</p>"
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Added <code>query_id</code> when collecting <code>active_session</code> in PostgreSQL 14 or later.</p>",
+        "category": "PostgreSQL"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_6_31",
+    "ver": "v1.6.31",
+    "date": "2024-03-04",
+    "Lists": [
+      {
+        "ver": "v1.6.31",
+        "hash": "v1631",
+        "product": "DBX",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Modified to receive a resolution notification by default when the agent restarts after termination.</p>"
       }
     ]
   },
@@ -621,40 +1052,25 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_6_24",
-    "ver": "v1.6.24",
-    "date": "2024-02-21",
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_6_18",
+    "ver": "v1.6.18",
+    "date": "2024-01-25",
     "Lists": [
       {
-        "ver": "v1.6.24",
-        "hash": "v1624",
+        "ver": "v1.6.18",
+        "hash": "v1618",
         "product": "DBX",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Added <code>query_id</code> when collecting <code>active_session</code> in PostgreSQL 14 or later.</p>",
-        "category": "PostgreSQL"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_6_22",
-    "ver": "v1.6.22",
-    "date": "2024-02-15",
-    "Lists": [
-      {
-        "ver": "v1.6.22",
-        "hash": "v1622",
-        "product": "DBX",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> If the type of agent setting is boolean, the value is unified as <code>true</code>/<code>false</code>.</p>",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Added <code>uuid</code> and <code>statefulset</code> to allow to receive a recovery message for database notification.</p>",
         "category": "Common"
       },
       {
-        "ver": "v1.6.22",
-        "hash": "v1622",
+        "ver": "v1.6.18",
+        "hash": "v1618",
         "product": "DBX",
         "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Added the <code>redo entries</code> metric.</p>",
-        "category": "Oracle"
+        "desc": "<li><code class=\"Changed\">Changed</code> Modified not to retry when timeout occurs 3 times to prevent connection full when using the <code>show slave status</code> command.</li>",
+        "category": "MySQL"
       }
     ]
   },
@@ -678,6 +1094,44 @@
         "type": "Changed",
         "desc": "<p><code class=\"Changed\">Changed</code> Added the <code>rep_gap_max</code> metric.</p>",
         "category": "Altibase"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_6_17",
+    "ver": "v1.6.17",
+    "date": "2024-01-16",
+    "Lists": [
+      {
+        "ver": "v1.6.17",
+        "hash": "v1617",
+        "product": "DBX",
+        "type": "Fixed",
+        "desc": "<li><code class=\"Fixed\">Fixed</code> Fixed the slave data collection bug in MariaDB 10.2 or earlier.</li>",
+        "category": "MySQL"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_6_22",
+    "ver": "v1.6.22",
+    "date": "2024-02-15",
+    "Lists": [
+      {
+        "ver": "v1.6.22",
+        "hash": "v1622",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> If the type of agent setting is boolean, the value is unified as <code>true</code>/<code>false</code>.</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "v1.6.22",
+        "hash": "v1622",
+        "product": "DBX",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Added the <code>redo entries</code> metric.</p>",
+        "category": "Oracle"
       }
     ]
   },
@@ -732,43 +1186,5 @@
         "desc": "<p><code class=\"Changed\">Changed</code> Modified to collect the <code>disk_usage_interval=60</code> option by default.</p>"
       }
     ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_6_17",
-    "ver": "v1.6.17",
-    "date": "2024-01-16",
-    "Lists": [
-      {
-        "ver": "v1.6.17",
-        "hash": "v1617",
-        "product": "DBX",
-        "type": "Fixed",
-        "desc": "<li><code class=\"Fixed\">Fixed</code> Fixed the slave data collection bug in MariaDB 10.2 or earlier.</li>",
-        "category": "MySQL"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/db/dbx-1_6_18",
-    "ver": "v1.6.18",
-    "date": "2024-01-25",
-    "Lists": [
-      {
-        "ver": "v1.6.18",
-        "hash": "v1618",
-        "product": "DBX",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Added <code>uuid</code> and <code>statefulset</code> to allow to receive a recovery message for database notification.</p>",
-        "category": "Common"
-      },
-      {
-        "ver": "v1.6.18",
-        "hash": "v1618",
-        "product": "DBX",
-        "type": "Changed",
-        "desc": "<li><code class=\"Changed\">Changed</code> Modified not to retry when timeout occurs 3 times to prevent connection full when using the <code>show slave status</code> command.</li>",
-        "category": "MySQL"
-      }
-    ]
   }
-] 
+]

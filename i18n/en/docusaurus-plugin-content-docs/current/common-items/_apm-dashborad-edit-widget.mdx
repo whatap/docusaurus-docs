@@ -8,7 +8,7 @@ The widgets on the dashboard can be adjusted to the desired size and placed in t
 <ImgLang img='apm-dashboard-widget-resize.png' desc='Adjusting the widget size' />
 </InDoc>
 
-<InDoc product="postgresql,mysql,redis,mongodb,oracle-pro,oracle,altibase,cubrid">
+<InDoc product="postgresql,mysql,redis,mongodb,oracle-pro,oracle,altibase,cubrid,mssql">
 
 ![Resizing a widget](/img/db-dashboard-widget-resize.png)
 
@@ -22,7 +22,7 @@ Click and hold the mouse on the ![Resize icon](/img/ic-widget-size.svg) element 
 <ImgLang img='apm-dashboard-widget-move.png' desc='Moving a widget' />
 </InDoc>
 
-<InDoc product="postgresql,mysql,redis,mongodb,oracle-pro,oracle,altibase,cubrid">
+<InDoc product="postgresql,mysql,redis,mongodb,oracle-pro,oracle,altibase,cubrid,mssql">
 
 ![Moving a widget](/img/db-dashboard-widget-move.png)
 
@@ -36,7 +36,7 @@ When you move the mouse cursor to the top of the widget, the cursor shape change
 <ImgLang img='apm-dashboard-widget-remove.png' desc='Deleting a widget' />
 </InDoc>
 
-<InDoc product="postgresql,mysql,redis,mongodb,oracle-pro,oracle,altibase,cubrid">
+<InDoc product="postgresql,mysql,redis,mongodb,oracle-pro,oracle,altibase,cubrid,mssql">
 
 <ImgLang img='db-dashboard-widget-remove.png' desc='Deleting a widget' />
 
@@ -48,9 +48,11 @@ Right-click on a widget to delete. If you select <Cmdname sid="delete" className
 
 <InDoc product="java,php,python,nodejs,dotent,golang"><ImgLang img='apm-dashboard-widget-add.png' desc='Adding a widget' /></InDoc>
 
-<InDoc product="postgresql,mysql,redis,mongodb,oracle-pro,oracle,altibase,cubrid"><ImgLang img="db-dashboard-widget-add.png" desc="Adding a widget" /></InDoc>
+<InDoc product="postgresql,mysql,redis,mongodb,oracle-pro,oracle,altibase,cubrid,mssql"><ImgLang img="db-dashboard-widget-add.png" desc="Adding a widget" /></InDoc>
 
 Move the mouse cursor to an empty space on the dashboard and then right-click on it. Select a widget to add from the pop-up menu. Place the widget to the desired position and then resize it.
+
+<InDoc pages="dashboard">
 
 :::note
 
@@ -58,4 +60,20 @@ Move the mouse cursor to an empty space on the dashboard and then right-click on
 
 - The widgets that can be added are fixed, but we plan to increase supports through future updates.
 
+- In addition to the metrics provided by default on the dashboard, you can add the desired metrics. For more information about custom widgets, see [the following](#customwidget).
+
 :::
+
+</InDoc>
+
+<InDoc pages="multi-instance-monitoring">
+
+:::note
+
+- For more information about the widgets that can be placed on the dashboard, see [the following](#about-widget).
+
+- In addition to the metrics provided by default on the dashboard, you can add the desired metrics. For more information about custom widgets, see [the following](#customwidget).
+
+:::
+
+</InDoc>

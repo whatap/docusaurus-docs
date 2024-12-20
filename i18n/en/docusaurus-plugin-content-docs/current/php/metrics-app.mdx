@@ -10,17 +10,19 @@ keywords:
   - UI
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import Metricsindex from "../common-items/_metrics-index.mdx";
+import AgentStatus from "../common-items/_agent-status-summary-metrics.mdx";
+import Apmservermerics from "../common-items/_apm-server-merics.mdx";
+import Phpappproccounter from "../common-items/_php-app-proc-counter.mdx";
 
 <Metricsindex />
 
-import Apmservermerics from "../common-items/_apm-server-merics.mdx";
+<div className="metricslist">
+
+<AgentStatus />
 
 <Apmservermerics />
 
-import Phpappproccounter from "../common-items/_php-app-proc-counter.mdx";
-
 <Phpappproccounter />
+
+</div>

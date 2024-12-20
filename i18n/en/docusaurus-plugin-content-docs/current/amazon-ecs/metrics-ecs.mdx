@@ -2,7 +2,7 @@
 id: metrics-ecs
 title: Amazon ECS metric
 description: The following introduces the Amazon ECS metric.
-toc_max_heading_level: 3
+toc_max_heading_level: 2
 displayed_sidebar: awsecsSidebar
 keywords:
   - Amazon ECS
@@ -15,9 +15,11 @@ The notation of the WhaTap ECS metric's **category** uses the prefix (`ecs_`).
 
 :::
 
-### `ecs_service`
+<div className="metricslist">
 
-#### Tags
+## `ecs_service`
+
+### Tags
 
 | Tag name                      | Description                                                                                                                                                                 |
 | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -36,7 +38,7 @@ The notation of the WhaTap ECS metric's **category** uses the prefix (`ecs_`).
 | HealthCheckGracePeriodSeconds | It indicates the health check grace period (seconds) after starting the service. During this period, the service ignores health check failures.                             |
 | Tags                          | It is a list of key-value pairs for the tags associated with the service. Each tag provides additional metadata to the service.                                             |
 
-#### Fields
+### Fields
 
 | Field name   | Description                                                                                                                |
 | ------------ | -------------------------------------------------------------------------------------------------------------------------- |
@@ -47,9 +49,9 @@ The notation of the WhaTap ECS metric's **category** uses the prefix (`ecs_`).
 | PendingCount | It indicates the number of tasks in pending status. This is the number of tasks that have not been started.                |
 | RunningCount | It indicates the number of tasks running.                                                                                  |
 
-### `ecs_deployment`
+## `ecs_deployment`
 
-#### Tags
+### Tags
 
 | Tag name        | Description                                                                                                                                                              |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -59,7 +61,7 @@ The notation of the WhaTap ECS metric's **category** uses the prefix (`ecs_`).
 | TaskDefinition  | It indicates the name and revision number of the task that runs during deployment.                                                                                       |
 | ^               | e.g. `my-task:1`                                                                                                                                                         |
 
-#### Fields
+### Fields
 
 | Field name   | Description                                                                                                                      |
 | ------------ | -------------------------------------------------------------------------------------------------------------------------------- |
@@ -71,9 +73,9 @@ The notation of the WhaTap ECS metric's **category** uses the prefix (`ecs_`).
 | RunningCount | It indicates the number of tasks running.                                                                                        |
 | UpdatedAt    | It indicates the time when the deployment was last updated. It is saved as a timestamp.                                          |
 
-### `ecs_node`
+## `ecs_node`
 
-#### Tags
+### Tags
 
 | Tag name             | Description                                                                                                                                             |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -86,7 +88,7 @@ The notation of the WhaTap ECS metric's **category** uses the prefix (`ecs_`).
 | Tags                 | It is a list of key-value pairs for the tags associated with the container instance. Each tag provides additional metadata to the instance.             |
 | Version              | Internal version of the container instance. This may be the configuration version of the instance.                                                      |
 
-#### Fields
+### Fields
 
 | Field name   | Description                                                                                                        |
 | ------------ | ------------------------------------------------------------------------------------------------------------------ |
@@ -95,9 +97,9 @@ The notation of the WhaTap ECS metric's **category** uses the prefix (`ecs_`).
 | StatusReason | Description of the current state of the container instance and the reason for the change.                          |
 | RegisteredAt | It indicates the time when the container instance was registered with the ECS cluster. It is saved as a timestamp. |
 
-### `ecs_task`
+## `ecs_task`
 
-#### Tags
+### Tags
 
 | Tag name      | Description                                                                                             |
 | ------------- | ------------------------------------------------------------------------------------------------------- |
@@ -115,7 +117,7 @@ The notation of the WhaTap ECS metric's **category** uses the prefix (`ecs_`).
 | onodeName     | Name of the node on which the container is running.                                                     |
 | dimension     | A string combining the task ARN and container ID. This information helps monitoring and identification. |
 
-#### Fields
+### Fields
 
 | Field name           | Description                                                  |
 | -------------------- | ------------------------------------------------------------ |
@@ -162,3 +164,5 @@ The notation of the WhaTap ECS metric's **category** uses the prefix (`ecs_`).
 | state                | Container state. The state is divided into multiple levels.  |
 | ^                    | e.g. Running, Stopped                                        |
 | status               | Container state. A text value describes the status.          |
+
+</div>

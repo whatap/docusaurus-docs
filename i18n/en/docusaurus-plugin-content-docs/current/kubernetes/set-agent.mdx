@@ -71,6 +71,136 @@ Configure necessary settings in _whatap.conf_ for monitoring applications such a
 
   Set the log system output. When the option value is set to `true`, logging is left simultaneously in the standard output (stdOut) and a file. Any changes are immediately reflected in the logging system.
 
+- **collect_kube_node_process_metric_enabled** <span class='type'>bool</span>
+
+  Default `true`
+
+  It is the flag to enable or disable the monitoring for Kubernetes-related processes on the node. If it is set to `true`, monitoring is enabled. If it is set to `false`, monitoring is disabled.
+
+- **collect_kube_node_process_metric_target_list** <span class='type'>list</span> <ScrollToLink anchor='collect_kube_node_process_metric_target_list' />
+
+  Default `"kubelet,containerd-shim,containerd,docker,dockerd,crio,metrics-server, coredns,aws-k8s-agent,kube-proxy"`
+
+  Basically, it monitors Kubernetes-related processes. Users can arbitrarily set the processes to monitor by modifying the process list.
+
+  :::note 
+
+  **List of default monitoring target processes by WhaTab**
+
+  - **kubelet** 
+
+    This controller runs on each node, continuously monitors containers and communicates with the Kubernetes master to make sure that workloads are scheduled and run correctly. It is responsible for checking container status and managing node resources.
+
+  - **containerd** 
+
+    It is a high-performance container runtime for running containers. It handles image management, container creation and execution, networking, and such.
+
+  - **dockerd** 
+
+    It is the main process that manages the creation of Docker containers. This process includes building, releasing, running, networking, and data management for container images.
+
+  - **crio** 
+
+    It is a lightweight container runtime designed for Kubernetes that implements the Container Runtime Interface (CRI) to efficiently manage container workloads.
+
+  - **coredns** 
+
+    This process provides DNS services in the Kubernetes cluster and handles name resolution for services in the cluster. It also performs service discovery and load balancing, and supports seamless communication between services in the cluster.
+
+  - **aws-k8s-agent** 
+
+    This agent manages Kubernetes network interfaces (VPC CNI) in the AWS environment. This process allocates and releases AWS network resources (ENIs) for inter-Pod communication. If a problem occurs, it may cause network connection failures or resource allocation errors. 
+
+    {/* 이 프로세스는 포드 간의 네트워크 트래픽을 처리하기 위해 Elastic Network Interface(ENI)를 동적으로 할당 및 해제하는 작업을 수행합니다. It plays an important role in debugging the issues related to network connection failures. */}
+
+  - **kube-proxy** 
+
+    This process for routing network traffic is performed in the Kubernetes cluster. This process runs on each node and enables communication between services and Pods. It also uses Linux networking technologies like iptables or IPVS to deliver the cluster's internal requests to the correct Pods. This enables service discovery and load balancing in the Kubernetes cluster.
+
+  - **kube-apiserver**
+
+    This Kubernetes API server is a central component that handles all requests in the cluster and manages the status of resources. It processes all requests in the cluster, including authentication, authorization, and admission control.
+
+  - **etcd**
+
+    It is a distributed key-value database that stores Kubernetes cluster status data. It plays an important role in saving and recovering the status of the cluster.
+
+  - **kube-controller**
+
+    This process manages and runs multiple controllers, maintains the status of cluster resources, and performs automated tasks. It performs various roles such as managing node and Pod status, maintaining replication, etc.
+
+  - **kube-scheduler**
+
+    It places Pods on appropriate nodes in the cluster. It selects an optimal node considering the Pod's requirements and the status of each node.
+
+  :::
+
+{/* 
+
+  :::note 
+
+  **List of processes that can be monitored**
+
+- **kubelet** 
+
+  This controller runs on each node, continuously monitors containers and communicates with the Kubernetes master to make sure that workloads are scheduled and run correctly. It is responsible for checking container status and managing node resources.
+
+- **containerd-shim** 
+
+  The process plays as an intermediate interface between `containerd` and container runtime. This process manages the lifecycle of each container and is responsible for handling standard input/output and collecting logs for the container.
+
+- **containerd** 
+
+  It is a high-performance container runtime for running containers. It handles image management, container creation and execution, networking, and such.
+
+- **dockerd** 
+
+  The Docker daemon is a core process that oversees building, deploying, and running container images. It provides various features including network management between containers and data volume management.
+
+- **crio** 
+
+  It is a lightweight container runtime designed for Kubernetes that implements the Container Runtime Interface (CRI) to efficiently manage container workloads.
+
+- **coredns** 
+
+  This process provides DNS services in the Kubernetes cluster and handles name resolution for services in the cluster. It also performs service discovery and load balancing, and supports seamless communication between services in the cluster.
+
+- **aws-k8s-agent** 
+
+  This agent manages Kubernetes network interfaces (VPC CNI) in the AWS environment. This process dynamically allocates and de-allocates elastic network interfaces (ENIs) to handle network traffic between Pods. It plays an important role in debugging the issues related to network connection failures.
+
+- **kube-proxy** 
+
+  This process routes network traffic between Pods in the cluster and relays communication between services and Pods. By using the Linux `iptables` or IPVS, it delivers network requests in the cluster to the correct Pods, and supports service discovery and load balancing.
+
+  :::
+
+- **kubelet:**\
+  It communicates with the Kubernetes master, manages the state of containers on nodes, and helps make sure they are deployed and run correctly.
+
+- **containerd-shim:**\
+  This interface between the containerd and container runtime handles the lifecycle and logs of the container.
+
+- **containerd:**\
+  It is a container runtime that handles container execution, image management, networking, etc.
+
+- **dockerd:**\
+  It is a core process for Docker container management, and performs container image building, execution, deployment, networking, data management, etc.
+
+- **crio:**\
+  This container runtime manages containers in the Kubernetes environment.
+
+- **coredns:**\
+  It provides DNS services in the Kubernetes cluster, supporting the name resolution, service discovery, and load balancing.
+
+- **aws-k8s-agent:**\
+  It manages the Kubernetes VPC CNI in the AWS environment, and allocates and releases AWS network resources for inter-Pod communication.
+
+- **kube-proxy:**\
+  It routes network traffic in the cluster, supporting service discovery and load balancing via iptables or IPVS. 
+
+  */}
+
 ### whatap-node-agent
 
 ---
@@ -196,6 +326,12 @@ Configure necessary settings in _whatap.conf_ for monitoring applications such a
   Default `false`
 
   Set whether or not to enable the debugging (logging) for whatap-control-plane-helper. 
+
+- **kube_client_tls_verify** <span class='type'>bool</span> <ScrollToLink anchor='kube_client_tls_verify' />
+
+  Default `true`
+
+  If the option value is set to `false`, TLS authentication is not enforced and the authentication process can be skipped.
 
 ### whatap-master-agent
 
@@ -377,13 +513,13 @@ The _whatap.conf_ file can be managed using the ConfigMap function in the user K
 
 whatap-node-helper
 
-| Option name                                | Default          | Type   | Description                                                                                                          | Remarks                                                                                                                                                                                          |
-| ------------------------------------------ | ---------------- | ------ | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `collect_volume_detail_enabled`            | `true`           | bool   | In the node agent, use the `exec df` command for all containers to enable searching the container volume information | It enables the function to collect storage usage and volume data for all containers running on the node.                                                                                         |
-| `inject_container_id_to_apm_agent_enabled` | `true`           | bool   | It enables container ID injection using `exec` in the WhaTap APM container                                           | The ID of a container identified by WhaTap APM can be automatically extracted and injected into the APM tool, which can be used to associate the performance monitoring data with the container. |
-| `debug`                                    | `false`          | bool   | Whether the debug mode is active or not                                                                              | Set the log level to `DEBUG` when the debugging mode is enabled, otherwise to `INFO`.                                                                                                            |
-| `kube_config_path`                         | `~/.kube/config` | string | Kubernetes configuration file path                                                                                   | If not set, use _~/.kube/config_.                                                                                                                                                                |
-| `log_sys_out`                              | `true`           | bool   | Setting the log system output                                                                                        | When it is set to `true`, logging is left simultaneously in the standard output (stdOut) and a file. Any changes are immediately reflected in the logging system.                                |
+| Option name                                | Default          | Type   | Description                                                                                                | Remarks                                                                                                                                                                                          |
+| ------------------------------------------ | ---------------- | ------ | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `collect_volume_detail_enabled`            | `true`           | bool   | It enables querying the container volume using the `exec df` command for all containers by the node agent. | It enables the feature to collect the storage usage and volume for all containers running on the node.                                                                                           |
+| `inject_container_id_to_apm_agent_enabled` | `true`           | bool   | It enables container ID injection using `exec` in the WhaTap APM container                                 | The ID of a container identified by WhaTap APM can be automatically extracted and injected into the APM tool, which can be used to associate the performance monitoring data with the container. |
+| `debug`                                    | `false`          | bool   | Whether the debug mode is active or not                                                                    | Set the log level to `DEBUG` when the debugging mode is enabled, otherwise to `INFO`.                                                                                                            |
+| `kube_config_path`                         | `~/.kube/config` | string | Kubernetes configuration file path                                                                         | If not set, use _~/.kube/config_.                                                                                                                                                                |
+| `log_sys_out`                              | `true`           | bool   | Setting the log system output                                                                              | When it is set to `true`, logging is left simultaneously in the standard output (stdOut) and a file. Any changes are immediately reflected in the logging system.                                |
 
 whatap-node-helper 
 

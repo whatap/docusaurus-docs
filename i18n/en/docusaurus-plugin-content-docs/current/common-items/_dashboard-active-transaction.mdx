@@ -12,6 +12,16 @@ In Home screen &gt; Select Project &gt; <Cmdname sid="dashboard" className="uite
 
 You can quickly recognize abnormal transactions by using URLs, SQLs, and HTTP calls of the active transactions, and can analyze the delayed sections in detail through the transaction trace details.
 
+<InDoc product="java">
+
+:::tip
+
+By adding a database project via the <Cmdname sid="side_correlatedProjectManagement" className="uitext" /> menu, you can view the SQL performance of the database linked to the current transaction. For more information about the <Cmdname sid="side_correlatedProjectManagement" className="uitext" /> menu and linked project analysis, see [the following](linked-projects).
+
+:::
+
+</InDoc>
+
 ## Screen layout
 
 <ImgLang img='dashboard-active-transaction.png' desc='Active transaction' />
@@ -39,6 +49,8 @@ When you select an item in the transaction list, the <Cmdname sid="active_transa
   - <Cmdname sid="refresh_all" className="uitext" />: You can update information of the running transactions.
 
   - <Cmdname sid="stop_thread" className="uitext" />: You can stop a transaction in progress. To stop threading, <Cmdname sid="secret_key" className="uitext" /> is required. For more information about <Cmdname sid="secret_key" className="uitext" />, see <Link to="install-agent#security">the following</Link>.
+
+  - <Cmdname sid="BTN08518" className="uitext" />: You can query the SQL performance of the database linked to the active transaction. It appears only when the selected transaction is the one that executed SQL as a linked project. For more information about addition and management of the linked projects, see [the following](linked-projects).
 
   :::tip
 

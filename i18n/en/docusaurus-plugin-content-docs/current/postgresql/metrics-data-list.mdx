@@ -13,6 +13,13 @@ Database metrics are a comprehensive collection of database workloads and resour
 
 For more information about other metrics, see [the link](https://www.postgresql.org/docs/).
 
+import AgentStatus from "../common-items/_agent-status-summary-metrics.mdx";
+import Xosmetrics from "../common-items/_db-xos-metrics.mdx";
+
+<div className="metricslist">
+
+<AgentStatus />
+
 ## db_postgresql_counter {#db_postgresql_counter}
 
 ### Tags {#db_postgresql_counter-tags}
@@ -95,6 +102,6 @@ The following lists the fields that are collected in the `db_postgresql_counter`
 | `wal_count`                 | Number of Write-Ahead Logging (WAL) records written. Spikes in the WAL file counts are usually caused by the large amount of changes in a short period or vacuum-like maintenance operations that generate temporary tables and objects. They should slowly return to normal levels. This usually results in lots of disk I/O and CPU activity, slowing the application query's execution until things get back to normal. This metric has the values queried every minute. | Performance |
 | `warning_count`             | Number of warnings occurred.                                                                                                                                                                                                                                                                                                                                                                                                                                                | Info        |
 
-import Xosmetrics from "../common-items/_db-xos-metrics.mdx";
-
 <Xosmetrics />
+
+</div>

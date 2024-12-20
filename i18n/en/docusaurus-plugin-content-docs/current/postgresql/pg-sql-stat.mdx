@@ -17,6 +17,8 @@ SQL statistics (execution count, execution time, row count, etc.) provided by Po
 
 - Because the delta values are calculated and collected from `pg_stat_statements` every hour, the collection begins 1 hour after configuration.
 
+- When collecting data every 1 hour, up to 5,000 cases are collected based on `total_time`.
+
 - For more information about the `pg_stat_statements` module, see [the following link](https://www.postgresql.org/docs/current/pgstatstatements.html).
 
 :::
@@ -48,6 +50,17 @@ To use <Cmdname sid="side_pgStat" className="uitext" />, the following settings 
    ```bash
    select * from public.pg_stat_statements
    ```
+
+:::note
+
+See the following DBX agent options for the criteria on how to collect data. It views `pg_stat_statements` and performs collection if the rows value is greater than `statements_min_row`.
+
+```ini title="whatap.conf"
+# default 10000 row
+statements_min_row=10000
+```
+
+:::
 
 ## Basic screen guide
 
@@ -98,7 +111,7 @@ import Dbproductsqlstatquerydetails from "../common-items/_db-product-sql-stat-q
 {/* 필터 조건추가하기*/}
 import Dbsqlfilter from "../common-items/_db-sql-filter.mdx";
 
-<Dbsqlfilter />
+<Dbsqlfilter level={2} />
 
 import Dbv2dataeditcolumn from "../common-items/_db-v2-data-edit-column.mdx";
 

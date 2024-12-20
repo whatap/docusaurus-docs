@@ -60,11 +60,17 @@ The following provides various options for Java agents to handle the database an
 
   It records DB connection open data in the trace details.
 
-- **profile_dbc_close** <span class='type'>Boolean</span>
+- **trace_dbc_close_enabled** <span class='type'>Boolean</span> <code class="my">Java Agent v2.2.3 or later</code>
 
   Default `false`
 
   It works only when `profile_connection_open_enabled` is `true`. DB connection close-up data is recorded in the transaction trace details.
+
+  :::note
+
+  **For versions earlier than Java Agent 2.2.3**, use the `profile_dbc_close` option name.
+
+  :::
 
 - **profile_sql_param_enabled** <span class='type'>Boolean</span><ScrollToLink anchor='profile-sql-param' />
 
@@ -152,17 +158,17 @@ The following provides various options for Java agents to handle the database an
 
   It enables the function to normalize any SQL statements by extracting the literal part from each SQL statement.
 
-- **profile_error_jdbc_fetch_max** <span class='type'>Int</span>
+- **profile_error_jdbc_fetch_max** <span class='type'>Int</span> <ScrollToLink anchor='profile_error_jdbc_fetch_max' />
 
   Default `10000`
 
-  When SQL Fetch Count(`ResultSet.next()` call count) exceeds the set value, it is treated as TOO MANY Fetch error. If it is set to `0`, it is not treated as an error.
+  When the SQL Fetch Count (the number of `ResultSet.next()` calls) exceeds the set value, it is treated as the **TOO_MANY_RECORDS** error. If it is set to `0`, it is not treated as an error.
 
-- **profile_error_sql_time_max** <span class='type'>Int</span>
+- **profile_error_sql_time_max** <span class='type'>Int</span> <ScrollToLink anchor='profile_error_sql_time_max' />
 
   Default `30000`
 
-  If the SQL execution time exceeds the set value, it is treated as TOO SLOW error. If it is set to `0`, it is not treated as an error.
+  When the SQL execution time exceeds the set value, it is treated as the **SLOW_SQL** error. If it is set to `0`, it is not treated as an error.
 
 - **hook_connection_open_patterns** <span class='type'>String</span>
 

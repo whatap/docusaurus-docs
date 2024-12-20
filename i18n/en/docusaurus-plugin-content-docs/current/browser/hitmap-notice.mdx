@@ -1,0 +1,116 @@
+---
+id: hitmap-notice
+title: AJAX hitmap pattern
+description: It automatically recognizes AJAX distribution patterns through machine learning and sends alert notifications.
+keywords:
+  - Browser
+  - HITMAP
+  - Alert
+---
+
+Home &gt; Select Project &gt; <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" /> &gt; <Cmdname sid="TTL08559" className="uitext" />
+
+It automatically recognizes AJAX distribution patterns through machine learning and sends alert notifications. You can quickly and accurately recognize issue situations without setting complex conditions. Numerous hitmap patterns have been learned, so you can receive an alert when any similar pattern is detected in the data collected in real time.
+
+<ImgLang img="browser-event-ajax-hitmap.png" desc="AJAX Hitmap pattern" />
+
+:::note
+
+- This menu can also be accessed via the following menu path: Home &gt; Select Project &gt; ![Icon](/img/ic-sitemap.svg) <Cmdname sid="sitemap" className="uitext" /> &gt; <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" /> <code class="newfunc">New</code>
+
+- For more information about the <Cmdname sid="side_eventSetting" className="uitext" /> <code class="newfunc">New</code> menu, see [the following](warning-notice-v2).
+
+- For more information about the <Cmdname sid="ajaxAnalytics" className="uitext" /> menu, see [the following](analyze-ajax-hitmap).
+
+:::
+
+## Basic options {#basicoption}
+
+You can set the method how to receive notifications through the following options:
+
+- <Cmdname sid="hitmap_exc_time" className="uitext" />: Patterns out of the set time are ignored.
+
+- <Cmdname sid="silent" className="uitext" />: This option can prevent excessive alerts from happening. No alerts are sent for the selected period after the first alert notification is generated. In addition, they are not recorded in <Cmdname sid="side_eventHistory" className="uitext" />.
+
+- <Cmdname sid="event_tag" className="uitext" />: You can send alerts to specific members or teams. If the tag is not set, notifications are sent to all members. For more information about the tag settings, see [the following](set-receive-event#set-notice-by-team-or-users).
+
+- <Cmdname sid="save" className="uitext" />: The settings are saved and applied.
+
+## Hitmap patterns {#hitmappattern}
+
+You can set the alerts to be sent when any of the following hitmap patterns occur. This alert can be enabled or disabled by selecting the toggle buttons for each item.
+
+<Columns>
+<Column className="text--left width--40">
+
+![Horizontal line pattern](/img/blog_49_04.png)
+
+</Column>
+<Column className="text--left">
+
+<Cmdname sid="hitmap_pattern_horizontal" className="uitext" />
+
+In this pattern, requests are concentrated and terminated when specific response times are delayed. This occurs when requests are accumulated or response delays by specific APIs persist.
+
+</Column>
+</Columns>
+
+<Columns>
+<Column className="text--left width--40">
+
+![Vertical line pattern](/img/blog_49_05.png)
+
+</Column>
+<Column className="text--left">
+
+<Cmdname sid="hitmap_pattern_vertical" className="uitext" />
+
+In this state, requests are concentrated at a specific time point, resulting in different response times. This can happen when a specific event causes a temporary load or processing of multiple types of API calls simultaneously.
+
+</Column>
+</Columns>
+
+<Columns>
+<Column className="text--left width--40">
+
+![Flying pattern](/img/blog_49_06.png)
+
+</Column>
+<Column className="text--left">
+
+<Cmdname sid="hitmap_pattern_flying" className="uitext" />
+
+This symptom means a gradual increase in response time. The main causes include the server memory leak, cache inefficiency, and connection pool exhaustion.
+
+</Column>
+</Columns>
+
+<Columns>
+<Column className="text--left width--40">
+
+![Overload pattern](/img/blog_49_07.png)
+
+</Column>
+<Column className="text--left">
+
+<Cmdname sid="hitmap_pattern_overload" className="uitext" />
+
+This pattern is characterized by requests being concentrated in a specific time section and having high response times. The main causes include the lack of server resources, database overload, and network bottlenecks.
+
+</Column>
+</Columns>
+
+<Columns>
+<Column className="text--left width--40">
+
+![Flood pattern](/img/blog_49_08.png)
+
+</Column>
+<Column className="text--left">
+
+<Cmdname sid="hitmap_pattern_flood" className="uitext" />
+
+In this pattern, the number of requests suddenly increases and the response time increases sharply at the same time. This phenomenon is typically caused by DDoS attacks, traffic surges triggered by specific events, or abnormal API calls.
+
+</Column>
+</Columns>

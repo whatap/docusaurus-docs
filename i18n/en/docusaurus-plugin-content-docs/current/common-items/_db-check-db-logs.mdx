@@ -1,6 +1,6 @@
 ## Checking the logs
 
-<Xclude product="mssql">
+<Xclude product="mssql,oracle-pro,mssql-v1">
 
 - _dbx.log_
 
@@ -12,7 +12,19 @@
 
 </Xclude>
 
-<InDoc product="mssql">
+<InDoc product="oracle-pro">
+
+- _whatap.log_
+
+  All logs related to the agent startup and collection can be found in _`$WHATAP_HOME`/logs/whatap.log_ path. If the size of the _whatap.log_ file exceeds 25 MB, it is backed up with the file name of _whatap.log.[n]_. To clean up files, delete the files starting from the greatest (old) number.
+
+- _prx.log_
+
+  This log file records major activities and events that occur during DMA (Direct Memory Access)-based data collection. Logs are recorded when the DMX agent is restarted. You only need to run the `start.sh` or `startd.sh` (execution of daemon) file once in the agent installation path.
+
+</InDoc>
+
+<InDoc product="mssql,mssql-v1">
 
 All logs related to the agent startup and collection can be found in _`$WHATAP_HOME`/logs/dbx.log_ path. If the size of the _dbx.log_ file exceeds 25 MB, it is backed up with the file name of _dbx.log.[n]_. To clean up files, delete the files starting from the greatest (old) number.
 

@@ -2,9 +2,17 @@ Database metrics are a comprehensive collection of database workloads and resour
 
 For more information about columns, see [the link](https://docs.oracle.com/).
 
-<InDoc product="oracle">
+import AgentStatus from "../common-items/_agent-status-summary-metrics.mdx";
+
+<div className="metricslist">
+
+<AgentStatus />
+
+<InDoc product="oracle,oracle-v1">
 
 ## db_oracle_counter {#db_oracle_counter}
+
+This category is useful for collecting overall performance metrics of the Oracle database to monitor the status and performance of the system.
 
 ### Tags {#db_oracle_counter-tags}
 
@@ -28,6 +36,8 @@ The following lists the fields that are collected in the `db_oracle_counter` cat
 <InDoc product="oracle-pro">
 
 ## db_oracle_dma_counter {#db_oracle_dma_counter}
+
+This category is useful for collecting overall performance metrics of the Oracle database to monitor the status and performance of the system.
 
 ### Tags {#db_oracle_dma_counter-tags}
 
@@ -124,5 +134,61 @@ The following describes the metrics collected via the `ora_ratio` option in the 
 | `library cache get hit ratio` | If the rate of successful retrieval of objects from the Library Cache <br/> is a high number, it indicates that SQL statements and PL/SQL code are being reused effectively in the Library Cache.                                                                                                     |
 | `latch hit ratio`             | The rate of successful latch requests <br/>, latch is a locking mechanism for controlling access to shared memory in the database. A high number indicates a low latch latency and good concurrency and performance of the system.                                                                    |
 | `shared pool free mem ratio`  | The percentage of Free Memory in the Shared Pool <br/>. The shared pool is a memory area that stores SQL statements, PL/SQL code, and the data dictionary cache. If an appropriate amount of free memory is maintained, it can ensure efficient operation of the shared pool and optimal performance. |
+
+</div>
+
+<InDoc product="oracle,oracle-v1">
+
+## db_oracle_tablespace {#db_oracle_tablespace}
+
+This category collects tablespace usage data of the Oracle database every one hour. Metrics in this category help you monitor the status and capacity of tablespaces to efficiently manage storage resources and proactively prevent database performance issues.
+
+### Tags {#db_oracle_tablespace-tags}
+
+The following lists the tags that are collected in the `db_oracle_tablespace` category.
+
+| Tag name     | Description                                                                                                                                        | Remarks      |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| `con_name`   | It is the database name of the connected container. It is useful for distinguishing each Pluggable Database (PDB) in the multi-tenant environment. | -            |
+| `datfile`    | Path and file name of the data file linked to each tablespace.                                                                                     | -            |
+| `oname`      | Agent name                                                                                                                                         | Unique value |
+| `tablespace` | It is the name of tablespace.                                                                                                                      | -            |
+
+### Field {#db_oracle_tablespace-filed}
+
+The following lists the fields that are collected in the `db_oracle_tablespace` category.
+
+</InDoc>
+
+<InDoc product="oracle-pro">
+
+## db_oracle_dma_tablespace {#db_oracle_dma_tablespace}
+
+This category collects tablespace usage data of the Oracle database every one hour. Metrics in this category help you monitor the status and capacity of tablespaces to efficiently manage storage resources and proactively prevent database performance issues.
+
+### Tags {#db_oracle_dma_tablespace-tags}
+
+The following lists the tags that are collected in the `db_oracle_dma_tablespace` category.
+
+| Tag name     | Description                                                                                                                                        | Remarks      |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| `con_name`   | It is the database name of the connected container. It is useful for distinguishing each Pluggable Database (PDB) in the multi-tenant environment. | -            |
+| `datfile`    | Path and file name of the data file linked to each tablespace.                                                                                     | -            |
+| `oname`      | Agent name                                                                                                                                         | Unique value |
+| `tablespace` | It is the name of tablespace.                                                                                                                      | -            |
+
+### Field {#db_oracle_dma_tablespace-filed}
+
+The following lists the fields that are collected in the `db_oracle_dma_tablespace` category.
+
+</InDoc>
+
+| Metrics          | Description                                                                            |
+| ---------------- | -------------------------------------------------------------------------------------- |
+| `autoextensible` | It indicates whether the data file is automatically extensible with `YES` or `NO`.     |
+| `increment_by`   | Number of blocks that increase at a time when the data file is extended automatically. |
+| `maxsize`        | Maximum size set when the data file is automatically extended.                         |
+| `size`           | Current allocated capacity of the tablespace.                                          |
+| `used`           | Size of the tablespace in use.                                                         |
 
 </div>

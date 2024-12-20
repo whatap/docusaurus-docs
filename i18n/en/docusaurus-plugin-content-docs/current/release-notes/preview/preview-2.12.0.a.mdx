@@ -1,0 +1,101 @@
+---
+id: preview-2_12_0x
+title: Preview 2.12.0.a
+toc_max_heading_level: 2
+---
+
+<head>
+<meta name="robots" content="noindex, nofollow"/>
+</head>
+
+:::note
+
+In [preview.whatap.io](https://preview.whatap.io), the following new features and enhancements can be experienced in advance. 
+
+:::
+
+## Preview 2.12.0.a1
+
+November 28, 2024
+
+<div class='indentTab'>
+
+### `Common`
+
+- <Status priority='1'>Feature</Status> Added the following features in <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_metricsChart" className="uitext" /> <code className="newfunc">New</code>.
+
+  - Legend filtering of widgets
+
+  - Highlighting the chart line when hovering over the legend of the widget
+
+- <Status priority='1'>Changed</Status> In the <Cmdname sid="side_flexboard" className="uitext" /> menu of the project, removed <Cmdname sid="ITM06324" className="uitext" /> among the dashboard list sorting options.
+
+- <Status priority='0'>Fixed</Status> Fixed the malfunction of title display at the top of the screen in all menus.
+
+---
+
+### `Application`
+
+<Status priority='0'>Fixed</Status> In <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_txSearch" className="uitext" />, fixed the issue where the elapsed time filter is not applied.
+
+---
+
+### `Kubernetes`
+
+- <Status priority='1'>Feature</Status> In <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_etcdDashboard" className="uitext" />, added the guide message modal.
+
+- <Status priority='1'>Feature</Status> If the version of the installed agent is less than the supported version when the <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_etcdDashboard" className="uitext" /> menu is entered, the display feature of the update guide screen has been added.
+
+---
+
+### `Database`
+
+#### Common
+
+- <Status priority='1'>Fixed</Status> In the <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentInstall" className="uitext" /> of the <code className="my">V2</code> project, modified the XOS agent installation guide for the Windows environment.
+
+  :::note
+
+  - Applied platforms: **PostgreSQL**, **MySQL**, **CUBRID**, **Altibase**
+
+  :::
+
+- <Status priority='0'>Fixed</Status> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />, fixed the issue where the <Cmdname sid="session_kill" className="uitext" /> feature execution failure is not processed properly.
+
+#### PostgreSQL
+
+<Status priority='1'>Changed</Status> In <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentInstall" className="uitext" />, changed the configuration guide to account creation basic and additional role settings.
+
+#### Oracle, Oracle Pro
+
+<Status priority='0'>Fixed</Status> In <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbSqlAnalysis" className="uitext" />, fixed the issue where data is not output to the table in the <UI>Access Statistics</UI> tab.
+
+#### MySQL
+
+<Status priority='1'>Changed</Status> In <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentInstall" className="uitext" />, changed the guide to the JDBC download.
+
+---
+
+### `Log`
+
+<Status priority='0'>Fixed</Status> Modified to display the Close button in the log activation guidance modal.
+
+</div>
+
+## Preview 2.12.0.a0
+
+November 21, 2024
+
+<div class='indentTab'>
+
+### `Kubernetes`
+
+- <Status priority='1'>Feature</Status> In the detailed information of the <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_ingressList" className="uitext" /> menu, added the application information.
+
+- <Status priority='1'>Feature</Status> Added the link to the resource list in the <Cmdname sid="TTL08422" className="uitext" /> window in the following menu paths:
+
+  - <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_nodeTimeline" className="uitext" />
+
+  - <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_ingressList" className="uitext" />
+
+</div>

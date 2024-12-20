@@ -101,7 +101,7 @@ Any semantic word can be replaced with a regular expression. The GROK parser all
   - regular expression: `.*?`
 
 ```text title='GROK parsing pattern'
-[%{TIMESTAMP_ISO8601:date}\sGMT\][%{LOGLEVEL:level}\s\][%{DATA:caller}\]
+\[%{TIMESTAMP_ISO8601:date}\sGMT\]\[%{LOGLEVEL:level}\s\]\[%{DATA:caller}\]
 ```
 
 If you parse with the above syntax, you can extract tags as follows. In this way, GROK's `%{SYNTAX:SEMANTIC}` syntax helps you apply complex and long regular expressions easily and concisely.
@@ -196,9 +196,25 @@ If you parse with the above syntax, you can extract tags as follows.
 
 2. Select **_+_** <Cmdname sid="adding" className="uitext" /> and then select the **_GROK_** parser in the <Cmdname sid="parser" className="uitext" /> field.
 
-   <ImgLang img='log-1st-grok.png' desc='Registering the Grok pattern parser'/>
+   <ImgLang img='log-1st-parser-add.png' desc='Add Log Parser'/>
 
-3. Enter values for <Cmdname sid="category" className="uitext" />, <Cmdname sid="ITM06439" className="uitext" />, and <Cmdname sid="pattern" className="uitext" />. The components of the <Cmdname sid="parser" className="uitext" /> <Cmdname sid="add" className="uitext" /> window are as follows:
+3. When you select <Cmdname sid="BTN08593" className="uitext" />, the pattern registration and simulation window appears on the right.
+
+4. Enter <Cmdname sid="pattern" className="uitext" /> and <Cmdname sid="log" className="uitext" />, and then click <Cmdname sid="simulation" className="uitext" /> to check whether parsing is successful with the pattern to apply.
+
+   > <Cmdname sid="pattern" className="uitext" /> example: `\[%{TIMESTAMP_ISO8601:date}\sGMT\]\[%{LOGLEVEL:level}\s\]\[%{DATA:caller}\]\s(?<projectCode>\d)\s(?<logCategory>\w*)\s(?<dexBuildStartTime>\d{8}\s\d{2}:\d{2}:\d{2}\.\d{3})\s\{area=(?<areaEnum>\d),\scity=(?<cityEnum>\d)\}\s(?<dexBuildElapsed>\d{2})ms`
+   >
+   > <Cmdname sid="log" className="uitext" /> example: `[2023-08-08 02:02:30,101 GMT][INFO ][i.w.y.l.c.LogSinkDexScheduleThread.realProcess(159)] 8 VirtualLog 20230808 02:01:00.000 {area=4, city=5} 56ms`
+
+5. If the simulation is successful, you can view <Cmdname sid="simulation_result" className="uitext" /> and <Cmdname sid="TTL08604" className="uitext" />.
+
+   <ImgLang img='log-parser-simulation2.png' desc='Parser simulation and performance measurement'/>
+
+6. When you click <Cmdname sid="apply_pattern" className="uitext" /> after simulation, the pattern that has been entered for the selected parser is applied. 
+
+7. After applying the pattern, enter values for <Cmdname sid="category" className="uitext" />, <Cmdname sid="ITM06439" className="uitext" />, and <Cmdname sid="pattern" className="uitext" />. 
+
+   <ImgLang img='log-grok-parser-input.png' desc='GROK parser input'/>
 
    - <Cmdname sid="category" className="uitext" />
 
@@ -212,17 +228,13 @@ If you parse with the above syntax, you can extract tags as follows.
 
      - <Cmdname sid="ITM06439" className="uitext" /> are applied before all parsers are run. Accordingly, you cannot use the <Cmdname sid="tag" className="uitext" /> that have been added for the parser.
 
-   - <Cmdname sid="pattern" className="uitext" />
-
-     Specify the GROK pattern. It is required.
-
-4. Select <Cmdname sid="add" className="uitext" /> to register a parser.
+8. Select <Cmdname sid="add" className="uitext" /> to register a parser.
 
 :::note
 
 - In the log parser list, you can change the <Cmdname sid="ITM06352" className="uitext" /> or <Cmdname sid="enable" className="uitext" />, <Cmdname sid="edit" className="uitext" />, or <Cmdname sid="delete" className="uitext" /> the parser. 
 
-- Before registering a parser, you can check whether the pattern to register is normal through <Cmdname sid="simulation" className="uitext" />. 
+- After **_parser simulation_**, you can register a pattern. 
 
 :::
 
@@ -244,13 +256,15 @@ If you parse with the above syntax, you can extract tags as follows.
 
 :::
 
+{/* 
+
 ### Simulation{#grok-simulation}
 
 You can check the parsed result in advance by entering <Cmdname sid="log" className="uitext" /> and <Cmdname sid="pattern" className="uitext" /> in the <Cmdname sid="parser" className="uitext" /> <Cmdname sid="simulation" className="uitext" /> window.
 
 > <Cmdname sid="log" className="uitext" /> example: `[2023-08-08 02:02:30,101 GMT][INFO ][i.w.y.l.c.LogSinkDexScheduleThread.realProcess(159)] 8 VirtualLog 20230808 02:01:00.000 {area=4, city=5} 56ms`
 >
-> <Cmdname sid="pattern" className="uitext" /> example: `[%{TIMESTAMP_ISO8601:date}\sGMT\][%{LOGLEVEL:level}\s\][%{DATA:caller}\]\s(?<projectCode>\d)\s(?<logCategory>\w*)\s(?<dexBuildStartTime>\d{8}\s\d{2}:\d{2}:\d{2}\.\d{3})\s\{area=(?<areaEnum>\d),\scity=(?<cityEnum>\d)\}\s(?<dexBuildElapsed>\d{2})ms`
+> <Cmdname sid="pattern" className="uitext" /> example: `\[%{TIMESTAMP_ISO8601:date}\sGMT\]\[%{LOGLEVEL:level}\s\]\[%{DATA:caller}\]\s(?<projectCode>\d)\s(?<logCategory>\w*)\s(?<dexBuildStartTime>\d{8}\s\d{2}:\d{2}:\d{2}\.\d{3})\s\{area=(?<areaEnum>\d),\scity=(?<cityEnum>\d)\}\s(?<dexBuildElapsed>\d{2})ms`
 
 1. In the <Cmdname sid="parser" className="uitext" /> <Cmdname sid="add" className="uitext" /> window, select <Cmdname sid="simulation" className="uitext" />.
 
@@ -259,6 +273,8 @@ You can check the parsed result in advance by entering <Cmdname sid="log" classN
 3. After entry <Cmdname sid="log" className="uitext" /> and <Cmdname sid="pattern" className="uitext" />, select <Cmdname sid="simulation" className="uitext" />. You can check the <Cmdname sid="simulation_result" className="uitext" /> as follows:
 
    <ImgLang img='log-grok-parser-simulation.png' desc='GROK parser simulation'/>
+
+*/}
 
 ## JSON parser{#json-parser-detail}
 
@@ -274,9 +290,36 @@ If logs are collected in JSON format, they can be easily parsed using the JSON p
 
 2. Select **_+_** <Cmdname sid="adding" className="uitext" /> and then select the **_JSON_** parser in the <Cmdname sid="parser" className="uitext" /> field.
 
-   <ImgLang img='log-1st-json.png' desc='Register json parser pattern'/>
+   <ImgLang img='log-1st-parser-add.png' desc='Add Log Parser'/>
 
-3. Enter values for <Cmdname sid="category" className="uitext" />, <Cmdname sid="ITM06439" className="uitext" />, and <Cmdname sid="pattern" className="uitext" />. The components of the <Cmdname sid="parser" className="uitext" /> <Cmdname sid="add" className="uitext" /> window are as follows:
+3. When you select <Cmdname sid="BTN08593" className="uitext" />, the pattern registration and simulation window appears on the right.
+
+4. Enter <Cmdname sid="pattern" className="uitext" /> and <Cmdname sid="log" className="uitext" />, and then click <Cmdname sid="simulation" className="uitext" /> to check whether parsing is successful with the pattern to apply.
+
+   ```javascript title='Example'
+   2023-08-08 02:43:28,615 -- {"host":"10.21.3.24","method":"POST","status":"200","url":"http://devote.whatap.io/yard/api/flush"} --
+   ```
+
+   In the example log, if **_Prefix_** and **_Postfix_** are specified as `--` and `url` is specified in **_Ignore_**, only three <Cmdname sid="tag" className="uitext" /> (`host`, `method`, `status`) are created.
+
+   - **_Prefix_**\
+     Specify the position where the JSON format begins in the log. If the entire log is in JSON format, set an empty value.
+
+   - **_Postfix_**\
+     Specify the position where the JSON format ends in the log. If the entire log is in JSON format, set an empty value.
+
+   - **_Ignore_**\
+     Specify the key for which tags are not created during JSON formatting.
+
+5. If the simulation is successful, you can view <Cmdname sid="simulation_result" className="uitext" /> and <Cmdname sid="TTL08604" className="uitext" />.
+
+   <ImgLang img='log-jason-parser-simulation.png' desc='Parser simulation and performance measurement'/>
+
+6. When you click <Cmdname sid="apply_pattern" className="uitext" /> after simulation, the pattern that has been entered for the selected parser is applied. 
+
+7. After applying the pattern, enter values for <Cmdname sid="category" className="uitext" />, <Cmdname sid="ITM06439" className="uitext" />, and <Cmdname sid="pattern" className="uitext" />. 
+
+   <ImgLang img='log-jason-parser-input.png' desc='Json parser input'/>
 
    - <Cmdname sid="category" className="uitext" />
 
@@ -290,29 +333,7 @@ If logs are collected in JSON format, they can be easily parsed using the JSON p
 
      - <Cmdname sid="ITM06439" className="uitext" /> are applied before all parsers are run. Accordingly, you cannot use the <Cmdname sid="tag" className="uitext" /> that have been added for the parser.
 
-   - <Cmdname sid="pattern" className="uitext" />
-
-     - **_Prefix_**
-
-       Specify the position where the JSON format begins in the log. If the entire log is in JSON format, set an empty value.
-
-     - **_Postfix_**
-
-       Specify the position where the JSON format ends in the log. If the entire log is in JSON format, set an empty value.
-
-     - **_Ignore_**
-
-       Specify the key for which tags are not created during JSON formatting.
-
-     - Example of JSON pattern
-
-       ```javascript title='Example'
-       2023-08-08 02:43:28,615 -- {"host":"10.21.3.24","method":"POST","status":"200","url":"http://devote.whatap.io/yard/api/flush"} --
-       ```
-
-       In the example log, if **_Prefix_** and **_Postfix_** are specified as `--` and `url` is specified in **_Ignore_**, only three <Cmdname sid="tag" className="uitext" /> (`host`, `method`, `status`) are created.
-
-4. Select <Cmdname sid="add" className="uitext" /> to register a parser.
+8. Select <Cmdname sid="add" className="uitext" /> to register a parser.
 
 :::note
 

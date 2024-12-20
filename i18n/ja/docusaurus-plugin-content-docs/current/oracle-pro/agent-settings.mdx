@@ -16,9 +16,9 @@ import Dbstructureofagent from "../common-items/_db-structure-of-agent.mdx";
 
 <Dbstructureofagent />
 
-## 基本エージェント設定
+## DMXエージェント設定
 
-DBXエージェントに必要な設定は、*whatap.conf*ファイルに作成されます。 設定できるオプションについては、次を参照してください。
+DMXエージェントに必要な設定は、*whatap.conf*ファイルに作成します。 設定できるオプションについては、次を参照してください。
 
 ### 基本オプション
 
@@ -54,9 +54,15 @@ import Dbagentdbxbasicoption from "../common-items/_db-agent-dbx-basic-option.md
 
   :::note
 
-  Oracle Proモニタリングでは、メモリアクセスによりデータをほぼリアルタイムで収集できますが、**アクティブセッション**、**stat**、**event**指標の場合は、クエリ方式で収集します。
+  Oracle Proは、メモリアクセスを通じてアクティブセッション及びSQL情報を1/20秒単位で収集します。 このように収集されたデータに基づいてstatを生成するため、データの損失が少ないです。 `interval`オプションによって現在のDB状態を送信する際、stat、event、SQL stat、xview、lock、PQ情報はメモリから直接読み込み、迅速に処理されます。 一方、bind情報、DB parameter、plan情報、テーブル、テーブルスペース、Wait classなどはクエリーを通じて収集します。
 
   :::
+
+- **conn_fail_count** <span class='type'>Int</span>
+
+  既定値 `15`
+
+  15回連続connection errorが発生した時に通知を送信します。 希望する回数を入力して、通知の発生基準を調整できます。
 
 - **stat** <span class='type'>String</span>
 
@@ -176,9 +182,9 @@ import Dbagentdbxbasicoption from "../common-items/_db-agent-dbx-basic-option.md
 
 ### AES256暗号化の適用
 
-WhaTap DBXエージェントは、収集されたデータを暗号化してサーバーに送信します。 データの重要度や設定によって変更できます。 基本的にXOR演算とAESアルゴリズムによる暗号化を使用し、平文を128ビット単位に分割して暗号化、復号を行います。 ユーザー設定により、256ビットまで拡張できます。
+WhaTap DMXエージェントは、収集されたデータを暗号化してサーバーに送信します。 データの重要度や設定によって変更できます。 基本的にXOR演算とAESアルゴリズムによる暗号化を使用し、平文を128ビット単位に分割して暗号化、復号を行います。 ユーザー設定により、256ビットまで拡張できます。
 
-WhaTap DBXエージェントをインストールしたパスで、*whatap.conf*ファイルを次のオプションに追加してください。
+WhaTap DMXエージェントをインストールした経路で *whatap.conf*ファイルに次のようにオプションを追加します。
 
 ```ini title='whatap.conf' {3} showLineNumbers
 cypher_level=256
@@ -186,17 +192,11 @@ cypher_level=256
 
 設定を追加してから、エージェントを再起動してください。
 
-### エージェント名の識別 {#naming}
-
 import Dbsettingagentnamedetails from "../common-items/_db-setting-agent-name-details.mdx";
 
-<Dbsettingagentnamedetails />
+<Dbsettingagentnamedetails level={3} agentType="DMX" />
 
-import Dbagentdbxnaming from "../common-items/_db-agent-dbx-naming.mdx";
-
-<Dbagentdbxnaming />
-
-## XOSエージェント設定 {#xosconf}
+## XOSエージェント設定{#xosconf}
 
 *xos.conf*ファイルに次のオプションを設定すると、データベースサーバーのリソースを追加でモニタリングできます。 このオプションを利用するには、*whatap.conf*ファイルで`xos`オプションを`true`に設定してください。
 
@@ -261,3 +261,24 @@ import Dbagentdbxnaming from "../common-items/_db-agent-dbx-naming.mdx";
   ```ini title='xos.conf'
   file=/opt/oracle/log
   ```
+
+## prxプロセスオプション
+
+**prx**プロセスは**dmx**プロセスを監視しながら異常にダウンしているか、過剰なCPU、メモリを使用している場合は**dmx**プロセスを再起動させます。 次のオプションを使用して、再起動基準を設定できます。
+
+```ini title="prx.conf"
+cpu_limit=10
+mem_limit=500000 
+```
+
+- **cpu_limit**
+
+  既定値`10`(単位%)
+
+  CPU使用率が指定した値以上であれば**dmx**プロセスを再起動させます。
+
+- **mem_limit**
+
+  既定値`500000`(500MB、単位KB)
+
+  メモリ使用量が指定した値以上であれば**dmx**プロセスを再起動させます。

@@ -35,7 +35,7 @@ files: [
  },
  {
   "source" : "/crw-data/**/*",
-  "translation" : "/i18n/%two_letters_code%/**/%original_file_name%",
+  "translation" : "/i18n/%two_letters_code%/crw-data/**/%original_file_name%",
   "ignore" : [ 
     "/crw-data/overview/_changelog_overview.mdx", 
     "/crw-data/crwld-service-23q2/_import-new-files-service.mdx", 

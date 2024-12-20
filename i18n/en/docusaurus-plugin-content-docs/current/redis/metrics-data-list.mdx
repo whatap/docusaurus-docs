@@ -13,6 +13,13 @@ Database metrics comprehensively collect the database workload and resource usag
 
 For more information about other metrics, see [the following](https://redis.io/commands/info/).
 
+import AgentStatus from "../common-items/_agent-status-summary-metrics.mdx";
+import Xosmetrics from "../common-items/_db-xos-metrics.mdx";
+
+<div className="metricslist">
+
+<AgentStatus />
+
 ## db_redis_counter {#db_redis_counter}
 
 ### Tags {#db_redis_counter-tags}
@@ -243,6 +250,6 @@ The following lists the fields that are collected in the `db_redis_counter` cate
 
 </div>
 
-import Xosmetrics from "../common-items/_db-xos-metrics.mdx";
-
 <Xosmetrics />
+
+</div>

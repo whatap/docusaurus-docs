@@ -35,6 +35,12 @@ It is used to log data.
 
   If the value is `true`, standard output logs are collected.
 
+- **logsink_stderr_enabled** <span class='type'>Boolean</span>
+
+  Default `false`
+
+  If the value is `true`, standard error output logs are collected.
+
 - **logsink_zip_enabled** <span class='type'>Boolean</span>
 
   Default `true`
@@ -54,6 +60,7 @@ See the following example and then apply the agent settings for your environment
 ```ini title='whatap.conf'
 logsink_enabled=true
 logsink_stdout_enabled=true
+logsink_stderr_enabled=true
 logsink_zip_enabled=true
 logsink.files=/etc/httpd/logs/error_log, /etc/httpd/logs/access_log
 ```
@@ -69,5 +76,11 @@ whatap.logsink.files=/etc/httpd/logs/customlog-%Y%m%d
 ```
 
 This function is supported in Go agent 0.3.2 or later. 
+
+:::
+
+:::note
+
+For the API guide on log settings, see [the following](api-guide#log).
 
 :::

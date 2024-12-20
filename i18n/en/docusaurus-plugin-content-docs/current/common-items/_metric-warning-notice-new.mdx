@@ -1,0 +1,426 @@
+Home &gt; Select Project &gt; ![Icon](/img/ic-sitemap.svg) <Cmdname sid="sitemap" className="uitext" /> &gt; <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" /> <code class="newfunc">New</code>
+
+The following explains how to create and manage event notifications based on metrics. Metric events are used to configure the events more specific and complex than the [Default template](warning-notice-v2). It provides the feature that allows you to define various events occurring in the monitoring targets according to conditions and set them to receive notifications efficiently.
+
+<Xclude product='npm'>
+
+:::note
+
+- For more information about the metrics, see [the following](metrics-intro).
+
+- It can be used by only the members with the <Cmdname sid="sms_alert_settings" className="b500" /> role. For more information about the member roles, see [the following](../project/project-structure#project-auth).
+
+:::
+
+</Xclude>
+
+<InDoc product='npm'>
+
+:::note
+
+- For more information about metrics, see [the following](../metrics/common-metrics-intro).
+
+- It can be used by only the members with the <Cmdname sid="sms_alert_settings" className="b500" /> role. For more information about the member roles, see [the following](../project/project-structure#project-auth).
+
+:::
+
+</InDoc>
+
+## Basic screen guide
+
+In <Cmdname sid="side_eventSetting" className="uitext" /> <code class="newfunc">New</code>, select the <Cmdname sid="metrics" className="uitext" /> tab. You can view the list of metrics events added by users, and add, edit, or delete the metrics events.
+
+<Xclude product="server,postgresql,oracle,oracle-pro,mysql,mssql,mssql-v1,tibero,cubrid,altibase,redis,mongodb,browser"><ImgLang img="metric-warning-notice-new-basic-screen.png" desc="Event configuration" /></Xclude>
+
+<InDoc product="server"><ImgLang img="metric-warning-notice-new-basic-screen-server.png" desc="Event configuration" /></InDoc>
+
+<InDoc product="browser"><ImgLang img="metric-warning-notice-new-basic-screen-browser.png" desc="Event configuration" /></InDoc>
+
+<InDoc product="postgresql,oracle,oracle-pro,mysql,mssql,mssql-v1,tibero,cubrid,altibase,redis,mongodb"><ImgLang img="metric-warning-notice-new-basic-screen-db.png" desc="Event configuration" /></InDoc>
+
+The major elements of the list of metrics events are as follows:
+
+- <Cmdname sid="TTL06099" className="uitext" />: It is a toggle button that controls whether to enable or disable each event. You can turn on or off the notifications of the desired events.
+
+- <Cmdname sid="bsm_button_edit" className="uitext" />: You can modify the event rules. You can update the rules to set notifications more precisely.
+
+- <Cmdname sid="event_title" className="uitext" />: It is the event name. Event names make it easy to distinguish which events occurred. When an event occurs and a notification is received, it is displayed with the title of the message.
+
+- <Cmdname sid="rule" className="uitext" />: It includes event conditions for triggering a notification. Each color represents the <span className="vslow">Critical</span> or <span className="slow">Warning</span> level.
+
+- <Cmdname sid="ITM07579" className="uitext" />: You can receive notifications based on events occurring across all or specific monitoring targets.
+
+- <Cmdname sid="number_of_event" className="uitext" />: A notification is received when the set number of events occurs within the specified time.
+
+- <Cmdname sid="CNT08326" className="uitext" />: It indicates whether or not to receive notifications when an event in <span className="vslow">Critical</span> and <span className="slow">Warning</span> level returns to normal status (**RECOVERED**).
+
+- <Cmdname sid="TTL07415" className="uitext" />: It indicates the team or user group that receives notifications.
+
+:::note
+
+- For more information about the <Cmdname sid="goto_alertTemplate" className="uitext" /> feature, see [the following](set-notification-message).
+
+- You can edit or share metrics events as JSON files. For more information, see the following document.
+
+- For more information about the <Cmdname sid="BTN07761" className="uitext" /> and <Cmdname sid="BTN07762" className="uitext" /> features that allow you to share the entire event settings via JSON files, see [the following](warning-notice-v2#share-event-setting).
+
+:::
+
+## Adding event
+
+To add a metrics event, select the <Cmdname sid="add_notification" className="uitext" /> button on the upper right of the screen. When the Add Event screen appears, proceed with configuration by following the steps below:
+
+1. <Cmdname sid="TTL07362" className="uitext" />: Set the event conditions to receive notifications.
+
+2. <Cmdname sid="TTL07363" className="uitext" />: Select the monitoring targets to generate events.
+
+3. <Cmdname sid="TTL07364" className="uitext" />: Set the event name, message, and recipients.
+
+### <Cmdname sid="TTL07362" /> {#TTL07362}
+
+You can set event conditions to receive notifications.
+
+{/* <ImgLang img="metric-warning-notice-new-event-condition.png" desc="이벤트 조건 정의" /> */}
+
+<Xclude product="server">
+
+#### <Cmdname sid="template" className="uitext" /> {#select_template}
+
+The event templates tailored to your monitoring platform are provided for easy and quick event configuration. Select a desired template. Then the remaining fields are automatically filled in with predefined event conditions. If a template is not to be used, select <Cmdname sid="metrics_option_disabled" className="uitext" />.
+
+:::note
+
+- After selecting a template, the predefined event conditions can be modified.
+
+- Depending on the monitoring platform, the provided templates may differ. For more information about the provided template list, see [the following](#template).
+
+:::
+
+</Xclude>
+
+#### <Cmdname sid="select_category" className="uitext" /> {#select_category}
+
+It is the unit that distinguishes the metrics data. It is required for defining event conditions.
+
+<ImgLang img="metric-warning-notice-new-event-condition-category.png" desc="Select Category" />
+
+In the <Cmdname sid="select_category" className="uitext" /> list, <Cmdname sid="name" className="uitext" />, data collection interval (e.g. <Cmdname sid="h1" />, <Cmdname sid="m5" />), and <Cmdname sid="key" className="uitext" /> are displayed. It lists and displays metrics data being collected for projects within the last 3 hours. If the category name does not appear in the <Cmdname sid="category" className="uitext" /> selection list, you can enter the category key by selecting the <Cmdname sid="enter_category_self" className="uitext" /> option.
+
+:::note
+
+- You must select the <Cmdname sid="category" className="uitext" /> entry to proceed with <Cmdname sid="TTL07365" className="uitext" />.
+
+- The category information can be checked in <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_metricsSearch" className="uitext" />. 
+
+:::
+
+#### <Cmdname sid="TTL07365" className="uitext" /> {#TTL07365}
+
+You can select a notification level and set the threshold for events that trigger a notification.
+
+<ImgLang img="metric-warning-notice-new-set-metrics.png" desc="Indicator settings" />
+
+- Notification levels are divided into Critical (<span className="vslow">Critical</span>), Warning (<span className="slow">Warning</span>), and Normal (<span className="info">Info</span>).
+
+- <Cmdname sid="metrics_rule_select" className="uitext" />: Set the thresholds after selecting the field name and operators and then entering values. After clicking a field, you can see the list of fields included in the metric category.
+
+  <Cmdname sid="add" className="uitext" />: You can add the metric settings. You can select `&&`(and) or `||`(or) as the condition.
+
+- <Cmdname sid="metrics_rule_direct" className="uitext" />: Set the event occurrence conditions by directly entering the field name, operators, and values. If you select this option, the fields (<Cmdname sid="metrics_event_field_button" className="uitext" />) that can be entered are provided.
+
+:::tip
+
+The following example is an event condition that triggers a notification when the `write_time` exceeds 3,000 milliseconds, or the `read_time` is less than 3,000 milliseconds, and the `io_time` is less than 10,000 milliseconds.
+
+```text title="example"
+(write_time > 3000 || read_time > 3000) && io_time < 10000
+```
+
+:::
+
+:::note
+
+- If the <Cmdname sid="metrics_rule_select" className="uitext" /> option is selected, the field list appears only when <Cmdname sid="select_category" className="uitext" /> is set.
+
+- For the operators that can be selected in the <Cmdname sid="metrics_rule_select" className="uitext" /> option, see [the following](#condition-guide).
+
+- An error may occur if you enter a field name that includes special characters (<code>\~!@#$%^&\*()\_+=-[]\`</code>) or starts with a number. In this case, select the <Cmdname sid="metrics_rule_direct" className="uitext" /> option and then enter the value by enclosing it in curly brackets (`${}\`) as in the following example.
+
+  ```text
+  ${4xxErrorType} == '401'
+  ```
+
+- When the input method is changed between <Cmdname sid="metrics_rule_select" className="uitext" /> and <Cmdname sid="metrics_rule_direct" className="uitext" /> options, the edited result disappears.
+
+:::
+
+#### <Cmdname sid="number_of_event" className="uitext" /> {#number_of_event}
+
+A notification is sent when the specified number of events occur during the selected period. 
+
+<ImgLang img="metric-warning-notice-new-num-of-events.png" desc="Count of event" />
+
+- <Cmdname sid="TTL07366" className="uitext" />: A notification can be received when the specified number of events occur consecutively.
+
+- <Cmdname sid="metrics_number_of_event_last" className="uitext" />: A notification can be received when the specified number of events occur consecutively during the selected period.
+
+:::note
+
+The value, <UI>Interval</UI> indicates the data collection interval for the selected category.
+
+:::
+
+#### <Cmdname sid="TTL07367" className="uitext" /> {#TTL07367}
+
+This option can prevent excessive alerts from happening. Alert notifications are not sent for the selected period after the first alert occurs.
+
+<ImgLang img="metric-warning-notice-new-pause.png" desc="Pause alert" />
+
+:::note
+
+If you have enabled the <Cmdname sid="CNT08326" className="uitext" /> feature, no notification is sent for the selected period after receiving a normal (**RECOVERED**) notification.
+
+:::
+
+#### <Cmdname sid="CNT08326" className="uitext" /> {#CNT08326}
+
+If the <Cmdname sid="CNT08326" className="uitext" /> option is activated, it is displayed as the event of <Cmdname sid="side_eventHistory" className="uitext" /> in the <Cmdname sid="in_progress" className="uitext" /> menu. When an event of <span className="vslow">Critical</span> or <span className="slow">Warning</span> level is resolved, normal (**RECOVERED**) notifications are received. This function can be enabled or disabled by selecting the toggle button.
+
+<ImgLang img="metric-warning-notice-new-recovered.png" desc="Resolved notification" />
+
+:::note
+
+- This option appears when <span className="vslow">Critical</span> or <span className="slow">Warning</span> is selected for the notification level.
+
+- For more information about <Cmdname sid="side_eventHistory" className="uitext" />, see [the following](set-event-history).
+
+:::
+
+#### <Cmdname sid="simulation" className="uitext" /> {#simulation}
+
+You can test the event conditions set in <Cmdname sid="TTL07365" className="uitext" />. Select <Cmdname sid="simulation" className="uitext" />.
+
+<ImgLang img="metric-warning-notice-new-simulation.png" desc="Simulation" />
+
+- The number of notifications ![Number 1](/img/number-01.png) that occurred during the queried time appears at the upper right corner.
+
+- The ![Number 2](/img/number-02.png) red dotted line is the result set in <Cmdname sid="TTL07365" className="uitext" />.
+
+:::note
+
+- For more information about <Cmdname sid="TTL07365" className="uitext" />, see [the following](#TTL07365).
+
+- The <Cmdname sid="simulation" className="uitext" /> feature can test for the data for 24 hours.
+
+:::
+
+### <Cmdname sid="TTL07363" /> {#TTL07363}
+
+Select monitoring targets where events occur. If not entered, events are monitored and notifications are sent across the entire project. This may result in lots of notifications. Set specific targets to avoid excessive notifications.
+
+<ImgLang img="metric-warning-notice-new-select-target.png" desc="Select target" />
+
+Event targets can be specified based on the following tags (`Tag`). The tag (`Tag`) is the data containing unique information to distinguish the targets to collect. You can use values ​​such as IP, Oname, and host data that have little change history.
+
+- <Cmdname sid="metrics_rule_select" className="uitext" />: You can specify targets by selecting tag names and operators and entering values.
+
+  <Cmdname sid="add" className="uitext" />: You can add targets for the event. You can select `&&`(and) or `||`(or) as the condition.
+
+- <Cmdname sid="metrics_rule_direct" className="uitext" />: You can specify targets by directly entering the tag names, operators, and values. If you select this option, the tags (<Cmdname sid="metrics_event_tag_button" className="uitext" />) that can be entered are provided.
+
+:::tip
+
+Set event targets by noting the following example.
+
+```text
+ex. endsWith(okindName, 'example_name') && container == 'prod.billing'
+ex. ${4xxErrorType} == '401'
+```
+
+:::
+
+:::note
+
+- Depending on the value selected in <Cmdname sid="select_category" className="uitext" /> of the <Cmdname sid="TTL07362" className="uitext" /> section, available tags may differ.
+
+- If the event target is changed, the number of notifications may also change. Run the <Cmdname sid="simulation" className="uitext" /> button again to see the result.
+
+- For more information about the selection of event targets and use of operators, see [the following](#condition-guide).
+
+:::
+
+### <Cmdname sid="TTL07364" className="uitext" /> {#TTL07364}
+
+Set the event name, message, and recipients.
+
+<ImgLang img="metric-warning-notice-new-information.png" desc="Basic information" />
+
+- <Cmdname sid="enable_events" className="uitext" />: You can enable the current events.
+
+- <Cmdname sid="event_title" className="uitext" />: This is used as the title of the notification message. Enter a name that is easy to identify.
+
+- <Cmdname sid="message" className="uitext" />: Enter the notification message to deliver to users. You can use variables to contain dynamic data.
+
+  <ImgLang img='event-config-message-example.png' desc='Message example' />
+
+  - By entering `${Tag}` or `${Field}`, you can apply the variable to the message. The variable must be a value contained in the selected metrics data <Cmdname sid="category" className="uitext" />. You can check the `${Tag}` and `${Field}` variables that can be entered in the <Cmdname sid="tag_count" className="uitext" /> menu.
+
+  - If the ![Start icon](/img/ico-timing.svg) button is clicked, you can see the history of previously entered messages.
+
+  :::tip
+
+  You can write a message by entering the `${Tag}` and `${Field}` variables in the message field.
+
+  In <Cmdname sid="analysis" className="uitext" /> &gt; <Cmdname sid="tag_count" className="uitext" />, select <Cmdname sid="category" className="uitext" /> and then check the `${Tag}` and `${Field}` variables that can be entered. For the <Cmdname sid="category" className="uitext" /> name of the current event template, see the <b>Category</b> in <Link to="#basic-template">the following</Link>
+
+  :::
+
+  :::note
+
+  <InDoc product="java,php,python,nodejs,dotnet,golang">
+
+  For the `${Tag}` and `${Field}` variables that can be entered as the message, see [the following](metrics-app).
+
+  </InDoc>
+
+  <InDoc product="server">
+
+  For the `${Tag}` and `${Field}` variables that can be entered in the message, see [the following](metrics-server).
+
+  </InDoc>
+
+  <InDoc product="kubernetes">
+
+  For the `${Tag}` and `${Field}` variables that can be entered in the message, see [the following](metrics-kubernetes).
+
+  </InDoc>
+
+  <InDoc product="postgresql,mysql,oracle,oracle-v1,mssql,mssql-v1,tibero,cubrid,cubrid-v1,altibase,altibase-v1,redis,mongodb">
+
+  For the `${Tag}` and `${Field}` variables that can be entered as the message, see [the following](metrics-data-list).
+
+  </InDoc>
+
+  <InDoc product="browser">
+
+  For the `${Tag}` and `${Field}` variables that can be entered in the message, see [the following](metrics-browser).
+
+  </InDoc>
+
+  <InDoc product="npm">
+
+  For the `${Tag}` and `${Field}` variables that can be entered as the message, see [the following](metrics-npm).
+
+  </InDoc>
+
+  <InDoc product="amazon-cloudwatch,azure,ncloud,oracle-cloud">
+
+  The `${Tag}` or `${Field}` variables that can be entered as the message can be checked in <Cmdname sid="side_metricsSearch" className="uitext" />.
+
+  </InDoc>
+
+  <InDoc product="amazon-ecs">
+
+  For the `${Tag}` and `${Field}` variables that can be entered in the message, see [the following](metrics-ecs).
+
+  </InDoc>
+
+  :::
+
+- <Cmdname sid="alert_test" className="uitext" />: When receiving notifications as events, you can pre-check the specified event name and message. Testing is possible only when the required items (<Cmdname sid="TTL07365" className="uitext" replace="</br>" />, <Cmdname sid="event_title" className="uitext" />, and <Cmdname sid="TTL06883" className="uitext" />) are all entered.
+
+  :::note
+
+  - During testing, substitution for actual metric values or variables does not work, and the notifications cannot be sent only to users with recipient tags.
+
+  - To use this feature, enter or select a value for the required field (<span className="vslow">\*</span>).
+
+  :::
+
+- <Cmdname sid="TTL07415" className="uitext" />: You can select members to receive notifications from current events.
+
+  - <Cmdname sid="ITM07419" className="uitext" />: You can send notifications to all the members in the project.
+
+  - <Cmdname sid="ITM07420" className="uitext" />: It sends notifications to project members and 3rd-party plugins with the selected tags. When <Cmdname sid="TTL07416" className="uitext" /> appears, click <Cmdname sid="add_tag" className="uitext" /> or <LinkImage img="ico-add.svg" className="ico" /> to select a desired tag from the tag list.
+
+  :::note
+
+  In <Cmdname sid="event_statistic" className="uitext" /> &gt; <Cmdname sid="eventNoti" className="uitext" />, you can set the tags in project members and 3rd-party plug-ins. For more information, see <Link to="set-receive-event#set-notice-by-team-or-users">the following</Link>.
+
+  :::
+
+## Modifying and deleting the event
+
+1. Go to <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" /> and then select the <Cmdname sid="metrics" className="uitext" /> tab.
+
+2. In the event list, select ![Edit icon](/img/ico-edit.svg) on the utmost left of the item to edit or delete.
+
+3. If the metrics event setting window appears, modify each option and then select <Cmdname sid="save" className="uitext" />.
+
+   To delete the selected event, select <Cmdname sid="delete" className="uitext" /> on the upper right of the Event configuration window.
+
+## Modifying to JSON format {#json}
+
+You can modify metrics event settings in JSON format.
+
+1. On the upper right of the screen, select <span class="uitext">JSON</span> <LinkImage img="ico-export.svg" className="ico" />.
+
+2. When the editing window appears, modify the content in JSON format.
+
+3. After all changes are made, select <Cmdname sid="save" className="uitext" /> on the upper right of the screen.
+
+:::note
+
+If the modified content does not match the JSON format, an error message appears at the bottom of the screen and the changes cannot be saved. The displayed error message may differ depending on the format.
+
+<ImgLang img='event-config-v2-json-error.png' desc='JSON error' />
+
+:::
+
+The JSON data structure is as follows:
+
+```json
+[
+  {
+    "eventMessage": "APDEX: ${apdex100} > 10 ",
+    "select": "",
+    "receiver": [],
+    "alertLabel": [
+      "project"
+    ],
+    "rule": "apdex100 > 10",
+    "silentSec": 0,
+    "alertKey": [
+      "project"
+    ],
+    "enabled": false,
+    "eventTitle": "APDEX",
+    "repeatDuration": 0,
+    "eventLevelText": "Critical",
+    "id": "z3f41ge464magg",
+    "category": "app_counter_project{m5}",
+    "repeatCount": 0,
+    "stateful": false
+  }
+]
+```
+
+The fields in JSON data are associated with the following options in event settings.
+
+| JSON field       | Option                                                                                                                            | Classification                                                    |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `eventMessage`   | <Cmdname sid="message" className="uitext" />                                                                                      | [<Cmdname sid="TTL07364" className="uitext" />](#TTL07364)        |
+| `select`         | <Cmdname sid="ITM07588" className="uitext" /> &gt; <Cmdname sid="metrics_rule_direct" className="uitext" />                   | [<Cmdname sid="TTL07363" className="uitext" />](#TTL07363)        |
+| `receiver`       | List of key values in the <Cmdname sid="TTL07415" className="uitext" /> &gt; <Cmdname sid="TTL07416" className="uitext" /> option | [<Cmdname sid="TTL07364" className="uitext" />](#TTL07364)        |
+| `alertLabel`     | Primary key value used internally when performing notification operations                                                         | -                                                                 |
+| `rule`           | Event conditions of the <Cmdname sid="TTL07365" className="uitext" /> option                                                      | [<Cmdname sid="TTL07362" className="uitext" />](#TTL07365)        |
+| `silentSec`      | <Cmdname sid="TTL07367" className="uitext" />                                                                                     | [<Cmdname sid="TTL07362" className="uitext" />](#TTL07367)        |
+| `alertKey`       | Primary key value used internally when performing notification operations                                                         | -                                                                 |
+| `enabled`        | <Cmdname sid="enable_events" className="uitext" />                                                                                | [<Cmdname sid="TTL07364" className="uitext" />](#TTL07364)        |
+| `eventTitle`     | <Cmdname sid="event_title" className="uitext" />                                                                                  | [<Cmdname sid="TTL07364" className="uitext" />](#TTL07364)        |
+| `repeatDuration` | Time selected in the <Cmdname sid="number_of_event" className="uitext" /> option                                                  | [<Cmdname sid="TTL07362" className="uitext" />](#number_of_event) |
+| `eventLevelText` | Event level of the <Cmdname sid="TTL07365" className="uitext" /> option                                                           | [<Cmdname sid="TTL07362" className="uitext" />](#TTL07365)        |
+| `id`             | Unique identifier value of the event                                                                                              | -                                                                 |
+| `category`       | <Cmdname sid="select_category" className="uitext" />                                                                              | [<Cmdname sid="TTL07362" className="uitext" />](#select_category) |
+| `repeatCount`    | Number selected in the <Cmdname sid="number_of_event" className="uitext" /> option                                                | [<Cmdname sid="TTL07362" className="uitext" />](#number_of_event) |
+| `stateful`       | <Cmdname sid="CNT08326" className="uitext" />                                                                                     | [<Cmdname sid="TTL07362" className="uitext" />](#CNT08326)        |

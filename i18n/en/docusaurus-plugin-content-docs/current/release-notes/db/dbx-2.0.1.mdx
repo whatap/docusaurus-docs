@@ -1,0 +1,32 @@
+---
+id: dbx-2_0_1
+title: DBX v2.0.1
+pagination_next: release-notes/db/dbx-2_0_0
+displayed_sidebar: releaseSidebar
+---
+
+August 23, 2024
+
+## Common
+
+<Status priority='1'>Changed</Status> Modified the agent option names for MySQL, PostgreSQL, Altibase, and Oracle products.
+
+- `xviewSkipSession` → `xview_min_sec`
+
+- `tablespaceLock` → `tablespace_lock`
+
+## Altibase
+
+<Status priority='1'>New</Status> Added the Altibase <code className="my">V2</code> feature.
+
+- Changed to the tag count pack and added collection information.
+
+- It is compatible with lower versions.
+
+## Oracle
+
+<Status priority='0'>Fixed</Status> Restored the fix not to collect `v$osstat` metric in the AIX environment and modified it to process only the metrics that are collected.
+
+## PostgreSQL
+
+<Status priority='0'>Fixed</Status> Fixed the master processing bug during `pg_basebackup`.

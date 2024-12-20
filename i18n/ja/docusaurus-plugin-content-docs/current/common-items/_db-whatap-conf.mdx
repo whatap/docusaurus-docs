@@ -29,15 +29,15 @@ broker=query_editor,broker1
 ```
 
 - `db`: モニタリング対象データベース名であり、
-  _$CUBRID_DATABASES/databases.txt_ ファイルの`db_name`値段です。
+  _$CUBRID_DATABASES/databases.txt_ ファイルの`db_name`値です。
 
 - `db_ip`: モニタリング対象のデータベースサーバーに接続可能なIPアドレスです。
 
 - `db_port`: ブローカー設定ファイル(*cubrid_broker.conf*)で`BROKER_PORT`項目に定義された値を入力します。 (CUBRIDの既定値`BROKER_PORT: 33000`)
 
-- `cms_port`: **CUBRID Manager**が使用するポートです。 **CUBRID Manager**設定ファイル(*cm.conf*)の`cm_port`項目に定義された値を入力してください。
+- `cms_port`: **CUBRID Manager**が使用するポートです。 **CUBRID Manager**の設定ファイル(*cm.conf*)で`cm_port`項目に定義された値を入力します。
 
-- `broker`: CUBRIDを設置すると`broker1`、`query_editor`でブローカーがデフォルトで実行されます。 ユーザーが任意にブローカーの名前を変更または、追加で移動を行った場合は、変更を入力してください。
+- `broker`: CUBRIDを設置すると`broker1`、`query_editor`でブローカーがデフォルトで実行されます。 ユーザーからブローカーの名前を変更または、追加で移動を行った場合は、変更内容を入力してください。
 
 :::note
 
@@ -46,6 +46,32 @@ broker=query_editor,broker1
 - CUBRID環境の_databases.txt_ファイルの詳細は[次のリンク](https://www.cubrid.org/manual/ko/11.0/admin/db_manage.html#databases-txt)を参照してください。
 
 - CUBRIDのブローカー(broker)設定の詳細は[次のリンク](https://www.cubrid.org/manual/ko/11.0/admin/config.html#broker-configuration)を参照してください。
+
+:::
+
+</InDoc>
+
+<InDoc product="mssql">
+
+```ini title="whatap.conf"
+license=x6054vg8d8e5e-z16ovlmhlau3st-z2uj26egaj4mt4
+whatap.server.host=13.124.11.223/13.209.172.35
+
+dbms=mssql
+db=master
+db_ip=127.0.0.1
+db_port=1433
+```
+
+:::note
+
+**SSL認証問題が発生する場合**
+
+SSL認証に関する問題が発生したら、*whatap.conf*ファイルに次のオプションを設定します。
+
+```ini title="whatap.conf"
+connect_option=?useSSL=true&verifyServerCertificate=false
+```
 
 :::
 

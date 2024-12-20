@@ -1,0 +1,140 @@
+{/* #### 공통​ */}
+
+{/* - <code class="Changed">Changed</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" /> 메뉴의 대시보드에서 마우스 우클릭으로 표시되는 위젯 선택 목록의 스타일 변경 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code> */}
+
+{/* - <code class="Changed">Changed</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" /> 및 <Cmdname sid="flexboard" className="uitext" /> 메뉴에서 <span class="uitext">SQL Elapse Map</span> 위젯을 통해 <span class="uitext">Query List</span> 창을 열었을 때, 테이블의 컬럼 순서 변경 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code> */}
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbLockTree" className="uitext" />, added the following features. <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.0​</code></a></code>
+
+  - Added the query time unit and maximum value tag on the upper right of the <span class="uitext">Lock Wait Sessions</span> widget.
+  - Added the function to display the unable-to-view message when searching for the data within 3 hours while the query period is within 1 month.
+
+- <code class="Changed">Changed</code> Changed the date on the pop-up guide regarding the end of project V1 support. <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.1​</code></a></code>
+
+- <code class="Changed">Changed</code> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />, added the default presets (<span class="uitext">Default(rds)</span>, <span class="uitext">Default(xos)</span>). <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Changed">Changed</code> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" /> / <Cmdname sid="side_multiInstance" className="uitext" />, modified to enable the <Cmdname sid="side_dbLockTree" className="uitext" /> in the table below if the chart of the <span class="uitext">Lock Wait Sessions</span> widget is clicked. <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Feature">Feature</code> Added the function to display the session details when a column is clicked in the <Cmdname sid="side_dbLockTree" className="uitext" /> table in the following paths: <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+  - <Cmdname sid="dashboard" className="uitext" /> &gt; <Cmdname sid="instance_monitoring" className="uitext" />
+  - <Cmdname sid="dashboard" className="uitext" /> &gt; <Cmdname sid="multi_instance_monitoring" className="uitext" />
+  - <Cmdname sid="analysis" className="uitext" /> &gt; <Cmdname sid="lock_tree" className="uitext" />
+
+- <code class="Feature">Feature</code> In the <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" /> &gt; <Cmdname sid="side_sectionDatabase" className="uitext" /> tab, the agent restoration notification function (<Cmdname sid="resolved_event_notification" className="uitext" />) has been added. <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Feature">Feature</code> Added a guidance for replacement of the XOS2 metric. <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <span class="uitext"></span> In <Cmdname sid="side_agentUpdate" className="uitext" />, a new UI has been applied and features are reorganized. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbSqlStat" className="uitext" />, added the query preview when hovering the mouse over the query. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Changed">Changed</code> In <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="agentInstall" className="uitext" />, added considerations depending on the operating system when entering commands to create a DB user file. <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="agent_list" className="uitext" />, added the <Cmdname sid="db_ip" className="uitext" /> column that displays the IP address of the database server. <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Changed">Changed</code> Applied changes to the database product service for changing the xos metric (xos2 → xos). <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbSqlStat" className="uitext" />, added the selection feature for multiple filters. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> Added the real-time/suspension inquiry and the refresh button to the <Cmdname sid="session_detail" className="uitext" /> window. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="flexboard" className="uitext" />, added the active session table filter. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+{/* #### Database
+
+- <code class="Changed">Changed</code> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" /> and <Cmdname sid="flexboard" className="uitext" />, changed the order of table columns when the <span class="uitext">Query List</span> window is opened through the <span class="uitext">SQL Elapse Map</span> widget. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbLockTree" className="uitext" />, added the following features. <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.0​</code></a></code>
+
+- <code class="Changed">Changed</code> Changed the date on the pop-up guide regarding the end of project V1 support. <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.1​</code></a></code>
+
+- <code class="Changed">Changed</code> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />, added the default presets (<span class="uitext">Default(rds)</span>, <span class="uitext">Default(xos)</span>). <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Changed">Changed</code> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" /> / <Cmdname sid="side_multiInstance" className="uitext" />, modified to enable the <Cmdname sid="side_dbLockTree" className="uitext" /> in the table below if the chart of the <span class="uitext">Lock Wait Sessions</span> widget is clicked. <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Feature">Feature</code> Added the function to display the session details when a column is clicked in the <Cmdname sid="side_dbLockTree" className="uitext" /> table in the following paths: <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+  - <Cmdname sid="dashboard" className="uitext" /> &gt; <Cmdname sid="instance_monitoring" className="uitext" />
+  - <Cmdname sid="dashboard" className="uitext" /> &gt; <Cmdname sid="multi_instance_monitoring" className="uitext" />
+  - <Cmdname sid="analysis" className="uitext" /> &gt; <Cmdname sid="lock_tree" className="uitext" /> */}
+
+#### PostgreSQL / MySQL​
+
+- <code class="Changed">Changed</code> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_instanceList" className="uitext" />, the agent update guidance message has been changed. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> Added the function to display the agent update guidance message in the header when the agent has been installed but it does not support the <code class="my">V2</code>. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> Added the function to save the Y-axis values changed in the <span class="uitext">SQL Elapse Map</span> and <span class="uitext">Slow Query</span> widgets on the dashboard. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> Added the <span class="uitext">Default(xos)</span>, <span class="uitext">Default(rds)</span> preset. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" /> reorganized the functions. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+#### PosgreSQL
+
+- <code class="Feature">Feature</code> Added the function to check the configuration for <b>column</b> and <b>index</b> in the following menu paths: <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_pgStat" className="uitext" />, added the query preview when hovering the mouse over the query. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbWaitAnalysis" className="uitext" />, added the function guidance modal. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbWaitAnalysis" className="uitext" />, added the guidance modal for the agent configuration. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbParameter" className="uitext" />, added unit notation to some values when displaying the <span class="uitext">Value</span> column. <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_pgStat" className="uitext" />, added the selection feature for multiple filters. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="agentInstall" className="uitext" />, improved its design and added the installation guide. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+#### MySQL
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbSize" className="uitext" />, added the function to check the <b>column</b> and <b>index</b> lists when the <span class="uitext">TABLENAME</span> column is clicked in the <Cmdname sid="TTL06572" className="uitext" /> table. <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Feature">Feature</code> Added the plan search function in JSON format. <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_mysqlStat" className="uitext" />, added the query preview when hovering the mouse over the query. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_mysqlStat" className="uitext" />, added the selection feature for multiple filters. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+{/* #### Database <code class="my">V2</code>
+
+- <code class="Changed">Changed</code> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />, added the default presets (<span class="uitext">Default(rds)</span>, <span class="uitext">Default(xos)</span>). <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Changed">Changed</code> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" /> / <Cmdname sid="side_multiInstance" className="uitext" />, modified to enable the <Cmdname sid="side_dbLockTree" className="uitext" /> in the table below if the chart of the <span class="uitext">Lock Wait Sessions</span> widget is clicked. <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Feature">Feature</code> 다음 메뉴 경로에서 <Cmdname sid="side_dbLockTree" className="uitext" /> 테이블의 컬럼을 클릭하면 세션 상세 창을 표시하는 기능 추가 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code> */}
+
+{/* #### PostgreSQL <code class="my">V2</code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbParameter" className="uitext" /> 메뉴에서 <span class="uitext">Value</span> 컬럼 표기 시 일부 값에 단위 표기 추가 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code> */}
+
+#### Redis​
+
+- <code class="Changed">Changed</code> In <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="agentInstall" className="uitext" />, added descriptions for the <em>uid.sh</em> execution command that differ depending on the Redis version. <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="New">New</code> **Redis** <code class="my">V2</code> service launched <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+{/* #### PostgreSQL, MySQL​
+
+- <code class="Feature">Feature</code> Added the function to save the Y-axis values changed in the <span class="uitext">SQL Elapse Map</span> and <span class="uitext">Slow Query</span> widgets on the dashboard. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> Added the <span class="uitext">Default(xos)</span>, <span class="uitext">Default(rds)</span> preset. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" /> 메뉴의 기능 개편 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code> */}
+
+{/* #### PostgreSQL​
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_pgStat" className="uitext" />, added the selection feature for multiple filters. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <span class="uitext">관리</span> &gt; <Cmdname sid="agentInstall" className="uitext" /> 메뉴의 디자인 개선 및 설치 안내 추가 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code> */}
+
+{/* #### MySQL​
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_mysqlStat" className="uitext" /> 메뉴에서 다중 필터 선택 기능 추가 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code> */}
+
+#### MongoDB​
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbSize" className="uitext" /> reorganized the functions. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="New">New</code> **MongoDB** <code class="my">V2</code> service launched <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>

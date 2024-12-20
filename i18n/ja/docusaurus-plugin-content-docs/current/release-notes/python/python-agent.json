@@ -1,33 +1,5 @@
 [
   {
-    "url": "https://docs.whatap.io/ja/release-notes/python/python-1_6_6",
-    "ver": "v1.6.6",
-    "date": "2024-06-07",
-    "Lists": [
-      {
-        "ver": "v1.6.6",
-        "hash": "v166",
-        "product": "Python Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> FastAPI - remoteIP収集時に発生するバグを修正</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/python/python-1_6_7",
-    "ver": "v1.6.7",
-    "date": "2024-08-21",
-    "Lists": [
-      {
-        "ver": "v1.6.7",
-        "hash": "v167",
-        "product": "Python Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code>TraceContextをキューに入れる前に深いコピー(deep copy)してデータが上書きされないように防止</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/ja/release-notes/python/python-1_6_9",
     "ver": "v1.6.9",
     "date": "2024-09-03",
@@ -39,6 +11,21 @@
         "type": "New",
         "desc": "<p><code class=\"New\" type=\"1\">New</code> <strong>oracle-client</strong>モジュールの追跡(tracing) 機能を追加</p>",
         "details": "<p>オラクルクライアント(<strong>oracle-client</strong>)で<code>connect</code>メソッドと<code>Connection.close</code>メソッドに計測機能を適用して、データベースの接続と終了時点を追跡できる機能を追加しました。</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/python/python-1_6_10",
+    "ver": "v1.6.10",
+    "date": "2024-09-05",
+    "Lists": [
+      {
+        "ver": "v1.6.10",
+        "hash": "v1610",
+        "product": "Python Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> DjangoフレームワークでASGIをサポート</p>",
+        "details": "<ul>\n<li>\n<p>DjangoでUvicorn対応のためのサポートロジックを追加しました。</p>\n</li>\n<li>\n<p>非同期作業でローカルスレッドを使用する時に発生する可能性のあるデータ侵害の問題を解決するために、コンテキストを維持するロジックを追加しました。</p>\n</li>\n</ul>"
       }
     ]
   },
@@ -65,6 +52,20 @@
     ]
   },
   {
+    "url": "https://docs.whatap.io/ja/release-notes/python/python-1_7_1",
+    "ver": "v1.7.1",
+    "date": "2024-10-10",
+    "Lists": [
+      {
+        "ver": "v1.7.1",
+        "hash": "v171",
+        "product": "Python Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <code>database connection close</code>でエラーが発生した時にプロファイルの収集が中断される問題を修正</p>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/ja/release-notes/python/python-1_7_0",
     "ver": "v1.7.0",
     "date": "2024-09-24",
@@ -79,31 +80,44 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/python/python-1_6_5",
-    "ver": "v1.6.5",
-    "date": "2024-05-31",
+    "url": "https://docs.whatap.io/ja/release-notes/python/python-1_6_7",
+    "ver": "v1.6.7",
+    "date": "2024-08-21",
     "Lists": [
       {
-        "ver": "v1.6.5",
-        "hash": "v165",
+        "ver": "v1.6.7",
+        "hash": "v167",
         "product": "Python Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Python 3.6 gevent使用時、トランザクションの終了漏れを修正</p>"
+        "desc": "<p><code class=\"Fixed\">Fixed</code>TraceContextをキューに入れる前に深いコピー(deep copy)してデータが上書きされないように防止</p>"
       }
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/python/python-1_6_10",
-    "ver": "v1.6.10",
-    "date": "2024-09-05",
+    "url": "https://docs.whatap.io/ja/release-notes/python/python-1_7_2",
+    "ver": "v1.7.2",
+    "date": "2024-11-12",
     "Lists": [
       {
-        "ver": "v1.6.10",
-        "hash": "v1610",
+        "ver": "v1.7.2",
+        "hash": "v172",
         "product": "Python Agent",
         "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> DjangoフレームワークでASGIをサポート</p>",
-        "details": "<ul>\n<li>\n<p>DjangoでUvicorn対応のためのサポートロジックを追加しました。</p>\n</li>\n<li>\n<p>非同期作業でローカルスレッドを使用する時に発生する可能性のあるデータ侵害の問題を解決するために、コンテキストを維持するロジックを追加しました。</p>\n</li>\n</ul>"
+        "desc": "<p><code class=\"New\" type=\"1\">New</code>プロセス別PID 基盤のopen file descriptorの使用量を収集する機能を追加</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/python/python-1_6_6",
+    "ver": "v1.6.6",
+    "date": "2024-06-07",
+    "Lists": [
+      {
+        "ver": "v1.6.6",
+        "hash": "v166",
+        "product": "Python Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> FastAPI - remoteIP収集時に発生するバグを修正</p>"
       }
     ]
   },
@@ -122,6 +136,34 @@
     ]
   },
   {
+    "url": "https://docs.whatap.io/ja/release-notes/python/python-1_6_5",
+    "ver": "v1.6.5",
+    "date": "2024-05-31",
+    "Lists": [
+      {
+        "ver": "v1.6.5",
+        "hash": "v165",
+        "product": "Python Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Python 3.6 gevent使用時、トランザクションの終了漏れを修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/python/python-1_6_0",
+    "ver": "v1.6.0",
+    "date": "2024-03-13",
+    "Lists": [
+      {
+        "ver": "v1.6.0",
+        "hash": "v160",
+        "product": "Python Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> FastAPIでremote hostに関する情報が見つからないとエージェントが動作しない現象を修正</p>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/ja/release-notes/python/python-1_6_1",
     "ver": "v1.6.1",
     "date": "2024-03-20",
@@ -132,6 +174,20 @@
         "product": "Python Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\">Fixed</code> <em>whatap-hook.log</em>の繰り返しログ呼び出しの問題を修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/python/python-1_5_8",
+    "ver": "v1.5.8",
+    "date": "2024-02-18",
+    "Lists": [
+      {
+        "ver": "v1.5.8",
+        "hash": "v158",
+        "product": "Python Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Frappe Applicationのuser(接続者数に関する) 重複集計エラーを修正</p>"
       }
     ]
   },
@@ -151,34 +207,6 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/python/python-1_5_6",
-    "ver": "v1.5.6",
-    "date": "2024-02-02",
-    "Lists": [
-      {
-        "ver": "v1.5.6",
-        "hash": "v156",
-        "product": "Python Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Superset対応</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/python/python-1_6_0",
-    "ver": "v1.6.0",
-    "date": "2024-03-13",
-    "Lists": [
-      {
-        "ver": "v1.6.0",
-        "hash": "v160",
-        "product": "Python Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> FastAPIでremote hostに関する情報が見つからないとエージェントが動作しない現象を修正</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/ja/release-notes/python/python-1_6_3",
     "ver": "v1.6.3",
     "date": "2024-04-17",
@@ -189,20 +217,6 @@
         "product": "Python Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\">Fixed</code>Kubernetes環境コンテナで<code>containerID</code>を探すパーシングロジックを修正</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/python/python-1_5_8",
-    "ver": "v1.5.8",
-    "date": "2024-02-18",
-    "Lists": [
-      {
-        "ver": "v1.5.8",
-        "hash": "v158",
-        "product": "Python Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Frappe Applicationのuser(接続者数に関する) 重複集計エラーを修正</p>"
       }
     ]
   },
@@ -221,31 +235,16 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/python/python-1_5_3",
-    "ver": "v1.5.3",
-    "date": "2024-01-05",
+    "url": "https://docs.whatap.io/ja/release-notes/python/python-1_5_6",
+    "ver": "v1.5.6",
+    "date": "2024-02-02",
     "Lists": [
       {
-        "ver": "v1.5.3",
-        "hash": "v153",
+        "ver": "v1.5.6",
+        "hash": "v156",
         "product": "Python Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Pythonエージェントv1.4.9バージョン以降で、gunicornトランザクション収集エラーを修正</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/python/python-1_5_4",
-    "ver": "v1.5.4",
-    "date": "2024-01-09",
-    "Lists": [
-      {
-        "ver": "v1.5.4",
-        "hash": "v154",
-        "product": "Python Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Pythonエージェントv1.4.9バージョン以降で一部のPythonバージョンのモジュール依存性収集エラーを修正</p>",
-        "details": "<ul>\n<li>Python 3.6</li>\n<li>Python 3.7</li>\n</ul>"
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Superset対応</p>"
       }
     ]
   },
@@ -274,6 +273,35 @@
         "product": "Python Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\">Fixed</code> INJECTION方式のログ収集コードエラーを修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/python/python-1_5_4",
+    "ver": "v1.5.4",
+    "date": "2024-01-09",
+    "Lists": [
+      {
+        "ver": "v1.5.4",
+        "hash": "v154",
+        "product": "Python Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Pythonエージェントv1.4.9バージョン以降で一部のPythonバージョンのモジュール依存性収集エラーを修正</p>",
+        "details": "<ul>\n<li>Python 3.6</li>\n<li>Python 3.7</li>\n</ul>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/python/python-1_5_3",
+    "ver": "v1.5.3",
+    "date": "2024-01-05",
+    "Lists": [
+      {
+        "ver": "v1.5.3",
+        "hash": "v153",
+        "product": "Python Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Pythonエージェントv1.4.9バージョン以降で、gunicornトランザクション収集エラーを修正</p>"
       }
     ]
   }

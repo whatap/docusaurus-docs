@@ -4,6 +4,8 @@ WhaTapのデータベースモニタリングサービスは、エージェン�
 
 - WhaTapデータベースモニタリングサービスは、データベースサーバーにエージェントをインストールしなくても、別のエージェントサーバーでモニタリングすることができます。ユーザーの環境に柔軟に対応できます。
 
+  <Xclude product="cubrid,cubrid-v1">
+
   <div class='db-agent'>
 
   |                      他のエージェントサーバーにインストール可能                      |                        DBサーバーにインストール可能                       |           DBリソースモニタリング(XOS) 可能          |
@@ -11,6 +13,20 @@ WhaTapのデータベースモニタリングサービスは、エージェン�
   | <ImgLang img='dbx-install-agent-on-agent-server.png' desc='' /> | <ImgLang img='dbx-install-agent-on-db-server.png' desc='' /> | <ImgLang img='xos-agent.png' desc='' /> |
 
   </div>
+
+  </Xclude>
+
+  <InDoc product="cubrid,cubrid-v1">
+
+  <div class='db-agent'>
+
+  |                          他のエージェントサーバーにインストール可能                         |                           DBサーバーにインストール可能                           |              DBリソースモニタリング(XOS) 可能              |
+  | :--------------------------------------------------------------------: | :-----------------------------------------------------------------: | :--------------------------------------------: |
+  | <ImgLang img='dbx-install-agent-on-agent-server-cubrid.png' desc='' /> | <ImgLang img='dbx-install-agent-on-db-server-cubrid.png' desc='' /> | <ImgLang img='xos-agent-cubrid.png' desc='' /> |
+
+  </div>
+
+  </InDoc>
 
 - XOSエージェントは、データベースサーバーのプロセス使用状況をモニタリングできる付加オプションエージェントです。データベースサーバーでプロセス使用状況をモニタリングする場合は、データベースサーバーに別のエージェントを起動してデータを収集できます。
 
@@ -26,7 +42,7 @@ WhaTapのデータベースモニタリングサービスは、エージェン�
 
 </Xclude>
 
-<InDoc product="mssql">
+<InDoc product="mssql,mssql-v1">
 
 WhaTapのデータベースモニタリングサービスは、エージェントと収集サーバーで構成され、エージェントと収集サーバーの間でセキュリティのためにデータを暗号化します。外部ライブラリを使用していないため、インストールやアップデートのためにシステムを再起動する必要はありません。
 

@@ -1,0 +1,47 @@
+#### <code class='changelog-service'><a href="../release-notes/java/java-2_2_11">Java Agent v2.2.11</a></code> <code class='changelog-date'>2023年7月10日</code>
+
+- <code class="New">New</code>mongodb-reactive追跡
+
+#### <code class='changelog-service'><a href="../release-notes/java/java-2_2_12">Java Agent v2.2.12</a></code> <code class='changelog-date'>2023年7月21日</code>
+
+- <code class="New">New</code> <b>ignore_http_method</b>オプション追加
+
+#### <code class='changelog-service'><a href="../release-notes/java/java-2_2_13">Java Agent v2.2.13</a></code> <code class='changelog-date'>2023年8月8日</code>
+
+- <code class="New">New</code> <b>CompletableFuture</b>追跡のためのhookingオプションを追加
+
+#### <code class='changelog-service'><a href="../release-notes/java/java-2_2_14">Java Agent v2.2.14</a></code> <code class='changelog-date'>2023年8月17日</code>
+
+- <code class="Feature">Feature</code> resilience4j追跡
+
+- <code class="Feature">Feature</code> undertow追跡
+
+- <code class="Feature">Feature</code> SQL Exception、HTTP Call Exception発生時にユーザー定義のExceptionで処理できるオプションを追加
+
+- <code class="Feature">Feature</code> <code>java.sql.SQLException</code>発生時にエラーコードを含めて表示できるオプションの追加
+
+#### <code class='changelog-service'><a href="../release-notes/java/java-2_2_15">Java Agent v2.2.15</a></code> <code class='changelog-date'>2023年8月31日</code>
+
+- <code class="Feature">Feature</code>kafka-clients-2.4.0追跡
+
+- <code class="Feature">Feature</code>特定のエラーコードを持つ<code>java.sql.SQLException</code>無視する機能の追加
+
+- <code class="Feature">Feature</code>トランザクションでエラースタック表示機能を追加:トランザクションで複数のエラーが発生した場合、最初のエラーのスタックを表示
+
+#### <code class='changelog-service'><a href="../release-notes/java/java-2_2_16">Java Agent v2.2.16</a></code> <code class='changelog-date'>2023年9月8日</code>
+
+- <code class="Feature">Feature</code>Java 20対応(JAVAオプションが必要)
+
+- <code class="Feature">Feature</code>RedisのLettuceドライバー追跡
+
+- <code class="Feature">Feature</code>spring-boot-3.0設定にLettuce設定を含む
+
+#### <code class='changelog-service'><a href="../release-notes/java/java-2_2_18">Java Agent v2.2.18</a></code> <code class='changelog-date'>2023年9月26日</code>
+
+- <code class="Feature">Feature</code>HttpServletのsuperを設定して、該当クラスを継承したクラスでhttpサービスを開始できる機能の追加。コンマ(,)を区切り文字として使用できます。
+
+- <code class="Feature">Feature</code>db2-11.5追跡
+
+- <code class="Feature">Feature</code> Oracleデータベース追跡設定の追加。オプション適用後の再起動が必要です。既定値は<code>true</code>です。
+
+- <code class="Deprecated">Deprecated</code>HTTPサービス追跡時<code>org.apache.catalina.filters.FilterBase</code>クラスをデフォルト追跡から除外

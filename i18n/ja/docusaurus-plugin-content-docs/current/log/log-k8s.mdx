@@ -95,3 +95,7 @@ Kubernetesに関する各種ログを確認できます。WhaTap Kubernetesが�
 | `#WhatapEvent`    | <ul><li>WhaTapイベント設定によって発生したイベントが格納されるログ</li><li>ユーザー設定に関係なく、デフォルトで作成されます</li></ul>                      |
 | `containerStdout` | <ul><li>コンテナ標準出力ログ</li><li>ユーザー設定時に作成</li><li>ノードエージェントに`logsink_enabled=true`設定を追加したした場合</li></ul>      |
 | `AppLog`          | <ul><li>コンテナ内アプリケーションログ</li><li>ユーザー設定時に作成</li><li>アプリケーションエージェントに`logsink_enabled=true`設定の追加時</li></ul> |
+
+import K8slogfilter from "../common-items/_import_k8s-log-filter.mdx";
+
+<K8slogfilter />

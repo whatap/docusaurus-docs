@@ -1,0 +1,140 @@
+---
+id: install-agent
+title: エージェントのインストール
+description: WhaTapデータベースモニタリングサービスを使用するための基本的なインストール方法について説明します。
+keywords:
+  - SQL Server
+  - データベース
+  - エージェント
+---
+
+WhaTapデータベースモニタリングサービスを使用するための基本的なインストール方法について説明します。
+
+import Agentsignupguide from "../common-items/_agent-signup-guide.mdx";
+
+<Agentsignupguide />
+
+<Youtube ko='e_UpCgapfQY' en='MIo3HRIOt8M' ja='MIo3HRIOt8M' />
+
+import Createprojectv2 from "../getting-started/_create-project-v2.mdx";
+
+<Createprojectv2 />
+
+import Accesskey from "../getting-started/_accesskey.mdx";
+
+<Accesskey />
+
+## WhaTapデータベースエージェントのダウンロード
+
+import Dbinstallagentsteps from "../common-items/_db-install-agent-steps.mdx";
+
+<Dbinstallagentsteps />
+
+3. 圧縮して解凍したフォルダに入り、*whatap.conf*ファイルを確認してください。 *whatap.conf* ファイルに、プロジェクトのアクセスキー情報、WhaTapサーバー情報、DB接続情報を入力します。
+
+   ```ini title='whatap.conf'
+   license=プロジェクトアクセスキー
+   whatap.server.host=13.124.11.223/13.209.172.35 // WhaTapサーバー情報
+
+   dbms=mssql
+   db=master
+   db_ip=データベースのIPアドレス
+   db_port=データベースのポート番号 
+   ```
+
+   :::note
+
+   **SQL Serverとエージェントがlocalhostにインストールされる場合**(**default 1433 port**)
+
+   ```ini title='whatap.conf'
+   dbms=mssql
+   db=master
+   db_ip=127.0.0.1
+   db_port=1433
+   ```
+
+   :::
+
+4. 次のディレクトリにJDBCドライバーをダウンロードします。 *解凍されたフォルダ/jdbc*
+
+   データベースサーバーのOSとバージョンに合わせてJDBCドライバをダウンロードします。
+
+   **MS SQL 2005バージョン以降**
+
+   - [Microsoft JDBC Driver 6.4 for SQL Server](https://www.microsoft.com/en-us/download/details.aspx?id=56615)
+   - [Microsoft JDBC Driver 6.2 for SQL Server](https://www.microsoft.com/en-us/download/details.aspx?id=55539)
+
+:::note
+
+*/解凍されたフォルダ/jdbc/README.md*ファイルで各データベースのJDBCドライバのインストールパスを確認することができます。
+
+:::
+
+import Dbcreatemonitoringaccount from "../common-items/_db-create-monitoring-account.mdx";
+
+<Dbcreatemonitoringaccount />
+
+```bash showLineNumbers
+create login whatap with password='DB_PASSWORD'; ## passwordを入力してください。
+grant view server state to whatap;
+create user whatap for login whatap;
+grant execute to whatap;
+EXEC sp_configure 'show advanced options', 1;
+RECONFIGURE;
+EXEC sp_configure 'Ole Automation Procedures', 1;
+RECONFIGURE;
+ 
+## kill session使用時 - SQL Server
+grant alter any connection to whatap;
+
+## kill session使用時 - Azure SQL Database
+grant kill database connection to whatap;
+```
+
+## DBユーザーファイルの作成{#create-db-user}
+
+import Dbcreatedbuserfile from "../common-items/_db-create-db-user-file.mdx";
+
+<Dbcreatedbuserfile />
+
+{/*## 에이전트 실행*/}
+import Dbrunagent from "../common-items/_db-run-agent.mdx";
+
+<Dbrunagent />
+
+{/*## XOS 에이전트 설치*/}
+{/* import Dbinstallxosagent from "../common-items/_db-install-xos-agent.mdx"; */}
+
+## AWS CloudWatchリソースをモニタリングする
+
+エージェントサーバーにある*whatap.conf*ファイルに次のオプションを設定してください。 CloudWatch特性上、60秒(`cloud_watch_interval`)ごとの呼び出しをお勧めします。
+
+```ini title='whatap.conf'
+aws_region={AWS_RDS_Region_Name}
+aws_arn=arn:aws:iam::999999999999:role/UpdateApp
+cloud_watch=on
+cloud_watch_instance=RDS_DB_Instance_Name
+cloud_watch_interval=60
+cloud_watch_metrics=CPUUtilization,FreeableMemory,FreeStorageSpace,NetworkTransmitThroughput,NetworkReceiveThroughput
+```
+
+AWS CloudWatch指標照会のために次のコマンドを実行します。 `DB_Instance_Name`項目を変更してコマンドを実行します。
+
+```bash
+aws cloudwatch list-metrics --namespace AWS/RDS --dimensions Name=DBInstanceIdentifier,Value={DB_Instance_Name}
+```
+
+:::note
+
+- <Cmdname sid="side_agentInstall" className="uitext" />メニューの<UI>AWS RDS Region</UI>、<UI>RDS DB Instance Name</UI>、<UI>DB Instance Name</UI>項目に必要な情報を入力すると、エージェントオプションとコマンドを自動的に作成できます。
+
+- AWS CLIのインストールとアップデートの詳細については、[次のリンク](https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/getting-started-install.html)を参考にしてください。
+
+- AWS CLIの設定の詳細については、[次のリンク](https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-chap-configure.html)を参考にしてください。
+
+:::
+
+{/* ## 다음 단계 */}
+import NextStep from "../common-items/_db-next-step.mdx";
+
+<NextStep />

@@ -46,6 +46,14 @@ The following explains how to fine-tune the agent functionality for monitoring J
 
   The OS data collection through the sigar library is enabled. The OS resource data includes CPU, memory, and disk that are collected every 5 minutes through the sigar library. If the `enabled` option is `false`, this is disabled.
 
+  :::note
+
+  - In earlier than whatap.agent.2.1.0, the default value is `true`. In whatap.agent.2.1.0 or later, the default value is `false`.
+
+  - In Java 1.6 or earlier, you can enable the sigar library and collect performance metrics by adding the `sigar_enabled=true` option.
+
+  :::
+
 - **active_stack_enabled** <span class='type'>Boolean</span>
 
   Default `true`

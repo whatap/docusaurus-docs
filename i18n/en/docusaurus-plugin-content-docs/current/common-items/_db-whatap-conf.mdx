@@ -49,3 +49,29 @@ broker=query_editor,broker1
 :::
 
 </InDoc>
+
+<InDoc product="mssql">
+
+```ini title="whatap.conf"
+license=x6054vg8d8e5e-z16ovlmhlau3st-z2uj26egaj4mt4
+whatap.server.host=13.124.11.223/13.209.172.35
+
+dbms=mssql
+db=master
+db_ip=127.0.0.1
+db_port=1433
+```
+
+:::note
+
+**In case of occurrence of SSL authentication issues**
+
+If any SSL authentication issue occurs, set the following options in the _whatap.conf_ file.
+
+```ini title="whatap.conf"
+connect_option=?useSSL=true&verifyServerCertificate=false
+```
+
+:::
+
+</InDoc>

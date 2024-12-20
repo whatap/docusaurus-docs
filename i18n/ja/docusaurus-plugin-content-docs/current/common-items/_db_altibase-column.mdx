@@ -10,9 +10,9 @@
 
 | 項目                                   | 説明                                          |
 | ------------------------------------ | ------------------------------------------- |
-| `アクション`                              | 現在のセッションで実行されているアクションまたはコマンドです。             |
-| `active_flag`                        | セッションの活性化可否を示します。                           |
-| `autocommit_flag`                    | 自動コミットの活性化可否を示します。                          |
+| `アクション`                              | セッションで実行されているアクションまたはコマンドです。                |
+| `active_flag`                        | セッションの活性化有無を示します。                           |
+| `autocommit_flag`                    | 自動コミットの活性化有無を示します。                          |
 | `client_app_info`                    | クライアントアプリケーションに関する情報です。                     |
 | `client_info`                        | クライアントのカスタム情報を示します。                         |
 | `client_nls`                         | クライアントのNLS(National Language Support) 設定です。 |
@@ -22,13 +22,13 @@
 | `client_type`                        | クライアントのタイプを示します。                            |
 | `comm_name`                          | セッションで使用中のコミュニケーション名です。                     |
 | `commit_write_wait_mode`             | コミット時のデータ書き込み待機モードを示します。                    |
-| `current_stmt_id`                    | 現在実行中のSQL文のIDです。                            |
-| `data page gets`                     | データページを読み込むためにアクセスした回数です。                   |
-| `data page read`                     | データページを物理的に読み込んだ回数です。                       |
+| `current_stmt_id`                    | 実行中のSQL文のIDです。                              |
+| `data page gets`                     | データページを読み取るためにアクセスした回数です。                   |
+| `data page read`                     | データページを物理的に読み取った回数です。                       |
 | `db_username`                        | データベースに接続されているユーザー名です。                      |
 | `dblink_global_transaction_level`    | DBリンクのグローバルトランザクションのレベルです。                  |
 | `dblink_remote_statement_autocommit` | DBリンクのリモートドキュメントの自動コミット可否を示します。             |
-| `dbname`                             | 現在接続されているデータベースの名前です。                       |
+| `dbname`                             | 接続されているデータベースの名前です。                         |
 | `ddl_time_limit`                     | DDL(データ定義言語) 作業の時間制限です。                     |
 | `default_date_format`                | デフォルトの日付形式です。                               |
 | `default_tbsid`                      | セッションのデフォルトテーブルスペースのIDです。                   |
@@ -36,7 +36,7 @@
 | `elapse_time`                        | 作業が始まってから経過した時間です。                          |
 | `event`                              | 現在または最後に発生したイベントです。                         |
 | `execute success count`              | 正常に実行されたコマンドの数です。                           |
-| `failover_source`                    | フェイルオーバー時の元のサーバーの情報です。                      |
+| `failover_source`                    | フェイルオーバー時の原本サーバーの情報です。                      |
 | `fetch_time_limit`                   | データのフェッチにかかる最大時間です。                         |
 | `header_display_mode`                | ヘッダー情報の表示モードです。                             |
 | `id`                                 | セッション固有のIDです。                               |
@@ -44,9 +44,9 @@
 | `isolation_level`                    | 現在トランザクションの隔離レベルです。                         |
 | `lob_cache_threshold`                | LOB(Large Object) キャッシュのしきい値です。             |
 | `login_time`                         | セッションがログインした時間です。                           |
-| `max_statements_per_session`         | セッション当たりの最大実行可能な文章数です。                      |
+| `max_statements_per_session`         | セッション当たりの最大実行可能なステートメント数です。                 |
 | `memory table access count`          | メモリテーブルにアクセスした回数です。                         |
-| `module`                             | 現在実行中のモジュール名です。                             |
+| `module`                             | 実行中のモジュール名です。                               |
 | `nls_currency`                       | NLS設定で使用する通貨記号です。                           |
 | `nls_iso_currency`                   | NLS設定で使用するISO通貨コードです。                       |
 | `nls_numeric_characters`             | NLS設定で使用する数字の文字です。                          |
@@ -61,19 +61,19 @@
 | `query`                              | 実行されたSQLクエリです。                              |
 | `query_hash`                         | クエリのハッシュ値です。                                |
 | `query_param`                        | クエリの実行時に使用されたパラメータです。                       |
-| `query_rewrite_enable`               | クエリの再作成機能の活性可否です。                           |
+| `query_rewrite_enable`               | クエリの再作成機能の使用有無です。                           |
 | `query_time_limit`                   | クエリ実行の時間制限です。                               |
 | `rebuild count`                      | 再構成作業の回数です。                                 |
 | `replication_mode`                   | 複製モードの設定です。                                 |
-| `second_in_time`                     | 時間の秒単位の表現です。                                |
+| `second_in_time`                     | 時間の秒単位の表示です。                                |
 | `seqnum`                             | セッションのシーケンス番号です。                            |
-| `session_state`                      | セッションの現状です。                                 |
+| `session_state`                      | セッションの状況です。                                 |
 | `ssl_certificate_issuer`             | SSL認証書発行者の情報です。                             |
-| `ssl_certificate_subject`            | SSL認証書の主体情報です。                              |
+| `ssl_certificate_subject`            | SSL認証書のサブジェクト情報です。                          |
 | `ssl_cipher`                         | 使用中のSSL暗号化方式です。                             |
 | `stack_size`                         | セッションのスタックサイズです。                            |
-| `sysdba_flag`                        | SYSDBA権限の使用可否を示します。                         |
-| `task_state`                         | 現在作業の状態です。                                  |
+| `sysdba_flag`                        | SYSDBA権限の使用有無を示します。                         |
+| `task_state`                         | 現在作業の状況です。                                  |
 | `time`                               | 作業が実行された時間です。                               |
 | `time_zone`                          | セッションのタイムゾーンの設定です。                          |
 | `trans_id`                           | 現在トランザクションのIDです。                            |
@@ -88,18 +88,18 @@
 
 <TabItem value="locktree" label="Lock tree">
 
-| 項目            | 説明                              |
-| ------------- | ------------------------------- |
-| `oname`       | エージェントまたはインスタンスの名前です。           |
-| `id`          | セッション固有のIDです。                   |
-| `db_username` | データベースに接続されているユーザー名です。          |
-| `elapse_time` | 作業が始まってから経過した時間です。              |
-| `waiter type` | 現在ロックを待機しているエンティティのタイプを示します。    |
-| `holder type` | 現在ロックを所有しているエンティティのタイプを示します。    |
-| `holder desc` | 現在ロックを所有しているエンティティの詳細な説明を提供します。 |
-| `waiter desc` | 現在ロックを待機しているエンティティの詳細な説明を提供します。 |
-| `query`       | 実行されたSQLクエリです。                  |
-| `query_param` | クエリの実行時に使用されたパラメータです。           |
+| 項目            | 説明                            |
+| ------------- | ----------------------------- |
+| `oname`       | エージェントまたはインスタンスの名前です。         |
+| `id`          | セッション固有のIDです。                 |
+| `db_username` | データベースに接続されているユーザー名です。        |
+| `elapse_time` | 作業が始まってから経過した時間です。            |
+| `waiter type` | ロックを待機しているエンティティのタイプを示します。    |
+| `holder type` | ロックを所有しているエンティティのタイプを示します。    |
+| `holder desc` | ロックを所有しているエンティティの詳細な説明を提供します。 |
+| `waiter desc` | ロックを待機しているエンティティの詳細な説明を提供します。 |
+| `query`       | 実行されたSQLクエリです。                |
+| `query_param` | クエリの実行時に使用されたパラメータです。         |
 
 </TabItem>
 
@@ -138,9 +138,9 @@ WhaTapは、クライアントに関する情報をデフォルトで保存し�
 
 | 項目                                   | 説明                                          |
 | ------------------------------------ | ------------------------------------------- |
-| `アクション`                              | 現在のセッションで実行されているアクションまたはコマンドです。             |
-| `active_flag`                        | セッションの活性化可否を示します。                           |
-| `autocommit_flag`                    | 自動コミットの活性化可否を示します。                          |
+| `アクション`                              | セッションで実行されているアクションまたはコマンドです。                |
+| `active_flag`                        | セッションの活性化有無を示します。                           |
+| `autocommit_flag`                    | 自動コミットの活性化有無を示します。                          |
 | `client_app_info`                    | クライアントアプリケーションに関する情報です。                     |
 | `client_info`                        | クライアントのカスタム情報を示します。                         |
 | `client_nls`                         | クライアントのNLS(National Language Support) 設定です。 |
@@ -150,13 +150,13 @@ WhaTapは、クライアントに関する情報をデフォルトで保存し�
 | `client_type`                        | クライアントのタイプを示します。                            |
 | `comm_name`                          | セッションで使用中のコミュニケーション名です。                     |
 | `commit_write_wait_mode`             | コミット時のデータ書き込み待機モードを示します。                    |
-| `current_stmt_id`                    | 現在実行中のSQL文のIDです。                            |
-| `data page gets`                     | データページを読み込むためにアクセスした回数です。                   |
-| `data page read`                     | データページを物理的に読み込んだ回数です。                       |
+| `current_stmt_id`                    | 実行中のSQL文のIDです。                              |
+| `data page gets`                     | データページを読み取るためにアクセスした回数です。                   |
+| `data page read`                     | データページを物理的に読み取った回数です。                       |
 | `db_username`                        | データベースに接続されているユーザー名です。                      |
 | `dblink_global_transaction_level`    | DBリンクのグローバルトランザクションのレベルです。                  |
 | `dblink_remote_statement_autocommit` | DBリンクのリモートドキュメントの自動コミット可否を示します。             |
-| `dbname`                             | 現在接続されているデータベースの名前です。                       |
+| `dbname`                             | 接続されているデータベースの名前です。                         |
 | `ddl_time_limit`                     | DDL(データ定義言語) 作業の時間制限です。                     |
 | `default_date_format`                | デフォルトの日付形式です。                               |
 | `default_tbsid`                      | セッションのデフォルトテーブルスペースのIDです。                   |
@@ -164,7 +164,7 @@ WhaTapは、クライアントに関する情報をデフォルトで保存し�
 | `elapse_time`                        | 作業が始まってから経過した時間です。                          |
 | `event`                              | 現在または最後に発生したイベントです。                         |
 | `execute success count`              | 正常に実行されたコマンドの数です。                           |
-| `failover_source`                    | フェイルオーバー時の元のサーバーの情報です。                      |
+| `failover_source`                    | フェイルオーバー時の原本サーバーの情報です。                      |
 | `fetch_time_limit`                   | データのフェッチにかかる最大時間です。                         |
 | `header_display_mode`                | ヘッダー情報の表示モードです。                             |
 | `id`                                 | セッション固有のIDです。                               |
@@ -172,9 +172,9 @@ WhaTapは、クライアントに関する情報をデフォルトで保存し�
 | `isolation_level`                    | 現在トランザクションの隔離レベルです。                         |
 | `lob_cache_threshold`                | LOB(Large Object) キャッシュのしきい値です。             |
 | `login_time`                         | セッションがログインした時間です。                           |
-| `max_statements_per_session`         | セッション当たりの最大実行可能な文章数です。                      |
+| `max_statements_per_session`         | セッション当たりの最大実行可能なステートメント数です。                 |
 | `memory table access count`          | メモリテーブルにアクセスした回数です。                         |
-| `module`                             | 現在実行中のモジュール名です。                             |
+| `module`                             | 実行中のモジュール名です。                               |
 | `nls_currency`                       | NLS設定で使用する通貨記号です。                           |
 | `nls_iso_currency`                   | NLS設定で使用するISO通貨コードです。                       |
 | `nls_numeric_characters`             | NLS設定で使用する数字の文字です。                          |
@@ -189,19 +189,19 @@ WhaTapは、クライアントに関する情報をデフォルトで保存し�
 | `query`                              | 実行されたSQLクエリです。                              |
 | `query_hash`                         | クエリのハッシュ値です。                                |
 | `query_param`                        | クエリの実行時に使用されたパラメータです。                       |
-| `query_rewrite_enable`               | クエリの再作成機能の活性可否です。                           |
+| `query_rewrite_enable`               | クエリの再作成機能の使用有無です。                           |
 | `query_time_limit`                   | クエリ実行の時間制限です。                               |
 | `rebuild count`                      | 再構成作業の回数です。                                 |
 | `replication_mode`                   | 複製モードの設定です。                                 |
-| `second_in_time`                     | 時間の秒単位の表現です。                                |
+| `second_in_time`                     | 時間の秒単位の表示です。                                |
 | `seqnum`                             | セッションのシーケンス番号です。                            |
-| `session_state`                      | セッションの現状です。                                 |
+| `session_state`                      | セッションの状況です。                                 |
 | `ssl_certificate_issuer`             | SSL認証書発行者の情報です。                             |
-| `ssl_certificate_subject`            | SSL認証書の主体情報です。                              |
+| `ssl_certificate_subject`            | SSL認証書のサブジェクト情報です。                          |
 | `ssl_cipher`                         | 使用中のSSL暗号化方式です。                             |
 | `stack_size`                         | セッションのスタックサイズです。                            |
-| `sysdba_flag`                        | SYSDBA権限の使用可否を示します。                         |
-| `task_state`                         | 現在作業の状態です。                                  |
+| `sysdba_flag`                        | SYSDBA権限の使用有無を示します。                         |
+| `task_state`                         | 現在作業の状況です。                                  |
 | `time`                               | 作業が実行された時間です。                               |
 | `time_zone`                          | セッションのタイムゾーンの設定です。                          |
 | `trans_id`                           | 現在トランザクションのIDです。                            |
@@ -216,17 +216,17 @@ WhaTapは、クライアントに関する情報をデフォルトで保存し�
 
 <InDoc pages="analysis-lock-and-deadlock">
 
-| 項目            | 説明                              |
-| ------------- | ------------------------------- |
-| `oname`       | エージェントまたはインスタンスの名前です。           |
-| `id`          | セッション固有のIDです。                   |
-| `db_username` | データベースに接続されているユーザー名です。          |
-| `elapse_time` | 作業が始まってから経過した時間です。              |
-| `waiter type` | 現在ロックを待機しているエンティティのタイプを示します。    |
-| `holder type` | 現在ロックを所有しているエンティティのタイプを示します。    |
-| `holder desc` | 現在ロックを所有しているエンティティの詳細な説明を提供します。 |
-| `waiter desc` | 現在ロックを待機しているエンティティの詳細な説明を提供します。 |
-| `query`       | 実行されたSQLクエリです。                  |
-| `query_param` | クエリの実行時に使用されたパラメータです。           |
+| 項目            | 説明                            |
+| ------------- | ----------------------------- |
+| `oname`       | エージェントまたはインスタンスの名前です。         |
+| `id`          | セッション固有のIDです。                 |
+| `db_username` | データベースに接続されているユーザー名です。        |
+| `elapse_time` | 作業が始まってから経過した時間です。            |
+| `waiter type` | ロックを待機しているエンティティのタイプを示します。    |
+| `holder type` | ロックを所有しているエンティティのタイプを示します。    |
+| `holder desc` | ロックを所有しているエンティティの詳細な説明を提供します。 |
+| `waiter desc` | ロックを待機しているエンティティの詳細な説明を提供します。 |
+| `query`       | 実行されたSQLクエリです。                |
+| `query_param` | クエリの実行時に使用されたパラメータです。         |
 
 </InDoc>

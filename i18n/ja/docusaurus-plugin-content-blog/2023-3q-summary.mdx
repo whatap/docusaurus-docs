@@ -1,0 +1,383 @@
+---
+slug: 2023-3q-summary
+title: 第3四半期のご案内
+authors: ysj
+date: 2023-10-31T15:10
+toc_max_heading_level: 2
+tags:
+  - 新しい機能
+  - 2023
+---
+
+WhaTapの2023年第3四半期のサービス新規機能及び注目すべき変更事項の概要をご案内します。 WhaTapが新たに提供する機能を一目でご覧ください。
+
+<ImgLang img='changelog/changelog-new3.png' desc='新しい機能' />
+
+{/* truncate */}
+
+{/* db 상품 중 mysql v2 서비스 제공 시점 확인 필요 */}
+
+<div class ='faq'>
+
+| **共通** |
+| ------ |
+
+> **プロジェクトのフレックスボードの編集**権限が追加されました。
+
+| **Application** |
+| --------------- |
+
+> - <Cmdname sid="TTL06209" className="uitext" />機能が新しく改編されました。
+> - <Cmdname sid="side_transaction_map" className="uitext" />メニュー マップチャートが改善されました。
+
+| **Server** |
+| ---------- |
+
+> <Cmdname sid="sms_resource_board" className="uitext" />および<Cmdname sid="side_eventSetting" className="uitext" />メニューが改善されました。
+
+| **Kubernetes** |
+| -------------- |
+
+> - ***Docker PHP***インストールを提供します。
+> - <Cmdname sid="side_integratedContainerMap" className="uitext" />メニューを提供します。
+>   {/* > * <Cmdname sid="side_containerMap" className="uitext" /> 및 <Cmdname sid="side_perfSummary" className="uitext" /> 메뉴가 개선되었습니다. */}
+
+| **Database** |
+| ------------ |
+
+> - **PostgreSQL**製品<code class="my">V2</code>サービスが開始されました。
+> - **MySQL**製品<code class="my">V2</code>サービスが開始されました。
+
+| **Browser** |
+| ----------- |
+
+> - ***ページロードのヒットマップ***メニューが改善されました。 
+> - <Cmdname sid="side_rumErrorDashboard" className="uitext" />メニューでエラーの詳細が追加されました。
+
+| **AWS Log** |
+| ----------- |
+
+> `AWS Log`モニタリング製品**定式**サービスがリリースされました。 
+
+| **Network** |
+| ----------- |
+
+> **ネットワーク性能モニタリング**(Network Performance Monitoring) 商品ベータサービスが開始されました。 
+
+</div>
+
+商品別の新規機能以外の変更事項の概要および当該リリースバージョン、エージェントの変更事項は、次の案内で確認できます。
+
+<br/>
+<br/>
+
+## `共通`
+
+WhaTap2023年第3四半期`共通`部分の注目すべき新機能と変更事項として**プロジェクトのフレックスボード編集**権限追加と利便性向上のための改善を紹介します。
+
+**プロジェクトのフレックスボード編集**権限が追加され、これからはプロジェクト内の***Flexボード***を修正するためには、その権限が必要です。 
+
+その他、全体的な利便性向上のためのアップデートが行われました。 WhaTapのサービスバージョンと商品一覧を確認できる<Cmdname sid="BTN06853" className="uitext" />メニューの追加 
+
+<LinkImage img='changelog/changelog-whatap-info.png' desc='' className='noneborder' />
+
+また<Cmdname sid="side_eventNoti" className="uitext" />時**WhatsApp**通知設定が新たに追加され<Cmdname sid="side_integratedReport" className="uitext" />メニューで日刊レポート作成時、時間選択制限方式が変更されました。 従来は終了時間を前日の23時59分まで選択できましたが、これからは終了時間を現在の時間基準で1時間前まで選択できます。 
+
+次の概要案内を通じて、2023年第3四半期の共通部分の新規機能および主要変更事項を該当リリースバージョンと共に確認してみてください。
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Common_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-Common.mdx";
+
+<Common_23q3 />
+
+</details>
+<br/>
+
+## `Applicatoin`
+
+WhaTap2023年第3四半期`Application`商品群の注目すべき新機能および変更事項により、***トランザクション分析***機能の改編と<Cmdname sid="side_transaction_map" className="uitext" />画面の改善についてご紹介します。 
+
+***トランザクション分析***機能改編が始まりました。 従来は<Cmdname sid="hitmap" className="uitext" />下にトランザクションリストを読み込む方式でしたが、今では<Cmdname sid="hitmap" className="uitext" />ドラッグする際***トランザクション分析***ポップアップ画面が表示され、区間別にその詳細情報を分析し、比較しやすくなりました。 また、トランザクション一覧フィルターでエラーの件だけをすぐに確認できるオプションが追加されました。
+
+<LinkImage img='release/release-note-tx-new-feature.png' desc='' className='noneborder' />
+
+<Cmdname sid="side_transaction_map" className="uitext" />は可視性を高めるためにマップデザインを変更し、通常のトランザクションとエラートランザクションが重なる場合、エラー件が先に見えるように変更されました。
+
+|                          修正前                         |                         修正後                        |
+| :--------------------------------------------------: | :------------------------------------------------: |
+| ![before](/img/release/before-transaction-chart.png) | ![after](/img/release/after-transaction-chart.png) |
+
+また`.NET`商品の場合は、既存`Java`と`Python`製品でのみ提供された<Cmdname sid="side_stack" className="uitext" />メニューが追加されました。 <Cmdname sid="side_stack" className="uitext" />メニューを通じて<Cmdname sid="topstack" className="uitext" />と<Cmdname sid="uniquestack" className="uitext" />、<Cmdname sid="active_stack" className="uitext" />が簡単に確認できます。
+
+以下の概要案内により、2023年第3四半期`Application`製品群の新規機能および主要変更事項を当該リリースバージョンと一緒に確認してみてください。 
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Application_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-Application.mdx";
+
+<Application_23q3 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>エージェントガイド</b></summary>
+
+### `Java`
+
+import Java_agent_23q3 from "../crw-data/crwld-agent-23/_import-agent-23q3-java.mdx";
+
+<Java_agent_23q3 />
+
+### `PHP`
+
+#### <code class='changelog-service'>PHP Agent v2.6.2</code> <code class='changelog-date'>2023年9月13日</code>
+
+- <Status>Feature</Status>大容量プロファイル処理オプションの追加
+
+  - **whatap.large_profile_enabled** <span class='type'>Boolean</span>
+
+    既定値`false`
+
+    約1万件以下のプロファイル（ステップ）情報を収集できます。 より多くの量を収集する場合、`split_profile_enabled`オプションとして使用することをお勧めします。
+
+  - **whatap.split_profile_enabled** <span class='type'>Boolean</span>
+
+    既定値`false`
+
+    一定量のプロファイルを仮想トランザクションに分離して、より多くのプロファイル情報を収集します。 複数のトランザクション一覧に分割表記します。
+
+- <Status>Feature</Status>プロファイル データ圧縮転送オプションの追加
+
+  - **whatap.profile_zip_enabled** <span class='type'>Boolean</span> 既定値`true`
+
+### `.NET`
+
+#### <code class='changelog-service'>.NET Agent v2.1.1</code> <code class='changelog-date'>2023年7月17日</code>
+
+- <Status>New</Status>Active Stackサポート
+
+- <Status>New</Status>ドットネットサポート環境に分析ツール機能の追加
+
+#### <code class='changelog-service'>.NET Agent v2.1.2</code> <code class='changelog-date'>2023年7月20日</code>
+
+- <Status>New</Status> WCFサポート
+
+#### <code class='changelog-service'>.NET Agent v2.1.5</code> <code class='changelog-date'>2023年9月13日</code>
+
+- <Status>New</Status>タイムアウトの時間を調整する<code>webservice_method_timeout</code>オプションを追加
+
+### `Go`
+
+import Go_agent_23q3 from "../crw-data/crwld-agent-23/_import-agent-23q3-golang.mdx";
+
+<Go_agent_23q3 />
+
+</details>
+
+<br/>
+
+{/* ## `Application`, `Container`, `Server`
+
+import ApplicationContainerServer_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-Application-Container-Server.mdx";
+
+<ApplicationContainerServer_23q3 /> */}
+
+## `Server`
+
+WhaTap2023年第3四半期`Server`商品の場合、<Cmdname sid="side_eventSetting" className="uitext" />メニューで既存のイベント設定を現在のプロジェクトにコピーできる機能が追加され、その他 <Cmdname sid="sms_resource_board" className="uitext" />メニュー内のエージェント状態のウィジェットに危険と警告状態が区分されて表示するようにするなど、ユーザーの利便性向上のための改善作業が行われました。 
+
+以下の概要案内により、2023年第3四半期`Server`商品の新規機能および主な変更事項を当該リリースバージョンと一緒に確認してみてください。 
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Server_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-Server.mdx";
+
+<Server_23q3 />
+
+</details>
+
+<br/>
+
+## `Kubernetes`
+
+WhaTap2023年第3四半期`Kubernetes`製品の注目すべき新機能および変更事項により**Docker PHP**設置提供および新たに追加された<Cmdname sid="side_integratedContainerMap" className="uitext" />メニューをご紹介します。
+
+{/* ***컨테이너 맵*** 및 <Cmdname sid="side_perfSummary" className="uitext" /> 메뉴의 개선에 대해 소개합니다. */}
+
+これからDockerコンテナベースで実行する**PHPアプリケーション**にWhaTapモニタリングエージェントを適用し、コンテナ画像をパッケージングできます。 whatap-phpパッケージをインストールした後、インストールスクリプトとコンテナの環境変数を設定して、そのエージェントをインストールできます。 
+
+クラスタープロジェクトやネームスペースのプロジェクトを含む<Cmdname sid="side_integratedContainerMap" className="uitext" />メニューを新たに提供します。 統合コンテナマップは、プロジェクト別のグループ化オプションを追加で提供し、クラスタープロジェクトおよびネームスペース個別プロジェクト内のコンテナマップを照会できます。
+
+<LinkImage img='k8s-container-map-unified-whatapproject.png' desc='' className='noneborder' />
+
+以下の概要案内により、2023年第3四半期`Kubernetes`製品の新規機能および主な変更事項を当該リリースバージョンと一緒に確認してみてください。 
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Container_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-Container.mdx";
+
+<Container_23q3 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>エージェントガイド</b></summary>
+
+#### <code class='changelog-service'>Kubernetes Agent v1.3.6</code> <code class='changelog-date'>2023年9月25日</code>
+
+- <Status>Feature</Status>ノード一覧改編のためのノード情報(クラスターバージョン、ノード状態など)を追加
+
+#### <code class='changelog-service'>Kubernetes Agent v1.3.7</code> <code class='changelog-date'>2023年9月27日</code>
+
+- <Status>Feature</Status> 更新予定のアプリケーション一覧メニューから、ノード一覧と連携するためのキー値を追加
+
+</details>
+
+<br/>
+
+## `Database`
+
+WhaTap2023年第3四半期`Database`製品群の注目すべき新機能および変更事項により<code class="my">V2</code>サービス開始についてご紹介します。
+
+今度の第3四半期に`PostgreSQL`製品と`MySQL`製品の<code class="my">V2</code>サービスが開始されました。 <code class="my">V2</code>サービスは利便性の向上に重点を置きました。 
+
+製品環境別にRDSとXOSタブを分離し<Cmdname sid="side_dbMonitoring" className="uitext" />メニューを改善しました。 例えば、アクティブセッションのテーブルプリセット保存オプションおよびセッション詳細情報内のPlan照会オプションなどが追加されました。 
+
+以下の概要案内により、2023年第3四半期`Database`製品群の新規機能および主要変更事項を当該リリースバージョンと一緒に確認してみてください。 
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Database_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-Database.mdx";
+
+<Database_23q3 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>エージェントガイド</b></summary>
+
+#### DBX
+
+import DBX_agent_23q3 from "../crw-data/crwld-agent-23/_import-agent-23q3-dbx.mdx";
+
+<DBX_agent_23q3 />
+
+#### XOS
+
+import XOS_agent_23q3 from "../crw-data/crwld-agent-23/_import-agent-23q3-xos.mdx";
+
+<XOS_agent_23q3 />
+
+</details>
+
+<br/>
+
+## `Browser`
+
+WhaTap2023年第3四半期`Browser`商品の注目すべき新機能と変更事項により***ページロードヒットマップ***メニューの改善と<Cmdname sid="side_rumErrorDashboard" className="uitext" />エラーの詳細追加について紹介します。
+
+***ページロードヒットマップ***メニューの場合、詳細ページのロードデータにOSバージョンとクライアントIP情報が追加され、フィルター機能を新たに提供します。
+
+これから<Cmdname sid="side_rumErrorDashboard" className="uitext" />メニューの***エラーメッセージテーブル***一覧でエラーメッセージを選択すると、エラーメッセージに基づいてエラーに関する詳細な統計情報を確認できます。 それだけでなく、時間帯別に発生したエラーログも確認できます。
+
+<LinkImage img='browser-error-details-log.png' desc='Error log分岐の例' />
+
+以下の概要案内により、2023年第3四半期`Browser`製品の新規機能および主な変更事項を当該リリースバージョンと一緒に確認してみてください。 
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Browser_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-Browser.mdx";
+
+<Browser_23q3 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>エージェントガイド</b></summary>
+
+import Browser_agent_23q3 from "../crw-data/crwld-agent-23/_import-agent-23q3-browser.mdx";
+
+<Browser_agent_23q3 />
+
+</details>
+
+<br/>
+
+## `Network`
+
+WhaTap2023年第3四半期にネットワーク間の混雑や障害を把握し、ユーザのネットワーク性能改善のためにプロセスのネットワーク情報を収集する**ネットワークパフォーマンスモニタリング**(**Network Performance Monitoring**) 製品ベータサービスがリリースされました。 商品の詳細については、[次の文書](https://docs.whatap.io/npm/introduction)を参照してください。 
+
+<br/>
+
+{/* <details className='changelog'>
+
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Network_1q from "../crw-data/crwld-service/_import-service-Network.mdx";
+
+<Network_1q />
+
+</div>  */}
+
+{/* ## `CloudWatch`, `AZURE`, `OCI`, `NCP`
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Cloud_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-CloudWatch-AZURE-OCI-NCP.mdx";
+
+<Cloud_23q3 />
+
+</div><br/> */}
+
+## `AWS Log`
+
+WhaTap2023年第3四半期`AWS Log`モニタリングサービスが正式にリリースされました。 S3とLog Group、それぞれのリソース別に確認する面倒なプロセスを経る必要がなく、WhaTap`AWS Log`はAWS上で発生する各種ログを収集し、統合モニタリングを提供します。 商品の詳細については、<a href="../../aws-log/introduction">次のドキュメント</a>を参照してください。
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import AWSLog_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-AWSLog.mdx";
+
+<AWSLog_23q3 />
+
+</details>
+
+<br/>
+
+## `Log`
+
+WhaTap2023年第3四半期`Log`商品の注目すべき新機能および変更点を次のように紹介します。 
+
+全体的に利便性向上のためのアップデートが行われました。 <Cmdname sid="side_logSearch" className="uitext" />、<Cmdname sid="side_logExplorer" className="uitext" />、<Cmdname sid="transaction_log" className="uitext" />メニューでキーワードのハイライト機能が追加されました。 また<Cmdname sid="side_logSearch" className="uitext" />メニューで隣接ログ照会機能が追加されました。 
+
+以下の概要案内により、2023年第3四半期`Log`製品の新規機能および主な変更事項を当該リリースバージョンと一緒に確認してみてください。
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Log_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-Log.mdx";
+
+<Log_23q3 />
+
+</details>
+
+<br/>
+
+{/* ## `실험실`
+
+<details className='changelog'>
+<summary><b>新規機能および主な変更事項のご案内</b></summary>
+
+import Lab_23q3 from "../crw-data/crwld-service-23q3/_import-23q3-service-Lab.mdx";
+
+<Lab_23q3 />
+
+</div><br/> */}

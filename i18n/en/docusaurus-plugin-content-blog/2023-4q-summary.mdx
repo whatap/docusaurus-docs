@@ -1,0 +1,388 @@
+---
+slug: 2023-4q-summary
+title: Fourth quarter guidance
+authors: ysj
+date: 2023-12-31T15:20
+toc_max_heading_level: 2
+tags:
+  - New features
+  - 2023
+---
+
+Here’s an overview of new features and notable changes of WhaTap’s 4th quarter services in 2023. Take a look at new features offered by WhaTap at a glance.
+
+<ImgLang img='changelog/changelog-new3.png' desc='New features' />
+
+{/* truncate */}
+
+<div class ='faq'>
+
+| **Common** |
+| ---------- |
+
+> - **WhaTap Mobile App** has been newly released.
+> - <Cmdname sid="platform_catalog" className="uitext" /> and several menus have been improved for user convenience.
+> - <code class="my">V2</code> of <Cmdname sid="side_maintenancePlan" className="uitext" /> has been provided.
+
+{/* > * <Cmdname sid="side_paymentInformation" className="uitext" /> 및 <Cmdname sid="side_agentSetting" className="uitext" /> 메뉴 등의 화면이 개선되었습니다. */}
+
+| **Application** |
+| --------------- |
+
+> - The <Cmdname sid="TTL06209" className="uitext" /> feature has been reorganized.
+> - <Cmdname sid="side_dashboard" className="uitext" /> has been reorganized in a preset format.
+
+| **Server** |
+| ---------- |
+
+> The <Cmdname sid="event_tag" className="uitext" /> option has been provided.
+
+| **Kubernetes** |
+| -------------- |
+
+> - The <Cmdname sid="side_containerMap" className="uitext" /> menu has been reorganized.
+> - Submenus under <Cmdname sid="side_resource" className="uitext" /> have been added.
+
+{/* > * 통합 컨테이너 맵
+
+> - 메뉴 간 동선 개편 */}
+
+| **Database** |
+| ------------ |
+
+> The official transition to <code class="my">V2</code> of `PostgreSQL` and `MySQL` products has been completed, and their service improvements have been made. 
+
+| **Browser** |
+| ----------- |
+
+> The <Cmdname sid="side_ajaxAnalytics" className="uitext" /> menu has been provided.
+
+{/* 
+|**Network**|
+|---|
+
+> **Beta** service of the **Network Performance Monitoring** product has been released.  */}
+
+</div>
+
+An overview of changes other than new features for each product, the corresponding release versions, and changes in the agent can be found in the following guide.
+
+<br/>
+<br/>
+
+## `Common`
+
+The launch of the WhaTap **Mobile App**, screen improvements, and maintenance plan <code class="my">V2</code> are introduced, as well as notable new features and changes in the `Common` section of the 4th quarter, 2023.
+
+In the fourth quarter, a new WhaTap **Mobile App** has been launched. You can check the major charts of the WhaTap monitoring service <Cmdname sid="side_dashboard" className="uitext" /> or receive real-time notifications through the app. You can also use the OTP feature as the secondary authentication tool upon logging in. It is scheduled to expand the support scope for future updates.
+
+![Mobile app sc cl](/img/changelog/changelog-mobile-app.png)
+
+For better user experience and convenience, the service UIs have been improved. The **Service Notice** feature has been added to check for regular release news and emergency maintenances of WhaTap Monitoring Service, the product catalog screen has been reorganized, and product introduction information is provided in the sidebar menu. 
+
+Some menu screens such as <Cmdname sid="side_paymentInformation" className="uitext" /> and <Cmdname sid="side_agentSetting" className="uitext" /> have been also improved. For the <Cmdname sid="side_paymentInformation" className="uitext" /> menu, the currency selection feature is provided when entering the payment information. For the <Cmdname sid="side_agentSetting" className="uitext" /> menu, the list of options has been simplified to improve readability, and only the applied final options are displayed.
+
+A new <Cmdname sid="side_maintenancePlan" className="uitext" /> <code class="my">V2</code> that is a reorganized version of <Cmdname sid="side_maintenancePlan" className="uitext" />, is provided. The new <Cmdname sid="side_maintenancePlan" className="uitext" /> allows to add maintenance plans for each agent, and allows to use the repetition option for server projects. However, the previous maintenance plans and new ones are not compatible. 
+
+![Maintenance Plan sc cl](/img/changelog/changelog-maintenance-plan.png)
+
+The following overview guide helps you understand what's new and what's not in the Common section for the 4th quarter in 2023, along with the released versions.
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Common_23q4 from "../crw-data/crwld-service-23q4/_import-23q4-service-Common.mdx";
+
+<Common_23q4 />
+
+</details>
+
+:::note 
+
+- For more information about the mobile app, see [the following](../../mobile-app). Download the mobile app by selecting the link or scanning the QR code.
+
+  | [iOS](https://apps.apple.com/us/app/whatap-mobile/id6450067434) | [Android](https://play.google.com/store/apps/details?id=io.whatap.lion) |
+  | :-------------------------------------------------------------: | :---------------------------------------------------------------------: |
+  |              ![QR](/img/mobile/whatap-app-ios.png)              |                ![QR](/img/mobile/whatap-app-android.png)                |
+
+- For more information about the new <Cmdname sid="side_maintenancePlan" className="uitext" />, see [the following](https://docs.whatap.io/management/maintenance#maintenance-v2). 
+
+:::
+
+<br/>
+
+## `Applicatoin`
+
+WhaTap introduces notable new features and changes to the `Application` product suite in Q4 2023, including enhancements to <Cmdname sid="hitmap" className="uitext" /> and <Cmdname sid="side_dashboard" className="uitext" />. 
+
+As part of the <Cmdname sid="hitmap" className="uitext" /> enhancement, the <Cmdname sid="hitmap" className="uitext" /> window has been reorganized when <Cmdname sid="hitmap" className="uitext" /> is dragged. The project filtering feature has been added to the <Cmdname sid="multi_transaction" className="uitext" /> tab, and an appropriate guidance message appears when the log data is not retrieved in the ***Transaction Log*** tab. For example, you can check the cases where there is no log data, collection is not possible due to no agent configuration, and the log is disabled.
+
+<Cmdname sid="application_dashboard" className="uitext" /> has been reorganized. The time selector option has been added to view not only the real-time data but also **historical data**. And users can add and remove widgets in the dashboard, and even resize them. The **preset** feature has been added to save and load the position, size, and layout of the edited widget.
+
+|             Viewing the historical data            |
+| :------------------------------------------------: |
+|      ![](/img/release/none-realtime-mode.png)      |
+|                **Dashboard preset**                |
+| ![](/img/release/apm-dashboard-preset-feature.png) |
+
+Additionally, efforts have been made to unify and standardize some duplicate application metric names. For example, the metric names used as URLs, transactions, and transaction names have been unified as <Cmdname sid="side_tx" className="uitext" />. In addition, the metric names used as HTTPC, HTTP call, HTTPC count, and the like have been unified as <Cmdname sid="httpc_count" className="uitext" />. In addition, the overall terminology standardization has been made. 
+
+The following overview guide helps you understand new features and major changes in the `Application` product suite in Q4, 2023, along with release versions. 
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Applicatoin_23q4 from "../crw-data/crwld-service-23q4/_import-23q4-service-Application.mdx";
+
+<Applicatoin_23q4 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+### `Java`
+
+import Java_agent_23q4 from "../crw-data/crwld-agent-23/_import-agent-23q4-java.mdx";
+
+<Java_agent_23q4 />
+
+{/* ### `PHP`
+
+import PHP_agent_23q4 from "../crw-data/crwld-agent-23/_import-agent-23q4-php.mdx";
+
+<PHP_agent_23q4 />
+
+### `Python`
+
+import Python_agent_23q4 from "../crw-data/crwld-agent-23/_import-agent-23q4-python.mdx";
+
+<Python_agent_23q4 /> */}
+
+### `Node.js`
+
+import Node_agent_23q4 from "../crw-data/crwld-agent-23/_import-agent-23q4-nodejs.mdx";
+
+<Node_agent_23q4 />
+
+### `.NET`
+
+import DOTNET_agent_23q4 from "../crw-data/crwld-agent-23/_import-agent-23q4-dotnet.mdx";
+
+<DOTNET_agent_23q4 />
+
+{/* ### `Go`
+
+import Go_agent_23q4 from "../crw-data/crwld-agent-23/_import-agent-23q4-golang.mdx";
+
+<Go_agent_23q4 /> */}
+
+</details>
+
+<br/>
+
+## `Server`
+
+Notable new features and changes in the `Server` products in Q4 2023 include improvements to the <Cmdname sid="side_serverDetail" className="uitext" /> and <Cmdname sid="side_eventSetting" className="uitext" /> menus.
+
+In <Cmdname sid="side_serverDetail" className="uitext" />, the x-axis display unit in the chart has been changed to time to improve readability in the date-based view.
+
+In <Cmdname sid="side_eventSetting" className="uitext" />, the <Cmdname sid="event_tag" className="uitext" /> option has been added to set whether to receive notifications for server and process events for specific project members or teams. You can now edit the default notification name. In case of the default notification, a separate `default` tag is displayed separately.
+
+The following overview guide helps you understand new features and major changes in `Server` products in Q4 2023, along with release versions. 
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Server_23q4 from "../crw-data/crwld-service-23q4/_import-23q4-service-Server.mdx";
+
+<Server_23q4 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+import Server_agent_23q4 from "../crw-data/crwld-agent-23/_import-agent-23q4-server.mdx";
+
+<Server_agent_23q4 />
+
+</details>
+
+<br/>
+
+## `Kubernetes`
+
+Notable new features and changes in the `Kubernetes` products have been introduced in Q4 2023, including the improved and added sub menus under <Cmdname sid="side_containerMap" className="uitext" />. 
+
+{/* 와탭 쿠버네티스 모니터링 상품의 경우 통합 컨테이너 맵 개발 및 메뉴 간 동선 개편 */}
+
+<Cmdname sid="side_containerMap" className="uitext" /> of the WhaTap Kubernetes monitoring has been continuously improved. In this 4th quarter, the <Cmdname sid="TTL06891" className="uitext" /> tab has been newly added to the Display Detail window, which allows you to check the call flow and outbound call status of applications running on containers.
+
+<ImgLang img='k8s-container-map-call-info-app.png' desc='App call flow diagram branching example' />
+
+Additionally, both the container and Pod views now allow you to select a list of application-related fields (`app_counter`) for the block color display metric. And the feature to display the blocks of containers and Pods that have disappeared for 1 minute, has been added. 
+
+In addition, the list menu under <Cmdname sid="side_resource" className="uitext" /> has been reorganized and newly added. The <Cmdname sid="side_nodeList" className="uitext" /> menu has been updated with new node information metric and the filter search feature. Additionally, the time refresh interval has been changed from 1 minute to 10 seconds. The <Cmdname sid="side_clusterOverview" className="uitext" /> menu has been newly added, allowing you to check the version and various objects on the cluster at a glance. 
+
+The <Cmdname sid="pendingPod" className="uitext" /> menu has been newly added in <Cmdname sid="side_lab" className="uitext" /> of the namespace project. The <Cmdname sid="pendingPod" className="uitext" /> menu is an experimental feature to quickly identify Pods in the Pending status. 
+
+The following overview guide helps you understand new features and major changes in the `Kubernetes` products in Q4 2023, along with release versions. 
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Kubernetes_23q4 from "../crw-data/crwld-service-23q4/_import-23q4-service-Kubernetes.mdx";
+
+<Kubernetes_23q4 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+#### <code class='changelog-service'>Kubernetes Agent v1.3.8</code> <code class='changelog-date'>October 4, 2023</code>
+
+- <Status>Feature</Status> Additionally collects data for new development of Pod list (podIp, age, restartCount).
+
+#### <code class='changelog-service'>Kubernetes Agent v1.4.1</code> <code class='changelog-date'>November 8, 2023</code>
+
+- <Status>Feature</Status> Added cluster information of the Kubernetes.
+
+#### <code class='changelog-service'>Kubernetes Agent v1.4.2</code> <code class='changelog-date'>November 16, 2023</code>
+
+- <Status>Feature</Status> Added the data to be collected in the <code>kube_pod</code> category.
+
+  - <code>qosClass</code>: Quality of service for Pods
+  - <code>startTime</code>: Pod start time
+  - <code>podHash</code>: Hash value of the Pod name
+  - <code>con_cpu_limit_total</code>: Total CPU limit of containers inside the Pod
+  - <code>con_mem_alloc_fail_total_count</code>: Sum of memory allocation failures for containers inside the Pod
+
+</details>
+
+<br/>
+
+## `Database`
+
+Here are notable new features and changes to the `Database` product suite in Q4 2023. 
+
+In this fourth quarter, the <code class="my">V2</code> services were converted to official services for the **PostgreSQL** and **MySQL** products in the `Database` product suite. And the name of the **MS SQL Server** product has been changed to **SQL Server**.
+{/* 먼저 **PostgreSQL**에 뒤이어 이번 4분기에 `Database` 상품군 중 **MySQL** 상품 <code class="my">V2</code> 서비스가 정식 서비스로 전환되었습니다. And the name of the **MS SQL Server** product has been changed to **SQL Server**.  */}
+
+The UI of the <Cmdname sid="TTL06224" className="uitext" /> menu has been improved for better user convenience in the `Database` product suite. Placement of the query view and plan view areas can now be modified by the user, and parameter binding has been changed to be performed by default. You can also collapse the active session table in <Cmdname sid="side_dbMonitoring" className="uitext" /> and <Cmdname sid="side_multiInstance" className="uitext" /> for a wider graph chart.
+
+The following overview guide helps you understand new features and major changes in the `Database` product suite in Q4 2023, along with release versions. 
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Database_23q4 from "../crw-data/crwld-service-23q4/_import-23q4-service-Database.mdx";
+
+<Database_23q4 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+#### DBX
+
+import DBX_agent_23q4 from "../crw-data/crwld-agent-23/_import-agent-23q4-dbx.mdx";
+
+<DBX_agent_23q4 />
+
+#### XOS
+
+import XOS_agent_23q4 from "../crw-data/crwld-agent-23/_import-agent-23q4-xos.mdx";
+
+<XOS_agent_23q4 />
+
+</details>
+
+<br/>
+
+## `URL`
+
+For the `URL` product in Q4 2023, a new UI has been added to select the interval for collecting the monitoring data. 
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import URL_23q4 from "../crw-data/crwld-service-23q4/_import-23q4-service-URL.mdx";
+
+<URL_23q4 />
+
+</details>
+
+<br/>
+
+## `Browser`
+
+<Cmdname sid="side_ajaxAnalytics" className="uitext" /> has been introduced a notable new feature of the WhaTap `Browser` product in Q4 2023.
+
+The Asynchronous JavaScript and XML (**AJAX**) technology exchanges data and updates web pages in an asynchronous manner. AJAX that has advantages of improving user experience and reducing requests to the server, requires monitoring because it is implemented in JavaScript code. 
+
+You can check the response times of AJAX events over time in the hitmap chart through the <Cmdname sid="side_ajaxAnalytics" className="uitext" /> menu provided by the WhaTap `Browser` monitoring, and you can view detailed information such as detailed times for each event section, AJAX request URL and calling page information, error messages, and status codes. 
+
+![AJAX Hitamp sc cl](/img/changelog/changelog-browser-ajax.png)
+
+The following overview guide helps you understand new features and major changes in `Browser` products in Q4 2023, along with release versions. 
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Browser_23q4 from "../crw-data/crwld-service-23q4/_import-23q4-service-Browser.mdx";
+
+<Browser_23q4 />
+
+</details>
+
+<details className='changelog2'>
+<summary><b>Agent guide</b></summary>
+
+import Browser_agent_23q4 from "../crw-data/crwld-agent-23/_import-agent-23q4-browser.mdx";
+
+<Browser_agent_23q4 />
+
+</details>
+
+<br/>
+
+## `Cloud`
+
+For the `Cloud` product in Q4 2023, the <Cmdname sid="side_userBehavior" className="uitext" /> menu has been newly added to detect user interactions in the project and provide insights to user behaviors. 
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Cloud_23q4 from "../crw-data/crwld-service-23q4/_import-23q4-service-Cloud.mdx";
+
+<Cloud_23q4 />
+
+</details>
+
+<br/>
+
+## `Log`
+
+Here are notable new features and changes to the `Log` products in Q4 2023.
+
+The **Guide UI** has been added in the <Cmdname sid="side_logSearch" className="uitext" /> menu to guide to the log search filtering syntax. You can check the supported search grammar when entering search values ​​through the guide UI.
+
+<ImgLang img='log-filter-ui1.png' desc='Log filter cl branching example'/>
+
+In addition, the switching feature to full screen has been added to allow you to check only the timestamps and logs, and validation for reserved words has been added after entering the search value ​​for log detection conditions when adding a parser in the Log 1st Parser Settings tab. 
+
+The following overview guide helps you understand new features and major changes in `Log` products in Q4 2023, along with release versions. 
+
+<details className='changelog'>
+<summary><b>Guide to new features and major changes</b></summary>
+
+import Log_23q4 from "../crw-data/crwld-service-23q4/_import-23q4-service-Log.mdx";
+
+<Log_23q4 />
+
+</details>
+
+<br/>

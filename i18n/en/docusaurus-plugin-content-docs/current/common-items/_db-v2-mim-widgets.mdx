@@ -77,13 +77,15 @@ For information on how to configure the agent for inquiry of AWS CloudWatch metr
 
 </InDoc>
 
-<InDoc product="postgresql,mysql,oracle,oracle-pro,altibase,mongodb">
+<InDoc product="postgresql,mysql,oracle,oracle-pro,altibase,mongodb,mssql">
 
 ### Database widgets
 
+The provided widgets allow you to check the status of various system resources, such as CPU, memory, and disk I/O, as key metrics for database performance analysis.
+
 </InDoc>
 
-<InDoc product="postgresql,mysql,oracle,oracle-pro,altibase,cubrid">
+<InDoc product="postgresql,mysql,oracle,oracle-pro,altibase,cubrid,mssql">
 
 - ***Active Sessions***
 
@@ -136,6 +138,34 @@ For information on how to configure the agent for inquiry of AWS CloudWatch metr
 - ***Session Logical Reads***
 
   This widget monitors logical reads executed in the database session. It traces and provides real-time visibility to users on the number of logical read operations executed in the database session.
+
+</InDoc>
+
+<InDoc product="mssql">
+
+- ***Cache Hit Ratio*** (Buffer Manager.Buffer cache hit ratio)
+
+  It is the percentage of pages that SQL Server found in the memory buffer pool without reading data from disk. A higher value indicates better performance, while a lower value may indicate insufficient memory capacity or buffer pool management issues. Typically, it is recommended to maintain this value at 90% or more.
+
+- ***Page Life Expectancy*** (Buffer Manager.Page life expectancy)
+
+  It displays the average time in seconds that data pages remain in the buffer pool. The longer the data stays in the buffer pool, the more it is read from memory, reducing the disk I/O and improving the performance. If this value is lower, it indicates that the memory is insufficient or the workload is increased, and the recommended value is 300 seconds (5 minutes) or more. If it is consistently low, you have to consider adding memory.
+
+- ***Full Scans/sec***
+
+  It is the number of tables or index scans performed per second. A high value may indicate the need for query optimization or appropriate index designing, because full scan is less efficient than index scan that reads only the required data. Frequent full scans may cause increased CPU usage and decreased performance.
+
+- ***Page Lookups/sec*** (Buffer Manager.Page lookups/sec)
+
+  It is the number of requests to find pages in the buffer pool. A higher value indicates that more data is being processed, possibly indicating large query executions or table scans. If the value is unusually high, check for missing indexes and poor query design. It may be linked to increased CPU usage.
+
+- ***Page Reads/sec*** (Buffer Manager.Page reads/sec)
+
+  It is the number of pages per second physically read from disk across all databases. A high value may result in high disk I/O, which may cause performance degradation. Consider increasing the data cache size or reviewing query tuning and index optimization for improvement. Actual read operations on the disk can be costly, so caution is required.
+
+- ***Page Writes/sec*** (Buffer Manager.Page writes/sec)
+
+  It is the number of database pages physically written to disk per second. If write operations are frequent, it may be due to a high transaction load or bulk data input. If you have a lot of data write operations, you may experience I/O bottlenecks. Accordingly, consider splitting transactions, improving disk performance, and adjusting the log file size.
 
 </InDoc>
 
@@ -487,7 +517,7 @@ For information on how to configure the agent for inquiry of AWS CloudWatch metr
 
 - ***Resident Memory*** (`resident$mem`)
 
-  It is the memory size (MB) used by processes on the current system. You can see how much memory they use. Tracing memory usage optimizes the memory usage to increase the performance and becomes an important metric for efficient use of memory resources. It also helps you determine how much memory you need or whether or not to add more shards.
+  It is the memory size (MB) used by processes on the current system. You can see how much memory they use. Tracing memory usage optimizes the memory usage to increase the performance and becomes an important metric for efficient use of memory resources. It also helps you determine whether more memory is needed or shards need to be added.
 
 - ***Virtual Memory*** (`virtual$mem`)
 

@@ -1,3 +1,93 @@
-.yearGroupHeading {
-  margin: 1rem 0.75rem 0.5rem;
+/* 다국어 숨김 스타일 이게 연도 설정이 안되어서 index 수정함  */
+html[lang='en-US'] .iflang, 
+html[lang='ja-JP'] .iflang {
+  display: none !important;
 }
+
+html[lang='en-US'] .iflang > div > a,
+html[lang='ja-JP'] .iflang > div > a {
+  display: none !important;
+}
+
+/* 링크 클릭 방지도 안되고 있음 index 수정 중 */
+html[lang='en-US'] .iflink div > a,
+html[lang='ja-JP'] .iflink div > a {
+  pointer-events: none !important;
+}
+
+/* 인덱스에 추가할 링크 막기 */
+.disableLinks div > a {
+  pointer-events: none !important;
+}
+
+/* 메뉴 항목 스타일 */
+.menuCategory {
+  margin-bottom: 1rem;
+  /* font-weight: 500; */
+  div > a {
+    font-weight: var(--ifm-font-weight-bold);
+  }
+}
+
+.menuItem {
+  margin-left: 1rem;
+}
+
+.menu__list li::marker {
+  content: none !important;
+}
+
+.active {
+  color: var(--ifm-color-primary) !important;
+}
+
+
+/* 메뉴 링크 스타일 적용이 안됨 index 수정 중 */
+.menu__link {
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+  display: block;
+}
+
+.menu__link:hover {
+  text-decoration: none;
+  color: var(--ifm-color-primary); /* hover 시 색상 변경 */
+}
+
+.menu__link--active {
+  color: var(--ifm-color-primary) !important;
+  font-weight: bold; /* active 상태 강조 */
+}
+
+/* 메뉴 항목 hover 및 active 상태 */
+.menu__list-item:hover > .menu__link,
+.menu__list-item--active > .menu__link {
+  color: var(--ifm-color-primary); /* 링크 hover 시 강조 */
+}
+
+
+ul > li.news > a::after {
+  content: 'N';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: rgb(225, 229, 255);
+  color: rgb(82, 114, 255);
+  font-family: "Oleo Script";
+  font-size: 9.5px;
+  font-weight: 500;
+  border: none;
+  position: relative;
+  margin-left: 5px; 
+  transform: none;
+}
+
+/* @media (max-width: 768px) {
+  html[lang='en-US'] .iflink div > a,
+  html[lang='ja-JP'] .iflink div > a {
+    pointer-events: none !important;
+  }
+} */

@@ -1,4 +1,14 @@
+<Xclude product="cubrid,cubrid-v1">
+
 ## Installing the additional agent (XOS) and applying other options {#apply-xos-agent}
+
+</Xclude>
+
+<InDoc product="cubrid,cubrid-v1">
+
+## XOS agent installation (optional) {#apply-cubrid-xos-agent}
+
+</InDoc>
 
 To additionally monitor the resources of the database server, run a separate XOS agent process on the database server to collect data.
 
@@ -8,152 +18,93 @@ To additionally monitor the resources of the database server, run a separate XOS
 
 - The additional agent installation process is **optional**.
 
-<InDoc product="postgresql,mysql,oracle,oracle-v1,cubrid,redis,mongodb,altibase,mssql">
+<Xclude product="oracle-pro">
 
 - For more information about the XOS agent configuration options, see [the following](agent-xos-settings).
 
+</Xclude>
+
+<InDoc product="postgresql,mysql,oracle,mssql">
+
+- To additionally collect and monitor monitoring metrics provided by cloud services on the dashboard of the database project, see [the following](cloudsettings).
+
 </InDoc>
 
 :::
 
-<InDoc product="postgresql,mysql,oracle,oracle-v1,tibero,altibase,altibase-v1,mssql">
+<Xclude product="cubrid,cubrid-v1"><ImgLang img='xos-agent.png' desc='' /></Xclude>
 
-<Tabs groupId="dbXos">
-<TabItem value="xos" label="XOS">
+<InDoc product="cubrid,cubrid-v1"><ImgLang img='xos-agent-cubrid.png' desc='' /></InDoc>
 
-<ImgLang img='xos-agent.png' desc='' />
+### Configuring the whatap.conf file
 
-1. Set the following options in the _whatap.conf_ file in the path where the DBX agent has been installed.
-
-   ```ini title='whatap.conf'
-   xos=1
-   xos_port=3002
-   ```
-
-2. Move the _xos_ folder (`/unzip folder/xos/`) to the database server.
-
-3. Set the following options in the _xos.conf_ file in the _xos_ path moved to the database server.
-
-   ```ini title='xos.conf'
-   dbx_ip={DB_Agent_IP}
-   dbx_port=3002 # default 3002
-   cpu_limit=0
-   mem_limit=10240
-   ```
-
-   :::tip
-
-   In <Cmdname sid="side_agentInstall" className="uitext" />, when you enter the DB data to <UI>DB Agent IP</UI> and <UI>DB Agent Port</UI>, the agent options are automatically generated.
-
-   :::
-
-4. Grant the role to run the XOS agent.
-
-   ```bash
-   chmod +x ./whatap.agent.xos*
-   ```
-
-5. Run the XOS agent.
-
-   ```bash
-   ./start.sh
-   ```
-
-:::note
-
-- To transmit monitored data to the DBX agent, the port set to `dbx_port` (default 3002) must have been open. (**UDP Outbound**)
-
-- To run the XOS agent in the background, run the _./startd.sh_ file.
-
-:::
-
-</TabItem>
-<TabItem value="rds" label="RDS : AWS CloudWatch">
-
-Set the following options in the _whatap.conf_ file on the agent server. Due to the nature of CloudWatch, it is recommended to call every 60 seconds (`cloud_watch_interval`).
+Set the following options in the _whatap.conf_ file in the path where the DBX agent has been installed.
 
 ```ini title='whatap.conf'
-aws_region={AWS_RDS_Region_Name}
-aws_arn=arn:aws:iam::999999999999:role/UpdateApp
-cloud_watch=on
-cloud_watch_instance=RDS_DB_Instance_Name
-cloud_watch_interval=60
-cloud_watch_metrics=CPUUtilization,FreeableMemory,FreeStorageSpace,NetworkTransmitThroughput,NetworkReceiveThroughput
+xos=1
+xos_port=3002
 ```
 
-Execute the following command to view the AWS CloudWatch metrics. Change the `DB_Instance_Name` and then execute the following command.
+Move the _xos_ folder (`/unzip folder/xos/`) to the database server.
 
-```bash
-aws cloudwatch list-metrics --namespace AWS/RDS --dimensions Name=DBInstanceIdentifier,Value={DB_Instance_Name}
+### Configuring the xos.conf file
+
+Set the following options in the _xos.conf_ file in the _xos_ path moved to the database server.
+
+```ini title='xos.conf'
+dbx_ip={DB_Agent_IP}
+dbx_port=3002 # default 3002
+cpu_limit=0
+mem_limit=10240
 ```
 
-:::note
+:::tip
 
-- In <Cmdname sid="side_agentInstall" className="uitext" />, enter values for <UI>AWS RDS Region</UI>, <UI>RDS DB Instance Name</UI>, and <UI>DB Instance Name</UI>. Then the agent options and commands are automatically generated.
-
-<InDoc product="postgresql,oracle,mysql,redis,mongodb">
-
-- For more information about the `aws_arn` option for AWS authentication, see [the following](agent-dbx-settings#using-aws-rds).
-
-</InDoc>
-
-- For more information about the AWS CLI installation and update, see [the following link](https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/getting-started-install.html).
-
-- For more information about the AWS CLI configuration, see [the following link](https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-chap-configure.html).
+In <Cmdname sid="side_agentInstall" className="uitext" />, when you enter the DB data to <UI>DB Agent IP</UI> and <UI>DB Agent Port</UI>, the agent options are automatically generated.
 
 :::
+
+### Running the XOS agent
+
+import Xoslinux from "../common-items/_db-install-xos-agent-linux.mdx";
+import Xoswindows from "../common-items/_db-install-xos-agent-windows.mdx";
+
+<Xclude product="oracle,oracle-v1,mssql,mssql-v1,tibero,redis,mongodb">
+
+<Tabs groupId='os'>
+<TabItem value='linux' label='Linux' default>
+
+<Xoslinux/>
+
+</TabItem>
+<TabItem value='windows' label='Windows'>
+
+<Xoswindows/>
+
+</TabItem>
+</Tabs>
+
+</Xclude>
+
+<InDoc product="mssql,mssql-v1">
+
+<Tabs groupId='os'>
+<TabItem value='windows' label='Windows'>
+
+<Xoswindows/>
+
+</TabItem>
+<TabItem value='linux' label='Linux' default>
+
+<Xoslinux/>
 
 </TabItem>
 </Tabs>
 
 </InDoc>
 
-<InDoc product="redis,mongodb,cubrid">
+<InDoc product="oracle,oracle-v1,tibero,redis,mongodb">
 
-<ImgLang img='xos-agent.png' desc='' />
-
-1. Set the following options in the _whatap.conf_ file in the path where the DBX agent has been installed.
-
-   ```ini title='whatap.conf'
-   xos=1
-   xos_port=3002
-   ```
-
-2. Move the _xos_ folder (`/unzip folder/xos/`) to the database server.
-
-3. Set the following options in the _xos.conf_ file in the _xos_ path moved to the database server.
-
-   ```ini title='xos.conf'
-   dbx_ip={DB_Agent_IP}
-   dbx_port=3002 # default 3002
-   cpu_limit=0
-   mem_limit=10240
-   ```
-
-   :::tip
-
-   In <Cmdname sid="side_agentInstall" className="uitext" />, when you enter the DB data to <UI>DB Agent IP</UI> and <UI>DB Agent Port</UI>, the agent options are automatically generated.
-
-   :::
-
-4. Grant the role to run the XOS agent.
-
-   ```bash
-   chmod +x ./whatap.agent.xos*
-   ```
-
-5. Run the XOS agent.
-
-   ```bash
-   ./start.sh
-   ```
-
-:::note
-
-- To transmit monitored data to the DBX agent, the port set to `dbx_port` (default 3002) must have been open. (**UDP Outbound**)
-
-- To run the XOS agent in the background, run the _./startd.sh_ file.
-
-:::
+<Xoslinux/>
 
 </InDoc>

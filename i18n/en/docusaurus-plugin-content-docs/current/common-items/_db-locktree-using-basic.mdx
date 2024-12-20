@@ -1,8 +1,10 @@
 <Title hashid="basicusage" level={props.level}>Basic usage guide</Title>
 
-<ProdImg img='db-locktress-basic.png' desc='Lock tree' />
+<Xclude product="mssql"><ProdImg img='db-locktress-basic.png' desc='Lock tree' /></Xclude>
 
-<Xclude product='postgresql,mysql,altibase,mssql,cubrid'>
+<InDoc product="mssql"><ImgLang img="db-locktress-basic-mssql-v2.png" desc="Lock tree" /></InDoc>
+
+<Xclude product='postgresql,mysql,altibase,mssql,mssql-v1,cubrid'>
 
 Set the desired ![number1](/img/number-01.png) date and time, and then select an instance from the ![number2](/img/number-02.png) list. If a lock occurs at the set time, **_lock wait sessions_** and the retrieved data appear in the table at the bottom of the screen.
 
@@ -26,15 +28,15 @@ Select the desired date, time, and instance to view in ![number 1](/img/number-0
 
 </InDoc>
 
-<InDoc product="mssql,tibero">
+<InDoc product="mssql,mssql-v1,tibero">
 
-1. Select the date to view and set the time in <Cmdname sid="date" className="uitext" /> at the top of the screen.
+1. Select the date to view and set the time in <Cmdname sid="time" className="uitext" /> at the top of the screen.
 
 2. Select an instance to monitor. 
 
 You can check the lock that occurred during the set time on the selected instance.
 
-If a lock occurs during the set period, you can analyze whether lock occurrences are concentrated in a specific time period or whether a specific session continuously causes locks in the <UI>lock wait sessions</UI> graph and the table at the bottom.
+If any lock occurs during the set period, you can analyze whether locks are concentrated in a specific time period or whether a specific session continuously causes locks in the <UI>Lock Wait Sessions</UI> graph and the table at the bottom.
 
 :::note
 

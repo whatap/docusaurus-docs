@@ -5,7 +5,8 @@ function initAmplitude() {
     amplitude.init("02434e2a648821186600db8943872ab5", "", {
         autocapture: {
             attribution: true,
-            pageViews: true
+            pageViews: true,
+            formInteractions: true
         }
     });
 }

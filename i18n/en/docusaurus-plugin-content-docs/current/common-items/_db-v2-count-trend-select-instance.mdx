@@ -1,22 +1,14 @@
 ### Selecting a comparison target
 
-Select ![number 1](/img/number-01.png) <Cmdname sid="TTL06202" className="uitext" /> and <Cmdname sid="instance" className="uitext" />, and then select ![number 2](/img/number-02.png) <Cmdname sid="TTL06203" className="uitext" /> and <Cmdname sid="instance" className="uitext" />. If you hover your mouse over the chart, you can compare the data through the tooltip that appears.
+Select ![number 1](/img/number-01.png) <Cmdname sid="TTL06202" className="uitext" /> and <Cmdname sid="instance" className="uitext" />, and then select ![number 2](/img/number-02.png) <Cmdname sid="TTL06203" className="uitext" /> and <Cmdname sid="instance" className="uitext" />. You can check the data details at the time point through a tooltip that appears by hovering the mouse over the chart. The content of the tooltip is updated based on the position of the mouse.
 
-<InDoc product="postgresql,mysql,oracle-pro,oracle"><ImgLang img='db-compare-count-trend-tootip.png' dsec='Tooltip' /></InDoc>
+![Tooltip](/img/db-compare-count-trend-tootip.png)
 
-<InDoc product="redis"><ImgLang img='db-compare-count-trend-tootip-redis.png' dsec='Tooltip' /></InDoc>
+- Each series is given a unique color for easy visual distinction. The solid line represents the data in <Cmdname sid="TTL06202" className="uitext" />, and the dotted line represents the data in <Cmdname sid="TTL06203" className="uitext" />.
 
-<InDoc product="altibase,cubrid"><ImgLang img='db-compare-count-trend-tootip-altibase.png' dsec='Tooltip' multi="true" /></InDoc>
+- **_Compare Time_** displays the time value of the data where the mouse pointer is located.
 
-<InDoc product="mongodb">
-
-![Tooltip](/img/db-compare-count-trend-tootip-mongodb.png)
-
-</InDoc>
-
-- The solid line in the graph chart displays the data for the <Cmdname sid="TTL06202" className="uitext" />, and the dotted line displays the data for the <Cmdname sid="TTL06203" className="uitext" />.
-
-- The items marked with <UI>(Comparison)</UI> in the tooltip are the data for the <Cmdname sid="TTL06203" className="uitext" />.
+- It displays the metric value at the time point of the selected data, and provides the data by series. Each series includes the metric name, date, and value of the data point.
 
 :::note
 

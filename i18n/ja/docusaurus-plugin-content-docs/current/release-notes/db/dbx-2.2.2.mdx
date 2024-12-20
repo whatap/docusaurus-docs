@@ -1,0 +1,26 @@
+---
+id: dbx-2_2_2
+title: DBX v2.2.2
+pagination_next: release-notes/db/dbx-2_2_1
+displayed_sidebar: releaseSidebar
+---
+
+2024年11月21日
+
+## ### SQL Server
+
+- <Status priority='1'>Feature</Status>デッドロック検出のためのエージェントオプションを追加
+
+  - **mslog** <span class='type'>Boolean</span>
+
+    既定値 `true`
+
+    `xp_ReadErrorLog`コマンドを実行して、エラーログを照会します。
+
+  - **mslog_interval** <span class='type'>Int</span>
+
+    既定値`1` (単位：分、min)
+
+    以前のサイクルから現在のサイクルまでのログを照会します。
+
+- <Status priority='1'>Feature</Status> `Uptime`メトリクスの追加

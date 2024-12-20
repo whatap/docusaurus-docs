@@ -1,6 +1,6 @@
 ## ログの確認
 
-<Xclude product="mssql">
+<Xclude product="mssql,oracle-pro,mssql-v1">
 
 - *dbx.log*
 
@@ -12,7 +12,19 @@
 
 </Xclude>
 
-<InDoc product="mssql">
+<InDoc product="oracle-pro">
+
+- *whatap.log*
+
+  エージェントの起動および収集に関するログはすべて、_`$WHATAP_HOME`/logs/whatap.log_パスで確認できます。*whatap.log*ファイルのサイズが25MBを超える場合は、_whatap.log.[n]_ファイル名でバックアップします。ファイルをクリーンアップする必要がある場合は、サイズの大きい(古い) ファイルから削除してください。
+
+- _prx.log_
+
+  DMA(Direct Memory Access)基盤となるデータ収集で発生する主要なアクティビティとイベントを記録するログファイルです。DMXエージェントを再起動すると、ログを記録します。エージェントのインストールパスで`start.sh`または`startd.sh`(デーモン実行)ファイルを実行します。
+
+</InDoc>
+
+<InDoc product="mssql,mssql-v1">
 
 エージェントの起動および収集に関するログはすべて、*`$WHATAP_HOME`/logs/dbx.log*パスで確認できます。*dbx.log*ファイルのサイズが25MBを超える場合は、*dbx.log.[n]*ファイル名でバックアップします。ファイルをクリーンアップする必要がある場合は、サイズの大きい(古い) ファイルから削除してください。
 

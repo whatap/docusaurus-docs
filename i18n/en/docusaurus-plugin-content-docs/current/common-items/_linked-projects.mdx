@@ -1,32 +1,4 @@
-Home &gt; Select Project &gt; <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_correlatedProjectManagement" className="uitext" />
-
-If you have created a database monitoring (DPM) project and an application monitoring (APM) project, you can relate the two projects for monitoring the data collected from DPM in the APM project.
-
-<ImgLang img="linked-project-management.png" desc="Correlated Project Management" />
-
-The <Cmdname sid="side_correlatedProjectManagement" className="uitext" /> feature allows you to go beyond product-/equipment-centric monitoring and view monitoring data across multiple projects. This is useful for analyzing how different system components such as applications and databases, interact together. In particular, when performance degradation occurs, you can quickly determine whether it is a hardware problem or an individual application problem, which can significantly reduce the troubleshooting time. Through <Cmdname sid="side_correlatedProjectManagement" className="uitext" />, you can comprehensively analyze performance data at the user system level and obtain more visible insights.
-
-:::note
-
-**Notes before you begin**
-
-Supportable databases: PostgreSQL, Oracle, MySQL, SQL Server, CUBRID, Altibase, Redis, MongoDB
-
-:::
-
-## Adding any linked project {#addlinkproject}
-
-1. Go to <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_correlatedProjectManagement" className="uitext" />.
-
-2. In the <Cmdname sid="TTL07015" className="uitext" /> section, select the <Cmdname sid="project_selection" className="uitext" /> input field.
-
-   <ImgLang img="linked-project-management-add-project.png" desc="Correlated Project Management" />
-
-3. If you see a list of projects, select a project to link to. You can also enter a string to search for matching projects.
-
-4. Select one or more projects and then select <Cmdname sid="add" className="uitext" /> that is active.
-
-The selected project is added in <Cmdname sid="TTL07016" className="uitext" />.
+<InDoc product="java,php,python,nodejs,dotnet,golang">
 
 ## Checking the metrics of the linked project {#checklinkedproject}
 
@@ -44,7 +16,7 @@ This feature is useful when analyzing transactions in the APM project. When you 
 
    <ImgLang img="linked-project-db-instance-dahboard.png" desc="Correlated Project" />
 
-Select the correlated project from the left list and then check the metrics in the <Cmdname sid="TTL08442" className="uitext" /> section. 
+Select the correlated project from the left list and then check the metrics in the <Cmdname sid="TTL08442" className="uitext" /> section. <Cmdname sid="TTL08442" className="uitext" /> allows you to view key performance metrics of the database associated with the transactions executed in the application.
 
 <ImgLang img="linked-project-db-instance-dahboard-select-instance.png" desc="Correlated Project" />
 
@@ -64,12 +36,87 @@ To navigate to the dashboard menu for a selected project, select an instance and
 
 :::
 
-## Removing any linked project {#removelinkedproject}
+</InDoc>
 
-1. Go to <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_correlatedProjectManagement" className="uitext" />.
+<InDoc product="postgresql,oracle,oracle-pro,mysql">
 
-2. To delete a project to unlink from the <Cmdname sid="TTL07016" className="uitext" /> section, select ![Delete icon](/img/ico-trash.svg) on the utmost right of the list.
+## Checking any linked project {#checklinkedproject}
 
-3. When the confirmation message appears, select <Cmdname sid="delete" className="uitext" />.
+It provides real-time details about active transactions in applications associated to active sessions in the database. Users can check specific metrics such as transaction ID, thread ID, client IP, and CPU usage time, along with basic information such as transaction URL and database connection information, DB type, HTTP method, and execution time. Additionally, you can monitor the SQL query execution time, number of SQL calls, DB connection time, and such, which allows you to comprehensively analyze the system performance.
 
-The deleted project is excluded from the <Cmdname sid="TTL07016" className="uitext" /> section.
+In particular, it provides the call stack information and SQL queries through stack traces, helping you trace and resolve detailed causes when problems occur. This allows you to perform in-depth analysis of interactions between applications and databases, and to quickly diagnose performance bottlenecks.
+
+### Tracing active transactions {#tracingtx}
+
+Go to <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />. The link analysis feature can be checked only in real-time query status.
+
+<ProdImg img="db-linked-project-instance-monitoring.png" desc="Correlation analysis" />
+
+1. Select an instance (agent) for query in the <Cmdname sid="instance" className="uitext" /> 
+   option.
+
+2. In the <Cmdname sid="active_sessions" className="uitext" /> table list, select ![Linked icon](/img/ic-correlations.svg) for the active session to correlate.
+
+3. The <Cmdname sid="TTL07046" className="uitext" /> window appears, which provides transaction information associated with the selected active session.
+
+Select the desired project from the <Cmdname sid="TTL07151" className="uitext" /> list to check the linked analysis information.
+
+:::note
+
+- You can go to the <Cmdname sid="side_appDashboard" className="uitext" /> menu for that project by selecting <Cmdname sid="BTN08404" className="uitext" /> on the upper right of the screen.
+
+- If there is no transaction associated with the selected active session, the screen displays <Cmdname sid="no_data" className="uitext" />.
+
+:::
+
+### <Cmdname sid="TTL07046" /> Screen guidance {#TTL07046}
+
+The <Cmdname sid="TTL07046" className="uitext" /> window displays information details for active transactions, as well as the call stack and SQL statements.
+
+#### ***Active Transaction***
+
+You can check information details of the linked active transactions.
+
+<ImgLang img="db-linked-project-detail-active-tx.png" desc="Active Transaction" />
+
+- ***DB Connection***: Database connection URL.
+
+- ***Thread ID***: Unique identifier of the thread used to process the transaction.
+
+- ***Sid***: ID of the selected active session.
+
+  <InDoc product="postgresql">
+
+  :::note
+
+  ***Sid*** is the same value as the <UI>PID</UI> entry in the <Cmdname sid="active_sessions" className="uitext" /> table. It is also equivalent to the <UI>SID</UI> entry in the SQL information of the APM project.
+
+  <ImgLang img="db-linked-projects-postgresql-pid-sid.png" desc="SID" />
+
+  :::
+
+  </InDoc>
+
+- ***Thread Stat***: Current status of the thread.
+
+- **DB Type\***: Type of the linked database platform.
+
+:::note
+
+For more information about others, see [the following](java/dashboard-hitmap-trace#anlaysis-trace-record-summary).
+
+:::
+
+#### ***Call Stack***
+
+It provides information to trace the order of methods or function calls.
+
+<ImgLang img="db-linked-project-detail-call-stack.png" desc="Call Stack" />
+
+#### ***SQL***
+
+SQL query executed via the linked active transactions.
+
+<ImgLang img="db-linked-project-detail-sql.png" desc="SQL" />
+
+</InDoc>

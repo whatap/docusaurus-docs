@@ -1,0 +1,426 @@
+ホーム画面 &gt; プロジェクト選択 &gt; ![アイコン](/img/ic-sitemap.svg) <Cmdname sid="sitemap" className="uitext" /> &gt; <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" /> <code class="newfunc">New</code>
+
+メトリクスに基づくイベント通知を生成および管理する方法を案内します。 メトリクスイベントは、[基本テンプレート](warning-notice-v2)より具体的で複雑なイベントを設定する時に使用します。 モニタリング対象で発生する様々なイベントを条件によって定義し、これによって効率的に通知を受けられるように設定できる機能を提供します。
+
+<Xclude product='npm'>
+
+:::note
+
+- メトリクスの詳細については、[次の文書](metrics-intro)を参照してください。
+
+- <Cmdname sid="sms_alert_settings" className="b500" />権限のあるメンバーのみが利用できます。 メンバー権限の詳細については、[次の文書](../project/project-structure#project-auth)を参照してください
+
+:::
+
+</Xclude>
+
+<InDoc product='npm'>
+
+:::note
+
+- メトリクスの詳細については、[次の文書](../metrics/common-metrics-intro)を参照にしてください。
+
+- <Cmdname sid="sms_alert_settings" className="b500" />権限のあるメンバーのみが利用できます。 メンバー権限の詳細については、[次の文書](../project/project-structure#project-auth)を参照してください
+
+:::
+
+</InDoc>
+
+## 基本画面ガイド
+
+<Cmdname sid="side_eventSetting" className="uitext" /> <code class="newfunc">New</code>メニューで<Cmdname sid="metrics" className="uitext" />タブを選択します。 ユーザーが追加したメトリクスイベントの一覧を確認し、メトリクスイベントを追加または修正、削除できます。
+
+<Xclude product="server,postgresql,oracle,oracle-pro,mysql,mssql,mssql-v1,tibero,cubrid,altibase,redis,mongodb,browser"><ImgLang img="metric-warning-notice-new-basic-screen.png" desc="Event configuration" /></Xclude>
+
+<InDoc product="server"><ImgLang img="metric-warning-notice-new-basic-screen-server.png" desc="Event configuration" /></InDoc>
+
+<InDoc product="browser"><ImgLang img="metric-warning-notice-new-basic-screen-browser.png" desc="Event configuration" /></InDoc>
+
+<InDoc product="postgresql,oracle,oracle-pro,mysql,mssql,mssql-v1,tibero,cubrid,altibase,redis,mongodb"><ImgLang img="metric-warning-notice-new-basic-screen-db.png" desc="Event configuration" /></InDoc>
+
+メトリクスイベント一覧の主な要素は次の通りです。
+
+- <Cmdname sid="TTL06099" className="uitext" />: 各イベントの有効可否を制御するトグルボタンです。 希望するイベントの通知をオンまたはオフできます。
+
+- <Cmdname sid="bsm_button_edit" className="uitext" />: イベントルールを修正できます。 ルールを更新して、より正確な通知を設定できます。
+
+- <Cmdname sid="event_title" className="uitext" />: イベント名です。 イベント名により、どのようなイベントが発生したかを簡単に区別できます。 イベントが発生して通知を受信すると、そのメッセージのタイトルで表示されます。
+
+- <Cmdname sid="rule" className="uitext" />: 通知を発生させるためのイベント条件です。 各色は<span className="vslow">Critical</span>と<span className="slow">Warning</span>レベルを意味します。
+
+- <Cmdname sid="ITM07579" className="uitext" />: 全体または特定のモニタリング対象で発生するイベントに基づいて通知を受信できます。
+
+- <Cmdname sid="number_of_event" className="uitext" />: 設定した時間の間、設定回数だけイベントが発生した場合は、通知を受信します。
+
+- <Cmdname sid="CNT08326" className="uitext" />: <span className="vslow">Critical</span>と<span className="slow">Warning</span>レベルのイベントが正常状態(**RECOVERED**)に戻る時、通知の受信可否を示します。
+
+- <Cmdname sid="TTL07415" className="uitext" />: 通知を受信するチームまたはユーザーグループを示します。
+
+:::note
+
+- <Cmdname sid="goto_alertTemplate" className="uitext" />機能についての詳細は、[次の文書](set-notification-message)を参照してください。
+
+- メトリクスイベントをJSONファイルで修正または共有できます。 詳細については、次の文書を参照してください。
+
+- JSONファイルで全体イベント設定を共有できる<Cmdname sid="BTN07761" className="uitext" />と<Cmdname sid="BTN07762" className="uitext" />機能についての詳細は、[次の文書](warning-notice-v2#share-event-setting)を参照してください。
+
+:::
+
+## イベントの追加
+
+メトリクスイベントを追加するには、画面右上に<Cmdname sid="add_notification" className="uitext" />ボタンを選択します。 イベントの追加画面が表示されたら、ユーザーは次のステップに従って設定を進行できます。
+
+1. <Cmdname sid="TTL07362" className="uitext" />: 通知を受け取るためのイベント条件を設定します。
+
+2. <Cmdname sid="TTL07363" className="uitext" />: イベントが発生するモニタリング対象を選択します。
+
+3. <Cmdname sid="TTL07364" className="uitext" />: イベント名とメッセージ、受信対象を設定します。
+
+### <Cmdname sid="TTL07362" /> {#TTL07362}
+
+通知を受信するためのイベント条件を設定できます。
+
+{/* <ImgLang img="metric-warning-notice-new-event-condition.png" desc="이벤트 조건 정의" /> */}
+
+<Xclude product="server">
+
+#### <Cmdname sid="template" className="uitext" /> {#select_template}
+
+簡単で迅速なイベント設定のために、モニタリングプラットフォームに合わせたイベントテンプレートを提供します。 希望するテンプレートを選択すると、事前定義されたイベント条件を残りの項目に自動入力します。 テンプレートを使用しない場合は<Cmdname sid="metrics_option_disabled" className="uitext" />を選択します。
+
+:::note
+
+- テンプレートを選択した後、事前定義されたイベント条件はユーザーが直接修正できます。
+
+- モニタリングプラットフォームによって提供されるテンプレートは異なる場合があります。 提供するテンプレート一覧の詳細については、[次の文書](#template)を参照してください。
+
+:::
+
+</Xclude>
+
+#### <Cmdname sid="select_category" className="uitext" /> {#select_category}
+
+メトリクスデータを区切る単位です。 イベント条件を定義するための必須項目です。
+
+<ImgLang img="metric-warning-notice-new-event-condition-category.png" desc="Select Category" />
+
+<Cmdname sid="select_category" className="uitext" />一覧には<Cmdname sid="name" className="uitext" />とデータ収集間隔(<Cmdname sid="h1" />、<Cmdname sid="m5" />など)、<Cmdname sid="key" className="uitext" />情報を表示します。 最近3時間の範囲内のプロジェクトで収集中のメトリクスデータを照会し、一覧に表示します。 <Cmdname sid="category" className="uitext" />選択一覧にカテゴリ名が表示されない場合は、<Cmdname sid="enter_category_self" className="uitext" />オプションを選択してカテゴリキーを入力できます。
+
+:::note
+
+- <Cmdname sid="category" className="uitext" />項目を選択しなければ<Cmdname sid="TTL07365" className="uitext" />を進行できません。
+
+- カテゴリ情報は<Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_metricsSearch" className="uitext" />メニューで確認できます。 
+
+:::
+
+#### <Cmdname sid="TTL07365" className="uitext" /> {#TTL07365}
+
+通知レベルを選択し、通知を発生させるイベントのしきい値を設定できます。
+
+<ImgLang img="metric-warning-notice-new-set-metrics.png" desc="Indicator settings" />
+
+- 通知レベルは危険(<span className="vslow">Critical</span>)と警告(<span className="slow">Warning</span>)、正常(<span className="info">Info</span>)レベルで区分します。
+
+- <Cmdname sid="metrics_rule_select" className="uitext" />: フィールド名と演算子を選択し、値を入力してしきい値を設定します。 フィールド項目をクリックすると、メトリクスカテゴリに含まれるフィールドの一覧を確認できます。
+
+  <Cmdname sid="add" className="uitext" />: メトリクス設定を追加できます。 `&&`(and) または`||`(or) 条件を選択できます。
+
+- <Cmdname sid="metrics_rule_direct" className="uitext" />: フィールド名と演算子、値を直接入力して、イベント発生条件を設定します。 このオプションを選択すると、入力欄の下に入力できるフィールド情報(<Cmdname sid="metrics_event_field_button" className="uitext" />)を提供します。
+
+:::tip
+
+次の例は、`write_time`が3000ミリ秒を超えたり`read_time`この3000ミリ秒未満でありながら、`io_time`が10000ミリ秒未満の時に通知が発生するイベント条件です。
+
+```text title="example"
+(write_time > 3000 || read_time > 3000) && io_time < 10000
+```
+
+:::
+
+:::note
+
+- <Cmdname sid="metrics_rule_select" className="uitext" />オプションを選択した場合、フィールド一覧は<Cmdname sid="select_category" className="uitext" />が設定されていないと表示されません。
+
+- <Cmdname sid="metrics_rule_select" className="uitext" />オプションで選択できる演算子の種類は[次の文書](#condition-guide)を参照してください。
+
+- 特殊文字(<code>\~!@#$%^&\*()\_+=-[]\`</code>)を含めるか、数字で始まるフィールド名を入力すると、エラーが発生する可能性があります。 この場合、<Cmdname sid="metrics_rule_direct" className="uitext" />オプションを選択した上で例のように中括弧(`${}\`)にまとめて入力します。
+
+  ```text
+  ${4xxErrorType} == '401'
+  ```
+
+- <Cmdname sid="metrics_rule_select" className="uitext" />と<Cmdname sid="metrics_rule_direct" className="uitext" />オプション間の入力方式を変更すると、作成した内容が消えます。
+
+:::
+
+#### <Cmdname sid="number_of_event" className="uitext" /> {#number_of_event}
+
+選択した時間の間に設定したイベントが入力回数だけ発生すると、通知を送信します。 
+
+<ImgLang img="metric-warning-notice-new-num-of-events.png" desc="Count of event" />
+
+- <Cmdname sid="TTL07366" className="uitext" />: 入力した回数だけイベントが連続して発生した時に通知を受信できます。
+
+- <Cmdname sid="metrics_number_of_event_last" className="uitext" />: 選択した時間の間に入力した回数だけイベントが連続して発生した時に通知を受信できます。
+
+:::note
+
+<UI>Interval</UI>値は、選択したカテゴリのデータ収集間隔を意味します。
+
+:::
+
+#### <Cmdname sid="TTL07367" className="uitext" /> {#TTL07367}
+
+過度のアラート通知の発生を防止できるオプションです。 最初の通知が発生した後、選択した時間の間にアラート通知を送信しません。
+
+<ImgLang img="metric-warning-notice-new-pause.png" desc="Pause alert" />
+
+:::note
+
+<Cmdname sid="CNT08326" className="uitext" />機能を有効にした場合は、正常(**RECOVERED**) ステータス通知を受信した後、選択した時間の間通知を送信しません。
+
+:::
+
+#### <Cmdname sid="CNT08326" className="uitext" /> {#CNT08326}
+
+<Cmdname sid="CNT08326" className="uitext" />オプションを有効にすると<Cmdname sid="side_eventHistory" className="uitext" />メニューで<Cmdname sid="in_progress" className="uitext" />のイベントで表示されます。 <span className="vslow">Critical</span>または<span className="slow">Warning</span>レベルのイベントが解消されると、正常(**RECOVERED**) ステータスの通知を受信します。 トグルボタンを選択し、機能をオンまたはオフできます。
+
+<ImgLang img="metric-warning-notice-new-recovered.png" desc="Resolved notification" />
+
+:::note
+
+- このオプションは、通知レベルを<span className="vslow">Critical</span>または<span className="slow">Warning</span>を選択した時に表示されます。
+
+- <Cmdname sid="side_eventHistory" className="uitext" />メニューの詳細は[次の文書](set-event-history)を参照してください。
+
+:::
+
+#### <Cmdname sid="simulation" className="uitext" /> {#simulation}
+
+<Cmdname sid="TTL07365" className="uitext" />で設定したイベント条件をテストできます。 <Cmdname sid="simulation" className="uitext" />ボタンを選択してください。
+
+<ImgLang img="metric-warning-notice-new-simulation.png" desc="Simulation" />
+
+- 照会した時間の間に何回の通知が発生したのか、右上に![数字1](/img/number-01.png)発生件数を表示します。
+
+- ![数字2](/img/number-02.png)赤い点線は<Cmdname sid="TTL07365" className="uitext" />で設定した結果です。
+
+:::note
+
+- <Cmdname sid="TTL07365" className="uitext" />についての詳細は、[次の文書](#TTL07365)を参照してください。
+
+- <Cmdname sid="simulation" className="uitext" />機能は、最大24時間のデータに基づいてテストできます。
+
+:::
+
+### <Cmdname sid="TTL07363" /> {#TTL07363}
+
+イベントが発生するモニタリング対象を選択します。 入力しない場合は、プロジェクトに含まれるすべてのイベントをモニタリングし、通知を送信します。 これにより、多くの通知が発生する可能性があります。 過度の通知が発生しないように特定の対象を設定します。
+
+<ImgLang img="metric-warning-notice-new-select-target.png" desc="Select target" />
+
+イベント対象は次のタグ(`Tag`)を基準に特定できます。 タグ(`Tag`)は、収集対象を区分できる固有の情報を含むデータです。 変更履歴の少ないIP、Oname、Host情報などの値を活用できます。
+
+- <Cmdname sid="metrics_rule_select" className="uitext" />: タグ名と演算子を選択し、値を入力してターゲットを特定できます。
+
+  <Cmdname sid="add" className="uitext" />: イベント対象を追加できます。 `&&`(and) または`||`(or) 条件を選択できます。
+
+- <Cmdname sid="metrics_rule_direct" className="uitext" />: タグ名と演算子、値を直接入力して対象を特定できます。 このオプションを選択すると、入力欄の下に入力できるタグ情報(<Cmdname sid="metrics_event_tag_button" className="uitext" />)を提供します。
+
+:::tip
+
+次の例を参照して、イベントの対象を設定します。
+
+```text
+ex. endsWith(okindName, 'example_name') && container == 'prod.billing'
+ex. ${4xxErrorType} == '401'
+```
+
+:::
+
+:::note
+
+- <Cmdname sid="TTL07362" className="uitext" />セクションの<Cmdname sid="select_category" className="uitext" />で選択した値によって選択できるタグは異なる場合があります。
+
+- イベント対象を変更した場合、通知の発生件数が異なる場合があります。 <Cmdname sid="simulation" className="uitext" />ボタンをもう一度実行して結果を確認します。
+
+- イベント対象の選択および演算子の使用についての詳細は、[次の文書](#condition-guide)を参照してください。
+
+:::
+
+### <Cmdname sid="TTL07364" className="uitext" /> {#TTL07364}
+
+イベント名とメッセージ、通知受信対象を設定します。
+
+<ImgLang img="metric-warning-notice-new-information.png" desc="Basic information" />
+
+- <Cmdname sid="enable_events" className="uitext" />：現在のイベントを活性化することができます。
+
+- <Cmdname sid="event_title" className="uitext" />: 通知メッセージのタイトルとして使用され、識別しやすい名前で入力します。
+
+- <Cmdname sid="message" className="uitext" />: ユーザーに配信する通知メッセージの内容を入力します。 変数を使用して動的データを包含できます。
+
+  <ImgLang img='event-config-message-example.png' desc='Message example' />
+
+  - `&#36;&#123;Tag&#125;`または`&#36;&#123;Field&#125;`を入力してメッセージに変数を適用できます。 変数は選択したメトリクスデータ<Cmdname sid="category" className="uitext" />に含まれる値である必要があります。 <Cmdname sid="tag_count" className="uitext" />メニューで入力できる`&#36;&#123;Tag&#125;`または`&#36;&#123;Field&#125;`変数を確認できます。
+
+  - ![時間アイコン](/img/ico-timing.svg)ボタンをクリックすると、以前に入力したメッセージの履歴を確認できます。
+
+  :::tip
+
+  メッセージ入力画面に`&#36;&#123;Tag&#125;`または`&#36;&#123;Field&#125;`変数を入力してメッセージを作成できます。
+
+  <Cmdname sid="analysis" className="uitext" /> &gt; <Cmdname sid="tag_count" className="uitext" />メニューで<Cmdname sid="category" className="uitext" />を選択した上で入力できる`&#36;&#123;Tag&#125;`または`&#36;&#123;Field&#125;`変数を確認します。 現在のイベントテンプレートの<Cmdname sid="category" className="uitext" />名前は、<Link to="#basic-template">次の文書</Link>の<b>カテゴリ</b>項目を参考にしてください。
+
+  :::
+
+  :::note
+
+  <InDoc product="java,php,python,nodejs,dotnet,golang">
+
+  メッセージで入力できる`&#36;&#123;Tag&#125;`または`&#36;&#123;Field&#125;`変数は[次の文書](metrics-app)を参照してください。
+
+  </InDoc>
+
+  <InDoc product="server">
+
+  メッセージで入力できる`&#36;&#123;Tag&#125;`または`&#36;&#123;Field&#125;`変数は、[次の文書](metrics-server)を参照してください。
+
+  </InDoc>
+
+  <InDoc product="kubernetes">
+
+  メッセージで入力できる`&#36;&#123;Tag&#125;`または`&#36;&#123;Field&#125;`変数は、[次の文書](metrics-kubernetes)を参照してください。
+
+  </InDoc>
+
+  <InDoc product="postgresql,mysql,oracle,oracle-v1,mssql,mssql-v1,tibero,cubrid,cubrid-v1,altibase,altibase-v1,redis,mongodb">
+
+  メッセージで入力できる`&#36;&#123;Tag&#125;`または`&#36;&#123;Field&#125;`変数は[次の文書](metrics-data-list)を参照してください。
+
+  </InDoc>
+
+  <InDoc product="browser">
+
+  メッセージで入力できる`&#36;&#123;Tag&#125;`または`&#36;&#123;Field&#125;`変数は[次の文書](metrics-browser)を参照してください。
+
+  </InDoc>
+
+  <InDoc product="npm">
+
+  メッセージで入力できる`&#36;&#123;Tag&#125;`または`&#36;&#123;Field&#125;`変数は、[次の文書](metrics-npm)を参照してください。
+
+  </InDoc>
+
+  <InDoc product="amazon-cloudwatch,azure,ncloud,oracle-cloud">
+
+  メッセージで入力できる`&#36;&#123;Tag&#125;`または`&#36;&#123;Field&#125;`変数は<Cmdname sid="side_metricsSearch" className="uitext" />メニューで確認できます。
+
+  </InDoc>
+
+  <InDoc product="amazon-ecs">
+
+  メッセージで入力できる`&#36;&#123;Tag&#125;`または`&#36;&#123;Field&#125;`変数は、[次の文書](metrics-ecs)を参照してください。
+
+  </InDoc>
+
+  :::
+
+- <Cmdname sid="alert_test" className="uitext" />：現在のイベントで発生する通知受信時に入力したイベント名とメッセージを事前にチェックすることができます。 必須項目(<Cmdname sid="TTL07365" className="uitext" replace="</br>" />、<Cmdname sid="event_title" className="uitext" />、<Cmdname sid="TTL06883" className="uitext" />)をすべて入力しないとテストできません。
+
+  :::note
+
+  - テスト中は、実際のメトリクス値や変数の置換機能が動作せず、受信者タグが設定されているユーザーにのみ通知を送信することはできません。
+
+  - この機能を利用するためには、必須項目(<span className="vslow">\*</span>)に値を入力するか、選択します。
+
+  :::
+
+- <Cmdname sid="TTL07415" className="uitext" />：現在イベントで発生している通知を受信するメンバーを選択できます。
+
+  - <Cmdname sid="ITM07419" className="uitext" />：プロジェクトに所属するメンバー全員に通知を送信します。
+
+  - <Cmdname sid="ITM07420" className="uitext" />：選択したタグを持つプロジェクトメンバーと3rd-partyプラグインに通知を送信します。 <Cmdname sid="TTL07416" className="uitext" />項目が表示されたら<Cmdname sid="add_tag" className="uitext" />または<LinkImage img="ico-add.svg" className="ico" />ボタンをクリックして、タグ一覧で希望するタグを選択します。
+
+  :::note
+
+  <Cmdname sid="event_statistic" className="uitext" /> &gt; <Cmdname sid="eventNoti" className="uitext" />メニューでプロジェクトメンバーと3rd-partyプラグインにタグを設定できます。 詳細については、<Link to="set-receive-event#set-notice-by-team-or-users">次の文書</Link>を参照してください。
+
+  :::
+
+## イベントを修正/削除する
+
+1. <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" />メニューから移動した後<Cmdname sid="metrics" className="uitext" />タブを選択してください。
+
+2. イベント一覧で修正または削除しようとする項目の一番左に![編集アイコン](/img/ico-edit.svg)ボタンを選択します。
+
+3. メトリクスのイベント設定画面が表示すると、各オプションを修正して、<Cmdname sid="save" className="uitext" />ボタンを選択します。
+
+   選択したイベントを削除するには、イベント設定画面の右上に<Cmdname sid="delete" className="uitext" />ボタンを選択します。
+
+## JSON形式に修正する{#json}
+
+メトリクスイベント設定をJSON形式に修正できます。
+
+1. 画面右上に<span class="uitext">JSON</span> <LinkImage img="ico-export.svg" className="ico" />ボタンを選択します。
+
+2. 編集ウィンドウが表示されたら、JSON形式に合わせて内容を修正します。
+
+3. 修正を完了すると、画面右上の<Cmdname sid="save" className="uitext" />ボタンを選択します。
+
+:::note
+
+修正した内容がJSON形式に合わない場合、画面下にエラーメッセージが表示され、保存できません。 表示されるエラー メッセージは、形式によって異なる場合があります。
+
+<ImgLang img='event-config-v2-json-error.png' desc='JSON error' />
+
+:::
+
+JSONデータの構造は次のとおりです。
+
+```json
+[
+  {
+    "eventMessage": "APDEX: ${apdex100} > 10 ",
+    "select": "",
+    "receiver": [],
+    "alertLabel": [
+      "project"
+    ],
+    "rule": "apdex100 > 10",
+    "silentSec": 0,
+    "alertKey": [
+      "project"
+    ],
+    "enabled": false,
+    "eventTitle": "APDEX",
+    "repeatDuration": 0,
+    "eventLevelText": "Critical",
+    "id": "z3f41ge464magg",
+    "category": "app_counter_project{m5}",
+    "repeatCount": 0,
+    "stateful": false
+  }
+]
+```
+
+JSONデータのフィールドは、イベント設定で次のオプション項目にリンクされます。
+
+| JSONフィールド        | オプション                                                                                                                | 分類                                                                |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `eventMessage`   | <Cmdname sid="message" className="uitext" />                                                                         | [<Cmdname sid="TTL07364" className="uitext" />](#TTL07364)        |
+| `select`         | <Cmdname sid="ITM07588" className="uitext" /> &gt; <Cmdname sid="metrics_rule_direct" className="uitext" />      | [<Cmdname sid="TTL07363" className="uitext" />](#TTL07363)        |
+| `receiver`       | <Cmdname sid="TTL07415" className="uitext" /> &gt; <Cmdname sid="TTL07416" className="uitext" />オプションの受信タグキー値の一覧 | [<Cmdname sid="TTL07364" className="uitext" />](#TTL07364)        |
+| `alertLabel`     | 通知動作時に内部的に使用するprimary key値                                                                                           | -                                                                 |
+| `rule`           | <Cmdname sid="TTL07365" className="uitext" />オプションのイベント条件                                                            | [<Cmdname sid="TTL07362" className="uitext" />](#TTL07365)        |
+| `silentSec`      | <Cmdname sid="TTL07367" className="uitext" />                                                                        | [<Cmdname sid="TTL07362" className="uitext" />](#TTL07367)        |
+| `alertKey`       | 通知動作時に内部的に使用するprimary key値                                                                                           | -                                                                 |
+| `enabled`        | <Cmdname sid="enable_events" className="uitext" />                                                                   | [<Cmdname sid="TTL07364" className="uitext" />](#TTL07364)        |
+| `eventTitle`     | <Cmdname sid="event_title" className="uitext" />                                                                     | [<Cmdname sid="TTL07364" className="uitext" />](#TTL07364)        |
+| `repeatDuration` | <Cmdname sid="number_of_event" className="uitext" />オプションで選択した時間                                                     | [<Cmdname sid="TTL07362" className="uitext" />](#number_of_event) |
+| `eventLevelText` | <Cmdname sid="TTL07365" className="uitext" />オプションのイベントレベル                                                           | [<Cmdname sid="TTL07362" className="uitext" />](#TTL07365)        |
+| `id`             | 当該イベントの固有識別子値                                                                                                        | -                                                                 |
+| `category`       | <Cmdname sid="select_category" className="uitext" />                                                                 | [<Cmdname sid="TTL07362" className="uitext" />](#select_category) |
+| `repeatCount`    | <Cmdname sid="number_of_event" className="uitext" />オプションで選択した回数                                                     | [<Cmdname sid="TTL07362" className="uitext" />](#number_of_event) |
+| `stateful`       | <Cmdname sid="CNT08326" className="uitext" />                                                                        | [<Cmdname sid="TTL07362" className="uitext" />](#CNT08326)        |

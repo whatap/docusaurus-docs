@@ -1,0 +1,426 @@
+name: Generate PDF EN
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Deployment?"
+        default: "WhaTap"
+
+permissions:
+  contents: write
+
+env:
+  PRINCE_VER: 15.3
+
+jobs:
+  build-n-deploy:
+    name: Generate PDF
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Install Prince
+      run: |
+        curl https://www.princexml.com/download/prince-${{ env.PRINCE_VER }}-macos.zip -O
+        tar zxf prince-${{ env.PRINCE_VER }}-macos.zip
+        cd prince-${{ env.PRINCE_VER }}-macos
+        yes "" | sudo ./install.sh
+
+    - name: Install pdfcpu
+      run: brew install pdfcpu
+
+    - name: Build PDF
+      run: |
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-java --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-apm-java-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-apm-java-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-php --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-apm-php-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-apm-php-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-nodejs --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-apm-nodejs-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-apm-nodejs-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-python --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-apm-python-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-apm-python-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-dotnet --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-apm-dotnet-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-apm-dotnet-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-go --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-apm-go-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-apm-go-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-server --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-server-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-server-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-k8s --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-kubernetes-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-kubernetes-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-postgresql --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-postgresql-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-db-postgresql-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-oracle --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-oracle-v2-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-db-oracle-v2-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-oracle-pro --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-oracle-pro-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-db-oracle-pro-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-mysql --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-mysql-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-db-mysql-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-mssql --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-mssql-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-db-mssql-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-tibero --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-tibero-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-db-tibero-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-cubrid --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-cubrid-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-db-cubrid-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-altibase --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-altibase-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-db-altibase-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-redis --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-redis-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-db-redis-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-mongodb --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-mongodb-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-db-mongodb-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-log --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-log-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-log-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-url --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-url-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-url-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-manage --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-manage-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-manage-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-reference --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-reference-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-reference-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-extensions --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-extensions-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-extensions-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-awscloudwatch --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-amazon-cloudwatch-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-amazon-cloudwatch-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-awsecs --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-amazon-ecs-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-amazon-ecs-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-azure --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-azure-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-azure-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-ncloud --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-ncloud-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-ncloud-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-oci --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-oracle-cloud-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-oracle-cloud-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-awslog --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-aws-log-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-aws-log-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-browser --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-browser-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-browser-monitoring-en.pdf
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/en/cover-npm --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-network-performance-monitoring-en.pdf --dest ./pdf --include-index
+        pdfcpu annot remove -pages 1 ./pdf/whatap-network-performance-monitoring-en.pdf
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        tag_name: v2.11.0@en # 생성할 Release의 태그 이름
+        release_name: "v2.11.0_EN"
+        body: "This is a PDF file created based on WhaTap Docs v2.11.0."
+        draft: false
+        prerelease: false
+    
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-apm-java-monitoring-en.pdf
+        asset_name: whatap-apm-java-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-apm-php-monitoring-en.pdf
+        asset_name: whatap-apm-php-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-apm-nodejs-monitoring-en.pdf
+        asset_name: whatap-apm-nodejs-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-apm-python-monitoring-en.pdf
+        asset_name: whatap-apm-python-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-apm-dotnet-monitoring-en.pdf
+        asset_name: whatap-apm-dotnet-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-apm-go-monitoring-en.pdf
+        asset_name: whatap-apm-go-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-server-monitoring-en.pdf
+        asset_name: whatap-server-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-kubernetes-monitoring-en.pdf
+        asset_name: whatap-kubernetes-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-db-postgresql-monitoring-en.pdf
+        asset_name: whatap-db-postgresql-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-db-oracle-v2-monitoring-en.pdf
+        asset_name: whatap-db-oracle-v2-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-db-oracle-pro-monitoring-en.pdf
+        asset_name: whatap-db-oracle-pro-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-db-mysql-monitoring-en.pdf
+        asset_name: whatap-db-mysql-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-db-mssql-monitoring-en.pdf
+        asset_name: whatap-db-mssql-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-db-tibero-monitoring-en.pdf
+        asset_name: whatap-db-tibero-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-db-cubrid-monitoring-en.pdf
+        asset_name: whatap-db-cubrid-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-db-altibase-monitoring-en.pdf
+        asset_name: whatap-db-altibase-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-db-redis-monitoring-en.pdf
+        asset_name: whatap-db-redis-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-db-mongodb-monitoring-en.pdf
+        asset_name: whatap-db-mongodb-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-log-monitoring-en.pdf
+        asset_name: whatap-log-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-url-monitoring-en.pdf
+        asset_name: whatap-url-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-manage-en.pdf
+        asset_name: whatap-manage-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-reference-en.pdf
+        asset_name: whatap-reference-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-extensions-en.pdf
+        asset_name: whatap-extensions-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-amazon-cloudwatch-en.pdf
+        asset_name: whatap-amazon-cloudwatch-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-amazon-ecs-en.pdf
+        asset_name: whatap-amazon-ecs-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-azure-en.pdf
+        asset_name: whatap-azure-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-ncloud-en.pdf
+        asset_name: whatap-ncloud-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-oracle-cloud-en.pdf
+        asset_name: whatap-oracle-cloud-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-aws-log-monitoring-en.pdf
+        asset_name: whatap-aws-log-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-browser-monitoring-en.pdf
+        asset_name: whatap-browser-monitoring-en.pdf
+        asset_content_type: application/pdf
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: pdf/whatap-network-performance-monitoring-en.pdf
+        asset_name: whatap-network-performance-monitoring-en.pdf
+        asset_content_type: application/pdf

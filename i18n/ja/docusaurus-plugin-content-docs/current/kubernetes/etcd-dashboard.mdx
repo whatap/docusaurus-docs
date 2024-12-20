@@ -1,0 +1,241 @@
+---
+id: etcd-dashboard
+title: etcd ダッシュボード
+description: etcdダッシュボードをご案内します。
+keywords:
+  - Kubernetes
+  - Kubernetesモニタリング
+  - etcd
+  - コントロールプレーン
+toc_max_heading_level: 3
+---
+
+{/* 프로젝트 데이터가 없음. 다국어 이미지는 나중에 */}
+
+ホーム画面&gt; クラスタープロジェクト選択(<code class='my'>CP</code>) &gt; <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_etcdDashboard" className="uitext" />
+
+:::note 
+
+**要求事項**
+
+- WhaTap Kubernetesエージェント1.7.16バージョン以降が必要です。 
+
+- Kubernetesクラスタープロジェクト(<code class='my'>CP</code>)の場合、該当メニューを照会できます。 
+
+:::
+
+**etcd**は、Kubernetes環境でクラスター状態に関連するデータを保存する重要なコンポーネントです。 WhaTapはetcdの性能と状態をモニタリングできる<Cmdname sid="side_etcdDashboard" className="uitext" />を提供します。 これにより、クラスターの安定性を高め、問題が発生した場合の迅速な対応が可能になります。
+
+## 基本画面ガイド
+
+<ImgLang img='k8s-etcd-dashboard.png' desc='etcd ダッシュボード' />
+
+<Cmdname sid="side_etcdDashboard" className="uitext" />は、1時間の間に収集された主要なetcdメトリクスを1分周期で提供します。 ダッシュボードで確認できる主メトリクスは次の通りです。 メトリクス詳細は、下段の[メトリクス案内](#etcd-metrics)を参照してください。
+
+- etcdが使用するリソース、Podの再起動数、詳細ログを提供します。 
+
+- etcd内部のcommit及びapply回数を提供します。 
+
+- etcdリーダーの存在有無及びリーダーの変更履歴を提供します。 
+
+## etcdモニタリング有効化
+
+WhaTap Kubernetesエージェントインストール時にダウンロードした*YAML*ファイルの修正とmTLS認証書を登録してエージェントを有効にします。
+
+### 認証書の確認とSecretを作成する
+
+#### etcd認証書の確認
+
+etcdのmTLS認証書が必要です。 etcd認証書は一般的にControl Planeノードの*/etc/kubernetes/pki/etcd*経路に保存されます。 ファイル所有者はrootアカウントであり、必要な証明書は以下の通りです。
+
+- *ca.crt*
+
+- *server.crt*
+
+- *server.key*
+
+`kubectl`コマンドを実行するマシンで、次のコマンドを使用して証明書が存在することを確認します。 
+
+{/* 경로에서 필요한 인증서 파일(*ca.crt*, *server.crt*, *server.key*)이 존재하는지 확인하려면 다음 명령어를 실행하세요. */}
+
+```bash
+sudo ls /etc/kubernetes/pki/etcd
+```
+
+#### Secret生成
+
+証明書が存在する場合、次のコマンドを使用してSecretを生成します。 
+
+```bash
+sudo kubectl create secret generic whatap-etcd-cert -n whatap-monitoring --from-file=ca.crt=/etc/kubernetes/pki/etcd/ca.crt --from-file=server.crt=/etc/kubernetes/pki/etcd/server.crt --from-file=server.key=/etc/kubernetes/pki/etcd/server.key
+```
+
+正常にSecret生成時、次のようなメッセージが出力されます。 
+
+```yaml
+secret/whatap-etcd-cert created
+```
+
+##### rootアカウントが使用できない場合
+
+{/* root 계정에서 `kubectl` 명령을 사용할 수 없는 경우 인증서 파일을 복제한 뒤 소유자를 변경하여 등록하세요.  */}
+
+rootアカウントで`kubectl`コマンドが使用できない場合は、次のガイドを参照してください。 
+
+1. 証明書の複製後、アクセス可能なパスに移動します。 
+
+2. 複製された証明書ファイルの所有者を、現在の所有者に変更します。 
+
+##### ネームスペースがない場合
+
+KubernetesエージェントYAMLの適用前にSecretを作る場合、`whatap-monitoring`ネームスペースが存在しないため、Secret作成に失敗する可能性があります。 次のコマンドを使用してネームスペースを作成し、再度Secretを生成します。
+
+```bash
+kubectl create namespace whatap-monitoring
+```
+
+### WhaTapのKubernetesエージェント*YAML*を修正
+
+WhaTapのKubernetesエージェント*YAML*ファイルを修正してコンテナ設定を追加し、Secretを接続します。
+
+#### コンテナ設定
+
+1. Deploymentの`whatap-control-plane-helper`コンテナ内のargsセクションにetcd関連設定を追加します。 
+
+   ```yaml
+   -collect_etcd_monitoring_enabled=true
+   -etcd_hosts=ユーザーの_etcd_ip、ユーザーの_etcd_ip
+   ```
+
+   次の例を参照にしてください。 
+
+   ```yaml title='Example'
+   -etcd_hosts=192.168.1.45,192.168.1.46,192.168.1.47
+   ```
+
+2. Deploymentの`whatap-master-agent`コンテナの環境変数(env)に次の内容を追加します。 
+
+   ```yaml
+   - name: "collect_etcd_monitoring_enabled"
+     value: "true"
+   ```
+
+#### Secret接続
+
+1. Deploymentの`whatap-master-agent`内のvolumesセクションにSecretを追加します。 
+
+   ```yaml
+   - name: "whatap-etcd-cert"
+     secret:
+       secretName: "whatap-etcd-cert"
+   ```
+
+2. `whatap-control-plane-helper`コンテナに当該Secretをマウントします。 
+
+   ```yaml
+   volumeMounts:
+     - name: "whatap-etcd-cert"
+       readOnly: true
+       mountPath: "/etc/kubernetes/pki/etcd"
+   ```
+
+#### 全体*YAML*の例
+
+以下は、すべての設定が適用された*YAML*ファイルの例です。 ハイライトされた部分を参照してください。 
+
+```yaml {31-32,55-56,64-67,76-78}
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "whatap-master-agent"
+  namespace: "whatap-monitoring"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: "whatap-master-agent"
+  template:
+    metadata:
+      labels:
+        name: "whatap-master-agent"
+    spec:
+      containers:
+      - command:
+        - "/bin/entrypoint.sh"
+        env:
+        - name: "WHATAP_LICENSE"
+          value: "x208gnc8i1kko-z2p19shk7npc4t-z788sgbj3n123a"
+        - name: "WHATAP_HOST"
+          value: "59.13.101.109"
+        - name: "WHATAP_PORT"
+          value: "61574"
+        - name: "WHATP_MEM_LIMIT"
+          valueFrom:
+            resourceFieldRef:
+              containerName: "whatap-master-agent"
+              resource: "limits.memory"
+        - name: "collect_control_plane_monitoring_enabled"
+          value: "true"
+        - name: "collect_etcd_monitoring_enabled"
+          value: "true"
+        image: "whatap/kube_mon"
+        name: "whatap-master-agent"
+        ports:
+        - containerPort: 6600
+        resources:
+          limits:
+            cpu: "200m"
+            memory: "350Mi"
+          requests:
+            cpu: "100m"
+            memory: "300Mi"
+        volumeMounts:
+        - mountPath: "/bin/entrypoint.sh"
+          name: "start-script-volume"
+          readOnly: true
+          subPath: "entrypoint.sh"
+        - mountPath: "/whatap_conf"
+          name: "whatap-config-volume"
+      - args:
+        - "-collect_control_plane_monitoring_enabled=true"
+        - "-collect_etcd_monitoring_enabled=true"
+        - "-etcd_hosts=192.168.1.45,192.168.1.46,192.168.1.47"
+        command:
+        - "/data/agent/master/whatap_control_plane_helper"
+        image: "whatap/kube_mon"
+        imagePullPolicy: "Always"
+        name: "whatap-control-plane-helper"
+        ports:
+        - containerPort: 9496
+        volumeMounts:
+          - name: "whatap-etcd-cert"
+            readOnly: true
+            mountPath: "/etc/kubernetes/pki/etcd"
+      serviceAccount: "whatap"
+      volumes:
+      - configMap:
+          defaultMode: 448
+          name: "master-start-script"
+        name: "start-script-volume"
+      - emptyDir: {}
+        name: "whatap-config-volume"
+      - name: "whatap-etcd-cert"
+        secret:
+          secretName: "whatap-etcd-cert" 
+```
+
+## etcdメトリクス{#etcd-metrics}
+
+| 区分                 | 説明                      |
+| ------------------ | ----------------------- |
+| ***Pod数***         | 現在存在するetcd Podの数        |
+| ***etcd再起動数の推移***  | etcd Podの再起動回数の合計推移     |
+| ***リーダー変更の推移***    | etcd Podリーダーの変更回数推移     |
+| ***リーダーの存在有無***    | リーダーの役割をするetcd Podの存在有無 |
+| ***CPUの合計使用量***    | etcd Podの合計CPU使用量       |
+| ***CPU使用量***       | etcd PodのCPU使用量の推移      |
+| ***Memoryの合計使用量*** | etcd Podの合計メモリ使用量       |
+| ***Memory使用量***    | etcd Podのメモリ使用量の推移      |
+| ***Commit推移***     | etcd変更事項commit回数        |
+| ***Apply推移***      | commit以後applyされた回数      |
+| ***etcdログ***       | etcd Podで発生したログ         |

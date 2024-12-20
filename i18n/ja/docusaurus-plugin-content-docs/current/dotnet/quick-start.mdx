@@ -47,11 +47,11 @@ WhaTap.NETエージェントは、Windowsサーバー2012以降および.NET Fra
 
 - そのサーバーのファイアウォール設定を確認します。 アウトバウンド**6600**ポートが開かれている必要があります。
 
-### ヒートマップデータが収集されない場合
+### ヒットマップデータが収集されない場合
 
 <ImgLang img='dotnet-trst02.png' desc='ヒットマップデータの未収集' />
 
-例のように、ヒートマップ情報が正常に収集されない場合、対象のアプリケーションが対応環境に該当することを確認します。 対応環境は、[次の文書](https://docs.whatap.io/dotnet/supported-spec)を参照してください。 
+例のように、ヒットマップ情報が正常に収集されない場合、対象のアプリケーションが対応環境に該当することを確認します。 対応環境は、[次の文書](https://docs.whatap.io/dotnet/supported-spec)を参照してください。 
 
 ### 対応環境の確認が困難だったり、対応対象である場合
 
@@ -62,6 +62,8 @@ WhaTap.NETエージェントは、Windowsサーバー2012以降および.NET Fra
 - 次のリンクから、.NETエージェントの対応環境に該当可否を、AIの活用により確認できます。
 
   - [.NETエージェント対応の環境分析](https://whatap-dotnet.s3.ap-northeast-2.amazonaws.com/analysis.html)
+
+{/* 
 
 ### その他
 
@@ -83,7 +85,9 @@ WhaTap.NETエージェントは、Windowsサーバー2012以降および.NET Fra
 
 6. *UdpMonitor.txt*ファイルを担当者に転送します。 
 
-7. デバッグ完了時、デバッグ用のエージェントを削除します。
+7. デバッグ完了時、デバッグ用のエージェントを削除します。 
+
+*/}
 
 ## WCFおよび公式未対応ライブラリのモニタリング
 
@@ -122,6 +126,12 @@ WCF(Windows Communication Foundation)のようにWhaTap.NETエージェントが
   そのオプションを変更した後は、IISを再起動しないと変更事項が適用されません。 
 
   :::
+
+- **webservice_method_prefix_realtime** <span class='type'>Boolean</span> [<code className="my">.NET Agent v2.3.6 or later</code>](../release-notes/dotnet/dotnet-2_3_6)
+
+  既定値`false`
+
+  値を`true`に設定すると、`webservice_method_prefix`ターゲットを以前と同じようにリアルタイムで処理します。
 
 - **webservice_method_timeout** <span class='type'>Milliseconds</span>
 
@@ -165,6 +175,8 @@ webservice_method_timeout=10000
 <ImgLang img='dotnet-trst03.png' desc='エージェント設定' />
 
 :::
+
+{/* 
 
 #### WCFソースコード
 
@@ -229,7 +241,11 @@ namespace Whatap.DotNet.Examples
 
 - `webservice_method_prefix`オプションに`Whatap.DotNet.Examples.Service3`を追加する場合、Publicメソッドである`IwantToSeeOnlyThis()`メソッドがモニタリングの対象になる場合があります。
 
-:::
+::: 
+
+*/}
+
+{/* 
 
 ### ネームスペースとクラス名を見つけるのが難しい場合
 
@@ -251,4 +267,43 @@ WCFサーバーのメソッドが定義されたネームスペースが見つ�
 
 結果の適用が難しい場合、*GetNamesapces.exe*実行後、同じフォルダに作成された*GetNamesapces.txt*ファイルを担当者に転送します。 
 
-:::
+::: 
+
+*/}
+
+## ネームスペースとクラス名を検索する
+
+### WCFの場合
+
+WCFの場合、配布フォルダで*\*.svc*ファイルを探します。 このファイルをメモ帳などのテキストエディタで開き、`Service`項目に明示された値を確認します。 該当する値が`webservice_method_prefix`に追加すべき情報です。
+
+<ImgLang img='dotnet-quick-pic-01.png' desc='WCF設定の例' />
+
+### Web Serviceの場合
+
+Web Serviceの場合、配布フォルダで*\*.asmx*ファイルを探します。 このファイルをメモ帳で開き`Class`項目に明示された値を確認します。 この値が`webservice_method_prefix`に追加すべき情報です。
+
+<ImgLang img='dotnet-quick-pic-02.png' desc='Web Service設定の例' />
+
+### 設定例
+
+次の設定例を参照してください。 
+
+```ini
+webservice_method_enabled=true
+webservice_method_prefix=wcfServer.Service1, WebServiceDemo.WebService
+```
+
+## トランザクションは確認されるが、ステップ情報が表示されないか、少なすぎる場合
+
+トランザクションは検知されるが、ステップ情報が表示されなかったり、不足している場合、`Method hook`を通じてモニタリング範囲を拡大できます。 次の設定例を参照してください。 例の設定により、デフォルトのライブラリでモニタリング範囲から除外されたアイテムをステップ情報として表示できます。
+
+```ini
+hook_methods_enabled=true
+hook_methods_prefix=System.Net.Http.HttpClient., System.Net.WebRequest., System.Data., System.Net.Http.,
+# hook_methods_ignores=get,set
+```
+
+- `hook_methods_prefix`：指定された値で始まるすべてのメソッドをステップに表示します。
+
+- `hook_methods_ignores`：指定された値で始まるすべてのメソッドを、モニタリングから除外します。

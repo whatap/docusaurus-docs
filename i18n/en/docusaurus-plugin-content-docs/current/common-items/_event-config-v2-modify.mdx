@@ -8,7 +8,7 @@ You can set the criteria for event occurrence conditions.
 
 <ImgLang img='event-config-v2-condition-common.png' desc='Define event condition' />
 
-- <Cmdname sid="run" className="uitext" />: After setting the event conditions, you can simulate the set event by selecting the button.
+- <Cmdname sid="simulation" className="uitext" />: If you set event conditions and then select the button, the result of the set event can be predicted.
 
   <ImgLang img='event-config-v2-simulation-common.png' desc='Event simulation' />
 
@@ -40,7 +40,15 @@ You can set the criteria for event occurrence conditions.
 
   :::
 
-- <Cmdname sid="CNT08326" className="uitext" />: When the event is resolved, notify the status of <b>RECOVERED</b>.
+- <Cmdname sid="CNT08326" className="uitext" />: When this option is enabled, the events appear as <Cmdname sid="in_progress" className="uitext" /> in the <Cmdname sid="side_eventHistory" className="uitext" /> menu. When an event of <span className="vslow">Critical</span> or <span className="slow">Warning</span> level is resolved, normal (**RECOVERED**) notifications are received. This function can be enabled or disabled by selecting the toggle button.
+
+  <ImgLang img="metric-warning-notice-new-recovered.png" desc="Resolved notification" />
+
+  :::note
+
+  For more information about <Cmdname sid="side_eventHistory" className="uitext" />, see [the following](set-event-history).
+
+  :::
 
 :::tip
 
@@ -65,7 +73,7 @@ You can set to send events that occur only on specific agents as notifications. 
 
 </InDoc>
 
-<InDoc product="mysql,postgresql,oracle,mssql,cubrid,tibero,altibase,redis,oracle-v1,oracle-pro">
+<InDoc product="mysql,postgresql,oracle,mssql,mssql-v1,cubrid,tibero,altibase,redis,oracle-v1,oracle-pro">
 
 You can set to send events that occur only on specific agents as notifications. Click the <Cmdname sid="TLT07556" className="uitext" /> item and then select a desired agent. After selecting the agent, you can additionally select the database name (**_DbName_**) of the connected DB server.
 

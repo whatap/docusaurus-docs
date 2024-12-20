@@ -1,0 +1,9 @@
+- Basic information: It provides the cluster version of the node, startup time, current status, whether it is schedulable, internal IP address, region, and zone.
+
+- Operating system and hardware information: It provides the operating system on which the node is running, OS image, CPU architecture, number of cores, and total memory size. You can check the allocatability and current usage of the memory and CPU of a node.
+
+- Resource usage status: It displays the remaining resources through the difference between requests and allocatable resources (CPU, memory) for all containers running on the node. It summarizes the resource usage status, including the actual CPU and memory utilization.
+
+- Disk usage status: It provides information about the disks attached to the node, file system types, device IDs, mount points, total and used capacity, and utilization.
+
+- Pod status and resource availability: By comparing the total number of allocatable Pods on the node to the number of running Pods, you can see how many additional Pods can be run. In addition, the stability of the node is checked through the status of MemoryPressure, DiskPressure, PidPressure, and such.

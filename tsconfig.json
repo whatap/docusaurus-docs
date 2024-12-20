@@ -1,6 +1,32 @@
 {
   "extends": "@docusaurus/tsconfig",
-     "compilerOptions": {
-       "baseUrl": "."
-     }
+  "compilerOptions": {
+    "lib": ["DOM", "ESNext"],
+    "baseUrl": ".",
+    "types": ["docusaurus-plugin-sass"],
+    "resolveJsonModule": true,
+    "allowArbitraryExtensions": true,
+    "allowUnreachableCode": false,
+    "exactOptionalPropertyTypes": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "noUncheckedIndexedAccess": true,
+    "strict": true,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "useUnknownInCatchVariables": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "importsNotUsedAsValues": "remove",
+    "skipLibCheck": false,
+    "types": ["jest"]
+  },
+  "exclude": ["build", ".docusaurus", "src/sw.js", "_dogfooding/_asset-tests"]
 }

@@ -1,0 +1,266 @@
+---
+id: vcenter-introduction
+title: vCenterモニタリング
+description: この文書は、vCenterモニタリング商品の紹介ページです。
+displayed_sidebar: featuremonitorSidebar
+toc_max_heading_level: 2
+keywords:
+  - vCenter
+  - Feature
+---
+
+import InstallFeature from '../common-items/_import_feature-install-agent.mdx';
+import TR from '@site/src/components/TR';
+
+:::note
+
+**Featureプロジェク**<ScrollToLink anchor='feature-project' />
+
+WhaTapは、ユーザーが希望するソフトウェアのモニタリング支援の有無を簡単に確認し、簡単にモニタリングを開始できるように、新しく**Featureプロジェク**(<code class='Features'>Features</code>)を導入しました。 Featureプロジェクは、既存のモニタリング製品を、ユーザーがモニタリングしようとするソフトウェアに合わせてリパッケージし、最適化されたモニタリングソリューションを提供します。 WhaTapのFeatureプロジェクを通じて、サービスの安定性と性能をより効果的に管理します。 
+
+:::
+
+***vCenter***仮想化環境でデータセンターのリソースを中央で管理してモニタリングするのに最適化されたVMwareの統合管理プラットフォームです。 単一インターフェイスで多数の仮想マシン(VM)、ホスト、ストレージ、ネットワークを効率的に管理することで、ITインフラの運用を簡素化し、管理の効率性を高めることができます。
+
+WhaTapは新しい**Featureプロジェクト**方式で***vCenter***モニタリングを提供します。 WhaTapを通じて、vCenterインフラのパフォーマンスと状態をリアルタイムで追跡し、問題を早期に検出して解決できます。
+
+- **指標モニタリング**：各仮想マシンとホストの CPU、メモリ、ストレージ使用量など、さまざまなシステム指標をリアルタイムでモニタリングします。
+
+- **カスタマイズされたダッシュボード**: カスタマイズされたダッシュボードにより、メトリクスを効率的に照会できます。
+
+- **通知設定**: 設定した条件を検知時、リアルタイムで通知を送信してユーザーが問題に迅速に対応できます。
+
+WhaTap***vCenter***モニタリングにより、複雑な仮想化環境を効果的に管理してみてください。
+
+{/* 여기부터 다시 하기 */}
+
+## インストール
+
+WhaTap***vCenter***モニタリングサービス利用のための基本インストール方法をご案内します。 
+
+WhaTapモニタリングサービスを使用するには、[会員登録](https://www.whatap.io/ja/signup/)後、プロジェクトを作成し、ターゲットサーバーにエージェントをインストールする必要があります。 会員登録に関する詳細は、[次の文書](../account/account-manage)を参照してください。 
+
+:::note 
+
+**サポート環境**<ScrollToLink anchor='vcenter-supported-env' />
+
+WhaTap***vCenter***モニタリングエージェントをインストールする前に、サポート環境を確認します。 
+
+- **vCenter**：vCenter 6.5あるいは同等のバージョン
+
+- **Ubuntu**: Ubuntu 12.04以降
+
+- **OS**: Red Hat 6 or equivalent(CentOS, Rocky Linux, Amazon Linux)
+
+- **OSアーキテクチャ**: Amd64/X86_64, Arm64/Aarch64
+
+:::
+
+### Featureプロジェクトを作成する
+
+import CreateFeature from "../common-items/_import_feature-project-create.mdx";
+
+<CreateFeature />
+
+### vCenterエージェントのインストール
+
+<InstallFeature name='vCenter エージェントインストール' />
+
+## メインメニュー
+
+### ダッシューボード
+
+ホーム画面>**Featureプロジェクト**(<code class='Features'>Features</code>) 選択>***vCenter***>***vCenterダッシュボード***
+
+WhaTap***vCenter***モニタリングは、vCenter環境の性能と状態をリアルタイムで把握し、全体的な運営状況を管理できるように様々な指標を提供します。 主要指標を定期的に確認し、インフラが安定的に運用され、最適なパフォーマンスを維持できるようにサポートします。
+
+WhaTapが提供する***vCenterダッシュボード***は、次の5つのプリセットで構成されています。
+
+- ***VMware Summary***
+
+  全体のvCenter環境に関する要約情報を提供します。 vCenterインフラの状態を全体的に確認できます。
+
+  <details>
+  <summary>ダッシュボードのメトリクス案内</summary>
+
+  #### ***Datacenter***
+
+  - ***vSphere Overview***：vCenter環境に関する重要な指標を要約して提供します。
+
+    - ***vCenter***：モニタリング中のvCenterインスタンスの数を示します。
+
+    - ***Cluster***：管理中のクラスターの合計を示します。
+
+    - ***ESXHost***：現在管理中のESXi ホストの数を表示します。
+
+    - ***VM***：モニタリング中の仮想マシン(Virtual Machines)の合計を示します。
+
+    - ***Datastore***：現在管理中のデータストアの数を表示します
+
+  #### ***Cluster***
+
+  - ***Uptime***：各vCenterのクラスター稼働時間を秒単位で示します。
+
+    - ***vCenter***：そのクラスターが管理されるvCenterのIP住所を表示します。
+
+    - ***clustername***：クラスター名を表示します。
+
+    - ***Uptime Seconds***：クラスターの稼働時間(秒)を示します。
+
+  - ***CPU Usage***：クラスターのCPU使用量をパーセントで示します。
+
+    - ***vCenter***：CPU使用量を管理中のvCenterサーバーのIP住所を示します。
+
+    - ***cluster***：クラスター名を示します。
+
+    - ***CPU Usage***：クラスター内のCPU使用量のパーセント(%)を表示します。
+
+  - ***Memory Usage***：クラスターのメモリ使用量をパーセントで表示します。
+
+    - ***vCenter***：管理中のvCenterサーバーのIP住所を示します。
+
+    - ***clustername***：クラスター名を表示します。
+
+    - ***Memory Usage***：クラスター内のメモリ使用量をパーセントで示します。
+
+  #### ***Over Provisioned***
+
+  - ***All Overprovisioned CPU***：CPUが割り当てられている状態を示します。
+
+    - ***Host***：CPUリソースが過割り当てされているホストの数を示します。
+
+    - ***VM***：CPUが過割り当てされている仮想マシンの数を示します。
+
+    - ***Over Ratio***：CPU過割り当ての比率を表示します。
+
+  - ***All Overprovisioned Memory***：メモリが過割り当てされている状態を示します。
+
+    - ***Host***：メモリリソースが過割り当てされているホストの数を示します。
+
+    - ***VM***：メモリが過割り当てされている仮想マシンの数を示します。
+
+    - ***Over Ratio***：メモリの過割り当ての比率を表示します。
+
+  #### ***Cluster Status***
+
+  - ***Cluster CPU Usage %***：クラスターのCPU使用率を時間の経過に伴うグラフで視覚化します。
+
+  - ***Cluster Memory Usage %***：クラスターのメモリ使用率をグラフで表示します。
+
+  - ***Cluster Network Usage***：クラスターのネットワーク使用量を時間の経過とともに視覚化したグラフです。
+
+  - ***Cluster Storage Adapter***：クラスターでのストレージアダプターの使用量を視覚的に示します。
+
+  - ***Datastore - Usage Capacity***：データストアの使用量と容量をグラフで表示します。
+
+  </details>
+
+- ***VMware Hosts***
+
+  vCenterに接続された各ホストの状態とパフォーマンス指標を詳細にモニタリングできるプリセットです。
+
+  <details>
+  <summary>ダッシュボード指標案内</summary>
+
+  #### ***Hosts***
+
+  - ***Uptime***：各ホストの稼働時間を確認できます。
+
+  - ***CPU Usage MHZ***：ホストのCPU使用量をMHz単位で表示します。
+
+  - ***Memory Usage***：ホストで使用中のメモリ容量をGB単位で示します。
+
+  - ***CPU Usage %***：各ホストのCPU使用率をパーセントで示します。
+
+  - ***Memory Usage %***：ホストのメモリ使用率をパーセントで表示します。
+
+  #### ***パフォーマンス指標グラフ***
+
+  - ***CPU Utilization Avg %***：各ホストのCPU平均使用率を時間の経過に応じたグラフで表示します。
+
+  - ***CPU Ready ms***：CPUが使用準備状態で待機した時間をms単位で示します。
+
+  - ***Disk IO***：ディスク入出力のジョブ数を時間の経過とともに視覚化します。
+
+  - ***Memory Utilization***：ホストのメモリ使用率を時間とともに表示します。
+
+  - ***Network Usage***：ネットワーク帯域幅の使用量を時間の経過とともにグラフで視覚化します。
+
+  - ***Storage Adapter IOPS***：ストレージアダプターの毎秒入出力作業数(IOPS)を視覚的に示します。
+
+  </details>
+
+- ***vHost Performance Overview***
+
+  ESXiホストの全体的なパフォーマンスをリアルタイムで確認できるプリセットです。
+
+  <details>
+  <summary>ダッシュボードのメトリクス案内</summary>
+
+  #### ***[vHost] CPU/MEM***
+
+  - ***CPU-TotalUsage(%)***：ホストのCPU総使用率をパーセントで表示します。
+
+  - ***CPU-TotalUsage(MHz)***：各時間帯別ホストのCPU使用量をMHz単位で表示します。
+
+  - ***CPU-Ready(%)***：ホストのCPU待機時間を秒単位で示します。
+
+  - ***MEM-Usage(%)***：ホストのメモリ使用率をパーセントで表示します。
+
+  - ***MEM-Granted(KB)***：ホストに割り当てられたメモリ量をKB単位で表示します。
+
+  - ***MEM-Active(KB)***：ホストで実際に使用しているメモリ量をKB単位で示します。
+
+  - ***MEM-Vmmented(KB)***：メモリの過割り当てによるオーバーヘッドメモリの量を表示します。
+
+  #### ***[vHost] NET Rx+Tx / Datastore R/W Total***
+
+  - ***NET-Total(Kbps): RX+TX***：ホストのネットワーク送受信データをKbps単位で視覚化して表示します。
+
+  - ***Datastore R/W Total(KBps)***：データストアの読み書き作業速度をKBps単位で表示します。
+
+  #### ***[vHost] Running VM(s)***
+
+  - ***Running VM(s)***：現在ホストで実行されている仮想マシンの数を示します。
+
+  </details>
+
+- ***VMGuest Performance Overview***
+
+  個別仮想マシン(VM)のパフォーマンスデータをリアルタイムで提供するプリセットです。
+
+  <details>
+  <summary>ダッシュボードのメトリクス案内</summary>
+
+  #### ***VMGuest(s) CPU / MEM Overview***
+
+  - ***VMGuest-CPU-Usage(MHz)***：各VMのCPU使用量をMHz単位で視覚化し、時間帯別 CPUリソースの使用状況を表示します。
+
+  - ***VMGuest-CPU-Ready(%)***：VMがCPUを使用する前に待機した時間を秒単位で表示します。
+
+  - ***VMGuest-MEM-Active(KB)***：各VMで活性化されたメモリ使用量をKB単位で表示します。
+
+  - ***VMGuest-MEM-Vmmentedctl(KB)***：メモリの過割り当てのステータスを意味します。 スワップファイルなどにより発生したオーバーヘッドメモリ量をKB単位で表示します。
+
+  #### ***VMGuest(s) NET / Datastore Overview***
+
+  - ***VMGuest-NET-Total(Kbps)***：VMのネットワークトラフィック(送信および受信)をKbps単位で表示します。
+
+  - ***VMGuest-Datastore-RWTotal(KBps)***：各VMがデータストアで処理する読み書き作業をKBps単位で表示して入出力(I/O) パフォーマンスを示します。
+
+  </details>
+
+- ***VMware Datastore***
+
+  データストアの容量とパフォーマンスをモニタリングできるプリセットです。
+
+  <details>
+  <summary>ダッシュボードのメトリクス案内</summary>
+
+  - ***Usage Capacity***(使用容量)：各データストアが現在使用している容量をパーセントで表示します。
+
+  - ***Total Capacity***(全容量)：データストアの総容量を表示します。 
+
+  - ***Free Capacity***(残りの容量)：データストアで残りの容量を表示します。 
+
+  </details>

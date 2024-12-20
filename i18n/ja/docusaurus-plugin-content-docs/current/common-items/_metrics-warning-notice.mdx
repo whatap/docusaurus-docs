@@ -19,21 +19,33 @@
 - メトリックスイベント
 - 複合メトリクスイベント
 
-:::note
-
-メトリクスの詳細については、[次の文書](metrics-intro)を参照してください。
-
-:::
-
 </Xclude>
 
 <InDoc product='npm'>
 
 メトリクスイベントは、基本イベント(アプリケーションイベント、サーバーイベントなど)より具体的で複雑なイベントを設定するために使用します。プロジェクトがリアルタイムで収集中のメトリクスデータに基づいてイベントを設定できます。
 
+</InDoc>
+
+<Xclude product="amazon-cloudwatch,amazon-ecs,azure,ncloud,oracle-cloud">
+
 :::note
 
-メトリクスの詳細については、[次の文書](../metrics/common-metrics-intro)を参照にしてください。
+- メトリクスの詳細については、[次の文書](metrics-intro)を参照してください。
+
+- 新しいUIを適用してユーザーの利便性が強化された<Cmdname sid="side_eventSetting" className="uitext" /> <code class="newfunc">New</code>メニューでメトリクスイベントを追加できます。詳しい内容は、[次の文書](metric-warning-notice-new)を参照してください。
+
+- <Cmdname sid="sms_alert_settings" className="b500" />権限のあるメンバーのみが利用できます。メンバー権限についての詳細は、[次の文書](../project/project-structure#project-auth)を参照してください。
+
+:::
+
+</Xclude>
+
+<InDoc product="amazon-cloudwatch,amazon-ecs,azure,ncloud,oracle-cloud">
+
+:::note
+
+メトリクスの詳細については、[次の文書](metrics-intro)を参照してください。
 
 :::
 
@@ -95,7 +107,7 @@
 
   - イベント発生時の警告レベルを示します。<span class='vslow'>Critical</span>、<span class='slow'>Warning</span>、<span style={{color:'#757575'}}>Info</span>レベルで分けます。<span class='vslow'>Critical</span>、<span class='slow'>Warning</span>レベル設定時<Cmdname sid="CNT08320" className="uitext" />選択オプションが有効になります。
 
-  - <Cmdname sid="CNT08320" className="uitext" /><ScrollToLink anchor='scrollTo-resolve-event' />: イベント項目中に発生した<Cmdname sid="CNT08320" className="uitext" />送信可否を選択できます。トグルボタンを選択して機能をオンまたはオフできます。
+  - <Cmdname sid="CNT08320" className="uitext" /><ScrollToLink anchor='scrollTo-resolve-event' />: イベントの項目から発生した<Cmdname sid="CNT08320" className="uitext" />の送信可否を選択できます。トグルボタンを選択して機能をオンまたはオフできます。
 
 - <Cmdname sid="message" className="uitext" />
 
@@ -115,7 +127,7 @@
 
   :::
 
-- <Cmdname sid="metrics_event_rules" className="uitext" />
+- <Cmdname sid="metrics_event_rules" className="uitext" /> <ScrollToLink anchor='eventcondition' />
 
   <ImgLang img='set-event-condition.png' desc='イベント発生条件' />
 
@@ -135,7 +147,7 @@
 
 - イベント設定内容が保存された後は、そのオプション値は<Cmdname sid="metrics_rule_direct" className="uitext" />オプションで管理します。以降<Cmdname sid="metrics_rule_select" className="uitext" />オプションに切り替えると、オプション値が初期化される可能性があります。
 
-- イベント発生条件と対象入力時の特殊文字(<code>~!@#$%^&*()_+=-[]`</code>)を含めるか、数字で始まるフィールド名を入力すると、エラーが発生する可能性があります。 こんな場合<Cmdname sid="metrics_rule_direct" className="uitext" />オプションを選択した上で例示のように中括弧(<code>${}</code>)にまとめて入力してください。
+- イベント発生条件と対象に、特殊文字(<code>~!@#$%^&\*()_+=-[]\`</code>)を入れるか、数字から始まるフィールド名を入力すると、エラーが発生する場合があります。その時は、<Cmdname sid="metrics_rule_direct" className="uitext" />オプションを選択し、次のように中括弧(<code>\$\{\}</code>)にくくって入力します。
 
   ```text
   ${4xxErrorType} == '401'
@@ -143,7 +155,7 @@
 
 :::
 
-### イベント受信設定 {#set-receive-event}
+### 通知設定 {#set-receive-event}
 
 <ImgLang img='set-event-receive.png' desc='イベント受信設定' />
 
@@ -173,4 +185,12 @@
 
 <ImgLang img='set-event-test.png' desc='アラート通知テスト' />
 
-選択した時間に設定したイベント条件を実行し、アラート通知の件数を確認できます。実行ボタンを選択すると、通知発生の件数情報が表示され、イベント発生条件で選択したフィールドとしきい値がチャートに表示します。
+選択した時間の間に設定したイベント条件を実行して、何回の警告通知が発生したかを確認できます。<Cmdname sid="run" className="uitext" />ボタンを選択すると、右上に通知発生件数情報が表示されます。<Cmdname sid="metrics_event_rules" className="uitext" />で選択したフィールドとしきい値をチャート上に表示します。
+
+:::note
+
+- <Cmdname sid="metrics_event_rules" className="uitext" />についての詳細は、[次の文書](#eventcondition)を参照してください。
+
+- <Cmdname sid="event_simulation_title" className="uitext" />機能は、最大24時間のデータに基づいてテストできます。
+
+:::

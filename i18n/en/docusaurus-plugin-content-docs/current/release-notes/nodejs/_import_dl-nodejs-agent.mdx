@@ -1,0 +1,54 @@
+:::info
+
+<p><b>NPM method</b> Package Info: <Link to={`https://www.npmjs.com/package/whatap`}>https://www.npmjs.com/package/whatap</Link></p>
+
+- Installation and application methods
+
+  ```bash
+  npm install whatap
+  ```
+
+:::
+
+:::info
+
+<p><b>Local installation method</b> Download Info: <Link to={`https://repo.whatap.io/nodejs/whatap.agent.nodejs.${props.ver}.zip`}>Node.js Agent v{props.ver}</Link></p>
+
+1. Unzipping the *zip* file
+
+   <pre
+     tabIndex="0"
+     className="prism-code language-bash codeBlock_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-Content-styles-module thin-scrollbar"
+     style={{ color: "rgb(191, 199, 213)", backgroundColor: "rgb(41, 45, 62)" }}
+   >
+     <code className="codeBlockLines_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-Content-styles-module">
+       <span className="token-line" style={{ color: "rgb(191, 199, 213)" }}>
+         <span className="token function" style={{ color: "rgb(130, 170, 255)" }}>unzip </span>
+         <span className="token plain">whatap.agent.nodejs.{props.ver}.zip -d /path/to/app_directory</span>
+       </span>
+     </code>
+   </pre>
+
+2. Installing WhaTap and its dependency package
+
+   <pre
+     tabIndex="0"
+     className="prism-code language-bash codeBlock_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-Content-styles-module thin-scrollbar"
+     style={{ color: "rgb(191, 199, 213)", backgroundColor: "rgb(41, 45, 62)" }}
+   >
+     <code className="codeBlockLines_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-Content-styles-module">
+       <span className="token-line" style={{ color: "rgb(191, 199, 213)" }}>
+         <span className="token builtin class-name" style={{ color: "rgb(255, 203, 107)" }}>cd</span>
+         <span className="token plain"> /path/to/app_directory </span>
+       </span>
+       <br />
+       <span className="token-line" style={{ color: "rgb(191, 199, 213)" }}>
+         <span className="token function" style={{ color: "rgb(130, 170, 255)" }}>npm </span>
+         <span className="token plain"> </span>
+         <span className="token function" style={{ color: "rgb(130, 170, 255)" }}>install</span>
+         <span className="token plain"> crypto-1.0.1.tgz df-1.1.1.tgz long-3.2.0.tgz pidusage-1.1.0.tgz whatap-{props.ver}.tgz</span>
+       </span>
+     </code>
+   </pre>
+
+:::

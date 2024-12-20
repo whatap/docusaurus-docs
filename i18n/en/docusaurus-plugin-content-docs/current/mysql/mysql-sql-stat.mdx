@@ -15,9 +15,23 @@ SQL statistical data (execution count, execution time, number of rows, etc.) pro
 
 :::note
 
+- Delta values are calculated and collected from `events_statements_summary_by_digest` at 1-hour intervals. Therefore, collection begins one hour after configuration.
+
+- When collecting data every 1 hour, up to 5,000 cases are collected based on the `sum_timer_wait`. 
+
 - This function is supported in DBX agent 1.6.10 or later.
 
 - For more information about the `events_statements_summary_by_digest` view, see [the following link](https://dev.mysql.com/doc/refman/8.0/en/performance-schema-statement-summary-tables.html).
+
+:::
+
+:::tip
+
+- The `events_statements_summary_by_digest` view is affected by the value (number of rows) of a database parameter called `performance_schema_digests_size`. If the parameter value is set to `-1`, auto sizing is made. 
+
+- Data is stored according to the set parameter values. When the set capacity is exceeded, new data is no longer collected. 
+
+- If you initialize the view with the `TRUNCATE` command, all collected data is deleted and new data is recorded.
 
 :::
 
@@ -45,7 +59,14 @@ To use <Cmdname sid="side_mysqlStat" className="uitext" />, the following settin
 
 :::note
 
-Delta values are calculated and collected from `events_statements_summary_by_digest` at 1-hour intervals. Therefore, collection begins one hour after configuration.
+See the following DBX agent options for the criteria on how to collect data. It views `performance_schema.events_statements_summary_by_digest` and performs collection if the sum is greater than `statements_min_row`.
+
+> `sum_rows_affected` + `sum_rows_sent` + `sum_rows_examined`
+
+```ini title="whatap.conf"
+# default 10000 row
+statements_min_row=10000
+```
 
 :::
 
@@ -101,7 +122,7 @@ import Dbproductsqlstatquerydetails from "../common-items/_db-product-sql-stat-q
 {/* 필터 조건추가하기*/}
 import Dbsqlfilter from "../common-items/_db-sql-filter.mdx";
 
-<Dbsqlfilter />
+<Dbsqlfilter level={2} />
 
 import Dbv2dataeditcolumn from "../common-items/_db-v2-data-edit-column.mdx";
 

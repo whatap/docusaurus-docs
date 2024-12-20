@@ -1,0 +1,266 @@
+---
+id: vcenter-introduction
+title: vCenter monitoring
+description: This document is an introduction page for the vCenter monitoring product.
+displayed_sidebar: featuremonitorSidebar
+toc_max_heading_level: 2
+keywords:
+  - vCenter
+  - Feature
+---
+
+import InstallFeature from '../common-items/_import_feature-install-agent.mdx';
+import TR from '@site/src/components/TR';
+
+:::note
+
+**Feature Project**<ScrollToLink anchor='feature-project' />
+
+WhaTap newly introduced **Feature Project** (<code class='Features'>Features</code>) so that users can easily check whether the desired software supports monitoring and easily start monitoring. The Feature Project provides an optimized monitoring solution by repackaging existing monitoring products to fit the software to monitor. Manage your services for stability and performance more effectively through the WhaTap's Feature Project. 
+
+:::
+
+***vCenter*** is VMware's unified management platform optimized for centrally managing and monitoring data center resources in the virtualized environment. Simplify IT infrastructure operations and increase management efficiency by efficiently managing multiple virtual machines (VMs), hosts, storage, and networks through a single interface.
+
+WhaTap provides the ***vCenter*** monitoring in a new **feature project** manner. WhaTap lets you trace the performance and status of the vCenter infrastructure in real time, to detect and resolve issues early as possible.
+
+- **Metrics Monitoring**: It monitors various system metrics in real time, such as CPU, memory, and storage usage of each virtual machine and the host.
+
+- **Custom Dashboard**: You can view the metrics efficiently through this dashboard.
+
+- **Alert Settings**: Alerts are sent in real time when the set conditions are detected, allowing users to quickly respond to the problems.
+
+Manage complex virtualization environments effectively with the WhaTap ***vCenter*** monitoring.
+
+{/* 여기부터 다시 하기 */}
+
+## Installation
+
+This guide provides the basic installation instructions for using the WhaTap vCenter monitoring service. 
+
+To use the WhaTap monitoring service, after [Sign up](https://www.whatap.io/en/signup/), create a project and then install the agent to the target server. For more information about membership registration, see [the following](../account/account-manage). 
+
+:::note 
+
+**Supported environment**<ScrollToLink anchor='vcenter-supported-env' />
+
+Before installing the WhaTap ***vCenter*** monitoring agent, check the support environment. 
+
+- **vCenter**: vCenter 6.5 or equivalent
+
+- **Ubuntu**: Ubuntu 12.04 or later
+
+- **OS**: Red Hat 6 or equivalent (CentOS, Rocky Linux, Amazon Linux)
+
+- **OS Architecture**: Amd64/X86_64, Arm64/Aarch64
+
+:::
+
+### Creating a Feature Project
+
+import CreateFeature from "../common-items/_import_feature-project-create.mdx";
+
+<CreateFeature />
+
+### vCenter agent installation
+
+<InstallFeature name='vCenter Agent Installation' />
+
+## Learn about the main features
+
+### Dashboard
+
+Home > Select **Feature Project**(<code class='Features'>Features</code>) > ***vCenter*** > ***vCenter Dashboard***
+
+The WhaTap ***vCenter*** monitoring provides various metrics to help you manage the overall operation status by monitoring the performance and status of the vCenter environment in real time. It regularly monitors key metrics to make sure the infrastructure operates securely and performs optimally.
+
+The **vCenter Dashboard** provided by WhaTap consists of the following five presets:
+
+- ***VMware Summary***
+
+  It provides a summary of the entire vCenter environment. You can comprehensively check the status of the vCenter infrastructure.
+
+  <details>
+  <summary>Guide to dashboard metrics</summary>
+
+  #### ***Datacenter***
+
+  - ***vSphere Overview***: It provides a summary of key metrics for the vCenter environment.
+
+    - ***vCenter***: It displays the number of vCenter instances being monitored.
+
+    - ***Cluster***: It displays the total number of clusters being managed.
+
+    - ***ESXHost***: It displays the number of ESXi hosts being managed.
+
+    - ***VM***: It displays the total number of virtual machines being monitored.
+
+    - ***Datastore***: It displays the number of datastores being managed.
+
+  #### ***Cluster***
+
+  - ***Uptime***: It displays the cluster's uptime in seconds for each vCenter.
+
+    - ***vCenter***: It displays the IP address of the vCenter where the cluster is managed.
+
+    - ***clustername***: It displays the name of the cluster.
+
+    - ***Uptime Seconds***: It displays the uptime (seconds) of the cluster.
+
+  - ***CPU Usage***: It displays the CPU usage of the cluster as a percentage.
+
+    - ***vCenter***: It displays the IP address of the vCenter server that is managing the CPU usage.
+
+    - ***cluster***: It displays the name of the cluster.
+
+    - ***CPU Usage***: It displays the CPU usage percentage (%) in the cluster.
+
+  - ***Memory Usage***: It displays the memory usage of the cluster as a percentage.
+
+    - ***vCenter***: It displays the IP address of the vCenter server being managed.
+
+    - ***clustername***: It displays the name of the cluster.
+
+    - ***Memory Usage***: It displays the memory usage of the cluster as a percentage.
+
+  #### ***Over Provisioned***
+
+  - ***All Overprovisioned CPU***: It indicates that the CPU is over-allocated.
+
+    - ***Host***: It indicates the number of hosts that are over-allocated with CPU resources.
+
+    - ***VM***: It displays the number of virtual machines with over-allocated CPUs.
+
+    - ***Over Ratio***: It displays the CPU's over-allocation percentage.
+
+  - ***All Overprovisioned Memory***: It indicates that the memory is over-allocated.
+
+    - ***Host***: It indicates the number of hosts that are over-allocated with memory resources.
+
+    - ***VM***: It displays the number of virtual machines with over-allocated memory.
+
+    - ***Over Ratio***: It displays the memory's over-allocation percentage.
+
+  #### ***Cluster Status***
+
+  - ***Cluster CPU Usage %***: It visualizes a graph of the cluster's CPU utilization over time.
+
+  - ***Cluster Memory Usage %***: It displays the cluster's memory utilization with a graph.
+
+  - ***Cluster Network Usage***: Graph that visualizes the network usage of the cluster over time.
+
+  - ***Cluster Storage Adapter***: It visually displays the storage adapter usage in the cluster.
+
+  - ***Datastore - Usage Capacity***: It graphically displays the datastore usage and capacity.
+
+  </details>
+
+- ***VMware Hosts***
+
+  This preset allows you to monitor the status and performance metrics of each host connected to vCenter in detail.
+
+  <details>
+  <summary>Guide to dashboard metrics</summary>
+
+  #### ***Hosts***
+
+  - ***Uptime***: You can check uptimes of each host.
+
+  - ***CPU Usage MHZ***: It displays the CPU usage of the host in MHz.
+
+  - ***Memory Usage***: It displays the amount of memory used by the host in GB.
+
+  - ***CPU Usage %***: It displays the CPU utilization of each host as a percentage.
+
+  - ***Memory Usage %***: It displays the memory utilization of the host as a percentage.
+
+  #### ***Performance metrics graph***
+
+  - ***CPU Utilization Avg %***: It displays a graph of the average CPU utilization for each host over time.
+
+  - ***CPU Ready ms***: It displays the time in milliseconds that the CPU waited in Ready state.
+
+  - ***Disk IO***: It visualizes the number of disk I/O operations over time.
+
+  - ***Memory Utilization***: It displays the memory usage of the host over time.
+
+  - ***Network Usage***: It visualizes the network bandwidth usage over time with a graph.
+
+  - ***Storage Adapter IOPS***: It visually displays the input/output operations per second (IOPS) of the storage adapter.
+
+  </details>
+
+- ***vHost Performance Overview***
+
+  This preset allows you to check the overall performance of the ESXi host in real time.
+
+  <details>
+  <summary>Guide to dashboard metrics</summary>
+
+  #### ***[vHost] CPU/MEM***
+
+  - ***CPU-TotalUsage(%)***: It displays the total CPU utilization of the host as a percentage.
+
+  - ***CPU-TotalUsage(MHz)***: It displays the CPU usage of the host in MHz for each time zone.
+
+  - ***CPU-Ready(%)***: It displays the host's CPU waiting time in seconds.
+
+  - ***MEM-Usage(%)***: It displays the memory utilization of the host as a percentage.
+
+  - ***MEM-Granted(KB)***: It displays the amount of memory allocated to the host in KB.
+
+  - ***MEM-Active(KB)***: It displays the amount of memory being used by the host in KB.
+
+  - ***MEM-Vmmented(KB)***: It displays the amount of overhead memory caused by memory overallocation.
+
+  #### ***[vHost] NET Rx+Tx / Datastore R/W Total***
+
+  - ***NET-Total(Kbps): RX+TX***: It visualizes the host's network transmission and reception data in Kbps.
+
+  - ***Datastore R/W Total(KBps)***: It displays the read and write operations speed of the datastore in KBps.
+
+  #### ***[vHost] Running VM(s)***
+
+  - ***Running VM(s)***: It displays the number of virtual machines running on the host.
+
+  </details>
+
+- ***VMGuest Performance Overview***
+
+  It is a preset that provides real-time performance data for individual virtual machines (VMs).
+
+  <details>
+  <summary>Guide to dashboard metrics</summary>
+
+  #### ***VMGuest(s) CPU / MEM Overview***
+
+  - ***VMGuest-CPU-Usage(MHz)***: It visualizes the CPU usage of each VM in MHz to display the CPU resource usage over time.
+
+  - ***VMGuest-CPU-Ready(%)***: It displays the time in seconds that the VM waited before using the CPU.
+
+  - ***VMGuest-MEM-Active(KB)***: It displays the active memory usage in KB for each VM.
+
+  - ***VMGuest-MEM-Vmmentedctl(KB)***: It indicates that memory is over-allocated. It displays the amount of overhead memory incurred through swap files or such in KB.
+
+  #### ***VMGuest(s) NET / Datastore Overview***
+
+  - ***VMGuest-NET-Total(Kbps)***: It displays the VM's network traffic (transmission and reception) in Kbps.
+
+  - ***VMGuest-Datastore-RWTotal(KBps)***: It displays the input/output (I/O) performance through the displayed read and write operations in KBps that each VM processes on the datastore.
+
+  </details>
+
+- ***VMware Datastore***
+
+  It is the preset that allows you to monitor the capacity and performance of the datastore.
+
+  <details>
+  <summary>Guide to dashboard metrics</summary>
+
+  - ***Usage Capacity***: It displays the capacity used by each datastore as a percentage.
+
+  - ***Total Capacity***: It displays the total capacity of the datastore. 
+
+  - ***Free Capacity***: It displays the remaining space of the datastore. 
+
+  </details>

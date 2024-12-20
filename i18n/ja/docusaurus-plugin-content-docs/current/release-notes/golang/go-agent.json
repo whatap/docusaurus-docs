@@ -1,5 +1,79 @@
 [
   {
+    "url": "https://docs.whatap.io/ja/release-notes/golang/golang-0_3_1",
+    "ver": "v0.3.1",
+    "date": "2024-01-24",
+    "Lists": [
+      {
+        "ver": "v0.3.1",
+        "hash": "v031",
+        "product": "Go Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> <code>whatap.onode</code>オプション設定後、名前ではなくハッシュ(数字)値のみ表記されるエラーを修正</p>"
+      },
+      {
+        "ver": "v0.3.1",
+        "hash": "v031",
+        "product": "Go Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Ubuntu 14バージョンでwhatap-agent.serviceファイルが認識されないエラーを修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/golang/golang-0_4_1",
+    "ver": "v0.4.1",
+    "date": "2024-08-28",
+    "Lists": [
+      {
+        "ver": "v0.4.1",
+        "hash": "v041",
+        "product": "Go Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Standard outputのログ収集機能を追加</p>"
+      },
+      {
+        "ver": "v0.4.1",
+        "hash": "v041",
+        "product": "Go Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code>エージェント設定ファイル(<em>whatap.conf</em>)より環境変数を優先処理するオプションを追加</p>",
+        "details": "<ul>\n<li>\n<p>既存のエージェント設定は<em>whatap.conf</em>、環境変数の順に適用します。</p>\n</li>\n<li>\n<p><code>use_env_first</code>(既定値<code>false</code>)オプションを設定すると<em>whatap.conf</em>ファイルの設定よりも環境変数を優先します。</p>\n<div class=\"language-ini codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockTitle_Ktv7\">whatap.conf</div><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-ini codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token key attr-name\" style=\"color:rgb(255, 203, 107)\">use_env_first</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">=</span><span class=\"token value attr-value\">true</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n<li>\n<p><code>WHATAP_USE_ENV_FIRST=true</code>形式で環境変数を利用して設定できます。</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v0.4.1",
+        "hash": "v041",
+        "product": "Go Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code>次のエージェントオプションの既定値を修正</p>",
+        "details": "<ul>\n<li>\n<p>TCP read timeoutの時間を30秒から120秒に変更します。</p>\n<div class=\"language-ini codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockTitle_Ktv7\">whatap.conf</div><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-ini codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token key attr-name\" style=\"color:rgb(255, 203, 107)\">net_so_time</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">=</span><span class=\"token value attr-value\">120000</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n<li>\n<p>TCP write bufferの値を8Mbから2Mbに変更します。</p>\n<div class=\"language-ini codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockTitle_Ktv7\">whatap.conf</div><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-ini codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token key attr-name\" style=\"color:rgb(255, 203, 107)\">net_write_buffer_size</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">=</span><span class=\"token value attr-value\">2*1024*1024</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v0.4.1",
+        "hash": "v041",
+        "product": "Go Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code><code>OKIND</code>環境変数の認識エラーを修正</p>",
+        "details": "<p><code>OKIND</code>または<code>WHATAP_OKIND</code>環境変数として<code>okind</code>を設定できます。</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/golang/golang-0_4_3",
+    "ver": "v0.4.3",
+    "date": "2024-10-16",
+    "Lists": [
+      {
+        "ver": "v0.4.3",
+        "hash": "v043",
+        "product": "Go Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"1\">Fixed</code><code>os.Stdout</code>、<code>os.Stderr</code>ログ収集エラーを修正</p>",
+        "details": "<ul>\n<li>\n<p><code>trace.Init</code>関数でログ収集機能を有効にするように修正します。 できるだけ他のログライブラリよりも先に実行できるように変更します。</p>\n</li>\n<li>\n<p><code>os.Stdout</code>、<code>os.Stderr</code>をラッピングした<strong>io.Writer</strong>が使用できる関数を追加しました。</p>\n</li>\n</ul>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/ja/release-notes/golang/golang-0_4_2",
     "ver": "v0.4.2",
     "date": "2024-09-06",
@@ -10,6 +84,27 @@
         "product": "Go Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>ライブラリーファイルが存在しないため発生するコンパイルエラーの修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/golang/golang-0_3_3",
+    "ver": "v0.3.3",
+    "date": "2024-03-14",
+    "Lists": [
+      {
+        "ver": "v0.3.3",
+        "hash": "v033",
+        "product": "Go Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> <code>go.mod</code>のreplace構文を削除(github.com/whatap/golibモジュールのreplace構文を削除)</p>"
+      },
+      {
+        "ver": "v0.3.3",
+        "hash": "v033",
+        "product": "Go Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code>サンプルソースのビルドエラーを修正(github.com/whatap/go-api-example)</p>"
       }
     ]
   },
@@ -32,27 +127,6 @@
         "product": "Go Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\">Fixed</code> gRPCヘッダー収集エラーを修正</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/golang/golang-0_3_1",
-    "ver": "v0.3.1",
-    "date": "2024-01-24",
-    "Lists": [
-      {
-        "ver": "v0.3.1",
-        "hash": "v031",
-        "product": "Go Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> <code>whatap.onode</code>オプション設定後、名前ではなくハッシュ(数字)値のみ表記されるエラーを修正</p>"
-      },
-      {
-        "ver": "v0.3.1",
-        "hash": "v031",
-        "product": "Go Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Ubuntu 14バージョンでwhatap-agent.serviceファイルが認識されないエラーを修正</p>"
       }
     ]
   },
@@ -142,65 +216,6 @@
         "product": "Go Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\">Fixed</code>Linux環境でwhatap-agentサービス(<code>whatap-agent.service</code>)実行エラーを修正</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/golang/golang-0_3_3",
-    "ver": "v0.3.3",
-    "date": "2024-03-14",
-    "Lists": [
-      {
-        "ver": "v0.3.3",
-        "hash": "v033",
-        "product": "Go Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> <code>go.mod</code>のreplace構文を削除(github.com/whatap/golibモジュールのreplace構文を削除)</p>"
-      },
-      {
-        "ver": "v0.3.3",
-        "hash": "v033",
-        "product": "Go Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code>サンプルソースのビルドエラーを修正(github.com/whatap/go-api-example)</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/golang/golang-0_4_1",
-    "ver": "v0.4.1",
-    "date": "2024-08-28",
-    "Lists": [
-      {
-        "ver": "v0.4.1",
-        "hash": "v041",
-        "product": "Go Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> Standard outputのログ収集機能を追加</p>"
-      },
-      {
-        "ver": "v0.4.1",
-        "hash": "v041",
-        "product": "Go Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code>エージェント設定ファイル(<em>whatap.conf</em>)より環境変数を優先処理するオプションを追加</p>",
-        "details": "<ul>\n<li>\n<p>既存のエージェント設定は<em>whatap.conf</em>、環境変数の順に適用します。</p>\n</li>\n<li>\n<p><code>use_env_first</code>(既定値<code>false</code>)オプションを設定すると<em>whatap.conf</em>ファイルの設定よりも環境変数を優先します。</p>\n<div class=\"language-ini codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockTitle_Ktv7\">whatap.conf</div><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-ini codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token key attr-name\" style=\"color:rgb(255, 203, 107)\">use_env_first</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">=</span><span class=\"token value attr-value\">true</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n<li>\n<p><code>WHATAP_USE_ENV_FIRST=true</code>形式で環境変数を利用して設定できます。</p>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v0.4.1",
-        "hash": "v041",
-        "product": "Go Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code>次のエージェントオプションの既定値を修正</p>",
-        "details": "<ul>\n<li>\n<p>TCP read timeoutの時間を30秒から120秒に変更します。</p>\n<div class=\"language-ini codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockTitle_Ktv7\">whatap.conf</div><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-ini codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token key attr-name\" style=\"color:rgb(255, 203, 107)\">net_so_time</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">=</span><span class=\"token value attr-value\">120000</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n<li>\n<p>TCP write bufferの値を8Mbから2Mbに変更します。</p>\n<div class=\"language-ini codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockTitle_Ktv7\">whatap.conf</div><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-ini codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token key attr-name\" style=\"color:rgb(255, 203, 107)\">net_write_buffer_size</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">=</span><span class=\"token value attr-value\">2*1024*1024</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v0.4.1",
-        "hash": "v041",
-        "product": "Go Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code><code>OKIND</code>環境変数の認識エラーを修正</p>",
-        "details": "<p><code>OKIND</code>または<code>WHATAP_OKIND</code>環境変数として<code>okind</code>を設定できます。</p>"
       }
     ]
   }

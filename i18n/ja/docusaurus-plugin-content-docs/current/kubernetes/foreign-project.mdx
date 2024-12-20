@@ -1,0 +1,295 @@
+---
+id: foreign-project
+title: 外部プロジェクトの連携と設定
+description: 外部プロジェクトの連携についてご案内します。
+keywords:
+  - Kubernetes
+  - Kubernetesモニタリング
+  - ダッシューボード
+  - 外部プロジェクト
+toc_max_heading_level: 2
+---
+
+ホーム画面 &gt; プロジェクト選択 &gt; <Cmdname sid="dashboard" className="uitext" /> &gt; <Cmdname sid="side_containerMap" className="uitext" />
+
+:::note 
+
+WhaTap Kubernetesエージェント1.7.16バージョン以降が必要です。 
+
+:::
+
+{/* 쿠버네티스 환경에서의 애플리케이션과 데이터베이스를 프로젝트 단위로 모니터링할 수 있는 기능을 제공합니다.  */}
+
+{/* 와탭은 다양한 모니터링 서비스를 프로젝트 단위로 제공하고 있습니다. Kubernetesプロジェクトと外部プロジェクトを連携させ、統合的なモニタリングシステムを構築できます。 このような連携のためには、プロジェクト生成、ライセンス設定、エージェント連携オプション有効化といった過程を経る必要があり、これによって統合モニタリング環境を実現できます。 */}
+
+WhaTapは、様々なモニタリングサービスをプロジェクト単位で提供します。 **外部プロジェクト連携**機能を通じてKubernetesプロジェクトのPodと関連した外部プロジェクトを連携できます。 
+
+{/* 외부 프로젝트 연동을 위해서는 에이전트 설정 및 사용자 정의 리소스 내 환경변수 설정이 필요합니다. Kubernetesプロジェクトと外部プロジェクトを連携させ、統合的なモニタリングシステムを構築します。  */}
+
+外部プロジェクト連携のためにはKubernetesエージェント設定及び連携対象Pod設定が必要です。 Kubernetesプロジェクトと外部プロジェクトを連携させ、統合的なモニタリングシステムを構築します。 
+
+{/* 외부 프로젝트 연동 기능은 쿠버네티스 프로젝트의 **파드(Pod)**와 관계된 외부 프로젝트를 연결하여 통합적인 모니터링 환경을 제공합니다. この機能を有効にするには、Kubernetesエージェント設定と連携対象Pod設定の2つのタスクを実行する必要があります。 */}
+
+## 外部プロジェクト連携
+
+外部プロジェクト連携機能を有効にすると、次のように連携されたコンテナ及びPodに当該プロジェクトロゴが表示されます。 これにより、どの外部プロジェクトと連携したのか視覚的に簡単に識別できます。 また、該当するブロックをクリックして、要約表示パネル内のボタンを通じて該当プロジェクトに移動できます。 
+
+<p align="center">
+
+<ImgLang img='k8s-foreign-project-container-map.png' desc='外部プロジェクトの例中のコンテナマップ' />
+
+</p>
+
+{/* ## 외부 프로젝트 연동 활성화  */}
+
+## 外部プロジェクト設定
+
+### エージェント設定
+
+Kubernetesエージェントのインストール*YAML*ファイルでwhatap-monitoringネームスペースのwhatap-node-agent DaemonSet設定を変更する必要があります。 特に、whatap-node-agentコンテナのenvセクションに次の環境変数を追加する必要があります。
+
+```yaml
+- name: "collect_foreign_project"
+  value: "true"
+```
+
+#### 例
+
+以下は、環境変数が追加された*YAML*ファイルの例です。 実際の運営環境の*YAML*ファイルと多くの違いがある可能性があるため、例を参考にして必要な部分だけ修正してから使用してください。 ハイライトされたラインが追加された環境変数です。 
+
+```yaml {75,76}
+apiVersion: "apps/v1"
+kind: "DaemonSet"
+metadata:
+  labels:
+    name: "whatap-node-agent"
+  name: "whatap-node-agent"
+  namespace: "whatap-monitoring"
+spec:
+  selector:
+    matchLabels:
+      name: "whatap-node-agent"
+  template:
+    metadata:
+      labels:
+        name: "whatap-node-agent"
+    spec:
+      containers:
+      - command:
+        - "/data/agent/node/cadvisor_helper"
+        - "-port"
+        - "6801"
+        env:
+        - name: "NODE_NAME"
+          valueFrom:
+            fieldRef:
+              fieldPath: "spec.nodeName"
+        image: "whatap/kube_mon_dev:foreign-2"
+        name: "whatap-node-helper"
+        ports:
+        - containerPort: 6801
+          name: "helperport"
+        resources:
+          limits:
+            cpu: "200m"
+            memory: "350Mi"
+          requests:
+            cpu: "100m"
+            memory: "100Mi"
+        volumeMounts:
+        - mountPath: "/rootfs"
+          name: "rootfs"
+          readOnly: true
+        - mountPath: "/sys"
+          name: "hostsys"
+          readOnly: true
+        - mountPath: "/dev/disk"
+          name: "hostdiskdevice"
+          readOnly: true
+        - mountPath: "/run/containerd/containerd.sock"
+          name: "containerddomainsocket"
+      - command:
+        - "/bin/entrypoint.sh"
+        env:
+        - name: "NODE_IP"
+          valueFrom:
+            fieldRef:
+              fieldPath: "status.hostIP"
+        - name: "NODE_NAME"
+          valueFrom:
+            fieldRef:
+              fieldPath: "spec.nodeName"
+        - name: "WHATAP_LICENSE"
+          value: "x6050rs80f4eg-x1g0egm9rjb3mg-z7p9533a2ea87e"
+        - name: "WHATAP_HOST"
+          value: "13.124.11.223/13.209.172.35"
+        - name: "WHATAP_PORT"
+          value: "6600"
+        - name: "HOST_PREFIX"
+          value: "/rootfs"
+        - name: "WHATP_MEM_LIMIT"
+          valueFrom:
+            resourceFieldRef:
+              containerName: "whatap-node-agent"
+              resource: "limits.memory"
+        - name: "collect_foreign_project"
+          value: "true"
+        image: "whatap/kube_mon_dev:foreign-2"
+        name: "whatap-node-agent"
+        ports:
+        - containerPort: 6600
+          name: "nodeport"
+        resources:
+          limits:
+            cpu: "200m"
+            memory: "350Mi"
+          requests:
+            cpu: "100m"
+            memory: "300Mi"
+        volumeMounts:
+        - mountPath: "/rootfs"
+          name: "rootfs"
+          readOnly: true
+        - mountPath: "/bin/entrypoint.sh"
+          name: "start-script-volume"
+          readOnly: true
+          subPath: "entrypoint.sh"
+        - mountPath: "/whatap_conf"
+          name: "whatap-config-volume"
+      initContainers:
+      - command:
+        - "/data/agent/tools/whatap_debugger"
+        - "run"
+        image: "whatap/kube_mon_dev:foreign-2"
+        name: "whatap-node-debug"
+        volumeMounts:
+        - mountPath: "/rootfs"
+          name: "rootfs"
+          readOnly: true
+      serviceAccount: "whatap"
+      tolerations:
+      - effect: "NoSchedule"
+        key: "node-role.kubernetes.io/master"
+      - effect: "NoSchedule"
+        key: "node-role.kubernetes.io/control-plane"
+      volumes:
+      - hostPath:
+          path: "/"
+        name: "rootfs"
+      - hostPath:
+          path: "/sys"
+        name: "hostsys"
+      - hostPath:
+          path: "/dev/disk"
+        name: "hostdiskdevice"
+      - configMap:
+          defaultMode: 448
+          name: "node-start-script"
+        name: "start-script-volume"
+      - emptyDir: {}
+        name: "whatap-config-volume"
+      - hostPath:
+          path: "/run/containerd/containerd.sock"
+        name: "containerddomainsocket"
+```
+
+### 連携対象Podの設定
+
+連携しようとするPodの設定を修正します。 例えば、Redis Podを連携させる場合、Redisコンテナのenvセクションに次の環境変数を追加する必要があります。 
+
+```yaml
+- name: "license"
+  value: "here_is_whatap_license"
+- name: "whatap_platform"
+  value: "redis"
+```
+
+- `here_is_whatap_license `：外部プロジェクトのライセンス情報を入力します。 
+
+- `whatap_platform`：連携しようとしている外部プロジェクトのプラットフォームを入力します。
+
+#### 例
+
+以下は、Redis Pod設定に環境変数を追加した*YAML*ファイルの例です。 ハイライトされたラインが追加された環境変数です。 
+
+```yaml {31-34}
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: redis-cluster
+  namespace: backend
+spec:
+  serviceName: redis-cluster-svc
+  replicas: 6
+  selector:
+    matchLabels:
+      app: redis-cluster
+  template:
+    metadata:
+      labels:
+        app: redis-cluster
+    spec:
+      containers:
+      - name: redis
+        image: redis:5.0.1-alpine
+        ports:
+        - containerPort: 6379
+          name: client
+        - containerPort: 16379
+          name: gossip
+        command: ["/conf/update-node.sh", "redis-server", "/conf/redis.conf"]
+        env:
+        - name: POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: license
+          value: x6050s081i709-z2lhh7gpi3bdr4-x7jovr61kumi5k
+        - name: whatap_platform
+          value: redis
+        volumeMounts:
+        - name: conf
+          mountPath: /conf
+          readOnly: false
+        - name: data
+          mountPath: /data
+          readOnly: false
+```
+
+## 外部プロジェクトの連携確認
+
+{/* 
+
+外部プロジェクトの連携設定後、<Cmdname sid="side_metricsSearch" className="uitext" />メニューに移動します。 次のように***カテゴリ選択***ボタンをクリックする時、**container_foreign_project_mapping**カテゴリが表示されると、連携が正常に適用された状態です。 
+
+<p align="center">
+
+<ImgLang img='k8s-foreign-project-check.png' desc='外部プロジェクトの適用確認' />
+
+</p>
+
+例の画像のように***カテゴリ選択***ボタンをクリックする時、`container_foreign_project_mapping`カテゴリが表示されると、連携が正常に適用された状態です。 
+
+*/}
+
+<Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_metricsSearch" className="uitext" />
+
+<Columns>
+
+<Column className="text--left width--50">
+
+<ImgLang img='k8s-foreign-project-check.png' desc='外部プロジェクトの適用確認' />
+
+</Column>
+
+<Column className="text--left">
+
+外部プロジェクトの連携設定後、<Cmdname sid="side_metricsSearch" className="uitext" />メニューに移動します。 例の画像のように***カテゴリ選択***ボタンをクリックします。 
+
+次のカテゴリが表示されたら、連携が正常に適用された状態です。
+
+> `container_foreign_project_mapping`
+
+</Column>
+
+</Columns>

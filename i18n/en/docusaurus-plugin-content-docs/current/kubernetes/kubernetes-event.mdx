@@ -6,11 +6,93 @@ keywords:
   - Kubernetes
   - Kubernetes Monitoring
   - Cluster
-  - Kubernetes Event
+  - Kubernetes event
 displayed_sidebar: kubeSidebar
-draft: true
+toc_max_heading_level: 2
 ---
 
-Home &gt; Select Project &gt; **_Cluster_** &gt; **_Kubernetes Event_** 
+Home &gt; Select Project &gt; <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_kubeEventList" className="uitext" />
 
-Through the WhaTap **_Kubernetes Event_** menu, you can view and search various Kubernetes events on a project basis. You can see the Kubernetes event count trend and find each reason of them.
+The WhaTap <Cmdname sid="side_kubeEventList" className="uitext" /> menu allows you to perform various queries and searches for Kubernetes events without using commands. You can check the cluster events and also view past events through the time selector. 
+
+{/* 
+You can see the Kubernetes event count trend and find each reason of them.
+
+You can easily view Kubernetes events without using commands through the WhaTap <Cmdname sid="side_kubeEventList" className="uitext" /> menu. 
+
+It allows you to check the count trend of Kubernetes events by type on a project basis. 
+
+Through this menu, you can quickly find the desired event type through simple filtering, and easily view events that occurred in the past. */}
+
+<ImgLang img='k8s-kuber-event.png' desc='Kubernetes event'/>
+
+- You can find the desired events through the filtering options and search bar. 
+
+- You can quickly filter by event type, such as <span class='k8s-normal'>Normal</span> or <span class='slow'>Warning</span>, and ***Reason***.
+
+:::note 
+
+For more information about Kubernetes events, see [the following](https://kubernetes.io/docs/reference/kubernetes-api/cluster-resources/event-v1/#Event). 
+
+:::
+
+## Event count trend
+
+{/* ![지시선 1](/img/number-01.png) <Cmdname sid="TTL06683" className="uitext" />에서 조회한 시간 범위 내의 이벤트 수 추이를 제공합니다. This allows you to effectively trace system issues by pinpointing when events were concentrated. */}
+
+The ![Leader line 1](/img/number-01.png) <Cmdname sid="TTL06683" className="uitext" /> presented in the bar chart format allows you to visually see the change in the number of events that occurred within the selected time range. 
+
+You can select a desired time zone to view and see the events occurred in the zone. This allows you to quickly identify the time zone when events were concentrated and analyze its details.
+
+{/* 조회한 시간 범위의 이벤트 수의 추이를 볼 수 있습니다. The event count trend helps you trace issues by pinpointing when a large number of events occurred. */}
+
+## Event list
+
+You can see the list of Kubernetes events that occurred during a specific time period in the ![Leader line 2](/img/number-02.png) area. WhaTap stores the event data up to 30 days, allowing you to view and analyze past events. 
+
+You can also quickly filter desired events by selecting the event type (<span class='slow'>Warning</span>, <span class='k8s-normal'>Normal</span>), or **_Reason_** at the top of the list.
+
+| Item                              | Description                                                                                                                           |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| **_Timestamp_**                   | It is the time when the event occurred.                                                                                               |
+| **_Target_**                      | It is the target on which the event occurred. If Kind is Pod, it indicates the Pod name. If Kind is Node, it indicates the node name. |
+| **_Namespace_**                   | It is the namespace in which the event occurred.                                                                                      |
+| **_Kind_**                        | It is the type of object on which the event occurred.                                                                                 |
+| **_Reason_**                      | It is the reason why the event occurred.                                                                                              |
+| **_First event occurrence time_** | It is the time when the event was first observed.                                                                                     |
+| **_Event occurrence count_**      | It is the number of events that occurred continuously over a period of time.                                                          |
+| **_Event content_**               | It is a specific event details.                                                                                                       |
+
+## Event details
+
+You can check the **event details** by selecting the **_details_** icon on the left of the event to view in the event list![detail icon](/img/ico-detail-view.svg). 
+
+<ImgLang img='k8s-kuber-event-details.png' desc='Kubernetes event detail'/>
+
+### Suggestions
+
+The **_Suggestions_** tab provides insights into the cause of an event and provides directions for tracing the problem based on the event message that occurred.
+
+:::note 
+
+Currently, only the **_BackOff_** event of the <span class='slow'>Warning</span> type is provided as a feature. 
+
+:::
+
+### Adjacent logs
+
+You can see adjacent logs based on the time of occurrence of the selected event. You can set the desired adjacent range by using the time selection button.
+
+:::note 
+
+**Log query role**
+
+- If you have **Log query role**, you can see all adjacent logs.
+
+- If your have no **log query role**, you can view only the adjacent Kubernetes events.
+
+:::
+
+### Event timeline
+
+It provides all events that occurred from the time the target of the selected event (**_Kind_**) was created to the present in a timeline format. This allows you to see the target's event history at a glance.

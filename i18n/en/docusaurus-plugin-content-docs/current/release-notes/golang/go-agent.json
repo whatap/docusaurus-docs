@@ -1,5 +1,158 @@
 [
   {
+    "url": "https://docs.whatap.io/en/release-notes/golang/golang-0_4_1",
+    "ver": "v0.4.1",
+    "date": "2024-08-28",
+    "Lists": [
+      {
+        "ver": "v0.4.1",
+        "hash": "v041",
+        "product": "Go Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the standard output log collection feature.</p>"
+      },
+      {
+        "ver": "v0.4.1",
+        "hash": "v041",
+        "product": "Go Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the option to prioritize environment variables over the agent configuration file (<em>whatap.conf</em>).</p>",
+        "details": "<ul>\n<li>\n<p>Agent settings are applied in the order of <em>whatap.conf</em> and then environment variables.</p>\n</li>\n<li>\n<p>When the <code>use_env_first</code> option (default value: <code>false</code>) is set, environment variables take precedence over the settings in the <em>whatap.conf</em> file.</p>\n<div class=\"language-ini codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockTitle_Ktv7\">whatap.conf</div><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-ini codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token key attr-name\" style=\"color:rgb(255, 203, 107)\">use_env_first</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">=</span><span class=\"token value attr-value\">true</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"Copy code to clipboard\" title=\"Copy\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n<li>\n<p>Alternatively, you can set the environment variable as <code>WHATAP_USE_ENV_FIRST=true</code>.</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v0.4.1",
+        "hash": "v041",
+        "product": "Go Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Changed the default values for the following agent options.</p>",
+        "details": "<ul>\n<li>\n<p>The TCP read timeout has been changed from 30 seconds to 120 seconds.</p>\n<div class=\"language-ini codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockTitle_Ktv7\">whatap.conf</div><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-ini codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token key attr-name\" style=\"color:rgb(255, 203, 107)\">net_so_time</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">=</span><span class=\"token value attr-value\">120000</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"Copy code to clipboard\" title=\"Copy\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n<li>\n<p>The TCP write buffer value has been changed from 8 Mb to 2 Mb.</p>\n<div class=\"language-ini codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockTitle_Ktv7\">whatap.conf</div><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-ini codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token key attr-name\" style=\"color:rgb(255, 203, 107)\">net_write_buffer_size</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">=</span><span class=\"token value attr-value\">2*1024*1024</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"Copy code to clipboard\" title=\"Copy\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v0.4.1",
+        "hash": "v041",
+        "product": "Go Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the recognition error for the <code>OKIND</code> environment variable.</p>",
+        "details": "<p>You can set <code>okind</code> by using the <code>OKIND</code> or <code>WHATAP_OKIND</code> environment variable.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/golang/golang-0_4_3",
+    "ver": "v0.4.3",
+    "date": "2024-10-16",
+    "Lists": [
+      {
+        "ver": "v0.4.3",
+        "hash": "v043",
+        "product": "Go Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"1\">Fixed</code> Fixed the error collecting <code>os.Stdout</code> and <code>os.Stderr</code> logs.</p>",
+        "details": "<ul>\n<li>\n<p>It modified the <code>trace.Init</code> function to enable log collection. It changes to run before other log libraries if possible.</p>\n</li>\n<li>\n<p>The function has been added that allows to use <strong>io.Writer</strong> that wraps <code>os.Stdout</code> and <code>os.Stderr</code>.</p>\n</li>\n</ul>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/golang/golang-0_4_2",
+    "ver": "v0.4.2",
+    "date": "2024-09-06",
+    "Lists": [
+      {
+        "ver": "v0.4.2",
+        "hash": "v042",
+        "product": "Go Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the compilation error caused by missing library files.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/golang/golang-0_3_3",
+    "ver": "v0.3.3",
+    "date": "2024-03-14",
+    "Lists": [
+      {
+        "ver": "v0.3.3",
+        "hash": "v033",
+        "product": "Go Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Deleted the replace syntax in <code>go.mod</code> (deleted the replace syntax in github.com/whatap/golib module).</p>"
+      },
+      {
+        "ver": "v0.3.3",
+        "hash": "v033",
+        "product": "Go Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the example source build error (github.com/whatap/go-api-example).</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/golang/golang-0_3_0",
+    "ver": "v0.3.0",
+    "date": "2024-01-10",
+    "Lists": [
+      {
+        "ver": "v0.3.0",
+        "hash": "v030",
+        "product": "Go Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Trace context (W3C) is supported in the multi-transaction tracing.</p>",
+        "details": "<p><strong>OpenTelmetry</strong> that supports the trace context, and the multi-transaction tracing correlation are supported.</p>"
+      },
+      {
+        "ver": "v0.3.0",
+        "hash": "v030",
+        "product": "Go Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Modified the resource collection for SQL, Method, and HTTP call.</p>",
+        "details": "<p>The differences between resources (CPU, memory) at the start of the transaction and the start of each step are collected.</p>"
+      },
+      {
+        "ver": "v0.3.0",
+        "hash": "v030",
+        "product": "Go Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Modified to newly create the configuration file (<em>whatap.conf</em>) if nothing.</p>"
+      },
+      {
+        "ver": "v0.3.0",
+        "hash": "v030",
+        "product": "Go Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the error where the cumulative number of outbound calls are collected wrong as the cumulative time in the active transation list.</p>"
+      },
+      {
+        "ver": "v0.3.0",
+        "hash": "v030",
+        "product": "Go Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the whatap-agent service (<code>whatap-agent.service</code>) execution error in the Linux environment.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/golang/golang-0_3_1",
+    "ver": "v0.3.1",
+    "date": "2024-01-24",
+    "Lists": [
+      {
+        "ver": "v0.3.1",
+        "hash": "v031",
+        "product": "Go Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the bug where only the hash (number) value appears, not the name, after setting the <code>whatap.onode</code> option.</p>"
+      },
+      {
+        "ver": "v0.3.1",
+        "hash": "v031",
+        "product": "Go Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fix the bug where the whatap-agent.service file is not recognized in Ubuntu 14.</p>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/en/release-notes/golang/golang-0_4_0",
     "ver": "v0.4.0",
     "date": "2024-06-19",
@@ -45,65 +198,6 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/golang/golang-0_4_1",
-    "ver": "v0.4.1",
-    "date": "2024-08-28",
-    "Lists": [
-      {
-        "ver": "v0.4.1",
-        "hash": "v041",
-        "product": "Go Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the standard output log collection feature.</p>"
-      },
-      {
-        "ver": "v0.4.1",
-        "hash": "v041",
-        "product": "Go Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the option to prioritize environment variables over the agent configuration file (<em>whatap.conf</em>).</p>",
-        "details": "<ul>\n<li>\n<p>Agent settings are applied in the order of <em>whatap.conf</em> and then environment variables.</p>\n</li>\n<li>\n<p>When the <code>use_env_first</code> option (default value: <code>false</code>) is set, environment variables take precedence over the settings in the <em>whatap.conf</em> file.</p>\n<div class=\"language-ini codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockTitle_Ktv7\">whatap.conf</div><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-ini codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token key attr-name\" style=\"color:rgb(255, 203, 107)\">use_env_first</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">=</span><span class=\"token value attr-value\">true</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"Copy code to clipboard\" title=\"Copy\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n<li>\n<p>Alternatively, you can set the environment variable as <code>WHATAP_USE_ENV_FIRST=true</code>.</p>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v0.4.1",
-        "hash": "v041",
-        "product": "Go Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Changed the default values for the following agent options.</p>",
-        "details": "<ul>\n<li>\n<p>The TCP read timeout has been changed from 30 seconds to 120 seconds.</p>\n<div class=\"language-ini codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockTitle_Ktv7\">whatap.conf</div><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-ini codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token key attr-name\" style=\"color:rgb(255, 203, 107)\">net_so_time</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">=</span><span class=\"token value attr-value\">120000</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"Copy code to clipboard\" title=\"Copy\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n<li>\n<p>The TCP write buffer value has been changed from 8 Mb to 2 Mb.</p>\n<div class=\"language-ini codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockTitle_Ktv7\">whatap.conf</div><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-ini codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token key attr-name\" style=\"color:rgb(255, 203, 107)\">net_write_buffer_size</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">=</span><span class=\"token value attr-value\">2*1024*1024</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"Copy code to clipboard\" title=\"Copy\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v0.4.1",
-        "hash": "v041",
-        "product": "Go Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the recognition error for the <code>OKIND</code> environment variable.</p>",
-        "details": "<p>You can set <code>okind</code> by using the <code>OKIND</code> or <code>WHATAP_OKIND</code> environment variable.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/golang/golang-0_3_3",
-    "ver": "v0.3.3",
-    "date": "2024-03-14",
-    "Lists": [
-      {
-        "ver": "v0.3.3",
-        "hash": "v033",
-        "product": "Go Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Deleted the replace syntax in <code>go.mod</code> (deleted the replace syntax in github.com/whatap/golib module).</p>"
-      },
-      {
-        "ver": "v0.3.3",
-        "hash": "v033",
-        "product": "Go Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the example source build error (github.com/whatap/go-api-example).</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/en/release-notes/golang/golang-0_3_2",
     "ver": "v0.3.2",
     "date": "2024-03-06",
@@ -122,71 +216,6 @@
         "product": "Go Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the gRPC header collection error.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/golang/golang-0_3_1",
-    "ver": "v0.3.1",
-    "date": "2024-01-24",
-    "Lists": [
-      {
-        "ver": "v0.3.1",
-        "hash": "v031",
-        "product": "Go Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the bug where only the hash (number) value appears, not the name, after setting the <code>whatap.onode</code> option.</p>"
-      },
-      {
-        "ver": "v0.3.1",
-        "hash": "v031",
-        "product": "Go Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fix the bug where the whatap-agent.service file is not recognized in Ubuntu 14.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/golang/golang-0_3_0",
-    "ver": "v0.3.0",
-    "date": "2024-01-10",
-    "Lists": [
-      {
-        "ver": "v0.3.0",
-        "hash": "v030",
-        "product": "Go Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Trace context (W3C) is supported in the multi-transaction tracing.</p>",
-        "details": "<p><strong>OpenTelmetry</strong> that supports the trace context, and the multi-transaction tracing correlation are supported.</p>"
-      },
-      {
-        "ver": "v0.3.0",
-        "hash": "v030",
-        "product": "Go Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Modified the resource collection for SQL, Method, and HTTP call.</p>",
-        "details": "<p>The differences between resources (CPU, memory) at the start of the transaction and the start of each step are collected.</p>"
-      },
-      {
-        "ver": "v0.3.0",
-        "hash": "v030",
-        "product": "Go Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Modified to newly create the configuration file (<em>whatap.conf</em>) if nothing.</p>"
-      },
-      {
-        "ver": "v0.3.0",
-        "hash": "v030",
-        "product": "Go Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the error where the cumulative number of outbound calls are collected wrong as the cumulative time in the active transation list.</p>"
-      },
-      {
-        "ver": "v0.3.0",
-        "hash": "v030",
-        "product": "Go Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the whatap-agent service (<code>whatap-agent.service</code>) execution error in the Linux environment.</p>"
       }
     ]
   }

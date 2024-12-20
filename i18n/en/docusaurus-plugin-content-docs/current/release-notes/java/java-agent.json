@@ -1,5 +1,311 @@
 [
   {
+    "url": "https://docs.whatap.io/en/release-notes/java/java-2_2_43",
+    "ver": "v2.2.43",
+    "date": "2024-12-02",
+    "Lists": [
+      {
+        "ver": "v2.2.43",
+        "hash": "v2243",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> jedis-2.9.0 추적</p>"
+      },
+      {
+        "ver": "v2.2.43",
+        "hash": "v2243",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> vertx-3.5.3 추적 범위 확장</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/java/java-2_2_45",
+    "ver": "v2.2.45",
+    "date": "2024-12-10",
+    "Lists": [
+      {
+        "ver": "v2.2.45",
+        "hash": "v2245",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> mongodb-4.11 추적</p>"
+      },
+      {
+        "ver": "v2.2.45",
+        "hash": "v2245",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> mongodb-5.0 추적</p>"
+      },
+      {
+        "ver": "v2.2.45",
+        "hash": "v2245",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> MongoDB SQL 데이터 변경</p>",
+        "details": "<ul>\n<li>\n<p><strong>기존</strong>: <code>${query}</code> 형식, 파라미터 수집</p>\n<div class=\"language-json codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-json codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token property\">\"find\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> </span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"employee\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> </span><span class=\"token property\">\"filter\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token property\">\"_id\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> </span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"a40b6cc6-e1e6-#b-#ddf-b880e55f25bb\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> </span><span class=\"token property\">\"limit\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> #</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> </span><span class=\"token property\">\"singleBatch\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> </span><span class=\"token boolean\" style=\"color:rgb(255, 88, 116)\">true</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"Copy code to clipboard\" title=\"Copy\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n<li>\n<p><strong>변경</strong>: <code>$database ${query}</code> 형식, 파라미터 제거</p>\n<div class=\"language-json codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-json codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">test </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token property\">\"find\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> employee</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"Copy code to clipboard\" title=\"Copy\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.45",
+        "hash": "v2245",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> <code>weaving=spring-boot-3.2</code> 옵션에서 MongoDB 설정 분리</p>",
+        "details": "<p>mongodb-driver-core 라이브러리의 내부 동작이 버전별로 상이하여 spring-boot 설정에서 분리합니다.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/java/java-2_2_39",
+    "ver": "v2.2.39",
+    "date": "2024-09-30",
+    "Lists": [
+      {
+        "ver": "v2.2.39",
+        "hash": "v2239",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Supported Java 21.</p>"
+      },
+      {
+        "ver": "v2.2.39",
+        "hash": "v2239",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Traced dyanmodb-1.11.</p>"
+      },
+      {
+        "ver": "v2.2.39",
+        "hash": "v2239",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Traced dyanmodb-2.25 (dynamodb-enhanced).</p>"
+      },
+      {
+        "ver": "v2.2.39",
+        "hash": "v2239",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Traced retrofit-2.5.</p>"
+      },
+      {
+        "ver": "v2.2.39",
+        "hash": "v2239",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Traced undertow-server-2.2 and undertow-servlet-2.2.</p>"
+      },
+      {
+        "ver": "v2.2.39",
+        "hash": "v2239",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Traced vertx-4.5.</p>"
+      },
+      {
+        "ver": "v2.2.39",
+        "hash": "v2239",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Modified to apply <code>httpc_status_url_ignore_set</code> and <code>httpc_status_ignore</code> options even when there is an exception in http-call.</p>"
+      },
+      {
+        "ver": "v2.2.39",
+        "hash": "v2239",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Modified to separate the agent logs and notifications, and then disable notifications when an overflow occurs.</p>"
+      },
+      {
+        "ver": "v2.2.39",
+        "hash": "v2239",
+        "product": "Java Agent",
+        "type": "Deprecated",
+        "desc": "<p><code class=\"Deprecated\" type=\"1\">Deprecated</code> Deprecated the <code>log_overflow_enabled</code> option.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/java/java-2_2_44",
+    "ver": "v2.2.44",
+    "date": "2024-12-04",
+    "Lists": [
+      {
+        "ver": "v2.2.44",
+        "hash": "v2244",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<li>\n<p><code class=\"New\" type=\"1\">New</code> vertx-3.9 추적</p>\n<div class=\"language-ini codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockTitle_Ktv7\">whatap.conf</div><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-ini codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token key attr-name\" style=\"color:rgb(255, 203, 107)\">weaving</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">=</span><span class=\"token value attr-value\">vertx-3.9.0</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"Copy code to clipboard\" title=\"Copy\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n<p>vertx-redis 추적하지 않습니다.</p>\n</li>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/java/java-2_2_42",
+    "ver": "v2.2.42",
+    "date": "2024-11-28",
+    "Lists": [
+      {
+        "ver": "v2.2.42",
+        "hash": "v2242",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> vertx-3.5.3 tracing</p>"
+      },
+      {
+        "ver": "v2.2.42",
+        "hash": "v2242",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> camel-netty4-2.25 tracing</p>"
+      },
+      {
+        "ver": "v2.2.42",
+        "hash": "v2242",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed some bugs that occurred when linking containers.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/java/java-2_2_41",
+    "ver": "v2.2.41",
+    "date": "2024-11-08",
+    "Lists": [
+      {
+        "ver": "v2.2.41",
+        "hash": "v2241",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Improved the sampling feature when tracing WebFlux transactions in Spring Boot 2.7.0 to 3.3.x</p>"
+      },
+      {
+        "ver": "v2.2.41",
+        "hash": "v2241",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the link tracing to work properly even when there are headers for the tracing when calling the Spring Cloud Gateway in Spring Boot 2.7.0 to 3.3.x.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/java/java-2_2_38",
+    "ver": "v2.2.38",
+    "date": "2024-08-14",
+    "Lists": [
+      {
+        "ver": "v2.2.38",
+        "hash": "v2238",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> spring-boot-3.2 tracing</p>"
+      },
+      {
+        "ver": "v2.2.38",
+        "hash": "v2238",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Modified the transaction name while tracing the spring-kafka batch.</p>",
+        "details": "<ul>\n<li>\n<p>Previous: <code>[kafka] {topic} (cnt: {Number of polls in Kafka})</code></p>\n</li>\n<li>\n<p>After: <code>[kafka-batch] {topic}</code></p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.38",
+        "hash": "v2238",
+        "product": "Java Agent",
+        "type": "Deprecated",
+        "desc": "<p><code class=\"Deprecated\" type=\"1\">Deprecated</code> Stopped tracing the keys and parameters of the lettuce driver.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/java/java-2_2_40",
+    "ver": "v2.2.40",
+    "date": "2024-11-06",
+    "Lists": [
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> camel-netty4-2.25 tracing</p>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Provided a new feature to collect AWS ECS Fargate memory utilization metrics.</p>",
+        "details": "<ul>\n<li>Set the memory utilization reference as the user-defined (task definition) memory limit.</li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Supported configuration through system environment variables in some agent settings.</p>",
+        "details": "<ul>\n<li>\n<p>If previously set in <em>whatap.conf</em>, the existing setting values take precedence and the values of system environment variables are ignored.</p>\n<div class=\"language-bash codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-bash codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">Agent setting             System environment variable</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">whatap.server.host   </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">&lt;=</span><span class=\"token plain\"> WHATAP_SERVER_HOST</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">whatap.server.port   </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">&lt;=</span><span class=\"token plain\"> WHATAP_SERVER_PORT</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">whatap.okind         </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">&lt;=</span><span class=\"token plain\"> WHATAP_OKIND</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">whtap.micro.enabled  </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">&lt;=</span><span class=\"token plain\"> WHATAP_MICRO_ENABLED</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"Copy code to clipboard\" title=\"Copy\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Improved the sampling feature when tracing WebFlux transactions in Spring Boot 2.5 to 2.6.x.</p>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Modified the AWS ECS EC2 memory utilization reference as the memory limit for user-defined task definition.</p>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Removed the empty SQL collection when using the PostgreSQL.</p>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the problem of collecting cases greater than the actual TPS when using the transaction sampling feature.</p>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the link tracing to work properly even when there are headers for the tracing for calling the Spring Cloud Gateway in Spring Boot 2.5 to 2.6.x.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/java/java-2_2_34",
+    "ver": "v2.2.34",
+    "date": "2024-06-14",
+    "Lists": [
+      {
+        "ver": "v2.2.34",
+        "hash": "v2234",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Changed the agent log when using the camel-cxf-3.15 plugin.</p>"
+      },
+      {
+        "ver": "v2.2.34",
+        "hash": "v2234",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the issue where the <code>log_root</code> path is registered in the <code>heapdump_root</code> option.</p>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/en/release-notes/java/java-2_2_35",
     "ver": "v2.2.35",
     "date": "2024-06-20",
@@ -17,36 +323,6 @@
         "product": "Java Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the issue where calling a transaction through spring-cloud-gateway does not make access in spring-boot-2.5 or earlier.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/java/java-2_2_32",
-    "ver": "v2.2.32",
-    "date": "2024-04-16",
-    "Lists": [
-      {
-        "ver": "v2.2.32",
-        "hash": "v2232",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> When using the aws.mysql library, tracing the <code>executeBatchInternal</code> method has been added.</p>",
-        "details": "<ul>\n<li>\n<code>software.aws.rds.jdbc.mysql.shading.com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal</code>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v2.2.32",
-        "hash": "v2232",
-        "product": "Java Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Modified to trace in Spring-boot-2.7.x to enable linked tracing even when you implemented the NettyRoutingFilter class.</p>",
-        "details": "<ul>\n<li>Class NettyRoutingFilter <code>org.springframework.cloud.gateway.filter.NettyRoutingFilter</code></li>\n</ul>"
-      },
-      {
-        "ver": "v2.2.32",
-        "hash": "v2232",
-        "product": "Java Agent",
-        "type": "Deprecate",
-        "desc": "<p><code class=\"Deprecate\">Deprecate</code> In <span class=\"uitext\">Instance Performance Management</span> &gt; <span class=\"uitext\">System ENV. Variable</span>, stopped collecting the <code>jvm.uptime</code> data.</p>"
       }
     ]
   },
@@ -76,6 +352,35 @@
         "product": "Java Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the issue where the user's log content cannot be collected when the logs including the exception stack are generated when using the logback and log4j.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/java/java-2_2_33",
+    "ver": "v2.2.33",
+    "date": "2024-05-28",
+    "Lists": [
+      {
+        "ver": "v2.2.33",
+        "hash": "v2233",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Added the method to pass <code>continerId</code> from the Kubernetes agent to a Java agent.</p>"
+      },
+      {
+        "ver": "v2.2.33",
+        "hash": "v2233",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Modified to enable integrated tracing even when users who are using Spring-boot-2.5.x to 2.6.x implement the <code>NettyRoutingFilter</code> class for use.</p>",
+        "details": "<ul>\n<li>Class NettyRoutingFilter <code>org.springframework.cloud.gateway.filter.NettyRoutingFilter</code></li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.33",
+        "hash": "v2233",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Changed the <code>$okind</code> and <code>$onode</code> values to <code>okindName</code> and <code>onodeName</code> in the metrics in the <code>db_pool_detail</code> category.</p>"
       }
     ]
   },
@@ -188,81 +493,16 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/java/java-2_2_34",
-    "ver": "v2.2.34",
-    "date": "2024-06-14",
+    "url": "https://docs.whatap.io/en/release-notes/java/java-2_2_30",
+    "ver": "v2.2.30",
+    "date": "2024-03-21",
     "Lists": [
       {
-        "ver": "v2.2.34",
-        "hash": "v2234",
-        "product": "Java Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Changed the agent log when using the camel-cxf-3.15 plugin.</p>"
-      },
-      {
-        "ver": "v2.2.34",
-        "hash": "v2234",
+        "ver": "v2.2.30",
+        "hash": "v2230",
         "product": "Java Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the issue where the <code>log_root</code> path is registered in the <code>heapdump_root</code> option.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/java/java-2_2_38",
-    "ver": "v2.2.38",
-    "date": "2024-08-14",
-    "Lists": [
-      {
-        "ver": "v2.2.38",
-        "hash": "v2238",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> spring-boot-3.2 tracing</p>"
-      },
-      {
-        "ver": "v2.2.38",
-        "hash": "v2238",
-        "product": "Java Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Modified the transaction name while tracing the spring-kafka batch.</p>",
-        "details": "<ul>\n<li>\n<p>Previous: <code>[kafka] {topic} (cnt: {Number of polls in Kafka})</code></p>\n</li>\n<li>\n<p>After: <code>[kafka-batch] {topic}</code></p>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v2.2.38",
-        "hash": "v2238",
-        "product": "Java Agent",
-        "type": "Deprecated",
-        "desc": "<p><code class=\"Deprecated\" type=\"1\">Deprecated</code> Stopped tracing the keys and parameters of the lettuce driver.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/java/java-2_2_33",
-    "ver": "v2.2.33",
-    "date": "2024-05-28",
-    "Lists": [
-      {
-        "ver": "v2.2.33",
-        "hash": "v2233",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Added the method to pass <code>continerId</code> from the Kubernetes agent to a Java agent.</p>"
-      },
-      {
-        "ver": "v2.2.33",
-        "hash": "v2233",
-        "product": "Java Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Modified to enable integrated tracing even when users who are using Spring-boot-2.5.x to 2.6.x implement the <code>NettyRoutingFilter</code> class for use.</p>",
-        "details": "<ul>\n<li>Class NettyRoutingFilter <code>org.springframework.cloud.gateway.filter.NettyRoutingFilter</code></li>\n</ul>"
-      },
-      {
-        "ver": "v2.2.33",
-        "hash": "v2233",
-        "product": "Java Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Changed the <code>$okind</code> and <code>$onode</code> values to <code>okindName</code> and <code>onodeName</code> in the metrics in the <code>db_pool_detail</code> category.</p>"
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the issue where Java agent 2.2.28 and 2.2.29 do not work in Java 1.5 to 1.7.</p>"
       }
     ]
   },
@@ -302,86 +542,32 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/java/java-2_2_30",
-    "ver": "v2.2.30",
-    "date": "2024-03-21",
+    "url": "https://docs.whatap.io/en/release-notes/java/java-2_2_32",
+    "ver": "v2.2.32",
+    "date": "2024-04-16",
     "Lists": [
       {
-        "ver": "v2.2.30",
-        "hash": "v2230",
-        "product": "Java Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the issue where Java agent 2.2.28 and 2.2.29 do not work in Java 1.5 to 1.7.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/java/java-2_2_26",
-    "ver": "v2.2.26",
-    "date": "2024-01-11",
-    "Lists": [
-      {
-        "ver": "v2.2.26",
-        "hash": "v2226",
+        "ver": "v2.2.32",
+        "hash": "v2232",
         "product": "Java Agent",
         "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Traces the reactor-kafka-1.3 in spring-boot-2.5 or later.</p>"
+        "desc": "<p><code class=\"Feature\">Feature</code> When using the aws.mysql library, tracing the <code>executeBatchInternal</code> method has been added.</p>",
+        "details": "<ul>\n<li>\n<code>software.aws.rds.jdbc.mysql.shading.com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal</code>\n</li>\n</ul>"
       },
       {
-        "ver": "v2.2.26",
-        "hash": "v2226",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Traces the RxJava schedules when using RxJava in spring-boot-2.5 or later.</p>"
-      },
-      {
-        "ver": "v2.2.26",
-        "hash": "v2226",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Traces RxJava3 schedules when using RxJava3 in spring-boot-3.0 or later.</p>"
-      },
-      {
-        "ver": "v2.2.26",
-        "hash": "v2226",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Collects and displays <code>threadName</code>, <code>className</code>, <code>methodName</code>, and <code>lineNumber</code> in the agent log.</p>"
-      },
-      {
-        "ver": "v2.2.26",
-        "hash": "v2226",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Modified the agent log format.</p>"
-      },
-      {
-        "ver": "v2.2.26",
-        "hash": "v2226",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Traces <code>CallableStatement</code> of Tibero.</p>"
-      },
-      {
-        "ver": "v2.2.26",
-        "hash": "v2226",
+        "ver": "v2.2.32",
+        "hash": "v2232",
         "product": "Java Agent",
         "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Modified the text color of the agent log.</p>"
+        "desc": "<p><code class=\"Changed\">Changed</code> Modified to trace in Spring-boot-2.7.x to enable linked tracing even when you implemented the NettyRoutingFilter class.</p>",
+        "details": "<ul>\n<li>Class NettyRoutingFilter <code>org.springframework.cloud.gateway.filter.NettyRoutingFilter</code></li>\n</ul>"
       },
       {
-        "ver": "v2.2.26",
-        "hash": "v2226",
+        "ver": "v2.2.32",
+        "hash": "v2232",
         "product": "Java Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Modified the agent logfile name when starting the agent from <em>whatap-<code>date</code>.log</em> to <em>whatap.log</em>.</p>"
-      },
-      {
-        "ver": "v2.2.26",
-        "hash": "v2226",
-        "product": "Java Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> When the UTC reference date is changed, modified to save the <em>whatap.log</em> file name to <em>whatap-<code>date</code>.log</em>.</p>"
+        "type": "Deprecate",
+        "desc": "<p><code class=\"Deprecate\">Deprecate</code> In <span class=\"uitext\">Instance Performance Management</span> &gt; <span class=\"uitext\">System ENV. Variable</span>, stopped collecting the <code>jvm.uptime</code> data.</p>"
       }
     ]
   },
@@ -515,6 +701,76 @@
         "product": "Java Agent",
         "type": "Deprecate",
         "desc": "<p><code class=\"Deprecate\">Deprecate</code> Redis value collection is stopped when using the Lettuce driver.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/java/java-2_2_26",
+    "ver": "v2.2.26",
+    "date": "2024-01-11",
+    "Lists": [
+      {
+        "ver": "v2.2.26",
+        "hash": "v2226",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Traces the reactor-kafka-1.3 in spring-boot-2.5 or later.</p>"
+      },
+      {
+        "ver": "v2.2.26",
+        "hash": "v2226",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Traces the RxJava schedules when using RxJava in spring-boot-2.5 or later.</p>"
+      },
+      {
+        "ver": "v2.2.26",
+        "hash": "v2226",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Traces RxJava3 schedules when using RxJava3 in spring-boot-3.0 or later.</p>"
+      },
+      {
+        "ver": "v2.2.26",
+        "hash": "v2226",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Collects and displays <code>threadName</code>, <code>className</code>, <code>methodName</code>, and <code>lineNumber</code> in the agent log.</p>"
+      },
+      {
+        "ver": "v2.2.26",
+        "hash": "v2226",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Modified the agent log format.</p>"
+      },
+      {
+        "ver": "v2.2.26",
+        "hash": "v2226",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Traces <code>CallableStatement</code> of Tibero.</p>"
+      },
+      {
+        "ver": "v2.2.26",
+        "hash": "v2226",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Modified the text color of the agent log.</p>"
+      },
+      {
+        "ver": "v2.2.26",
+        "hash": "v2226",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Modified the agent logfile name when starting the agent from <em>whatap-<code>date</code>.log</em> to <em>whatap.log</em>.</p>"
+      },
+      {
+        "ver": "v2.2.26",
+        "hash": "v2226",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> When the UTC reference date is changed, modified to save the <em>whatap.log</em> file name to <em>whatap-<code>date</code>.log</em>.</p>"
       }
     ]
   }

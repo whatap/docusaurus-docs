@@ -53,8 +53,14 @@ It detects the case when a SQL statement with the same SQL ID is changed to a di
 
 Select the query time and target on the screen. Select the <Cmdname sid="time" className="uitext" /> and <Cmdname sid="instance" className="uitext" /> options, and then select ![Search icon](/img/ico-btn-search.png).
 
-***Plan Change Count***: This bar graph chart displays the number of plan changes by time zone. When you select a time zone, a list of plan changes for the selected time appears. When you select a changed item from the list, you can see the details before and after the plan change at the lower part of the screen.
+The ***Plan Change Count*** section is a bar graph chart that displays the number of plan changes that occurred over time. When you select a time zone, a list of plan changes for the selected time appears. 
+
+### Checking the plan change details
+
+When you select a specific change from the list at the bottom of the screen, a ***Query*** section appears at the bottom of the screen where you can see the details before and after the plan change. By comparing the differences before and after the plan change in detail, you can determine which change affected the performance.
 
 <ImgLang img="db-analysis-sql-plan-change-history-diff.png" desc="Plan Change History" />
 
-By comparing the differences before and after the plan change in detail, you can determine which change affected the performance.
+- You can open the ***Query*** section in a new window by selecting ![New window viewing icon](/img/ic-popup.svg) on the upper right of the section.
+
+- To close the ***Query*** section, select ![Close icon](/img/ico-close.svg) in the upper right corner.

@@ -1,0 +1,26 @@
+---
+id: dbx-2_2_2
+title: DBX v2.2.2
+pagination_next: release-notes/db/dbx-2_2_1
+displayed_sidebar: releaseSidebar
+---
+
+November 21, 2024
+
+## ### SQL Server
+
+- <Status priority='1'>Feature</Status> Added the agent option to detect deadlocks.
+
+  - **mslog** <span class='type'>Boolean</span>
+
+    Default `true`
+
+    Execute the `xp_ReadErrorLog` command to view the error log.
+
+  - **mslog_interval** <span class='type'>Int</span>
+
+    Default `1` (unit: minute, min)
+
+    It searches logs from the previous cycle to the current cycle.
+
+- <Status priority='1'>Feature</Status> Added the `Uptime` metric.

@@ -39,7 +39,7 @@ import Transaction from "../common-items/_transaction.mdx";
 
   オプション値を`true`に設定すると、トランザクションのURLの前にアプリケーションのフルネームを表示します。
 
-- **trace_db_command_methods** <span class='type'>String</span>
+- **trace_db_command_methods** <span class='type'>String</span> <Status priority='1'>Deprecated</Status>
 
   `System.Data.Common.DbCommand`クラスでモニタリングするメソッド名を入力します。2 つ以上の値を設定するには、コンマ(,)を区切り文字として利用します。すべてのメソッドをモニタリングするには、以下のように適用します。
 
@@ -51,25 +51,25 @@ import Transaction from "../common-items/_transaction.mdx";
 
   既定値`false`
 
-  オプション値を`true`に設定すると、トランザクションの外部から発生するSQL、HTTPの呼び出しをトランザクションとして扱い、ヒートマップに表示します。
+  オプション値を`true`に設定すると、トランザクションの外部から発生するSQL、HTTPの呼び出しをトランザクションとして扱い、ヒットマップに表示します。
 
 - **expand_transaction_basetime** <span class='type'>Int</span>
 
   既定値`1000`(1秒)/最小値`100`(0.1秒)
 
-  設定したオプション値よりも応答に時間がかかる場合にのみ、データを収集します。1秒当たり最大100件まで収集します。
+  `expand_transaction_level` オプションが `true`に設定されている場合は、指定した時間よりも応答時間のかかるリクエストのみが、データを収集します。1秒当たり最大100件まで収集します。
 
 ## 例外処理{#exception}
 
 以下は、アプリケーションで発生する例外を管理およびモニタリングするためのオプションです。ビジネス例外を登録し、関連する統計を収集することで、アプリケーションの安定性を確認できます。また、特定の例外を無視したりHTTPステータスコードがエラーの場合、エラーとして処理するかどうかを設定できます。例外として処理された項目は、<Cmdname sid="side_hitmap" className="uitext" />または<Cmdname sid="TTL06209" className="uitext" />画面で、正常なトランザクションとして表示されます。
 
-- **transaction_status_error_enable** <span class='type'>Boolean</span>
+- **transaction_status_error_enable** <span class='type'>Boolean</span> <ScrollToLink anchor='transaction_status_error_enable' />
 
   既定値 `true`
 
   正常応答ではなくHTTP401、403のようなステータスコードがリターンされた場合、エラーとして処理するかどうかを設定します。
 
-- **status_ignore** <span class='type'>String</span>
+- **status_ignore** <span class='type'>String</span> <ScrollToLink anchor='status_ignore' />
 
   無視するHTTPのステータスコードを設定できます。複数の値を対象とする場合は、コンマ(,)を区切り文字として使用してください。
 
@@ -84,7 +84,7 @@ import Transaction from "../common-items/_transaction.mdx";
 
   :::
 
-- **status_ignore_set** <span class='type'>String</span>
+- **status_ignore_set** <span class='type'>String</span> <ScrollToLink anchor='status_ignore_set' />
 
   `whatap.error.STATUS_ERROR`を無視します。複数の値を対象とする場合は、コンマ(,)を区切り文字として使用してください。
 
@@ -183,7 +183,7 @@ import Transaction from "../common-items/_transaction.mdx";
 
 - **trace_ignore_url_prefix** <span class='type'>String</span>
 
-  トランザクションの収集から除外するURLのプレフィクス(prefix)を設定します。設定したプレフィクスと一致するURLは、トランザクションの性能を収集しません。複数の値を設定するには、コンマ(,)で区分してください。
+  トランザクションの収集から除外するURLのプレフィクス(prefix)を設定します。設定したプレフィクスと一致するURLは、トランザクションの性能を収集しません。複数の値を設定するには、コンマ(,)で区切りします。
 
   :::note
 
@@ -193,7 +193,7 @@ import Transaction from "../common-items/_transaction.mdx";
 
 - **trace_ignore_url_suffix** <span class='type'>String</span>
 
-  トランザクションの収集から除外するURLのサフィックス(suffix)を設定します。設定したサフィックスと一致するURLは、トランザクションの性能を収集しません。複数の値を設定するには、コンマ(,)で区分してください。
+  トランザクションの収集から除外するURLのサフィックスを設定します。設定したサフィックスと一致するURLは、トランザクションの性能を収集しません。複数の値を設定するには、コンマ(,)で区切りします。
 
   :::note
 

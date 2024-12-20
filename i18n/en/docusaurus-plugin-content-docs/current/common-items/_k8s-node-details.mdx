@@ -1,0 +1,117 @@
+### <Cmdname sid="TTL08441" className="uitext" type="node" />
+
+It provides a summary of the node configuration and overall resource usage selected in the<Cmdname sid="TTL08441" className="uitext" type="node" /> tab. You can comprehensively see the hardware and software components of the node. Users can monitor resource usage of nodes and the status of each component, as well as performance and operational stability.
+
+<ImgLang img='k8s-node-timeline-config.png' />
+
+- **Node system specifications**
+
+  - ***Architecture***: Hardware architecture used by the node.
+
+  - ***Image***: Information about the operating system image that the node is running on.
+
+  - ***CapacityMemory***: Total memory capacity of the node.
+
+  - ***CapacityCpu***: Total CPU capacity of the node.
+
+- **Software configuration** 
+
+  - ***Container Runtime***: Version of the container runtime used on the node. 
+
+  - ***kubelet***: Version of the Kubernetes kubelet running on the node. 
+
+  - ***kube-proxy***: Version of the kube-proxy that manages the network features. 
+
+- **Resource usage status** 
+
+  - ***CPU***: CPU usage of the node.
+
+  - ***Memory***: Memory usage of the node.
+
+  - ***Disk***: Disk capacity and usage rate on the node.
+
+  - ***Network***: Network throughput 
+
+:::note 
+
+- If you click CPU, memory, disk, or network, the <Cmdname sid="metrics" className="uitext" /> tab appears that can display the usage trend for the query period. 
+
+- By clicking ***AVG*** and ***MAX***, you can see the average usage and maximum usage for the query period.
+
+:::
+
+<InDoc pages="resource-node-list">
+
+:::note 
+
+The ***Node configuration*** tab is available in case of a cluster project (<code class='my'>CP</code>). 
+
+:::
+
+</InDoc>
+
+<InDoc pages="resource-node-list">
+
+### <Cmdname sid="resource" className="uitext" />
+
+<Cmdname sid="resource" className="uitext" /> In the tab, you can see the list of ***Pods*** scheduled on the selected node and the ***containers*** and ***applications*** running in those Pods. The information appears reflecting 1 minute of resource data as of the end of the selected time zone. This allows you to more clearly identify the node status at the time point and the operation status of each Pod, container, and application.
+
+<ImgLang img='k8s-node-timeline-resource.png' />
+
+</InDoc>
+
+### <Cmdname sid="process" className="uitext" />
+
+The <Cmdname sid="process" className="uitext" /> tab provides information about the major Kubernetes management processes inside the selected node. It can prevent cluster failures caused by process issues and minimize the downtime.
+
+<ImgLang img='k8s-node-process.png' />
+
+#### Process details {#k8s-node-process-details}
+
+- You can check information details about a process by selecting the ![Display Detail icon](/img/ico-detail-view.svg) icon in the <Cmdname sid="TTL08422" className="uitext" /> column on the left of the process list. 
+
+- You can select a method how to aggregate the statistical data during retrieval while querying long-term data of 3 days or more by clicking ***AVG*** or ***MAX***.
+
+- When you click a process key data value, the value is copied. 
+
+:::note 
+
+The <Cmdname sid="process" className="uitext" /> tab is supported in Kubernetes agent 1.7.14 or later.
+
+:::
+
+### <Cmdname sid="metrics" className="uitext" />
+
+You can check the resource usage trend of the node select in the <Cmdname sid="metrics" className="uitext" /> tab. You can check the usage changes in ***CPU***, ***memory***, ***network***, and ***disk*** based on the average (***AVG***) and maximum (***MAX***) values during the query period.
+
+<ImgLang img='k8s-node-timeline-metrics.png' />
+
+- ***AVG***: Average usage for the query period.
+
+- ***MAX***: Maximum usage for the query period.
+
+- ***Total***: Total traffic usage across multiple network interfaces.
+
+- ***In/Out***: Inbound (receiving) and outbound (sending) traffic usage for a specific network interface.
+
+:::note 
+
+The ***K8s CPU Request / Allocatable CPU (%)*** widget is supported in Kubernetes agent 1.7.10 or later.
+
+:::
+
+<InDoc pages="resource-node-list">
+
+### <Cmdname sid="trace" className="uitext" />
+
+You can see the trace information of the applications running on the node selected in the <Cmdname sid="trace" className="uitext" /> tab.
+
+<ImgLang img='k8s-resource-node-list-trace.png' />
+
+</InDoc>
+
+### <Cmdname sid="event" className="uitext" />
+
+You can check ***K8s Node events*** and ***WhaTap Node events*** that occurred on the node selected in the <Cmdname sid="event" className="uitext" /> tab. ***K8s node events*** include important activity logs within the cluster such as changes in node status, while ***WhaTap node events*** provide information about the events triggered based on the user-defined alert criteria.
+
+<ImgLang img='k8s-node-timeline-event.png' />

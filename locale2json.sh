@@ -4,15 +4,15 @@ node locale2json
 
 echo "[" > menu-locale.json
 
-gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /repos/whatap/whatap-front/contents/apps/whatap-front/src/containers/Sitemap/locale/menu.ko.js >> menu-locale.json
+gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /repos/whatap/whatap-front/contents/apps/whatap-front/src/fsd/common/5_entities/localization/const/locale/menu.ko.js >> menu-locale.json
 
 echo "," >> menu-locale.json
 
-gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /repos/whatap/whatap-front/contents/apps/whatap-front/src/containers/Sitemap/locale/menu.en.js >> menu-locale.json
+gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /repos/whatap/whatap-front/contents/apps/whatap-front/src/fsd/common/5_entities/localization/const/locale/menu.en.js >> menu-locale.json
 
 echo "," >> menu-locale.json
 
-gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /repos/whatap/whatap-front/contents/apps/whatap-front/src/containers/Sitemap/locale/menu.ja.js >> menu-locale.json
+gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /repos/whatap/whatap-front/contents/apps/whatap-front/src/fsd/common/5_entities/localization/const/locale/menu.ja.js >> menu-locale.json
 
 echo "]" >> menu-locale.json
 

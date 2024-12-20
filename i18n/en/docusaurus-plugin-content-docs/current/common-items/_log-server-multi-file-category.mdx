@@ -1,0 +1,133 @@
+{/* ### 다중 파일 지정 및 파일 분리  */}
+
+#### Specifying multiple files {#multiple-file-specification}
+
+{/* 여러 개의 로그 파일을 동일한 카테고리로 지정하려면, 각 파일에 대해 `[[inputs.logsink.file]]` 항목을 추가하고 `path`에 해당 파일 경로를 설정해야 합니다. The following example is a configuration that specifies a file in /root/test2 as a log file under the `serverlog` category.  */}
+
+To categorize multiple log files under the same category, add each log file path into the `[[inputs.logsink.file]]` entry and specify the file path by using the `path` setting. Additionally, you can configure additional settings, such as log generation statistics and options such as `category`, `stats_enabled`, and `stats_category`. The example is where the */root/test1* and */root/test2* files are assigned the same category (`serverlog`).
+
+```bash {2,7-15}
+[[inputs.logsink]]
+  category = "serverlog"
+  stats_enabled = true
+  stats_category = "logsink_stats"
+  excludeNames = [ ".gz",".zip" ]
+
+[[inputs.logsink.file]]
+  path = "/root/test1"
+  disabled = false
+  encoding = "utf-8"
+
+[[inputs.logsink.file]]
+  path = "/root/test2"
+  disabled = false
+  encoding = "utf-8"
+```
+
+:::note
+For information about options such as `category`, `stats_enabled`, `stats_category`, and `nowrap_keywords`, see the guidance [above](#server-log-settings). 
+:::
+
+In this example, you can see the following in <Cmdname sid="side_logTail" className="uitext" />.
+
+![Multiple file specification](/img/log-server-multi-file.png)
+
+{/* <Columns>
+
+<Column className="text--left width--45">
+
+```bash {7,10-17,19} showLineNumbers
+[[inputs.logsink]]
+  category = "serverlog"
+  stats_enabled = true
+  stats_category = "logsink_stats"
+  excludeNames = [ ".gz",".zip" ]
+#[[inputs.logsink.file]]
+#  path = "/some/path/%Y-%m-%d/.log"
+#  disabled = false
+#  encoding = "euc-kr"
+[[inputs.logsink.file]]
+  path = "/root/test1"
+  disabled = false
+  encoding = "utf-8"
+[[inputs.logsink.file]]
+  path = "/root/test2"
+  disabled = false
+  encoding = "utf-8"
+#[[inputs.logsink.file]]
+#  nowrap_keywords = ["Caused by:", "Test"]
+```
+
+</Column>
+
+<Column className="text--left">
+
+- Specify the category. `category` 
+
+- When configuring the log file, you can apply the date pattern (strftime.ort) via the `path` option, as in line 7 of the example. 
+
+  ```bash
+  path = "/some/path/%Y-%m-%d/.log"
+  ```
+
+- When setting the log files, you can merge logs based on specific keywords by using the `nowrap_keywords` option, as shown in line 19 of the example. 
+
+  ```bash
+  nowrap_keywords = ["Caused by:", "Test"]
+  ```
+
+</Column>
+
+</Columns> */}
+
+#### File separation {#file-separation}
+
+To specify different categories for log files, create separate *logsink\{<b>number</b>\}.conf* files and then set different `category` values ​​in each file. The following example shows how to set different log categories through *logsink.conf* and *logsink<b>1</b>.conf*.
+
+<Columns>
+
+<Column className="text--left width--50-2">
+
+```bash title='logsink.conf' {1,3,9}
+# cat logsink.conf
+[[inputs.logsink]]
+  category = "serverlog1"
+  stats_enabled = true
+  stats_category = "logsink_stats"
+  excludeNames = [ ".gz",".zip" ]
+
+[[inputs.logsink.file]]
+  path = "/root/test1"
+  disabled = false
+  encoding = "utf-8"
+```
+
+</Column>
+
+<Column className="text--left">
+
+```bash title='logsink1.conf' {1,3,9}
+#cat logsink1.conf
+[[inputs.logsink]]
+  category = "serverlog2"
+  stats_enabled = true
+  stats_category = "logsink_stats"
+  excludeNames = [ ".gz",".zip" ]
+
+[[inputs.logsink.file]]
+  path = "/root/test2"
+  disabled = false
+  encoding = "utf-8"
+```
+
+</Column>
+
+</Columns>
+
+:::note
+For information about options such as `category`, `stats_enabled`, `stats_category`, and `nowrap_keywords`, see the guidance [above](#server-log-settings). 
+:::
+
+In this example, you can see the following in <Cmdname sid="side_logTail" className="uitext" />.
+
+![File separation](/img/log-server-file-separation.png)

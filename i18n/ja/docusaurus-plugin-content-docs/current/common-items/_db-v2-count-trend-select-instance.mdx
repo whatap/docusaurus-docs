@@ -1,22 +1,14 @@
 ### 比較対象の選択
 
-![数字1](/img/number-01.png) <Cmdname sid="TTL06202" className="uitext" />、<Cmdname sid="instance" className="uitext" />を選択し、![数字2](/img/number-02.png) <Cmdname sid="TTL06203" className="uitext" />、<Cmdname sid="instance" className="uitext" />を選択します。 グラフにカーソルを合わせると、表示されるツールチップでデータを比較できます。
+![数字1](/img/number-01.png) <Cmdname sid="TTL06202" className="uitext" />、<Cmdname sid="instance" className="uitext" />を選択し、![数字2](/img/number-02.png) <Cmdname sid="TTL06203" className="uitext" />、<Cmdname sid="instance" className="uitext" />を選択します。 チャートの上にマウスをオーバーすると表示されるツールチップを通じて、その時点の詳細データを確認できます。 ツールチップの内容は、マウスの位置に応じて値が更新されます。
 
-<InDoc product="postgresql,mysql,oracle-pro,oracle"><ImgLang img='db-compare-count-trend-tootip.png' dsec='Tooltip' /></InDoc>
+![Tooltip](/img/db-compare-count-trend-tootip.png)
 
-<InDoc product="redis"><ImgLang img='db-compare-count-trend-tootip-redis.png' dsec='Tooltip' /></InDoc>
+- シリーズごとに固有の色が表示され、視覚的に簡単に区別できます。 実線は<Cmdname sid="TTL06202" className="uitext" />のデータ、点線は<Cmdname sid="TTL06203" className="uitext" />のデータを意味します。
 
-<InDoc product="altibase,cubrid"><ImgLang img='db-compare-count-trend-tootip-altibase.png' dsec='Tooltip' multi="true" /></InDoc>
+- **_Compare Time_**は、現在マウスポインターが存在するデータの時間値を表示します。
 
-<InDoc product="mongodb">
-
-![Tooltip](/img/db-compare-count-trend-tootip-mongodb.png)
-
-</InDoc>
-
-- グラフチャートの線は<Cmdname sid="TTL06202" className="uitext" />のデータ、点線は<Cmdname sid="TTL06203" className="uitext" />のデータを表示します。
-
-- ツールチップに<UI>(Comparison)</UI>が表示されている項目は、<Cmdname sid="TTL06203" className="uitext" />のデータです。
+- 選択したデータ時点のメトリクス値を表示し、シリーズごとに区別して提供します。 各シリーズには、データポイントのメトリクス名、日付及び値が含まれます。
 
 :::note
 

@@ -212,13 +212,33 @@ To use workflows, you need an account with access to **Microsoft Teams** and a b
 
 </details>
 
+<Xclude product="server">
+
 <details>
 
 <summary>Webhook JSON</summary>
 
 1. Register a webhook to receive alerts. The notification data is sent to the registered URL in JSON format by using the POST method.
 
-   ![Webhook](/img/3rdparty/set-event-3rd-party-plugin-add-webhook-json.png)
+   ```json
+   {
+       "pcode": 1234,
+       "projectName": "Sample project",
+       "time": 1577840400000,
+       "oid": 1234567890,
+       "oname": "WAS-01", // Optional
+       "title": "Alert Title",
+       "message": "Sample warning message",
+       "level": "Warning",
+       "status": "on",
+       "metricName": "cpu", // Optional
+       "metricValue": "99.99", // Optional
+       "metricThreshold": "90", // Optional
+       "uuid": "ba5db108b788475c95195***********",
+       "okind": "WAS-okind-01", // Optional
+       "onode": "WAS-onode-01", // Optional
+   }
+   ```
 
 2. Enter values for <UI>Webhook Name</UI> and <UI>Webhook URL</UI>.
 
@@ -237,6 +257,57 @@ To use workflows, you need an account with access to **Microsoft Teams** and a b
 :::
 
 </details>
+
+</Xclude>
+
+<InDoc product="server">
+
+<details>
+
+<summary>Webhook JSON</summary>
+
+1. Register a webhook to receive alerts. The notification data is sent to the registered URL in JSON format by using the POST method.
+
+   ```json
+   {
+       "pcode": 1234,
+       "projectName": "Sample project",
+       "time": 1577840400000,
+       "oid": 1234567890,
+       "oname": "WAS-01", // Optional
+       "title": "Alert Title",
+       "message": "Sample warning message",
+       "level": "Warning",
+       "status": "on",
+       "metricName": "cpu", // Optional
+       "metricValue": "99.99", // Optional
+       "metricThreshold": "90", // Optional
+       "uuid": "ba5db108b788475c95195***********",
+       "okind": "WAS-okind-01", // Optional
+       "onode": "WAS-onode-01", // Optional
+       "serverAlertPolicyName": "Memory Alert" // Optional
+   }
+   ```
+
+2. Enter values for <UI>Webhook Name</UI> and <UI>Webhook URL</UI>.
+
+   <ImgLang img="3rdparty/set-event-3rd-party-plugin-add-webhook-json-options.png" className="width-600" desc="Register" />
+
+3. Select <Cmdname sid="BTN06673" className="uitext" />.
+
+:::note
+
+- Event status (`status`) can be divided into event occurrence (`on`) and event resolution (`off`).
+
+- The `level` is divided into `None`, `Info`, `Warning`, and `Critical`.
+
+- To add the header values, select <Cmdname sid="TTL06674" className="uitext" />.
+
+:::
+
+</details>
+
+</InDoc>
 
 <details>
 

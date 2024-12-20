@@ -1,0 +1,73 @@
+[
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server-solaris/server-solaris-1_3_4",
+    "ver": "v1.3.4",
+    "date": "2024-09-19",
+    "Lists": [
+      {
+        "ver": "v1.3.4",
+        "hash": "v134",
+        "product": "Server Solaris Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the feature to collect server configuration data.</p>"
+      },
+      {
+        "ver": "v1.3.4",
+        "hash": "v134",
+        "product": "Server Solaris Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Improved to fix the OID value after initial startup of the agent.</p>"
+      },
+      {
+        "ver": "v1.3.4",
+        "hash": "v134",
+        "product": "Server Solaris Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the issue where the agent stops when collecting process data in the Oracle Enterprise Edition running environment.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server-solaris/server-solaris-1_3_5",
+    "ver": "v1.3.5",
+    "date": "2024-10-17",
+    "Lists": [
+      {
+        "ver": "v1.3.5",
+        "hash": "v135",
+        "product": "Server Solaris Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Supported Solaris 10.</p>"
+      },
+      {
+        "ver": "v1.3.5",
+        "hash": "v135",
+        "product": "Server Solaris Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"1\">Fixed</code> Fixed the issue where the Oname fixing option does not work.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server-solaris/server-solaris-1_3_6",
+    "ver": "v1.3.6",
+    "date": "2024-11-11",
+    "Lists": [
+      {
+        "ver": "v1.3.6",
+        "hash": "v136",
+        "product": "Server Solaris Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the data collection option for <span class=\"uitext\">Server inventory map</span>.</p>",
+        "details": "<ul>\n<li>\n<p><strong>categoryv2.enabled</strong> <span class=\"type\">bool</span></p>\n<p>Default <code>false</code></p>\n<p>It enables the collection of the server inventory map data.</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v1.3.6",
+        "hash": "v136",
+        "product": "Server Solaris Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the issue where the agent does not start when there is no zpool.</p>"
+      }
+    ]
+  }
+]

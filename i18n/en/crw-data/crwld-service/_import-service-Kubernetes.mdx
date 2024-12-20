@@ -1,0 +1,157 @@
+{/* - <code class="Changed">Changed</code> 오브젝트 매니페스트 지원 마스터 에이전트 버전 <b>1.5.2</b>로 변경 <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.3​</code></a></code>대시보드​
+
+- <code class="Changed">Changed</code> In the summary view under <Cmdname sid="side_containerMap" className="uitext" />, modified to display the container ID with the container name upon query of the current log (Stdout). <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="agentInstall" className="uitext" /> 메뉴의 안내 문구 개선 <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.2​</code></a></code> */}
+
+- <code class="Changed">Changed</code> Reorganized the <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="pod_init_perform" className="uitext" /> menu. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> If there is any linked project, provided the <Cmdname sid="TTL07046" className="uitext" /> view for the SQL target server and HTTPURLConnection information in <Cmdname sid="TTL06209" className="uitext" /> &gt; <Cmdname sid="table_view" className="uitext" />. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> Added the <Cmdname sid="side_correlatedProjectManagement" className="uitext" /> menu under <Cmdname sid="side_management" className="uitext" />: Registration, view, and deletion of the linked projects. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Changed">Changed</code> In <Cmdname sid="side_clusterOverview" className="uitext" />, added the <span class="uitext">Total Capacity CPU</span> (total CPU for nodes) and <span class="uitext">Total Capacity Memory</span> (total memory for nodes) widgets. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Changed">Changed</code> In <Cmdname sid="side_perfSummary" className="uitext" />, added <Cmdname sid="TTL07432" className="uitext" /> and <Cmdname sid="TTL07433" className="uitext" />, <Cmdname sid="TTL07434" className="uitext" /> widgets. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_containerImages" className="uitext" />, added the metrics, - <b>Total Container CPU</b> and <b>Total Container Memory</b>. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_nodeList" className="uitext" />, added the metric, - <b>beta.kubernetes.io/instance-type</b>. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_clusterOverview" className="uitext" />, added the lists for <b>Service</b>, <b>Ingress</b>, <b>Job</b>, and <b>CronJob</b> objects. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_containerList" className="uitext" />, added the function to move to the <Cmdname sid="side_nodeList" className="uitext" /> menu that filters the nodes when the <span class="uitext">Node</span> column is selected. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> Added the following menus under the <Cmdname sid="side_resource" className="uitext" /> menu. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+  - <Cmdname sid="podList" className="uitext" />: The Pod list and information details are provided.
+  - <Cmdname sid="containerizedAppList" className="uitext" />: The list and information details of the containerized applications are provided.
+  - <Cmdname sid="containerImages" className="uitext" />: The list of images in use is provided.
+
+- <code class="Feature">Feature</code> Added the function to filter only the selected resources when the status icon is selected at the top of the screen in the following menus: <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+  - <Cmdname sid="resource" className="uitext" /> &gt; <Cmdname sid="node_list" className="uitext" />
+  - <Cmdname sid="resource" className="uitext" /> &gt; <Cmdname sid="container_list" className="uitext" />
+  - <Cmdname sid="resource" className="uitext" /> &gt; <Cmdname sid="podList" className="uitext" />
+
+- <code class="Changed">Changed</code> Changed the name of the <Cmdname sid="side_resource" className="uitext" /> &gt; <Cmdname sid="kube_master" className="uitext" /> menu to <Cmdname sid="side_objectManifest" className="uitext" />. <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_resource" className="uitext" /> &gt; <Cmdname sid="side_objectManifest" className="uitext" />, improved to search and compare the object manifests (supports Kubernetes agent v1.5.0 or later). <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.0​</code></a></code>
+
+- <code class="Changed">Changed</code> To support <UI>Object Manifest</UI>, the master agent version has been changed to <b>1.5.2</b>. <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.3​</code></a></code>Dashboard
+
+- <code class="New">New</code> Added the <Cmdname sid="side_kubeApiserverDashboard" className="uitext" /> menu. <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="New">New</code> Added the <Cmdname sid="side_kubernetesAgentList" className="uitext" /> menu. <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Changed">Changed</code> In <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_objectManifest" className="uitext" />, modified the UI design and added TOC for the <Cmdname sid="compare" className="uitext" /> function. <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Changed">Changed</code> When using the comparison feature in <Cmdname sid="container" className="uitext" /> &gt; <Cmdname sid="side_containerList" className="uitext" />, added the <span class="uitext">Container CPU Usage</span> chart in the <Cmdname sid="kube_default" className="uitext" /> and <Cmdname sid="cpu" className="uitext" /> tabs. <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_containerMap" className="uitext" />, added the ReplicationController grouping option. <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="New">New</code> Added the <Cmdname sid="side_kubeApiserverMetricsSearch" className="uitext" /> menu. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="New">New</code> Added the <Cmdname sid="side_deploymentList" className="uitext" /> menu. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> Added the <Cmdname sid="ITM06172" className="uitext" /> option in the Pod category. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_workload" className="uitext" /> &gt; <Cmdname sid="side_containerImages" className="uitext" />, displayed the total number of images. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_nodeList" className="uitext" /> for the Kubernetes cluster project, added the node information column. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_integratedContainerMap" className="uitext" />, added <span class="uitext">WhatapProject</span> as the <Cmdname sid="groupby" className="uitext" /> option: grouping by project is possible. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="display_detail" className="uitext" /> of <Cmdname sid="side_containerMap" className="uitext" />, added the <Cmdname sid="checked_only" className="uitext" /> option that can display only the items selected from the target (container/Pod) list. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_workload" className="uitext" /> &gt; <Cmdname sid="side_containerizedAppList" className="uitext" />, added the <Cmdname sid="TTL06891" className="uitext" /> tab in the application details. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_containerMap" className="uitext" />, added the guide for the Pod phase and phases of the selected category. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_containerMap" className="uitext" />, added the link to the list menu. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> Reorganized the <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="pod_init_perform" className="uitext" /> menu and changed the menu name to <Cmdname sid="side_podInitPerf" className="uitext" />. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="agentInstall" className="uitext" /> added the guide for agent installation using the Helm. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.2​</code></a></code>
+
+{/* #### 리소스​
+
+- <code class="Changed">Changed</code> In <Cmdname sid="side_clusterOverview" className="uitext" />, added the <span class="uitext">Total Capacity CPU</span> (total CPU for nodes) and <span class="uitext">Total Capacity Memory</span> (total memory for nodes) widgets. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Changed">Changed</code> In <Cmdname sid="side_perfSummary" className="uitext" />, added <Cmdname sid="TTL07432" className="uitext" /> and <Cmdname sid="TTL07433" className="uitext" />, <Cmdname sid="TTL07434" className="uitext" /> widgets. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Changed">Changed</code> In <Cmdname sid="side_nodeList" className="uitext" /> modified the classification and positions of columns. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_containerImages" className="uitext" />, added the metrics, - <b>Total Container CPU</b> and <b>Total Container Memory</b>. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_nodeList" className="uitext" />, added the metric, - <b>beta.kubernetes.io/instance-type</b>. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_clusterOverview" className="uitext" />, added the lists for <b>Service</b>, <b>Ingress</b>, <b>Job</b>, and <b>CronJob</b> objects. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_containerList" className="uitext" />, added the function to move to the <Cmdname sid="side_nodeList" className="uitext" /> menu that filters the nodes when the <span class="uitext">Node</span> column is selected. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> Added the following menus under the <Cmdname sid="resource" className="uitext" /> menu. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+  - <Cmdname sid="podList" className="uitext" />: The Pod list and information details are provided.
+  - <Cmdname sid="containerizedAppList" className="uitext" />: The list and information details of the containerized applications are provided.
+  - <Cmdname sid="containerImages" className="uitext" />: The list of images in use is provided.
+
+- <code class="Feature">Feature</code> Added the function to filter only the selected resources when the status icon is selected at the top of the screen in the following menus: <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+  - <Cmdname sid="resource" className="uitext" /> &gt; <Cmdname sid="node_list" className="uitext" />
+  - <Cmdname sid="resource" className="uitext" /> &gt; <Cmdname sid="container_list" className="uitext" />
+  - <Cmdname sid="resource" className="uitext" /> &gt; <Cmdname sid="podList" className="uitext" />
+
+- <code class="Changed">Changed</code> Changed the name of the <Cmdname sid="resource" className="uitext" /> &gt; <Cmdname sid="kube_master" className="uitext" /> menu to <Cmdname sid="side_objectManifest" className="uitext" />. <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="resource" className="uitext" /> &gt; <Cmdname sid="side_objectManifest" className="uitext" /> 메뉴에서 과거 오브젝트 매니페스트를 조회/비교할 수 있도록 개선(Kubernetes 에이전트 v1.5.0 이상 지원) <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.0​</code></a></code> */}
+
+{/* 
+
+#### Application​
+
+- <code class="Changed">Changed</code> Changed the Japanese menu name of the <Cmdname sid="multi_hitmap" className="uitext" /> and <Cmdname sid="side_customHitmap" className="uitext" /> menu. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Changed">Changed</code> In <Cmdname sid="container" className="uitext" /> &gt; <Cmdname sid="side_containerImages" className="uitext" />, changed the columns. <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_containerMap" className="uitext" /> 메뉴에서 블록의 크기가 작은 경우 UI 표시 수정 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code> */}
+
+#### Log
+
+- <code class="Feature">Feature</code> Added the <Cmdname sid="side_kubeEventList" className="uitext" /> menu to search Kubernetes events as a project basis. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> Added the log data search function in the <Cmdname sid="whatapEventList" className="uitext" />: <code>#WhatapEvent</code> category. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" />, added the composite metrics event templates. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.5​</code></a></code>
+
+{/* #### 기타
+
+- <code class="Changed">Changed</code> Reorganized the <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="pod_init_perform" className="uitext" /> menu. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> If there is any linked project, provided the <Cmdname sid="TTL07046" className="uitext" /> view for the SQL target server and HTTPURLConnection information in <Cmdname sid="TTL06209" className="uitext" /> &gt; <Cmdname sid="table_view" className="uitext" />. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> Added the <span class="uitext">Correlated Project Management</span> menu under <span class="uitext">Management</span>: Registration, view, and deletion of the linked projects. <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Changed">Changed</code> To support object manifests, the master agent version has been changed to <b>1.5.2</b>. <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.3​</code></a></code>대시보드​
+
+- <code class="Changed">Changed</code> In <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_podInitPerf" className="uitext" /> added the user guide link on the banner. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.1​</code></a></code>
+
+- <code class="Feature">Feature</code> Added the <Cmdname sid="ITM06172" className="uitext" /> option in the Pod category. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_workload" className="uitext" /> &gt; <Cmdname sid="side_containerImages" className="uitext" />, displayed the total number of images. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_nodeList" className="uitext" /> for the Kubernetes cluster project, added the node information column. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_integratedContainerMap" className="uitext" />, added <span class="uitext">WhatapProject</span> as the <Cmdname sid="groupby" className="uitext" /> option: grouping by project is possible. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="display_detail" className="uitext" /> of <Cmdname sid="side_containerMap" className="uitext" />, added the <Cmdname sid="checked_only" className="uitext" /> option that can display only the items selected from the target (container/Pod) list. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_workload" className="uitext" /> &gt; <span class="uitext">Container Application List</span>, added the <Cmdname sid="TTL06891" className="uitext" /> tab in the application details. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_containerMap" className="uitext" />, added the guide for the Pod phase and phases of the selected category. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <span class="uitext">Container Map</span>, added the link to the list menu. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> Reorganized the <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="pod_init_perform" className="uitext" /> menu and changed the menu name to <Cmdname sid="side_podInitPerf" className="uitext" />. <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <span class="uitext">관리</span> &gt; <Cmdname sid="agentInstall" className="uitext" /> 메뉴에서 Helm을 이용한 에이전트 설치 안내 추가 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.2​</code></a></code> */}

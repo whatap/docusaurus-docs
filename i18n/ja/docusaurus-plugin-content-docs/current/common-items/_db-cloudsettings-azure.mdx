@@ -1,0 +1,133 @@
+## Azure Monitor設定{#azure}
+
+Azureクラウド環境で実行中のデータベースの状態と資源使用状況をモニタリングできます。
+
+### メトリクスを追加するサービスを選択する
+
+<ImgLang img="db-cloudsettings-select-service-azure.png" desc="Azure" />
+
+最初のセクションで<UI>Azure Monitor</UI>を選択します。 **Azure Resource Manager**テンプレートをインストールして、Azure Monitorが提供するメトリクスを収集します。
+
+### パラメータを入力する
+
+**Azure Resource Manager**設定を進める前に、必須項目を入力します。
+
+<ImgLang img="db-cloudsettings-azure-input-parameters.png" desc="Azure parameter" />
+
+- ***Instance***: Azureクラウド環境で実行中のデータベースから収集したメトリクスをモニタリングするインスタンス(エージェント)を選択します。
+
+- ***Resource ID***: モニタリング対象データベースのリソースIDを入力します。 この情報は、モニタリング対象データベースのコンソールで確認できます。 次の画像を参照してください。
+
+  ![Azure resource ID](/img/db-cloudsettings-azure-resourceid.png)
+
+パラメータを入力した後、<Cmdname sid="BTN08639" className="uitext" />ボタンを選択します。 **Azure Resource Manager**設定に必要なJSONを生成します。 生成されたJSONコンテンツをコピーします。
+
+### Azure Resource Managerを設定する
+
+WhaTapで提供する**Azure Resource Manager**テンプレートをインストールします。 このテンプレートを通じて、Azure MonitorメトリクスをWhaTapサーバーに収集するFunction Appをインストールできます。 <UI>Azure Resource Manager</UI> <Cmdname sid="setting" className="uitext" />ボタンを選択すると、インストールを開始し、設定プロセスを実行できます。
+
+<ImgLang img="db-cloudsettings-set-resource-manager.png" desc="Azure Resource Manager" />
+
+1. <UI>Azure Resource Manager</UI> <Cmdname sid="setting" className="uitext" />ボタンを選択すると、Microsoft Azureのテンプレート生成画面に移動します。
+
+2. **Edit Parameters**を選択します。
+
+   ![Azure](/img/db-cloudsettings-azure-template.png)
+
+3. 先の<Cmdname sid="BTN08639" className="uitext" />ボタンで生成したJSON形式のパラメータを貼り付けします。
+
+   <ImgLang img="db-cloudsettings-azure-edit-parameters.png" desc="Edit parameters" />
+
+4. 画面下段の**Save**ボタンを選択すると、パラメータが自動的に入力されます。
+
+5. **Resource group**を選択します。 **Resource group**は、モニタリング対象データベースを持つグループを選択する必要があります。
+
+   <ImgLang img="db-cloudsettings-azure-project-details.png" desc="Azure" />
+
+6. **Review \+ Create**ボタンを選択します。
+
+7. 次の画面で**Create**ボタンを選択します。
+
+配布が行われ、すべてのプロセスが完了します。
+
+:::note
+
+- **Azure Resource Manager**についての詳細は、[次のリンク](https://learn.microsoft.com/azure/azure-resource-manager/management/overview)を参照してください。
+
+- Azure Monitorでサポートされるメトリクス情報は、[次のリンク](https://learn.microsoft.com/azure/azure-monitor/reference/metrics-index)を参照してください。
+
+:::
+
+### 必要権限を設定する
+
+#### 権限案内
+
+WhaTapのFunction Appがモニタリング機能を正しく活用するには、当該リソースグループ(Rescource group)やサブスクリプション(Subscription)に**Monitoring Reader**役割を割り当てる必要があります。 しかし、この役割を割り当てる行為自体は、権限が必要な作業です。 つまり、**Microsoft.Authorization/roleAssignments/write**権限が必要であり、この権限は一般的なユーザーロールには含まれません。
+
+従って、**Monitoring Reader**役割を割り当てるためには、これらの高度な権限を含む**Role Based Access Control Administrator**または**User Access Administrator**役割が必要です。
+
+:::note
+
+- 該当リソースグループ(Rescource group)やサブスクリプション(Subscription)に**Monitoring Reader**役割がすでに割り当てられている場合は、このコースは省略しても構いません。
+
+- Azure役割の割り当てについての詳細は、[次のリンク](https://learn.microsoft.com/azure/role-based-access-control/role-assignments-portal#prerequisites)を参照してください。
+
+:::
+
+#### 権限を割り当てる
+
+最小限の範囲のためにサブスクリプション(Subscription)より下位階層のリソースグループ(Rescource group)を基準にご案内します。
+
+1. リソースを含むグループダッシュボードで**Access control (IAM)** &gt; **Add** &gt; **Add role assignment**順番に選択します。
+
+   ![Azure - Add role assignment](/img/db-cloudsettings-azure-add-role.png)
+
+2. **Add role assignment**画面で**Privileged administrator roles**タブを選択します。
+
+   ![Azure - Privileged administrator roles](/img/db-cloudsettings-azure-assignment.png)
+
+3. **Role base Access Controle Administator** または**User Access Administrator**項目を選択します。
+
+4. 画面下段の**Next**ボタンを選択します。
+
+5. **Assign access to**項目で**User, group, or service principal**を選択し、**Select Members**を選択し、ユーザー(**User**)を追加します。
+
+   ![Azure - Select members](/img/db-cloudsettings-azure-assignment-user.png)
+
+6. 画面下段の**Next**ボタンを選択します。
+
+7. **Recommended**項目を選択して**Review + assign**ボタンをクリックします。
+
+   ![Azure - Condtions](/img/db-cloudsettings-azure-conditions.png)
+
+:::note
+
+**fewer privileges**項目を選択するには、**Monitoring Reader**役割のみ許可しします。
+
+:::
+
+### 収集メトリクスを確認する
+
+クラウドデーターベース接続を完了すると、画面に<Cmdname sid="TTL08633" className="uitext" />セクションが生成されます。 クラウドデータベースに接続されたインスタンス(エージェント) および収集されるメトリクスの一覧を確認できます。
+
+<ImgLang img="db-cloudsettings-added-azure-cloud-services.png" desc="Cloud Services" />
+
+**Azure Monitor**から収集したメトリクスは***Azure***カテゴリに含まれます。
+
+![CloudWatch](/img/db-cloudsettings-check-metrics-category-aws.png)
+
+次のメニューパスで確認できます。
+
+- <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />: ウィジェットの![設定アイコン](/img/ico-setting.svg)ボタンを選択してメトリクスを選択できます。
+
+- <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" />: ユーザー定義ウィジェットを追加してメトリクスを選択できます。
+
+:::note
+
+- <Cmdname sid="side_dbMonitoring" className="uitext" />メニューでウィジェットのメトリクスを変更する方法は、[次の文書](instance-monitoring#selectmetrics)を参照してください。
+
+- <Cmdname sid="side_multiInstance" className="uitext" />メニューでユーザー定義ウィジェットを追加する方法は、[次の文書](multi-instance-monitoring#customwidget)を参照してください。
+
+- <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_metricsSearch" className="uitext" />メニューで<Cmdname sid="category" className="uitext" />項目を**db_azure_database**に選択します。 関連したタグとフィールド情報を確認できます。
+
+:::

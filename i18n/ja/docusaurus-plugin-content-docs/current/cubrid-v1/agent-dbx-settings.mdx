@@ -22,17 +22,17 @@ import Dbagentdbxbasicoption from "../common-items/_db-agent-dbx-basic-option.md
 
   既定値`0`
 
-  アプリケーション接続情報に使用するブローカーのポート情報です。 ブローカー設定ファイル(*cubrid_broker.conf*)に`BROKER_PORT`項目に定義された値を入力してください。 (CUBRIDの既定値`BROKER_PORT: 33000`)
+  アプリケーション接続情報に使用するブローカーのポート情報です。 ブローカー設定ファイル(*cubrid_broker.conf*)に`BROKER_PORT`項目に定義された値を入力します。 (CUBRIDの既定値`BROKER_PORT: 33000`)
 
 - **cms_port** <span class='type'>Int</span>
 
   既定値 `8001`
 
-  **CUBRID Manager**が使用するポートです。 **CUBRID Manager**設定ファイル(*cm.conf*)の`cm_port`項目に定義された値を入力してください。 モニタリング情報を**CUBRID Manager**のapiを使用して読み込むために必要です。
+  **CUBRID Manager**が使用するポートです。 **CUBRID Manager**の設定ファイル(*cm.conf*)で`cm_port`項目に定義された値を入力します。 モニタリング情報を**CUBRID Manager**のAPIから取得するために必要です。
 
 - **cms_token_file** <span class='type'>String</span>
 
-  ユーザーが生成したDBが複数ある場合、WhaTapエージェントをDB数だけインストールして設定する必要があります。 この場合、エージェント間でトークンを共有するには、`cms_token_file`パスが必要です。 *`{エージェントインストールパス}`/cms_token*に設定してください。 
+  ユーザーが生成したDBが複数ある場合、WhaTapエージェントもDBの数分インストールし、設定する必要があります。 この場合、エージェント間でトークンを共有するには、`cms_token_file`パスが必要です。 *`{エージェントインストールパス}`/cms_token*で設定します。 
 
   例) agent2をインストールした場合、agent1の`cms_token_file`パスを共有するために次のように設定してください。
 
@@ -46,7 +46,7 @@ import Dbagentdbxbasicoption from "../common-items/_db-agent-dbx-basic-option.md
 
   既定値 `broker1`、`query_editor`
 
-  CUBRIDをインストールすると、デフォルトで`broker1`、`query_editor`でブローカーが実行されます。 ユーザーが任意にブローカーの名前を変更または、追加で移動を行った場合は、変更を入力してください。
+  CUBRIDをインストールすると、デフォルトで`broker1`、`query_editor`でブローカーが実行されます。 ユーザーからブローカーの名前を変更または、追加で移動を行った場合は、変更内容を入力してください。
 
   :::note
 
@@ -65,12 +65,6 @@ import Dbaes256encrypt from "../common-items/_db-aes-256-encrypt.mdx";
 
 <Dbaes256encrypt />
 
-## エージェント名の識別{#naming}
-
 import Dbsettingagentnamedetails from "../common-items/_db-setting-agent-name-details.mdx";
 
-<Dbsettingagentnamedetails />
-
-import Dbagentdbxnaming from "../common-items/_db-agent-dbx-naming.mdx";
-
-<Dbagentdbxnaming />
+<Dbsettingagentnamedetails level={2} agentType="DBX" />

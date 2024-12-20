@@ -1,0 +1,200 @@
+---
+id: okta
+title: Okta連携
+description: SSOアカウント連携を通じて一つのIDとパスワードを利用し、簡単にアカウントを管理してください。
+keywords:
+  - SSO
+  - アカウント
+  - セキュリティ
+displayed_sidebar: manageSidebar
+---
+
+クラウドベースのユーザーアカウント管理及びアクセス権限管理ソリューションである**Okta**とWhaTapモニタリングを連携できます。 **Okta**は、高レベルのセキュリティ環境において数多くのアプリケーションを 1つのアカウントでログインできるソリューションです。 組織内で使用中の**Okta**アカウントでWhaTapサービスにログインし、与えられた権限内でサービスを利用できます。
+
+:::note
+
+- WhaTapログイン連携のため、ユーザーは**Okta**アカウントを持っている必要があります。
+
+- **Okta**についての詳細は、[次のリンク](https://www.okta.com)を参照してください。
+
+:::
+
+## Okta連携{#integrateokta}
+
+次の案内に従って、WhaTapモニタリングサービスにOkta連携を設定してください。
+
+### WhaTapでのSSOキー発行{#generatessokey}
+
+1. [WhaTapモニタリングサービス](https://service.whatap.io)にログインしてください。
+
+2. 画面の右上のプロフィールアイコンを選択してください。
+
+3. ポップアップメニューが表示されたら<Cmdname sid="MNU07360" className="uitext" />を選択します。
+
+4. 画面の左側のメニューで<Cmdname sid="ssoIntegrations" className="uitext" />を選択します。
+
+5. ***Service provider ID (WhaTap)***セクションの<Cmdname sid="BTN07473" className="uitext" />でKey Nameを入力します。
+
+   Key Nameは、ユーザーが任意に入力できます。
+
+   <ImgLang img='sso-service-key.png' desc='Service provider ID' />
+
+6. <Cmdname sid="BTN07473" className="uitext" />ボタンを選択します。
+
+7. <Cmdname sid="TTL07478" className="uitext" />で<span class="uitext">EntityID</span>と<span class="uitext">Sign-On URL</span>項目の値を確認してコピーします。
+
+   <ImgLang img='sso-check-sso-info.png' desc='sso-info' />
+
+:::note
+
+- SSOキーは最大5個まで発行でき、それぞれ固有の認証情報値を持っています。 
+
+- <Cmdname sid="BTN07476" className="uitext" />ボタンを選択してSSOキーを追加し、その後の手順に進みます。
+
+- 追加されたSSO情報は、***Key Name***項目でリストボックスを選択して確認できます。
+
+:::
+
+### Okta認証設定{#settingokta}
+
+1. **Okta管理者ページ**にアクセスします。
+
+2. **Applcations** &gt; **Applications**メニューに移動します。
+
+3. **Create App Integration**ボタンを選択します。
+
+4. **Create a new app integration**ポップアップが表示されたら**SAML 2.0**項目をクリックし**Next**ボタンを選択します。
+
+5. **App name**項目を入力した後**Next**ボタンを選択します。
+
+6. **SAML Settings**セクションの**General**項目を順番に入力します。
+
+   ![Okta - SAML Settings](/img/okta-samil-settings-general.png)
+
+   - **Single sign-on URL**：WhaTapで発行されたSSO情報のうち***Sign-On URL***値を入力します。
+
+   - **Audience URI** (**SP Entity ID**)：WhaTapで発行されたSSO情報のうち***EntityID***値を入力します。
+
+   - **Application username**一覧で**Email**を選択します。
+
+7. **Attribute Statements** (**optional**)の**Name**項目には'email'を入力した上で、**Value**項目では**user.email**を選択します。
+
+   ![Okta - Attribute Statements](/img/okta-attribute-statements.png)
+
+8. **Next**ボタンを選択します。
+
+9. 次の画面で**This is an internal app that we have created**項目を選択した後**Finish**ボタンを選択します。
+
+### Oktaメタデータのコピー{#copymetadata}
+
+1. **Okta管理者ページ**にアクセスします。
+
+2. **Applcations** &gt; **Applications**メニューに移動します。
+
+3. **Sign On**タブを選択します。
+
+4. **Metadata URL**項目で**Copy**ボタンを選択します。
+
+   ![Metadata URL](/img/okta-sign-on.png)
+
+5. コピーした値を登録するために、WhaTapの<Cmdname sid="ssoIntegrations" className="uitext" />メニューに移動します。
+
+### WhaTapでのExternal IdP情報登録{#registerexternalidp}
+
+1. WhaTapモニタリングサービスで<Cmdname sid="ssoIntegrations" className="uitext" />メニューに移動します。
+
+2. <Cmdname sid="TTL07484" className="uitext" />セクションで<Cmdname sid="BTN07491" className="uitext" />ボタンを選択します。
+
+   <ImgLang img='sso-externalidp-button.png' desc='External IdP' />
+
+3. <Cmdname sid="BTN07491" className="uitext" />ウィンドウが表示されたら<b>Okta</b>でコピーした<b>Metadata URL</b>値を<span class="uitext">Metadata</span>項目に貼り付けてください。
+
+4. 認証データを自動変換するために<Cmdname sid="BTN07494" className="uitext" />ボタンを選択します。
+
+5. <Cmdname sid="save" className="uitext" />ボタンを選択します。
+
+SSO連携を完了しました。
+
+## ユーザー割り当て
+
+1. **Okta管理者ページ**にアクセスします。
+
+2. **Applcations** &gt; **Applications**メニューに移動します。
+
+3. 一覧で先に追加したアプリケーションを選択します。
+
+4. **Assignments**タブを選択します。
+
+5. **Assign**ボタンをクリックし**Assign to People** (または**Assign to Groups**)を選択します。
+
+   ![Assignments](/img/sso-assignments-assign.png)
+
+6. 希望するユーザーを割り当て(**Assign**)します。
+
+   ![Assignments](/img/sso-assignments-assign-people.png)
+
+7. **Save and Go Back**ボタンを選択します。
+
+   ![Assignments](/img/sso-assignments-assign-save.png)
+
+8. すべての手順を完了した後**Done**ボタンを選択します。
+
+   ![Assignments](/img/sso-assignments-assign-done.png)
+
+## SSO連携の確認{#checksso}
+
+1. **Okta管理者ページ**にアクセスします。
+
+2. **Applcations** &gt; **Applications**メニューに移動します。
+
+3. 一覧で先に追加したアプリケーションを選択します。
+
+4. **General**タブを選択します。
+
+5. 画面下にスクロールして**App Embed Link**へ移動します。
+
+   ![Okta - App Embed Link](/img/okta-app-embed-link.png)
+
+6. **Embed Link**項目にURLをコピーします。
+
+7. WEBブラウザーでコピーしたURLへ移動します。
+
+正常に連携された場合、WhaTapモニタリングサービス画面にログインされます。
+
+:::note
+
+- 最初にSSO連携した時、WhaTapに該当メールアカウントがある場合、パスワード認証による連携情報登録(自動) の手続きが必要です。
+
+- メールアドレスがない場合は、必須情報の入力後WhaTapの会員登録及び連携情報の登録が自動的に処理されます。
+
+:::
+
+## SSOキーの削除
+
+1. WhaTapモニタリングサービスで<Cmdname sid="ssoIntegrations" className="uitext" />メニューに移動します。
+
+2. ***Service provider ID (WhaTap)***セクションの<Cmdname sid="TTL07478" className="uitext" />で削除しようとする***Key Name***を選択します。
+
+   <ImgLang img='sso-delete-sso-key.png' desc='Delete SSO Key' />
+
+3. <Cmdname sid="BTN07481" className="uitext" />ボタンを選択します。
+
+4. 削除確認ウィンドウが表示されたら、<Cmdname sid="BTN07481" className="uitext" />ボタンを選択します。
+
+## External Idp情報の修正・削除
+
+1. WhaTapモニタリングサービスで<Cmdname sid="ssoIntegrations" className="uitext" />メニューに移動します。
+
+2. <Cmdname sid="TTL07484" className="uitext" />セクションで<Cmdname sid="BTN07490" className="uitext" />ボタンを選択します。
+
+3. <Cmdname sid="BTN07490" className="uitext" />ウィンドウが表示されたら<span class="uitext">Meatadata</span>項目に<b>Oktaメタデータ</b>を貼り付けします。
+
+4. 認証データを自動変換するための<Cmdname sid="BTN07494" className="uitext" />ボタンを選択します。
+
+5. <Cmdname sid="save" className="uitext" />ボタンを選択します。
+
+:::tip
+
+**External Idp**情報を削除するには、<Cmdname sid="BTN07490" className="uitext" />ボタンをクリックし、ポップアップで<Cmdname sid="delete" className="uitext" />ボタンを選択します。
+
+:::

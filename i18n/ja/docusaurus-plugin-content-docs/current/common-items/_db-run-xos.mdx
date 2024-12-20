@@ -2,6 +2,8 @@
 
 データベースサーバーで次のバッチファイルを実行してください。
 
+<Xclude product="mssql">
+
 ```bash
 $ ./start.sh
 
@@ -9,3 +11,29 @@ $ ./start.sh
 
 $ ./startd.sh #バックグラウンドで実行する場合
 ```
+
+</Xclude>
+
+<InDoc product="mssql">
+
+```bash
+start.bat
+```
+
+画面に表示される実行ログにエラーがないことを確認し、実行を終了した後、次の手順に従ってサービスに登録します。
+
+- **サービスを登録**
+
+  xosフォルダにある_install_WindowsService.bat_ファイルを次のように実行してサービスに登録してください。もし`create`オプションの次に名前を入力しないと**WhatapXOSAgent**名前でサービスに基本登録されます。
+
+  ```bash
+  install_WindowsService.bat create WhatapXOSAgent
+  ```
+
+- **サービスを削除**
+
+  ```bash
+  install_WindowsService.bat delete WhatapXOSAgent
+  ```
+
+</InDoc>

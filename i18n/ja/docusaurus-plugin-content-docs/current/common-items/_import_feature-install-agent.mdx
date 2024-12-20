@@ -1,3 +1,5 @@
+{/* 이 문서 넘버링이 1 1 3으로 이어진 이유는 xclude page 활용 문제입니다. 번역 시 주의해 주세요. */}
+
 **Featureプロジェクト**(<code class='Features'>Features</code>) 生成後、自動的に***{props.name}***画面に移動します。 次の案内に従ってインストールします。 
 
 1. **プロジェクトアクセスキー**を確認します。 
@@ -43,11 +45,57 @@
 
    </InDoc>
 
+   <InDoc pages="vcenter-introduction">
+
+   次のコマンドを実行してユーザー環境を自動的に認識し、vCenterがインストールされているサーバーにインストールスクリプトを生成します。 
+
+   ```bash
+   curl http://repo.whatap.io/telegraf/feature/vcenter/install_vcenter_monitoring.sh -o install_vcenter_monitoring.sh
+   ```
+
+   </InDoc>
+
+   <InDoc pages="nginx-introduction">
+
+   次のコマンドを実行してユーザ環境を自動的に認識し、NGINXがインストールされているサーバーにインストールスクリプトを生成します。
+
+   ```bash
+   curl http://repo.whatap.io/telegraf/feature/nginx/install_nginx_monitoring.sh -o install_nginx_monitoring.sh
+   ```
+
+   次のコマンドを実行してNGINXエージェントをインストールします。
+
+   ```bash
+   chmod +x install_nginx_monitoring.sh
+   sudo ./install_nginx_monitoring.sh "x42ut20rmr8rn-z1kli3trqviqul-x5cm4quee6cdmj" "15.165.146.117"
+   ```
+
+   </InDoc>
+
+   <InDoc pages="apache-introduction">
+
+   次のコマンドを実行してユーザー環境を自動的に認識した後、APACHEがインストールされたサーバーにインストールスクリプトを生成します。
+
+   ```bash
+   curl http://repo.whatap.io/telegraf/feature/apache/install_apache_monitoring.sh -o install_apache_monitoring.sh
+   ```
+
+   次のコマンドを実行して、APACHEエージェントをインストールします。
+
+   ```bash
+   chmod +x install_apache_monitoring.sh
+   sudo ./install_apache_monitoring.sh "x42uu23t8kl3a-z1e71pb8vhbpir-z62lcfeuerbcp2" "15.165.146.117"
+   ```
+
+   </InDoc>
+
+<Xclude pages="nginx-introduction,apache-introduction">
+
 3. エージェント設定および再起動後、**モニタリング**を**開始**します。  
 
    <InDoc pages="kafka-introduction">
 
-   KAFKAにJolokiaエージェント設定のために、次のコマンドを実行してから再起動します。
+   KAFKAにJolokiaエージェントを設定するために、次のコマンドを実行してから再起動します。
 
    ```bash
    #cd {kafka home directory}/bin
@@ -80,9 +128,15 @@
 
    </InDoc>
 
-{/* 
-Featureプロジェク 
+   <InDoc pages="vcenter-introduction">
 
-Kafka
-Aerospike 
-*/}
+   WhaTapサーバーモニタリングエージェントとテレグラフサイドカーをインストールするために、次のコマンドを実行します。
+
+   ```bash
+   chmod +x install_vcenter_monitoring.sh
+   sudo ./install_vcenter_monitoring.sh "x42u520ie21jb-z76vslonvu6qp8-x7dv18dj7fknuq" "15.165.146.117"
+   ```
+
+   </InDoc>
+
+</Xclude>

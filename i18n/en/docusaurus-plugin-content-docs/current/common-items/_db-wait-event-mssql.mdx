@@ -1,0 +1,91 @@
+### wait_type {#waittype}
+
+The `wait_type` column is a value that indicates a specific resource or event on which a query or transaction is waiting in **SQL Server**. **SQL Server** uses various wait types internally to manage the system performance and diagnose problems.
+
+#### I/O-related waits
+
+- `PAGEIOLATCH_EX`: It waits for an exclusive lock to read a data page.
+
+- `PAGEIOLATCH_SH`: It waits for a shared lock to read a data page.
+
+- `FILEIO`: It waits for a file I/O operation.
+
+#### Lock-related waits
+
+- `LCK_M_X`: Exclusive lock wait.
+
+- `LCK_M_S`: Shared lock wait.
+
+- `LCK_M_U`: Update lock wait.
+
+- `RESOURCE_SEMAPHORE`': Resource semaphore wait when waiting to acquire memory resources.
+
+#### Other waits
+
+- `CKPACKET`: Inter-thread synchronization wait in parallel queries.
+
+- `ASYNC_NETWORK_IO`: It is waiting for the network I/O operations.
+
+- `SLEEP_*`: It is waiting due to a `WAITFOR` or `WAITFOR DELAY` statement.
+
+- `BROKER_*` : It waits for a service broker message.
+
+- `LOCK_MANAGER`: Lock management waits and the waits related to the lock manager in **SQL Server**.
+
+### wait_resource {#waitsresource}
+
+The `wait_resource` column provides information about the resource on which a request running in **SQL Server** is waiting. A string for a request waiting for a specific resource indicates the specific ID or location of the resource being waited for.
+
+For key resource types and examples, see the following:
+
+- `PAGE: <file_id>:<page_id>`
+
+  It indicates a wait for a data page. 
+
+  > e.g. `PAGE: 1:12345`
+
+- `FILE: <file_id>`
+
+  It indicates a wait for the entire data file.
+
+  > e.g. `FILE: 1`
+
+- `0BJECT: <cobject_id>`
+
+  It indicates a wait for a specific table.
+
+  > e.g. `0BJECT: 123456`
+
+- `DATABASE: <database_id>`
+
+  It indicates a wait for a specific database.
+
+  > e.g. `DATABASE: 5`
+
+- `KEY: <key_id>`
+
+  It indicates a wait for an index key or a key of another data structure.
+
+  > e.g. `KEY: 67890`
+
+- `RID: <file_id>:<page_id>:<row_id>`
+
+  If the `wait_resource` column is `RID` (Row Identifier), it indicates a wait for a specific row in **SQL Server**. `RID` is a unique ID that identifies a specific row in a table in SQL Server.
+
+  > e.g. `RID: 1:1234:5678`
+
+:::note
+
+- `<file_id>` represents the ID of the data file.
+
+- `<page_id>` represents the page ID.
+
+- `<object_id>` represents the ID of the table.
+
+- `<database_1d>` represents the ID of the database.
+
+- `<key_id>` is the key ID.
+
+- `<row_id>` represents an ID that identifies a row within the page.
+
+:::

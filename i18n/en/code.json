@@ -509,5 +509,285 @@
   "theme.blog.newFeatures": {
     "message": "New features",
     "description": "Navbar item with label 새로운 기능"
+  },
+  "index.pages.metaTitle": {
+    "message": "Real-time Observability Platform | WhaTap Docs"
+  },
+  "index.pages.register": {
+    "message": "Sign up"
+  },
+  "index.pages.register.desc": {
+    "message": "To use the WhaTap monitoring service, proceed with membership registration. Try free for 15 days."
+  },
+  "index.pages.project": {
+    "message": "Creating a project"
+  },
+  "index.pages.project.desc": {
+    "message": "Create a project, and then issue an access key."
+  },
+  "index.pages.agentInstall": {
+    "message": "Install agent"
+  },
+  "index.pages.agentInstall.desc": {
+    "message": "Install agent to the monitoring target."
+  },
+  "index.pages.viewDashboard": {
+    "message": "Viewing the dashboard"
+  },
+  "index.pages.viewDashboard.desc": {
+    "message": "When data is transferred to the WhaTap server after agent installation, you can view the overall project status in real time through dashboard."
+  },
+  "index.pages.welcome.para": {
+    "message": "Welcome to the WhaTap Docs page."
+  },
+  "index.pages.welcome.recommend": {
+    "message": "Recommended docs: "
+  },
+  "index.pages.section.gettingStart": {
+    "message": "Getting started"
+  },
+  "index.pages.section.gettingStart.whatapOverview": {
+    "message": "WhaTap Monitoring services"
+  },
+  "index.pages.section.gettingStart.whatapOverview.desc": {
+    "message": "Integrated Monitoring for multiple platforms"
+  },
+  "index.pages.section.gettingStart.support": {
+    "message": "Support environment"
+  },
+  "index.pages.section.gettingStart.support.desc": {
+    "message": "You can check the support environment before using our service."
+  },
+  "index.pages.section.gettingStart.home": {
+    "message": "Guide to Home screen"
+  },
+  "index.pages.section.gettingStart.home.desc": {
+    "message": "It guides you to the elements displayed on the initial screen"
+  },
+  "index.pages.section.gettingStart.mobileApp": {
+    "message": "Mobile app"
+  },
+  "index.pages.section.gettingStart.mobileApp.desc": {
+    "message": "It guides you to the functions available through the WhaTap mobile app."
+  },
+  "index.pages.section.product": {
+    "message": "Product"
+  },
+  "index.pages.section.product.java": {
+    "message": "Applies to all applications running on the JVM environment, such as WAS and batch applications etc."
+  },
+  "index.pages.section.product.nodejs": {
+    "message": "Single thread flows can be analyzed every 10 seconds to identfy bottlenecks or errors by using asynchronous transaction anaysis."
+  },
+  "index.pages.section.product.php": {
+    "message": "Supports upto PHP 8.3 and Alpine Linux. SQL, HTTP call, Redis call information can be checked on the profile."
+  },
+  "index.pages.section.product.python": {
+    "message": "Applies to major applications such as web framework, server, and batch. Delays can be identified by tracing DB queries and external calls."
+  },
+  "index.pages.section.product.dotnet": {
+    "message": "Monitors .NET based IIS, Console, Service, Windows applications in the .NET Frameworks 4.5 environment."
+  },
+  "index.pages.section.product.go": {
+    "message": "Go API can be used to trace web requests, response transactions, unit transactions, SQL, HTTP calls, and more of Go application."
+  },
+  "index.pages.section.product.server": {
+    "message": "Supports physical servers, cloud, scale-out environments. Also, large-scale resources and risky resources with high utilization rates can be monitored and managed."
+  },
+  "index.pages.section.product.k8s": {
+    "message": "Monitors Kubernetes clusters, nodes, applications, and logs at a glance."
+  },
+  "index.pages.section.product.postgresql": {
+    "message": "Monitors, analyzes and compares performance indicators, SQL, Lock, and Slow SQL."
+  },
+  "index.pages.section.product.oracle": {
+    "message": "Monitors, analyzes and compares performance indicators, SQL, Lock, and parallel query information."
+  },
+  "index.pages.section.product.oraclePro": {
+    "message": "By directly accessing the memory of the database server, performance information can be monitored dozens of times per second without loading the database server."
+  },
+  "index.pages.section.product.mysql": {
+    "message": "Monitors, analyzes and compares MySQL and MariaDB’s performance indicators, SQL, Lock, Slow SQL."
+  },
+  "index.pages.section.product.mssql": {
+    "message": "Monitors, analyzes and compares performance indicators, SQL and Lock information."
+  },
+  "index.pages.section.product.tibero": {
+    "message": "Monitors, analyzes and compares performance indicators, SQL, Lock, and parallel query information."
+  },
+  "index.pages.section.product.cubrid": {
+    "message": "Monitors, analyzes and compares performance indicators, SQL, Lock, and parallel query information."
+  },
+  "index.pages.section.product.altibase": {
+    "message": "Monitors, analyzes and compares performance indicators, SQL, Lock, and parallel query information."
+  },
+  "index.pages.section.product.redis": {
+    "message": "Monitors, analyzes and compares performance indicators."
+  },
+  "index.pages.section.product.mongodb": {
+    "message": "Monitors, analyzes and compares performance indicators."
+  },
+  "index.pages.section.product.url": {
+    "message": "Connectivity issues can be automatically checked with HTTP status codes as an end user."
+  },
+  "index.pages.section.product.browser": {
+    "message": "Monitors and analyzes the performance of end-user interactions with browser applications."
+  },
+  "index.pages.section.product.awsCloudWatch": {
+    "message": "Retrieves and stores metrics periodically through the Amazon CloudWatch API."
+  },
+  "index.pages.section.product.awsEcs": {
+    "message": "Collects resource usage by Docker container in real time through META API and cgroup directory."
+  },
+  "index.pages.section.product.awsLog": {
+    "message": "Collects and saves logs that are created in AWS Resources and stored in AWS S3 and AWS CloudWatch Log Group."
+  },
+  "index.pages.section.product.azure": {
+    "message": "Searches and saves metrics periodically through the Azure Monitor API."
+  },
+  "index.pages.section.product.ncloud": {
+    "message": "Searches and saves metrics periodically through the Naver Cloud Monitoring API."
+  },
+  "index.pages.section.product.oci": {
+    "message": "Searches and saves metrics periodically through the Oracle Cloud Monitor API."
+  },
+  "index.pages.section.product.network": {
+    "message": "It visualizes the network communication information of the process and uses it to analyze performance and identify failures."
+  },
+  "index.pages.section.product.feature": {
+    "message": "It provides an optimized monitoring solution by repackaging existing monitoring products to fit the software to monitor."
+  },
+  "index.pages.section.management": {
+    "message": "Management"
+  },
+  "index.pages.section.management.account": {
+    "message": "Account management"
+  },
+  "index.pages.section.management.account.desc": {
+    "message": "Signup up to create and manage your account."
+  },
+  "index.pages.section.management.multiFactor": {
+    "message": "Multi-factor authentication"
+  },
+  "index.pages.section.management.multiFactor.desc": {
+    "message": "Multi-factor authentication can be used to enhance the security of accounts and services."
+  },
+  "index.pages.section.management.sso": {
+    "message": "SSO account linking"
+  },
+  "index.pages.section.management.sso.desc": {
+    "message": "Log in easily using a single ID and password."
+  },
+  "index.pages.section.management.billing": {
+    "message": "Billing"
+  },
+  "index.pages.section.management.billing.desc": {
+    "message": "Get started with a trial version for free and use as much as you need."
+  },
+  "index.pages.section.management.project": {
+    "message": "Project management"
+  },
+  "index.pages.section.management.project.desc": {
+    "message": "The project means a monitoring unit. Learn more about the project."
+  },
+  "index.pages.section.management.organize": {
+    "message": "Integrated management"
+  },
+  "index.pages.section.management.organize.desc": {
+    "message": "You can systematically manage organizations, groups, and projects."
+  },
+  "index.pages.section.management.maintenance": {
+    "message": "Maintenance plan"
+  },
+  "index.pages.section.management.maintenance.desc": {
+    "message": "You can pause notification set to receive during the registered maintenance time."
+  },
+  "index.pages.section.management.userbehavior": {
+    "message": "User behavior"
+  },
+  "index.pages.section.management.userbehavior.desc": {
+    "message": "You can track user actions being performed in the project."
+  },
+  "index.pages.section.updates": {
+    "message": "Latest updates"
+  },
+  "index.pages.section.updates.news": {
+    "message": "New features"
+  },
+  "index.pages.section.updates.news.desc": {
+    "message": "Check out the newly released features."
+  },
+  "index.pages.section.updates.release": {
+    "message": "Release notes"
+  },
+  "index.pages.section.updates.release.desc": {
+    "message": "Quickly check the latest release information."
+  },
+  "index.pages.section.reference": {
+    "message": "Reference"
+  },
+  "index.pages.section.reference.openApi": {
+    "message": "Open API"
+  },
+  "index.pages.section.reference.openApi.desc": {
+    "message": "You can extract monitoring data through the Open API."
+  },
+  "index.pages.section.reference.proxy": {
+    "message": "Software proxy"
+  },
+  "index.pages.section.reference.proxy.desc": {
+    "message": "You can block access to the external network and send data to the WhaTap server through a single channel."
+  },
+  "index.pages.section.reference.docs": {
+    "message": "Guide to WhaTap Docs"
+  },
+  "index.pages.section.reference.docs.desc": {
+    "message": "WhaTap Docs can help you efficiently use WhaTap Monitoring."
+  },
+  "index.pages.section.reference.license": {
+    "message": "License"
+  },
+  "index.pages.section.reference.license.desc": {
+    "message": "Guides the open source licenses and available libraries used by WhaTap."
+  },
+  "index.pages.section.reference.faq": {
+    "message": "FAQ"
+  },
+  "index.pages.section.reference.faq.desc": {
+    "message": "It provides solutions to common problems that may occur while using the WhaTap monitoring service."
+  },
+  "index.pages.section.learn": {
+    "message": "Learning"
+  },
+  "index.pages.section.learn.learning": {
+    "message": "Learning"
+  },
+  "index.pages.section.learn.learning.desc": {
+    "message": "We provide learning materials for quick understanding and efficient use of the WhaTap."
+  },
+  "index.pages.section.learn.mxql": {
+    "message": "MXQL"
+  },
+  "index.pages.section.learn.mxql.desc": {
+    "message": "MXQL is a query language to flexibly query WhaTap's performance data (metrics)."
+  },
+  "index.pages.section.learn.metrics": {
+    "message": "Metrics"
+  },
+  "index.pages.section.learn.metrics.desc": {
+    "message": "Metrics is the data collected from the monitoring target."
+  },
+  "index.pages.section.learn.glossary": {
+    "message": "Glossary"
+  },
+  "index.pages.section.learn.glossary.desc": {
+    "message": "A glossary of terms is provided for easier use of the monitoring service."
+  },
+  "theme.blog.author.noPosts": {
+    "message": "This author has not written any posts yet.",
+    "description": "The text for authors with 0 blog post"
+  },
+  "pages.dbfunctions.title": {
+    "message": "Comparison between supported functions by database"
   }
 }

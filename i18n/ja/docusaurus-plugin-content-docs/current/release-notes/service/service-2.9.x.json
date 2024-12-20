@@ -1,6 +1,174 @@
 [
   {
     "url": "https://docs.whatap.io/ja/release-notes/service/service-2_9_x",
+    "ver": "Service 2.9.9",
+    "date": "2024-10-29",
+    "Lists": [
+      {
+        "ver": "Service 2.9.9",
+        "hash": "service-299",
+        "product": "Kubernetes",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">管理</span> &gt; <span class=\"uitext\">エージェントインストール</span>メニューでKubernetesエージェントのイメージバージョンの説明が正常に表示されない問題を修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/service/service-2_9_x",
+    "ver": "Service 2.9.8",
+    "date": "2024-10-25",
+    "Lists": [
+      {
+        "ver": "Service 2.9.8",
+        "hash": "service-298",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">分析</span> &gt; <span class=\"uitext\">Top SQL比較</span>メニューでデータ騰落が一貫しない問題を修正</p>",
+        "category": "共通"
+      },
+      {
+        "ver": "Service 2.9.8",
+        "hash": "service-298",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">ダッシューボード</span> &gt; <span class=\"uitext\">インスタンスモニタリング</span>メニューで<span class=\"uitext\">セッション詳細</span>ウィンドウで古いセッションを照会する時、データが照会されない問題を修正</p>",
+        "category": "Oracle Pro"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/service/service-2_9_x",
+    "ver": "Service 2.9.7",
+    "date": "2024-10-23",
+    "Lists": [
+      {
+        "ver": "Service 2.9.7",
+        "hash": "service-297",
+        "product": "Server",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> <span class=\"uitext\">サーバーリスト</span> &gt; <span class=\"uitext\">サーバー インベントリ</span>メニューでリスト内の選択項目の<span class=\"uitext\">削除</span>機能を追加</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/service/service-2_9_x",
+    "ver": "Service 2.9.5",
+    "date": "2024-10-08",
+    "Lists": [
+      {
+        "ver": "Service 2.9.5",
+        "hash": "service-295",
+        "product": "共通",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> <span class=\"uitext\">利用状況</span> &gt; <span class=\"uitext\">決済情報</span>メニューでWhaTapスターターパックに関するプロモーションイメージを変更</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/service/service-2_9_x",
+    "ver": "Service 2.9.4",
+    "date": "2024-10-02",
+    "Lists": [
+      {
+        "ver": "Service 2.9.4",
+        "hash": "service-294",
+        "product": "共通",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"0\">Changed</code>ページネーションコンポーネントスタイルを改善</p>"
+      },
+      {
+        "ver": "Service 2.9.4",
+        "hash": "service-294",
+        "product": "Application",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">統計</span>メニューでデータ照会中にページネーションを無効にするように修正</p>"
+      },
+      {
+        "ver": "Service 2.9.4",
+        "hash": "service-294",
+        "product": "Application",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> <span class=\"uitext\">統計</span>メニューでCSVダウンロードライン数が最大照会件数と一致するように変更</p>",
+        "details": "<ul>\n<li>\n<p><strong>修正前</strong></p>\n<p>CSV：100,000 / 照会：10,000</p>\n</li>\n<li>\n<p><strong>修正後</strong></p>\n<p>CSV：10,000 / 照会： 10,000</p>\n</li>\n</ul>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/service/service-2_9_x",
+    "ver": "Service 2.9.3",
+    "date": "2024-09-27",
+    "Lists": [
+      {
+        "ver": "Service 2.9.3",
+        "hash": "service-293",
+        "product": "Kubernetes",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">ダッシューボード</span> &gt; <span class=\"uitext\">ノードマップ</span>メニューでノード全体を選択した後、<span class=\"uitext\">ログ</span>メニューに移動するとログデータが照会されない問題を修正(キャッシュ問題の解決)</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/service/service-2_9_x",
+    "ver": "Service 2.9.2",
+    "date": "2024-09-26",
+    "Lists": [
+      {
+        "ver": "Service 2.9.2",
+        "hash": "service-292",
+        "product": "Server",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">サーバーリスト</span> &gt; <span class=\"uitext\">サーバー インベントリ</span>メニューの<span class=\"uitext\">サーバー インベントリ エージェントの案内</span>でWindowsオプション追加コマンドに抜けている逆スラッシュ(<code>\\</code>) 文字を追加</p>"
+      },
+      {
+        "ver": "Service 2.9.2",
+        "hash": "service-292",
+        "product": "Kubernetes",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code>次のメニュー経路に進入する時、新機能に対する案内ポップアップを追加</p>",
+        "details": "<ul>\n<li>\n<p><span class=\"uitext\">ダッシューボード</span> &gt; <span class=\"uitext\">ノードマップ</span></p>\n</li>\n<li>\n<p><span class=\"uitext\">クラスター</span> &gt; <span class=\"uitext\">ノードタイムライン</span></p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "Service 2.9.2",
+        "hash": "service-292",
+        "product": "Kubernetes",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> <span class=\"uitext\">レポート</span>メニューで報告書の様式を<span class=\"uitext\">月次レポート：アプリケーション</span>、<span class=\"uitext\">月次レポート：性能比較</span>を選択した時、複数のエージェント、エージェントグループ、エージェントの種類を選択できるように修正</p>"
+      },
+      {
+        "ver": "Service 2.9.2",
+        "hash": "service-292",
+        "product": "Kubernetes",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">ダッシューボード</span> &gt; <span class=\"uitext\">ノードマップ</span>メニューでノード全体を選択した後、<span class=\"uitext\">ログ</span>メニューに移動するとログデータが照会されない問題を修正</p>"
+      },
+      {
+        "ver": "Service 2.9.2",
+        "hash": "service-292",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">SQL詳細</span>ウィンドでSQL文にコロン(<code>:</code>)が複数含まれている場合、これをバインド変数として認識する問題を修正</p>",
+        "category": "共通"
+      },
+      {
+        "ver": "Service 2.9.2",
+        "hash": "service-292",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">SQL詳細</span>ウィンドウで<span class=\"uitext\">Runtime Plan</span>の平均データが合算されて計算される問題を修正</p>",
+        "category": "Oracle V2、Oracle Pro"
+      },
+      {
+        "ver": "Service 2.9.2",
+        "hash": "service-292",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>ダッシュボードの <span class=\"uitext\">アクティブセッション</span>テーブルからクエリを選択してPlanを照会する時、Object Detailウィンドウでテーブルデータがない場合、カラム名のみを表示するように修正</p>",
+        "category": "PostgreSQL、MySQL"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/service/service-2_9_x",
     "ver": "Service 2.9.1",
     "date": "2024-09-25",
     "Lists": [
@@ -23,7 +191,7 @@
         "hash": "service-290",
         "product": "新機能リリーズ",
         "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code>インフラサーバー運営に必要な情報をエージェントが自動収集および保存、ユーザー定義フィールドを通じて追加した情報を照会し管理できる<span class=\"uitext\">サーバー情報</span>メニューを追加</p>",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code>インフラサーバー運用に必要な情報をエージェントが自動収集および保存、ユーザー定義フィールドを通じて追加した情報を照会し管理できる<span class=\"uitext\">サーバー インベントリ</span>メニューを追加</p>",
         "category": "Server"
       },
       {
@@ -92,7 +260,7 @@
         "product": "共通",
         "type": "Changed",
         "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> <span class=\"uitext\">リアルタイムアラート</span>メニューで次の事項を変更</p>",
-        "details": "<ul>\n<li>\n<p><span class=\"uitext\">リアルタイム通知設定</span>オプションのUI改善</p>\n</li>\n<li>\n<p><span class=\"uitext\">ポップアップ通知</span>機能のOn/Offトグルボタンの位置を<span class=\"uitext\">リアルタイム通知設定</span>内に位置を変更</p>\n</li>\n</ul>"
+        "details": "<ul>\n<li>\n<p><span class=\"uitext\">リアルタイム通知設定</span>オプションのUI改善</p>\n</li>\n<li>\n<p><span class=\"uitext\">ポップアップ通知</span>機能のOn/Offトグルボタンの位置を<span class=\"uitext\">リアルタイム通知設定</span>内に変更</p>\n</li>\n</ul>"
       },
       {
         "ver": "Service 2.9.0",
@@ -269,7 +437,7 @@
         "hash": "service-290",
         "product": "Kubernetes",
         "type": "Deprecated",
-        "desc": "<p><code class=\"Deprecated\">Deprecated</code> <span class=\"uitext\">管理</span> &gt; <span class=\"uitext\">エージェント設定</span>メニューで<span class=\"uitext\">旧バージョン</span>ボタンを削除</p>"
+        "desc": "<p><code class=\"Deprecated\" type=\"1\">Deprecated</code> <span class=\"uitext\">クラスター</span> &gt; <span class=\"uitext\">ノードリスト</span>メニューから<span class=\"uitext\">以前のバージョンで見る</span>機能を削除</p>"
       },
       {
         "ver": "Service 2.9.0",
@@ -327,7 +495,7 @@
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">管理</span> &gt; <span class=\"uitext\">エージェントインストール</span>メニューでエージェントのインストール内容を修正</p>",
         "category": "Oracle Pro",
-        "details": "<ul>\n<li>\n<p>Oracleアカウントではない他のOSアカウントでインストールする方法の説明を補完</p>\n</li>\n<li>\n<p>ZIPファイルのダウンロード機能を削除</p>\n</li>\n</ul>"
+        "details": "<ul>\n<li>\n<p>Oracleアカウントではない他のOSアカウントでインストールする方法の説明を追記</p>\n</li>\n<li>\n<p>ZIPファイルのダウンロード機能を削除</p>\n</li>\n</ul>"
       },
       {
         "ver": "Service 2.9.0",

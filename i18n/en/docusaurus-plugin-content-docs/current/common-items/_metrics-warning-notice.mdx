@@ -19,21 +19,33 @@ Metrics events are used to set more specific and complex events than basic event
 - Metrics Event
 - Composite metrics event
 
-:::note
-
-For more information about the metrics, see [the following](metrics-intro).
-
-:::
-
 </Xclude>
 
 <InDoc product='npm'>
 
 Metrics events are used to set more specific and complex events than basic events (application events, server events, and such). You can set events based on the metrics data being collected in real time from your projects.
 
+</InDoc>
+
+<Xclude product="amazon-cloudwatch,amazon-ecs,azure,ncloud,oracle-cloud">
+
 :::note
 
-For more information about metrics, see [the following](../metrics/common-metrics-intro).
+- For more information about the metrics, see [the following](metrics-intro).
+
+- You can add metrics events from the <Cmdname sid="side_eventSetting" className="uitext" /> <code class="newfunc">New</code> menu, which has a new UI for improved usability. For more information, see [the following](metric-warning-notice-new).
+
+- This feature is only available to the members with the <Cmdname sid="sms_alert_settings" className="b500" /> role. For more information about member roles, see [the following](../project/project-structure#project-auth).
+
+:::
+
+</Xclude>
+
+<InDoc product="amazon-cloudwatch,amazon-ecs,azure,ncloud,oracle-cloud">
+
+:::note
+
+For more information about the metrics, see [the following](metrics-intro).
 
 :::
 
@@ -115,7 +127,7 @@ For more information about the event templates for metrics, see [the following](
 
   :::
 
-- <Cmdname sid="metrics_event_rules" className="uitext" />
+- <Cmdname sid="metrics_event_rules" className="uitext" /> <ScrollToLink anchor='eventcondition' />
 
   <ImgLang img='set-event-condition.png' desc='Event Rule' />
 
@@ -135,7 +147,7 @@ For more information about the event templates for metrics, see [the following](
 
 - After the event setting is made, the option value is managed as the <Cmdname sid="metrics_rule_direct" className="uitext" /> option. Afterwards, if switched to the <Cmdname sid="metrics_rule_select" className="uitext" /> option, the option value can be initialized.
 
-- Upon entry of event occurrence conditions and targets, an error may occur, if you enter a field name that contains special characters (<code>~!@#$%^&*()_+=-[]`</code>) or begins with a number. In this case, select the <Cmdname sid="metrics_rule_direct" className="uitext" /> option and then enter values enclosing with curly brackets (<code>${}</code>) as shown in the following example:
+- Upon entry of event occurrence conditions and targets, an error may occur, if you enter a field name that contains special characters (<code>~!@#$%^&\*()_+=-[]\`</code>) or begins with a number. In this case, select the <Cmdname sid="metrics_rule_direct" className="uitext" /> option and then enter values enclosing with curly brackets (<code>\$\{\}</code>) as shown in the following example:
 
   ```text
   ${4xxErrorType} == '401'
@@ -173,4 +185,12 @@ For more information about the event templates for metrics, see [the following](
 
 <ImgLang img='set-event-test.png' desc='Alert Test' />
 
-You can check how many alerts have occurred by enabling the event conditions you set for the selected time period. If you select Run, you can see the number of notifications, and the selected fields and thresholds are displayed on the chart when the event conditions are met.
+You can check how many alerts have occurred by enabling the event conditions you set for the selected time period. If your select <Cmdname sid="run" className="uitext" />, the number of notifications occurred appears in the upper right corner. The selected field and thresholds are displayed on the chart in <Cmdname sid="metrics_event_rules" className="uitext" />.
+
+:::note
+
+- For more information about <Cmdname sid="metrics_event_rules" className="uitext" />, see [the following](#eventcondition).
+
+- The <Cmdname sid="event_simulation_title" className="uitext" /> feature can test for the data for 24 hours.
+
+:::

@@ -6,7 +6,7 @@
 
 <InDoc product="kubernetes"><ImgLang img="metrics-chart-new-main-k8s.png" desc="Metrics Chart" /></InDoc>
 
-<InDoc product="postgresql,oracle,oracle-pro,mysql,redis,mongodb,altibase"><ImgLang img="metrics-chart-new-main-db.png" desc="Metrics Chart" /></InDoc>
+<InDoc product="postgresql,oracle,oracle-v1,oracle-pro,mysql,redis,mongodb,altibase,altibase-v1,cubrid,cubrid-v1,mssql,mssql-v1"><ImgLang img="metrics-chart-new-main-db.png" desc="Metrics Chart" /></InDoc>
 
 - 様々なメトリクスを時系列チャートを通じて視覚的に確認でき、障害発生時点の様々なメトリクスを一度に分析できます。
 
@@ -24,7 +24,7 @@
 
 [Service 2.8.0](../release-notes/service/service-2_8_x) アップデート以降の変更点は以下の通りです。 アップデート後の変更事項を画面で確認するには、右上の<Cmdname sid="BTN07397" className="uitext" />ボタンを選択します。
 
-- ユーザーが時間、対象、インターバルオプションを設定した後、モニタリングしようとする対象のメトリクスを特定し、チャートを追加できるようにユーザー経験(UX)を改善しました。
+- ユーザーが時間、対象、インターバルオプションを設定した後、モニタリングする対象のメトリクスを特定し、チャートを追加できるようにユーザー経験(UX)を改善しました。
 
 - ダッシュボードに配置されたウィジェットを削除することなく、チャートの照会時間の範囲を変更できます。
 
@@ -58,7 +58,7 @@
 
 ### 対象を選択する
 
-プロジェクトに含まれるエージェントの中から、希望する対象を選択します。 個々のエージェントを選択するか、エージェント設定によって分類したグループ単位で選択できます。
+プロジェクトに含まれるエージェントの中から、対象を選択します。 個々のエージェントを選択するか、エージェント設定で分類されたグループ単位で選択できます。
 
 <Columns>
 
@@ -80,9 +80,9 @@
 
 - 設定した時間と日付によって、選択できる対象が変更される場合があります。
 
-- エージェントの一覧からマウスをクリックして、対象を選択または解除できます。 `Shift`キーを使用して複数のエージェントを一度に選択できます。
+- エージェントの一覧からマウスをクリックして、対象を選択または解除できます。 `Shift`キーを使用して複数のエージェントを選択できます。
 
-- <Cmdname sid="select_all" className="uitext" />または<Cmdname sid="deselect_all" className="uitext" />ボタンを選択すると、関連する下位対象を一度に選択または解除できます。
+- <Cmdname sid="select_all" className="uitext" />または<Cmdname sid="deselect_all" className="uitext" />ボタンを選択すると、関連する下位対象をすべて選択または解除できます。
 
 - 希望のエージェントが一覧に表示されない場合は、<Cmdname sid="refresh" className="uitext" />ボタンを選択します。
 
@@ -96,19 +96,37 @@
 
 ### 指標を選択する
 
-モニタリングする対象エージェントを選択した後、<Cmdname sid="metric" className="uitext" />パネルに選択できる一覧が表示されます。 一覧でご希望のメトリクスを選択します。
+モニタリングする対象エージェントを選択した後、<Cmdname sid="metric" className="uitext" />パネルに選択できる一覧が表示されます。 一覧からご希望のメトリクスを選択します。
 
 <InDoc product="java,php,python,nodejs,golang,dotnet"><ImgLang img="metrics-chart-new-select-metrics.png" desc="指標の選択" /></InDoc>
 
 <InDoc product="kubernetes"><ImgLang img="metrics-chart-new-k8s-select-metrics.png" desc="指標の選択" /></InDoc>
 
-<InDoc product="postgresql,oracle,oracle-pro,mysql,redis,mongodb,altibase"><ImgLang img="metrics-chart-new-db-select-metrics.png" desc="指標の選択" /></InDoc>
+<InDoc product="postgresql,oracle,oracle-v1,oracle-pro,mysql,redis,mongodb,altibase,altibase-v1,cubrid,cubrid-v1,mssql,mssql-v1"><ImgLang img="metrics-chart-new-db-select-metrics.png" desc="指標の選択" /></InDoc>
 
-選択したメトリクスに対応するチャートウィジェットが右側のダッシュボードに配置されます。 他のメトリクスを追加選択してチャートウィジェットを追加できます。 チャート領域を拡大して見るには、<Cmdname sid="time" className="uitext" />オプション右の![閉じるアイコン](/img/ico-close.svg)ボタンを選択します。 <Cmdname sid="target" className="uitext" />と<Cmdname sid="metric" className="uitext" />パネルが消え、チャート領域のみが画面に表示されます。
+選択したメトリクスに対応するチャートウィジェットが右側のダッシュボードに配置されます。 他のメトリクスを選択し、チャートウィジェットを追加できます。 チャート領域を拡大して見るには、<Cmdname sid="time" className="uitext" />オプションの右にある![閉じるアイコン](/img/ico-close.svg)ボタンを選択します。 <Cmdname sid="target" className="uitext" />と<Cmdname sid="metric" className="uitext" />パネルが消え、チャート領域のみが画面に表示されます。
 
 :::note
 
 - <Cmdname sid="CNT08118" className="uitext" />入力欄に文字列を入力すると、希望のメトリクスをすばやく検索できます。
+
+<InDoc product="java,php,python,nodejs,dotnet,golang">
+
+- メトリクスのカテゴリとフィールド名に基づいても検索できます。 カテゴリおよびフィールドの詳細については、[次の文書](metrics-app)を参照してください。
+
+</InDoc>
+
+<InDoc product="kubernetes">
+
+- メトリクスのカテゴリとフィールド名に基づいても検索できます。 カテゴリおよびフィールドの詳細については、[次の文書](metrics-kubernetes)を参照してください。
+
+</InDoc>
+
+<InDoc product="postgresql,oracle,oracle-v1,oracle-pro,mysql,redis,mongodb,altibase,altibase-v1,cubrid,cubrid-v1,mssql,mssql-v1">
+
+- メトリクスのカテゴリとフィールド名に基づいても検索できます。 カテゴリおよびフィールドの詳細については、[次の文書](metrics-data-list)を参照してください。
+
+</InDoc>
 
 - <Cmdname sid="BTN06285" className="uitext" />または<Cmdname sid="BTN06286" className="uitext" />ボタンを選択して、カテゴリ単位でメトリクス一覧を非表示または表示できます。
 
@@ -126,13 +144,13 @@
 
 <InDoc product="kubernetes"><ImgLang img="metrics-chart-new-k8s-select-interval.png" desc="間隔" /></InDoc>
 
-<InDoc product="postgresql,oracle,oracle-pro,mysql,redis,mongodb,altibase"><ImgLang img="metrics-chart-new-db-select-interval.png" desc="間隔" /></InDoc>
+<InDoc product="postgresql,oracle,oracle-v1,oracle-pro,mysql,redis,mongodb,altibase,altibase-v1,cubrid,cubrid-v1,mssql,mssql-v1"><ImgLang img="metrics-chart-new-db-select-interval.png" desc="間隔" /></InDoc>
 
 </Column>
 
 <Column className="text--left">
 
-チャートごとにインターバルを設定でき、データの集計単位を調整して、様々な時間間隔のデータを視覚化できます。 <Cmdname sid="metric" className="uitext" />パネルの右上に![時間アイコン](/img/ico-time-set.svg)ボタンを選択すると、インターバルオプションを選択できます。
+チャートごとにインターバルを設定でき、データの集計単位を調整して、様々な時間間隔のデータを可視化できます。 <Cmdname sid="metric" className="uitext" />パネルの右上にある![時間アイコン](/img/ico-time-set.svg)ボタンを選択すると、インターバルオプションを選択できます。
 
 メトリクスごとにデフォルトで設定されたインターバル時間が異なり、照会時間の範囲によってインターバル時間が変更されます。
 
@@ -146,29 +164,29 @@
 
 :::tip
 
-インターバルオプションを調整することで、短い時間間隔の詳細データから長い時間間隔の全体まで、様々な観点でデータを分析できます。
+インターバルオプションを調整し、短い間隔の詳細データから長い間隔の全体的な推移まで、多様な観点からデータを分析できます。
 
 :::
 
 ## 照会時間を変更する
 
-個々のウィジェットのチャート照会時間範囲を変更するには、ウィジェット上部の![左方向アイコン](/img/left-arrow.svg)または![右方向アイコン](/img/right-arrow.svg)ボタンを選択します。 時間変更範囲は、<Cmdname sid="time" className="uitext" />オプションに設定された時間基準と同じです。 例えば、<Cmdname sid="time" className="uitext" />オプションで<Cmdname sid="1_day" className="uitext" />に設定されている時、![左方向アイコン](/img/left-arrow.svg)または![右方向アイコン](/img/right-arrow.svg)ボタンを選択すると、時間を1日単位で変更できます。
+ウィジェットのチャート照会時間の範囲を変更するには、ウィジェット上部の![左方向アイコン](/img/left-arrow.svg)または![右方向アイコン](/img/right-arrow.svg)ボタンを選択します。 時間変更範囲は、<Cmdname sid="time" className="uitext" />オプションに設定された時間基準と同じです。 例えば、<Cmdname sid="time" className="uitext" />オプションで<Cmdname sid="1_day" className="uitext" />に設定されている時、![左方向アイコン](/img/left-arrow.svg)または![右方向アイコン](/img/right-arrow.svg)ボタンを選択すると、時間を1日単位で変更できます。
 
 <ImgLang img="metrics-chart-new-change-time.png" desc="Chart widget" />
 
-またはチャートの特定領域をドラッグすると、ドラッグした範囲だけ時間を変更して照会できます。
+またはチャートの特定領域をドラッグすると、ドラッグした範囲に時間を変更して照会できます。
 
 <ImgLang img="metrics-chart-new-chart-drag-time.png" desc="時間変更" />
 
 :::tip
 
-- 画面の上部に<Cmdname sid="CNT08055" className="uitext" />オプションを有効にした状態で個別のウィジェットの時間を変更すると、すべてのウィジェットの時間を変更できます。
+- 画面の上部にある<Cmdname sid="CNT08055" className="uitext" />オプションを有効にして、ウィジェットの時間を変更すると、すべてのウィジェットの時間を変更できます。
 
   <ImgLang img="metrics-chart-new-chart-reset-time.png" desc="時間バッチ初期化" />
 
-- 照会時間範囲を変更した後、直近の時間に再度変更するには、<LinkImage img="ic-recent-time-active.svg" className="ico active" />ボタンを選択します。 
+- 照会時間の範囲を変更した後、直近の時間に再度変更するには、<LinkImage img="ic-recent-time-active.svg" className="ico active" />ボタンを選択します。 
 
-  もし画面の上部に<Cmdname sid="CNT08055" className="uitext" />オプションを有効にした状態であれば、![最近時間のアイコン](/img/ic-recent-time-active.svg) <Cmdname sid="BTN08155" className="uitext" />ボタンが表示されます。 このボタンを選択すると、すべてのウィジェットの時間を初期化できます。
+  もし画面の上部にある<Cmdname sid="CNT08055" className="uitext" />オプションを有効にした場合、![最近時間のアイコン](/img/ic-recent-time-active.svg) <Cmdname sid="BTN08155" className="uitext" />ボタンが表示されます。 このボタンを選択すると、すべてのウィジェットの時間を初期化できます。
 
 :::
 
@@ -178,7 +196,7 @@
 
 :::
 
-## チャートウィジェット詳細のご案内{#chart-details}
+## チャートウィジェットの詳細{#chart-details}
 
 チャートウィジェットに表示される各アイテムの詳細を確認します。
 
@@ -194,17 +212,17 @@
 
   - `onode`: エージェント設定で、<code>whatap.onode</code>で分類されたグループを選択した時に表示されます。
 
-- ![数字02](/img/number-02.png) **ウィジェットオプション**: チャートウィジェットのオプションメニューです。 詳細については[次の文書](#chart-options)を参照してください。 インターバルオプションの詳細については、[次の文書](#setinterval)を参照します。
+- ![数字02](/img/number-02.png) **ウィジェットオプション**: チャートウィジェットのオプションメニューです。 詳細については、[次の文書](#chart-options)を参照してください。 インターバルオプションの詳細については、[次の文書](#setinterval)を参照します。
 
 - ![数字03](/img/number-03.png) **時間**: チャートのデータを照会する時間範囲を表示します。 ![左方向アイコン](/img/left-arrow.svg)または![右方向アイコン](/img/right-arrow.svg)ボタンを選択して照会時間範囲を調整できます。 
 
 - ![数字04](/img/number-04.png) **データ**: モニタリング対象のうち照会したデータの最大値(***Max***)とデータ結合方式(***Value Type***)を確認できます。
 
-- ![数字05](/img/number-05.png) **チャート**: 照会したデータを時系列グラフで表示します。 マウスポインターをグラフの上にドラッグすると、ツールチップを使用して詳細情報を確認できます。 チャートの特定領域をドラッグすると、ドラッグした範囲だけ時間を変更して照会できます。
+- ![数字05](/img/number-05.png) **チャート**: 照会したデータを時系列グラフで表示します。 マウスをグラフの上にかざすと、詳細な情報を確認できます。 チャートの特定領域をドラッグすると、ドラッグした範囲に時間を変更して照会できます。
 
 - ![数字06](/img/number-06.png) **凡例**: モニタリング対象を凡例として表示します。
 
-- ![数字07](/img/number-07.png) **サイズ調整**: チャートウィジェットの中央下部領域をドラッグすると、ウィジェットのサイズを調整できます。
+- ![数字07](/img/number-07.png) **サイズ調整**: チャートウィジェットの真ん中の下部領域をドラッグすると、ウィジェットのサイズを調整できます。
 
 ## チャートウィジェットオプションを利用する{#chart-options}
 
@@ -244,7 +262,7 @@
 
 ### 追加オプションを利用する
 
-チャートウィジェット右上に![詳細アイコン](/img/ico-more.svg)ボタンを選択すると、次の追加オプションが利用できます。
+チャートウィジェット右上にある![詳細アイコン](/img/ico-more.svg)ボタンを選択すると、次の追加オプションが利用できます。
 
 - <Cmdname sid="sms_summary_download_csv" className="uitext" />: チャートで照会したデータをCSV形式のファイルにダウンロードできます。
 
@@ -288,7 +306,7 @@
 
 - プリセットはプロジェクト単位で保存され、他のユーザーと共有できます。
 
-- プリセットに保存される対象は、ダッシュボードのレイアウトとダッシュボードに配置したウィジェット、ウィジェットで修正したオプション(<Cmdname sid="target" className="uitext" />, <Cmdname sid="interval" className="uitext" />)となります。 画面上部の<Cmdname sid="time" className="uitext" />オプションは保存されません。
+- プリセットに保存される対象は、ダッシュボードのレイアウトとダッシュボードに配置したウィジェット、ウィジェットで修正したオプション(<Cmdname sid="target" className="uitext" />, <Cmdname sid="interval" className="uitext" />)です。 画面上部の<Cmdname sid="time" className="uitext" />オプションは保存されません。
 
 - プリセットを読み込んでからウィジェットの照会時間を変更するには、<Cmdname sid="BTN08226" className="uitext" />機能を利用します。 詳細については、[次の文書](#batchchanges)を参照してください。
 
@@ -296,7 +314,7 @@
 
 ### プリセットを削除する{#removepreset}
 
-使用していないプリセットは、プリセット一覧から削除できます。 プリセット一覧から削除したい項目の右側に![削除アイコン](/img/ico-remove-white.svg)ボタンをクリックしてください。
+使用していないプリセットは、プリセット一覧から削除できます。 プリセット一覧から削除する項目の右側にある![削除アイコン](/img/ico-remove-white.svg)ボタンを選択します。
 
 ## ダッシュボードウィジェットの編集
 
@@ -306,7 +324,7 @@
 
 <ImgLang img="metrics-chart-new-move-widget.png" desc="ウィジェットの移動" />
 
-ウィジェットの上部をマウスカーソルに移動すると、![移動アイコン](/img/ic-move-pointer.svg)形に変更されます。 この時、マウスでクリックした状態で希望の位置にドラッグしてウィジェットを移動できます。
+ウィジェットの上部にマウスをかざすと、![移動アイコン](/img/ic-move-pointer.svg)に変更されます。 この時、クリックしたまま希望の位置にドラッグするとウィジェットを移動できます。
 
 ### ウィジェットのサイズ変更
 
@@ -318,13 +336,13 @@
 
 :::note
 
-<Cmdname sid="layout" className="uitext" />が<Cmdname sid="ITM08273" className="uitext" />に設定されていない場合は、ウィジェットの高さだけを調整できます。 ウィジェットの下部中央領域をマウスでクリックした状態でサイズを調整します。
+<Cmdname sid="layout" className="uitext" />が<Cmdname sid="ITM08273" className="uitext" />に設定されていない場合は、ウィジェットの高さだけを調整できます。 ウィジェットの真ん中の下部領域をマウスでクリックしたままでサイズを調整します。
 
 :::
 
 ## ダッシュボードオプションを利用する
 
-画面上部にあるオプションメニューを利用して、チャートウィジェットに適用された様々な設定を一度に適用できます。 また、ダッシュボードのレイアウトを好きな形にも設定できます。
+画面上部にあるオプションメニューを利用して、チャートウィジェットに適用された様々な設定を一度に適用できます。 また、ダッシュボードのレイアウトを希望する形に設定できます。
 
 <ImgLang img="metrics-chart-new-chart-dashboard-options.png" desc="ダッシュボードオプション" />
 
@@ -336,7 +354,7 @@
 
 <InDoc product="kubernetes"><ImgLang img="metrics-chart-new-k8s-chart-batch-change.png" desc="一括変更" /></InDoc>
 
-<InDoc product="postgresql,oracle,oracle-pro,mysql,redis,mongodb,altibase"><ImgLang img="metrics-chart-new-db-chart-batch-change.png" desc="一括変更" /></InDoc>
+<InDoc product="postgresql,oracle,oracle-v1,oracle-pro,mysql,redis,mongodb,altibase,altibase-v1,cubrid,cubrid-v1,mssql,mssql-v1"><ImgLang img="metrics-chart-new-db-chart-batch-change.png" desc="一括変更" /></InDoc>
 
 - <Cmdname sid="time" className="uitext" />: チャートのデータ照会範囲を設定できます。
 
@@ -366,9 +384,9 @@
 
 - オーバーレイチャート左上の<Cmdname sid="count" className="uitext" />を選択すると、x軸チャートのデータ基準を変更できる一覧が表示されます。 希望する項目を選択して、チャートのデータを比較できます。
 
-- ![カメラアイコン](/img/ic-camera.svg) : 現在照会中のデータに基づいて、チャートを画像形式のファイルとしてダウンロードできます。
+- ![カメラアイコン](/img/ic-camera.svg) : 照会中のデータに基づいて、チャートを画像形式のファイルとしてダウンロードできます。
 
-- ![CSVアイコン](/img/ic-csv-download.svg) : 現在照会中のデータに基づいて、チャートをCSV形式のファイルとしてダウンロードできます。
+- ![CSVアイコン](/img/ic-csv-download.svg) : 照会中のデータに基づいて、チャートをCSV形式のファイルとしてダウンロードできます。
 
 - 右側のセクションでは、各メトリクスごとのエージェントの一覧を確認できます。 個々のエージェントの色は、チャートのグラフの色と一致します。
 
@@ -376,15 +394,15 @@
 
 ### 配置されたウィジェットを一括削除する
 
-ダッシュボードに配置された複数のウィジェットを一度に削除できます。 <Cmdname sid="BTN06884" className="uitext" />ボタンを選択します。 確認メッセージが表示されたら<Cmdname sid="delete" className="uitext" />ボタンを選択してください。
+ダッシュボードに配置された複数のウィジェットを一度に削除できます。 <Cmdname sid="BTN06884" className="uitext" />ボタンを選択します。 確認メッセージが表示されたら<Cmdname sid="delete" className="uitext" />ボタンを選択します。
 
 ### CSVファイルでダウンロードする
 
 ダッシュボードに配置したウィジェットのデータをCSV形式のファイルとしてダウンロードできます。 <Cmdname sid="download" className="uitext" /> &gt; <Cmdname sid="sms_summary_download_csv" className="uitext" />を選択します。 各時間帯のメトリクスのデータを確認できます。
 
-### 画像ファイルとしてダウンロードする
+### イメージファイルでダウンロードする
 
-ダッシュボードに配置されたすべてのウィジェットを1つの画像形式のファイルとしてダウンロードできます。 <Cmdname sid="download" className="uitext" /> &gt; <Cmdname sid="BTN07750" className="uitext" />を選択します。 ダッシュボード画面をそのままスクリーンショットした画像を保存できます。
+ダッシュボードに配置されたすべてのウィジェットを1つのイメージファイルでダウンロードできます。 <Cmdname sid="download" className="uitext" /> &gt; <Cmdname sid="BTN07750" className="uitext" />を選択します。 ダッシュボード画面をそのままイメージで保存できます。
 
 ### 以前のバージョンを利用する
 
@@ -398,7 +416,7 @@
 
 ### その他のオプションを利用する
 
-その他の次のオプションにより、ダッシュボードのレイアウトを調整したり、ウィジェットに適用されたオプションを簡単に一括設定できます。
+次のその他のオプションで、ダッシュボードのレイアウトを調整したり、ウィジェットに適用されたオプションを簡単に一括設定できます。
 
 <ImgLang img="metrics-chart-new-chart-dashboard-layout-options.png" desc="ダッシュボードオプション" />
 
@@ -410,13 +428,13 @@
 
   :::
 
-- <Cmdname sid="CNT08053" className="uitext" />: オプションをオンまたはオフにすると、ウィジェットのチャートの下部に凡例を表示や非表示ができます。
+- <Cmdname sid="CNT08053" className="uitext" />: オプションをオンまたはオフにすると、ウィジェットのチャートの下部に凡例を表示・非表示できます。
 
-- <Cmdname sid="CNT08054" className="uitext" />: チャートにマウスカーソルを持っていくと、そのグラフの位置に該当する値をツールチップを通じて確認できます。 マウスカーソルが位置した時間帯のすべての対象のデータを、ツールチップで確認するにはオプションをオンにします。
+- <Cmdname sid="CNT08054" className="uitext" />: チャートにマウスかざすと、そのグラフの位置に該当する値を確認できます。 マウスが位置した時間帯のすべての対象のデータを確認するにはオプションをオンにします。
 
-- <Cmdname sid="CNT08056" className="uitext" />: オプションをオンにすると、すべてのウィジェットの高さを同一に設定できます。
+- <Cmdname sid="CNT08056" className="uitext" />: オプションをオンにすると、すべてのウィジェットの高さを同じく設定できます。
 
-- <Cmdname sid="CNT08055" className="uitext" />: 個別のチャートウィジェットのデータ照会時間を変更する時、他のウィジェットのチャート時間も一緒に変更するにはオプションをオンにします。
+- <Cmdname sid="CNT08055" className="uitext" />: チャートウィジェットのデータ照会時間を変更する時、他のウィジェットのチャート時間も一緒に変更するにはオプションをオンにします。
 
 ## チュートリアルを利用する
 

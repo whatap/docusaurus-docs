@@ -1,0 +1,109 @@
+---
+id: backup-recovery-history
+title: バックアップ/復旧履歴
+description: SQL Serverで実行されたデータベースのバックアップおよび復旧作業の記録を提供します。
+keywords:
+  - SQL Server
+  - バックアップ/復旧履歴
+---
+
+ホーム画面 &gt; プロジェクト選択 &gt; <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbBackupRecoveryHistory" className="uitext" />
+
+SQL Serverで実行されたデータベースのバックアップおよび復旧作業の記録を提供します。 これにより、バックアップおよびリカバリ作業の成否と詳細情報を把握し、データ保護およびリカバリ戦略を検討するのに役立ちます。
+
+- データベースごとのバックアップの成否とバックアップサイズを確認し、バックアップサイクルの適正性を検討できます。
+
+- 復旧作業が正常に実行されたことを確認し、復旧が失敗した場合、エラーの原因を分析できます。
+
+- バックアップファイルの保存場所を確認して、バックアップファイルの適切な管理とアクセシビリティを確認してください。
+
+- バックアップファイルの継続性と回復の可能性を分析し、パスワードで保護されたバックアップの有無によってセキュリティを検討してください。
+
+:::note
+
+一覧に照会しようとする項目がなければ![更新アイコン](/img/ico-refresh.png)ボタンを選択します。
+
+:::
+
+## バックアップ履歴を確認する{#backup}
+
+画面上段の<Cmdname sid="TTL08690" className="uitext" />タブを選択します。 収集したデータに基づいてバックアップ作業の上位50件を照会し、データベースごとのバックアップ情報を提供します。 バックアップ作業の名前とタイプ、ソフトウェア、サイズ、バックアップ時点などを確認できます。
+
+<ImgLang img="db-backup-history-mssql.png" desc="バックアップ履歴" />
+
+提供するカラム項目の詳細については、以下を参照してください。
+
+- ***database_name***：バックアップ作業に関連したデータベースの名前です。
+
+- ***backup_name***：バックアップセットの名前です。
+
+- ***backup_type***：バックアップのタイプです。
+
+- ***device_type***：バックアップのデバイスタイプです。
+
+- ***software_name***：バックアップを実行したソフトウェアの名前です。
+
+- ***recovery_model***：データベースの復旧モデルです。
+
+- ***compatibility_level***：データベースの互換性レベルの設定です。
+
+- ***backup_start_date***：バックアップ操作が開始された日時です。
+
+- ***backup_finish_date***：バックアップ操作が完了した日時です。
+
+- ***latest_backup_location***：バックアップデバイスの物理パスです。
+
+- ***backup_size_mb***：バックアップセットのサイズ(Byte)です。
+
+- ***compressed_backup_size_mb***：ディスクに保存されているバックアップの合計サイズです。
+
+- ***database_backup_lsn***：直近の合計データベースバックアップのログシーケンス番号です。
+
+- ***checkpoint_lsn***：再実行が開始される必要があるログレコードのログシーケンス番号です。
+
+- ***begins_log_chain***：連続するログバックアップチェーンの最初のチェーン(`1`)です。 ログチェーンは、データベースを作成した後、または単純から全体、大量のログリカバリモデルに切り替える時に実行される最初のログバックアップから始まります。
+
+- ***is_password_protected***
+
+  - `protected`：パスワードで保護されたバックアップセット
+
+  - `Not protected`：保護されない
+
+## 復旧履歴を確認する{#recovery}
+
+画面上段の<Cmdname sid="TTL08691" className="uitext" />タブを選択します。 リカバリタスクの上位50件を照会します。 復旧されたデータベース、復旧タイプ、およびユーザー情報などを確認できます。 復旧タスクの対象であるデータベース、復旧時点、復旧ファイルパスを特定できます。
+
+<ImgLang img="db-recovery-history-mssql.png" desc="回復履歴" />
+
+提供するカラム項目の詳細については、以下を参照してください。
+
+- ***restore_database_name***：復旧タスクの対象であるデータベース名です。
+
+- ***backup_name***：復旧に使用されたバックアップセットの名前です。
+
+- ***restore_date***：復旧操作が開始された日時です。
+
+- ***restore_type***：復旧操作のタイプです。
+
+- ***user_name***：復旧操作を実行したユーザーの名前です。
+
+- ***backup_server_name***：バックアップ作業を実行したSQL Serverの名前です。
+
+- ***backup_database_name***：復旧に使用されたバックアップセットが、元に作成されたデータベースの名前です。
+
+- ***destination_phys_name***：復旧されたファイルの物理パスです。
+
+{/* 필터 조건추가하기*/}
+import Dbsqlfilter from "../common-items/_db-sql-filter.mdx";
+
+<Dbsqlfilter level={2} />
+
+## 照会結果をダウンロードする
+
+バックアップまたは復旧履歴をCSVファイル形式でダウンロードできます。 ご希望のタブを選択し、画面上部の![csvアイコン](/img/ic-csv-download-ms.svg)ボタンを選択します。
+
+ダウンロードしたCSVファイルの名前形式は次の通りです。
+
+- <Cmdname sid="TTL08690" className="uitext" />: *backup\_history\_`YYYY-MM-DD_HH-MM-SS`.csv*
+
+- <Cmdname sid="TTL08691" className="uitext" />: *recovery\_history\_`YYYY-MM-DD_HH-MM-SS`.csv*

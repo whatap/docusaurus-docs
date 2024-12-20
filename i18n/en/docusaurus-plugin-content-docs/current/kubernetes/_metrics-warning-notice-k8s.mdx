@@ -1,0 +1,237 @@
+## Template {#template}
+
+### Metrics Event Templates
+
+:::note 
+
+For more information about the `reason` field in the Kubernetes event, see [Kubernetes official documentation](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/events/event.go#L27). 
+
+:::
+
+#### ***BackOff***
+
+This notification is sent when `BackOff` is displayed 0 or more times in the `reason` field for the Kubernetes event. The example of <Cmdname sid="message" className="uitext" /> is as follows: 
+
+> Kubernetes Event (Kube Event `${message}`)
+
+#### ***Evicted***
+
+This notification is sent when `Evicted` is displayed 0 or more times in the `reason` field for the Kubernetes event. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> Kubernetes Event (Kube Event `${message}`)
+
+#### ***FailedCreatePodSandBox***
+
+This notification is sent when `FailedCreatePodSandBox` is displayed 0 or more times in the `reason` field of the Kubernetes event. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> Kubernetes Event (Kube Event `${message}`)
+
+#### ***FailedMount***
+
+This notification is sent when `FailedMount` is displayed 0 or more times in the `reason` field of the Kubernetes event. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> Kubernetes Event (Kube Event `${message}`)
+
+#### ***FailedScheduling***
+
+This notification is sent when `FailedScheduling` is displayed 0 or more times in the `reason` field of the Kubernetes event. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> Kubernetes Event (Kube Event `${message}`)
+
+#### ***FailedSync***
+
+This notification is sent when `FailedSync` is displayed 0 or more times in the `reason` field of the Kubernetes event. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> Kubernetes Event (Kube Event `${message}`)
+
+#### ***NodeNotReady***
+
+This notification is sent when `NodeNotReady` is displayed 0 or more times in the `reason` field for the Kubernetes event. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> Kubernetes Event (Kube Event `${message}`)
+
+#### ***Unhealthy***
+
+This notification is sent when `Unhealthy` is displayed 0 or more times in the `reason` field for the Kubernetes event. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> Kubernetes Event (Kube Event `${message}`)
+
+#### ***Notification of utilization based on container CPU quota***
+
+The alert occurs when the total CPU usage (`${cpu_per_quota}`) based on the container's CPU limit is 70% or more. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> The CPU utilization of container `${oname}` in `${okindName}` is high, `${cpu_per_quota}`% >= 70%.
+
+#### ***Container memory fail count***
+
+This notification is sent when the container memory limit is reached once or more times. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> Because the `${oname}` container of `${okindName}` exceeded the limit, the `${mem_failcnt}` increased.
+
+#### ***Container memory utilization***
+
+The alert occurs when the usage (`${container.mem_percent}`) based on the container's memory limit is 90% or more. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> The memory usage of `${oname}` container in `${okindName}` is `${container.mem_percent}`% >= 90%.
+
+#### ***Container DEAD status notification***
+
+This notification is sent when the container status code is `100`. The status code, `100` means `DEAD`. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> Container `${oname}` is in `DEAD` state.
+
+#### ***Cluster CPU request notification***
+
+This notification is sent when the value of the CPU allocatable to nodes divided by the total Limit CPU amount and multiplied by 100 is 80% or more. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> The CPU request (minimum required resource) is more than 80% of the cluster CPU allocation.
+
+#### ***Cluster memory request notification***
+
+The corresponding alert occurs when the available amount of memory for node allocation divided by the total Limit Memory and multiplied by 100 is 80% or more. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> Memory Request (minimum required resource) is more than 80% of the cluster memory allocation.
+
+#### ***Cluster CPU request notification***
+
+This notification is sent when the value of the CPU allocatable to nodes divided by the total Limit CPU amount and multiplied by 100 is 60% or more. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> The CPU request (minimum required resource) is more than 60% of the cluster CPU allocation.
+
+#### ***Cluster memory request notification***
+
+The corresponding alert occurs when the available amount of memory for node allocation divided by the total Limit Memory and multiplied by 100 is 60% or more. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> Memory Request (minimum required resource) is more than 60% of the cluster memory allocation.
+
+#### ***Notification of the number of master pods***
+
+This alert occurs when the Pods allocable to nodes do not exist. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> The number of Pods allocable to the master is 0.
+
+#### ***Node CPU utilization notification***
+
+This notification is sent when the node's CPU utilization (`${cpu}`) is 70% or more. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> The CPU usage of `${oname}` is `${cpu}`% >= 70%.
+
+#### ***Node memory utilization notification***
+
+This notification is sent when the node's memory utilization (`${memory_pused}`) is 90% or more. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> The memory usage of `${oname}` is `${memory_pused}`% >= 90%.
+
+#### ***Unassignable node notification***
+
+The corresponding alert occurs when the available number of Pods that can be assigned to a node is zero. 
+
+#### ***APDEX***
+
+This notification is triggered when transactions exist and the APDEX score is lower than 0.7.  The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+This alert occurs when the available number of Pods that can be assigned to a node is zero.  The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> APDEX is lower than 0.7 (`${oname}`)
+
+{/* 
+
+#### ***HPA CPU utilization notification***
+
+This alert occurs when the number of running Pods is equal to the maximum number of Pods within resources and the memory utilization is 70% or more. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> HPA Pod creation reached the maximum value and the CPU utilization is 70% or more.
+
+#### ***HPA memory utilization notification***
+
+This alert occurs when the number of running Pods is equal to the maximum allowable number of Pods for resources and the memory utilization is greater than 90%. 
+
+> HPA Pod creation reached the maximum value and the memory utilization is 90% or more.
+
+*/}
+
+### Composite Metrics Event Templates
+
+#### ***Inactive agents has been found***
+
+An alert occurs when the number of active agents is less than the specified value. The example of <Cmdname sid="message" className="uitext" /> is as follows: 
+
+> `${ip}` `${okindName}` The number of active agents has decreased to `${num_of_current_agents}`. 
+
+#### ***TPS has changed by more than 30% compared to the previous week***
+
+An alert occurs when the application's TPS changes by more than 30% compared to that of the previous week. The example of message is as follows:
+
+> `${okindName}` a week ago : `${prev_week_tps_display}`, current : `${current_tps_display}`,  difference : `${one_week_diff_display}`
+
+#### ***Very slow active transactions detected***
+
+An alert occurs when the number of transactions that exceed 8 seconds in the application exceeds 10 on average. The example of message is as follows:
+
+> `${okindName}` `${very_slow_tx_cnt_m5_avg_display}` active transactions performed for more than 8 seconds were detected.
+
+#### ***APDEX score dropped***
+
+A notification is triggered when the APDEX score falls below 70. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> The average apdex of `${pname}` in the last 5 seconds is `${apdex_display}`
+
+#### ***CPU % is too high***
+
+A notification is sent when the CPU utilization of the node exceeds 80%. The example of message is as follows:
+
+> CPU utilization rate of the `${oname}` in the last minute > `${_rule_}` %
+
+#### ***CPU User % is too high***
+
+An alert occurs when the user's CPU utilization exceeds 50%. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> CPU User utilization rate of the `${oname}` in the last minute > `${_rule_}` %
+
+#### ***The number of agents with high CPU SYS % is too large***
+
+An alert occurs when the system's CPU utilization exceeds 50%. The example of message is as follows: 
+
+> The number of agents with a CPU SYS of 70% or more in the last minute > `${_rule_}` %
+
+#### ***The Disk I/O is too high***
+
+A notification is sent when the disk I/O utilization exceeds 10%. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> In the last minute, `${oname}`'s Disk I/O > `${_rule_}` %
+
+#### ***The Disk Used % is too high***
+
+A notification is sent when the file system utilization exceeds 90%. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> In the last minute, `${oname}`'s Disk Used > `${_rule_}` %
+
+#### ***Network Traffic I/O is too high***
+
+An alert occurs when the network inbound/outbound traffic exceeds 10%. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> In the last minute, `${oname}`'s Network Traffic I/O > `${_rule_}` %
+
+#### ***Network Packet I/O is too high***
+
+An alert occurs when the network inbound/outbound packets exceed 10%. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> In the last minute, `${oname}`'s Network Packet I/O > `${_rule_}` %
+
+#### ***Network Error I/O is too high***
+
+An alert occurs when the network inbound/outbound errors exceed 10%. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> In the last minute, The maximum value of the `${oname}`'s Network Error I/O > `${_rule_}` %
+
+#### ***The kube-apiserver latency over 10 second***
+
+A notification is sent when the latency of kube-apiserver among the control plane components exceeds 10 seconds. However, the WATCH operation is excluded. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> Latency of the `${verb}` verb in `${instance}` of kube-apiserver exceeded `${metricValue}` seconds.
+
+#### ***The kube-apiserver response increase/decrease rate for error codes***
+
+Among control plane components, an alert occurs when the number of error responses from kube-apiserver exceeds 50 and the increase/decrease rate changes by more than 50%. The example of <Cmdname sid="message" className="uitext" /> is as follows:
+
+> Rate of increase in the number of requests for code `${code}` on instance `${instance}` of kube-apiserver exceeded `${metricValue}`.

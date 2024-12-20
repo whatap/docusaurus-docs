@@ -42,9 +42,17 @@ Javaアプリケーションサーバーのモニタリングのためのエー�
 
 - **sigar_enabled** <span class='type'>Boolean</span>
 
-  既定値 `false`
+  既定値`false`
 
   sigarライブラリによるOS情報の収集を有効にします。sigarライブラリを通じて5秒単位で収集するCPU、Memory、DiskなどのOSリソースデータが含まれます。`enabled`オプションが`false`の場合、無効にします。
+
+  :::note
+
+  - whatap.agent.2.1.0バージョン以下では既定値は`true`です。whatap.agent.2.1.0バージョン以降では既定値は`false`です。
+
+  - Java 1.6以下のバージョン環境では、`sigar_enabled=true`オプションを追加してsigarライブラリを有効にし、パフォーマンス指標を収集できます。
+
+  :::
 
 - **active_stack_enabled** <span class='type'>Boolean</span>
 

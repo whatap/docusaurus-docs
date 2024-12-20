@@ -40,29 +40,33 @@ The errors that occur when making a JDBC connection call or SQL execution call, 
 
 The errors that occur during HTTP calls appear in the `SLOW_HTTPC` or `httpc error` format.
 
-### WhaTap error handling
+### Handling the errors defined in WhaTap
 
 The WhaTap monitoring service handles errors depending on specific conditions.
 
-- **TOO_MANY_RECORDS**: 1000 or more fetches
+- **TOO_MANY_RECORDS**: The number of fetches is 10,000 or more.
 
-- **SLOW_SQL**: SQL time of 30000 ms or more
+  For the related agent options, see the following document: [`profile_error_jdbc_fetch_max=10000`](agent-dbsql#profile_error_jdbc_fetch_max)
 
-- **SLOW_HTTPC**: HTTP call elapsed time of 10000 ms or more
+- **SLOW_SQL**: SQL time is 30,000 ms or more.
+
+  For the related agent options, see the following document: [`profile_error_sql_time_max=30000`](agent-dbsql#profile_error_sql_time_max)
+
+- **SLOW_HTTPC**: The elapsed time for the HTTP call is 10,000 ms or more.
+
+  For the related agent options, see the following document: [`profile_error_httpc_time_max=10000`](agent-httpcapicall#profile_error_httpc_time_max)
 
 - **httpc error**: HTTP call status code of 400 or more
 
+  For the related agent options, see the following document: [`httpc_status_error_enable=true`](agent-transaction#httpc_status_error_enable)
+
 - **status error**: Transaction status code of 400 or more
+
+  For the related agent options, see the following document: [`transaction_status_error_enable=true`](agent-transaction#transaction_status_error_enable)
 
 ### Transaction error step INFO processing
 
 Some errors can be displayed as normal or ignored through the agent settings. The level displayed in the <Cmdname sid="AA005" className="uitext" /> widget is <span class="normal">INFO</span> (blue).
-
-:::note
-
-Agent settings can be configured by editing the _whatap.conf_ file or using <Cmdname sid="management" className="uitext" /> &gt; <Cmdname sid="agent_configuration" className="uitext" />. For more information, see [the following](../java/set-agent).
-
-:::
 
 - `biz_exceptions`: Displays the record error.
 
@@ -99,3 +103,19 @@ Agent settings can be configured by editing the _whatap.conf_ file or using <Cmd
   ```ini title="whatap.conf"
   httpc_status_url_ignore_set=/api/posts/test/timeout:408,/api/apache/httpclient/posts/timeout:500
   ```
+
+:::note
+
+The agent settings can be configured in _whatap.conf_ and they can be viewed in the <Cmdname sid="management" className="uitext" /> &gt; <Cmdname sid="agent_configuration" className="uitext" /> menu. For more information, see [the following](set-agent).
+
+:::
+
+### Exception handling for methods
+
+If a method set via the `hook_method_patterns` or `hook_service_patterns` option generates an exception during execution, the exception is treated as an error. 
+
+:::note 
+
+If an exception is handled inside a method by using the Try-Catch statement, the Java agent excludes the exception from collection and does not handle it as an error.
+
+:::

@@ -1,0 +1,45 @@
+---
+id: java-2_2_40
+title: Java Agent v2.2.40
+toc_max_heading_level: 2
+pagination_next: release-notes/java/java-2_2_39
+displayed_sidebar: releaseSidebar
+---
+
+2024年11月06日
+
+- <Status priority='1'>New</Status> camel-netty4-2.25追跡
+
+  ```bash
+  weaving=camel-netty4-2.25
+  ```
+
+- <Status priority='1'>New</Status> AWS ECS Fargateメモリ使用率のメトリクス収集
+
+  - メモリ使用率の既定値をユーザー定義(task definition) メモリ制限値に設定
+
+- <Status priority='1'>New</Status>一部のエージェント設定でシステム環境変数による設定をサポート
+
+  - 既存に*whatap.conf*に設定した場合、既存の設定値が優先され、システム環境変数の値は無視
+
+    ```bash
+    エージェント設定              システム環境変数
+    whatap.server.host   <= WHATAP_SERVER_HOST
+    whatap.server.port   <= WHATAP_SERVER_PORT
+    whatap.okind         <= WHATAP_OKIND
+    whtap.micro.enabled  <= WHATAP_MICRO_ENABLED
+    ```
+
+- <Status priority='1'>Changed</Status> Spring Boot 2.5 ~ 2.6.xバージョンでWebFluxトランザクションを追跡する際にサンプリング機能を使用できるように改善
+
+- <Status priority='0'>Fixed</Status>AWS ECS EC2メモリ使用率の既定値をユーザー定義のtask definitionのメモリ制限値に修正
+
+- <Status priority='0'>Fixed</Status> PostgreSQL使用時の空SQL(Empty SQL) 収集の除去
+
+- <Status priority='0'>Fixed</Status>トランザクションサンプリング機能を使用時、実際のTPSより高く収集される現象を修正
+
+- <Status priority='0'>Fixed</Status> Spring Boot 2.5 ~ 2.6.xバージョンでSpring Cloud Gatewayを呼び出す際、連携追跡用ヘッダーがある場合でも、連携追跡に問題がないように修正
+
+import DownloadJava from './_import_dl-java-agent.mdx';
+
+<DownloadJava ver="2.2.40" />

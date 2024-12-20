@@ -10,6 +10,12 @@ keywords:
 
 Node.jsエージェントのHTTPC、API Callのオプションを提供します。
 
+- **profile_error_httpc_time_max** <span class='type'>Int</span> <ScrollToLink anchor='profile_error_httpc_time_max' />
+
+  既定値`10000`
+
+  HTTPCの実行時間が指定した値を超えると、**SLOW_HTTPC**エラーで処理します。`0`に設定するとエラー処理されません。
+
 - **hook_httpc_patterns** <span class='type'>String</span>
 
   HTTP Callを実行するクラスを設定します。

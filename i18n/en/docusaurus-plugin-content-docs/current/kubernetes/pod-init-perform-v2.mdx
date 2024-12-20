@@ -117,15 +117,3 @@ WhaTap calculates the average usage compared to the container's CPU limit for ab
 - If the **_Running_** section becomes longer, it means that there is a section with high resource usage when the container in the Pod first runs. Check if there is any problem with the container execution process.
 
 - If the overall initial resource usage is high, consider increasing container resource requests and limits.
-
-{/* 
-
-## Viewing the Pod list within 30 days
-
-<ImgLang img='k8s-pod-startup-analysis-30days.png' desc='Pod list within 30 days' />
-
-The **_Pod Startup Analysis_** menu analyzes the Pod startup data for 5 minutes within the last 30 days starting from Pod creation. Because of this, the startup performance cannot be analyzed for Pods that are older than 30 days after creation. 
-
-To display Pods within 30 days in the Pod list, enable the <Cmdname sid="BTN07717" className="uitext" days="30" /> toggle option at the top of the screen. You can search for the desired Pods by entering characters in the input field on the right of the option.
-
-*/}

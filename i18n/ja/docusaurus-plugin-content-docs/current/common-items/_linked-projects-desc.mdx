@@ -1,0 +1,61 @@
+ホーム画面 &gt; プロジェクト選択 &gt; <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_correlatedProjectManagement" className="uitext" />
+
+データベースモニタリング(DPM) プロジェクトとアプリケーションのモニタリング(APM) プロジェクトを生成した場合、2つのプロジェクトを連携してDPMで収集したモニタリングデータをAPMプロジェクトで確認できます。
+
+<InDoc product="postgresql,oracle,oracle-pro,mysql">
+
+データベースで有効になったセッション(アクティブセッション)と連動したアプリケーションのアクティブトランザクションにより、そのトランザクションの詳細情報をリアルタイムで確認できます。 このような統合モニタリングにより、アプリケーションとデータベース間の相互作用を深層分析し、リアルタイムで性能ボトルネック現象を診断して解決できます。
+
+</InDoc>
+
+<InDoc product="java,php,python,nodejs,dotnet,golang"><ImgLang img="linked-project-management.png" desc="相関プロジェクト管理" /></InDoc>
+
+<InDoc product="postgresql,oracle,oracle-pro,mysql"><ImgLang img="db-linked-project-management.png" desc="相関プロジェクト管理" /></InDoc>
+
+<Cmdname sid="side_correlatedProjectManagement" className="uitext" />機能を使用すると、製品または機器中心のモニタリングを超えて、複数のプロジェクト間のモニタリングデータを統合して確認できます。 これは、アプリケーション、データベースなど、 様々なシステムコンポーネントがどのように相互作用するかを分析するのに役立ちます。 特に、性能低下が発生した時に装備の問題なのか個別アプリケーションの問題なのか迅速に把握でき、問題解決時間を大幅に短縮できます。 <Cmdname sid="side_correlatedProjectManagement" className="uitext" />これにより、ユーザーシステム単位で性能データを総合的に分析し、より可視的なインサイトを確保できます。
+
+<InDoc product="php,python,nodejs,dotnet,golang">
+
+:::note
+
+**開始前の参考事項**
+
+- 対応するデータベース: PostgreSQL、Oracle、MySQL、SQL Server、CUBRID、Altibase、Redis、MongoDB
+
+:::
+
+</InDoc>
+
+<InDoc product="java">
+
+:::note
+
+**開始前の参考事項**
+
+- <Cmdname sid="BTN08519" className="uitext" />機能をサポートするデータベースプラットフォームは次の通りです。
+
+  PostgreSQL, Oracle, MySQL, SQL Server, CUBRID, Altibase, Redis, MongoDB
+
+- <Cmdname sid="BTN08518" className="uitext" />機能の場合、Javaエージェント2.2.33バージョン以降が必要です。 この機能をサポートするデータベースプラットフォームは次の通りです。
+
+  PostgreSQL, Oracle, Oracle Pro, MySQL
+
+:::
+
+</InDoc>
+
+<InDoc product="postgresql,oracle,oracle-pro,mysql">
+
+:::note
+
+**開始前の参考事項**
+
+- 現在は**Java**プラットフォームのみサポートします。 今後のアップデートでサポートプラットフォームを拡張します。 
+
+- <Cmdname sid="BTN08518" className="uitext" />機能の場合、Javaエージェント2.2.33バージョン以降が必要です。
+
+- アプリケーションプロジェクトでデータベースプロジェクトを連携する方法についての詳細は、[次の文書](../java/linked-projects)を参照してください。
+
+:::
+
+</InDoc>

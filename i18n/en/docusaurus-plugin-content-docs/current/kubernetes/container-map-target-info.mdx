@@ -28,9 +28,9 @@ import TargetInfo from "../common-items/_import_k8s-container-map-target-resourc
 
 <TargetInfo />
 
-### Container summary analysis and Pod summary analysis {#kube-resource-summary-analysis}
+### Kubernetes status summary analysis {#kube-summary-analysis}
 
-<Cmdname sid="TTL08230" className="uitext" /> and <Cmdname sid="TTL08317" className="uitext" type="kube_pod"/> provides analysis reports on the performance and resources for each container and Pod in the Kubernetes environment. You can monitor the resource allocation and usage for containers and Pods in the clusters and namespaces in real time and respond effectively by referencing the suggestions of the reports.
+It provides a summary analysis report on the performance and resources for each container, Pod, and node in the Kubernetes environment. You can monitor the resource allocation and usage for containers, Pods, and nodes in the clusters and namespaces in real time and respond effectively by referencing the suggestions of the reports. 
 
 :::note 
 
@@ -53,3 +53,9 @@ Currently, each summary analysis is available only in Korean.
 import PodSummary from "../common-items/_import_k8s-pod-summary-analysis.mdx";
 
 <PodSummary />
+
+#### Node summary analysis {#node-summary-analysis}
+
+import NodeSummary from "../common-items/_import_k8s-node-summary.mdx";
+
+<NodeSummary />

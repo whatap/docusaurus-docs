@@ -94,6 +94,7 @@ x-tagGroups:
       - プロジェク
       - グループ
       - エージェント
+      - イベント履歴
   - name: Appication
     tags:
       - APM Spot情報照会
@@ -531,6 +532,200 @@ paths:
               -w "\n" \
               -H "x-whatap-token: {{ACCOUNT_API_TOKEN}}" \
               "https://api.whatap.io/open/api/json/group/{groupKey}/projects"
+  /open/api/json/event/history:
+    get:
+      summary: イベント記録照会
+      description: プロジェクトで発生したイベント履歴を照会できます。
+      tags:
+        - イベント履歴
+      parameters:
+        - $ref: 'parameters.yaml#/WhatapAccoutTokenHeader'
+        - $ref: 'parameters.yaml#/WhatapPcodeHeader'
+        - $ref: 'parameters.yaml#/StartTimeQuery'
+        - $ref: 'parameters.yaml#/EndTimeQuery'
+        - $ref: 'parameters.yaml#/Progress'
+        - $ref: 'parameters.yaml#/OidPathopt'
+        - $ref: 'parameters.yaml#/OkindQuery'
+        - $ref: 'parameters.yaml#/OnodesQuery'
+      responses:
+        '200':
+          description: 照会成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  metricName:
+                    type: string
+                    description: メトリクス名
+                  pcode:
+                    type: integer
+                    description: プロジェクトコード
+                  onodeName:
+                    type: string
+                    description: サーバー別エージェントグループ名
+                  displayTag:
+                    type: string
+                    description: イベントステータスタグを表示するための値
+                  metricValue:
+                    type: float
+                    description: メトリックス値
+                  oid:
+                    type: integer
+                    description: エージェント固有識別子(ID)
+                  title:
+                    type: string
+                    description: イベントタイトル
+                  uuid:
+                    type: integer
+                    description: イベント固有識別子
+                  okind: 
+                    type: integer
+                    description: タイプ別エージェントグループの固有識別子(ID)
+                  ackCount:
+                    type: integer
+                    description: 処理内容数
+                  eventTime: 
+                    type: integer
+                    format: int64
+                    description: イベントが発生した時刻
+                  disabled:
+                    type: boolean
+                    description: | 
+                      イベント終了かどうか
+                      - しきい値未満の値発生でイベントが解消された場合
+                      - ユーザーが意図的にイベントルールを無効にした場合
+                      - 大量通知などの理由でブロックされたイベントの場合
+                      - 処理履歴が追加されたイベントの場合
+                  id:
+                    type: integer
+                    description: イベント固有識別子(ID)
+                  acknowledges:
+                    type: array
+                    description: 処理内容
+                  stateful:
+                    type: boolean
+                    description: 解消されたイベント通知機能が有効かどうか
+                  product:
+                    type: string
+                    description: サーバータイプ
+                  level:
+                    type: string
+                    description: 警告レベル
+                  updateTime:
+                    type: integer
+                    format: int64
+                    description: イベント更新時間
+                  message:
+                    type: string
+                    description: イベントメッセージ
+                  metricThreshold:
+                    type: string
+                    description: しきい値
+                  oname:
+                    type: string
+                    description: エージェント名
+                  escalation:
+                    type: boolean
+                    description: 繰り返し通知するかどうか
+                  tagCount:
+                    type: boolean
+                    description: TagCountカテゴリイベントかどうか
+                  systemEvent:
+                    type: boolean
+                    description: システムイベントかどうか
+                  offTime:
+                    type: integer
+                    description: 解消時刻
+                  category:
+                    type: string
+                    description: TagCount カテゴリ
+                  okindName:
+                    type: sting
+                    description: 種類別エージェントのグループ名
+                  onode:
+                    type: integer
+                    description: サーバー別エージェントグループの固有識別子(ID)
+                  snapshot:
+                    type: string
+                    description: イベント発生時のスナップショット(サーバーの基本イベントのみ)
+                  status:
+                    type: string
+                    description: イベントステータス
+              example:
+                - metricName: "mem"
+                  pcode: "7"
+                  onodeName: ""
+                  displayTag: "inprogress"
+                  metricValue: "99.73802"
+                  oid: -17079562
+                  title: "Server Memory"
+                  uuid: "c5cf01fe9daf43ce99a9028e0a804d35"
+                  okind: 0,
+                  ackCount: 0,
+                  eventTime: 1733288350068,
+                  disabled: false,
+                  id: 44,
+                  acknowledges: []
+                  stateful: true
+                  process: 0
+                  product: "ap"
+                  level: "Critical"
+                  triggerId: 0
+                  updateTime: 1733288350128
+                  message: "Server Memory = 99.738"
+                  metricThreshold: "90"
+                  oname: "front"
+                  escalation: true
+                  tagCount: true
+                  systemEvent: false
+                  offTime: 0
+                  category: "app_host_resource"
+                  okindName: ""
+                  onode: 0
+                  snapshot: null
+                  status: "ON"
+                - metricName: "cpu"
+                  pcode: 7
+                  onodeName: ""
+                  displayTag: "inprogress"
+                  metricValue: "19.947985"
+                  oid: -17079562
+                  title: "Server CPU"
+                  uuid: "5d7a40d11a1144a8b7bad7e2c71cda2e"
+                  okind: 0
+                  ackCount: 0
+                  eventTime: 1733288325022
+                  disabled: false
+                  id: 42
+                  acknowledges: []
+                  stateful: true
+                  process: 0
+                  product: "ap"
+                  level: "Warning"
+                  triggerId: 0
+                  updateTime: 1733288325055
+                  message: "Server CPU = 19.948"
+                  metricThreshold: "0"
+                  oname: "front"
+                  escalation: false
+                  tagCount: true
+                  systemEvent: false
+                  offTime: 0
+                  category: "app_host_resource"
+                  okindName: ""
+                  onode: 0
+                  snapshot: null
+                  status: "ON"
+      x-codeSamples:
+        - lang: curl
+          source: |
+            curl --location \
+            -w "\n" \
+            -H 'x-whatap-token: {{PROJECT_API_TOKEN}}' \
+            -H 'x-whatap-pcode: {{projectCode}}' \
+            "https://api.whatap.io/open/api/json/event/history?stime=1733065200000&etime=1733103557000&progress=true&oids=-17079562%2C352247167" \
+
   /open/api/v2/agent/list:
     post:
       summary: oid一覧呼び出し

@@ -1,0 +1,157 @@
+{/* - <code class="Changed">Changed</code> 오브젝트 매니페스트 지원 마스터 에이전트 버전 <b>1.5.2</b>로 변경 <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.3​</code></a></code>대시보드​
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_containerMap" className="uitext" />メニューの要約表示画面から、現在のログ(Stdout) 照会時にコンテナidをコンテナ名として表示するように変更 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="agentInstall" className="uitext" /> 메뉴의 안내 문구 개선 <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.2​</code></a></code> */}
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="pod_init_perform" className="uitext" />メニューの変更 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> 登録された連携プロジェクトがあった場合は<Cmdname sid="TTL06209" className="uitext" /> &gt; <Cmdname sid="table_view" className="uitext" />でSQL対象サーバー情報とHTTPURL Connection情報について<Cmdname sid="TTL07046" className="uitext" />ビューを提供 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_management" className="uitext" />メニュー下位に <Cmdname sid="side_correlatedProjectManagement" className="uitext" />メニューを追加：連携プロジェクトの登録、照会、削除機能 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_clusterOverview" className="uitext" />メニューに<span class="uitext">Total Capacity CPU</span>(ノード総CPU), <span class="uitext">Total Capacity Memory</span>(ノード総Memory) ウィジェットを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_perfSummary" className="uitext" />メニューに<Cmdname sid="TTL07432" className="uitext" />と<Cmdname sid="TTL07433" className="uitext" />、<Cmdname sid="TTL07434" className="uitext" />ウィジェットを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_containerImages" className="uitext" />メニューに指標を追加 - <b>Total Container CPU</b>、<b>Total Container Memory</b> <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_nodeList" className="uitext" />メニューに指標を追加 - <b>beta.kubernetes.io/instance-type</b> <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_clusterOverview" className="uitext" />メニューに<b>Service</b>、<b>Ingress</b>、<b>Job</b>、<b>CronJob</b>オブジェクト一覧を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_containerList" className="uitext" />メニューで<span class="uitext">Node</span>カラム項目を選択すると、該当ノード一覧がフィルタリングされた<Cmdname sid="side_nodeList" className="uitext" />メニューに移動する機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_resource" className="uitext" />メニューの下位に、次のメニューを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+  - <Cmdname sid="podList" className="uitext" />: Pod一覧と詳細情報を提供
+  - <Cmdname sid="containerizedAppList" className="uitext" />: コンテナ化されたアプリケーションの一覧と詳細情報を提供
+  - <Cmdname sid="containerImages" className="uitext" />: 使用中の画像一覧を提供
+
+- <code class="Feature">Feature</code> 次のメニューで画面上段のステータスアイコンを選択すると、選択したステータスのリソースだけがフィルタリングされる機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+  - <Cmdname sid="resource" className="uitext" /> &gt; <Cmdname sid="node_list" className="uitext" />
+  - <Cmdname sid="resource" className="uitext" /> &gt; <Cmdname sid="container_list" className="uitext" />
+  - <Cmdname sid="resource" className="uitext" /> &gt; <Cmdname sid="podList" className="uitext" />
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_resource" className="uitext" /> &gt; <Cmdname sid="kube_master" className="uitext" />メニュー名を<Cmdname sid="side_objectManifest" className="uitext" />に変更 <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_resource" className="uitext" /> &gt; <Cmdname sid="side_objectManifest" className="uitext" />メニューで過去のオブジェクトマニフェストを照会・比較できるように改善(Kubernetesエージェントv1.5.0以降に対応) <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.0​</code></a></code>
+
+- <code class="Changed">Changed</code> <UI>Object Manifest</UI>対応のマスターエージェントバージョンを<b>1.5.2</b>に変更 <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.3​</code></a></code>ダッシューボード​
+
+- <code class="New">New</code> <Cmdname sid="side_kubeApiserverDashboard" className="uitext" />メニューの追加 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="New">New</code> <Cmdname sid="side_kubernetesAgentList" className="uitext" />メニューの追加 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_objectManifest" className="uitext" />メニューで<Cmdname sid="compare" className="uitext" />機能のUIを修正し、目次機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Changed">Changed</code> <Cmdname sid="container" className="uitext" /> &gt; <Cmdname sid="side_containerList" className="uitext" />メニューで比較する機能の利用時、<Cmdname sid="kube_default" className="uitext" />、<Cmdname sid="cpu" className="uitext" />タブに<span class="uitext">Container CPU Usage</span>チャートを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_containerMap" className="uitext" />メニューでレプリケーションコントローラ(Replication Controller) のグループ化オプションを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="New">New</code> <Cmdname sid="side_kubeApiserverMetricsSearch" className="uitext" />メニューの追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="New">New</code> <Cmdname sid="side_deploymentList" className="uitext" />メニューの追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> Podカテゴリに<Cmdname sid="ITM06172" className="uitext" />オプションを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_workload" className="uitext" /> &gt; <Cmdname sid="side_containerImages" className="uitext" />メニューの画面上に画像の総数を表示 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> Kubernetesクラスタープロジェクトの<Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_nodeList" className="uitext" />メニューでノード情報カラムを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_integratedContainerMap" className="uitext" />メニューの<Cmdname sid="groupby" className="uitext" />オプション項目として<span class="uitext">WhatapProject</span>追加：WhaTapプロジェクト別グループ化機能 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_containerMap" className="uitext" />メニューの<Cmdname sid="display_detail" className="uitext" />から対象(コンテイナ/ファド) の一覧から選択したものだけが確認できる<Cmdname sid="checked_only" className="uitext" />オプションを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_workload" className="uitext" /> &gt; <Cmdname sid="side_containerizedAppList" className="uitext" />メニューのアプリケーション詳細情報に<Cmdname sid="TTL06891" className="uitext" />タブを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_containerMap" className="uitext" />メニューで選択したカテゴリのPod Phase情報及びPhase案内を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_containerMap" className="uitext" />メニューからリストメニューに移動するリンクを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="pod_init_perform" className="uitext" />メニューの改編とメニュー名を<Cmdname sid="side_podInitPerf" className="uitext" />に変更 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="agentInstall" className="uitext" />メニューでHelmを利用したエージェントのインストール案内を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.2​</code></a></code>
+
+{/* #### 리소스​
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_clusterOverview" className="uitext" />メニューに<span class="uitext">Total Capacity CPU</span>(ノード総CPU), <span class="uitext">Total Capacity Memory</span>(ノード総Memory) ウィジェットを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_perfSummary" className="uitext" />メニューに<Cmdname sid="TTL07432" className="uitext" />と<Cmdname sid="TTL07433" className="uitext" />、<Cmdname sid="TTL07434" className="uitext" />ウィジェットを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_nodeList" className="uitext" />メニューから、カラム分類と位置を変更 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_containerImages" className="uitext" />メニューに指標を追加 - <b>Total Container CPU</b>、<b>Total Container Memory</b> <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_nodeList" className="uitext" />メニューに指標を追加 - <b>beta.kubernetes.io/instance-type</b> <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_clusterOverview" className="uitext" />メニューに<b>Service</b>、<b>Ingress</b>、<b>Job</b>、<b>CronJob</b>オブジェクト一覧を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_containerList" className="uitext" />メニューで<span class="uitext">Node</span>カラム項目を選択すると、該当ノード一覧がフィルタリングされた<Cmdname sid="side_nodeList" className="uitext" />メニューに移動する機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="resource" className="uitext" />メニューの下位に、次のメニューを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+  - <Cmdname sid="podList" className="uitext" />: Pod一覧と詳細情報を提供
+  - <Cmdname sid="containerizedAppList" className="uitext" />: コンテナ化されたアプリケーションの一覧と詳細情報を提供
+  - <Cmdname sid="containerImages" className="uitext" />: 使用中の画像一覧を提供
+
+- <code class="Feature">Feature</code> 次のメニューで画面上段のステータスアイコンを選択すると、選択したステータスのリソースだけがフィルタリングされる機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+  - <Cmdname sid="resource" className="uitext" /> &gt; <Cmdname sid="node_list" className="uitext" />
+  - <Cmdname sid="resource" className="uitext" /> &gt; <Cmdname sid="container_list" className="uitext" />
+  - <Cmdname sid="resource" className="uitext" /> &gt; <Cmdname sid="podList" className="uitext" />
+
+- <code class="Changed">Changed</code> <Cmdname sid="resource" className="uitext" /> &gt; <Cmdname sid="kube_master" className="uitext" />メニュー名を<Cmdname sid="side_objectManifest" className="uitext" />に変更 <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="resource" className="uitext" /> &gt; <Cmdname sid="side_objectManifest" className="uitext" /> 메뉴에서 과거 오브젝트 매니페스트를 조회/비교할 수 있도록 개선(Kubernetes 에이전트 v1.5.0 이상 지원) <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.0​</code></a></code> */}
+
+{/* 
+
+#### アプリケーション​
+
+- <code class="Changed">Changed</code> <Cmdname sid="multi_hitmap" className="uitext" />, <Cmdname sid="side_customHitmap" className="uitext" />メニューの日本語メニュー名を修正 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Changed">Changed</code> <Cmdname sid="container" className="uitext" /> &gt; <Cmdname sid="side_containerImages" className="uitext" />メニューのカラム項目を変更 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code>
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_containerMap" className="uitext" /> 메뉴에서 블록의 크기가 작은 경우 UI 표시 수정 <code class='changelog-service'><a href="../release-notes/service/service-2_2_x"><code class='changelog-service'>Service 2.2.0​</code></a></code> */}
+
+#### ログ​
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_kubeEventList" className="uitext" />：プロジェクト単位でKubernetesイベントに対する照会と検索機能 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="whatapEventList" className="uitext" />: <code>#WhatapEvent</code>カテゴリのログデータの照会機能を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" />メニューから複合メトリクスイベントテンプレートを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.5​</code></a></code>
+
+{/* #### 기타
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="pod_init_perform" className="uitext" />メニューの変更 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> 登録された連携プロジェクトがあった場合は<Cmdname sid="TTL06209" className="uitext" /> &gt; <Cmdname sid="table_view" className="uitext" />でSQL対象サーバー情報とHTTPURL Connection情報について<Cmdname sid="TTL07046" className="uitext" />ビューを提供 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <span class="uitext">管理</span>メニュー下位に <span class="uitext">相関プロジェクト管理</span>メニューを追加：連携プロジェクトの登録、照会、削除機能 <code class='changelog-service'><a href="../release-notes/service/service-2_0_x"><code class='changelog-service'>Service 2.0.0​</code></a></code>
+
+- <code class="Changed">Changed</code> オブジェクトマニフェスト対応のマスターエージェントバージョンを<b>1.5.2</b>に変更​ <code class='changelog-service'><a href="../release-notes/service/service-2_1_x"><code class='changelog-service'>Service 2.1.3​</code></a></code>ダッシューボード​
+
+- <code class="Changed">Changed</code> <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_podInitPerf" className="uitext" />メニューのバナーにユーザーガイドのリンクを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.1​</code></a></code>
+
+- <code class="Feature">Feature</code> Podカテゴリに<Cmdname sid="ITM06172" className="uitext" />オプションを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_workload" className="uitext" /> &gt; <Cmdname sid="side_containerImages" className="uitext" />メニューの画面上に画像の総数を表示 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> Kubernetesクラスタープロジェクトの<Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_nodeList" className="uitext" />メニューでノード情報カラムを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_integratedContainerMap" className="uitext" />メニューの<Cmdname sid="groupby" className="uitext" />オプション項目として<span class="uitext">WhatapProject</span>追加：WhaTapプロジェクト別グループ化機能 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_containerMap" className="uitext" />メニューの<Cmdname sid="display_detail" className="uitext" />から対象(コンテイナ/ファド) の一覧から選択したものだけが確認できる<Cmdname sid="checked_only" className="uitext" />オプションを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_workload" className="uitext" /> &gt; <span class="uitext">コンテナアプリケーションリスト</span>メニューのアプリケーション詳細情報に<Cmdname sid="TTL06891" className="uitext" />タブを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_containerMap" className="uitext" />メニューで選択したカテゴリのPod Phase情報及びPhase案内を追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_dashboard" className="uitext" /> &gt; <span class="uitext">コンテナマップ</span>メニューからリストメニューに移動するリンクを追加 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="pod_init_perform" className="uitext" />メニューの改編とメニュー名を<Cmdname sid="side_podInitPerf" className="uitext" />に変更 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.0​</code></a></code>
+
+- <code class="Feature">Feature</code> <span class="uitext">관리</span> &gt; <Cmdname sid="agentInstall" className="uitext" /> 메뉴에서 Helm을 이용한 에이전트 설치 안내 추가 <code class='changelog-service'><a href="../release-notes/service/service-2_3_x"><code class='changelog-service'>Service 2.3.2​</code></a></code> */}

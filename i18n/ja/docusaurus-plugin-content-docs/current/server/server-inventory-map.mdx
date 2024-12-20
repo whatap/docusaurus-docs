@@ -1,0 +1,373 @@
+---
+id: server-inventory-map
+title: サーバーインベントリマップ
+description: サーバーインベントリマップメニューを案内します。
+keywords:
+  - ダッシューボード
+  - サーバーインベントリマップ
+  - 分析する
+  - UI
+  - Server
+---
+
+ホーム画面 &gt; プロジェクト選択 &gt; <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_serverInventoryMap" className="uitext" />
+
+{/* :::note 
+
+**要求事項**
+
+サーバーインベントリマップのダッシュボードを使用するには、サーバーインベントリ機能の有効化とサーバーインベントリマップ機能の有効化が必要です。 サーバーインベントリと一緒に新しいサーバーインベントリマップのダッシュボードを活用します。 サーバーインベントリの有効化の詳細については、[次の文書](server-inventory)を参照してください。  
+
+::: */}
+
+WhaTapモニタリングサービスの初期画面でプロジェクトを選択した後、<Cmdname sid="side_dashboard" className="uitext" />メニューの下にある<Cmdname sid="side_serverInventoryMap" className="uitext" />メニューを選択します。 <Cmdname sid="side_serverInventoryMap" className="uitext" />は<Cmdname sid="side_serverInventory" className="uitext" />に基づいて、オペレーターがモニタリングの目的に合った分類基準に従ってサーバーをグループ化して構成できる視覚化ダッシュボードです。 
+
+WhaTapは<Cmdname sid="side_serverInventoryMap" className="uitext" />これにより、ユーザーがサーバーの運用状況を直感的に確認し、分析できるようにサポートします。 運用者は業務分類、担当者、サーバー位置などのユーザー定義情報をカスタムカラムで追加して管理でき、これを基に視覚化したダッシュボードを簡単に生成できます。 <Cmdname sid="side_serverInventoryMap" className="uitext" />は、モニタリング目的に応じた様々な視点を満たすために、グループ化機能を提供します。 <Cmdname sid="side_serverInventoryMap" className="uitext" />を通じて、サーバーの運用管理の効率を向上させます。
+
+{/* 
+
+また、グループごとの要約情報と詳細情報を効率的なインフラ運用に役立ちます。
+
+サーバーインベントリマップを通じてサーバー運用管理を簡素化し、主要メトリクスを視覚的に提供してインフラ管理の効率性と運営生産性を同時に向上させます。 
+
+*/}
+
+## 要求事項
+
+:::note 
+
+<Cmdname sid="side_serverInventoryMap" className="uitext" />ダッシュボードを使用するためには<Cmdname sid="side_serverInventory" className="uitext" />機能活性化と<Cmdname sid="side_serverInventoryMap" className="uitext" />機能の活性化がそれぞれ必要です。 <Cmdname sid="side_serverInventory" className="uitext" />とともに新しい<Cmdname sid="side_serverInventoryMap" className="uitext" />ダッシュボードを活用します。 <Cmdname sid="side_serverInventory" className="uitext" />活性化についての詳細は、[次の文書](server-inventory)を参照してください。
+
+:::
+
+### サポートするエージェント
+
+<Cmdname sid="side_serverInventoryMap" className="uitext" />メニューは、オペレーティングシステムごとに次のバージョン以降でサポートされます。
+
+- **Linux**：2.7.2以降
+
+  アップデートが必要な場合は、オペレーティング システムごとに次のコマンドを確認します。 
+
+  <Tabs>
+  <TabItem value="du" label="Debian/Ubuntu" default>
+
+  ```bash
+  sudo apt-get update
+  sudo apt-get install whatap-infra
+  ```
+
+  </TabItem>
+  <TabItem value="arfocrs" label="Amazon Linux/RHEL/Fedora/Oracle Linux/CentOS/Rocky Linux/SUSE">
+
+  ```bash
+  sudo yum update whatap-infra
+  ```
+
+  </TabItem>
+  </Tabs>
+
+- **Unix** Solaris：1.3.6以降
+
+  アップデートが必要な場合は、次のコマンドを確認します。
+
+  ```bash
+  cp /usr/whatap/infra/conf/whatap.conf /tmp
+  /etc/init.d/whatap-infra stop
+  gunzip -c whatap-infra.latest.SPARC.pkg.tar.gz | tar xvf -
+  yes n | ./whatap-infra/install.sh
+  cp /tmp/whatap.conf /usr/whatap/infra/conf/whatap.conf
+  /etc/init.d/whatap-infra start
+  ```
+
+- **Windows**：2.7.2以降
+
+  次の[リンク](https://repo.whatap.io/windows/whatap_infra.exe)でインストールファイルをダウンロードして実行します。 エージェントアップデートの後、サービスが再起動します。 
+
+### 活性化オプション{#server-inventory-map-activate}
+
+<Cmdname sid="side_serverInventoryMap" className="uitext" />メニューの照会機能を有効にするには、次の設定が必要です。
+
+1. *whatap.conf*ファイル内の次のオプションを有効にします。 
+
+   ```ini
+   categoryv2.enabled=true
+   ```
+
+2. 環境ごとにオプションを追加設定した後、エージェントを再起動します。 
+
+   - **Linux**
+
+     <Tabs>
+     <TabItem value="linux-opt" label="オプション追加コマンド" default>
+
+     ```bash
+     grep -q '^categoryv2.enabled' /usr/whatap/infra/conf/whatap.conf || echo 'categoryv2.enabled=true' | sudo tee -a /usr/whatap/infra/conf/whatap.conf
+     ```
+
+     </TabItem>
+     <TabItem value="linux-restart" label="エージェント再起動">
+
+     ```bash
+     sudo service whatap-infra restart
+     ```
+
+     </TabItem>
+     </Tabs>
+
+   - **Unix** Solaris
+
+     <Tabs>
+     <TabItem value="unix-opt" label="オプション追加コマンド" default>
+
+     ```bash title='Oracle Solaris'
+     grep -q '^categoryv2.enabled' /usr/whatap/infra/conf/whatap.conf || echo 'categoryv2.enabled=true' | tee -a /usr/whatap/infra/conf/whatap.conf
+     ```
+
+     </TabItem>
+     <TabItem value="unix-restart" label="エージェント再起動">
+
+     ```bash title='Oracle Solaris'
+     /etc/init.d/whatap-infra restart
+     ```
+
+     </TabItem>
+     </Tabs>
+
+   - **Windows**
+
+     <Tabs>
+     <TabItem value="windows-opt" label="オプション追加コマンド" default>
+
+     ```bash
+     if (-not (Select-String -Path "C:\Program Files\WhatapInfra\whatap.conf" -Pattern "^categoryv2.enabled" -Quiet)) { Add-Content -Path "C:\Program Files\WhatapInfra\whatap.conf" -Value "categoryv2.enabled=true" }
+     ```
+
+     </TabItem>
+     <TabItem value="windows-restart" label="エージェント再起動">
+
+     ```bash
+     Restart-Service -Name "Whatap Infra"
+     ```
+
+     </TabItem>
+     </Tabs>
+
+## 基本画面ガイド
+
+<ImgLang img='server-inventory-map.png' desc='サーバーインベントリマップ' />
+
+### ![1](/img/number-01.png)ユーザー設定
+
+<Cmdname sid="side_serverInventoryMap" className="uitext" />が提供する複数のユーザー設定により、好きなようにダッシュボードを構成できます。 利用できる機能は次の通りです。
+
+#### リアルタイム照会および一時停止
+
+<Cmdname sid="side_serverInventoryMap" className="uitext" />は基本的にリアルタイムの照会ベースです。 リアルタイム照会および一時停止状態の変更は、画面上部左側の時間選択者を利用します。
+
+| 参照ステータス        | 説明                 |
+| -------------- | ------------------ |
+| リアルタイム照会(Live) | 基本モード<br/>インターバル5秒 |
+| 一時停止照会(Pause)  | リアルタイム状態変更OFF      |
+
+#### グループ化
+
+{/* 1. 업무그룹 대 - 업무 그룹 중 (활용 예시)(나중에 12월?)
+2. 인프라 도메인 - 업무 그룹 대 (11 배포 시 안내 방식) (광훈 님이 업무 그룹 대까지는 영문 제공 시도해 주신다고 함) */}
+
+<Columns>
+
+<Column className="text--left width--20">
+
+<ImgLang img='server-inventory-map-group-select.png' desc='サーバーインベントリマップグループ化選択する' />
+
+</Column>
+
+<Column className="text--left">
+
+<Cmdname sid="side_serverInventoryMap" className="uitext" />は、サーバーを体系的に分類できる***グループ化***機能を提供します。 モニタリングの目的と環境に基づいてグループ基準を設定して、サーバーを効果的に管理します。
+
+<Cmdname sid="side_serverInventory" className="uitext" />ベースで照会可能なカラムのうち、基本収集項目とユーザー定義項目が***グループ化***一覧に表示されます。 基本収集項目は***サーバータイプ***、***基本グループ***、***OSタイプ***、***OSバージョン***、***モデル***、***シリアル***です。 例示画像で確認できるその他の項目は、ユーザー定義項目であり、カスタムカラム(<code class='custom-cl'>custom</code>)です。
+
+***1次グループ***と***2次グループ***を順次選択してサーバーを分類できます。 1次と2次グループ化によって![指示線3](/img/number-03.png)領域で***1次グループ***はカード方式でデータを分類し***2次グループ***は、カード内のチャート領域でサブグループ形式で各グループ化されたデータを表現します。 
+
+</Column>
+
+</Columns>
+
+{/* 
+
+1次グループ：グループ、2次グループ：サブグループ、カード
+
+カードはグループ要約情報、サーバーグループチャート、サーバーグループのメトリクス情報要約 
+
+*/}
+
+{/* 
+
+1次グループ - グループ、2次グループ - サブグループ
+
+***1次グループ***と***2次グループ***を順次選択してサーバーを分類できます。 
+
+グループごとにグリッド領域にパネルが生成されます。 2次グループはグループグリッド 
+
+グループ化する時、![指示線3](/img/number-03.png)チャートのグループグリッド領域に視覚的に表示されます。 2차 그룹은 
+
+1次グループ内で詳細にグループ化されたサーバーを表示し、チャートと枠で区切られたサーバーの一覧で表現されます。 
+
+*/}
+
+:::note 
+
+***グループ化***についての詳細は、[次の文書](server-inventory-map-group)を参照してください。 
+
+:::
+
+#### フィルター
+
+<Cmdname sid="side_serverInventoryMap" className="uitext" />は、ダッシュボードに表示するサーバー種類のフィルター機能を提供します。 フィルターを介して適用されたデータは、サーバー グループチャート、要約ビュー、および詳細ビューに反映されます。
+
+- ***フィルタキー***：フィルターは<Cmdname sid="side_serverInventory" className="uitext" />メニューで提供される基本収集カラムとユーザーが定義したカスタムカラムを基準に設定できます。
+
+  - 基本収集カラム：<Cmdname sid="side_serverInventory" className="uitext" />で自動収集されたデータ項目であり、***サーバータイプ***、***基本グループ***、***OSタイプ***、***OSバージョン***、***モデル***、***シリアル***カラム項目です。
+
+  - カスタムカラム：ユーザーがプロジェクトごとに追加して管理する項目です。
+
+- ***フィルター条件***：フィルター条件は、一致、不一致、包含、除外などの文字列条件で設定できます。 すべてのフィルターは文字列ベースで適用され、数字型条件(例、`≥`, `≤`)はサポートしていません。
+
+### ![2](/img/number-02.png)サーバー構成状況
+
+<Cmdname sid="side_serverInventoryMap" className="uitext" />は、ダッシュボードの上部で当該プロジェクトのサーバー運営体制別の構成状態を一目で確認できるサーバー構成状況情報を提供します。 これにより、ユーザーはプロジェクト内のサーバーの主要な情報を簡単かつ直感的に把握できます。
+
+- ***OS***：サーバーのオペレーティングシステムを示し、OSアイコンとともにOSの名前を表示します。 事前に定義されていないOSが含まれている場合は、デフォルトでインフラアイコンを表示します。
+
+- ***Total / Active***：プロジェクトに含まれているサーバー全体の数と、現在有効なサーバー数を意味します。 
+
+- ***Core***：プロジェクトに含まれるすべてのサーバーの物理コアの合計を表示します。 
+
+### ![3](/img/number-03.png)サーバーグループカード
+
+<Cmdname sid="side_serverInventoryMap" className="uitext" />は、グループ化されたサーバー構成情報に基づいて個別のカードを提供します。 <Cmdname sid="side_serverInventoryMap" className="uitext" />のカードは、次の3つの主要な要素で構成されます。
+
+{/* <Cmdname sid="side_serverInventoryMap" className="uitext" />은 그룹화 한 서버 구성 정보별로 카드를 제공합니다. グループ化を適用していない場合、サーバー全体の情報が1つの大きなカード内に表示されます。 グループ化を適用すると、各グループ単位でカードを構成します。 <Cmdname sid="side_serverInventoryMap" className="uitext" />のカードは次の3つの要素で構成されます。  */}
+
+<ImgLang img='server-inventory-map-chart.png' desc='サーバーインベントリマップチャート' />
+
+#### ![指示線a](/img/char-a.svg)グループ状況　
+
+グループ名およびグループに属するサーバーの状態別サーバー数の情報を提供します。
+
+| 区分                                  | 説明                                                              |
+| ----------------------------------- | --------------------------------------------------------------- |
+| Total                               | そのグループに含まれるサーバー全体の数を示します。 サーバーは目的に合わせて分類され、フィルタリングされた状態で集計されます。 |
+| <span class='vslow'>Critical</span> | 危険度Critical(危険)に該当するイベントを発生させたサーバー数を示します。                       |
+| <span class='slow'>Warning</span>   | 危険度Warning(警告)に該当するイベントを発生させたサーバー数を示します。                        |
+| <span class='normal'>Normal</span>  | 危険度CriticalまたはWarningイベントが発生していない、正常な状態のサーバー数を示します。             |
+| <span class='mstop'>Inactive</span> | サーバーDown、AgentDown、ネットワーク通信障害などにより、正常なデータ収集ができないサーバー数を示します。     |
+| Cores                               | グループ内の各サーバーの物理コア数を合計したコア数を示します。                                 |
+
+#### ![指示線b](/img/char-b.svg)サーバーグループチャート
+
+{/* 그룹 내 서버의 상태 및 성능 데이터를 시각화하여 제공합니다. ***2次グループ化***が適用されている場合、チャート内にサブグループ形式で表示されます。 また、サブグループにマウスオーバーする場合、簡単な各サーバーの状態情報をポップオーバー形式で確認できます。 例示画像の場合、基本収集項目である***サーバータイプ***と***OSタイプ***で1次と2次グループ化が適用されています。  */}
+
+グループ内のサーバーの状態と性能データを視覚化して提供します。 ***2次グループ化***が適用された場合、チャート内でサブグループ形式でデータがさらに区切られて表示されます。 また、サブグループにマウスオーバーすると、そのグループに含まれたサーバーの主要状態情報をポップオーバー形式で簡単に確認できます。 
+
+{/* 예시 이미지에서는 기본 수집 항목인 ***서버 타입***과 ***OS 타입***을 기준으로 1차와 2차 그룹화가 적용된 차트를 확인할 수 있습니다. */}
+
+#### ![指示線c](/img/char-c.svg)メトリクス
+
+グループごとの主要なメトリクス情報を簡単に提供します。 各メトリクスの詳細については、次のグラフを参照してください。 
+
+| 区分                 | 説明                                                    |
+| ------------------ | ----------------------------------------------------- |
+| ***CPU(%)***       | 全CPU使用率のうち、ユーザーモード(User)とカーネルモード(Sys)での使用率の合計を表示します。  |
+| ***Memory(%)***    | ユーザープロセスとカーネルが使用中のメモリの割合を表示し、バッファとキャッシュ領域は除外されます。     |
+| ***Swap(%)***      | 現在使用中のSwap領域のサイズをパーセンテージで表示します。                       |
+| ***Disk Busy(%)*** | 単位時間当たりの各ディスクが作業した時間の割合であり、サーバーで最も使用率の高いディスクの値を表示します。 |
+| ***Network RX***   | 受信(Rx)されたデータの量をbps単位で表示します。                           |
+| ***Network TX***   | 送信(Tx)されたデータの量をbps単位で表示します。                           |
+
+- ***Avg***：グループに属するすべてのサーバーの平均メトリクス値を表示します。
+
+- ***Max***：当該メトリクスの最大値を表示します。
+
+- ***Max Server***：最大値を記録したサーバーの名前を表示します。
+
+## 概要を表示
+
+サーバーインベントリのマップチャートでグループを選択する場合、右側の領域で**要約表示**パネルを確認できます。 要約表示パネルは***グループ情報***タブと***メトリクス***タブを提供します。 
+
+<ImgLang img='server-inventory-map-summary.png' desc='サーバーインベントリマップ要約' />
+
+:::note 
+
+**詳細**
+
+要約表示パネルの右上に![詳細を見るアイコン](/img/ico-detail-mode.svg) ***詳細を見る***ボタンをクリックします。 ***詳細を見る***についての詳細は、[次の文書](server-inventory-map-details)を参照してください。
+
+:::
+
+### グループ情報
+
+<Cmdname sid="group_info" className="uitext" />タブで、次のように選択したサーバーグループの主要な運用状態とリソース情報を効果的に確認できます。
+
+{/* 서버 업타임 */}
+
+#### <Cmdname sid="TTL08660" className="uitext" />
+
+サーバーが起動した後、運用期間を基準に区間を分けて、該当区間に属しているサーバーの台数をバーチャートの形で視覚化して表示します。 バーチャート選択時、当該区間に属するサーバーの詳細情報が下段の<Cmdname sid="TTL08767" className="uitext" />一覧でハイライトされます。 同じバー チャートをクリックすると、選択が解除されます。 
+
+{/* 
+
+運用期間の区間別台数を表示：
+
+- サーバーが起動してから経過した日付(運用期間)を基準に区間を分けて、その区間に属するサーバーの台数をバーチャートの形で視覚化します。
+
+- 相互作用機能：
+
+- バーチャートをクリックすると、該当区間に属するサーバーの詳細情報が下段のサーバー構成情報テーブルに表示され、選択された項目は強調表示(highlight)されます。
+
+- 同じバー チャートをもう一度クリックすると、選択が解除されます。
+
+これにより、オペレーターはサーバーアップタイムの分布を直感的に把握し、特定の区間に属するサーバー情報を簡単に確認できます。 
+
+*/}
+
+{/* 서버 인벤토리 */}
+
+#### <Cmdname sid="TTL08767" className="uitext" />
+
+選択したサーバーグループのサーバー関連の主要情報を一覧形式で照会できます。 右側の入力画面でHostnameまたはIPアドレスを入力してフィルタリングできます。 ***サーバー名***、***IP Adress***、***OSバージョン***、***CPU Cores***、***Memory(GB)***、***サーバーアップタイム***カラムを提供します。
+
+{/* 파일 시스템 사용 정보 */}
+
+#### <Cmdname sid="TTL08662" className="uitext" />
+
+サーバーのファイルシステムの状態を直感的に照会できます。 各サーバーのマウントポイントは1つのブロックで表現されます。 ブロック色は、当該マウントポイントの使用率(Used、%)を示します。 また、同じ色の範囲内でも使用率の数値が高くなるほど、色の強度が高くなります。 
+
+- <span class='vslow'>赤色</span>：使用率が90%以上の場合を意味します。
+
+- <span class='slow'>オレンジ色</span>：使用率が80%以上90%未満の場合を意味します。
+
+- <span class='snormal'>緑色</span>：使用率が80%未満の場合を意味します。
+
+:::note 
+
+マウントポイントブロックの上にマウスオーバーすると、そのサーバー名、マウントポイント、使用率、および全容量情報を確認できます。 
+
+:::
+
+### メトリクス
+
+<Cmdname sid="metrics" className="uitext" />タブで主要サーバーの性能メトリクスをチャート形式で照会できます。 グループごとのリソースの状態を直感的に確認できます。
+
+| 区分                         | 説明                                                                           |
+| -------------------------- | ---------------------------------------------------------------------------- |
+| ***[CPU] User + Sys (%)*** | 全CPU使用率のうち、ユーザーモード(User)とカーネルモード(Sys)での使用率の合計を表示します。 これにより、CPU資源全体の活用度を示します。 |
+| ***[MEM] Used (%)***       | ユーザープロセスまたはカーネルによって使用されたメモリの割合を表示します。 バッファとキャッシュ領域を除き、純粋なメモリ使用量のみが反映されます。    |
+| ***[SWAP] Used (%)***      | 現在使用中のSwapメモリサイズをパーセンテージで表示した値です。                                            |
+| ***[NET] Rx (bps)***       | ネットワークで受信(Rx)されたデータの量をbps(秒当たりビット)単位で表示します。                                  |
+| ***[NET] Tx (bps)***       | ネットワークを通じて送信(Tx)されたデータの量をbps(秒当たりビット)単位で表示します。                               |
+| ***[Disk] Read (Bytes)***  | ディスク全体の1秒当たりの読み取り速度の合計をBytes単位で表示します。                                        |
+| ***[Disk] Write (Bytes)*** | ディスク全体の1秒当たりの書き込み速度の合計をBytes単位で表示します。                                        |
+
+{/* 상세 내 커스텀 컬럼 추가/수정/삭제의 경우 프로젝트 수정 권한 필요 */}

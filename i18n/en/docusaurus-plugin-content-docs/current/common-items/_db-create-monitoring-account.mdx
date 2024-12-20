@@ -10,9 +10,46 @@ create user DB_User with password 'DB Password';
 
 </InDoc>
 
+<InDoc product="mssql">
+
+```sql
+create login DB_User with password='DB Password';
+grant view server state to DB_User;
+create user DB_User for login DB_User;
+grant execute to DB_User;
+EXEC sp_configure 'show advanced options', 1;
+RECONFIGURE;
+EXEC sp_configure 'Ole Automation Procedures', 1;
+RECONFIGURE;
+```
+
+- Additional roles when using the Kill session
+
+  ```sql
+  grant alter any connection to whatap;
+  ```
+
+- **Additional roles when using the Kill session in the Azure SQL Database environment**
+
+  ```sql
+  grant kill database connection to whatap;
+  ```
+
+- **Roles required for use of <Cmdname sid="side_dbJobInfo" className="uitext" /> and <Cmdname sid="side_dbBackupRecoveryHistory" className="uitext" /> menus**
+
+  Granting the role to access the msdb database
+
+  ```sql
+  USE msdb;
+  CREATE USER DB_User FOR LOGIN DB_User;
+  GRANT SELECT to DB_User;
+  ```
+
+</InDoc>
+
 :::note
 
-<Xclude product="postgresql,mysql,altibase">
+<Xclude product="postgresql,mysql,altibase,mssql">
 
 - To use the previous accounts, go to [Create DB User File](#create-db-user). If you do not have any permission, you may not be able to proceed with normal monitoring.
 
@@ -20,7 +57,7 @@ create user DB_User with password 'DB Password';
 
 </Xclude>
 
-<InDoc product="postgresql,mysql,altibase">
+<InDoc product="postgresql,mysql,altibase,mssql">
 
 - If you have an account with roles, skip this step and then proceed to [Next Step](#check-accesskey).
 
