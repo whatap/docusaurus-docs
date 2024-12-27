@@ -62,10 +62,14 @@ function generateVersionLink(productName, versionLinkPart) {
         versionLinkDB = 'db/xos';
     } else if (versionLinkDB === 'dbx/dbx') {
         versionLinkDB = 'db/dbx';
-    } else if (versionLink = 'browser/browser'){
+    } else if (productName === 'browser'){
         return `https://docs.whatap.io/release-notes/${versionLinkDB}-v${versionLinkPart}`;
     }
     return `https://docs.whatap.io/release-notes/${versionLinkDB}-${versionLinkPart}`;
 }
 
 processFiles();
+
+
+// if (versionLink = 'browser/browser')
+// if (productName === 'browser')
