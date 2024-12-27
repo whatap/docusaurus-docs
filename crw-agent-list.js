@@ -8,17 +8,11 @@ const cheerio = require('cheerio');
 
 // URL 배열 정의
 const urls = [
-    'https://docs.whatap.io/release-notes/k8s/k8s-1_7_12',
-    'https://docs.whatap.io/release-notes/k8s/k8s-1_7_13',
-    'https://docs.whatap.io/release-notes/k8s/k8s-1_7_15',
-    'https://docs.whatap.io/release-notes/k8s/k8s-1_7_16',
-    'https://docs.whatap.io/release-notes/k8s/k8s-1_8_1',
-    // 'https://docs.whatap.io/release-notes/db/dbx-1_8_0',
-    // 'https://docs.whatap.io/release-notes/db/dbx-1_8_1',
-    // 'https://docs.whatap.io/release-notes/db/dbx-1_9_0',
-    // 'https://docs.whatap.io/release-notes/db/dbx-1_9_1',
-    // 'https://docs.whatap.io/release-notes/db/dbx-1_9_5',
-    // 'https://docs.whatap.io/release-notes/db/dbx-2_0_0',
+    'https://docs.whatap.io/release-notes/db/dbx-2_2_7',
+    'https://docs.whatap.io/release-notes/db/dbx-2_3_0',
+    // 'https://docs.whatap.io/release-notes/db/dbx-2_2_4',
+    // 'https://docs.whatap.io/release-notes/db/dbx-2_2_5',
+    // 'https://docs.whatap.io/release-notes/db/dbx-2_2_6',
 ];
 
 // 순차적으로 각 URL을 처리하는 함수
