@@ -8,7 +8,8 @@ const cheerio = require('cheerio');
 
 // URL 배열 정의
 const urls = [
-    'https://docs.whatap.io/release-notes/nodejs/nodejs-0_5_4'
+    'https://docs.whatap.io/release-notes/python/python-1_7_2',
+    'https://docs.whatap.io/release-notes/python/python-1_7_3',
     // 'https://docs.whatap.io/release-notes/db/dbx-1_8_0',
     // 'https://docs.whatap.io/release-notes/db/dbx-1_8_1',
     // 'https://docs.whatap.io/release-notes/db/dbx-1_9_0',
