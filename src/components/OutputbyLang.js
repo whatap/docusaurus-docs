@@ -22,7 +22,7 @@ export default function OutputbyLang({ko, en, ja}) {
                 width="800" 
                 height="500" 
                 type="text/html" 
-                frameborder="0" 
+                border="none" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 src={printCode}
                 >

@@ -1,5 +1,11 @@
 const svList = [
     {
+        "name": 'Service-2.11.x',
+        "date": '2024-12-19',
+        "url": 'https://github.com/whatap/whatap-docs/releases/download/v2.12.0/service-2.11.x.pdf',
+        "docs": '/release-notes/service/service-2_11_x'
+    },
+    {
         "name": 'Service-2.10.x',
         "date": '2024-11-22',
         "url": 'https://github.com/whatap/whatap-docs/releases/download/v2.11.0/service-2.10.x.pdf',
@@ -255,6 +261,42 @@ const svList = [
 ];
 
 const javaList = [
+    {
+        "name": 'Java-agent-v2.2.47',
+        "date": '2024-12-23',
+        "url": 'https://github.com/whatap/whatap-docs/releases/download/v2.12.0/java-agent-v2.2.47.pdf',
+        "docs": '/release-notes/java/java-2_2_47',
+    },
+    {
+        "name": 'Java-agent-v2.2.46',
+        "date": '2024-12-13',
+        "url": 'https://github.com/whatap/whatap-docs/releases/download/v2.12.0/java-agent-v2.2.46.pdf',
+        "docs": '/release-notes/java/java-2_2_46',
+    },
+    {
+        "name": 'Java-agent-v2.2.45',
+        "date": '2024-12-10',
+        "url": 'https://github.com/whatap/whatap-docs/releases/download/v2.12.0/java-agent-v2.2.45.pdf',
+        "docs": '/release-notes/java/java-2_2_45',
+    },
+    {
+        "name": 'Java-agent-v2.2.44',
+        "date": '2024-12-04',
+        "url": 'https://github.com/whatap/whatap-docs/releases/download/v2.12.0/java-agent-v2.2.44.pdf',
+        "docs": '/release-notes/java/java-2_2_44',
+    },
+    {
+        "name": 'Java-agent-v2.2.43',
+        "date": '2024-12-02',
+        "url": 'https://github.com/whatap/whatap-docs/releases/download/v2.12.0/java-agent-v2.2.43.pdf',
+        "docs": '/release-notes/java/java-2_2_43',
+    },
+    {
+        "name": 'Java-agent-v2.2.42',
+        "date": '2024-11-28',
+        "url": 'https://github.com/whatap/whatap-docs/releases/download/v2.12.0/java-agent-v2.2.42.pdf',
+        "docs": '/release-notes/java/java-2_2_42',
+    },
     {
         "name": 'Java-agent-v2.2.41',
         "date": '2024-11-08',
@@ -574,6 +616,12 @@ const javaBatchList = [
 
 const phpList = [
     {
+        "name": 'php-agent-v2.9.0',
+        "date": '2024-12-11',
+        "url": 'https://github.com/whatap/whatap-docs/releases/download/v2.12.0/php-agent-v2.9.0.pdf',
+        "docs": '/release-notes/php/php-2_9_0',
+    },
+    {
         "name": 'php-agent-v2.8.2',
         "date": '2024-09-11',
         "url": 'https://content.whatap.io/24/09/30/002205php-agent-v282.pdf',
@@ -789,6 +837,12 @@ const nodejsList = [
 ]
 
 const pyList = [
+    {
+        "name": 'Python-agent-v1.7.3',
+        "date": '2024-12-19',
+        "url": 'https://github.com/whatap/whatap-docs/releases/download/v2.12.0/python-agent-v1.7.3.pdf',
+        "docs": '/release-notes/python/python-1_7_3',
+    },
     {
         "name": 'Python-agent-v1.7.2',
         "date": '2024-11-12',
@@ -1044,6 +1098,12 @@ const pyList = [
 ];
 
 const dotnetList = [
+    {
+        "name": '.NET-agent-v2.3.6',
+        "date": '2024-11-25',
+        "url": 'https://github.com/whatap/whatap-docs/releases/download/v2.12.0/dotnet-agent-v2.3.6.pdf',
+        "docs": '/release-notes/dotnet/dotnet-2_3_6',
+    },
     {
         "name": '.NET-agent-v2.3.5',
         "date": '2024-11-04',
@@ -1393,6 +1453,18 @@ const goList = [
 
 const serverList = [
     {
+        "name": "Server-agent-v2.7.4",
+        "date": "2024-12-17",
+        "url": "https://github.com/whatap/whatap-docs/releases/download/v2.12.0/server-agent-v2.7.4.pdf",
+        "docs": "/release-notes/server/server-2_7_4"
+    },
+    {
+        "name": "Server-agent-v2.7.3",
+        "date": "2024-12-09",
+        "url": "https://github.com/whatap/whatap-docs/releases/download/v2.12.0/server-agent-v2.7.3.pdf",
+        "docs": "/release-notes/server/server-2_7_3"
+    },
+    {
         "name": "Server-agent-v2.7.2",
         "date": "2024-11-27",
         "url": "https://github.com/whatap/whatap-docs/releases/download/v2.11.0/server-agent-v2.7.2.pdf",
@@ -1720,6 +1792,12 @@ const serverList = [
 
 const serveraixList = [
     {
+        "name": "Server-AIX-agent-v1.3.7",
+        "date": "2024-12-13",
+        "url": "https://github.com/whatap/whatap-docs/releases/download/v2.12.0/server-aix-agent-v1.3.7.pdf",
+        "docs": "/release-notes/server-aix/server-aix-1_3_7"
+    },
+    {
         "name": "Server-AIX-agent-v1.3.6",
         "date": "2024-11-11",
         "url": "https://github.com/whatap/whatap-docs/releases/download/v2.11.0/server-aix-agent-v1.3.6.pdf",
@@ -1768,6 +1846,18 @@ const serversolarisList = [
 
 const serverhpuxList = [
     {
+        "name": "Server-HP-UX-agent-v1.3.7",
+        "date": "2024-12-13",
+        "url": "https://github.com/whatap/whatap-docs/releases/download/v2.12.0/server-hpux-agent-v1.3.7.pdf",
+        "docs": "/release-notes/server-hpux/server-hpux-1_3_7"
+    },
+    {
+        "name": "Server-HP-UX-agent-v1.3.6",
+        "date": "2024-12-03",
+        "url": "https://github.com/whatap/whatap-docs/releases/download/v2.12.0/server-hpux-agent-v1.3.6.pdf",
+        "docs": "/release-notes/server-hpux/server-hpux-1_3_6"
+    },
+    {
         "name": "Server-HP-UX-agent-v1.3.4",
         "date": "2024-09-19",
         "url": "https://content.whatap.io/24/09/30/002205server-hpux-agent-v134.pdf",
@@ -1776,6 +1866,18 @@ const serverhpuxList = [
 ]
 
 const k8sList = [
+    {
+        "name": "Kubernetes-agent-v1.8.1",
+        "date": "2024-12-24",
+        "url": "https://github.com/whatap/whatap-docs/releases/download/v2.12.0/k8s-agent-v1.8.1.pdf",
+        "docs": "/release-notes/k8s/k8s-1_8_1"
+    },
+    {
+        "name": "Kubernetes-agent-v1.8.0",
+        "date": "2024-12-02",
+        "url": "https://github.com/whatap/whatap-docs/releases/download/v2.12.0/k8s-agent-v1.8.0.pdf",
+        "docs": "/release-notes/k8s/k8s-1_8_0"
+    },
     {
         "name": "Kubernetes-agent-v1.7.16",
         "date": "2024-11-22",
@@ -2175,6 +2277,60 @@ const k8sList = [
 ];
 
 const dbxList = [
+    {
+        "name": "DBX-agent-v2.3.1",
+        "date": "2024-12-20",
+        "url": "https://github.com/whatap/whatap-docs/releases/download/v2.12.0/dbx-agent-v2.3.1.pdf",
+        "docs": "release-notes/db/dbx-2_3_1"
+    },
+    {
+        "name": "DBX-agent-v2.3.0",
+        "date": "2024-12-19",
+        "url": "https://github.com/whatap/whatap-docs/releases/download/v2.12.0/dbx-agent-v2.3.0.pdf",
+        "docs": "release-notes/db/dbx-2_3_0"
+    },
+    {
+        "name": "DBX-agent-v2.2.9",
+        "date": "2024-12-18",
+        "url": "https://github.com/whatap/whatap-docs/releases/download/v2.12.0/dbx-agent-v2.2.9.pdf",
+        "docs": "release-notes/db/dbx-2_2_9"
+    },
+    {
+        "name": "DBX-agent-v2.2.8",
+        "date": "2024-12-12",
+        "url": "https://github.com/whatap/whatap-docs/releases/download/v2.12.0/dbx-agent-v2.2.8.pdf",
+        "docs": "release-notes/db/dbx-2_2_8"
+    },
+    {
+        "name": "DBX-agent-v2.2.7",
+        "date": "2024-12-07",
+        "url": "https://github.com/whatap/whatap-docs/releases/download/v2.12.0/dbx-agent-v2.2.7.pdf",
+        "docs": "release-notes/db/dbx-2_2_7"
+    },
+    {
+        "name": "DBX-agent-v2.2.6",
+        "date": "2024-12-02",
+        "url": "https://github.com/whatap/whatap-docs/releases/download/v2.12.0/dbx-agent-v2.2.6.pdf",
+        "docs": "release-notes/db/dbx-2_2_6"
+    },
+    {
+        "name": "DBX-agent-v2.2.5",
+        "date": "2024-11-29",
+        "url": "https://github.com/whatap/whatap-docs/releases/download/v2.12.0/dbx-agent-v2.2.5.pdf",
+        "docs": "release-notes/db/dbx-2_2_5"
+    },
+    {
+        "name": "DBX-agent-v2.2.4",
+        "date": "2024-11-27",
+        "url": "https://github.com/whatap/whatap-docs/releases/download/v2.12.0/dbx-agent-v2.2.4.pdf",
+        "docs": "release-notes/db/dbx-2_2_4"
+    },
+    {
+        "name": "DBX-agent-v2.2.3",
+        "date": "2024-11-26",
+        "url": "https://github.com/whatap/whatap-docs/releases/download/v2.12.0/dbx-agent-v2.2.3.pdf",
+        "docs": "release-notes/db/dbx-2_2_3"
+    },
     {
         "name": "DBX-agent-v2.2.2",
         "date": "2024-11-21",

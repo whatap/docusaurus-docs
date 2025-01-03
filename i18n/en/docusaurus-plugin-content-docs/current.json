@@ -2042,5 +2042,97 @@
   "sidebar.dbSidebar.link.데이터베이스별 지원 기능 비교": {
     "message": "Comparison between supported functions by database",
     "description": "The label for link 데이터베이스별 지원 기능 비교 in sidebar dbSidebar, linking to ../db-support-functions"
+  },
+  "sidebar.javaSidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar javaSidebar"
+  },
+  "sidebar.phpSidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar phpSidebar"
+  },
+  "sidebar.nodejsSidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar nodejsSidebar"
+  },
+  "sidebar.pySidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar pySidebar"
+  },
+  "sidebar.dotNetSidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar dotNetSidebar"
+  },
+  "sidebar.goSidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar goSidebar"
+  },
+  "sidebar.postgreSidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar postgreSidebar"
+  },
+  "sidebar.dboracleSidebar.category.경고 알림": {
+    "message": "Alert",
+    "description": "The label for category 경고 알림 in sidebar dboracleSidebar"
+  },
+  "sidebar.dboracleSidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar dboracleSidebar"
+  },
+  "sidebar.dboracleV2Sidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar dboracleV2Sidebar"
+  },
+  "sidebar.dboracledmaSidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar dboracledmaSidebar"
+  },
+  "sidebar.mysqlSidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar mysqlSidebar"
+  },
+  "sidebar.mssqlSidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar mssqlSidebar"
+  },
+  "sidebar.mssqlV1Sidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar mssqlV1Sidebar"
+  },
+  "sidebar.tiberoSidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar tiberoSidebar"
+  },
+  "sidebar.cubridSidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar cubridSidebar"
+  },
+  "sidebar.cubridV1Sidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar cubridV1Sidebar"
+  },
+  "sidebar.altibaseSidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar altibaseSidebar"
+  },
+  "sidebar.altibasev1Sidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar altibasev1Sidebar"
+  },
+  "sidebar.redisSidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar redisSidebar"
+  },
+  "sidebar.mongodbSidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar mongodbSidebar"
+  },
+  "sidebar.npmsidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar npmsidebar"
+  },
+  "sidebar.rumsSidebar.category.이벤트 설정": {
+    "message": "Event Configuration",
+    "description": "The label for category 이벤트 설정 in sidebar rumsSidebar"
   }
 }

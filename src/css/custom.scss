@@ -521,8 +521,8 @@ footer.footer.full--width {
 }
 .menu__list-item.newfunc > .menu__list-item-collapsible > a::after,
 .menu__list-item.newfunc > a::after {
-  display: inline;
-  content: 'New';
+  display: contents;
+  content: ' New';
   border-radius: 4px;
   padding: 0 3px;
   border: 1px solid none;
@@ -531,6 +531,7 @@ footer.footer.full--width {
   font-family: "Oleo Script";
   margin-left: 10px;
   font-weight: 400;
+  font-size: .8rem;
   transform: none;
 }
 .menu__list-item-collapsible:hover {
@@ -3205,13 +3206,24 @@ main {
         }
       }
     }
-    .rum-compatibility {
+    .width--same-8 {
       table {
         tr {
           td {
-            width: 10%;
+            width: 8%;
+          }
+        }
+      }
+    }
+    .session-replay {
+      table {
+        tr {
+          td {
             &:first-of-type {
               width: 20%;
+            }
+            &:nth-of-type(2) {
+              width: 80%;
             }
           }
         }

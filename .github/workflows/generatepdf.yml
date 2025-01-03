@@ -40,67 +40,67 @@ jobs:
 
     - name: Build PDF
       run: |
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-java --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-apm-java-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-java --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-apm-java-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-apm-java-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-php --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-apm-php-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-php --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-apm-php-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-apm-php-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-nodejs --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-apm-nodejs-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-nodejs --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-apm-nodejs-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-apm-nodejs-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-python --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-apm-python-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-python --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-apm-python-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-apm-python-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-dotnet --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-apm-dotnet-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-dotnet --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-apm-dotnet-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-apm-dotnet-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-go --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-apm-go-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-go --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-apm-go-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-apm-go-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-server --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-server-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-server --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-server-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-server-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-k8s --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-kubernetes-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-k8s --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-kubernetes-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-kubernetes-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-postgresql --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-postgresql-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-postgresql --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-postgresql-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-db-postgresql-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-oracle --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-oracle-v2-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-oracle --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-oracle-v2-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-db-oracle-v2-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-oracle-pro --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-oracle-pro-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-oracle-pro --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-oracle-pro-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-db-oracle-pro-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-mysql --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-mysql-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-mysql --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-mysql-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-db-mysql-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-mssql --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-mssql-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-mssql --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-mssql-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-db-mssql-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-tibero --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-tibero-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-tibero --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-tibero-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-db-tibero-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-cubrid --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-cubrid-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-cubrid --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-cubrid-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-db-cubrid-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-altibase --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-altibase-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-altibase --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-altibase-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-db-altibase-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-redis --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-redis-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-redis --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-redis-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-db-redis-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-mongodb --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-mongodb-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-mongodb --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-db-mongodb-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-db-mongodb-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-log --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-log-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-log --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-log-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-log-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-url --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-url-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-url --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-url-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-url-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-manage --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-manage.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-manage --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-manage.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-manage.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-reference --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-reference.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-reference --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-reference.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-reference.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-extensions --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-extensions.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-extensions --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-extensions.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-extensions.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-awscloudwatch --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-amazon-cloudwatch.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-awscloudwatch --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-amazon-cloudwatch.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-amazon-cloudwatch.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-awsecs --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-amazon-ecs.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-awsecs --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-amazon-ecs.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-amazon-ecs.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-azure --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-azure.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-azure --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-azure.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-azure.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-ncloud --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-ncloud.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-ncloud --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-ncloud.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-ncloud.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-oci --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-oracle-cloud.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-oci --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-oracle-cloud.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-oracle-cloud.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-awslog --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-aws-log-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-awslog --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-aws-log-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-aws-log-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-browser --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-browser-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-browser --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-browser-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-browser-monitoring.pdf
-        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover-npm --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-network-performance-monitoring.pdf --dest ./pdf --include-index
+        npx docusaurus-prince-pdf -u https://docs.whatap.io/cover/cover-npm --prince-args="--page-size='a4' --page-margin='10mm' --style=pdf-print.css" -o ./pdf/whatap-network-performance-monitoring.pdf --dest ./pdf --include-index
         pdfcpu annot remove -pages 1 ./pdf/whatap-network-performance-monitoring.pdf
 
     - name: Create Release
@@ -109,9 +109,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.WHATAP_DOCS_TOKEN }}
       with:
-        tag_name: v2.11.0 # 생성할 Release의 태그 이름
-        release_name: "v2.11.0_KO"
-        body: "WhaTap Docs v2.11.0 기준으로 생성된 PDF 파일입니다."
+        tag_name: v2.12.0 # 생성할 Release의 태그 이름
+        release_name: "v2.12.0_KO"
+        body: "WhaTap Docs v2.12.0 기준으로 생성된 PDF 파일입니다."
         draft: false
         prerelease: false
     

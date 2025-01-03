@@ -724,7 +724,7 @@ paths:
             -w "\n" \
             -H 'x-whatap-token: {{PROJECT_API_TOKEN}}' \
             -H 'x-whatap-pcode: {{projectCode}}' \
-            "https://api.whatap.io/open/api/json/event/history?stime=1733065200000&etime=1733103557000&progress=true&oids=-17079562%2C352247167" \
+            "https://api.whatap.io/open/api/json/event/history?stime=1733065200000&etime=1733103557000&progress=true&oids=-17079562%2C352247167"
 
   /open/api/v2/agent/list:
     post:
