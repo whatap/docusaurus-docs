@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 // MDX 파일이 있는 폴더 경로
-const folderPath = 'crw-data/crwld-service-24q3';
+const folderPath = 'crw-data/crwld-service-24q4';
 
 // 버전 비교 함수
 const compareVersions = (a, b, order = 'asc') => {

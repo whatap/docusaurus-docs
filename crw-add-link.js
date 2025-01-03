@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 // 폴더 경로
-const folderPath = './crw-data/crwld-service-24q3';
+const folderPath = './crw-data/crwld-service-24q4';
 
 // 폴더 내 파일 목록 읽기
 fs.readdir(folderPath, (err, files) => {

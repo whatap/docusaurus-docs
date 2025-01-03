@@ -1880,6 +1880,12 @@ main {
       summary {
         color: #4d4d4d;
         font-size: 110%;
+        // grid-column: 1 / 2;
+        // display: contents;
+        // width: auto;
+        // display: block;
+        // grid-column: auto / span 0;
+        // grid-row: auto / span 0;
       }
     }
     details.changelog.alert--info {
@@ -2056,7 +2062,7 @@ main {
       --ring-size: 1rem;
       --ring-border-width: var(--timeline-width);
       --timeline-color: var(--border-color);
-      display: grid;
+      // display: grid;
       grid-template-columns: auto 1fr;
       grid-column-gap: 2rem;
     }
