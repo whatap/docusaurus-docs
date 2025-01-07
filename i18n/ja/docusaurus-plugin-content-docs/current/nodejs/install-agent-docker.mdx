@@ -10,21 +10,27 @@ keywords:
 
 Docker環境でDockerFileを作成し、Node.jsエージェントをインストールして実行する方法について説明します。 次の手順で使用するサンプルファイルは、[次のリンク](https://github.com/whatap/nodejs_sample_application/tree/main/simple_http)を参照してください。
 
+<Steps>
+
 ## ファイル構成
 
 Node.jsエージェントのサンプル ファイルは、次のように構成されています。
 
-- *html*：サンプルアプリケーションフォルダ
+<Filetree name="sample_http" open>
 
-- *Dockerfile*: Dockerイメージビルド用の設定ファイル
+<FiletreeItem name="html/" type="folder">サンプルアプリケーションフォルダ</FiletreeItem>
 
-- *http.js*: サンプルアプリケーションファイル
+<FiletreeItem name="Dockerfile" type="file">Docker画像をビルドするための設定ファイル</FiletreeItem>
 
-- *package.json*: サンプルアプリケーション情報と依存関係(dependency)管理文書
+<FiletreeItem name="http.js" type="file">サンプルアプリケーションファイル</FiletreeItem>
 
-- *whatap.conf*: モニタリングのオプション設定ファイル
+<FiletreeItem name="package.json" type="file">サンプルアプリケーション情報と依存関係(dependency)の管理文書</FiletreeItem>
 
-- *security.conf* (又は*paramkey.txt*): パラメータの暗号化キー
+<FiletreeItem name="whatap.conf" type="file">監視のためのエージェント設定ファイル</FiletreeItem>
+
+<FiletreeItem name="security.conf (or paramkey.txt)" type="file">パラメータ暗号化キー</FiletreeItem>
+
+</Filetree>
 
 ## エージェントインストール
 
@@ -76,6 +82,8 @@ $ docker run --rm -p 3500:3500 \
     -e license=$WHATAP_LICENSE \
     sampleapp/nodejs:0503
 ```
+
+</Steps>
 
 {/* 다음 단계 */}
 import NextSteps from "../common-items/_apm-next-stemp-exclude-java.mdx";

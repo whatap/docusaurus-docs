@@ -1,0 +1,211 @@
+---
+id: resourceload-stat
+title: リソースロード統計
+description: IPロード統計は、ウェブサイトに接続したIPアドレス別のロード性能情報を提供します。
+keywords:
+  - Browser Monitoring
+  - リソースロード統計
+---
+
+{/* Note */}
+import TimequeryNotes from "../common-items/_browser-stat-time-query-note.mdx"
+
+ホーム画面 &gt; プロジェクト選択 &gt; <Cmdname sid="side_statistics" className="uitext" /> &gt; <Cmdname sid="side_resourceLoadStatistics" className="uitext" />
+
+<Cmdname sid="side_resourceLoadStatistics" className="uitext" />メニューは、ウェブページの性能データを視覚的に提供し、性能のボトルネックを体系的に分析して改善できる有用な情報を提供します。 提供するリソース別の性能の推移、応答時間、サイズなどを分析し、ウェブページの性能を最適化できる具体的な根拠を得ることができます。 これにより、ロード時間の長いリソースを識別し、大容量リソースを最適化し、3rd partyリソースの性能への影響を点検することができます。
+
+:::note
+
+収集データの詳細については、[次の文書](collect-data#pageloadtime)を参照してください。
+
+:::
+
+## 基本使用案内{#basicusageguide}
+
+ページのロード時間を短縮し、ユーザーエクスペリエンスを向上させるために必要なデータを提供します。 性能低下の原因を明確に把握でき、改善作業をより効果的に進めることができます。
+
+<ImgLang img="browser-resourceload-stat-basic.png" desc="リソース負荷統計" />
+
+1. <Cmdname sid="time" className="uitext" />で性能メトリクスを照会する日時を設定します。
+
+2. <Cmdname sid="TTL08276" className="uitext" />でご希望の基準を選択します。
+
+3. 画面右上の![検索アイコン](/img/ic-search-on-press.svg)ボタンを選択します。
+
+照会した時間範囲の性能メトリクスを各セクションでグラフチャートと一覧を通じて確認できます。 各セクションのグラフチャートでマウスをオーバーすると、その時間帯のメトリクス情報を確認できます。 これにより、性能の低下が特定の時間帯に集中しているかを把握し、時間別のトレンドを分析することができます。
+
+:::note
+
+<Cmdname sid="TTL08276" className="uitext" />についての詳細は、[次の文書](#statcriteria)を参照してください。
+
+:::
+
+{/* 조회 시간 설정하기 */}
+import Settime from "../common-items/_browser-stat-set-time.mdx";
+
+<Settime/>
+
+### 統計基準を選択する{#statcriteria}
+
+<Cmdname sid="TTL08276" className="uitext" />は、ユーザーが分析しようとする統計メトリクスを次に選択した基準で確認できるオプションです。
+
+- <Cmdname sid="merge_avg" className="uitext" />: 各リソースの平均ロード時間を計算して統計を提供します。
+
+- <Cmdname sid="merge_max" className="uitext" />: 各リソースの最大ロード時間に基づいて統計を提供します。 ページのロード時間が最も非効率的なリソースを特定できます。
+
+- <Cmdname sid="merge_min" className="uitext" />: 各リソースの最小ロード時間に基づいて統計を提供します。 ページのロード時間が最も早いリソースを確認できます。
+
+:::tip
+
+- <Cmdname sid="merge_avg" className="uitext" />は全体の性能把握に役立ちます。
+
+- <Cmdname sid="merge_max" className="uitext" />は、リソースの応答時間やサイズの大きい区間を分析するのに活用できます。
+
+:::
+
+{/* 조회 결과 다운로드하기 */}
+import CSVdownload from "../common-items/_browser-stat-download-csv.mdx";
+
+<CSVdownload filename="Resource_LoadStatistics" />
+
+## 画面構成
+
+### <Cmdname sid="TTL08866" /> {#TTL08866}
+
+リソースタイプごとのロード数を時間単位で視覚化して提供します。 特定のリソースタイプのロード比率が過度に高い場合、性能上のボトルネックが発生する可能性がありますので、これをチェックして最適化を進めてください。 
+
+<ImgLang img="browser-resourceload-stat-resource-type-trend.png" desc="リソースタイプ別ロード数の推移" />
+
+- 円形チャートにより、リソースタイプごとの比率を一目で確認できます。 チャートにマウスをオーバーすると、そのリソースの割合をツールチップで表示します。
+
+- 棒グラフを使用して、時間単位でリソースのロード数の推移を確認できます。 グラフにマウスをオーバーすると、その時間帯のリソースタイプごとのロード数をツールチップで表示します。
+
+- 特定の時間を棒グラフを選択すると<Cmdname sid="TTL08860" className="uitext" />及び<Cmdname sid="TTL08861" className="uitext" />、<Cmdname sid="TTL08862" className="uitext" />セクションのデータを選択した時間範囲に合わせて更新します。 この時、<Cmdname sid="TTL08860" className="uitext" />と<Cmdname sid="TTL08861" className="uitext" />セクションでは、棒グラフ形式に変更されます。
+
+  <ImgLang img="browser-resourceload-stat-resource-type-trend-select-time.png" desc="リソースタイプ別ロード数の推移" />
+
+:::note
+
+リソースタイプの詳細については、[次の文書](#resourcetype)を参照してください。
+
+:::
+
+### <Cmdname sid="TTL08860" /> {#TTL08860}
+
+各リソースの平均応答時間が最も長い上位10のリソースをチャートとともに一覧として提供します。
+
+<ImgLang img="browser-resourceload-stat-resoponse-top.png" desc="リソース応答時間トップ10" />
+
+性能低下の原因となるリソースを迅速に特定できます。 時間による応答時間の変化の推移を一緒に確認して、特定の時間帯に発生する問題の有無を分析できます。 応答時間の長いリソースを確認し、サーバーの応答やネットワークの遅延を最適化するのに活用できます。
+
+### <Cmdname sid="TTL08861" /> {#TTL08861}
+
+サイズの大きいリソースの上位10個をチャートとともに一覧として提供します。
+
+<ImgLang img="browser-resourceload-stat-size-top.png" desc="リソースサイズトップ10" />
+
+ウェブページのロードの性能低下を引き起こす大容量リソースを確認できます。 画像の最適化、JSバンドル、圧縮によりページ性能の改善に活用できます。
+
+### <Cmdname sid="TTL08862" /> {#TTL08862}
+
+ウェブページにロードされたすべてのリソースをテーブル形式で提供します。 各リソースの詳細な性能指標を確認できます。 特定のリソースのロードパスとリクエストの数を分析して、不要な繰り返しリクエストを減らすことができます。 外部リソース(**3rd party**)の<Cmdname sid="CNT08863" className="uitext" />カラムを確認して他社APIやCDNの性能状態を点検できます。
+
+<ImgLang img="browser-resourceload-stat-group-list.png" desc="リソースグループ一覧" />
+
+- テーブルのヘッダーカラムをクリックすると、そのカラムを基準に一覧をソートできます。 
+
+- ヘッダーカラムにマウスをオーバーすると、そのカラムの説明をツールチップで確認できます。
+
+- ![カラムアイコン](/img/ic-column.svg) <Cmdname sid="BTN06441" className="uitext" />: テーブルヘッダーカラムを非表示にしたり、必要な項目を追加できます。 カラムの順序を変更することもできます。 詳細については、[次の文書](#setcolumn)を参照してください。
+
+- ![ポップアップアイコン](/img/ic-popup.svg) : リソースグループの一覧を全画面で確認できます。
+
+- ![左方向アイコン](/img/left-arrow.svg) / ![右方向アイコン](/img/right-arrow.svg) : リソース一覧が多い場合は、ボタンを選択してページを移動できます。
+
+## 参照結果フィルタリング
+
+照会した統計データをドメインまたは性能指標(ms)、リソース経路に基づいてフィルタリングし、希望する内容を集中分析できます。
+
+### ドメインフィルター{#domainfilter}
+
+<Cmdname sid="TTL08857" className="uitext" />オプションを活用すると、リソースを提供する主体を区別し、性能に影響を与える要因が**内部**(<Cmdname sid="CNT08859" className="uitext" />)か**外部**(<Cmdname sid="CNT08858" className="uitext" />)かを把握できます。 これにより、ウェブページの性能を最適化する時に、どこでボトルネックが発生するかを効果的に分析できます。
+
+- <Cmdname sid="CNT08859" className="uitext" />: 自社で提供するリソースのみをフィルタリングできます。 ウェブサーバーや独自にホスティングされたリソースなどが該当します。
+
+- <Cmdname sid="CNT08858" className="uitext" />: 外部サービスが提供するリソースです。 CDNリソース、外部API(例: Google Analytics)、他社ライブラリなど、外部ドメインからロードされるすべてのリソースが含まれます。
+
+:::tip
+
+- **1st Party**リソースを確認して、内部サーバーの性能上のボトルネックをチェックします。
+
+- **3rd Party**リソースの応答時間を分析して、外部サービスやCDNの性能がウェブページに与える影響を評価します。
+
+:::
+
+{/* 성능 지표 필터 */}
+import PermetricsFilter from "../common-items/_browser-stat-perf-metrics-filter.mdx";
+
+<PermetricsFilter/>
+
+### リソースパスフィルター
+
+特定のリソースパスを選択して、性能データを照会できます。 <Cmdname sid="resource_url_path" className="uitext" />オプションで目的のリソースパスを選択した後<Cmdname sid="apply" className="uitext" />ボタンをクリックします。
+
+<ImgLang img="browser-resourceload-stat-resource-path-filter.png" desc="リソースパス" />
+
+:::note
+
+リソースパスは最大3つまで選択できます。
+
+:::
+
+## リソースタイプ{#resourcetype}
+
+以下は、WhaTapブラウザーモニタリングで定義するリソースタイプのガイドです。
+
+| リソースタイプ      | 説明                                                                         |
+| ------------ | -------------------------------------------------------------------------- |
+| **script**   | JavaScriptファイルリソースです。 例えば、`.js`ファイル、フロントエンドコードの実行および動的機能に必要なスクリプトファイルです。   |
+| **image**    | 画像ファイルリソースです。 例えば、`.png`、`.jpg`、`.svg`など、様々な画像フォーマットを含みます。                 |
+| **fetch**    | ブラウザーからデータを取得するHTTPリクエストです。 主にAPI呼び出しやJSONデータリクエストに使用されます。                 |
+| **css**      | スタイルシートファイル リソースです。 ウェブページのレイアウトとデザインを定義するCSSファイルです。                       |
+| **font**     | ウェブフォントリソースです。 例えば、`.woff`、`.ttf`、`.otf`などのフォントファイルを含めます。                  |
+| **xhr**      | XML HTTP Requestを通じて取得するリソースです。 主に非同期データリクエスト(例: AJAX呼び出し)に使います。           |
+| **media**    | オーディオ、ビデオなどのメディアファイルリソースです。 例えば、`.mp4`、`.mp3`、`.wav`など、様々なメディアフォーマットを含みます。 |
+| **beacon**   | `navigator.sendBeacon()`を使用して非同期データをサーバーに送信するリクエストです。                      |
+| **document** | HTMLドキュメントそのもので、ページを構成する主要なコンテンツリソースです。                                    |
+| **other**    | その他として分類されるリソースです。 明確なタイプとして区分されないリソースを含みます。                               |
+
+{/* 컬럼 설정하기 */}
+import Coumnsetting from "../common-items/_browser-stat-column-setting.mdx";
+
+<Coumnsetting/>
+
+## カラムと用語案内{#columninfo}
+
+<div className="c3-20-15-65 tableScroll">
+
+| カラム                                                    | 単位        | 説明                                                                         |
+| ------------------------------------------------------ | --------- | -------------------------------------------------------------------------- |
+| <Cmdname sid="count" className="uitext" />             | 件数        | リソースがリクエストされた合計数です。                                                        |
+| <Cmdname sid="TTL06361" className="uitext" />          | ミリ秒       | リソースを完全に読み込むのにかかった時間です。                                                    |
+| <Cmdname sid="download_time" className="uitext" />     | ミリ秒       | リソースをサーバーからダウンロードするのにかかった時間です。 (`responseStart`から`responseEnd`までの時間)       |
+| <Cmdname sid="ITM08283" className="uitext" />          | ミリ秒       | リソースのロード中のリダイレクトにかかった時間です。 (`redirectStart`から`redirectEnd`までの時間)           |
+| <Cmdname sid="CNT08864" className="uitext" />          | テキスト      | リクエストしたリソースのタイプです。 詳細については、[次の文書](#resourcetype)を参照してください。                 |
+| <Cmdname sid="CNT08863" className="uitext" />          | テキスト      | リソースを提供するサーバーのホスト名です。                                                      |
+| <Cmdname sid="resource_url_path" className="uitext" /> | テキスト      | リクエストしたリソースのURLパスまたはファイルパスです。                                              |
+| <Cmdname sid="version" className="uitext" />           | テキスト      | リソースのバージョン情報です。                                                            |
+| <Cmdname sid="ITM08876" className="uitext" />          | ミリ秒       | リソースをリクエストするクライアントとサーバーとのネットワーク接続にかかった時間です。                                |
+| <Cmdname sid="size" className="uitext" />              | バイト(Byte) | リクエストしたリソースのデータサイズです。                                                      |
+| <Cmdname sid="environment" className="uitext" />       | テキスト      | リソースがロードされた実行環境です。 例: 開発環境、運用環境など                                          |
+| <Cmdname sid="ITM08284" className="uitext" />          | ミリ秒       | ドメイン名の照会にかかった時間です。 (`domainLookupStart`から`domainLookupEnd`までの時間)           |
+| <Cmdname sid="ITM08285" className="uitext" />          | ミリ秒       | サーバーから最初のバイト(Byte)を受信するまでの時間です。 (`requestStart`から`responseStart`までの時間)     |
+| <Cmdname sid="ssl_time" className="uitext" />          | ミリ秒       | HTTPS接続時、TLSハンドシェイクにかかった時間です。 (`connectEnd`から`secureConnectionStart`までの時間) |
+
+</div>
+
+:::note
+
+**Navigation timing**についての詳細は、[次の文書](collect-data#navigation-timing)を参照してください。
+
+:::

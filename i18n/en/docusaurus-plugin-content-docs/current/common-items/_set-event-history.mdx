@@ -2,11 +2,13 @@ Home &gt; Select Project &gt; <Cmdname sid="event_statistic" className="uitext" 
 
 You can check the details of events that occurred in the monitoring target during a specific time period. You can analyze the root cause of problems that occurred in the monitoring target or identify the system status upon performance degradation or error.
 
-<Xclude product='kubernetes,browser'><ImgLang img='event-history.png' desc='Event history' /></Xclude>
+<Xclude product='kubernetes,browser,url'><ImgLang img='event-history.png' desc='Event history' /></Xclude>
 
 <InDoc product='kubernetes'><ImgLang img='k8s-event-history.png' desc='Event History' /></InDoc>
 
 <InDoc product='browser'><ImgLang img='browser-event-history.png' desc='Event History' /></InDoc>
+
+<InDoc product='url'><ImgLang img='url-event-history.png' desc='Event History' /></InDoc>
 
 The items displayed in the event list are the ones set in <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" />. You can move to the corresponding menu by selecting <Cmdname sid="event_setting" className="uitext" /> on the upper right of the screen.
 
@@ -24,15 +26,15 @@ Set the following options in order and then select ![Search icon](/img/ico-btn-s
 
 - <Cmdname sid="time_selector" className="uitext" />: You can set the time range for events to search for. It searches based on <Cmdname sid="event_time" className="uitext" />.
 
-  - You can select the lookup time by selecting the green button on the right.
+  :::note
 
-  - By selecting ![Left arrow icon](/img/left-arrow.svg) or ![Right arrow icon](/img/right-arrow.svg), you can move by the selected inquiry time range.
+  For more information on how to use the <Cmdname sid="time_selector" className="uitext" /> option, see [the following](usage-ui#timeselector).
 
-  - To select a detailed time, select a date or time zone. Set the detailed time and then select <Cmdname sid="apply" className="uitext" />.
+  :::
 
 - <Cmdname sid="filter" className="uitext" />: It filters the list of events that contain the entered string based on the content of <Cmdname sid="event_title" className="uitext" /> or <Cmdname sid="message" className="uitext" />.
 
-<Xclude product="browser">
+<Xclude product="browser,url">
 
 - <Cmdname sid="agent" className="uitext" />: Filtering can be made by selecting only the events that occurred on a specific agent.
 
@@ -54,7 +56,7 @@ The following are descriptions of the items that appear in the event list.
 
 - <Cmdname sid="TTL06583" className="uitext" />: Time when the event that occurred was resolved.
 
-<Xclude product="browser">
+<Xclude product="browser,url">
 
 - <Cmdname sid="oname" className="uitext" />: When adding an event in <Cmdname sid="event_setting" className="uitext" />, it appears if <Cmdname sid="TTL07363" className="uitext" /> is set.
 
@@ -62,7 +64,7 @@ The following are descriptions of the items that appear in the event list.
 
 - <Cmdname sid="message" className="uitext" />: Details of the event added in the <Cmdname sid="event_setting" className="uitext" /> menu.
 
-<Xclude product="amazon-cloudwatch,amazon-ecs,aws-log,azure,log,ncloud,oracle-cloud">
+<Xclude product="amazon-cloudwatch,amazon-ecs,aws-log,azure,log,ncloud,oracle-cloud,url">
 
 :::note
 
@@ -94,13 +96,13 @@ When you register the processing history, the <Cmdname sid="TTL06149" className=
 
 2. When the <Cmdname sid="sms_alert_acknowledge_add" className="uitext" /> window appears, enter the processed results.
 
-   <ImgLang img="event-history-add-acknowledge.png" desc="Add acknowledge content" />
+   <ImgLang img="event-history-add-acknowledge.png" desc="Add to acknowledge history" />
 
 3. Select <Cmdname sid="registration" className="uitext" />.
 
 The registered processing history appears as a list in <Cmdname sid="TTL08669" className="uitext" />. You can check the creation time, author, and details.
 
-<ImgLang img="event-history-add-acknowledge-history.png" desc="Acknowledge details" />
+<ImgLang img="event-history-add-acknowledge-history.png" desc="Acknowledge detail" />
 
 You can check the number of processed records added in the event list.
 
@@ -116,11 +118,11 @@ Processed details can be entered up to 255 Bytes.
 
 - <Cmdname sid="BTN06441" className="uitext" />: You can add, delete, and change the order of columns in the event list.
 
-- **_CSV_**: You can save the viewed event records as a CSV file. Enter the <Cmdname sid="maximum_csv_lines" className="uitext" /> and then select <Cmdname sid="download" className="uitext" />.
-
-- <Cmdname sid="event_setting" className="uitext" />: Go to <Cmdname sid="event_statistic" className="uitext" /> &gt; <Cmdname sid="event_setting" className="uitext" />.
+- **_CSV_**: You can save the searched event history records as a CSV file. Click **_CSV_**, enter <Cmdname sid="maximum_csv_lines" className="uitext" />, and then select <Cmdname sid="download" className="uitext" />.
 
 - <Cmdname sid="exclude_resolved_alerts" className="uitext" />: You can view only the **ongoing events** in the event history list.
+
+- <Cmdname sid="event_setting" className="uitext" />: Go to <Cmdname sid="event_statistic" className="uitext" /> &gt; <Cmdname sid="event_setting" className="uitext" />.
 
 import Dbv2dataeditcolumn from "../common-items/_db-v2-data-edit-column.mdx";
 

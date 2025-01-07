@@ -8,33 +8,16 @@ keywords:
   - 分析する
   - UI
   - Server
+toc_max_heading_level: 3
 ---
 
-{/* 11월에 서버 구성 정보 -> 서버 인벤토리 변경 예정 현재 로케일 미 업데이트라 관련 텍스트만 일부 수정 */}
+import ServerInventoryFilter from "../common-items/_server-inventory-filter.mdx";
 
 ホーム画面 &gt; プロジェクト選択 &gt; <Cmdname sid="side_serverList" className="uitext" /> &gt; <Cmdname sid="side_serverInventory" className="uitext" />
-
-{/* :::note 
-
-**サポートエージェントバージョン**
-
-<Cmdname sid="side_serverInventory" className="uitext" />メニューは特定のエージェントバージョン以降でのみ対応しています。 オペレーティングシステムごとの最小サポートバージョンは次のとおりです。
-
-- **Linux**：2.6.6以降
-
-- **AIX**：1.3.4以降
-
-- **Solaris**：1.3.4以降
-
-- **Windows**：2.6.6以降
-
-::: */}
 
 WhaTapモニタリングサービスの初期画面でプロジェクトを選択した後、<Cmdname sid="side_serverList" className="uitext" />メニューの下にある<Cmdname sid="side_serverInventory" className="uitext" />メニューを選択します。 <Cmdname sid="side_serverInventory" className="uitext" />は、サーバー運営に必要な構成情報を提供し、管理の利便性のために手動で管理項目を追加できます。 
 
 <Cmdname sid="side_serverInventory" className="uitext" />は、サーバーの物理的かつ仮想的特性、運用環境などを体系的に管理するためのメニューです。 この機能により、自動的に収集されたサーバーの構成要素とユーザー定義項目を使用してサーバーの構成を詳細に把握し、管理できます。 <Cmdname sid="side_serverInventory" className="uitext" />は、サーバーの性能分析と問題解決に不可欠なデータを提供します。
-
-{/* ## 지원 에이전트 및 업데이트 */}
 
 :::note 
 
@@ -177,37 +160,15 @@ WhaTapモニタリングサービスの初期画面でプロジェクトを選�
 
 ## 基本画面ガイド
 
-{/* 대시보드 및 주요 제공 정보 안내  */}
-
 <Cmdname sid="side_serverInventory" className="uitext" />メニューは、サーバーの主な構成情報を一覧形式で提供します。 自動的に収集したサーバーの運用および管理に必要な必須情報とユーザー定義項目をともに管理できます。 これにより、サーバー管理者はより体系的かつ効率的にインフラをモニタリングするとともに、運用できます。 フィルターとソート機能を活用して、必要な情報を簡単に検索してみてください。
 
 <ImgLang img='server-inventory.png' desc='サーバー インベントリ' />
 
-{/* 
-
-<Cmdname sid="side_serverInventory" className="uitext" />メニューでサーバー構成データを自動的に収集して管理できます。 また、サーバー構成項目をユーザーが定義して追加または修正できます。 これにより、サーバーの運営および管理に必要な重要なデータを一目で把握し、追加の構成管理項目を通じてサーバー管理の効率性を向上できます。
-
-メニューは、サーバーのハードウェアおよびソフトウェアの主な構成情報を一覧形式で提供します。 <Cmdname sid="side_serverInventory" className="uitext" />メニューでサーバーの運用と管理に必要な必須情報の自動収集とともに、カスタム項目による拡張性を提供します。 これにより、サーバー管理者はより体系的かつ効率的にインフラをモニタリングするとともに、管理できます。 フィルターとソート機能を活用して、必要な情報を簡単に検索してみてください。 
-
-*/}
-
-{/* 이를 통해 다음 예시와 같은 구성 관리가 가능합니다. 
-
-- システム運用担当者およびサポートベンダー情報
-
-- サーバーの導入日およびその他の管理項目
-
-- 서버를 용도나 역할에 따라 그룹으로 분류하여 다양한 그룹 관리  */}
-
 ### フィルター
 
-上段![指示線1](/img/number-01.png)フィルターの入力ウィンドウで希望する条件を入力した後、その条件に合う項目のみ照会できます。 カラムの条件を入力または選択した後、Enterキーを押して追加します。 `==`または`!=`適用後、条件の値を特定して入力し、Enterキーを押します。
+上部の![指示線 1](/img/number-01.png)フィルター入力ウィンドウをクリックし、目的の***フィルタキー***と***条件***を選択して値を入力し***適用***ボタンをクリックします。 ![指示線 2](/img/number-02.png)サーバー インベントリ一覧領域でフィルタリングされた一覧を照会できます。 
 
-> 例、<code class='filter'>サーバー名</code><code class='filter center'>==</code><code class='filter'>server04</code>
-
-フィルター入力後<Cmdname sid="BTN06223" className="uitext" />ボタンをクリックすると、![指示線2](/img/number-02.png)サーバー インベントリ一覧領域でフィルタリングされた一覧を照会できます。 
-
-{/* 컬럼 조건 특정 후 조회 선택해야 적용 */}
+<ServerInventoryFilter />
 
 ### ソート
 
@@ -218,19 +179,6 @@ WhaTapモニタリングサービスの初期画面でプロジェクトを選�
 メニューの移動と更新時にソートは初期化されます。
 
 :::
-
-{/* \* 1차 2차 3차 정렬 
-
-- 기본 설정: OS - 모델 - 시리얼 
-
-- 현재 정렬 옵션 선택 시 컬럼 설정에서 선택하지 않은 항목까지 보임?
-
-- 정렬 조작으로 적용  
-
-カラム設定
-ユーザーは、デフォルト項目以外にも自分が希望する項目を追加してカスタムカラムを構成できます。
-
-*/}
 
 ### カラム設定
 
@@ -252,9 +200,37 @@ WhaTapモニタリングサービスの初期画面でプロジェクトを選�
 
   ユーザーは***+*** <Cmdname sid="add_a_column" className="uitext" />ボタンを選択した後、デフォルト項目以外にも自分が希望する項目を追加してカスタムカラム(<code class='custom-cl'>custom</code>)を構成できます。 必要に応じてカラムを追加し、サーバーの状態とパフォーマンスをより細かくモニタリングしてみてください。 
 
-### CSVダウンロード
+### CSVダウンロードとアップロード
+
+#### CSVダウンロード{#csvdownload}
 
 ![指示線2](/img/number-02.png)領域上段の![ダウンロードアイコン](/img/ico-download.svg) <Cmdname sid="download" className="uitext" />ボタンを選択して、収集されたサーバーインベントリを*CSV*ファイル形式でダウンロードできます。 
+
+#### CSVアップロード{#csvupload}
+
+サーバー構成情報を大量に入力する必要がある場合、個々のデータを手作業で入力するのに多くの時間がかかります。 *CSVファイル*アップロード機能により、大量のデータ入力を効率的に処理できます。 ダウンロードした*CSV*ファイルを修正してアップロード機能を活用してみてください。 
+
+1. ![指示線 2](/img/number-02.png)領域上部の![アップロードアイコン](/img/ico-upload.svg) ***CSV*** <Cmdname sid="upload" className="uitext" />ボタンをクリックして、アップロードする*CSV*ファイルを選択します。 
+
+2. ***CSV検証***ウィンドウを通じてアップロードされたデータの検証結果を確認してください。 
+
+   - 変更される項目及びエラー項目の件数を確認できます。
+
+     <ImgLang img='server-inventory-csv-preview.png' desc='サーバーインベントリ CSV プレビュー' />
+
+   - エラー項目をクリックすると、右側の変更データ一覧内でエラーが発生した項目に移動し、エラー項目はハイライトされます。
+
+     <ImgLang img='server-inventory-csv-error.png' desc='サーバーインベントリ CSV プレビュー2' />
+
+3. データ検証後、異常がない場合***適用***ボタンをクリックして選択した*CSV*ファイルのサーバー構成情報を適用します。 
+
+:::note 
+
+- *CSV*アップロード時<Cmdname sid="TTL08183" className="uitext" />、<Cmdname sid="TTL08184" className="uitext" />及びカスタムカラム(<code class='custom-cl'>custom</code>)の変更点のみ適用します。 
+
+- *CSV*アップロード時に、事前に登録していないカラムは反映しません。 
+
+:::
 
 ### 修正
 
@@ -263,11 +239,3 @@ WhaTapモニタリングサービスの初期画面でプロジェクトを選�
 - <Cmdname sid="TTL08183" className="uitext" />と<Cmdname sid="TTL08184" className="uitext" />カラムの内容を設定できます。
 
 - ユーザーが追加したカスタムカラム(<code class='custom-cl'>custom</code>) の内容を設定できます。
-
-{/* 
-
-### 適用例
-
-활용 예시의 경우 추후 학습하기 문서에서 활용 
-
-*/}

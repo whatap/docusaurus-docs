@@ -1,3 +1,65 @@
+- <code class='changelog-overview'>Common</code>
+<code class='changelog-date'>2024-12-24</code> <code class='changelog-service'><a href="https://docs.whatap.io/en/release-notes/service/service-2_12_x"><img src="../img/ic-link.svg" width="18px" height="18px" class="ico-link medium-zoom-image"></img> Service 2.12.0​</a></code>
+  - <code class="Feature" type="1">Feature</code> Replaced components of the time selector in each individual menu.
+  - <code class="Feature" type="1">Feature</code> In <span class="uitext">Flex Board</span> or <span class="uitext">Integrated Flex Board</span>, added the following features in the <span class="uitext">Alert list</span> widget.
+    - Added the <Cmdname sid="ITM08413" className="uitext" /> option.
+    - Added the option to select a query time independent of the time set on the dashboard.
+  - <code class="Feature" type="1">Feature</code> Added the following features in <span class="uitext">Analysis</span> &gt; <span class="uitext">Metrics Chart</span> <code class="newfunc">New</code>.
+    - Different UI display depending on whether the widget legend is to be shown on the dashboard
+    - Legend filtering of widgets
+    - Highlighting the chart line when hovering over the legend of the widget
+    - When there are many chart lines, provided the feature so that the graph color does not become blurred.
+  - <code class="Feature" type="1">Feature</code> In <span class="uitext">Alert</span> &gt; <span class="uitext">Event Configuration</span> <code class="newfunc">New</code>, added the description to the <span class="uitext">Resolved notification</span> option.
+  - <code class="Feature" type="1">Feature</code> In <span class="uitext">Alert</span> &gt; <span class="uitext">Notifications</span>, added the <span class="uitext">Smart message (AI)</span> option to send notification messages with user-friendly content via AI.
+
+- <code class='changelog-overview'>Application</code>
+<code class='changelog-date'>2024-12-24</code> <code class='changelog-service'><a href="https://docs.whatap.io/en/release-notes/service/service-2_12_x"><img src="../img/ic-link.svg" width="18px" height="18px" class="ico-link medium-zoom-image"></img> Service 2.12.0​</a></code>
+  - <code class="Feature" type="1">Feature</code> In the <span class="uitext">Table view</span> tab of the <span class="uitext">Trace analysis</span> window, added the bind variable copying feature when checking the SQL information details.
+  - <code class="Feature" type="1">Feature</code> In <span class="uitext">Statistics</span> &gt; <span class="uitext">Transaction</span>, added the <span class="uitext">Trend comparison</span> feature that allows you to see the information details by selecting multiple transactions.
+  - <code class="Feature" type="1">Feature</code> In <span class="uitext">Alert</span> &gt; <span class="uitext">Event Configuration</span> <code class="newfunc">New</code>, added the <span class="uitext">Agent duplication alert</span> option for the application.
+
+- <code class='changelog-overview'>Server</code>
+<code class='changelog-date'>2024-12-24</code> <code class='changelog-service'><a href="https://docs.whatap.io/en/release-notes/service/service-2_12_x"><img src="../img/ic-link.svg" width="18px" height="18px" class="ico-link medium-zoom-image"></img> Service 2.12.0​</a></code>
+  - <code class="Feature" type="1">Feature</code> In <span class="uitext">Server List</span> &gt; <span class="uitext">Server Inventory</span>, added the feature that replaces the custom columns in the server list by uploading a CSV file.
+
+- <code class='changelog-overview'>Kubernetes</code>
+<code class='changelog-date'>2024-12-24</code> <code class='changelog-service'><a href="https://docs.whatap.io/en/release-notes/service/service-2_12_x"><img src="../img/ic-link.svg" width="18px" height="18px" class="ico-link medium-zoom-image"></img> Service 2.12.0​</a></code>
+  - <code class="Feature" type="1">Feature</code> In the detailed information of the <span class="uitext">Cluster</span> &gt; <span class="uitext">Ingress List</span> menu, added the application information.
+  - <code class="Feature" type="1">Feature</code> In <span class="uitext">Cluster</span> &gt; <span class="uitext">etcd Dashboard</span>, added the guide message modal.
+  - <code class="Feature" type="1">Feature</code> If the version of the installed agent is less than the supported version when the <span class="uitext">Cluster</span> &gt; <span class="uitext">etcd Dashboard</span> menu is entered, the display feature of the update guide screen has been added.
+  - <code class="Feature" type="1">Feature</code> Added the link to the resource list in the <span class="uitext">Detail</span> window in the following menu paths:
+    - <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_nodeTimeline" className="uitext" />
+    - <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_ingressList" className="uitext" />
+  - <code class="Feature" type="1">Feature</code> In the <span class="uitext">Node configuration</span> tab for the detailed information provided by the following menu path, added the total values for CPU, memory, and disk.
+    - <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_nodeMap" className="uitext" />
+    - <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_nodeList" className="uitext" />
+    - <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_nodeTimeline" className="uitext" />
+
+- <code class='changelog-overview'>Database</code>
+<code class='changelog-date'>2024-12-24</code> <code class='changelog-service'><a href="https://docs.whatap.io/en/release-notes/service/service-2_12_x"><img src="../img/ic-link.svg" width="18px" height="18px" class="ico-link medium-zoom-image"></img> Service 2.12.0​</a></code>
+<br/><code class='changelog-overview2'>Common</code>
+  - <code class="Feature" type="1">Feature</code> Provided the pagination feature in the <span class="uitext">Active sessions</span> table.
+    - <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />
+    - <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" />
+  - <code class="Feature" type="1">Feature</code> Added the feature to check the result from the <span class="uitext">User Behavior</span> menu when a user updated the agent in <span class="uitext">Management</span> &gt; <span class="uitext">Agent Update</span>.
+  - <code class="Feature" type="1">Feature</code> Added the feature to check the result from the <span class="uitext">User Behavior</span> menu when a user executed SQLs in <span class="uitext">Laboratory</span> &gt; <span class="uitext">Script Manager</span>.
+
+- <code class='changelog-overview'>Database</code>
+<code class='changelog-date'>2024-12-24</code> <code class='changelog-service'><a href="https://docs.whatap.io/en/release-notes/service/service-2_12_x"><img src="../img/ic-link.svg" width="18px" height="18px" class="ico-link medium-zoom-image"></img> Service 2.12.0​</a></code>
+<br/><code class='changelog-overview2'>Database V2</code>
+  - <code class="Feature" type="1">Feature</code> In <span class="uitext">Dashboard</span> &gt; <span class="uitext">Monitoring Multiple Instances</span>, added the feature to display the unit for the metric selected in the custom widget.
+  - <code class="Feature" type="1">Feature</code> In the <span class="uitext">Correlated DB information</span> window, added the button that pastes the bind variable value copied from the <span class="uitext">Trace analysis</span> window for the APM project.
+
+- <code class='changelog-overview'>Database</code>
+<code class='changelog-date'>2024-12-24</code> <code class='changelog-service'><a href="https://docs.whatap.io/en/release-notes/service/service-2_12_x"><img src="../img/ic-link.svg" width="18px" height="18px" class="ico-link medium-zoom-image"></img> Service 2.12.0​</a></code>
+<br/><code class='changelog-overview2'>Oracle, Oracle Pro</code>
+  - <code class="Feature" type="1">Feature</code> In the <span class="uitext">SQL details</span> window of the <span class="uitext">Dashboard</span> &gt; <span class="uitext">Monitoring a Database Instance</span> menu, added the active session information.
+  - <code class="Feature" type="1">Feature</code> In the <span class="uitext">Filter</span> option of the <span class="uitext">Analysis</span> &gt; <span class="uitext">SQL Analysis</span> menu, added the condition, <code>object_name</code>.
+
+- <code class='changelog-overview'>Browser</code>
+<code class='changelog-date'>2024-12-24</code> <code class='changelog-service'><a href="https://docs.whatap.io/en/release-notes/service/service-2_12_x"><img src="../img/ic-link.svg" width="18px" height="18px" class="ico-link medium-zoom-image"></img> Service 2.12.0​</a></code>
+  - <code class="Feature" type="1">Feature</code> Added the <span class="uitext">Resource Load Statistics</span> menu to visually provide performance data for each resource and to analyze the load time, resource size, performance trends by type, and the like.
+
 - <code class='changelog-overview'>Release of new features</code>
 <code class='changelog-date'>2024-11-27</code> <code class='changelog-service'><a href="https://docs.whatap.io/en/release-notes/service/service-2_11_x"><img src="../img/ic-link.svg" width="18px" height="18px" class="ico-link medium-zoom-image"></img> Service 2.11.0​</a></code>
 <br/><code class='changelog-overview2'>Server</code>

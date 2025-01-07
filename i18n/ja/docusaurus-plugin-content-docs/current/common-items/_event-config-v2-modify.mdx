@@ -12,6 +12,12 @@
 
   <ImgLang img='event-config-v2-simulation-common.png' desc='イベントシミュレーション' />
 
+  :::note
+
+  タイムセレクターの利用方法の詳細については、[次の文書](usage-ui#timeselector)を参照してください。
+
+  :::
+
 - <Cmdname sid="TTL07365" className="uitext" replace="</br>" />: <span class="slow">Warning</span>または<span class="vslow">Critical</span>通知に対するしきい値を設定できます。 演算子を設定し、しきい値を入力してください。
 
   - 演算子の種類：`>`(より大きい)、`>=`(より大きいか等しい)、`<`(より小さい)、`<=`(より小さいか等しい)、`==`(等しい)
@@ -161,7 +167,9 @@
 
   :::note
 
-  テスト中は、実際のメトリクス値や変数の置換機能が動作せず、受信者タグが設定されているユーザーにのみ通知を送信することはできません。
+  - テスト中は、実際のメトリクス値や変数への置換機能が機能しません。 
+
+  - <Cmdname sid="TTL07415" className="uitext" />オプションで、受信者タグが設定されているユーザーに限ってテスト通知を送信します。 <Cmdname sid="ITM07419" className="uitext" />を選択すると、すべてのユーザーにテスト通知を送信します。
 
   :::
 

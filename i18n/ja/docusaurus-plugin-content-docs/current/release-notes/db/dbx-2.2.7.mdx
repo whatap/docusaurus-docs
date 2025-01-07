@@ -1,0 +1,34 @@
+---
+id: dbx-2_2_7
+title: DBX v2.2.7
+pagination_next: release-notes/db/dbx-2_2_6
+displayed_sidebar: releaseSidebar
+---
+
+2024年12月07日
+
+## MySQL
+
+- <Status priority='1'>Feature</Status>リテラルパラメータ収集のためのエージェントオプションを追加
+
+  **save_literal_param** <span class='type'>Boolean</span>
+
+  既定値 `true`
+
+  リテラルパラメータの収集有無を設定します。 `false`に設定するとリテラルパラメータを収集しません。
+
+- <Status priority='1'>Changed</Status> **db_mysql_statements**転送時、1時間に最大5000件の制限を追加
+
+## PostgreSQL
+
+<Status priority='1'>Changed</Status> **db_postgresql_statements**転送時、1時間に最大5000件の制限を追加
+
+## Oracle
+
+- <Status priority='1'>Changed</Status>オブジェクト情報のリアルタイム照会機能を修正
+
+  - インデックスカラムの順序を変更
+
+  - シーケンスレイアウトの照会機能を追加
+
+- <Status priority='0'>Fixed</Status> saving planバグを修正

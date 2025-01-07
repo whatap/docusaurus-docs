@@ -1,23 +1,16 @@
 [
   {
-    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_7_10",
-    "ver": "v1.7.10",
-    "date": "2024-08-29",
+    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_7_15",
+    "ver": "v1.7.15",
+    "date": "2024-10-30",
     "Lists": [
       {
-        "ver": "v1.7.10",
-        "hash": "v1710",
+        "ver": "v1.7.15",
+        "hash": "v1715",
         "product": "Kubernetes Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> タグカウント<code>kube_node</code>のカテゴリにノード(Node)<strong>capacity</strong>と<strong>allocatable</strong>の関連指標を追加</p>",
-        "details": "<ul>\n<li>\n<p><code>allocatable_ephemeral_storage</code>：ノードで使用できる一時ストレージ(ephemeral storage)を示します。</p>\n</li>\n<li>\n<p><code>capacityEphemeralStorage</code>：ノードの一時ストレージ(ephemeral storage)の総容量です。</p>\n</li>\n<li>\n<p><code>capacityPods</code>：ノードにスケジューリングできる最大Pod数です。</p>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v1.7.10",
-        "hash": "v1710",
-        "product": "Kubernetes Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>より正確なCPU割り当てデータを提供するため、<code>allocatable_cpu</code>指標でミリコア単位の値が漏れる現象を修正</p>"
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code>  <span class=\"uitext\">管理</span> &gt; <span class=\"uitext\">エージェント設定</span>メニューでログフィルタリング機能を追加</p>",
+        "details": "<p>特定のコンテナログの収集を制御できるログフィルタリング機能が追加されました。 この機能により、ユーザーはネームスペース、Pod名、コンテナ名などに基づいてログ収集を細分化でき、必要に応じて特定のコンテナのログ収集を許可または遮断できます。</p>"
       }
     ]
   },
@@ -60,58 +53,6 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_7_11",
-    "ver": "v1.7.11",
-    "date": "2024-09-11",
-    "Lists": [
-      {
-        "ver": "v1.7.11",
-        "hash": "v1711",
-        "product": "Kubernetes Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> タグカウント<code>kube_stat</code>のカテゴリにPod状態の指標を追加</p>",
-        "details": "<ul>\n<li>\n<p><code>pending_pod</code>：待機中のPod数です。</p>\n</li>\n<li>\n<p><code>running_pod</code>：実行中のPod数です。</p>\n</li>\n<li>\n<p><code>succeeded_pod</code>：正常に完了したPod数です。</p>\n</li>\n<li>\n<p><code>failed_pod</code>：失敗したPod数です。</p>\n</li>\n<li>\n<p><code>unknown_pod</code>：状態の分からないPod数です。</p>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v1.7.11",
-        "hash": "v1711",
-        "product": "Kubernetes Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> タグカウント<code>kube_node</code>のカテゴリに各ノードの生成時間を示す<code>creationTimeStamp</code> フィールドを追加</p>",
-        "details": "<p><code>creationTimeStamp</code>フィールドを使用して、ノードが作成された時間を追跡できます。</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_7_15",
-    "ver": "v1.7.15",
-    "date": "2024-10-30",
-    "Lists": [
-      {
-        "ver": "v1.7.15",
-        "hash": "v1715",
-        "product": "Kubernetes Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code>  <span class=\"uitext\">管理</span> &gt; <span class=\"uitext\">エージェント設定</span>メニューでログフィルタリング機能を追加</p>",
-        "details": "<p>特定のコンテナログの収集を制御できるログフィルタリング機能が追加されました。 この機能により、ユーザーはネームスペース、Pod名、コンテナ名などに基づいてログ収集を細分化でき、必要に応じて特定のコンテナのログ収集を許可または遮断できます。</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_7_14",
-    "ver": "v1.7.14",
-    "date": "2024-10-29",
-    "Lists": [
-      {
-        "ver": "v1.7.14",
-        "hash": "v1714",
-        "product": "Kubernetes Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>プロセスが死んだ後も継続的にデータが入ってくるカテゴリメトリックのバグを修正</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_7_16",
     "ver": "v1.7.16",
     "date": "2024-11-22",
@@ -131,37 +72,6 @@
         "type": "New",
         "desc": "<p><code class=\"New\" type=\"1\">New</code> Foreign Project機能の有効化と無効化機能を追加</p>",
         "details": "<ul>\n<li>Kubernetes外部プロジェクトで有効になったモニタリングとの接続データを収集</li>\n</ul>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_7_9",
-    "ver": "v1.7.9",
-    "date": "2024-08-19",
-    "Lists": [
-      {
-        "ver": "v1.7.9",
-        "hash": "v179",
-        "product": "Kubernetes Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> cgroup v2環境でrss関連メトリック指標の追加収集</p>",
-        "details": "<p><code>container::mem_totalrss</code>：cgroup v2環境におけるコンテナのメモリRSS(Resident Set Size)を収集する指標です。 この指標はコンテナが実際に使用している物理メモリの量を示します。</p>"
-      },
-      {
-        "ver": "v1.7.9",
-        "hash": "v179",
-        "product": "Kubernetes Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code>コンテナのrequest、limitの設定有無に対する指標追加</p>",
-        "details": "<ul>\n<li>\n<p><strong>Memory関連指標</strong></p>\n<ul>\n<li>\n<p><code>container::memory_limit_contained</code>：コンテナのメモリlimitの設定有無を示す指標です。 値が<code>true</code>ならlimitが設定されており、<code>false</code>なら設定されていないことを指します。</p>\n</li>\n<li>\n<p><code>container::memory_request_contained</code>：コンテナのメモリrequestの設定有無を示す指標です。 値が<code>true</code>ならrequestが設定されており、<code>false</code>なら設定されていないことを指します。</p>\n</li>\n</ul>\n</li>\n<li>\n<p><strong>CPU関連指標</strong></p>\n<ul>\n<li>\n<p><code>container::cpu_limit_contained</code>：コンテナのCPU limitの設定有無を示す指標です。 値が<code>true</code>ならlimitが設定されており、<code>false</code>なら設定されていないことを指します。</p>\n</li>\n<li>\n<p><code>container::cpu_request_contained</code>：コンテナのCPU requestの設定有無を示す指標です。 値が<code>true</code>ならrequestが設定されており、<code>false</code>なら設定されていないことを指します。</p>\n</li>\n</ul>\n</li>\n<li>\n<p><strong>Ephemeral-Storage関連指標</strong></p>\n<ul>\n<li>\n<p><code>container::ephemeral_storage_limit_contained</code>：コンテナのephemeral-storage limitの設定有無を示す指標です。 値が<code>true</code>ならlimitが設定されており、<code>false</code>なら設定されていないことを指します。</p>\n</li>\n<li>\n<p><code>container::ephemeral_storage_request_contained</code>：コンテナのephemeral-storage requestの設定有無を示す指標です。 値が<code>true</code>ならrequestが設定されており、<code>false</code>なら設定されていないことを指します。</p>\n</li>\n</ul>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v1.7.9",
-        "hash": "v179",
-        "product": "Kubernetes Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code>ノードラベル指標をリストの形で追加</p>",
-        "details": "<ul>\n<li>\n<p><code>kube_node::labelKey</code>：Kubernetesノードのラベルキー(Key)を収集する指標です。 ノードに適用されている各ラベルのキーを示します。</p>\n</li>\n<li>\n<p><code>kube_node::labelValue</code>：Kubernetesノードのラベル値(Value)を収集する指標です。 ノードに適用される各ラベルの値を示します。</p>\n</li>\n</ul>"
       }
     ]
   },
@@ -197,6 +107,71 @@
     ]
   },
   {
+    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_7_14",
+    "ver": "v1.7.14",
+    "date": "2024-10-29",
+    "Lists": [
+      {
+        "ver": "v1.7.14",
+        "hash": "v1714",
+        "product": "Kubernetes Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>プロセスが死んだ後も継続的にデータが入ってくるカテゴリメトリックのバグを修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_8_1",
+    "ver": "v1.8.1",
+    "date": "2024-12-24",
+    "Lists": [
+      {
+        "ver": "v1.8.1",
+        "hash": "v181",
+        "product": "Kubernetes Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code>新しいタグカウントメトリックを追加</p>",
+        "details": "<ul>\n<li>\n<p><strong>kube_scheduler</strong></p>\n<p>サンプリング周期<code>1分</code></p>\n<p>Kubernetesコントロールプレーンコンポーネントであるスケジューラ関連メトリックを収集します。</p>\n</li>\n<li>\n<p><strong>kube_pv</strong></p>\n<p>サンプリング周期<code>30秒</code></p>\n<p>KubernetesストレージPersistent Volume(PV)関連メトリックを収集します。</p>\n</li>\n<li>\n<p><strong>kube_pvc</strong></p>\n<p>サンプリング周期<code>30秒</code></p>\n<p>KubernetesストレージPersistent Volume Claim(PVC)関連メトリックを収集します。</p>\n</li>\n<li>\n<p><strong>kube_pod_volume_list{h1}</strong></p>\n<p>サンプリング周期<code>1時間</code></p>\n<p>Kubernetes Podのボリュームマウント情報を収集します。</p>\n</li>\n<li>\n<p><strong>kube_container_volume_list{h1}</strong></p>\n<p>サンプリング周期<code>1時間</code></p>\n<p>Kubernetesコンテナのボリューム情報を収集します。</p>\n</li>\n</ul>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_8_0",
+    "ver": "v1.8.0",
+    "date": "2024-12-02",
+    "Lists": [
+      {
+        "ver": "v1.8.0",
+        "hash": "v180",
+        "product": "Kubernetes Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"0\">Changed</code>メンテナンスと拡張性を考慮してエージェントコード構造を改善</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_7_10",
+    "ver": "v1.7.10",
+    "date": "2024-08-29",
+    "Lists": [
+      {
+        "ver": "v1.7.10",
+        "hash": "v1710",
+        "product": "Kubernetes Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> タグカウント<code>kube_node</code>のカテゴリにノード(Node)<strong>capacity</strong>と<strong>allocatable</strong>の関連指標を追加</p>",
+        "details": "<ul>\n<li>\n<p><code>allocatable_ephemeral_storage</code>：ノードで使用できる一時ストレージ(ephemeral storage)を示します。</p>\n</li>\n<li>\n<p><code>capacityEphemeralStorage</code>：ノードの一時ストレージ(ephemeral storage)の総容量です。</p>\n</li>\n<li>\n<p><code>capacityPods</code>：ノードにスケジューリングできる最大Pod数です。</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v1.7.10",
+        "hash": "v1710",
+        "product": "Kubernetes Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>より正確なCPU割り当てデータを提供するため、<code>allocatable_cpu</code>指標でミリコア単位の値が漏れる現象を修正</p>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_7_6",
     "ver": "v1.7.6",
     "date": "2024-07-01",
@@ -219,6 +194,60 @@
     ]
   },
   {
+    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_7_11",
+    "ver": "v1.7.11",
+    "date": "2024-09-11",
+    "Lists": [
+      {
+        "ver": "v1.7.11",
+        "hash": "v1711",
+        "product": "Kubernetes Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> タグカウント<code>kube_stat</code>のカテゴリにPod状態の指標を追加</p>",
+        "details": "<ul>\n<li>\n<p><code>pending_pod</code>：待機中のPod数です。</p>\n</li>\n<li>\n<p><code>running_pod</code>：実行中のPod数です。</p>\n</li>\n<li>\n<p><code>succeeded_pod</code>：正常に完了したPod数です。</p>\n</li>\n<li>\n<p><code>failed_pod</code>：失敗したPod数です。</p>\n</li>\n<li>\n<p><code>unknown_pod</code>：状態の分からないPod数です。</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v1.7.11",
+        "hash": "v1711",
+        "product": "Kubernetes Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> タグカウント<code>kube_node</code>のカテゴリに各ノードの生成時間を示す<code>creationTimeStamp</code> フィールドを追加</p>",
+        "details": "<p><code>creationTimeStamp</code>フィールドを使用して、ノードが作成された時間を追跡できます。</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_7_9",
+    "ver": "v1.7.9",
+    "date": "2024-08-19",
+    "Lists": [
+      {
+        "ver": "v1.7.9",
+        "hash": "v179",
+        "product": "Kubernetes Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> cgroup v2環境でrss関連メトリック指標の追加収集</p>",
+        "details": "<p><code>container::mem_totalrss</code>：cgroup v2環境におけるコンテナのメモリRSS(Resident Set Size)を収集する指標です。 この指標はコンテナが実際に使用している物理メモリの量を示します。</p>"
+      },
+      {
+        "ver": "v1.7.9",
+        "hash": "v179",
+        "product": "Kubernetes Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code>コンテナのrequest、limitの設定有無に対する指標追加</p>",
+        "details": "<ul>\n<li>\n<p><strong>Memory関連指標</strong></p>\n<ul>\n<li>\n<p><code>container::memory_limit_contained</code>：コンテナのメモリlimitの設定有無を示す指標です。 値が<code>true</code>ならlimitが設定されており、<code>false</code>なら設定されていないことを指します。</p>\n</li>\n<li>\n<p><code>container::memory_request_contained</code>：コンテナのメモリrequestの設定有無を示す指標です。 値が<code>true</code>ならrequestが設定されており、<code>false</code>なら設定されていないことを指します。</p>\n</li>\n</ul>\n</li>\n<li>\n<p><strong>CPU関連指標</strong></p>\n<ul>\n<li>\n<p><code>container::cpu_limit_contained</code>：コンテナのCPU limitの設定有無を示す指標です。 値が<code>true</code>ならlimitが設定されており、<code>false</code>なら設定されていないことを指します。</p>\n</li>\n<li>\n<p><code>container::cpu_request_contained</code>：コンテナのCPU requestの設定有無を示す指標です。 値が<code>true</code>ならrequestが設定されており、<code>false</code>なら設定されていないことを指します。</p>\n</li>\n</ul>\n</li>\n<li>\n<p><strong>Ephemeral-Storage関連指標</strong></p>\n<ul>\n<li>\n<p><code>container::ephemeral_storage_limit_contained</code>：コンテナのephemeral-storage limitの設定有無を示す指標です。 値が<code>true</code>ならlimitが設定されており、<code>false</code>なら設定されていないことを指します。</p>\n</li>\n<li>\n<p><code>container::ephemeral_storage_request_contained</code>：コンテナのephemeral-storage requestの設定有無を示す指標です。 値が<code>true</code>ならrequestが設定されており、<code>false</code>なら設定されていないことを指します。</p>\n</li>\n</ul>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v1.7.9",
+        "hash": "v179",
+        "product": "Kubernetes Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code>ノードラベル指標をリストの形で追加</p>",
+        "details": "<ul>\n<li>\n<p><code>kube_node::labelKey</code>：Kubernetesノードのラベルキー(Key)を収集する指標です。 ノードに適用されている各ラベルのキーを示します。</p>\n</li>\n<li>\n<p><code>kube_node::labelValue</code>：Kubernetesノードのラベル値(Value)を収集する指標です。 ノードに適用される各ラベルの値を示します。</p>\n</li>\n</ul>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_7_7",
     "ver": "v1.7.7",
     "date": "2024-07-11",
@@ -237,27 +266,6 @@
         "product": "Kubernetes Agent",
         "type": "Changed",
         "desc": "<p><code class=\"Changed\">Changed</code>イベント収集方式の変更: エージェント起動時点以降に生成されたイベントに対してのみデータを収集(<code>kube_event</code>)</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_7_4",
-    "ver": "v1.7.4",
-    "date": "2024-06-07",
-    "Lists": [
-      {
-        "ver": "v1.7.4",
-        "hash": "v174",
-        "product": "Kubernetes Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> whatap-node-helperコンテナで、agentの連携失敗時に発生するエラーログをデバッグ処理</p>"
-      },
-      {
-        "ver": "v1.7.4",
-        "hash": "v174",
-        "product": "Kubernetes Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code>ノードディスクの性能データの収集時に発生するエラーを修正</p>"
       }
     ]
   },
@@ -285,31 +293,23 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_7_1",
-    "ver": "v1.7.1",
-    "date": "2024-05-17",
+    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_7_4",
+    "ver": "v1.7.4",
+    "date": "2024-06-07",
     "Lists": [
       {
-        "ver": "v1.7.1",
-        "hash": "v171",
+        "ver": "v1.7.4",
+        "hash": "v174",
         "product": "Kubernetes Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> <strong>OOMKilled</strong>コンテナの収集ロジックを修正</p>",
-        "details": "<blockquote>\n<p><code>lastState</code>が<strong>OOMKilled</strong>のコンテナの場合、コンテナの<code>state</code>が<strong>Running</strong>にもかかわらず、<strong>OOMKilled</strong>と見られるバグを修正</p>\n</blockquote>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_7_3",
-    "ver": "v1.7.3",
-    "date": "2024-06-04",
-    "Lists": [
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> whatap-node-helperコンテナで、agentの連携失敗時に発生するエラーログをデバッグ処理</p>"
+      },
       {
-        "ver": "v1.7.3",
-        "hash": "v173",
+        "ver": "v1.7.4",
+        "hash": "v174",
         "product": "Kubernetes Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> whatap-master-agentで、Podイベントの監視によって発生していたapiserverの過度な監査ログの生成問題を修正</p>"
+        "desc": "<p><code class=\"Fixed\">Fixed</code>ノードディスクの性能データの収集時に発生するエラーを修正</p>"
       }
     ]
   },
@@ -325,6 +325,20 @@
         "type": "Feature",
         "desc": "<p><code class=\"Feature\">Feature</code>ファイルシステムが、nfsであるディスクのメトリクス収集オプションを追加</p>",
         "details": "<ul>\n<li><code>collect_nfs_disk_enabled</code>: nfsディスクの収集可否を決定するオプションです。 デフォルト値は<code>true</code>です。</li>\n</ul>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_7_3",
+    "ver": "v1.7.3",
+    "date": "2024-06-04",
+    "Lists": [
+      {
+        "ver": "v1.7.3",
+        "hash": "v173",
+        "product": "Kubernetes Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> whatap-master-agentで、Podイベントの監視によって発生していたapiserverの過度な監査ログの生成問題を修正</p>"
       }
     ]
   },
@@ -373,23 +387,31 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_5_6",
-    "ver": "v1.5.6",
-    "date": "2024-02-23",
+    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_7_1",
+    "ver": "v1.7.1",
+    "date": "2024-05-17",
     "Lists": [
       {
-        "ver": "v1.5.6",
-        "hash": "v156",
-        "product": "Kubernetes Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> <span class=\"uitext\">コンテナ</span> &gt; <span class=\"uitext\">コンテナボリューム</span>メニューでMountType属性を照会する機能を追加</p>"
-      },
-      {
-        "ver": "v1.5.6",
-        "hash": "v156",
+        "ver": "v1.7.1",
+        "hash": "v171",
         "product": "Kubernetes Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> IPv6アドレスを使用する場合、<span class=\"uitext\">コンテナ</span> &gt; <span class=\"uitext\">コンテナボリューム</span>メニューで照会されない問題を修正</p>"
+        "desc": "<p><code class=\"Fixed\">Fixed</code> <strong>OOMKilled</strong>コンテナの収集ロジックを修正</p>",
+        "details": "<blockquote>\n<p><code>lastState</code>が<strong>OOMKilled</strong>のコンテナの場合、コンテナの<code>state</code>が<strong>Running</strong>にもかかわらず、<strong>OOMKilled</strong>と見られるバグを修正</p>\n</blockquote>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_6_0",
+    "ver": "v1.6.0",
+    "date": "2024-04-05",
+    "Lists": [
+      {
+        "ver": "v1.6.0",
+        "hash": "v160",
+        "product": "Kubernetes Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> <span class=\"uitext\">クラスター</span> &gt; <span class=\"uitext\">Object Manifest</span>メニューのwarningイベントの連携ロジックのバグを修正</p>"
       }
     ]
   },
@@ -429,20 +451,6 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_6_0",
-    "ver": "v1.6.0",
-    "date": "2024-04-05",
-    "Lists": [
-      {
-        "ver": "v1.6.0",
-        "hash": "v160",
-        "product": "Kubernetes Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> <span class=\"uitext\">クラスター</span> &gt; <span class=\"uitext\">Object Manifest</span>メニューのwarningイベントの連携ロジックのバグを修正</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_5_5",
     "ver": "v1.5.5",
     "date": "2024-02-14",
@@ -453,6 +461,56 @@
         "product": "Kubernetes Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\">Fixed</code> ReplicationController listの権限がない場合、マスターエージェントが30秒間隔でログを生成する問題を修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_5_7",
+    "ver": "v1.5.7",
+    "date": "2024-03-07",
+    "Lists": [
+      {
+        "ver": "v1.5.7",
+        "hash": "v157",
+        "product": "Kubernetes Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> whatap-node-helperは、ノードディスクおよびコンテナのイメージ、性能データを収集します。 当該コンテナのロギング及び設定機能を追加してデバッグを行い、問題が発生した場合、当該機能に対するオプション処理が可能です。</p>",
+        "details": "<ul>\n<li>\n<p><strong>collect_volume_detail_enabled</strong> <span class=\"type\">Boolean</span></p>\n<p>既定値 <code>true</code></p>\n<p>ノードエージェントですべてのコンテナに対する<code>exec df</code>コマンドを使用して、コンテナのボリューム情報の照会を活性化します。 ノードに実行中のすべてのコンテナのストレージ使用量およびボリューム情報を収集する機能を活性化できます。</p>\n</li>\n<li>\n<p><strong>inject_container_id_to_apm_agent_enabled</strong> <span class=\"type\">Boolean</span></p>\n<p>既定値 <code>true</code></p>\n<p>WhaTap APMコンテナに<code>exec</code>を利用したcontainer IDの注入を活性化します。 WhaTap APMと識別されるコンテナのIDを自動的に抽出し、これをAPMツールに注入して性能モニタリングデータとコンテナを連結するのに使用できます。</p>\n<div class=\"theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary\"><div class=\"admonitionHeading_Gvgb\"><span class=\"admonitionIcon_Rf37\"><svg viewbox=\"0 0 14 16\"><path fill-rule=\"evenodd\" d=\"M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z\"></path></svg></span>ノート</div><div class=\"admonitionContent_BuS1\"><p>このオプションは、<a href=\"/ja/release-notes/java/java-2_2_33\">Javaエージェント2.2.33バージョン</a> 以降から使用できます。</p></div></div>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v1.5.7",
+        "hash": "v157",
+        "product": "Kubernetes Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code>マスターエージェントからKubernetesイベントを収集する場合、エージェントが再起動されると、イベントの重複収集を中止するロジックを削除しました。 サーバーサイドで重複イベントのドロップロジックを実行するように変更しました。</p>"
+      },
+      {
+        "ver": "v1.5.7",
+        "hash": "v157",
+        "product": "Kubernetes Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> watchLog機能を利用するとノードシステムの特定のログファイル(例、<em>/var/log/message</em>)をWhaTapダッシュボードで監視できます。 システムのログ ローテーションロジックによってファイルが変更された場合、ログの追加収集に失敗するバグを修正しました。</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_5_6",
+    "ver": "v1.5.6",
+    "date": "2024-02-23",
+    "Lists": [
+      {
+        "ver": "v1.5.6",
+        "hash": "v156",
+        "product": "Kubernetes Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> <span class=\"uitext\">コンテナ</span> &gt; <span class=\"uitext\">コンテナボリューム</span>メニューでMountType属性を照会する機能を追加</p>"
+      },
+      {
+        "ver": "v1.5.6",
+        "hash": "v156",
+        "product": "Kubernetes Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> IPv6アドレスを使用する場合、<span class=\"uitext\">コンテナ</span> &gt; <span class=\"uitext\">コンテナボリューム</span>メニューで照会されない問題を修正</p>"
       }
     ]
   },
@@ -506,6 +564,28 @@
     ]
   },
   {
+    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_5_0",
+    "ver": "v1.5.0",
+    "date": "2024-01-16",
+    "Lists": [
+      {
+        "ver": "v1.5.0",
+        "hash": "v150",
+        "product": "Kubernetes Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code>オブジェクトマニフェスト収集機能を追加</p>",
+        "details": "<p>1日に1回、ユーザーが設定したタイムゾーンの午前0時にクラスターのオブジェクト情報を収集して保存する機能を追加しました。 この機能を利用するには、次のようにエージェントオプションを設定してください。 詳細については、<a href=\"/ja/kubernetes/object-manifest\">次の文書</a>を参照してください。</p>"
+      },
+      {
+        "ver": "v1.5.0",
+        "hash": "v150",
+        "product": "Kubernetes Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code>コントロールプレーンモニタリングエージェントの性能を改善。クラスターと通信するクライアントの性能改善を含みます。</p>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_5_1",
     "ver": "v1.5.1",
     "date": "2024-01-25",
@@ -534,35 +614,6 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_5_7",
-    "ver": "v1.5.7",
-    "date": "2024-03-07",
-    "Lists": [
-      {
-        "ver": "v1.5.7",
-        "hash": "v157",
-        "product": "Kubernetes Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> whatap-node-helperは、ノードディスクおよびコンテナのイメージ、性能データを収集します。 当該コンテナのロギング及び設定機能を追加してデバッグを行い、問題が発生した場合、当該機能に対するオプション処理が可能です。</p>",
-        "details": "<ul>\n<li>\n<p><strong>collect_volume_detail_enabled</strong> <span class=\"type\">Boolean</span></p>\n<p>既定値 <code>true</code></p>\n<p>ノードエージェントですべてのコンテナに対する<code>exec df</code>コマンドを使用して、コンテナのボリューム情報の照会を活性化します。 ノードに実行中のすべてのコンテナのストレージ使用量およびボリューム情報を収集する機能を活性化できます。</p>\n</li>\n<li>\n<p><strong>inject_container_id_to_apm_agent_enabled</strong> <span class=\"type\">Boolean</span></p>\n<p>既定値 <code>true</code></p>\n<p>WhaTap APMコンテナに<code>exec</code>を利用したcontainer IDの注入を活性化します。 WhaTap APMと識別されるコンテナのIDを自動的に抽出し、これをAPMツールに注入して性能モニタリングデータとコンテナを連結するのに使用できます。</p>\n<div class=\"theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary\"><div class=\"admonitionHeading_Gvgb\"><span class=\"admonitionIcon_Rf37\"><svg viewbox=\"0 0 14 16\"><path fill-rule=\"evenodd\" d=\"M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z\"></path></svg></span>ノート</div><div class=\"admonitionContent_BuS1\"><p>このオプションは、<a href=\"/ja/release-notes/java/java-2_2_33\">Javaエージェント2.2.33バージョン</a> 以降から使用できます。</p></div></div>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v1.5.7",
-        "hash": "v157",
-        "product": "Kubernetes Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code>マスターエージェントからKubernetesイベントを収集する場合、エージェントが再起動されると、イベントの重複収集を中止するロジックを削除しました。 サーバーサイドで重複イベントのドロップロジックを実行するように変更しました。</p>"
-      },
-      {
-        "ver": "v1.5.7",
-        "hash": "v157",
-        "product": "Kubernetes Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> watchLog機能を利用するとノードシステムの特定のログファイル(例、<em>/var/log/message</em>)をWhaTapダッシュボードで監視できます。 システムのログ ローテーションロジックによってファイルが変更された場合、ログの追加収集に失敗するバグを修正しました。</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_4_9",
     "ver": "v1.4.9",
     "date": "2024-01-08",
@@ -573,28 +624,6 @@
         "product": "Kubernetes Agent",
         "type": "Changed",
         "desc": "<p><code class=\"Changed\">Changed</code> <code>collect_control_plane_monitoring_enabled</code>オプションを追加。このオプションの値を<code>true</code>に設定するとコントロールプレーン(Control Plane) 指標を収集します。</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/k8s/k8s-1_5_0",
-    "ver": "v1.5.0",
-    "date": "2024-01-16",
-    "Lists": [
-      {
-        "ver": "v1.5.0",
-        "hash": "v150",
-        "product": "Kubernetes Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code>オブジェクトマニフェスト収集機能を追加</p>",
-        "details": "<p>1日に1回、ユーザーが設定したタイムゾーンの午前0時にクラスターのオブジェクト情報を収集して保存する機能を追加しました。 この機能を利用するには、次のようにエージェントオプションを設定してください。 詳細については、<a href=\"/ja/kubernetes/object-manifest\">次の文書</a>を参照してください。</p>"
-      },
-      {
-        "ver": "v1.5.0",
-        "hash": "v150",
-        "product": "Kubernetes Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code>コントロールプレーンモニタリングエージェントの性能を改善。クラスターと通信するクライアントの性能改善を含みます。</p>"
       }
     ]
   }

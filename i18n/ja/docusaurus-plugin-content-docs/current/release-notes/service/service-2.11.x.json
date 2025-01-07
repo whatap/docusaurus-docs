@@ -1,6 +1,175 @@
 [
   {
     "url": "https://docs.whatap.io/ja/release-notes/service/service-2_11_x",
+    "ver": "Service 2.11.10",
+    "date": "2024-12-19",
+    "Lists": [
+      {
+        "ver": "Service 2.11.10",
+        "hash": "service-21110",
+        "product": "Application",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">統合Flexボード</span>メニューで<span class=\"uitext\">アクティブTX</span> <span class=\"uitext\">TopN</span>ウィジェットをクリックすると発生するエラーを修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/service/service-2_11_x",
+    "ver": "Service 2.11.9",
+    "date": "2024-12-19",
+    "Lists": [
+      {
+        "ver": "Service 2.11.9",
+        "hash": "service-2119",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">ダッシューボード</span> &gt; <span class=\"uitext\">マルチインスタンス</span>メニューで<span class=\"uitext\">SQL Elapse Map</span>ウィジェット内のデータが出力されない問題を修正</p>",
+        "category": "PostgreSQL"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/service/service-2_11_x",
+    "ver": "Service 2.11.8",
+    "date": "2024-12-16",
+    "Lists": [
+      {
+        "ver": "Service 2.11.8",
+        "hash": "service-2118",
+        "product": "Server",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">サーバーリスト</span> &gt; <span class=\"uitext\">サーバー 詳細</span>メニューの<span class=\"uitext\">エージェント名</span>カラムに特定のオペレーティング システムのアイコンが表示されない問題を修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/service/service-2_11_x",
+    "ver": "Service 2.11.7",
+    "date": "2024-12-10",
+    "Lists": [
+      {
+        "ver": "Service 2.11.7",
+        "hash": "service-2117",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">ダッシューボード</span> &gt; <span class=\"uitext\">マルチインスタンス</span>メニューのユーザー定義ウィジェットでクラウド指標のデータが出力されない問題を修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/service/service-2_11_x",
+    "ver": "Service 2.11.6",
+    "date": "2024-12-09",
+    "Lists": [
+      {
+        "ver": "Service 2.11.6",
+        "hash": "service-2116",
+        "product": "AWS Log",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">管理</span> &gt; <span class=\"uitext\">エージェントインストール</span>メニューで<span class=\"uitext\">WhatTap Forwarderインストールページ\n</span>ボタンのリンクパラメータエラーを修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/service/service-2_11_x",
+    "ver": "Service 2.11.5",
+    "date": "2024-12-05",
+    "Lists": [
+      {
+        "ver": "Service 2.11.5",
+        "hash": "service-2115",
+        "product": "Application",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>トランザクションの開始/終了時間の単位値が異なる場合<span class=\"uitext\">トレース分析</span>ウィンドウで発生する次の問題を修正</p>",
+        "details": "<p>例えば、トランザクションが<strong>17</strong>時59分に始まって <strong>18</strong>時00分に終了する時に発生する問題です。</p>"
+      },
+      {
+        "ver": "Service 2.11.5",
+        "hash": "service-2115",
+        "product": "Server",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">サーバーリスト</span> &gt; <span class=\"uitext\">サーバー 詳細</span>メニューの<span class=\"uitext\">サーバー情報</span>パネルで<span class=\"uitext\">サーバーアラートリスト</span>ボタンを選択すると発生するホワイトアウト現象を修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/service/service-2_11_x",
+    "ver": "Service 2.11.4",
+    "date": "2024-12-04",
+    "Lists": [
+      {
+        "ver": "Service 2.11.4",
+        "hash": "service-2114",
+        "product": "Application",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> <span class=\"uitext\">トレース分析</span>ウィンドウの<span class=\"uitext\">SQL要約</span>、<span class=\"uitext\">HTTPコール要約</span>、<span class=\"uitext\">メソッド要約</span>、<span class=\"uitext\">アクティブスタック</span>タブでテキストダウンロード機能を追加</p>"
+      },
+      {
+        "ver": "Service 2.11.4",
+        "hash": "service-2114",
+        "product": "Kubernetes",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">クラスター</span> &gt; <span class=\"uitext\">etcd ダッシュボード</span>メニューでチャートインデックスに不要な情報値を削除する</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/service/service-2_11_x",
+    "ver": "Service 2.11.3",
+    "date": "2024-12-03",
+    "Lists": [
+      {
+        "ver": "Service 2.11.3",
+        "hash": "service-2113",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> XOSエージェントが収集するメモリサイズに関する指標の単位を変更</p>",
+        "category": "共通"
+      },
+      {
+        "ver": "Service 2.11.3",
+        "hash": "service-2113",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">SQL詳細</span>及び<span class=\"uitext\">セッション詳細</span>ウィンドウでPlan情報を確認するため<span class=\"uitext\">Default Bind</span>機能を実行すると、すべてのバインド変数が <code>1</code>で満たされない問題を修正</p>",
+        "category": "共通"
+      },
+      {
+        "ver": "Service 2.11.3",
+        "hash": "service-2113",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">統計/レポート</span> &gt; <span class=\"uitext\">テーブルスペース容量増減</span>メニューで<span class=\"uitext\">セグメントサイズ(Top 50)</span>セクションの単位表示のエラーを修正</p>",
+        "category": "Oracle、Oracle Pro"
+      },
+      {
+        "ver": "Service 2.11.3",
+        "hash": "service-2113",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">ダッシューボード</span> &gt; <span class=\"uitext\">インスタンスモニタリング</span>メニューの<span class=\"uitext\">アクティブセッション</span>テーブルにセッション状態値が正常に出力されない問題を修正</p>",
+        "category": "Oracle、Oracle Pro"
+      },
+      {
+        "ver": "Service 2.11.3",
+        "hash": "service-2113",
+        "product": "Database",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"0\">Changed</code> <span class=\"uitext\">管理</span> &gt; <span class=\"uitext\">エージェントインストール</span>メニューの<strong>アカウント作成</strong>段階で<strong>2012バージョン以下</strong>環境に関する設定メッセージを追加</p>",
+        "category": "SQL Server V2"
+      },
+      {
+        "ver": "Service 2.11.3",
+        "hash": "service-2113",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <span class=\"uitext\">統計/レポート</span> &gt; <span class=\"uitext\">テーブルスペース容量増減</span>メニューでTotal項目が重複表示される問題を修正</p>",
+        "category": "Tibero"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/service/service-2_11_x",
     "ver": "Service 2.11.2",
     "date": "2024-11-28",
     "Lists": [
@@ -281,7 +450,7 @@
         "hash": "service-2110",
         "product": "Server",
         "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> <span class=\"uitext\">サーバーリスト</span> &gt; <span class=\"uitext\">サーバー インベントリ</span>メニュー名を<span class=\"uitext\">サーバーインベントリ</span>に変更</p>"
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> <span class=\"uitext\">サーバーリスト</span> &gt; <span class=\"uitext\">サーバー構成情報</span>メニュー名を<span class=\"uitext\">サーバー インベントリ</span>に変更</p>"
       },
       {
         "ver": "Service 2.11.0",

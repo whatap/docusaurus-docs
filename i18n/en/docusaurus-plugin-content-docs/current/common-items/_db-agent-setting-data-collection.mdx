@@ -130,6 +130,12 @@
 
   If set to `2`, the sys sessions (root, system user, event_scheduler) are not visible in the active session. The set value, `1` makes sys sessions visible, but excludes them from the total runtime.
 
+- **save_literal_param** <span class='type'>Boolean</span>
+
+  Default `true`
+
+  It sets whether or not to collect literal parameters. If set to `false`, literal parameters are not collected.
+
 - **statements_min_row** <span class='type'>Int</span>
 
   Default `10000` (row)
@@ -246,6 +252,24 @@
 </InDoc>
 
 <InDoc product="altibase">
+
+- **segments** <span class='type'>Boolean</span>
+
+  Default `true`
+
+  It collects the segment size information. In <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_tableSpace" className="uitext" />, you can see the size by selecting the database or tablespace.
+
+- **segments_hour** <span class='type'>Int</span>
+
+  Default `5`
+
+  Set the time to collect the segment size information. The default value is `5` and collection starts at 5 am.
+
+- **segments_min_size** <span class='type'>Int</span>
+
+  Default `10`
+
+  The minimum unit for collecting segment size information, the default value is 10 MB. When collecting segment sizes, the segment sizes less than the set value are not collected.
 
 - **tablespace_lock** <span class='type'>Boolean</span>
 

@@ -44,17 +44,11 @@ To add a metric as a widget to the dashboard, select <Cmdname sid="add_chart" cl
 
 In <Cmdname sid="time" className="uitext" />, set the date and time to view the metric.
 
-<ImgLang img="metrics-chart-new-set-time.png" desc="Time setting" />
+:::note
 
-- Select the green button on the utmost right, you can select from various time ranges. 
+For more information on how to use the <Cmdname sid="time" className="uitext" /> option, see [the following](usage-ui#timeselector).
 
-  <ImgLang img="metrics-chart-new-set-time-select-options.png" className="width-600" desc="Time setting" />
-
-- By selecting ![Left arrow icon](/img/left-arrow.svg) or ![Right arrow icon](/img/right-arrow.svg), you can shift the time. The shifting interval is the time interval set on the right.
-
-- Click the Date & Time area to manually select the desired date and time.
-
-  <ImgLang img="metrics-chart-new-set-custom-time.png" desc="Time setting" />
+:::
 
 ### Selecting a target
 
@@ -218,7 +212,7 @@ See details for each item displayed in the chart widget.
 
 - ![Number 04](/img/number-04.png) **Data**: You can check the maximum value (***Max***) of the data viewed from the monitoring targets and the data merge method (***Value Type***).
 
-- ![Number 05](/img/number-05.png) **Legend**: It displays the monitoring targets as a legend.
+- ![Number 05](/img/number-05.png) **Legend**: It displays the monitoring targets as a legend. For more information about the display of legend, see [the following](#otheroptions).
 
 - ![Number 06](/img/number-06.png) **Chart**: It displays the viewed data in a time series graph. If you hover your mouse pointer over the graph, you can see detailed information through a tooltip. By dragging a specific area of the chart, you can change the time according to the dragged range for a view.
 
@@ -259,6 +253,20 @@ To check the detailed information about the chart data in a wider screen, select
 ### ![](/img/ico-trash.svg) Removing the chart widget
 
 To remove any chart widgets placed on the screen, select ![Delete icon](/img/ico-trash.svg).
+
+### Using the legend {#legend}
+
+You can check the monitoring targets displayed on the chart through the legend and then sort or filter them by desired criteria. You can show or hide the legend on the right of the widget's chart by turning on or off the <Cmdname sid="CNT08053" className="uitext" /> option at the top of the screen. With the option turned off, you can check and select the monitoring targets by clicking <Cmdname sid="TTL07590" className="uitext" />.
+
+<ImgLang img="metrics-chart-new-legend-on-off.png" desc="Show widget legend" />
+
+- In the legend list, you can sort monitored objects by name, maximum value, or average value.
+
+  <ImgLang img="metrics-chart-new-legend-order.png" desc="Show widget legend" />
+
+- Hovering over each item in the legend list can highlight the graph for the monitored object. Alternatively, you can filter by selecting a target from the legend list.
+
+  ![Widget legend display](/img/metrics-chart-new-legend-filter.gif)
 
 ### Using additional options
 
@@ -414,7 +422,7 @@ For more information about <Cmdname sid="side_counter" className="uitext" /> <co
 
 :::
 
-### Using other options
+## Using other options {#otheroptions}
 
 Other options below allow you to adjust the layout of the dashboard or easily and conveniently batch set the applied options to the widgets.
 
@@ -428,7 +436,7 @@ Other options below allow you to adjust the layout of the dashboard or easily an
 
   :::
 
-- <Cmdname sid="CNT08053" className="uitext" />: Turning the option on or off can show or hide the legend at the bottom of the widget's chart.
+- <Cmdname sid="CNT08053" className="uitext" />: Turning the option on or off shows or hides the legend on the right of the widget's chart. With the option turned off, you can check and select the monitoring targets by clicking <Cmdname sid="TTL07590" className="uitext" />. For more information about the use of legend, see [the following](#legend).
 
 - <Cmdname sid="CNT08054" className="uitext" />: When you hover your mouse pointer over the chart, you can see the value for the point on the graph through a tooltip. Turn on the option to view data for all targets in the time zone where the mouse pointer is located through the tooltip.
 

@@ -13,80 +13,94 @@ toc_max_heading_level: 2
 
 警告通知が発生した履歴を確認できます。 発生したすべてのイベント履歴一覧の照会が可能です。 
 
+## 基本画面ガイド
+
 <ImgLang img='event-history-server.png' desc='サーバーイベント履歴'/>
 
-- ![number1](/img/number-01.png) **上段オプション**
+### ![](/img/number-01.png)**ユーザー設定**
 
-  - <Cmdname sid="time_selector" className="uitext" />
+- <Cmdname sid="time_selector" className="uitext" />
 
-    - 右側の緑色のボタンを選択して、表示時間を選択することができます。基本設定は12時間です。
+  - 右側の緑色のボタンを選択して、表示時間を選択することができます。基本設定は12時間です。
 
-    - ![左アイコン](/img/left-arrow.svg)または ![右アイコン](/img/right-arrow.svg)ボタンを選択すると、選択した表示時間だけ間隔を移動します。
+  - ![左アイコン](/img/left-arrow.svg)または ![右アイコン](/img/right-arrow.svg)ボタンを選択すると、選択した表示時間だけ間隔を移動します。
 
-    - 詳細な時間を選択するには、日付または時間の領域を選択してください。詳細な時間を設定し、<Cmdname sid="apply" className="uitext" />ボタンを選択します。
+  - 詳細な時間を選択するには、日付または時間の領域を選択してください。詳細な時間を設定し、<Cmdname sid="apply" className="uitext" />ボタンを選択します。
 
-  - **_入力ウィンドウ_**  
+  :::note 
 
-    入力ウィンドウでサーバー名またはイベント名で検索できます。
+  タイムセレクターの利用方法の詳細については、[次の文書](usage-ui#timeselector)を参照してください。
 
-  - <Cmdname sid="exclude_resolved_alerts" className="uitext" />
+  :::
 
-    イベント履歴の一覧から**進行中のイベント**のみ照会できます。
+- **_入力ウィンドウ_**  
 
-  - <Cmdname sid="BTN06585" className="uitext" />
+  入力ウィンドウでサーバー名またはイベント名で検索できます。
 
-    イベント履歴一覧に<Cmdname sid="TTL06583" className="uitext" />カラムを追加できます。 
+- <Cmdname sid="exclude_resolved_alerts" className="uitext" />
 
-    :::note
+  イベント履歴の一覧から**進行中のイベント**のみ照会できます。
 
-    進行中のイベントは、<Cmdname sid="TTL06583" className="uitext" />を照会しません。
+- <Cmdname sid="BTN06585" className="uitext" />
 
-    :::
+  イベント履歴一覧に<Cmdname sid="TTL06583" className="uitext" />カラムを追加できます。 
 
-  - **_CSV_**
+  :::note
 
-    取得したイベント履歴結果をCSVで保存できます。<Cmdname sid="maximum_csv_lines" className="uitext" />を入力し<Cmdname sid="download" className="uitext" />ボタンを選択します。
+  進行中のイベントは、<Cmdname sid="TTL06583" className="uitext" />を照会しません。
 
-- ![number2](/img/number-02.png)**イベント履歴一覧**
+  :::
 
-  - <Cmdname sid="sms_alert_severity" className="uitext" />
+- **_CSV_**
 
-    リスクレベルは、 <span class='vslow'>Fatal</span>(危険), <span class='slow'>Warning</span>(警告)の色で表示されます。
+  取得したイベント履歴結果をCSVで保存できます。<Cmdname sid="maximum_csv_lines" className="uitext" />を入力し<Cmdname sid="download" className="uitext" />ボタンを選択します。
 
-  - <Cmdname sid="event_title" className="uitext" />
+### ![](/img/number-02.png)**イベント履歴一覧**
 
-    イベントポリシーで設定した値に基づいて発生したイベント名です。
+- <Cmdname sid="sms_alert_severity" className="uitext" />
 
-  - <Cmdname sid="event_time" className="uitext" />
+  リスクレベルは、 <span class='vslow'>Fatal</span>(危険), <span class='slow'>Warning</span>(警告)の色で表示されます。
 
-    イベントが発生した時刻です。
+- <Cmdname sid="event_title" className="uitext" />
 
-  - **_+_** <Cmdname sid="sms_alert_acknowledge" className="uitext" /><ScrollToLink anchor='scrollTo-alert-acknowledge' />
+  イベントポリシーで設定した値に基づいて発生したイベント名です。
 
-    イベント処理履歴を追加できます。
+- <Cmdname sid="event_time" className="uitext" />
 
-  - <Cmdname sid="server" className="uitext" />
+  イベントが発生した時刻です。
 
-    サーバー名です。 
+- <Cmdname sid="sms_alert_acknowledge" className="uitext" /><ScrollToLink anchor='scrollTo-alert-acknowledge' />
 
-  - <Cmdname sid="sms_alert_snapshot" className="uitext" />
+  イベント処理履歴を追加できます。
 
-    発生したイベントに対する<Cmdname sid="cpu" className="uitext" />、<Cmdname sid="memory_pused" className="uitext" />、<Cmdname sid="disk" className="uitext" />、<Cmdname sid="network" className="uitext" />へのスナップショット情報です。 
+  :::caution
 
-### イベント詳細情報
+  処理履歴を登録すると、当該イベントの<Cmdname sid="TTL06149" className="uitext" />は中止となります。<Cmdname sid="TTL06149" className="uitext" />についての詳細は、[次の文書](set-receive-event#escalation)を参照してください。
+
+  :::
+
+- <Cmdname sid="server" className="uitext" />
+
+  サーバー名です。 
+
+- <Cmdname sid="sms_alert_snapshot" className="uitext" />
+
+  発生したイベントに対する<Cmdname sid="cpu" className="uitext" />、<Cmdname sid="memory_pused" className="uitext" />、<Cmdname sid="disk" className="uitext" />、<Cmdname sid="network" className="uitext" />へのスナップショット情報です。 
+
+## イベント詳細情報
 
 イベント履歴リストから対象の<Cmdname sid="event_title" className="uitext" />を選択すると、イベント発生の前後5分間の<Cmdname sid="detail" className="uitext" />情報に移動します。
 
 <ImgLang img='server-event-detail.png' desc='サーバーイベント詳細'/>
 
-- ![number1](/img/number-01.png) **チャートウィジェット**
+### ![](/img/number-01.png) **チャートウィジェット**
 
-  アラーム発生の前後5分間の **_ CPU Usage_**、**_Memory Usage_**、**_Network_**、**_Disk I/O_** チャートを表示します。イベントに対象する部分の<Cmdname sid="sms_alert_severity" className="uitext" />を色付けして表示します。
+アラーム発生の前後5分間の **_ CPU Usage_**、**_Memory Usage_**、**_Network_**、**_Disk I/O_** チャートを表示します。イベントに対象する部分の<Cmdname sid="sms_alert_severity" className="uitext" />を色付けして表示します。
 
-- ![number2](/img/number-02.png) <Cmdname sid="sms_summary_process" className="uitext" />
+### ![](/img/number-02.png) <Cmdname sid="sms_summary_process" className="uitext" />
 
-  イベント対象プロセスの上位10個の情報を表示します。 
+イベント対象プロセスの上位10個の情報を表示します。 
 
-- ![number3](/img/number-03.png) <Cmdname sid="sms_alert_acknowledge_detail" className="uitext" />
+### ![](/img/number-03.png) <Cmdname sid="sms_alert_acknowledge_detail" className="uitext" />
 
-  イベントの処理履歴を表示できます。<Cmdname sid="sms_alert_acknowledge_add" className="uitext" />ボタンを選択すると、履歴を作成して保存できます。
+イベントの処理履歴を表示できます。<Cmdname sid="sms_alert_acknowledge_add" className="uitext" />ボタンを選択すると、履歴を作成して保存できます。

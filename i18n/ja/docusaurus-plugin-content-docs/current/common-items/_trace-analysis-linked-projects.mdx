@@ -1,6 +1,8 @@
 ### 連携プロジェクトの性能メトリクスを照会する
 
-<Cmdname sid="side_correlatedProjectManagement" className="uitext" />メニューでデータベースプロジェクトを追加すると、**DB Connectionステップ**で連携したプロジェクトの性能メトリクスを照会できます。
+<Cmdname sid="side_correlatedProjectManagement" className="uitext" />メニューでデータベースプロジェクトを追加すると、**DB Connectionステップ**及び**SQLステップ**で連携したプロジェクトの性能メトリクスを照会できます。
+
+#### DB Connectionステップで確認する
 
 <ImgLang img="linked-projects-check-widget-03.png" desc="Correlated project" />
 
@@ -23,5 +25,41 @@
 - 連携プロジェクトの追加と分析についての詳細は、[次の文書](linked-projects)を参照してください。
 
 - <Cmdname sid="TTL08442" className="uitext" />画面についての詳細は、[次の文書](linked-projects#TTL08442)を参照してください。
+
+:::
+
+#### SQLステップで確認する
+
+<ImgLang img="linked-projects-check-widget-03.png" desc="Correlated project" />
+
+<ImgLang img="linked-projects-check-widget-06.png" desc="Correlated project" />
+
+1. ダッシュボードで<Cmdname sid="AA005" className="uitext" />ウィジェットのチャート領域をドラッグします。
+
+2. <Cmdname sid="TTL06209" className="uitext" />画面が表示されたら、照会したいトランザクション項目を選択します。
+
+3. トランザクションの詳細情報が右側に表示されると、<Cmdname sid="TTL06126" className="uitext" />タブを選択します。
+
+4. SQLステップでSQL文を選択します。
+
+5. <UI>SQL</UI>画面が表示されたら、<Cmdname sid="BTN08518" className="uitext" />ボタンを選択します。
+
+6. <Cmdname sid="TTL07860" className="uitext" />画面が表示されたら、関連するメトリクスを確認します。
+
+:::note
+
+- 連携分析のために登録したデータベースプロジェクトのDBが現在選択したトランザクションのSQLを実行した場合のみ、<UI>SQL</UI>画面に<Cmdname sid="BTN08518" className="uitext" />ボタンが表示されます。
+
+- <Cmdname sid="BTN08840" className="uitext" />機能を利用すると変数をコピーして<Cmdname sid="TTL07860" className="uitext" />ウィンドウの<UI>SQL Text</UI>タブに変数を貼り付けることができます。 この機能は<Cmdname sid="BTN06764" className="uitext" />ボタンを選択してパスワードを入力した後、バインド変数の値が表示されるときに利用できます。
+
+- <Cmdname sid="TTL07860" className="uitext" />ウィンドウの詳細については[次の文書](linked-projects#TTL07860)を参照してください。
+
+- この機能をサポートするデータベースは、**PostgreSQL**、**Oracle**、**Oracle Pro**、**MySQL**プラットフォームです。
+
+- **PostgreSQL**プラットホームで<Cmdname sid="active_sessions" className="uitext" />テーブルの<UI>PID</UI>項目は、<UI>SID</UI>項目と同じです。
+
+  <ImgLang img="apm-linked-projects-postgresql-pid-sid.png" desc="SID" />
+
+  **Javaエージェント2.2.40**以前のバージョンでは<Cmdname sid="acttx" className="uitext" />ウィンドウで<UI>ThreadStat</UI>値が数字値形式で表示されます。 文字形式で表示するには[Javaエージェント2.2.40](../release-notes/java/java-2_2_40)バージョン以降をインストールします。
 
 :::

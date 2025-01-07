@@ -4,7 +4,7 @@
     "description": "Navbar item with label 시작하기"
   },
   "item.label.상품": {
-    "message": "製品",
+    "message": "サービス",
     "description": "Navbar item with label 상품"
   },
   "item.label.Java 모니터링": {
@@ -276,11 +276,11 @@
     "description": "Navbar item with label CUBRID V1 모니터링"
   },
   "item.label.Altibase V2 모니터링": {
-    "message": "Altibase V2モニタリング",
+    "message": "Altibase V2 モニタリング",
     "description": "Navbar item with label Altibase V2 모니터링"
   },
   "item.label.Altibase V1 모니터링": {
-    "message": "Altibase V1モニタリング",
+    "message": "Altibase V1 モニタリング",
     "description": "Navbar item with label Altibase V1 모니터링"
   },
   "item.label.Learning": {

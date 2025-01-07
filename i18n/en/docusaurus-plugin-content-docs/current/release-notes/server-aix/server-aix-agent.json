@@ -1,5 +1,33 @@
 [
   {
+    "url": "https://docs.whatap.io/en/release-notes/server-aix/server-aix-1_3_7",
+    "ver": "v1.3.7",
+    "date": "2024-12-13",
+    "Lists": [
+      {
+        "ver": "v1.3.7",
+        "hash": "v137",
+        "product": "Server AIX Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the data collection option in <span class=\"uitext\">Server Inventory Map</span>.</p>"
+      },
+      {
+        "ver": "v1.3.7",
+        "hash": "v137",
+        "product": "Server AIX Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the loading error of the Openssl Hash function.</p>"
+      },
+      {
+        "ver": "v1.3.7",
+        "hash": "v137",
+        "product": "Server AIX Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Improved processing the agent logs.</p>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/en/release-notes/server-aix/server-aix-1_3_5",
     "ver": "v1.3.5",
     "date": "2024-10-17",
@@ -10,20 +38,6 @@
         "product": "Server AIX Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\" type=\"1\">Fixed</code> Fixed the issue where the Oname fixing option does not work.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/server-aix/server-aix-1_3_6",
-    "ver": "v1.3.6",
-    "date": "2024-11-11",
-    "Lists": [
-      {
-        "ver": "v1.3.6",
-        "hash": "v136",
-        "product": "Server AIX Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the issue where network data is not collected when the OS language set is Korean.</p>"
       }
     ]
   },
@@ -59,6 +73,20 @@
         "product": "Server AIX Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the AIX server CPU logical core analysis error: fixed the over-measurement error related to the process CPU.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server-aix/server-aix-1_3_6",
+    "ver": "v1.3.6",
+    "date": "2024-11-11",
+    "Lists": [
+      {
+        "ver": "v1.3.6",
+        "hash": "v136",
+        "product": "Server AIX Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the issue where network data is not collected when the OS language set is Korean.</p>"
       }
     ]
   }

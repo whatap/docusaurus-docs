@@ -10,6 +10,8 @@ keywords:
   - Server
 ---
 
+import ServerInventoryFilter from "../common-items/_server-inventory-filter.mdx";
+
 ホーム画面 &gt; プロジェクト選択 &gt; <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_serverInventoryMap" className="uitext" />
 
 {/* :::note 
@@ -169,6 +171,12 @@ WhaTapは<Cmdname sid="side_serverInventoryMap" className="uitext" />これに�
 | リアルタイム照会(Live) | 基本モード<br/>インターバル5秒 |
 | 一時停止照会(Pause)  | リアルタイム状態変更OFF      |
 
+:::note 
+
+タイムセレクターの利用方法の詳細については、[次の文書](usage-ui#timeselector)を参照してください。
+
+:::
+
 #### グループ化
 
 {/* 1. 업무그룹 대 - 업무 그룹 중 (활용 예시)(나중에 12월?)
@@ -226,13 +234,7 @@ WhaTapは<Cmdname sid="side_serverInventoryMap" className="uitext" />これに�
 
 <Cmdname sid="side_serverInventoryMap" className="uitext" />は、ダッシュボードに表示するサーバー種類のフィルター機能を提供します。 フィルターを介して適用されたデータは、サーバー グループチャート、要約ビュー、および詳細ビューに反映されます。
 
-- ***フィルタキー***：フィルターは<Cmdname sid="side_serverInventory" className="uitext" />メニューで提供される基本収集カラムとユーザーが定義したカスタムカラムを基準に設定できます。
-
-  - 基本収集カラム：<Cmdname sid="side_serverInventory" className="uitext" />で自動収集されたデータ項目であり、***サーバータイプ***、***基本グループ***、***OSタイプ***、***OSバージョン***、***モデル***、***シリアル***カラム項目です。
-
-  - カスタムカラム：ユーザーがプロジェクトごとに追加して管理する項目です。
-
-- ***フィルター条件***：フィルター条件は、一致、不一致、包含、除外などの文字列条件で設定できます。 すべてのフィルターは文字列ベースで適用され、数字型条件(例、`≥`, `≤`)はサポートしていません。
+<ServerInventoryFilter />
 
 ### ![2](/img/number-02.png)サーバー構成状況
 

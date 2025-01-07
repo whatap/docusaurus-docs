@@ -1,0 +1,20 @@
+---
+id: dbx-2_3_0
+title: DBX v2.3.0
+pagination_next: release-notes/db/dbx-2_2_9
+displayed_sidebar: releaseSidebar
+---
+
+2024年12月19日
+
+## PostgreSQL
+
+- <Status priority='1'>Feature</Status> Amazon Aurora指標を追加
+
+  - `cpu`
+  - `active_txns`
+  - `log_stream_speed_in_kib_per_second`
+  - `pending_read_ios`
+  - `read_ios`
+
+- <Status priority='0'>Fixed</Status> PostgreSQL 17 バージョン未満で発生する`vacuum`、`statement`エラーを修正

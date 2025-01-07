@@ -1,7 +1,6 @@
 ---
 id: welcome-to-whatapdocs
 title: Welcome aboard to WhaTap!
-displayed_sidebar: indexSidebar
 description: The following introduces the WhaTap Docs pages.
 ---
 
@@ -15,15 +14,20 @@ description: The following introduces the WhaTap Docs pages.
 
 ## Guide to WhaTap Docs
 
-**WhaTap Docs** can help you efficiently use WhaTap Monitoring. It provides various usages and recommendations, from step-by-step agent installation to settings for the dashboard, Flex board (custom dashboard), performance metrics, and notifications.  
+**WhaTap Docs** can help you efficiently use WhaTap Monitoring. It provides various usages and recommendations, from step-by-step agent installation to settings for the dashboard, Flex board (custom dashboard), performance metrics, and notifications. 
 
-In [Docs Home](./), you can see [Shortcuts for each product documenation](./#shortcut-product) and the main menus on the left. 
+You can check the technical documentation structure, including shortcuts to [Product](./#shortcut-product) and detailed searches on the [Docs Home screen](./). 
+
+{/* 
+[Docs 홈 화면](./)에서 [상품별 문서 바로가기](./#shortcut-product)와 다음과 같은 기술 문서 구성을 확인할 수 있습니다.
+
+- You can use the detailed search feature from the **Detailed Search** technical documentation home screen. 텍스트 입력 시 검색 목록을 확인할 수 있고, Enter 키를 투 */}
 
 <ImgLang img='whatap-docs-upper.png' desc=''/>
 
-- The fixed top menus allow you to move freely to WhaTap Docs pages. 
-
 - If you select the **WhaTap Docs** icon, the Docs Home screen appears.
+
+- Through the fixed top menu, you can freely move between product guide documents, management documents, open API statements and FAQs, and learning documents within WhaTap Docs. 
 
 - WhaTap Docs supports multilingual guidance. Select a desired language from the language option above.
 
@@ -71,29 +75,47 @@ In [Docs Home](./), you can see [Shortcuts for each product documenation](./#sho
 
   :::
 
+<ImgLang img='whatap-docs-main-r.png' desc=''/>
+
+### Detailed Search
+
+You can use the detailed search feature from the technical documentation home screen. When you enter text in the search bar, the list of related search results appears. Press Enter to display the **Detailed Search** screen. **Detailed Search** filters search results by product category to help you easily find the desired information.
+
+:::note 
+
+You can see the recommended documents and new documents from WhaTap Docs at the bottom of the search bar.
+
+:::
+
 ### Getting started
 
-[Getting Started](./) introduces the WhaTap Monitoring services and guides you to the service flow to help you understand the platform features and user experiences. 
+The following introduces the WhaTap monitoring service and guides you to the service flow to help you experience the platform and understand features. 
 
-- If you select [Getting Started](./), Home screen appears. 
+#### Quick Guide
 
-- In the [Support Environment](support-env) document, you can see an overview of the support environments for each WhaTap monitoring service product. 
+For users who are new to the WhaTap monitoring service, an overview is provided to the service usage flow step by step, from membership registration to project creation, agent installation, and dashboard viewing. When you select a desired topic, the corresponding guide appears in the [Quick guide](quick-guide) document. 
 
-- The [Home screen (UI) guide](main-ui-intro-v2) document guides you on how to use the initial screen of the service. 
+#### Before starting
 
 - For more information about WhaTap Monitoring services, see [WhaTap Monitoring Service Guide](whatap-overview).
 
+- In the [Support Environment](support-env) document, you can see an overview of the support environments for each WhaTap monitoring service product. 
+
 - If you use WhaTap Monitoring for the first time, see [Quick Guide](quick-guide).
 
-- To use the WhaTap monitoring service efficiently, see the [learning](learning-guides) document that guides you to the dashboard analysis and use cases. 
+- For more information on how to use the WhaTap Monitoring Service mobile app, see the [Mobile App](mobile-app.mdx) document. 
+
+- The [Home screen (UI) guide](main-ui-intro-v2) document guides you on how to use the initial screen of the service. 
+
+{/* \* 와탭 모니터링 서비스를 효율적으로 이용하고 싶다면 대시보드 분석 및 활용 사례를 안내하는 [학습하기](learning-guides) 문서를 참조하세요. 
 
 - For more information about the proxy configuration based on the WhaTap software, see the [Software Proxy](software-proxy) document.
 
-- To see new features and major changes in the WhaTap monitoring service at a glance, see the [New features](blog) document. 
+- To see new features and major changes in the WhaTap monitoring service at a glance, see the [New features](blog) document.  */}
 
 ### Product
 
-In **Shortcuts for each product documentation**, the guides from product installation to configuration and usage tips are provided. 
+The [Product](./#shortcut-product) menu provides shortcuts to the integrated guide for the product selected by the user, from installation to setup and usage instructions. 
 
 - Check the **support environment** before installing agents. 
 
@@ -103,9 +125,9 @@ In **Shortcuts for each product documentation**, the guides from product install
 
 - Read agent setup options and **management** tips from update to deletion. 
 
-- In the **Learn about the main features** on the service screen, look at the settings for <Cmdname sid='dashboard' className='uitext' />, <Cmdname sid='flexboard' className='uitext' />, <Cmdname sid='report' className='uitext' />, and <Cmdname sid="event_statistic" className="uitext" />.
+- Learn how to set <Cmdname sid='dashboard' className='uitext' />, <Cmdname sid='flexboard' className='uitext' />, <Cmdname sid='report' className='uitext' />, and <Cmdname sid="event_statistic" className="uitext" />.
 
-Documents for each product can be found in the main menus on the left of the [Docs Home screen](./) or in the **Product** menu at the top.
+You can check the documents for each product from the [Product](./#shortcut-product) shortcut in the [Docs Home screen](./) or from the **Product document shortcut** menu at the fixed top.
 
 ### Management
 
@@ -119,17 +141,45 @@ Documents for each product can be found in the main menus on the left of the [Do
 
 - Once the 15-day free trial period has expired, check your payment information and see the method to switch to a paid service.
 
-### Reference
+### What's New
 
-[Reference](reference) introduces a collection of key concepts and terms used in WhaTap Docs. It provides the [definition of metrics](metrics/common-metrics-intro), [grammar and commands of MXQL](mxql/mxql-overview) that is the query language for viewing WhaTap metrics, [Open API usage guide](openapi-spec), and [glossary]. We also provide the product-specific documents as PDF files. PDF files are provided at the start of each month reflecting the last update. The [FAQ] document is to be updated continuously. 
+#### New features
 
-### Release Notes
+The [New features] (blog) menu provides a timeline-based service overview and quarterly guidance to the WhaTap monitoring service. In case of **service overview**, you can see new features at a glance by timeline and they are constantly updated. In case of the **quarterly guidance**, it provides a quarterly summary of new features and notable changes for each WhaTap product, as well as an overview of services and agents. 
+
+:::note 
+
+For quarterly guidance, only Korean guidance is now available. 
+
+:::
+
+#### Release Notes
 
 [Release Notes](release-notes) provides information about new features, improvements, and important security patches. For user convenience, service release notes and agent-specific release notes are provided separately.
 
-### New features
+### Reference
 
-The [New features] (blog) menu provides a timeline-based service overview and quarterly guidance to the WhaTap monitoring service. In case of service overview, you can see new features at a glance by timeline. For quarterly guidance, it provides a quarterly summary of new features and notable changes for each WhaTap product, as well as an overview of services and agents. Currently, only the Korean version is provided. 
+The [Reference document](reference) menu introduces the following key materials: 
+
+- [Open API](openapi-spec): Guide on how to use the Open API for the monitoring service
+
+- [License](/license/licenses): Guide to open source licenses and related libraries used by WhaTap
+
+- [Software Proxy](software-proxy): Guide on how to install and configure the WhaTap software proxy
+
+- [FAQ](faq): Frequently asked questions and solutions while using the service
+
+:::note 
+
+The [FAQ] document is to be updated continuously.
+
+:::
+
+{/* 와탭 Docs에서 사용하는 주요 개념 및 용어에 대한 자료집을 소개합니다. It provides the [definition of metrics](metrics/common-metrics-intro), [grammar and commands of MXQL](mxql/mxql-overview) that is the query language for viewing WhaTap metrics, [Open API usage guide](openapi-spec), and [glossary]. We also provide the product-specific documents as PDF files. PDF files are provided at the start of each month reflecting the last update. */}
+
+### Learning
+
+The [Learning] document menu provides dashboard analysis and use case guides that complement the basic guide documents to help you efficiently use the WhaTap monitoring service, as well as an [MXQL Guide](/mxql/mxql-overview) and a [Glossary](glossary) on key concepts and terms. The related contents are to be updated continuously.
 
 :::note
 

@@ -1,6 +1,8 @@
 ### Viewing the linked project performance metrics
 
-If you add a database project through the <Cmdname sid="side_correlatedProjectManagement" className="uitext" /> menu, you can see the performance metrics of the project linked in the **DB connection step**.
+If you add a database project through the <Cmdname sid="side_correlatedProjectManagement" className="uitext" /> menu, you can see the performance metrics of the project linked in the **DB connection step** and **SQL step.
+
+#### Checking in the DB connection step
 
 <ImgLang img="linked-projects-check-widget-03.png" desc="Correlated project" />
 
@@ -23,5 +25,41 @@ If you add a database project through the <Cmdname sid="side_correlatedProjectMa
 - For more detailed information about adding and analyzing a linked project, see [the following] (linked-projects).
 
 - For more information about the <Cmdname sid="TTL08442" className="uitext" /> window, see [the following](linked-projects#TTL08442).
+
+:::
+
+#### Checking in the SQL step
+
+<ImgLang img="linked-projects-check-widget-03.png" desc="Correlated project" />
+
+<ImgLang img="linked-projects-check-widget-06.png" desc="Correlated project" />
+
+1. Drag the chart area of ​​the <Cmdname sid="AA005" className="uitext" /> widget on the dashboard.
+
+2. When the <Cmdname sid="TTL06209" className="uitext" /> window appears, select a transaction to view.
+
+3. When the transaction details appear on the right, select the <Cmdname sid="TTL06126" className="uitext" /> tab.
+
+4. Select a SQL statement in the SQL step.
+
+5. If the <UI>SQL</UI> window appears, select <Cmdname sid="BTN08518" className="uitext" />.
+
+6. When the <Cmdname sid="TTL07860" className="uitext" /> window appears, check the related metrics.
+
+:::note
+
+- The <Cmdname sid="BTN08518" className="uitext" /> button appears in the <UI>SQL</UI> window only when the DB of the database project registered for linked analysis executes the SQL statement of the selected transaction.
+
+- The <Cmdname sid="BTN08840" className="uitext" /> feature allows you to copy variables and paste them into the <UI>SQL Text</UI> tab of the <Cmdname sid="TTL07860" className="uitext" /> window. This feature is available when you select <Cmdname sid="BTN06764" className="uitext" />, enter the password, and then display the value of the bind variable.
+
+- For more information about the <Cmdname sid="TTL07860" className="uitext" /> window, see [the following](linked-projects#TTL07860).
+
+- The databases that support this feature are **PostgreSQL**, **Oracle**, **Oracle Pro**, and **MySQL** platforms.
+
+- On the **PostgreSQL** platform, the <UI>PID</UI> entry in the <Cmdname sid="active_sessions" className="uitext" /> table is the same as the <UI>SID</UI> entry.
+
+  <ImgLang img="apm-linked-projects-postgresql-pid-sid.png" desc="SID" />
+
+  In **the versions before Java Agent 2.2.40**, the <UI>ThreadStat</UI> values appear in numeric format on the <Cmdname sid="acttx" className="uitext" /> window. To display in text format, install [Java Agent 2.2.40](../release-notes/java/java-2_2_40) or later.
 
 :::

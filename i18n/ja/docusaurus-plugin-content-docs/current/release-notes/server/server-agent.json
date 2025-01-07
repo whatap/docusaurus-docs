@@ -1,5 +1,47 @@
 [
   {
+    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_7_3",
+    "ver": "v2.7.3",
+    "date": "2024-12-09",
+    "Lists": [
+      {
+        "ver": "v2.7.3",
+        "hash": "v273",
+        "product": "Server Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Windows環境でw32tm時間の同期化収集機能を追加</p>"
+      },
+      {
+        "ver": "v2.7.3",
+        "hash": "v273",
+        "product": "Server Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Windows Event log収集時に従来のWMI方式をEvent Subscription方式に変更</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_7_1",
+    "ver": "v2.7.1",
+    "date": "2024-11-13",
+    "Lists": [
+      {
+        "ver": "v2.7.1",
+        "hash": "v271",
+        "product": "Server Agent",
+        "type": "New",
+        "desc": "<li><code class=\"New\" type=\"1\">New</code>Linuxサービスのモニタリングを追加</li>"
+      },
+      {
+        "ver": "v2.7.1",
+        "hash": "v271",
+        "product": "Server Agent",
+        "type": "Changed",
+        "desc": "<li><code class=\"Changed\" type=\"0\">Changed</code>メモリの使いすぎを防止するため、収集命令の実行遅延時に重複実行が発生しないようにロジックを改善</li>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/ja/release-notes/server/server-2_6_7",
     "ver": "v2.6.7",
     "date": "2024-09-03",
@@ -17,6 +59,41 @@
         "product": "Server Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> プロセスFile Descriptor数の収集エラーを改善</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_7_2",
+    "ver": "v2.7.2",
+    "date": "2024-11-27",
+    "Lists": [
+      {
+        "ver": "v2.7.2",
+        "hash": "v272",
+        "product": "Server Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Windows、Linux環境で<span class=\"uitext\">サーバーインベントリマップ</span>メトリクス収集機能を追加</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_7_4",
+    "ver": "v2.7.4",
+    "date": "2024-12-17",
+    "Lists": [
+      {
+        "ver": "v2.7.4",
+        "hash": "v274",
+        "product": "Server Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Windowsイベントログの収集時に<code>eventType</code>及び<code>eventId</code>の指定できないエラーを修正</p>"
+      },
+      {
+        "ver": "v2.7.4",
+        "hash": "v274",
+        "product": "Server Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code>ログの収集時に、指定されたプロジェクトに転送できるように機能を改善</p>"
       }
     ]
   },
@@ -49,55 +126,6 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_7_0",
-    "ver": "v2.7.0",
-    "date": "2024-10-22",
-    "Lists": [
-      {
-        "ver": "v2.7.0",
-        "hash": "v270",
-        "product": "Server Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code>ユーザースクリプトの登録過程でvalidationメッセージを追加</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_7_1",
-    "ver": "v2.7.1",
-    "date": "2024-11-13",
-    "Lists": [
-      {
-        "ver": "v2.7.1",
-        "hash": "v271",
-        "product": "Server Agent",
-        "type": "New",
-        "desc": "<li><code class=\"New\" type=\"1\">New</code>Linuxサービスのモニタリングを追加</li>"
-      },
-      {
-        "ver": "v2.7.1",
-        "hash": "v271",
-        "product": "Server Agent",
-        "type": "Changed",
-        "desc": "<li><code class=\"Changed\" type=\"0\">Changed</code>メモリの使いすぎを防止するため、収集命令の実行遅延時に重複実行が発生しないようにロジックを改善</li>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_6_6",
-    "ver": "v2.6.6",
-    "date": "2024-08-19",
-    "Lists": [
-      {
-        "ver": "v2.6.6",
-        "hash": "v266",
-        "product": "Server Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code>不要なGPU指標フィールドの過剰収集による表示エラーを改善</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/ja/release-notes/server/server-2_6_9",
     "ver": "v2.6.9",
     "date": "2024-10-04",
@@ -119,16 +147,30 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_7_2",
-    "ver": "v2.7.2",
-    "date": "2024-11-27",
+    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_7_0",
+    "ver": "v2.7.0",
+    "date": "2024-10-22",
     "Lists": [
       {
-        "ver": "v2.7.2",
-        "hash": "v272",
+        "ver": "v2.7.0",
+        "hash": "v270",
         "product": "Server Agent",
         "type": "Feature",
-        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Windows、Linux環境で<span class=\"uitext\">サーバーインベントリマップ</span>メトリクス収集機能を追加</p>"
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code>ユーザースクリプトの登録過程でvalidationメッセージを追加</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_6_6",
+    "ver": "v2.6.6",
+    "date": "2024-08-19",
+    "Lists": [
+      {
+        "ver": "v2.6.6",
+        "hash": "v266",
+        "product": "Server Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code>不要なGPU指標フィールドの過剰収集による表示エラーを改善</p>"
       }
     ]
   },
@@ -147,6 +189,48 @@
     ]
   },
   {
+    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_6_1",
+    "ver": "v2.6.1",
+    "date": "2024-06-26",
+    "Lists": [
+      {
+        "ver": "v2.6.1",
+        "hash": "v261",
+        "product": "Server Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Red Hat系列のLinuxで、<code>rpm -a</code>が周期的に実行されるエラーを修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_6_3",
+    "ver": "v2.6.3",
+    "date": "2024-07-24",
+    "Lists": [
+      {
+        "ver": "v2.6.3",
+        "hash": "v263",
+        "product": "Server Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code>サーバーインベントリの収集オプションを追加</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_6_2",
+    "ver": "v2.6.2",
+    "date": "2024-07-16",
+    "Lists": [
+      {
+        "ver": "v2.6.2",
+        "hash": "v262",
+        "product": "Server Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Windowsエージェントでbat、powershellスクリプトの実行機能を追加</p>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/ja/release-notes/server/server-2_6_4",
     "ver": "v2.6.4",
     "date": "2024-07-29",
@@ -161,16 +245,16 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_6_1",
-    "ver": "v2.6.1",
-    "date": "2024-06-26",
+    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_5_9",
+    "ver": "v2.5.9",
+    "date": "2024-05-24",
     "Lists": [
       {
-        "ver": "v2.6.1",
-        "hash": "v261",
+        "ver": "v2.5.9",
+        "hash": "v259",
         "product": "Server Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Red Hat系列のLinuxで、<code>rpm -a</code>が周期的に実行されるエラーを修正</p>"
+        "type": "Feature",
+        "desc": "<li><code class=\"Feature\">Feature</code> zfs v2.2対応の追加</li>"
       }
     ]
   },
@@ -203,48 +287,6 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_6_3",
-    "ver": "v2.6.3",
-    "date": "2024-07-24",
-    "Lists": [
-      {
-        "ver": "v2.6.3",
-        "hash": "v263",
-        "product": "Server Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code>サーバーインベントリの収集オプションを追加</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_5_9",
-    "ver": "v2.5.9",
-    "date": "2024-05-24",
-    "Lists": [
-      {
-        "ver": "v2.5.9",
-        "hash": "v259",
-        "product": "Server Agent",
-        "type": "Feature",
-        "desc": "<li><code class=\"Feature\">Feature</code> zfs v2.2対応の追加</li>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_6_2",
-    "ver": "v2.6.2",
-    "date": "2024-07-16",
-    "Lists": [
-      {
-        "ver": "v2.6.2",
-        "hash": "v262",
-        "product": "Server Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Windowsエージェントでbat、powershellスクリプトの実行機能を追加</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/ja/release-notes/server/server-2_5_8",
     "ver": "v2.5.8",
     "date": "2024-05-21",
@@ -273,34 +315,6 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_5_3",
-    "ver": "v2.5.3",
-    "date": "2024-03-07",
-    "Lists": [
-      {
-        "ver": "v2.5.3",
-        "hash": "v253",
-        "product": "Server Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Windows OSにおけるServerエージェントのCPU使用の最適化、WMIメソッド呼び出しの最小化</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_5_2",
-    "ver": "v2.5.2",
-    "date": "2024-02-13",
-    "Lists": [
-      {
-        "ver": "v2.5.2",
-        "hash": "v252",
-        "product": "Server Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\">New</code>Windows OSのイベントログのうち、必要な条件を満たす件をWhaTapログに収集可能</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/ja/release-notes/server/server-2_5_5",
     "ver": "v2.5.5",
     "date": "2024-03-13",
@@ -315,6 +329,20 @@
     ]
   },
   {
+    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_5_3",
+    "ver": "v2.5.3",
+    "date": "2024-03-07",
+    "Lists": [
+      {
+        "ver": "v2.5.3",
+        "hash": "v253",
+        "product": "Server Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Windows OSにおけるServerエージェントのCPU使用の最適化、WMIメソッド呼び出しの最小化</p>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/ja/release-notes/server/server-2_5_4",
     "ver": "v2.5.4",
     "date": "2024-03-11",
@@ -325,20 +353,6 @@
         "product": "Server Agent",
         "type": "New",
         "desc": "<p><code class=\"New\">New</code> サーバー時間の同期化コマンドである <code>ntpq -p</code>結果を通じて時系列でモニタリングする機能を追加</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_5_1",
-    "ver": "v2.5.1",
-    "date": "2024-01-26",
-    "Lists": [
-      {
-        "ver": "v2.5.1",
-        "hash": "v251",
-        "product": "Server Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code>ネットワークのカード名に<code>+</code>がある場合、性能収集障害が発生するエラーを修正</p>"
       }
     ]
   },
@@ -378,27 +392,6 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_7_3",
-    "ver": "v2.7.3",
-    "date": "2024-12-09",
-    "Lists": [
-      {
-        "ver": "v2.7.3",
-        "hash": "v273",
-        "product": "Server Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Windows 환경에서 w32tm 시간 동기화 수집 기능 추가</p>"
-      },
-      {
-        "ver": "v2.7.3",
-        "hash": "v273",
-        "product": "Server Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Windows Event log 수집 시 기존의 WMI 방식을 Event Subscription 방식으로 변경</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/ja/release-notes/server/server-2_5_0",
     "ver": "v2.5.0",
     "date": "2024-01-24",
@@ -409,6 +402,34 @@
         "product": "Server Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\">Fixed</code>Naverクラウド環境にサーバーモニタリングエージェントをインストールする場合、タグに<code>uptime</code>が収集されて<code>uptime</code>イベントを適用できないエラーを修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_5_2",
+    "ver": "v2.5.2",
+    "date": "2024-02-13",
+    "Lists": [
+      {
+        "ver": "v2.5.2",
+        "hash": "v252",
+        "product": "Server Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\">New</code>Windows OSのイベントログのうち、必要な条件を満たす件をWhaTapログに収集可能</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/server/server-2_5_1",
+    "ver": "v2.5.1",
+    "date": "2024-01-26",
+    "Lists": [
+      {
+        "ver": "v2.5.1",
+        "hash": "v251",
+        "product": "Server Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code>ネットワークのカード名に<code>+</code>がある場合、性能収集障害が発生するエラーを修正</p>"
       }
     ]
   }

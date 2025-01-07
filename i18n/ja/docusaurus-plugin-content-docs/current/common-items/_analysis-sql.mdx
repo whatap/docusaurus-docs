@@ -20,6 +20,12 @@
 
   ![Operation Count](/img/db-analysis-sql-access-statistics-op-count.png)
 
+:::note
+
+<Cmdname sid="time" className="uitext" />オプションの利用方法の詳細については、[次の文書](usage-ui#timeselector)を参照してください。
+
+:::
+
 {/* 쿼리 자세히 보기 */}
 import QueryDetails from "../common-items/_db-query-details.mdx";
 
@@ -27,7 +33,17 @@ import QueryDetails from "../common-items/_db-query-details.mdx";
 
 ### 参照結果フィルタリング
 
-照会したSQLリストで<Cmdname sid="filter" className="uitext" />オプションを通じて**Full Scan**または**Index Scan**基準で結果をフィルタリングできます。
+照会された結果で次の項目の値に基づいて、希望する結果をフィルタリングできます。
+
+:::info
+
+- ***Access Type***: **Full Scan**または**Index Scan**に基づいて結果をフィルタリングできます。
+
+- ***Object Name***: オブジェクト名に基づいてフィルタリングできます。
+
+:::
+
+#### Access Typeフィルター条件を追加する
 
 1. <Cmdname sid="filter" className="uitext" />オプションを選択してください。
 
@@ -45,6 +61,36 @@ Full Scan、Index Scanをすべて検索するには、<Cmdname sid="TTL06737" c
 
 :::
 
+#### Object Nameフィルター条件を追加する
+
+<ImgLang img="db-analysis-sql-access-object-filter-add.png" desc="フィルター" />
+
+1. <Cmdname sid="filter" className="uitext" />オプションで<LinkImage img="ico-add.svg" className="ico" />ボタンを選択します。
+
+2. <Cmdname sid="TTL06617" className="uitext" />ポップアップで***Object Name***項目と<Cmdname sid="equal" className="uitext" />条件を選択します。
+
+3. 空の入力欄を選択し、表示されるオブジェクトの一覧から目的のオブジェクト名を選択します。
+
+4. <Cmdname sid="apply" className="uitext" />ボタンを選択します。
+
+5. 選択した条件をSQLリストに反映するには、![検索アイコン](/img/ico-btn-search.png)ボタンを選択してください。
+
+:::note
+
+- フィルタリング条件を追加するには、<Cmdname sid="bsm_button_add" className="uitext" />ボタンを選択し、1 ~ 5の手順を繰り返します。 追加した条件は、AND(`&&`) 条件として適用されます。
+
+- 条件を追加する時に一部の項目を削除するには、フィルター条件の右側の![削除アイコン](/img/ico-trash.svg)ボタンを選択します。 全体の条件を削除するには、![削除アイコン](/img/ico-trash.svg) <Cmdname sid="BTN06616" className="uitext" />ボタンを選択します。
+
+- <Cmdname sid="filter" className="uitext" />オプションに適用された条件をすばやく削除するには、<LinkImage img="ico-close.svg" className="ico" />ボタンを選択します。
+
+:::
+
+#### フィルター条件を修正する
+
+<ImgLang img="db-analysis-sql-access-object-filter-edit.png" desc="フィルターの修正" />
+
+<Cmdname sid="filter" className="uitext" />オプションに適用されている項目をクリックします。 <Cmdname sid="TTL06737" className="uitext" />画面が表示されたら、必要な項目を修正し<Cmdname sid="apply" className="uitext" />ボタンを選択します。
+
 ## Plan Change History {#plan_change_history}
 
 同一のSQL IDを持つSQL文がオプティマイザによって他の実行プランに変更された場合を感知します。 これは性能に影響を与える可能性があるため、モニタリングが必要です。 プラン変更による性能変化を感知して対応し、不要なプラン変更を識別してSQL性能の一貫性を維持できます。
@@ -53,7 +99,13 @@ Full Scan、Index Scanをすべて検索するには、<Cmdname sid="TTL06737" c
 
 画面上で照会時間と対象を選択してください。 <Cmdname sid="time" className="uitext" />と<Cmdname sid="instance" className="uitext" />オプションを設定した後![検索アイコン](/img/ico-btn-search.png)ボタンを選択してください。
 
-***Plan Change Count***セクションは、時間帯別のプラン変更が起きた回数を確認できる棒グラフチャートです。 特定の時間帯を選択すると、選択した時間のプラン変更の一覧を表示します。 
+***Plan Change Count***セクションは、時間帯別のプラン変更が起きた回数を確認できる棒グラフチャートです。 特定の時間帯を選択すると、選択した時間のプラン変更の一覧を表示します。
+
+:::note
+
+<Cmdname sid="time" className="uitext" />オプションの利用方法の詳細については、[次の文書](usage-ui#timeselector)を参照してください。
+
+:::
 
 ### Plan変更事項を確認する
 

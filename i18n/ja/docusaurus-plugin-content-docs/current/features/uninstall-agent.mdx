@@ -1,0 +1,32 @@
+---
+id: uninstall-agent
+title: エージェント削除
+description: フィーチャプロジェクトデータ収集の非活性化及びエージェントのアンインストールのプロセスについて説明します。
+keywords:
+  - Features
+  - Featureプロジェク
+  - エージェント
+---
+
+**フィーチャープロジェクト**(<code class='Features'>Features</code>)インストール後、サーバー エージェントを維持しながらデータ収集を非活性化するか、サーバー エージェントを完全に削除する方法を次のように案内します。
+
+## エージェントの維持及びデータ収集の非活性化
+
+サーバー エージェントを維持しフィーチャプロジェクトデータ収集を非活性化するには*whatap.conf* ファイルで関連設定を削除した後`whatap-infra`サービスを再起動します。 次の例を参照にしてください。 
+
+1. *whatap.conf*ファイルで次の設定を削除します。
+
+   ```bash title='whatap.conf'
+   internal.forwarder.enabled=true
+   telegraf.sidecar.enabled=true
+   telegraf.sidecar.executable=/usr/whatap/infra/feature/telegraf
+   ```
+2. 設定の修正後`whatap-infra`サービスを再起動します。 
+
+   ```bash
+   systemctl restart whatap-infra
+   ```
+
+## エージェント削除
+
+サーバーエージェント及びフィーチャプロジェクトを完全に削除するには[次の文書](/server/agent-remove/)を参照してください。

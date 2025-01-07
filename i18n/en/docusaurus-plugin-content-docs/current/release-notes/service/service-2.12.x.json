@@ -1,0 +1,473 @@
+[
+  {
+    "url": "https://docs.whatap.io/en/release-notes/service/service-2_12_x",
+    "ver": "Service 2.12.2",
+    "date": "2024-12-26",
+    "Lists": [
+      {
+        "ver": "Service 2.12.2",
+        "hash": "service-2122",
+        "product": "Application",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Upon reentry to <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Application Dashboard</span>, fixed the issue where the data is not displayed.</p>"
+      },
+      {
+        "ver": "Service 2.12.2",
+        "hash": "service-2122",
+        "product": "Application",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In the <span class=\"uitext\">Hitmap</span> widget of the <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Application Dashboard</span> menu, fixed the issue where the time selector and the x-axis of the chart are not set to the time value of the retrieved data when the <span class=\"uitext\">Analysis</span> &gt; <span class=\"uitext\">Hitmap</span> menu appears.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/service/service-2_12_x",
+    "ver": "Service 2.12.1",
+    "date": "2024-12-24",
+    "Lists": [
+      {
+        "ver": "Service 2.12.1",
+        "hash": "service-2121",
+        "product": "Common",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the issue where the common modal is located at the top of the page.</p>"
+      },
+      {
+        "ver": "Service 2.12.1",
+        "hash": "service-2121",
+        "product": "Application",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">IIS Perf. Count</span>, fixed the issue where the time selector appears when checking a chart in full screen by clicking the <img decoding=\"async\" loading=\"lazy\" alt=\"Magnifier icon\" src=\"data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik01IDlIM1YzSDVIOVY1SDVWOVpNMyAyMVYxNUg1VjE5SDlWMjFINUgzWk0xNSAxOVYyMUgyMVYxOVYxNUgxOVYxOUgxNVpNMTUgNVYzSDIxVjVWOUgxOVY1SDE1WiIgZmlsbD0iIzc1NzU3NSIvPgo8L3N2Zz4K\" width=\"24\" height=\"24\" class=\"img_ev3q\"> button of the widget.</p>",
+        "category": ".NET"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/service/service-2_12_x",
+    "ver": "Service 2.12.0",
+    "date": "2024-12-24",
+    "Lists": [
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Common",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Replaced components of the time selector in each individual menu.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Common",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In <span class=\"uitext\">Flex Board</span> or <span class=\"uitext\">Integrated Flex Board</span>, added the following features in the <span class=\"uitext\">Alert list</span> widget.</p>",
+        "details": "<ul>\n<li>\n<p>Added the <span class=\"uitext\">View resolved events</span> option.</p>\n</li>\n<li>\n<p>Added the option to select a query time independent of the time set on the dashboard.</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Common",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the following features in <span class=\"uitext\">Analysis</span> &gt; <span class=\"uitext\">Metrics Chart</span> <code class=\"newfunc\">New</code>.</p>",
+        "details": "<ul>\n<li>\n<p>Different UI display depending on whether the widget legend is to be shown on the dashboard</p>\n<p><strong>On</strong>: Widget with a fixed legend panel</p>\n<p><strong>Off</strong>: Widget with a legend panel provided as a drop-down</p>\n</li>\n<li>\n<p>Legend filtering of widgets</p>\n</li>\n<li>\n<p>Highlighting the chart line when hovering over the legend of the widget</p>\n</li>\n<li>\n<p>When there are many chart lines, provided the feature so that the graph color does not become blurred.</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Common",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In <span class=\"uitext\">Alert</span> &gt; <span class=\"uitext\">Event Configuration</span> <code class=\"newfunc\">New</code>, added the description to the <span class=\"uitext\">Resolved notification</span> option.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Common",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In <span class=\"uitext\">Alert</span> &gt; <span class=\"uitext\">Notifications</span>, added the <span class=\"uitext\">Smart message (AI)</span> option to send notification messages with user-friendly content via AI.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Common",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> In the <span class=\"uitext\">Flex Board</span> menu of the project, removed <span class=\"uitext\">Project name</span> among the dashboard list sorting options.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Common",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> In the event addition or modification screen of the <span class=\"uitext\">Alert</span> &gt; <span class=\"uitext\">Event Configuration</span> menu, modified to test by applying the event reception tag selection items when the <span class=\"uitext\">Test alert</span> feature is run.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Common",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> In the event addition or modification screen of the <span class=\"uitext\">Alert</span> &gt; <span class=\"uitext\">Event Configuration</span> &gt; <span class=\"uitext\">Metrics</span> tab, modified to apply <code>${ }</code> to all fields when <span class=\"uitext\">Selector</span> is selected for the <span class=\"uitext\">Event rule</span> option.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Common",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Account Management</span>, fixed the issue where the <span class=\"uitext\">Notification language</span> setting is displayed as \"ja.\"</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Common",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the missing or misspelled title at the top of the screen in some menus.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Application",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In the <span class=\"uitext\">Table view</span> tab of the <span class=\"uitext\">Trace analysis</span> window, added the bind variable copying feature when checking the SQL information details.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Application",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In <span class=\"uitext\">Statistics</span> &gt; <span class=\"uitext\">Transaction</span>, added the <span class=\"uitext\">Trend comparison</span> feature that allows you to see the information details by selecting multiple transactions.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Application",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In <span class=\"uitext\">Alert</span> &gt; <span class=\"uitext\">Event Configuration</span> <code class=\"newfunc\">New</code>, added the <span class=\"uitext\">Agent duplication alert</span> option for the application.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Application",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Added the download and related texts for agent installation files for .NET platforms using the versions less than .NET 4.6.1 or Windows 2008.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Application",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In the <span class=\"uitext\">Today's visits</span> widget of the <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Application Dashboard</span> menu, fixed the issue where the today's maximum value does not appear when the presious day's maximum value is greater than that of today's.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Server",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In <span class=\"uitext\">Server List</span> &gt; <span class=\"uitext\">Server Inventory</span>, added the feature that replaces the custom columns in the server list by uploading a CSV file.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Server",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> In <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Server Inventory Map</span>, changed the initialization method for the grouping option selection tools.</p>",
+        "details": "<blockquote>\n<p>Changed from clicking the Clear button to selecting <span class=\"uitext\">Not set.</span> from the list.</p>\n</blockquote>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Server",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Changed the <span class=\"uitext\">Filter</span> option UI of the <span class=\"uitext\">Server List</span> &gt; <span class=\"uitext\">Server Inventory</span> menu to be the same as the <span class=\"uitext\">Filter</span> option of the <span class=\"uitext\">Server Inventory Map</span> menu.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Server",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> In <span class=\"uitext\">Management</span> &gt; <span class=\"uitext\">Agent Installation</span> &gt; <span class=\"uitext\">HP-UX</span>, added the agent download button for IA64 Kernel 11.31.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Server",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In the group summary panel of the <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Server Inventory Map</span> menu, fixed the issue where the <span class=\"uitext\">Server uptime</span> chart is intermittently clicked.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Server",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Server Inventory Map</span>, fixed the bug where a previous time can be selected after replacing the time selector components.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Server",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Server List</span> &gt; <span class=\"uitext\">Server List</span>, fixed the bug where the time appears as NaN and a previous time can be selected when the real-time mode of the time selector is paused.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Server",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Column settings</span> of the <span class=\"uitext\">Server List</span> &gt; <span class=\"uitext\">Server List</span> menu, fixed the issue where all the selected columns are released when the <span class=\"uitext\">Initialized</span> button is clicked.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Server",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Server List</span> &gt; <span class=\"uitext\">Server Detail</span>, fixed the issue where the corresponding page does not appear when the agent viewed through the agent/IP search feature of the side menu is selected.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Kubernetes",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In the detailed information of the <span class=\"uitext\">Cluster</span> &gt; <span class=\"uitext\">Ingress List</span> menu, added the application information.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Kubernetes",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In <span class=\"uitext\">Cluster</span> &gt; <span class=\"uitext\">etcd Dashboard</span>, added the guide message modal.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Kubernetes",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> If the version of the installed agent is less than the supported version when the <span class=\"uitext\">Cluster</span> &gt; <span class=\"uitext\">etcd Dashboard</span> menu is entered, the display feature of the update guide screen has been added.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Kubernetes",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the link to the resource list in the <span class=\"uitext\">Detail</span> window in the following menu paths:</p>",
+        "details": "<ul>\n<li>\n<p><span class=\"uitext\">Cluster</span> &gt; <span class=\"uitext\">Node Timeline</span></p>\n</li>\n<li>\n<p><span class=\"uitext\">Cluster</span> &gt; <span class=\"uitext\">Ingress List</span></p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Kubernetes",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In the <span class=\"uitext\">Node configuration</span> tab for the detailed information provided by the following menu path, added the total values for CPU, memory, and disk.</p>",
+        "details": "<ul>\n<li><span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Node Map</span></li>\n<li><span class=\"uitext\">Cluster</span> &gt; <span class=\"uitext\">Node List</span></li>\n<li><span class=\"uitext\">Cluster</span> &gt; <span class=\"uitext\">Node Timeline</span></li>\n</ul>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Kubernetes",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> In the <span class=\"uitext\">Management</span> &gt; <span class=\"uitext\">Project Management</span> menu for the namespace project, modified not to change the projeet name.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Provided the pagination feature in the <span class=\"uitext\">Active sessions</span> table.</p>",
+        "category": "Common",
+        "details": "<ul>\n<li><span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring a Database Instance</span></li>\n<li><span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring Multiple Instances</span></li>\n</ul>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the feature to check the result from the <span class=\"uitext\">User Behavior</span> menu when a user updated the agent in <span class=\"uitext\">Management</span> &gt; <span class=\"uitext\">Agent Update</span>.</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the feature to check the result from the <span class=\"uitext\">User Behavior</span> menu when a user executed SQLs in <span class=\"uitext\">Laboratory</span> &gt; <span class=\"uitext\">Script Manager</span>.</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Changed the support period for the database <code class=\"my\">V1</code> from December 31, 2024 to June 26, 2025.</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"0\">Changed</code> In <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring a Database Instance</span>, fixed the issue where the chart appears blank when changing the real-time query range.</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the issue where the <span class=\"uitext\">Active sessions</span> table in the following menu path displays the data that exceeds the 1-minute range.</p>",
+        "category": "Common",
+        "details": "<ul>\n<li><span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring a Database Instance</span></li>\n<li><span class=\"uitext\">Analysis</span> &gt; <span class=\"uitext\">Counts Trend Comparison</span></li>\n</ul>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring Multiple Instances</span>, added the feature to display the unit for the metric selected in the custom widget.</p>",
+        "category": "Database V2"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In the <span class=\"uitext\">Correlated DB information</span> window, added the button that pastes the bind variable value copied from the <span class=\"uitext\">Trace analysis</span> window for the APM project.</p>",
+        "category": "Database V2"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> In <span class=\"uitext\">Analysis</span> &gt; <span class=\"uitext\">Counts Trend Comparison</span>, changed the title of the <span class=\"uitext\">Active sessions</span> table.</p>",
+        "category": "Database V2"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> When moving to <span class=\"uitext\">Monitoring a Database Instance</span> from the <span class=\"uitext\">Correlated DB information</span> window, changed to include the start time, end time, and session period as query parameters.</p>",
+        "category": "Database V2"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring a Database Instance</span>, fixed the issue where the Y-axis of a widget is not changed to match the changed metric.</p>",
+        "category": "Database V2"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring a Database Instance</span>, fixed the problem where the loading indicator persists displaying if there is no data to be viewed, and added a guide message for empty data.</p>",
+        "category": "Database V2"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring a Database Instance</span>, added the text, <span class=\"uitext\">There are no recent views.</span> when there is chart data but no table data.</p>",
+        "category": "Database V2"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In the <span class=\"uitext\">Active sessions</span> table of the <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring a Database Instance</span> menu, modified to display ellipsis (...) when the instance name is longer than the width of the column.</p>",
+        "category": "Database V2"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring a Database Instance</span>, fixed the issue where full text cannot be viewed when the <span class=\"uitext\">Session detail</span> window is opened to view the past data.</p>",
+        "category": "Database V2"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring Multiple Instances</span>, changed the order of instances displayed in the custom widget in the equalizer chart format to match that of the instance list at the top of the screen.</p>",
+        "category": "Database V2"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Analysis</span> &gt; <span class=\"uitext\">Counts Trend Comparison</span>, added the information for [<span class=\"uitext\">Reference</span>]/[<span class=\"uitext\">Comparison</span>] and instances in the widget tooltip.</p>",
+        "category": "Database V2"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In the <span class=\"uitext\">SQL details</span> window of the <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring a Database Instance</span> menu, added the active session information.</p>",
+        "category": "Oracle, Oracle Pro"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In the <span class=\"uitext\">Filter</span> option of the <span class=\"uitext\">Analysis</span> &gt; <span class=\"uitext\">SQL Analysis</span> menu, added the condition, <code>object_name</code>.</p>",
+        "category": "Oracle, Oracle Pro"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> In <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring a Database Instance</span>, changed the style for the <span class=\"uitext\">TOP STAT</span> and <span class=\"uitext\">TOP EVENT</span> windows and the table content.</p>",
+        "category": "Oracle, Oracle Pro"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In the <span class=\"uitext\">Account creation</span> step of the <span class=\"uitext\">Management</span> &gt; <span class=\"uitext\">Agent Installation</span> menu, corrected wording in the command granting the role to query the hidden parameters.</p>",
+        "category": "Oracle, Oracle Pro"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In the <span class=\"uitext\">SQL details</span> window of the <span class=\"uitext\">Stat/Report</span> &gt; <span class=\"uitext\">MYSQL SQL Statistics</span> menu, fixed the issue where the hash value is displayed as <code>undefined</code>.</p>",
+        "category": "MySQL"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Browser",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> Added the <span class=\"uitext\">Resource Load Statistics</span> menu to visually provide performance data for each resource and to analyze the load time, resource size, performance trends by type, and the like.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "AWS Log",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"0\">Changed</code> In <span class=\"uitext\">Management</span> &gt; <span class=\"uitext\">Agent Installation</span>, added the region, Jakarta into the <strong>AWS Region</strong> selection list.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Log",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> In <span class=\"uitext\">Log</span> &gt; <span class=\"uitext\">Log Search</span>, changed to enable the search button while loading the data.</p>"
+      },
+      {
+        "ver": "Service 2.12.0",
+        "hash": "service-2120",
+        "product": "Log",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Modified to display the Close button in the log activation guidance modal.</p>"
+      }
+    ]
+  }
+]

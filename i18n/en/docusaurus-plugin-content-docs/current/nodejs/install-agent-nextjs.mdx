@@ -16,6 +16,8 @@ Reference: [Next.js Custom Server Configuration](https://nextjs.org/docs/pages/b
 
 :::
 
+<Steps>
+
 ## Installing the agent {#installagent}
 
 Execute the following command to install the agent.
@@ -28,7 +30,7 @@ npm install whatap
 
 For the agent file configuration, see the following.
 
-<Filetree name="whatap">
+<Filetree name="whatap" open>
 
 <FiletreeItem name="package.json" type="file">Document file for sample applications and dependency management.</FiletreeItem>
 
@@ -146,9 +148,13 @@ app.prepare().then(() => {
 
 ## Running the application
 
+Use the following command to run the application.
+
 ```bash title="SH"
 node server.js
 ```
+
+</Steps>
 
 {/* 다음 단계 */}
 import NextSteps from "../common-items/_apm-next-stemp-exclude-java.mdx";

@@ -11,7 +11,11 @@ tags:
 
 WhaTapの2024年第3四半期のサービス新規機能および注目すべき変更事項の概要をご案内します。 WhaTapが新たに提供する機能を一目でご覧ください。
 
+{/* 새로운 기능 sc 이미지 국문과 영문 */}
+
 <ImgLang img='changelog/changelog-new3.png' desc='新しい機能' />
+
+{/* truncate */}
 
 <div class ='faq'>
 
@@ -59,6 +63,8 @@ WhaTapの2024年第3四半期のサービス新規機能および注目すべき
 <br/>
 <br/>
 
+{/* 공통 및 브라우저 뺄지?? */}
+
 ## `共通`
 
 WhaTap2024年第3四半期`共通`部分で<Cmdname sid="side_eventSettingV2" className="uitext" />メニューの改善および新たに改編された<Cmdname sid="side_metricsChart" className="uitext" /> <code class="newfunc">New</code>メニューをご紹介します。 
@@ -70,6 +76,8 @@ WhaTap2024年第3四半期`共通`部分で<Cmdname sid="side_eventSettingV2" cl
 `Application`、`Kubernetes`、`Database`製品群の共通で<Cmdname sid="side_metricsChart" className="uitext" /> <code class="newfunc">New</code>メニューが新しく改編されました。 <Cmdname sid="side_metricsChart" className="uitext" /> <code class="newfunc">New</code>は、ユーザーエクスペリエンスを大幅に改善し、モニタリング作業をより効率的に行えるように設計されました。 
 
 ![共通メトリクスチャート v2 四半期の例](/img/changelog/changelog-24q3-common-metrics-chart.gif)
+
+{/* ![공통 메트릭스 차트 v2 분기 예시2](/img/changelog/changelog-24q3-common-add_chart.gif) */}
 
 ユーザーは***時間***、***対象***、***インターバル***設定を一度に処理し、簡単にチャートを追加できます。 また、ダッシュボードウィジェットの時間範囲を自由に変更でき、一括変更機能とプリセット機能により設定管理が簡単になりました。 これに加えて、ダッシュボードレイアウトとウィジェットも自由に調整でき、チャート分析がより効率的に改善されました。
 
@@ -183,7 +191,7 @@ WhaTapサーバーモニタリングは、今回の第3四半期に新たに<Cmd
 
 ![サーバーの構成要素sc](/img/changelog/changelog-24q3-server-inventory.png)
 
-ユーザー定義項目を通じてカスタムカラムを構成し、サーバーの状態と性能をより細かくモニタリングし、問題状況に対応できます。 例えば、各サーバー担当者との直接的なコミュニケーションが容易になるように運用担当者情報を追加し、問題時に迅速に対応できます。 また<Cmdname sid="side_serverInventory" className="uitext" />メニューは、3段階の複数のソートによって、条件に合うサーバーをすばやくフィルタリングできます。 基本ソートは、***OSタイプ***、***モデル***、そして***シリアル情報***基準です。 
+ユーザー定義項目を通じてカスタムカラムを構成し、サーバーの状態と性能をより細かくモニタリングし、問題状況に対応できます。 例えば、各サーバー担当者との直接的なコミュニケーションが容易になるように運用担当者情報を追加し、問題時に迅速に対応できます。 また<Cmdname sid="side_serverInventory" className="uitext" />メニューは、3段階の複数のソートによって、条件に合うサーバーをすばやくフィルタリングできます。 基本ソートは、***OSタイプ***、***モデル***、そして***シリアル情報***基準です。
 
 **Unix** `HP-UX`エージェントのインストールパッケージを提供します。 `HP-UX`は、Hewlett-Packard(HP)で開発した高性能Unix OS環境であり、ItaniumおよびPA-RISCシステムにおける安定性と性能でよく知られています。 
 
@@ -240,6 +248,8 @@ WhaTapのKubernetesモニタリングは、今回の第3四半期にノードモ
 ![k8s性能要約分析四半期の例](/img/changelog/changelog-24q3-k8s-summary.gif)
 
 加えて、WhaTapのKubernetesモニタリング情報拡大の一環として<Cmdname sid="side_kubeServiceList" className="uitext" />メニューが新たに追加され、各サービスの構成に接続されたPodの状態を確認できます。 照会時間を基準に、最近1分間収集されたサービス情報を提供します。 
+
+<ImgLang img='k8s-service-list.png' desc='k8s Serviceリスト四半期の例' />
 
 以下の概要案内により、2024年第3四半期`Kubernetes`製品の新規機能および主な変更事項を当該リリースバージョンと一緒に確認してみてください。
 
@@ -335,7 +345,8 @@ import DBX_agent_24q3 from "../crw-data/crwld-agent-24q3/_import-agent-24q3-dbx.
 
 :::
 
-<br/> 
+<br/>
+
 ## `Feature`
 
 WhaTap2024年第3四半期にFeatureプロジェクト(<code class='Features'>Features</code>) 方式で`Aerospike`モニタリングと`Apache Pulsar`モニタリング**ベータ**サービスを開始しました。 後日正式配布予定であり、サポートの範囲も拡大する予定です。 

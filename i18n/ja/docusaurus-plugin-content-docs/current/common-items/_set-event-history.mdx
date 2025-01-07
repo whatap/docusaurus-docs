@@ -2,11 +2,13 @@
 
 特定の時間、モニタリング対象で発生したイベントの詳細を確認できます。モニタリング対象で発生した問題の根本原因を分析したり、性能低下およびエラー発生時点のシステム状態を把握できます。
 
-<Xclude product='kubernetes,browser'><ImgLang img='event-history.png' desc='イベント履歴' /></Xclude>
+<Xclude product='kubernetes,browser,url'><ImgLang img='event-history.png' desc='イベント履歴' /></Xclude>
 
 <InDoc product='kubernetes'><ImgLang img='k8s-event-history.png' desc='イベント履歴' /></InDoc>
 
 <InDoc product='browser'><ImgLang img='browser-event-history.png' desc='イベント履歴' /></InDoc>
+
+<InDoc product='url'><ImgLang img='url-event-history.png' desc='イベント履歴' /></InDoc>
 
 イベント一覧に表示される項目は、<Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventSetting" className="uitext" />メニューで設定したイベントが表示されます。画面右上の<Cmdname sid="event_setting" className="uitext" />ボタンを選択すると、そのメニューに移動できます。
 
@@ -24,15 +26,15 @@
 
 - <Cmdname sid="time_selector" className="uitext" />: 照会しようとしているイベントの時間範囲を設定できます。<Cmdname sid="event_time" className="uitext" />を基準に照会します。
 
-  - 右側の緑色のボタンを選択して表示時間を選択することができます。
+  :::note
 
-  - ![左アイコン](/img/left-arrow.svg)または ![右アイコン](/img/right-arrow.svg)ボタンを選択すると、選択した表示時間だけ間隔を移動します。
+  <Cmdname sid="time_selector" className="uitext" />オプションの利用方法の詳細については、[次の文書](usage-ui#timeselector)を参照してください。
 
-  - 詳細な時間を選択するには、日付または時間の領域を選択してください。詳細な時間を設定し、<Cmdname sid="apply" className="uitext" />ボタンを選択します。
+  :::
 
 - <Cmdname sid="filter" className="uitext" />: <Cmdname sid="event_title" className="uitext" />または<Cmdname sid="message" className="uitext" />内容に基づいて入力した文字列を含むイベントの一覧をフィルタリングできます。
 
-<Xclude product="browser">
+<Xclude product="browser,url">
 
 - <Cmdname sid="agent" className="uitext" />: 特定のエージェントで発生したイベントのみを選択してフィルタリングできます。
 
@@ -54,7 +56,7 @@
 
 - <Cmdname sid="TTL06583" className="uitext" />: 発生したイベントが解消された時刻です。
 
-<Xclude product="browser">
+<Xclude product="browser,url">
 
 - <Cmdname sid="oname" className="uitext" />: <Cmdname sid="event_setting" className="uitext" />メニューでイベントを追加する時、<Cmdname sid="TTL07363" className="uitext" />項目を設定すると表示されます。
 
@@ -62,7 +64,7 @@
 
 - <Cmdname sid="message" className="uitext" />: <Cmdname sid="event_setting" className="uitext" />メニューで追加したイベントの詳細です。
 
-<Xclude product="amazon-cloudwatch,amazon-ecs,aws-log,azure,log,ncloud,oracle-cloud">
+<Xclude product="amazon-cloudwatch,amazon-ecs,aws-log,azure,log,ncloud,oracle-cloud,url">
 
 :::note
 
@@ -94,9 +96,9 @@
 
 2. <Cmdname sid="sms_alert_acknowledge_add" className="uitext" />画面が表示されたら、処理履歴を入力します。
 
-   <ImgLang img="event-history-add-acknowledge.png" desc="処理内容を追加" />
+   <ImgLang img="event-history-add-acknowledge.png" desc="処理内容追加" />
 
-3. <Cmdname sid="registration" className="uitext" />ボタンを選択します。
+3. <Cmdname sid="registration" className="uitext" />ボタンを選択してください。
 
 登録した処理履歴は、<Cmdname sid="TTL08669" className="uitext" />に一覧として表示されます。作成時間と作成者、詳細を確認できます。
 
@@ -104,7 +106,7 @@
 
 イベント一覧で追加した処理履歴の個数を確認できます。
 
-<ImgLang img="event-history-add-acknowledge-added.png" desc="処理履歴" />
+<ImgLang img="event-history-add-acknowledge-added.png" desc="処理内容" />
 
 :::note
 
@@ -116,11 +118,11 @@
 
 - <Cmdname sid="BTN06441" className="uitext" />: イベント一覧のカラム項目を追加と削除、順序を変更できます。
 
-- **_CSV_**：参照したイベント履歴結果をcsvファイルとして保存することができます。<Cmdname sid="maximum_csv_lines" className="uitext" />を入力し <Cmdname sid="download" className="uitext" /> ボタンを選択してください。
-
-- <Cmdname sid="event_setting" className="uitext" />: <Cmdname sid="event_statistic" className="uitext" /> &gt; <Cmdname sid="event_setting" className="uitext" />メニューに移動します。
+- **_CSV_**：参照したイベント履歴の結果をcsvで保存できます。**_CSV_** ボタンをクリックして<Cmdname sid="maximum_csv_lines" className="uitext" />を入力して<Cmdname sid="download" className="uitext" />ボタンを選択します。
 
 - <Cmdname sid="exclude_resolved_alerts" className="uitext" />：イベント記録一覧で**進行中のイベント**のみ照会できます。
+
+- <Cmdname sid="event_setting" className="uitext" />: <Cmdname sid="event_statistic" className="uitext" /> &gt; <Cmdname sid="event_setting" className="uitext" />メニューに移動します。
 
 import Dbv2dataeditcolumn from "../common-items/_db-v2-data-edit-column.mdx";
 

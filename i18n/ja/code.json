@@ -514,34 +514,34 @@
     "message": "リアルタイム・オブザーバビリティ・プラットフォーム | WhaTap Docs"
   },
   "index.pages.register": {
-    "message": "サインアップ"
+    "message": "会員登録"
   },
   "index.pages.register.desc": {
-    "message": "WhaTapモニタリングサービスを利用するには、会員登録を行ってください。 15日間無料体験できます。"
+    "message": "WhaTapモニタリングサービスを利用するには、会員登録を行ってください。15日間無料体験ができます。"
   },
   "index.pages.project": {
-    "message": "プロジェクト作成"
+    "message": "プロジェクト生成"
   },
   "index.pages.project.desc": {
-    "message": "プロジェクトを作成し、アクセスキーを発行してください。"
+    "message": "プロジェクトを作成してアクセスキーを取得します。"
   },
   "index.pages.agentInstall": {
-    "message": "エージェントインストール"
+    "message": "エージェントのインストール"
   },
   "index.pages.agentInstall.desc": {
-    "message": "監視対象にエージェントをインストールします。"
+    "message": "モニタリング対象にエージェントをインストールします。"
   },
   "index.pages.viewDashboard": {
-    "message": "ダッシューボード照会"
+    "message": "ダッシュボードを照会する"
   },
   "index.pages.viewDashboard.desc": {
-    "message": "エージェントをインストール後、データがWhaTapサーバーに送信されると、ダッシューボードメニューからプロジェクトの全体の状況をリアルタイムで確認することができます。"
+    "message": "エージェントインストール後、データがWhaTapサーバーに送信されると、ダッシュボードメニューでプロジェクトの全体現況をリアルタイムで照会できます。"
   },
   "index.pages.welcome.para": {
     "message": "WhaTapのDocsページへようこそ。"
   },
   "index.pages.welcome.recommend": {
-    "message": "推奨ドキュメント："
+    "message": "推奨文書: "
   },
   "index.pages.section.gettingStart": {
     "message": "始める前に"
@@ -556,103 +556,103 @@
     "message": "サポート環境"
   },
   "index.pages.section.gettingStart.support.desc": {
-    "message": "サービスを利用する前にサポート環境を確認してください。"
+    "message": "サービスを利用する前に、対応環境を確認してください。"
   },
   "index.pages.section.gettingStart.home": {
-    "message": "ホーム画面"
+    "message": "ホーム画面案内"
   },
   "index.pages.section.gettingStart.home.desc": {
-    "message": "サービスの初期画面の使い方をご案内します。"
+    "message": "サービスの初期画面の使い方について説明します。"
   },
   "index.pages.section.gettingStart.mobileApp": {
     "message": "モバイルアプリ"
   },
   "index.pages.section.gettingStart.mobileApp.desc": {
-    "message": "モバイルアプリの使い方をご案内します。"
+    "message": "モバイルアプリの使い方について説明します。"
   },
   "index.pages.section.product": {
     "message": "サービス"
   },
   "index.pages.section.product.java": {
-    "message": "WAS、バッチアプリケーション等、JVM環境で動作するすべてのアプリケーションに適応できます。"
+    "message": "WAS、バッチアプリケーションなど、JVM環境で動作するすべてのアプリケーションに適用できます。"
   },
   "index.pages.section.product.nodejs": {
-    "message": "非同期式のトランザクション分析によって、単一スレッドのフローを10秒間隔で分析し、ボトルネックやエラー内容が把握できます。"
+    "message": "非同期ベースのトランザクション分析により、単一のスレッドフローを10秒ごとに分析し、ボトルネック区間やエラー履歴を把握できます。"
   },
   "index.pages.section.product.php": {
-    "message": "PHP8.3、Alpine Linuxまで適用可能で、プロフィールからSQL、HTTPコール、Redisコール情報が確認できます。"
+    "message": "PHP 8.3、Alpine Linuxまで適用可能で、トレース上でSQL、HTTP呼び出し、Redis呼び出し情報を確認できます。"
   },
   "index.pages.section.product.python": {
-    "message": "ウェブフレームワーク、サーバー、バッチ等主なアプリケーションに適用可能で、DBクエリ、外部呼出しをトレースして遅延区間を識別します。"
+    "message": "ウェブフレームワーク、サーバー、デプロイなど主要アプリケーションに適用でき、DBクエリ、外部呼び出しを追跡して遅延区間を識別できます。"
   },
   "index.pages.section.product.dotnet": {
     "message": ".NETフレームワーク4.5に対応し、.NETベースのIIS、Console、サービス、Windowsアプリケーションをモニタリングします。"
   },
   "index.pages.section.product.go": {
-    "message": "Go APIを使ってGoアプリケーションのウェブ呼出し、応答トランザクション、一般のトランザクション、SQL、HTTPコール等がトレースできます。"
+    "message": "Go APIを利用して、Goアプリケーションのウェブリクエスト及びレスポンストランザクション、一般単位トランザクション、SQL、HTTP呼び出しなどを追跡できます。"
   },
   "index.pages.section.product.server": {
-    "message": "物理サーバーやクラウド、スケールアウト環境にも適用できます。それに、大規模リソースや使用率の高いクリティカルリソースのモニタリングとインベントリ管理ができます。"
+    "message": "物理サーバーやクラウド、スケールアウト環境にも適用でき、大規模なリソースや使用率の高いリスクリソースのモニタリング、インベントリ管理をサポートします。"
   },
   "index.pages.section.product.k8s": {
-    "message": "Monitors Kubernetes clusters, nodes, applications, and logs at a glance."
+    "message": "Kubernetesクラスター、ノード、アプリケーション、ログを一目で確認できます。"
   },
   "index.pages.section.product.postgresql": {
-    "message": "性能指標、SQL、Lock、Slow SQLを監視し、推移分析や比較ができます。"
+    "message": "性能指標及びSQL、Lock、Slow SQLをモニタリングし、推移分析と比較ができます。"
   },
   "index.pages.section.product.oracle": {
-    "message": "DBの性能指標、SQL、Lock、パラレルクエリ情報を監視し、推移分析や比較ができます。"
+    "message": "性能指標及びSQL、Lock、並列クエリ情報をモニタリングし、推移分析と比較ができます。"
   },
   "index.pages.section.product.oraclePro": {
-    "message": "データベースサーバーのメモリに直接アクセスして、負荷なく1秒間に数十回まで性能情報をモニタリングできます。"
+    "message": "データベースサーバーのメモリに直接アクセスして、負荷なしで性能情報を1秒に数十回までモニタリングできます。"
   },
   "index.pages.section.product.mysql": {
-    "message": "MySQL、MariaDBの性能指標、SQL、Lock、Slow SQLを監視し、推移分析や比較ができます。"
+    "message": "MySQL、MariaDBの性能指標及びSQL、Lock、Slow SQLをモニタリングし、推移分析と比較ができます。"
   },
   "index.pages.section.product.mssql": {
-    "message": "性能指標、SQL、Lock情報を監視し、推移分析や比較ができます。"
+    "message": "性能指標及びSQL、Lock、情報をモニタリングし、推移分析と比較ができます。"
   },
   "index.pages.section.product.tibero": {
-    "message": "DBの性能指標、SQL、Lock、パラレルクエリ情報を監視し、推移分析や比較ができます。"
+    "message": "性能指標及びSQL、Lock、並列クエリ情報をモニタリングし、推移分析と比較ができます。"
   },
   "index.pages.section.product.cubrid": {
-    "message": "DBの性能指標、SQL、Lock、パラレルクエリ情報を監視し、推移分析や比較ができます。"
+    "message": "性能指標及びSQL、Lock、並列クエリ情報をモニタリングし、推移分析と比較ができます。"
   },
   "index.pages.section.product.altibase": {
-    "message": "DBの性能指標、SQL、Lock、パラレルクエリ情報を監視し、推移分析や比較ができます。"
+    "message": "性能指標及びSQL、Lock、並列クエリ情報をモニタリングし、推移分析と比較ができます。"
   },
   "index.pages.section.product.redis": {
-    "message": "DBの性能指標を監視し、推移分析や比較ができます。"
+    "message": "性能指標モニタリングと推移分析と比較ができます。"
   },
   "index.pages.section.product.mongodb": {
-    "message": "DBの性能指標を監視し、推移分析や比較ができます。"
+    "message": "性能指標モニタリングと推移分析と比較ができます。"
   },
   "index.pages.section.product.url": {
-    "message": "サイトへ接続するエンドユーザー観点から、HTTPステータスコードで接続エラーを自動で確認できます。"
+    "message": "運用中のサイトのエンドユーザーの立場から、HTTPステータスコードで接続問題を自動的に確認できます。"
   },
   "index.pages.section.product.browser": {
-    "message": "ウェブアプリケーションへ接続したエンドユーザーのインタラクションに関する性能を監視し、分析します。"
+    "message": "ブラウザアプリケーションに接続したエンドユーザーの相互作用に関する性能をモニタリングして分析します。"
   },
   "index.pages.section.product.awsCloudWatch": {
-    "message": "Amazon CloudWatch APIを通して周期的にメトリクスを検索し、保存します。."
+    "message": "Amazon CloudWatch APIを介して定期的にメトリックを検索して保存します。"
   },
   "index.pages.section.product.awsEcs": {
-    "message": "META APIとcgroupディレクトリを通してDockerコンテナ別のリソース使用量をリアルタイムで収集します。"
+    "message": "META APIおよびcgroupディレクトリを通じてDockerコンテナ別リソース使用量をリアルタイムで収集します。"
   },
   "index.pages.section.product.awsLog": {
-    "message": "AWS Resourceから生成されAWS S3、AWS CloudWatch Log Groupに保存されるログを収集し、保存します。"
+    "message": "AWS Resourceで生成され、AWS S3、AWS CloudWatch Log Groupに保存されるログを収集、保存します。"
   },
   "index.pages.section.product.azure": {
-    "message": "Azure Monitor APIを通して周期的にメトリクスを検索し、保存します。"
+    "message": "Azure Monitor APIを介して定期的にメトリックを検索して保存します。"
   },
   "index.pages.section.product.ncloud": {
-    "message": "Naver Cloud Monitoring APIを通して周期的にメトリクスを検索し、保存します。"
+    "message": "Naver Cloud Monitoring APIを介して定期的にメトリックを検索して保存します。"
   },
   "index.pages.section.product.oci": {
-    "message": "Oracle Cloud Monitor APIを通して周期的にメトリックスを検索し、保存します。"
+    "message": "Oracle Cloud Monitor APIを介して定期的にメトリックを検索して保存します。"
   },
   "index.pages.section.product.network": {
-    "message": "プロセスのネットワーク通信情報を可視化し、パフォーマンス分析と障害の特定に使用します。"
+    "message": "プロセスのネットワーク通信情報を可視化し、性能分析および障害の特定に使用します。"
   },
   "index.pages.section.product.feature": {
     "message": "既存のモニタリング製品を、ユーザーがモニタリングしようとするソフトウェアに合わせてリパッケージし、最適化されたモニタリングソリューションを提供します。"
@@ -664,85 +664,85 @@
     "message": "アカウント管理"
   },
   "index.pages.section.management.account.desc": {
-    "message": "会員登録を通じてアカウントを作成し、管理してください。"
+    "message": "会員登録を通じてアカウントを作成し、管理できます。"
   },
   "index.pages.section.management.multiFactor": {
     "message": "マルチファクター認証"
   },
   "index.pages.section.management.multiFactor.desc": {
-    "message": "マルチファクター認証を使用して、アカウントとサービスに対するセキュリティを強化できます"
+    "message": "マルチファクター認証により、セキュリティを強化できます。"
   },
   "index.pages.section.management.sso": {
     "message": "SSOアカウント連携"
   },
   "index.pages.section.management.sso.desc": {
-    "message": "1つのIDとパスワードを利用して、簡単にログインしてください。"
+    "message": "1つのIDとパスワードで簡単にログインできます。"
   },
   "index.pages.section.management.billing": {
     "message": "課金"
   },
   "index.pages.section.management.billing.desc": {
-    "message": "トライアルで無料で始めて必要なだけご利用ください。"
+    "message": "トライアルで無料で開始し、必要なだけ利用できます。"
   },
   "index.pages.section.management.project": {
     "message": "プロジェクト管理"
   },
   "index.pages.section.management.project.desc": {
-    "message": "プロジェクトはモニタリング単位を意味します。プロジェクトについて確認してください。"
+    "message": "プロジェクトはモニタリングの単位です。プロジェクトについて調べてください。"
   },
   "index.pages.section.management.organize": {
     "message": "統合管理"
   },
   "index.pages.section.management.organize.desc": {
-    "message": "組織やグループ、プロジェクトを体系的に管理することができます。"
+    "message": "組織、グループ、プロジェクトを体系的に管理できます。"
   },
   "index.pages.section.management.maintenance": {
     "message": "メンテナンス計画"
   },
   "index.pages.section.management.maintenance.desc": {
-    "message": "登録したメンテナンス時間に受信設定した通知を一時停止できます。"
+    "message": "登録した作業時間に通知を一時停止できます。"
   },
   "index.pages.section.management.userbehavior": {
     "message": "ユーザー行為"
   },
   "index.pages.section.management.userbehavior.desc": {
-    "message": "プロジェクト内で実行中のユーザーの行動を追跡することができます。"
+    "message": "プロジェクトで実行中のユーザーの行動を追跡できます。"
   },
   "index.pages.section.updates": {
-    "message": "最新アップデート"
+    "message": "What's New"
   },
   "index.pages.section.updates.news": {
     "message": "新しい機能"
   },
   "index.pages.section.updates.news.desc": {
-    "message": "新しくリリースされた機能をご確認ください。"
+    "message": "新しくリリースされた機能を確認してみてください。"
   },
   "index.pages.section.updates.release": {
     "message": "リリースノート"
   },
   "index.pages.section.updates.release.desc": {
-    "message": "最新のリリース情報を素早く確認してください。"
+    "message": "最新のリリース情報をすばやく確認できます。"
   },
   "index.pages.section.reference": {
-    "message": "参照"
+    "message": "Reference"
   },
   "index.pages.section.reference.openApi": {
     "message": "Open API"
   },
   "index.pages.section.reference.openApi.desc": {
-    "message": "Open APIを通じてモニタリングデータを抽出することができます。"
+    "message": "Open APIにより、モニタリングデータを抽出できます。"
   },
   "index.pages.section.reference.proxy": {
     "message": "ソフトウェアプロキシ"
   },
   "index.pages.section.reference.proxy.desc": {
-    "message": "外部ネットワークへのアクセスを遮断し、単一のチャネルでWhaTapにデータを送信することができます。"
+    "message": "外部ネットワークへのアクセスをブロックし、単一のチャネルでWhaTapにデータを送信できます。"
   },
   "index.pages.section.reference.docs": {
     "message": "技術文書の案内"
   },
   "index.pages.section.reference.docs.desc": {
-    "message": "WhaTap Docsページの活用方法をご案内します。"
+    "message": "WhaTap Docsページの活用方法について案内します。"
   },
   "index.pages.section.reference.license": {
     "message": "ライセンス"
@@ -757,25 +757,25 @@
     "message": "WhaTapモニタリングサービスを使用する際に発生しうる、一般的な問題に対する解決方法を提供します。"
   },
   "index.pages.section.learn": {
-    "message": "学習する"
+    "message": "Learning"
   },
   "index.pages.section.learn.learning": {
     "message": "WhaTap活用"
   },
   "index.pages.section.learn.learning.desc": {
-    "message": "迅速な理解と効率的な利用のために活用ガイドを提供します。"
+    "message": "習得の速さと効率的な利用のために学習資料を提供します。"
   },
   "index.pages.section.learn.mxql": {
     "message": "MXQL"
   },
   "index.pages.section.learn.mxql.desc": {
-    "message": "MXQLは、メトリクスを柔軟に検索するためのクエリ言語です。"
+    "message": "MXQLは、メトリクスを柔軟に参照するためのクエリ言語です。"
   },
   "index.pages.section.learn.metrics": {
     "message": "メトリクス"
   },
   "index.pages.section.learn.metrics.desc": {
-    "message": "メトリクスは、モニタリング対象から収集されたデータです。"
+    "message": "メトリクスは、モニタリング対象から収集したデータです。"
   },
   "index.pages.section.learn.glossary": {
     "message": "用語辞典"
@@ -788,6 +788,6 @@
     "description": "The text for authors with 0 blog post"
   },
   "pages.dbfunctions.title": {
-    "message": "データベースごとのサポート機能の比較"
+    "message": "データベース別のサポート機能比較"
   }
 }

@@ -20,6 +20,12 @@ Select the query time and target on the screen. Select the <Cmdname sid="time" c
 
   ![Operation Count](/img/db-analysis-sql-access-statistics-op-count.png)
 
+:::note
+
+For more information on how to use the <Cmdname sid="time" className="uitext" /> option, see [the following](usage-ui#timeselector).
+
+:::
+
 {/* 쿼리 자세히 보기 */}
 import QueryDetails from "../common-items/_db-query-details.mdx";
 
@@ -27,7 +33,17 @@ import QueryDetails from "../common-items/_db-query-details.mdx";
 
 ### Filtering the searched results
 
-You can filter the results in the queried SQL list based on **Full Scan** or **Index Scan** through the <Cmdname sid="filter" className="uitext" /> option.
+You can filter the desired results based on the values ​​of the following items in the searched results.
+
+:::info
+
+- ***Access Type***: You can filter results by **Full Scan** or **Index Scan**.
+
+- ***Object Name***: You can filter based on the object name.
+
+:::
+
+#### Adding the access type filtering conditions
 
 1. Select the <Cmdname sid="filter" className="uitext" /> option.
 
@@ -45,6 +61,36 @@ To search all for Full Scan and Index Scan, in <Cmdname sid="TTL06737" className
 
 :::
 
+#### Adding the object name filtering conditions
+
+<ImgLang img="db-analysis-sql-access-object-filter-add.png" desc="Filter" />
+
+1. In the <Cmdname sid="filter" className="uitext" /> option, select <LinkImage img="ico-add.svg" className="ico" />.
+
+2. In the <Cmdname sid="TTL06617" className="uitext" /> popup, select ***Object Name*** and the <Cmdname sid="equal" className="uitext" /> condition.
+
+3. Select an empty input field and then select a desired object name from the object list.
+
+4. Select <Cmdname sid="apply" className="uitext" />.
+
+5. To apply the selected conditions to the SQL list, select the ![Search icon](/img/ico-btn-search.png) button.
+
+:::note
+
+- To add filtering conditions, select <Cmdname sid="bsm_button_add" className="uitext" /> and then repeat Step 1 to 5. Added conditions are applied based on AND (`&&`).
+
+- To delete some items while adding conditions, select ![Delete icon](/img/ico-trash.svg) on the right of the filter conditions. To delete all conditions, select ![Delete icon](/img/ico-trash.svg) <Cmdname sid="BTN06616" className="uitext" />.
+
+- To quickly delete the conditions applied to the <Cmdname sid="filter" className="uitext" /> option, select <LinkImage img="ico-close.svg" className="ico" />.
+
+:::
+
+#### Modifying the filter conditions
+
+<ImgLang img="db-analysis-sql-access-object-filter-edit.png" desc="Edit filter" />
+
+Click any applied to the <Cmdname sid="filter" className="uitext" /> option. If the <Cmdname sid="TTL06737" className="uitext" /> window appears, modify any desired items and then select <Cmdname sid="apply" className="uitext" />.
+
 ## Plan Change History {#plan_change_history}
 
 It detects the case when a SQL statement with the same SQL ID is changed to a different execution plan by the optimizer. This can affect the performance and needs to be monitored. By detecting and responding to performance changes due to plan changes, you can identify unnecessary plans and maintain the consistent SQL performance.
@@ -53,7 +99,13 @@ It detects the case when a SQL statement with the same SQL ID is changed to a di
 
 Select the query time and target on the screen. Select the <Cmdname sid="time" className="uitext" /> and <Cmdname sid="instance" className="uitext" /> options, and then select ![Search icon](/img/ico-btn-search.png).
 
-The ***Plan Change Count*** section is a bar graph chart that displays the number of plan changes that occurred over time. When you select a time zone, a list of plan changes for the selected time appears. 
+The ***Plan Change Count*** section is a bar graph chart that displays the number of plan changes that occurred over time. When you select a time zone, a list of plan changes for the selected time appears.
+
+:::note
+
+For more information on how to use the <Cmdname sid="time" className="uitext" /> option, see [the following](usage-ui#timeselector).
+
+:::
 
 ### Checking the plan change details
 

@@ -50,6 +50,20 @@ import Setheapmemory from "./_set-heap-memory.mdx";
 
 <Setheapmemory />
 
+## クライアントのIPアドレスが収集されない場合
+
+ダッシュボードやその他のメニューでクライアントIPアドレスが正常に収集されない場合は、以下を参照してください。 
+
+IBM HTTPサーバーでバックエンドのWebSphereアプリケーションサーバーに実際の(original)クライアントIPアドレスに転送すると、Javaエージェントから有効なクライアントIPアドレスを収集できます。実際のクライアントIPアドレスを転送するにはIBM HTTPサーバーでHTTPヘッダー(header)に`X-Forwarded-For`を追加する必要があります。 
+
+これについての詳細は、IBM対応の文書で扱われています。次のリンクを参照してください。[Passing the real client IP from IBM HTTP Server 9.0 to WebSphere Application Server](https://www.ibm.com/support/pages/passing-real-client-ip-ibm-http-server-90-websphere-application-server)
+
+:::note
+
+IBM対応文書を確認するには、IBMアカウントが必要になる場合があります。
+
+:::
+
 {/* 다음 단계 */}
 import Nextstep from "../../common-items/_apm-next-step.mdx";
 

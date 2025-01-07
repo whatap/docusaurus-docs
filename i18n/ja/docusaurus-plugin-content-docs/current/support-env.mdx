@@ -39,24 +39,30 @@ import Envnote from "./getting-started/_env-note.mdx";
 
 <div class="c2-3-7">
 
-| 環境      | サポート環境                |
-| ------- | --------------------- |
-| Linux   | Debian 6.0以降          |
-| ^       | Ubuntu 12.04以降        |
-| ^       | CentOS 5.0以降          |
-| ^       | Red Hat 5.0以降         |
-| ^       | Rocky Linux 8.6以降     |
-| ^       | Amazon Linuxすべてのバージョン |
-| ^       | SUSE 10.1以降           |
-| Unix    | FreeBSD 10以降          |
-| ^       | AIX 6.1以降             |
-| Windows | Windows 2008 R2以降     |
+| 環境      | サポート環境                                               |
+| ------- | ---------------------------------------------------- |
+| Linux   | Debian 6.0以降                                         |
+| ^       | Ubuntu 12.04以降                                       |
+| ^       | CentOS 5.0以降                                         |
+| ^       | Red Hat 5.0以降                                        |
+| ^       | Rocky Linux 8.6以降                                    |
+| ^       | Amazon Linuxすべてのバージョン                                |
+| ^       | SUSE 10.1以降                                          |
+| Unix    | FreeBSD 10以降                                         |
+| ^       | AIX 6.1以降                                            |
+| ^       | HP-UX 11.31(IA64), HP-UX 11.23(IA64, PA-RISC)        |
+| ^       | Solaris 10, Solaris 11.2, Solaris 11.3, Solaris 11.4 |
+| Windows | Windows 2008 R2以降                                    |
 
 </div>
 
 ----
 
-## DBモニタリング
+## データベースモニタリング
+
+import DBAgentSpec from "./common-items/_db-agent-specification.mdx";
+
+<DBAgentSpec level={3} />
 
 ### データベースの種類でサポートされているバージョン
 
@@ -82,6 +88,8 @@ import Envnote from "./getting-started/_env-note.mdx";
 - DBモニタリングを適用する場合、DB Metadata(Dictionary、 performance_schema) の参照権限のあるモニタリング用アカウントが必要です。
 
 - XOSエージェントは、x86アーキテクチャベースで動作するOS環境のみ適用できます。
+
+- データベースプラットフォームごとの対応機能の詳細については、[次の文書](db-support-functions)を参照してください。
 
 :::
 

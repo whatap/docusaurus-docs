@@ -1,0 +1,32 @@
+---
+id: uninstall-agent
+title: Agent deletion
+description: The following provides the process of disabling the feature project data collection and removing the agent.
+keywords:
+  - Features
+  - Feature Project
+  - Agent
+---
+
+After installation of the **feature project** (<code class='Features'>Features</code>), the following explains how to disable data collection while keeping the server agent, or completely remove the server agent.
+
+## Keeping the agent and disabling data collection
+
+To keep the server agent running and disable the feature project data collection, remove the related settings from the *whatap.conf* file and then restart the `whatap-infra` service. See the following example: 
+
+1. Remove the following settings from *whatap.conf*.
+
+   ```bash title='whatap.conf'
+   internal.forwarder.enabled=true
+   telegraf.sidecar.enabled=true
+   telegraf.sidecar.executable=/usr/whatap/infra/feature/telegraf
+   ```
+2. After modifying the settings, restart the `whatap-infra` service. 
+
+   ```bash
+   systemctl restart whatap-infra
+   ```
+
+## Agent deletion
+
+To completely remove the server agent and feature project, see [the following](/server/agent-remove/).

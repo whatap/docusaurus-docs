@@ -1,7 +1,7 @@
 When collecting Windows event logs, you can set the options as follows:
 
-```bash showLineNumbers
-# Require an Administarotr role
+```ini showLineNumbers
+# The administrator role required
 New-Item -type "Directory" -Path "C:\Program Files\WhatapInfra\extension"
 
 $contentToAdd = @"
@@ -13,14 +13,17 @@ $contentToAdd = @"
     [[inputs.win_eventlog.file]]
         #true | false
         enabled = true
-				# Application, Security, Setup, System, Forwarded
-				file = "Application"
-				#1: Information, 2: Warning 3: Critical 4: Audit Success 5 Audit Fail
-				#event_type = 
-				#event id
-				#event_id = 
-				#event source name
-				#source_name = ""
+        # Application, Security, Setup, System, Forwarded
+        file = "Application"
+        #1: Information, 2: Warning 3: Error 4: Audit Success 5 Audit Fail
+        #event_type = 
+        #event id
+        #event_id = 
+        #event source name
+        #source_name = ""
+        #When entering the project code and project license, the log can be sent to the desired project with the same region.
+        #pcode = Project code
+        #license = "Project License"
 
 "@
 
@@ -29,13 +32,13 @@ New-Item -path "C:\Program Files\WhatapInfra\extension" -name "win_eventlog.conf
 Restart-Service "Whatap Infra"
 ```
 
-:::note 
+{/* :::note 
 
 - Support version 2.5.2
 
 - OS: Windows
 
-:::
+::: */}
 
 - It is required to specify the `category`.
 
@@ -73,7 +76,7 @@ Restart-Service "Whatap Infra"
 
   2. Warning 
 
-  3. Critical 
+  3. Error 
 
   4. Audit Success 
 
@@ -84,3 +87,15 @@ Restart-Service "Whatap Infra"
 - The event ID (`event_id`) is optional.
 
 - The event source name (`source_name`) is optional.
+
+- Project code (`pcode`) optional 
+
+- Project license (`license`) optional 
+
+:::note 
+
+- For Windows event log collection, the Server Agent 2.5.2 or later is supported. 
+
+- Among the Windows event log options, `pcode` and `license` are supported in the Server Agent 2.7.4 or later. 
+
+:::

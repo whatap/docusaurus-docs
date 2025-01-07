@@ -35,21 +35,21 @@ import Dbcreatemonitoringaccount from "../common-items/_db-create-monitoring-acc
 
 Assign additional roles depending on the features and operation environment.
 
-- PostgreSQL 10 or later
+- **PostgreSQL 10 or later**
 
   ```sql title="SQL"
   create user DB_User with password 'DB Password'; 
   grant pg_monitor to DB_User;
   ```
 
-- Below PostgreSQL 10
+- **Below PostgreSQL 10**
 
   ```sql title="SQL"
   create user DB_User with password 'DB Password';
   alter user DB_User with superuser;
   ```
 
-- In case of using the kill session
+- **In case of using the kill session**
 
   Database monitoring provides the <UI>Kill Session</UI> function that allows you to kill an active session. To use this function, set the role as follows:
 
@@ -57,13 +57,19 @@ Assign additional roles depending on the features and operation environment.
   grant pg_signal_backend to DB_User;
   ```
 
-- In case of collecting the table size
+- **In case of collecting the table size** (<Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbSize" className="uitext" /> &gt; <Cmdname sid="TTL06572" className="uitext" />)
 
   ```sql title="SQL"
   grant usage on schema {schema_name} to DB_User;
   ```
 
-- In case of collecting the object information (<Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbObjectInfo" className="uitext" />)
+  :::note
+
+  Execute the command for each individual DB.
+
+  :::
+
+- **In case of collecting the object information** (<Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbObjectInfo" className="uitext" />)
 
   ```sql title="SQL"
   grant select on all tables in schema {schema_name} to DB_User;

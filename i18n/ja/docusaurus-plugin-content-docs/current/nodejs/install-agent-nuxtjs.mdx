@@ -1,120 +1,97 @@
 ---
 id: install-agent-nuxtjs
 title: Nuxt.js環境インストール
-description: Nuxt.jsなどのサーバーサイドレンダリング(SSR)フレームワークでNode.jsアプリケーションモニタリングのためのCustom Server設定を案内します。
+description: ユーザーがインストールしやすい**Nuxt.js 3**でNode.jsエージェントのインストール方法を案内します。
 keywords:
   - Node.js
   - Nuxt.js
   - エージェント
 ---
 
-**Nuxt.js**などのサーバーサイドレンダリング(Server-side Rendering、SSR)フレームワークでアプリケーションをモニタリングするためにCustom Serverの設定が必要です。 一般的なNode.jsフレームワーク(例、Express.js、Nest.js)とは異なるアプローチが求められます。
+ユーザーがインストールしやすい**Nuxt.js 3**でNode.jsエージェントのインストール方法を案内します。 この文書は**Nuxt.js 3**基準で作成しました。
 
-:::note
-
-参考資料：[Nuxt.js Custom Server Configuration](https://v2.nuxt.com/docs/configuration-glossary/configuration-dev/)
-
-:::
+<Steps>
 
 ## エージェント インストール {#installagent}
 
-次のコマンドを実行してエージェントをインストールしてください。
+プロジェクトのルート(Root)パスで次のコマンドを実行して、WhaTapエージェントをインストールします。
 
 ```bash title="BASH"
 npm install whatap
 ```
 
-## エージェントファイル構成 {#agentfiles}
+## エージェント設定ファイルの作成する
 
-エージェントのファイル構成については、以下を参照してください。
+プロジェクトのルート(Root)パスに*whatap.conf*ファイルを作成して必要な設定を追加します。 エージェント設定の詳細については、[次の文書](set-agent)を参照にしてください。
 
-<Filetree name="whatap">
+```ini title='whatap.conf'
+license={ACCESS_KEY}
+whatap.server.host={COLLECTION_SERVER_IP}
+```
 
-<FiletreeItem name="package.json" type="file">サンプルアプリケーション情報と依存関係(dependency)の管理文書ファイルです。</FiletreeItem>
+## Nuxtアプリケーションをビルドする
 
-<FiletreeItem name="whatap.conf" type="file">モニタリングのためのエージェントの情報とアクセスキー、WhaTapデータ収集サーバーのIP情報などを保存する設定ファイルです。</FiletreeItem>
+次のコマンドを実行してNuxtアプリケーションをビルドします。
 
-<FiletreeItem name="security.conf (or paramkey.txt)" type="file">SQL変数、HTTPクエリの照会、Thread中止機能を利用する時に入力するセキュリティキーを保存します。</FiletreeItem>
+```bash title="BASH"
+npm run build
+```
 
-<FiletreeItem name="server.js / index.js" type="file">例のファイル名です。 **Nuxt.js**アプリインスタンス用のサーバー設定ファイルです。</FiletreeItem>
+ビルドを完了すると_.output/server_ディレクトリが作成されます。 ディレクトリの構造については、以下を参照してください。
+
+<Filetree name=".output/server/" open>
+
+<FiletreeItem name="chunks/" type="folder">チャンクファイル(コード分割されたJavaScriptファイル)</FiletreeItem>
+
+<FiletreeItem name="node_modules/" type="folder">サーバーの実行に必要な依存性モジュール</FiletreeItem>
+
+<FiletreeItem name="package.json" type="file">アプリケーション情報と依存関係(dependency)の管理文書</FiletreeItem>
+
+<FiletreeItem name="index.mjs" type="file">サーバー進入点ファイル</FiletreeItem>
 
 </Filetree>
 
-## server/index.jsコードを作成する
-
-**Nuxt.js**アプリケーションインスタンスのための**server/index.js**ファイルを作成してください。 このファイルはプロジェクトのサーバー(_server_) フォルダ内に位置する必要があります。
-
-### WhaTapエージェントの初期化
-
-```javascript title="server/index.js"
-var Whatap = require('whatap').NodeAgent;
-```
-
-### Nuxt.js及びその他の必要モジュールの読み込み
-
-```javascript title="server/index.js"
-const express = require('express');
-const { Nuxt, Builder } = require('nuxt');
-const app = express();
-```
-
-### Nuxtインスタンス設定と初期化
-
-```javascript title="server/index.js"
-const config = require('./nuxt.config.js');
-config.dev = process.env.NODE_ENV !== 'production';
-const nuxt = new Nuxt(config);
-
-if (config.dev) {
-    new Builder(nuxt).build();
-}
-```
-
-### Expressサーバー設定とNuxtミドルウェア追加
-
-次のコードで`port`には、サーバーのポート番号を設定します。
-
-```javascript title="server/index.js"
-app.use(nuxt.render);
-
-const port = 3000;
-app.listen(port, () => {
-    console.log(`Server listening on http://localhost:${port}`);
-});
-```
-
-### 全体コードを見る{#fullcode}
-
-完成した完全なコードを参照してください。
-
-```javascript title="server/index.js"
-var Whatap = require('whatap').NodeAgent;
-
-const express = require('express');
-const { Nuxt, Builder } = require('nuxt');
-const app = express();
-
-const config = require('./nuxt.config.js');
-config.dev = process.env.NODE_ENV !== 'production';
-const nuxt = new Nuxt(config);
-
-if (config.dev) {
-    new Builder(nuxt).build();
-}
-
-app.use(nuxt.render);
-
-const port = 3000;
-app.listen(port, () => {
-    console.log(`Server listening on http://localhost:${port}`);
-});
-```
-
 ## アプリケーションを実行する
 
-```bash title="SH"
-node server/index.js
+次のコマンドを使用してアプリケーションを実行します。
+
+```bash title="BASH"
+node -r whatap .output/server/index.mjs
 ```
+
+</Steps>
+
+## Docker環境で実行する
+
+Docker環境でNuxtアプリケーションを実行するには*Dockerfile*で、次の手順を追加で作成します。
+
+1. _.output/server_ディレクトリに移動します。
+
+   ```bash title="BASH"
+   cd .output/server
+   ```
+
+2. 次のコマンドを実行して、WhaTapエージェントをインストールします。
+
+   ```bash title="BASH"
+   npm install whatap
+   ```
+
+   :::note
+
+   アプリケーションをビルドした後、_.output/server_パスには**whatap**パッケージが存在しないため、別のコマンドで**whatap**パッケージをインストールする必要があります。 **Nuxt.js**のTree shaking機能としてコード上で使用しないパッケージはビルドに含まれません。
+
+   :::
+
+3. *whatap.conf*ファイルを作成・設定します。
+
+4. 設定済みの_.output/server_パスを`WORKDIR`にコピーします。
+
+5. 次のコマンドを使用してアプリケーションを実行します。
+
+   ```bash title="BASH"
+   node -r whatap .output/server/index.mjs
+   ```
 
 {/* 다음 단계 */}
 import NextSteps from "../common-items/_apm-next-stemp-exclude-java.mdx";

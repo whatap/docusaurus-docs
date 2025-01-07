@@ -17,3 +17,25 @@
   - In the <Cmdname sid="active_sessions" className="uitext" /> table list, the text colors are changed black → <span class='slow'>orange</span> → <span class='vslow'>Red</span>, which means that the performance of the session is getting slower.
 
   :::
+
+<InDoc product="oracle,oracle-pro">
+
+- <UI>Top Stat</UI>: If the button displayed in the widget is selected, the top statistics about the user commits are provided. It displays the session information and key performance metrics for transaction commits occurred on the monitoring instance.
+
+  - You can check whether transactions are concentrated in a specific **sid** or **module**.
+
+  - The **program** column allows you to determine through which process a specific task was performed.
+
+- <UI>Top Event</UI>: If a button displayed in the widget is selected, the information about the major event waits for the metric is provided. This data can help you determine the cause of performance degradation and diagnose problematic sessions.
+
+  - You can identify bottlenecks by checking sessions with high **time waited** values.
+
+  - You can check whether wait events are concentrated in a specific **module** or **program**.
+
+:::note
+
+The <UI>Top Stat</UI> or <UI>Top Event</UI> button may not be available depending on the provided metrics.
+
+:::
+
+</InDoc>

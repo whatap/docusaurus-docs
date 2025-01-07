@@ -4,9 +4,15 @@
 
 <InDoc product="mssql"><ImgLang img="db-locktress-basic-mssql-v2.png" desc="Lock tree" /></InDoc>
 
-<Xclude product='postgresql,mysql,altibase,mssql,mssql-v1,cubrid'>
+<Xclude product='postgresql,mysql,altibase,mssql,mssql-v1,cubrid,tibero'>
 
 Set the desired ![number1](/img/number-01.png) date and time, and then select an instance from the ![number2](/img/number-02.png) list. If a lock occurs at the set time, **_lock wait sessions_** and the retrieved data appear in the table at the bottom of the screen.
+
+:::note
+
+For more information on how to use the <Cmdname sid="time" className="uitext" /> option, see [the following](usage-ui#timeselector).
+
+:::
 
 </Xclude>
 
@@ -26,6 +32,12 @@ Select the desired date, time, and instance to view in ![number 1](/img/number-0
 
 - You can see the data in 5-second increments by dragging within 3 hours on the chart. However, the data in 5-second increments can only be viewed within the most recent month. The data earlier than one month can only be viewed as 5-minute summary data. For example, you can drag (drill down) lock tree data from 40 days ago for the 5-minute summary data, but you cannot see 5-second data.
 
+:::note
+
+For more information on how to use the <Cmdname sid="time" className="uitext" /> option, see [the following](usage-ui#timeselector).
+
+:::
+
 </InDoc>
 
 <InDoc product="mssql,mssql-v1,tibero">
@@ -40,7 +52,9 @@ If any lock occurs during the set period, you can analyze whether locks are conc
 
 :::note
 
-You can see the data in 5-second increments by dragging within 3 hours on the chart. However, the data in 5-second increments can only be viewed within the most recent month. The data earlier than one month can only be viewed as 5-minute summary data. For example, you can drag (drill down) lock tree data from 40 days ago for the 5-minute summary data, but you cannot see 5-second data.
+- You can see the data in 5-second increments by dragging within 3 hours on the chart. However, the data in 5-second increments can only be viewed within the most recent month. The data earlier than one month can only be viewed as 5-minute summary data. For example, you can drag (drill down) lock tree data from 40 days ago for the 5-minute summary data, but you cannot see 5-second data.
+
+- For more information on how to use the <Cmdname sid="time" className="uitext" /> option, see [the following](usage-ui#timeselector).
 
 :::
 

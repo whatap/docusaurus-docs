@@ -50,6 +50,8 @@ You can query the SQL performance of the database associated with active transac
 
 - For more information about the <Cmdname sid="TTL07860" className="uitext" /> window, see [the following](#TTL07860).
 
+- In **the versions before Java Agent 2.2.40**, the <UI>ThreadStat</UI> values appear in numeric format on the <Cmdname sid="acttx" className="uitext" /> window. To display in text format, install [Java Agent 2.2.40](../release-notes/java/java-2_2_40) or later.
+
 - The databases that support this feature are **PostgreSQL**, **Oracle**, **Oracle Pro**, and **MySQL** platforms.
 
 :::
@@ -86,7 +88,7 @@ You can view performance metrics of the database associated with transactions fr
 
 :::
 
-##### Checking in the SQL step
+##### Checking in the SQL step {#sqlstep}
 
 <ImgLang img="linked-projects-check-widget-03.png" desc="Correlated project" />
 
@@ -108,6 +110,8 @@ You can view performance metrics of the database associated with transactions fr
 
 - The <Cmdname sid="BTN08518" className="uitext" /> button appears in the <UI>SQL</UI> window only when the DB of the database project registered for linked analysis executes the SQL statement of the selected transaction.
 
+- The <Cmdname sid="BTN08840" className="uitext" /> feature allows you to copy variables and paste them into the <UI>SQL Text</UI> tab of the <Cmdname sid="TTL07860" className="uitext" /> window. This feature is available when you select <Cmdname sid="BTN06764" className="uitext" />, enter the security key, and then display the value of the bind variable. For more information, see [the following](#copypastebindvar).
+
 - For more information about the <Cmdname sid="TTL07860" className="uitext" /> window, see [the following](#TTL07860).
 
 - The databases that support this feature are **PostgreSQL**, **Oracle**, **Oracle Pro**, and **MySQL** platforms.
@@ -115,6 +119,8 @@ You can view performance metrics of the database associated with transactions fr
 - On the **PostgreSQL** platform, the <UI>PID</UI> entry in the <Cmdname sid="active_sessions" className="uitext" /> table is the same as the <UI>SID</UI> entry.
 
   <ImgLang img="apm-linked-projects-postgresql-pid-sid.png" desc="SID" />
+
+  In **the versions before Java Agent 2.2.40**, the <UI>ThreadStat</UI> values appear in numeric format on the <Cmdname sid="acttx" className="uitext" /> window. To display in text format, install [Java Agent 2.2.40](../release-notes/java/java-2_2_40) or later.
 
 :::
 
@@ -135,6 +141,8 @@ You can query the SQL performance of the database associated with active transac
 - The <Cmdname sid="BTN08518" className="uitext" /> button appears in the <Cmdname sid="acttx" className="uitext" /> window only when the DB of the database project registered for linked analysis executes the SQL of the selected transaction.
 
 - For more information about the <Cmdname sid="TTL07860" className="uitext" /> window, see [the following](#TTL07860).
+
+- In **the versions before Java Agent 2.2.40**, the <UI>ThreadStat</UI> values appear in numeric format on the <Cmdname sid="acttx" className="uitext" /> window. To display in text format, install [Java Agent 2.2.40](../release-notes/java/java-2_2_40) or later.
 
 - The databases that support this feature are **PostgreSQL**, **Oracle**, **Oracle Pro**, and **MySQL** platforms.
 
@@ -159,6 +167,28 @@ Select the correlated project from the left list and then check the metrics in t
 :::note
 
 For more information about the <Cmdname sid="TTL08442" className="uitext" /> window, see [the following](#TTL08442).
+
+:::
+
+### Copying/pasting the bind variable {#copypastebindvar}
+
+You can copy the bind variable value displayed in the SQL step and then paste it into the <UI>SQL Text</UI> tab of the <Cmdname sid="TTL07860" className="uitext" /> window. Check the SQL step in the <Cmdname sid="TTL06209" className="uitext" /> window.
+
+<ImgLang img="linked-projects-copy-bind-var.png" desc="Bind variable" />
+
+1. In the <UI>SQL</UI> window, select <Cmdname sid="BTN06764" className="uitext" /> and then enter the security key.
+
+2. Check the bind variable and then select <Cmdname sid="BTN08840" className="uitext" />.
+
+3. Select <Cmdname sid="BTN08518" className="uitext" />.
+
+4. When the <Cmdname sid="TTL07860" className="uitext" /> window appears, select <Cmdname sid="BTN08846" className="uitext" /> on the <UI>SQL Text</UI> tab.
+
+:::note
+
+- For more information on how to view the SQL step in the <Cmdname sid="TTL07860" className="uitext" /> window, see [the following](#sqlstep).
+
+- For more information about the agent configuration related to the security key, see [the following](install-agent#security).
 
 :::
 
@@ -217,6 +247,8 @@ For more information about the <Cmdname sid="TTL08442" className="uitext" /> win
   - ***Default Bind***: You can bind the part set as a variable in the query sentence to the default value.
 
   - ***Reset Bind***: You can release the bound default value and check the variable.
+
+  - <Cmdname sid="BTN08846" className="uitext" />: You can paste the copied bind variable value. For more information, see [the following](#copypastebindvar).
 
   - ***Formatting***: You can improve readability by applying indentation and formatting to a SQL query statement.
 

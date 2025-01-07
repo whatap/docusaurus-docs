@@ -1,6 +1,6 @@
 Windowsイベントログ収集時、次のようにオプションを設定することができます。
 
-```bash showLineNumbers
+```ini showLineNumbers
 # 管理者権限が必要
 New-Item -type "Directory" -Path "C:\Program Files\WhatapInfra\extension"
 
@@ -13,14 +13,17 @@ $contentToAdd = @"
     [[inputs.win_eventlog.file]]
         #true | false
         enabled = true
-				# Application, Security, Setup, System, Forwarded
-				file = "Application"
-				#1: Information, 2: Warning 3: Critical 4: Audit Success 5 Audit Fail
-				#event_type = 
-				#event id
-				#event_id = 
-				#event source name
-				#source_name = ""
+        # Application, Security, Setup, System, Forwarded
+        file = "Application"
+        #1: Information, 2: Warning 3: Error 4: Audit Success 5 Audit Fail
+        #event_type = 
+        #event id
+        #event_id = 
+        #event source name
+        #source_name = ""
+        #プロジェクトコード及びプロジェクトライセンスの入力時、ログを同じリージョンの希望するプロジェクトに転送可能
+        #pcode = プロジェクトコード
+        #license = "プロジェクトライセンス"
 
 "@
 
@@ -29,13 +32,13 @@ New-Item -path "C:\Program Files\WhatapInfra\extension" -name "win_eventlog.conf
 Restart-Service "Whatap Infra"
 ```
 
-:::note 
+{/* :::note 
 
 - 対応バージョン2.5.2
 
 - OS：Windows
 
-:::
+::: */}
 
 - カテゴリー指定(`category`) 必須
 
@@ -73,7 +76,7 @@ Restart-Service "Whatap Infra"
 
   2. Warning 
 
-  3. Critical 
+  3. Error 
 
   4. Audit Success 
 
@@ -84,3 +87,15 @@ Restart-Service "Whatap Infra"
 - イベントID(`event_id`) 非必須
 
 - イベントソース名(`source_name`) 非必須
+
+- プロジェクトコード(`pcode`)非必須 
+
+- プロジェクトライセンス(`license`)非必須 
+
+:::note 
+
+- ウィンドウイベントログ収集の場合、サーバーエージェント2.5.2バージョン以降に対応します。 
+
+- ウィンドウイベントログオプションの中で`pcode`、`license`オプションの場合、サーバーエージェント2.7.4バージョン以降に対応します。 
+
+:::

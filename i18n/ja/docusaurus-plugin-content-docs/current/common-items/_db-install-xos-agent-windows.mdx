@@ -6,15 +6,15 @@ start.bat
 
 画面に表示される実行ログにエラーがないことを確認し、実行を終了した後、次の手順に従ってサービスに登録します。
 
-* **サービスを登録**
+- **サービスを登録**
 
-  xxosフォルダにある*install_WindowsService.bat*ファイルを次のように実行して、サービスに登録します。 もし`create`オプションの次に名前を入力しないと、**WhatapXOSAgent**名前でサービスに基本登録されます。
+  xosフォルダにある*install_WindowsService.bat*ファイルを次のように実行して、サービスに登録します。 もし`create`オプションの次に名前を入力しないと、**WhatapXOSAgent**名前でサービスに基本登録されます。
 
   ```bash
   install_WindowsService.bat create WhatapXOSAgent
   ```
 
-* **サービスを削除**
+- **サービスを削除**
 
   ```bash
   install_WindowsService.bat delete WhatapXOSAgent
@@ -22,6 +22,6 @@ start.bat
 
 :::note
 
-DBXエージェントでモニタリングしたデータを転送するために`dbx_port`に設定したポート(default 3002)が開いている必要があります。(**UDP Outbound**)
+DBXエージェントでモニタリングしたデータを転送するために`dbx_port`に設定したポート(default 3002)が開いている必要があります。 (**UDP Outbound**)
 
 :::

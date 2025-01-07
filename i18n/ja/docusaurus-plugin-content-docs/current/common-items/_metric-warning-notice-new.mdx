@@ -212,6 +212,8 @@
 
 - <Cmdname sid="simulation" className="uitext" />機能は、最大24時間のデータに基づいてテストできます。
 
+- タイムセレクターの利用方法の詳細については、[次の文書](usage-ui#timeselector)を参照してください。
+
 :::
 
 ### <Cmdname sid="TTL07363" /> {#TTL07363}
@@ -295,7 +297,7 @@ ex. ${4xxErrorType} == '401'
 
   </InDoc>
 
-  <InDoc product="postgresql,mysql,oracle,oracle-v1,mssql,mssql-v1,tibero,cubrid,cubrid-v1,altibase,altibase-v1,redis,mongodb">
+  <InDoc product="postgresql,mysql,oracle,oracle-v1,oracle-pro,mssql,mssql-v1,tibero,cubrid,cubrid-v1,altibase,altibase-v1,redis,mongodb">
 
   メッセージで入力できる`&#36;&#123;Tag&#125;`または`&#36;&#123;Field&#125;`変数は[次の文書](metrics-data-list)を参照してください。
 
@@ -331,7 +333,9 @@ ex. ${4xxErrorType} == '401'
 
   :::note
 
-  - テスト中は、実際のメトリクス値や変数の置換機能が動作せず、受信者タグが設定されているユーザーにのみ通知を送信することはできません。
+  - テスト中は、実際のメトリクス値や変数への置換機能が機能しません。 
+
+  - <Cmdname sid="TTL07415" className="uitext" />オプションで、受信者タグが設定されているユーザーに限ってテスト通知を送信します。 <Cmdname sid="ITM07419" className="uitext" />を選択すると、すべてのユーザーにテスト通知を送信します。
 
   - この機能を利用するためには、必須項目(<span className="vslow">\*</span>)に値を入力するか、選択します。
 

@@ -82,28 +82,42 @@ import Serveradfntp from "../common-items/_server-adf-ntp.mdx";
 
 <Serveradfntp />
 
-## Linuxシステムログモニタリング
+{/* 서버 로그  */}
 
 import Serveradflinuxsystemlog from "../common-items/_server-adf-linux-system-log.mdx";
+import Logserverlinuxshell from "../common-items/_log-server-linux-shell.mdx";
+import Logserverwindowspowershell from "../common-items/_log-server-windows-powershell.mdx";
+import Logserversettings from "../common-items/_log-server-settings.mdx";
+import Serveradflogplugin from "../common-items/_server-adf-log-plugin.mdx";
+import Logserverwindowsevent from "../common-items/_log-server-windows-event.mdx";
+import Logservermultifilecategory from "../common-items/_log-server-multi-file-category.mdx";
+
+## Linuxシステムログモニタリング
 
 <Serveradflinuxsystemlog />
 
 ## ログモニタリングプラグイン
 
-import Serveradflogplugin from "../common-items/_server-adf-log-plugin.mdx";
+ランダムなログを収集できます。次の設定の場合、エージェントの再起動が必要です。
 
-<Serveradflogplugin />
+### Linux Shell
+
+<Logserverlinuxshell />
+
+### Windows Powershell
+
+<Logserverwindowspowershell />
+
+### オプション設定 {#server-log-settings}
+
+<Logserversettings />
 
 ### Windowsイベントログのオプション設定
-
-import Logserverwindowsevent from "../common-items/_log-server-windows-event.mdx";
 
 <Logserverwindowsevent />
 
 ### ログ複数ファイルの指定と分離{#log-multiple-file-specification-and-separation}
 
 {/* 다중 파일 및 파일 분리 241014 */}
-
-import Logservermultifilecategory from "../common-items/_log-server-multi-file-category.mdx";
 
 <Logservermultifilecategory />

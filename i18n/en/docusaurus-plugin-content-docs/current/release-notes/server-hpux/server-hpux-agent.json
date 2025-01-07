@@ -1,6 +1,6 @@
 [
   {
-    "url": "https://docs.whatap.io/release-notes/server-hpux/server-hpux-1_3_6",
+    "url": "https://docs.whatap.io/en/release-notes/server-hpux/server-hpux-1_3_6",
     "ver": "v1.3.6",
     "date": "2024-12-03",
     "Lists": [
@@ -9,12 +9,12 @@
         "hash": "v136",
         "product": "Server HP-UX Agent",
         "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> HP-UX 11.31 버전 지원</p>"
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Supports HP-UX 11.31.</p>"
       }
     ]
   },
   {
-    "url": "https://docs.whatap.io/release-notes/server-hpux/server-hpux-1_3_4",
+    "url": "https://docs.whatap.io/en/release-notes/server-hpux/server-hpux-1_3_4",
     "ver": "v1.3.4",
     "date": "2024-09-19",
     "Lists": [
@@ -38,6 +38,27 @@
         "product": "Server HP-UX Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Improved to fix the OID value after initial startup of the agent.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/server-hpux/server-hpux-1_3_7",
+    "ver": "v1.3.7",
+    "date": "2024-12-13",
+    "Lists": [
+      {
+        "ver": "v1.3.7",
+        "hash": "v137",
+        "product": "Server HP-UX Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the loading error of the Openssl Hash function.</p>"
+      },
+      {
+        "ver": "v1.3.7",
+        "hash": "v137",
+        "product": "Server HP-UX Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Improved processing the agent logs.</p>"
       }
     ]
   }

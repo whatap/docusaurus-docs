@@ -1,0 +1,36 @@
+---
+id: otel-v0_2_2
+title: OTEL Agent v0.2.2
+toc_max_heading_level: 2
+---
+
+2024年12月11日
+
+- <Status priority='1'>Feature</Status>トランザクションURLとURI情報を分離して処理
+
+  既存URLで表記される部分はURIで表記します。
+
+- <Status priority='1'>Feature</Status>外部HTTP呼び出しのURL表記を"Host:Port"で修正
+
+- <Status priority='1'>Feature</Status> Kong gatewayに関して情報を抽出するプロパティのキー値をデフォルト設定に追加
+
+:::info
+
+**ダウンロード**
+
+| OS名                             |  ファイル形式  | アーキテクチャ |                                      ダウンロード                                     |
+| ------------------------------- | :------: | :-----: | :-----------------------------------------------------------------------------: |
+| Red Hat / CentOS / Amazon linux |    RPM   | x86 x64 |  [ダウンロード](https://repo.whatap.io/centos/6/x86_64/whatap-otel-0.2-2.x86_64.rpm)  |
+| \^                              |    \^    | aarch64 | [ダウンロード](https://repo.whatap.io/centos/7/aarch64/whatap-otel-0.2-2.aarch64.rpm) |
+| Ubuntu 12 and above / Debian    |    DEB   |  amd64  |   [ダウンロード](https://repo.whatap.io/debian/unstable/whatap-otel_0.2.2_amd64.deb)  |
+| \^                              |    \^    |  arm64  |   [ダウンロード](https://repo.whatap.io/debian/unstable/whatap-otel_0.2.2_arm64.deb)  |
+| Alpine linux                    | tar gzip | x86 x64 |     [ダウンロード](https://repo.whatap.io/alpine/x86_64/whatap-otel-0.2.2.tar.gz)     |
+| \^                              |    \^    | aarch64 |     [ダウンロード](https://repo.whatap.io/alpine/aarch64/whatap-otel-0.2.2.tar.gz)    |
+
+:::
+
+:::note
+
+**OpenTelemetry**で収集したデータを、WhaTapモニタリングサービスで確認する方法についての詳細は、[次の文書](../../opentelemetry/introduction)を参照してください。
+
+:::

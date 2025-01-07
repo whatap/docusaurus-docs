@@ -1,6 +1,175 @@
 [
   {
     "url": "https://docs.whatap.io/en/release-notes/service/service-2_11_x",
+    "ver": "Service 2.11.10",
+    "date": "2024-12-19",
+    "Lists": [
+      {
+        "ver": "Service 2.11.10",
+        "hash": "service-21110",
+        "product": "Application",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Integrated Flex Board</span>, fixed the error that occurs when the <span class=\"uitext\">Active Transaction</span> <span class=\"uitext\">TopN</span> widget is clicked.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/service/service-2_11_x",
+    "ver": "Service 2.11.9",
+    "date": "2024-12-19",
+    "Lists": [
+      {
+        "ver": "Service 2.11.9",
+        "hash": "service-2119",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring Multiple Instances</span>, fixed the issue where the data is not displayed for the <span class=\"uitext\">SQL Elapse Map</span> widget.</p>",
+        "category": "PostgreSQL"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/service/service-2_11_x",
+    "ver": "Service 2.11.8",
+    "date": "2024-12-16",
+    "Lists": [
+      {
+        "ver": "Service 2.11.8",
+        "hash": "service-2118",
+        "product": "Server",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Server List</span> &gt; <span class=\"uitext\">Server Detail</span>, fixed the issue where the icons for some operating systems are not displayed in the <span class=\"uitext\">Agent name</span> column.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/service/service-2_11_x",
+    "ver": "Service 2.11.7",
+    "date": "2024-12-10",
+    "Lists": [
+      {
+        "ver": "Service 2.11.7",
+        "hash": "service-2117",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In custom widgets of the <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring Multiple Instances</span> menu, fixed the issue where the data for Cloud metrics is not displayed.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/service/service-2_11_x",
+    "ver": "Service 2.11.6",
+    "date": "2024-12-09",
+    "Lists": [
+      {
+        "ver": "Service 2.11.6",
+        "hash": "service-2116",
+        "product": "AWS Log",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Management</span> &gt; <span class=\"uitext\">Agent Installation</span>, fixed the link parameter error for the <span class=\"uitext\">WhaTap forwarder installation page</span> button.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/service/service-2_11_x",
+    "ver": "Service 2.11.5",
+    "date": "2024-12-05",
+    "Lists": [
+      {
+        "ver": "Service 2.11.5",
+        "hash": "service-2115",
+        "product": "Application",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the following issues that occur in the <span class=\"uitext\">Trace analysis</span> window when the start/end time units for transactions are different.</p>",
+        "details": "<p>For example, there is an issue that occurs when a transaction starts at <strong>17</strong>:59 and ends at <strong>18</strong>:00.</p>"
+      },
+      {
+        "ver": "Service 2.11.5",
+        "hash": "service-2115",
+        "product": "Server",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In the <span class=\"uitext\">Server information</span> panel of the <span class=\"uitext\">Server List</span> &gt; <span class=\"uitext\">Server Detail</span> menu, fixed the whiteout that occurs when the <span class=\"uitext\">Server Alert List</span> button is clicked.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/service/service-2_11_x",
+    "ver": "Service 2.11.4",
+    "date": "2024-12-04",
+    "Lists": [
+      {
+        "ver": "Service 2.11.4",
+        "hash": "service-2114",
+        "product": "Application",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> In the <span class=\"uitext\">SQLs</span>, <span class=\"uitext\">HTTP calls</span>, <span class=\"uitext\">Methods</span>, and <span class=\"uitext\">Active stack</span> tabs of the <span class=\"uitext\">Trace analysis</span> window, added the text download feature.</p>"
+      },
+      {
+        "ver": "Service 2.11.4",
+        "hash": "service-2114",
+        "product": "Kubernetes",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Cluster</span> &gt; <span class=\"uitext\">etcd Dashboard</span>, removed unnecessary data values from the chart indexes.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/service/service-2_11_x",
+    "ver": "Service 2.11.3",
+    "date": "2024-12-03",
+    "Lists": [
+      {
+        "ver": "Service 2.11.3",
+        "hash": "service-2113",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Changed the units for memory size-related metrics collected by the XOS agent.</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "Service 2.11.3",
+        "hash": "service-2113",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> When the <span class=\"uitext\">Default Bind</span> feature is run in the <span class=\"uitext\">SQL details</span> and <span class=\"uitext\">Session detail</span> windows to check the plan information, fixed the issue where all bind variables are fixed with <code>1</code>.</p>",
+        "category": "Common"
+      },
+      {
+        "ver": "Service 2.11.3",
+        "hash": "service-2113",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Stat/Report</span> &gt; <span class=\"uitext\">Tablespace Size</span>, fixed the unit display error in the <span class=\"uitext\">Segment size (TOP 50)</span> section.</p>",
+        "category": "Oracle, Oracle Pro"
+      },
+      {
+        "ver": "Service 2.11.3",
+        "hash": "service-2113",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Dashboard</span> &gt; <span class=\"uitext\">Monitoring a Database Instance</span>, fixed the issue where the session status values in the <span class=\"uitext\">Active sessions</span> table are not displayed normally.</p>",
+        "category": "Oracle, Oracle Pro"
+      },
+      {
+        "ver": "Service 2.11.3",
+        "hash": "service-2113",
+        "product": "Database",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"0\">Changed</code> In the <strong>account creation</strong> step of the <span class=\"uitext\">Management</span> &gt; <span class=\"uitext\">Agent Installation</span> menu, added the configuration text for the environments <strong>below 2012</strong>.</p>",
+        "category": "SQL Server V2"
+      },
+      {
+        "ver": "Service 2.11.3",
+        "hash": "service-2113",
+        "product": "Database",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> In <span class=\"uitext\">Stat/Report</span> &gt; <span class=\"uitext\">Tablespace Size</span>, fixed the issue where the Total item is displayed multiple times.</p>",
+        "category": "Tibero"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/service/service-2_11_x",
     "ver": "Service 2.11.2",
     "date": "2024-11-28",
     "Lists": [
@@ -281,7 +450,7 @@
         "hash": "service-2110",
         "product": "Server",
         "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Changed the <span class=\"uitext\">Server List</span> &gt; <span class=\"uitext\">Server Inventory</span> menu name to <span class=\"uitext\">Server inventory</span>.</p>"
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Changed the name of the <span class=\"uitext\">Server List</span> &gt; <span class=\"uitext\">Server Configuration Info</span> menu to <span class=\"uitext\">Server Inventory</span>.</p>"
       },
       {
         "ver": "Service 2.11.0",

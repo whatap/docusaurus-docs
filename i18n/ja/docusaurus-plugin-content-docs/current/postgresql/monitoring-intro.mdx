@@ -15,10 +15,11 @@ keywords:
 import CommonCont from '../common-items/_import_db-specification-common.mdx';
 import NewFeature from '../common-items/_import_db-v2-new-feature.mdx';
 import Dbintroductiondesc from "../common-items/_db-introduction-desc.mdx";
+import DBsupportNote from "../common-items/_db-support-functions-note.mdx";
 
 <Dbintroductiondesc />
 
-<Videos url="https://img.whatap.io/23/11/06/031831DB_prd.mp4" />
+<DBsupportNote />
 
 ## PostgreSQLモニタリングの特長
 
@@ -33,34 +34,3 @@ import Dbspecification from "../common-items/_db-specification.mdx";
 ## データベースモニタリングV2の新機能{#new-feature}
 
 <NewFeature product='PostgreSQL' ver='1.6.7' />
-
----
-
-## 対応機能
-
-次に利用可能な機能一覧です。
-
-| カテゴリ       | 機能区分                            |                              PostgreSQL                             |
-| ---------- | ------------------------------- | :-----------------------------------------------------------------: |
-| Monitoring | Instance List                   |                   <span class='emoji-ok'>✅</span>                   |
-| ^          | Instancs Monitoring             |                   <span class='emoji-ok'>✅</span>                   |
-| ^          | Multi DataBase (tenant)         | <span class='emoji-ok'>✅</span><br/>一部の指標に限りmulti db statにすることができます |
-| ^          | Slow Query                      |                   <span class='emoji-ok'>✅</span>                   |
-| Analysis   | Trends                          |                   <span class='emoji-ok'>✅</span>                   |
-| ^          | Trends Compare                  |                   <span class='emoji-ok'>✅</span>                   |
-| ^          | Lock Tree                       |                   <span class='emoji-ok'>✅</span>                   |
-| ^          | Parallel Query Tree             |                   <span class='emoji-no'>❌</span>                   |
-| ^          | Dead Lock                       |                   <span class='emoji-no'>❌</span>                   |
-| ^          | DB Parameter                    |                   <span class='emoji-ok'>✅</span>                   |
-| Statistics | SQL Stat                        |                   <span class='emoji-ok'>✅</span>                   |
-| ^          | Table Size                      |                                サポート予定                               |
-| ^          | Database(TableSpace) Size       |                   <span class='emoji-ok'>✅</span>                   |
-| ^          | SGA Size                        |                   <span class='emoji-no'>❌</span>                   |
-| Report     | Daily / Weekly / Monthly Report |                   <span class='emoji-ok'>✅</span>                   |
-| Event      | Event List                      |                   <span class='emoji-ok'>✅</span>                   |
-| ^          | Event Stat                      |                   <span class='emoji-ok'>✅</span>                   |
-| ^          | Event Setting                   |                   <span class='emoji-ok'>✅</span>                   |
-| ^          | Notification                    |                   <span class='emoji-ok'>✅</span>                   |
-| Management | Agent Setup                     |                   <span class='emoji-ok'>✅</span>                   |
-| ^          | Agent List                      |                   <span class='emoji-ok'>✅</span>                   |
-| ^          | Project Management              |                   <span class='emoji-ok'>✅</span>                   |

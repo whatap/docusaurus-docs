@@ -36,3 +36,45 @@ import Permissionerror from "../common-items/_permission-error.mdx";
 import Sigarlibraryerror from "../common-items/_sigar-library-error.mdx";
 
 <Sigarlibraryerror />
+
+## CPU指標が-1で表示される場合{#cpumetrics}
+
+最新バージョンのJavaエージェントを使用する環境でIBM Javaを実行する時、CPU指標が**-1**と表示される場合があります。この問題は、特定のプラットフォームで**System Load Average**値に対応していないために発生します。
+
+Javaエージェントは基本的にJava Management Extensions(JMX)を活用して指標を収集します。`OperatingSystemMXBean`インターフェースの`getSystemLoadAverage()`メソッドを使用します。このメソッドは、オペレーティング システムに応じて、システムの最近1分間の平均負荷を返します。しかし、一部のプラットフォームではその値に対応していないため**-1**を返還できます。
+
+:::info
+
+`getSystemLoadAverage()`メソッドはOpenJDKソースコードで確認できます。例えば、OpenJDK 7uバージョンのソースコードは[GitHubリポジトリ](https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/lang/management/OperatingSystemMXBean.java)で確認できます。
+
+:::
+
+### 推奨事項: 組み込みライブラリによるメトリック収集の設定
+
+CPU指標が**-1**と表示される現象を解決するには、Javaエージェント設定により組み込みライブラリ(OSHIまたはSIGAR)を活性化します。
+
+- **Java 8 以降環境**: **OSHI**ライブラリを活用
+
+  オペレーティングシステムレベルの指標を安定的に収集するために**OSHI**ライブラリを使用できます。エージェントの設定方法については、以下を参照してください。
+
+  ```ini title="whatap.conf"
+  # default false
+  oshi_enabled=true
+  ```
+
+- **Java 8 未満環境**: **SIGAR**ライブラリを活用
+
+  Java 8 未満の環境では**SIGAR**ライブラリを活用して指標を収集できます。エージェントの設定方法については、以下を参照してください。
+
+  ```ini title="whatap.conf"
+  # default false
+  sigar_enabled=true
+  ```
+
+:::note
+
+- **OSHI**(`oshi_enabled`)と**SIGAR**(`sigar_enabled`)オプションはデフォルト値として非活性化されています。必要に応じて明示的に設定する必要があります。
+
+- 両方の設定を同時に活性化しないように注意します。環境に合ったライブラリを選択して設定します。
+
+:::

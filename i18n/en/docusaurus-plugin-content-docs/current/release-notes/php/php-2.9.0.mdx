@@ -1,0 +1,35 @@
+---
+id: php-2_9_0
+title: PHP Agent v2.9.0
+toc_max_heading_level: 2
+pagination_next: release-notes/php/php-2_8_2
+displayed_sidebar: releaseSidebar
+---
+
+December 11, 2024
+
+- <Status priority='1'>New</Status> PHP 8.4 has been supported.
+
+- <Status priority='0'>Fixed</Status> Fixed the location of the `session_start` profile.
+
+  When Redis query is performed inside the `session_start` function, the `session_start` function is modified to be displayed before the query.
+
+- <Status priority='0'>Fixed</Status> Modified the multi-transaction sampling.
+
+  When multi-transaction sampling is disabled, distributed transaction tracing stops even when there are multiple external HTTP calls.
+
+:::info
+
+**Download**
+
+| OS Name                         | File format | Architecture |                                     Download                                     |
+| ------------------------------- | :---------: | :----------: | :------------------------------------------------------------------------------: |
+| Red Hat / CentOS / Amazon linux |     RPM     |    x86 x64   |  [Download](https://repo.whatap.io/centos/6/x86_64/whatap-php-2.9-0.x86_64.rpm)  |
+| \^                              |      \^     |    aarch64   | [Download](https://repo.whatap.io/centos/7/aarch64/whatap-php-2.9-0.aarch64.rpm) |
+| Ubuntu 12 and above / Debian    |     DEB     |     amd64    |   [Download](https://repo.whatap.io/debian/unstable/whatap-php_2.9.0_amd64.deb)  |
+| \^                              |      \^     |     arm64    |   [Download](https://repo.whatap.io/debian/unstable/whatap-php_2.9.0_arm64.deb)  |
+| Alpine linux                    |   tar gzip  |    x86 x64   |     [Download](https://repo.whatap.io/alpine/x86_64/whatap-php-2.9.0.tar.gz)     |
+| \^                              |      \^     |    aarch64   |     [Download](https://repo.whatap.io/alpine/aarch64/whatap-php-2.9.0.tar.gz)    |
+| Freebsd 10 or later             |     TXZ     |    x86 x64   |        [Download](https://repo.whatap.io/freebsd/10/whatap-php-2.9.0.txz)        |
+
+:::

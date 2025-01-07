@@ -10,6 +10,8 @@ keywords:
   - Server
 ---
 
+import ServerInventoryFilter from "../common-items/_server-inventory-filter.mdx";
+
 Home &gt; Select Project &gt; <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_serverInventoryMap" className="uitext" />
 
 {/* :::note 
@@ -169,6 +171,12 @@ The following settings are required to enable the <Cmdname sid="side_serverInven
 | Real-time inquiry (Live) | Basic mode<br/>Interval: 5 seconds |
 | Pause inquiry (Pause)    | Real-time status change to OFF     |
 
+:::note 
+
+For more information on how to use the time selector, see [the following](usage-ui#timeselector).
+
+:::
+
 #### Grouping
 
 {/* 1. 업무그룹 대 - 업무 그룹 중 (활용 예시)(나중에 12월?)
@@ -226,13 +234,7 @@ For more information about ***grouping***, see [the following](server-inventory-
 
 <Cmdname sid="side_serverInventoryMap" className="uitext" /> provides the feature to filter the server types to display on the dashboard. Data applied through filtering is reflected into the server group chart, summary view, and detailed view.
 
-- ***Filter key***: Filters can be set based on the default collection columns provided in the <Cmdname sid="side_serverInventory" className="uitext" /> menu and user-defined custom columns.
-
-  - Default collection columns: Items automatically collected from <Cmdname sid="side_serverInventory" className="uitext" /> are ***server type***, ***default group***, ***OS type***, ***OS version***, ***model***, and ***serial*** columns.
-
-  - Custom columns: They are the items added and managed on a project basis.
-
-- ***Filter condition***: Filter conditions can be set as string conditions such as matched, mismatched, included, and excluded. All filters are string-based, and numeric conditions (e.g. `≥`, `≤`) are not supported.
+<ServerInventoryFilter />
 
 ### ![2](/img/number-02.png) Server configuration status
 

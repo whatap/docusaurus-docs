@@ -212,6 +212,8 @@ You can test the event conditions set in <Cmdname sid="TTL07365" className="uite
 
 - The <Cmdname sid="simulation" className="uitext" /> feature can test for the data for 24 hours.
 
+- For more information on how to use the time selector, see [the following](usage-ui#timeselector).
+
 :::
 
 ### <Cmdname sid="TTL07363" /> {#TTL07363}
@@ -263,15 +265,15 @@ Set the event name, message, and recipients.
 
   <ImgLang img='event-config-message-example.png' desc='Message example' />
 
-  - By entering `${Tag}` or `${Field}`, you can apply the variable to the message. The variable must be a value contained in the selected metrics data <Cmdname sid="category" className="uitext" />. You can check the `${Tag}` and `${Field}` variables that can be entered in the <Cmdname sid="tag_count" className="uitext" /> menu.
+  - By entering `&#36;&#123;Tag&#125;` or `&#36;&#123;Field&#125;`, you can apply the variable to the message. The variable must be a value contained in the selected metrics data <Cmdname sid="category" className="uitext" />. You can check the `&#36;&#123;Tag&#125;` and `&#36;&#123;Field&#125;` variables that can be entered in the <Cmdname sid="tag_count" className="uitext" /> menu.
 
   - If the ![Start icon](/img/ico-timing.svg) button is clicked, you can see the history of previously entered messages.
 
   :::tip
 
-  You can write a message by entering the `${Tag}` and `${Field}` variables in the message field.
+  You can write a message by entering the `&#36;&#123;Tag&#125;` and `&#36;&#123;Field&#125;` variables in the message field.
 
-  In <Cmdname sid="analysis" className="uitext" /> &gt; <Cmdname sid="tag_count" className="uitext" />, select <Cmdname sid="category" className="uitext" /> and then check the `${Tag}` and `${Field}` variables that can be entered. For the <Cmdname sid="category" className="uitext" /> name of the current event template, see the <b>Category</b> in <Link to="#basic-template">the following</Link>
+  In <Cmdname sid="analysis" className="uitext" /> &gt; <Cmdname sid="tag_count" className="uitext" />, select <Cmdname sid="category" className="uitext" /> and then check the `&#36;&#123;Tag&#125;` and `&#36;&#123;Field&#125;` variables that can be entered. For the <Cmdname sid="category" className="uitext" /> name of the current event template, see the <b>Category</b> in <Link to="#basic-template">the following</Link>
 
   :::
 
@@ -279,49 +281,49 @@ Set the event name, message, and recipients.
 
   <InDoc product="java,php,python,nodejs,dotnet,golang">
 
-  For the `${Tag}` and `${Field}` variables that can be entered as the message, see [the following](metrics-app).
+  For the `&#36;&#123;Tag&#125;` and `&#36;&#123;Field&#125;` variables that can be entered as the message, see [the following](metrics-app).
 
   </InDoc>
 
   <InDoc product="server">
 
-  For the `${Tag}` and `${Field}` variables that can be entered in the message, see [the following](metrics-server).
+  For the `&#36;&#123;Tag&#125;` and `&#36;&#123;Field&#125;` variables that can be entered in the message, see [the following](metrics-server).
 
   </InDoc>
 
   <InDoc product="kubernetes">
 
-  For the `${Tag}` and `${Field}` variables that can be entered in the message, see [the following](metrics-kubernetes).
+  For the `&#36;&#123;Tag&#125;` and `&#36;&#123;Field&#125;` variables that can be entered in the message, see [the following](metrics-kubernetes).
 
   </InDoc>
 
-  <InDoc product="postgresql,mysql,oracle,oracle-v1,mssql,mssql-v1,tibero,cubrid,cubrid-v1,altibase,altibase-v1,redis,mongodb">
+  <InDoc product="postgresql,mysql,oracle,oracle-v1,oracle-pro,mssql,mssql-v1,tibero,cubrid,cubrid-v1,altibase,altibase-v1,redis,mongodb">
 
-  For the `${Tag}` and `${Field}` variables that can be entered as the message, see [the following](metrics-data-list).
+  For the `&#36;&#123;Tag&#125;` and `&#36;&#123;Field&#125;` variables that can be entered as the message, see [the following](metrics-data-list).
 
   </InDoc>
 
   <InDoc product="browser">
 
-  For the `${Tag}` and `${Field}` variables that can be entered in the message, see [the following](metrics-browser).
+  For the `&#36;&#123;Tag&#125;` and `&#36;&#123;Field&#125;` variables that can be entered in the message, see [the following](metrics-browser).
 
   </InDoc>
 
   <InDoc product="npm">
 
-  For the `${Tag}` and `${Field}` variables that can be entered as the message, see [the following](metrics-npm).
+  For the `&#36;&#123;Tag&#125;` and `&#36;&#123;Field&#125;` variables that can be entered as the message, see [the following](metrics-npm).
 
   </InDoc>
 
   <InDoc product="amazon-cloudwatch,azure,ncloud,oracle-cloud">
 
-  The `${Tag}` or `${Field}` variables that can be entered as the message can be checked in <Cmdname sid="side_metricsSearch" className="uitext" />.
+  The `&#36;&#123;Tag&#125;` or `&#36;&#123;Field&#125;` variables that can be entered as the message can be checked in <Cmdname sid="side_metricsSearch" className="uitext" />.
 
   </InDoc>
 
   <InDoc product="amazon-ecs">
 
-  For the `${Tag}` and `${Field}` variables that can be entered in the message, see [the following](metrics-ecs).
+  For the `&#36;&#123;Tag&#125;` and `&#36;&#123;Field&#125;` variables that can be entered in the message, see [the following](metrics-ecs).
 
   </InDoc>
 
@@ -331,7 +333,9 @@ Set the event name, message, and recipients.
 
   :::note
 
-  - During testing, substitution for actual metric values or variables does not work, and the notifications cannot be sent only to users with recipient tags.
+  - During testing, substitutions for actual metric values ​​or variables do not work. 
+
+  - Test notifications are sent only to users with the recipient tag set in the <Cmdname sid="TTL07415" className="uitext" /> option. If you select <Cmdname sid="ITM07419" className="uitext" />, a test notification is sent to all users.
 
   - To use this feature, enter or select a value for the required field (<span className="vslow">\*</span>).
 

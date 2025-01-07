@@ -1972,7 +1972,7 @@
     "description": "The label for category 단계별 명령어 가이드 in sidebar learningSidebar"
   },
   "sidebar.learningSidebar.category.용어 알아보기": {
-    "message": "用語詳細",
+    "message": "用語の詳細",
     "description": "The label for category 용어 알아보기 in sidebar learningSidebar"
   },
   "sidebar.referSidebar.category.라이선스": {
@@ -2040,7 +2040,7 @@
     "description": "The label for category Database Reference in sidebar dbSidebar"
   },
   "sidebar.dbSidebar.link.데이터베이스별 지원 기능 비교": {
-    "message": "データベースごとのサポート機能の比較",
+    "message": "データベース別のサポート機能比較",
     "description": "The label for link 데이터베이스별 지원 기능 비교 in sidebar dbSidebar, linking to ../db-support-functions"
   },
   "sidebar.javaSidebar.category.이벤트 설정": {

@@ -1,0 +1,20 @@
+---
+id: dbx-2_3_0
+title: DBX v2.3.0
+pagination_next: release-notes/db/dbx-2_2_9
+displayed_sidebar: releaseSidebar
+---
+
+December 19, 2024
+
+## PostgreSQL
+
+- <Status priority='1'>Feature</Status> Added the Amazon Aurora metric.
+
+  - `cpu`
+  - `active_txns`
+  - `log_stream_speed_in_kib_per_second`
+  - `pending_read_ios`
+  - `read_ios`
+
+- <Status priority='0'>Fixed</Status> Fixed the `vacuum` and `statement` errors that occur in the versions less than PostgreSQL 17.

@@ -1,33 +1,27 @@
 ### アクティブスタック {#anlaysis-trace-active-stack}
 
-<Xclude product='kubernetes'>
-
 <ImgLang img="analysis-tx-active-stack.png" desc="アクティブスタック" />
 
 アクティブスタックを収集した区間と時間、関連するクラス、メソッド情報を確認するには、<Cmdname sid="TTL06133" className="uitext" />タブを選択します。 
+
+- ![統計アイコン](/img/ic-static.svg) : <Cmdname sid="transaction_statistics" className="uitext" />情報を確認できます。 チャートのグラフを選択すると<Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_txSearch" className="uitext" />メニューに移動します。 選択した時間帯のトランザクション一覧を確認できます。
+
+- ![ダウンロードアイコン](/img/ico-download.svg) <Cmdname sid="stack" className="uitext" />: アクティブスタックに関する詳細情報をTXTファイルにダウンロードできます。
 
 :::note
 
 - トランザクション一覧から![アクティブスタックアイコン](/img/ic-s-active-stack.svg)アイコンが表示された項目で確認できます。
 
-- アクティブスタックの詳細については、[次の文書](analysis-apm#active-stack)を参照してください。
+<Xclude product='kubernetes'>
 
-:::
+- アクティブスタックの詳細については、[次の文書](analysis-apm#active-stack)を参照してください。
 
 </Xclude>
 
 <InDoc product='kubernetes'>
 
-<ImgLang img="analysis-tx-active-stack.png" desc="アクティブスタック" />
-
-アクティブスタックを収集した区間と時間、関連するクラス、メソッド情報を確認するには、<Cmdname sid="TTL06133" className="uitext" />タブを選択します。 
-
-:::note
-
-- トランザクション一覧から![アクティブスタックアイコン](/img/ic-s-active-stack.svg)アイコンが表示された項目で確認できます。
-
 - アクティブスタックの詳細については、[次の文書](../java/analysis-apm#active-stack)を参照してください。
 
-:::
-
 </InDoc>
+
+:::

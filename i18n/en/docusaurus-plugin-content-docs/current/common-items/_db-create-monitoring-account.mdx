@@ -12,37 +12,96 @@ create user DB_User with password 'DB Password';
 
 <InDoc product="mssql">
 
+<Tabs groupId='mssql'>
+<TabItem value="sqlserver2014over" label="SQL Server 2014+">
+
 ```sql
 create login DB_User with password='DB Password';
-grant view server state to DB_User;
 create user DB_User for login DB_User;
-grant execute to DB_User;
+grant connect any database to DB_User;
+grant view server state to DB_User;
+grant view any definition to DB_User;
+```
+
+</TabItem>
+<TabItem value="sqlserver2012" label="SQL Server 2012 or earlier">
+
+```sql
+create login DB_User with password='DB Password';
+create user DB_User for login DB_User;
+grant view server state to DB_User;
+grant view any definition to DB_User;
+```
+
+You need to create an additional monitoring account and grant roles for each desired DB to monitor.
+
+```sql
+use DB_Name;
+create user DB_User for login DB_User;
+grant select, execute to DB_User;
+```
+
+</TabItem>
+<TabItem value="sqlserver2018" label="SQL Server 2008 or earlier">
+
+```sql
+create login DB_User with password='DB Password';
+create user DB_User for login DB_User;
+grant view server state to DB_User;
+grant view any definition to DB_User;
 EXEC sp_configure 'show advanced options', 1;
 RECONFIGURE;
 EXEC sp_configure 'Ole Automation Procedures', 1;
 RECONFIGURE;
 ```
 
+You need to create an additional monitoring account and grant roles for each desired DB to monitor.
+
+```sql
+use DB_Name;
+create user DB_User for login DB_User;
+grant select, execute to DB_User;
+```
+
+</TabItem>
+</Tabs>
+
 - Additional roles when using the Kill session
 
   ```sql
-  grant alter any connection to whatap;
+  grant alter any connection to DB_User;
   ```
 
 - **Additional roles when using the Kill session in the Azure SQL Database environment**
 
   ```sql
-  grant kill database connection to whatap;
+  grant kill database connection to DB_User;
   ```
 
 - **Roles required for use of <Cmdname sid="side_dbJobInfo" className="uitext" /> and <Cmdname sid="side_dbBackupRecoveryHistory" className="uitext" /> menus**
 
-  Granting the role to access the msdb database
+  Grant roles to access the msdb database.
 
   ```sql
   USE msdb;
   CREATE USER DB_User FOR LOGIN DB_User;
   GRANT SELECT to DB_User;
+  ```
+
+- **Required roles when viewing object information**
+
+  For the versions below 2014, connect to each DB to be monitored and grant roles.
+
+  ```sql
+  grant view any definition to DB_User;
+  ```
+
+- **Required roles when viewing plans**
+
+  Connect to each DB and perform required tasks.
+
+  ```sql
+  grant showplan to DB_User;
   ```
 
 </InDoc>

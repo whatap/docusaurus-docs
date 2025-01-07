@@ -227,6 +227,12 @@ import Transactionprofilehttp from "../common-items/_transaction-profile-http.md
 
 以下は、アプリケーション間の呼び出しを追跡しモニタリングするためのオプションです。このオプションにより、ユーザーは複数のアプリケーション間の相互作用を理解できます。提供する様々なオプションにより、マルチトランザクションの追跡に対する詳細な動作を調整できます。
 
+- **mtrace_enabled** <span class='type'>Boolean</span>
+
+  既定値`false`
+
+  マルチトランザクション追跡機能(Multi Transaction ID、以下MTID) の使用有無を設定します。MTIDを追跡することで、登録したすべてのアプリケーション間の呼び出しを確認できます。
+
 - **mtrace_rate** <span class='type'>Int</span>
 
   既定値`0`

@@ -1,0 +1,125 @@
+## Time selector {#timeselector}
+
+It provides the feature to set dates and times so that users can quickly and accurately analyze the required data. The following guides you to the main features of the time selector and how to use them.
+
+### Real-time mode
+
+This mode allows you to check the current status by updating the dashboard data in real time. When the current menu is in **live mode**, the date and time selection tools at the top of the screen display ![Pause icon](/img/ic-pause-green.svg) <UI>Live</UI>. 
+
+<ImgLang img="common-ui/ui-timeselector-live.png" desc="Real-time mode" />
+
+**Real-time mode** collects data at an interval of 5 seconds by default and displays it on the screen. If the time selector displays a green icon (e.g. <code className="time"><Cmdname sid="5_min" /></code>), the data is updated every 5 seconds during the query.
+
+<ImgLang img="common-ui/ui-timeselector-realtime-range-5m.png" desc="Real-time mode" />
+
+For example, if the time selector displays <code className="time"><Cmdname sid="5_min" /></code>, the charts or data displayed on the screen is continuously updated every 5 seconds for 5 minutes.
+
+- You can change the data query range by selecting the green icon button.
+
+  <ImgLang img="common-ui/ui-timeselector-realtime-range.png" desc="Real-time mode" />
+
+- If you want to stop **real-time mode** and view the data at a specific time, select ![Pause icon](/img/ic-pause-green.svg) or the clock area.
+
+  ![Real-time mode](/img/common-ui/ui-timeselector-live2specific.gif)
+
+:::note
+
+**Real-time mode** may not be supported depending on the menus and features provided.
+
+:::
+
+### Period setting mode (past time query)
+
+This mode allows users to set the desired start and end times and then retrieve data for the period. To return to **live mode**, select ![Play icon](/img/ic-play-grn.svg).
+
+<ImgLang img="common-ui/ui-timeselector-timerange.png" desc="Period setting mode" />
+
+To view a past time, you can set a desired viewing period by clicking ![Pause icon](/img/ic-pause-green.svg) or selecting the date and time.
+
+![Period setting mode](/img/common-ui/ui-timeselector-timerange-mov.gif)
+
+:::note
+
+The maximum query period may differ depending on the provided menus and features, and the **real-time mode** (![Play icon](/img/ic-play-grn.svg)) may not be supported.
+
+:::
+
+### Selecting the specific date and time
+
+You can select the desired date and time to view the data for the period.
+
+#### Changing with the keyboard
+
+You can click the date or time and then use your keyboard to change the time.
+
+![Period setting mode](/img/common-ui/ui-timeselector-timerange-mov.gif)
+
+- Press the left or right arrow keys on your keyboard to move through the step of year, month, day, hour, and minute. You can also navigate by pressing `TAB` or `Shift + TAB` keys.
+
+- You can change the date or time to your taste by pressing the up or down arrow key on your keyboard.
+
+- Change the time using your keyboard, and then press `Enter` or click outside the time selector. If you press `ESC` while typing, your changes is not applied.
+
+- In **Period setting mode**, you can change the desired query period by selecting ![Left arrow icon](/img/left-arrow.svg) or ![Right arrow icon](/img/right-arrow.svg). At this time, the time unit to be changed is based on the value indicated on the green icon.
+
+#### Changing in the calendar
+
+Select ![Calendar icon](/img/ic-start-date.svg) on the utmost right of the time selector. A window appears allowing you to select a calendar and time. You can change it by selecting the desired date and time. After changing the date and time, select <Cmdname sid="BTN06053" className="uitext" />.
+
+<ImgLang img="common-ui/ui-timeselector-date-picker.png" desc="Date picker" />
+
+- You can change by month by selecting ![Left arrow icon](/img/left-arrow.svg) or ![Right arrow icon](/img/right-arrow.svg) at the top of the calendar.
+
+- You can select the desired time from the time selection box at the bottom of the calendar. Select a time and then click <Cmdname sid="BTN06053" className="uitext" />.
+
+- You can change it to the current time by selecting <Cmdname sid="TTL07425" className="uitext" />.
+
+- Dates that are grayed out cannot be selected.
+
+:::note
+
+- If you select ![WhaTap Docs icon](/img/ic-guide.svg), the current document page appears.
+
+- **Maximum query period** may differ depending on the menus and features provided.
+
+:::
+
+#### Selecting a predefined query range
+
+It provides the feature to select a predefined query range to enable quick and efficient data retrieval. Select the green button in the time selector.
+
+<ImgLang img="common-ui/ui-timeselector-select-custom.png" desc="Time selector" />
+
+The options to select from short term to mid term, or a specific date. Select the desired options and then click ![Left arrow icon](/img/left-arrow.svg) or ![Right arrow icon](/img/right-arrow.svg). You can change the time based on the selected query range unit.
+
+The <Cmdname sid="recent_time_history" className="uitext" /> option allows you to select a list of recently searched times.
+
+:::note
+
+The list of predefined query ranges that can be selected may differ depending on the menus and features provided.
+
+:::
+
+#### Changing by paste
+
+After copying the time from the time selector, you can paste it after changing the text value to a desired value.
+
+![page time](/img/common-ui/ui-timeselector-paste.gif)
+
+1. In the time selector, press `Ctrl + C` to copy from the year, month, day, and time area. 
+
+2. Paste it into the text editor and then change it to your desired date and time.
+
+3. Copy the changed date and time in the text editor.
+
+4. Paste by pressing `Ctrl + V` in the time selector.
+
+:::note
+
+- For the date and time format that can be pasted, see the following. `YYYY/MM/DD HH:MM ~ YYYY/MM/DD HH:MM`
+
+  e.g. 2024/12/10 09:00 to 2024/12/11 13:00
+
+- If the date and time format is incorrect, it is not pasted.
+
+:::

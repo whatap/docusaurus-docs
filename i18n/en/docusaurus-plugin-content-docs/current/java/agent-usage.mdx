@@ -22,6 +22,12 @@ The following explains how the Java agent collects CPU, memory, and disk usage. 
 
   When measuring the CPU, memory, and disk usages, set whether or not to use the OSHI libraries.
 
+  :::note
+
+  It is recommended to use it in the environment with Java 8 or later.
+
+  :::
+
 - **oshi_netstat_enabled** <span class='type'>Boolean</span> <code class="my">Java Agent v2.2.31 or later</code>
 
   Default `false`
@@ -38,6 +44,8 @@ The following explains how the Java agent collects CPU, memory, and disk usage. 
 
   - In earlier than whatap.agent.2.1.0, the default value is `true`. In whatap.agent.2.1.0 or later, the default value is `false`.
 
-  - In Java 1.6 or earlier, you can enable the sigar library and collect performance metrics by adding the `sigar_enabled=true` option.
+  - In Java 8 or earlier or Java 1.6 or earlier, you can enable the sigar library and collect performance metrics by adding the `sigar_enabled=true` option.
+
+  - Depending on the application environment, you may see CPU metrics displayed as **-1**. You can check the recommendations provided by WhaTap and then resolve the issues. See [the following](agent-troubleshooting#cpumetrics).
 
   :::

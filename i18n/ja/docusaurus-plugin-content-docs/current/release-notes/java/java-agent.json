@@ -1,5 +1,192 @@
 [
   {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_45",
+    "ver": "v2.2.45",
+    "date": "2024-12-10",
+    "Lists": [
+      {
+        "ver": "v2.2.45",
+        "hash": "v2245",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code>mongodb-4.11追跡</p>"
+      },
+      {
+        "ver": "v2.2.45",
+        "hash": "v2245",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code>mongodb-5.0追跡</p>"
+      },
+      {
+        "ver": "v2.2.45",
+        "hash": "v2245",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> MongoDB SQLデータ変更</p>",
+        "details": "<ul>\n<li>\n<p><strong>既存</strong>: <code>${query}</code>形式、パラメータ収集</p>\n<div class=\"language-json codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-json codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token property\">\"find\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> </span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"employee\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> </span><span class=\"token property\">\"filter\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token property\">\"_id\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> </span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"a40b6cc6-e1e6-#b-#ddf-b880e55f25bb\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> </span><span class=\"token property\">\"limit\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> #</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> </span><span class=\"token property\">\"singleBatch\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> </span><span class=\"token boolean\" style=\"color:rgb(255, 88, 116)\">true</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n<li>\n<p><strong>変更</strong>: <code>$database ${query}</code>形式、パラメータ除去</p>\n<div class=\"language-json codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-json codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">test </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token property\">\"find\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> employee</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.45",
+        "hash": "v2245",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> <code>weaving=spring-boot-3.2</code>オプションからMongoDB設定を分離</p>",
+        "details": "<p>mongodb-driver-coreライブラリの内部動作がバージョンごとに異なりspring-boot設定から分離します。</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_44",
+    "ver": "v2.2.44",
+    "date": "2024-12-04",
+    "Lists": [
+      {
+        "ver": "v2.2.44",
+        "hash": "v2244",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<li>\n<p><code class=\"New\" type=\"1\">New</code> vertx-3.9追跡</p>\n<div class=\"language-ini codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockTitle_Ktv7\">whatap.conf</div><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-ini codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token key attr-name\" style=\"color:rgb(255, 203, 107)\">weaving</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">=</span><span class=\"token value attr-value\">vertx-3.9.0</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n<p>vertx-redis追跡しません。</p>\n</li>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_40",
+    "ver": "v2.2.40",
+    "date": "2024-11-06",
+    "Lists": [
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> camel-netty4-2.25追跡</p>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> AWS ECS Fargateメモリ使用率のメトリクス収集</p>",
+        "details": "<ul>\n<li>メモリ使用率の既定値をユーザー定義(task definition) メモリ制限値に設定</li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code>一部のエージェント設定でシステム環境変数による設定をサポート</p>",
+        "details": "<ul>\n<li>\n<p>既存に<em>whatap.conf</em>に設定した場合、既存の設定値が優先され、システム環境変数の値は無視</p>\n<div class=\"language-bash codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-bash codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">エージェント設定              システム環境変数</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">whatap.server.host   </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">&lt;=</span><span class=\"token plain\"> WHATAP_SERVER_HOST</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">whatap.server.port   </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">&lt;=</span><span class=\"token plain\"> WHATAP_SERVER_PORT</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">whatap.okind         </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">&lt;=</span><span class=\"token plain\"> WHATAP_OKIND</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">whtap.micro.enabled  </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">&lt;=</span><span class=\"token plain\"> WHATAP_MICRO_ENABLED</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Spring Boot 2.5 ~ 2.6.xバージョンでWebFluxトランザクションを追跡する際にサンプリング機能を使用できるように改善</p>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>AWS ECS EC2メモリ使用率の既定値をユーザー定義のtask definitionのメモリ制限値に修正</p>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> PostgreSQL使用時の空SQL(Empty SQL) 収集の除去</p>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>トランザクションサンプリング機能を使用時、実際のTPSより高く収集される現象を修正</p>"
+      },
+      {
+        "ver": "v2.2.40",
+        "hash": "v2240",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Spring Boot 2.5 ~ 2.6.xバージョンでSpring Cloud Gatewayを呼び出す際、連携追跡用ヘッダーがある場合でも、連携追跡に問題がないように修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_42",
+    "ver": "v2.2.42",
+    "date": "2024-11-28",
+    "Lists": [
+      {
+        "ver": "v2.2.42",
+        "hash": "v2242",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> vertx-3.5.3追跡</p>"
+      },
+      {
+        "ver": "v2.2.42",
+        "hash": "v2242",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> camel-netty4-2.25追跡</p>"
+      },
+      {
+        "ver": "v2.2.42",
+        "hash": "v2242",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>コンテナ連携時に発生する一部バグの修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_43",
+    "ver": "v2.2.43",
+    "date": "2024-12-02",
+    "Lists": [
+      {
+        "ver": "v2.2.43",
+        "hash": "v2243",
+        "product": "Java Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> jedis-2.9.0追跡</p>"
+      },
+      {
+        "ver": "v2.2.43",
+        "hash": "v2243",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> vertx-3.5.3追跡範囲の拡張</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_46",
+    "ver": "v2.2.46",
+    "date": "2024-12-13",
+    "Lists": [
+      {
+        "ver": "v2.2.46",
+        "hash": "v2246",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> undertow-server-2.3.0追跡</p>"
+      },
+      {
+        "ver": "v2.2.46",
+        "hash": "v2246",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\" type=\"1\">Feature</code> <strong>非同期追跡</strong>オプションを設定し、WhaTapで提供するapiで追跡する場合, main thread 終了後も動作する<code>CompletableFuture</code>メソッドを追跡する機能を追加</p>",
+        "details": "<p><span class=\"uitext\">トレース分析</span>で、mainトランザクションのステップ(step)として<code>CompletableFuture</code>メソッドを表示します。 <code>(SubTx)</code>サービスとしてCompletableFutureで行うトランザクションを接続します。</p>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_41",
     "ver": "v2.2.41",
     "date": "2024-11-08",
@@ -17,6 +204,56 @@
         "product": "Java Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Spring Boot 2.7.0 ~ 3.3.xバージョンでSpring Cloud Gatewayを呼び出す際、連携追跡用ヘッダーがある場合でも、連携追跡が正常に動作するように修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_47",
+    "ver": "v2.2.47",
+    "date": "2024-12-23",
+    "Lists": [
+      {
+        "ver": "v2.2.47",
+        "hash": "v2247",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> undertow-2.3でspring-boot-web使用時にトランザクションを重複収集する問題を修正</p>"
+      },
+      {
+        "ver": "v2.2.47",
+        "hash": "v2247",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <code>spring-boot-executor</code>指標の収集時にExecutorServiceがterminated状態の場合は収集されない問題を修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_33",
+    "ver": "v2.2.33",
+    "date": "2024-05-28",
+    "Lists": [
+      {
+        "ver": "v2.2.33",
+        "hash": "v2233",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code>Kubernetesエージェントで<code>continerId</code>を、Javaエージェントに渡す方式を追加</p>"
+      },
+      {
+        "ver": "v2.2.33",
+        "hash": "v2233",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> Spring-boot-2.5.x ~ 2.6.x環境を利用するユーザーが<code>NettyRoutingFilter</code>クラスを実装して使用する場合でも、連携追跡できるように修正</p>",
+        "details": "<ul>\n<li>Class NettyRoutingFilter <code>org.springframework.cloud.gateway.filter.NettyRoutingFilter</code></li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.33",
+        "hash": "v2233",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> <code>db_pool_detail</code>カテゴリのメトリクスで<code>$okind</code>, <code>$onode</code>値をそれぞれ<code>okindName</code>, <code>onodeName</code>に変更</p>"
       }
     ]
   },
@@ -91,71 +328,6 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_40",
-    "ver": "v2.2.40",
-    "date": "2024-11-06",
-    "Lists": [
-      {
-        "ver": "v2.2.40",
-        "hash": "v2240",
-        "product": "Java Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> camel-netty4-2.25追跡</p>"
-      },
-      {
-        "ver": "v2.2.40",
-        "hash": "v2240",
-        "product": "Java Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> AWS ECS Fargateメモリ使用率のメトリクス収集</p>",
-        "details": "<ul>\n<li>メモリ使用率の既定値をユーザー定義(task definition) メモリ制限値に設定</li>\n</ul>"
-      },
-      {
-        "ver": "v2.2.40",
-        "hash": "v2240",
-        "product": "Java Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code>一部のエージェント設定でシステム環境変数による設定をサポート</p>",
-        "details": "<ul>\n<li>\n<p>既存に<em>whatap.conf</em>に設定した場合、既存の設定値が優先され、システム環境変数の値は無視</p>\n<div class=\"language-bash codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-bash codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">エージェント設定              システム環境変数</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">whatap.server.host   </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">&lt;=</span><span class=\"token plain\"> WHATAP_SERVER_HOST</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">whatap.server.port   </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">&lt;=</span><span class=\"token plain\"> WHATAP_SERVER_PORT</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">whatap.okind         </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">&lt;=</span><span class=\"token plain\"> WHATAP_OKIND</span><br></span><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">whtap.micro.enabled  </span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">&lt;=</span><span class=\"token plain\"> WHATAP_MICRO_ENABLED</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v2.2.40",
-        "hash": "v2240",
-        "product": "Java Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> Spring Boot 2.5 ~ 2.6.xバージョンでWebFluxトランザクションを追跡する際にサンプリング機能を使用できるように改善</p>"
-      },
-      {
-        "ver": "v2.2.40",
-        "hash": "v2240",
-        "product": "Java Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>AWS ECS EC2メモリ使用率の既定値をユーザー定義のtask definitionのメモリ制限値に修正</p>"
-      },
-      {
-        "ver": "v2.2.40",
-        "hash": "v2240",
-        "product": "Java Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> PostgreSQL使用時の空SQL(Empty SQL) 収集の除去</p>"
-      },
-      {
-        "ver": "v2.2.40",
-        "hash": "v2240",
-        "product": "Java Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>トランザクションサンプリング機能を使用時、実際のTPSより高く収集される現象を修正</p>"
-      },
-      {
-        "ver": "v2.2.40",
-        "hash": "v2240",
-        "product": "Java Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Spring Boot 2.5 ~ 2.6.xバージョンでSpring Cloud Gatewayを呼び出す際、連携追跡用ヘッダーがある場合でも、連携追跡に問題がないように修正</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_38",
     "ver": "v2.2.38",
     "date": "2024-08-14",
@@ -181,106 +353,6 @@
         "product": "Java Agent",
         "type": "Deprecated",
         "desc": "<p><code class=\"Deprecated\" type=\"1\">Deprecated</code> lettuceドライバーのkey、paramの追跡を中断</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_43",
-    "ver": "v2.2.43",
-    "date": "2024-12-02",
-    "Lists": [
-      {
-        "ver": "v2.2.43",
-        "hash": "v2243",
-        "product": "Java Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> jedis-2.9.0 추적</p>"
-      },
-      {
-        "ver": "v2.2.43",
-        "hash": "v2243",
-        "product": "Java Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> vertx-3.5.3 추적 범위 확장</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_44",
-    "ver": "v2.2.44",
-    "date": "2024-12-04",
-    "Lists": [
-      {
-        "ver": "v2.2.44",
-        "hash": "v2244",
-        "product": "Java Agent",
-        "type": "New",
-        "desc": "<li>\n<p><code class=\"New\" type=\"1\">New</code> vertx-3.9 추적</p>\n<div class=\"language-ini codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockTitle_Ktv7\">whatap.conf</div><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-ini codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token key attr-name\" style=\"color:rgb(255, 203, 107)\">weaving</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">=</span><span class=\"token value attr-value\">vertx-3.9.0</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n<p>vertx-redis 추적하지 않습니다.</p>\n</li>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_42",
-    "ver": "v2.2.42",
-    "date": "2024-11-28",
-    "Lists": [
-      {
-        "ver": "v2.2.42",
-        "hash": "v2242",
-        "product": "Java Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> vertx-3.5.3追跡</p>"
-      },
-      {
-        "ver": "v2.2.42",
-        "hash": "v2242",
-        "product": "Java Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> camel-netty4-2.25追跡</p>"
-      },
-      {
-        "ver": "v2.2.42",
-        "hash": "v2242",
-        "product": "Java Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>コンテナ連携時に発生する一部バグの修正</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_45",
-    "ver": "v2.2.45",
-    "date": "2024-12-10",
-    "Lists": [
-      {
-        "ver": "v2.2.45",
-        "hash": "v2245",
-        "product": "Java Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> mongodb-4.11 추적</p>"
-      },
-      {
-        "ver": "v2.2.45",
-        "hash": "v2245",
-        "product": "Java Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> mongodb-5.0 추적</p>"
-      },
-      {
-        "ver": "v2.2.45",
-        "hash": "v2245",
-        "product": "Java Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> MongoDB SQL 데이터 변경</p>",
-        "details": "<ul>\n<li>\n<p><strong>기존</strong>: <code>${query}</code> 형식, 파라미터 수집</p>\n<div class=\"language-json codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-json codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token property\">\"find\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> </span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"employee\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> </span><span class=\"token property\">\"filter\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token property\">\"_id\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> </span><span class=\"token string\" style=\"color:rgb(195, 232, 141)\">\"a40b6cc6-e1e6-#b-#ddf-b880e55f25bb\"</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> </span><span class=\"token property\">\"limit\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> #</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">,</span><span class=\"token plain\"> </span><span class=\"token property\">\"singleBatch\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> </span><span class=\"token boolean\" style=\"color:rgb(255, 88, 116)\">true</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n<li>\n<p><strong>변경</strong>: <code>$database ${query}</code> 형식, 파라미터 제거</p>\n<div class=\"language-json codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#bfc7d5;--prism-background-color:#292d3e\"><div class=\"codeBlockContent_biex\"><pre tabindex=\"0\" class=\"prism-code language-json codeBlock_bY9V thin-scrollbar\" style=\"color:#bfc7d5;background-color:#292d3e\"><code class=\"codeBlockLines_e6Vv\"><span class=\"token-line\" style=\"color:#bfc7d5\"><span class=\"token plain\">test </span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">{</span><span class=\"token property\">\"find\"</span><span class=\"token operator\" style=\"color:rgb(137, 221, 255)\">:</span><span class=\"token plain\"> employee</span><span class=\"token punctuation\" style=\"color:rgb(199, 146, 234)\">}</span><br></span></code></pre><div class=\"buttonGroup__atx\"><button type=\"button\" aria-label=\"クリップボードにコードをコピーする\" title=\"コピー\" class=\"clean-btn\"><span class=\"copyButtonIcons_eSgA\" aria-hidden=\"true\"><svg viewbox=\"0 0 24 24\" class=\"copyButtonIcon_y97N\"><path fill=\"currentColor\" d=\"M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z\"></path></svg><svg viewbox=\"0 0 24 24\" class=\"copyButtonSuccessIcon_LjdS\"><path fill=\"currentColor\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"></path></svg></span></button></div></div></div>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v2.2.45",
-        "hash": "v2245",
-        "product": "Java Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code> <code>weaving=spring-boot-3.2</code> 옵션에서 MongoDB 설정 분리</p>",
-        "details": "<p>mongodb-driver-core 라이브러리의 내부 동작이 버전별로 상이하여 spring-boot 설정에서 분리합니다.</p>"
       }
     ]
   },
@@ -357,27 +429,6 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_35",
-    "ver": "v2.2.35",
-    "date": "2024-06-20",
-    "Lists": [
-      {
-        "ver": "v2.2.35",
-        "hash": "v2235",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> spring-boot-3.0.5以降(spring-webflux-6.0.7以降) バージョンでWebClient使用時、連携追跡機能を追加</p>"
-      },
-      {
-        "ver": "v2.2.35",
-        "hash": "v2235",
-        "product": "Java Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> spring-boot-2.5未満でspring-cloud-gatewayを通じてトランザクションを呼び出すと、接続されない問題を修正</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_34",
     "ver": "v2.2.34",
     "date": "2024-06-14",
@@ -395,6 +446,27 @@
         "product": "Java Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\">Fixed</code> <code>heapdump_root</code>オプションに<code>log_root</code>パスが登録される問題を修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_35",
+    "ver": "v2.2.35",
+    "date": "2024-06-20",
+    "Lists": [
+      {
+        "ver": "v2.2.35",
+        "hash": "v2235",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> spring-boot-3.0.5以降(spring-webflux-6.0.7以降) バージョンでWebClient使用時、連携追跡機能を追加</p>"
+      },
+      {
+        "ver": "v2.2.35",
+        "hash": "v2235",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> spring-boot-2.5未満でspring-cloud-gatewayを通じてトランザクションを呼び出すと、接続されない問題を修正</p>"
       }
     ]
   },
@@ -429,31 +501,72 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_33",
-    "ver": "v2.2.33",
-    "date": "2024-05-28",
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_26",
+    "ver": "v2.2.26",
+    "date": "2024-01-11",
     "Lists": [
       {
-        "ver": "v2.2.33",
-        "hash": "v2233",
+        "ver": "v2.2.26",
+        "hash": "v2226",
         "product": "Java Agent",
         "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code>Kubernetesエージェントで<code>continerId</code>を、Javaエージェントに渡す方式を追加</p>"
+        "desc": "<p><code class=\"Feature\">Feature</code> spring-boot-2.5以降でreactor-kafka-1.3を追跡</p>"
       },
       {
-        "ver": "v2.2.33",
-        "hash": "v2233",
+        "ver": "v2.2.26",
+        "hash": "v2226",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> spring-boot-2.5以降でRxJava使用時、RxJavaのscheduleを追跡</p>"
+      },
+      {
+        "ver": "v2.2.26",
+        "hash": "v2226",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> spring-boot-3.0以降でRxJava3使用時、RxJava3のscheduleを追跡</p>"
+      },
+      {
+        "ver": "v2.2.26",
+        "hash": "v2226",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code>エージェントログに<code>threadName</code>、<code>className</code>, <code>methodName</code>、<code>lineNumber</code>を収集して表示</p>"
+      },
+      {
+        "ver": "v2.2.26",
+        "hash": "v2226",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code>エージェントログの形態を修正</p>"
+      },
+      {
+        "ver": "v2.2.26",
+        "hash": "v2226",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Tiberoの<code>CallableStatement</code>を追跡</p>"
+      },
+      {
+        "ver": "v2.2.26",
+        "hash": "v2226",
         "product": "Java Agent",
         "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> Spring-boot-2.5.x ~ 2.6.x環境を利用するユーザーが<code>NettyRoutingFilter</code>クラスを実装して使用する場合でも、連携追跡できるように修正</p>",
-        "details": "<ul>\n<li>Class NettyRoutingFilter <code>org.springframework.cloud.gateway.filter.NettyRoutingFilter</code></li>\n</ul>"
+        "desc": "<p><code class=\"Changed\">Changed</code>エージェントログのテキストの色を変更</p>"
       },
       {
-        "ver": "v2.2.33",
-        "hash": "v2233",
+        "ver": "v2.2.26",
+        "hash": "v2226",
         "product": "Java Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> <code>db_pool_detail</code>カテゴリのメトリクスで<code>$okind</code>, <code>$onode</code>値をそれぞれ<code>okindName</code>, <code>onodeName</code>に変更</p>"
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code>エージェント起動時にエージェントログのファイル名を<em>whatap-<code>date</code>.log</em>から<em>whatap.log</em>に変更</p>"
+      },
+      {
+        "ver": "v2.2.26",
+        "hash": "v2226",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> UTC基準日付が変更されると<em>whatap.log</em>ファイル名を<em>whatap-<code>date</code>.log</em>に保存</p>"
       }
     ]
   },
@@ -468,71 +581,6 @@
         "product": "Java Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\">Fixed</code> Java 1.5 ~ 1.7環境でJavaエージェント2.2.28、2.2.29バージョンが動作しない問題を修正</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_31",
-    "ver": "v2.2.31",
-    "date": "2024-04-03",
-    "Lists": [
-      {
-        "ver": "v2.2.31",
-        "hash": "v2231",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> spring-boot-2.7.xでkafka-batchを追跡</p>"
-      },
-      {
-        "ver": "v2.2.31",
-        "hash": "v2231",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> JDBCドライバーでSqlExceptionが発生した場合、追跡有無の設定オプションを追加</p>",
-        "details": "<p>オプション値を<code>false</code>に設定すると、ユーザー定義の例外処理により<code>biz_exceptions</code>処理できます。</p>"
-      },
-      {
-        "ver": "v2.2.31",
-        "hash": "v2231",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> URL + HTTP method設定オプションを追加</p>",
-        "details": "<ul>\n<li>例、/api/user+GET、/api/user+POST</li>\n<li><span class=\"uitext\">統計</span>または<span class=\"uitext\">TX検索</span>メニューでURL methodで確認可能</li>\n<li>統計データでURL変更したURL methodで収集</li>\n</ul>"
-      },
-      {
-        "ver": "v2.2.31",
-        "hash": "v2231",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> oshi-core-6.1.6にアップデート</p>"
-      },
-      {
-        "ver": "v2.2.31",
-        "hash": "v2231",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code>Javaエージェントでnetstat指標を収集、Maximum Transmission Unit(MTU) 指標を追加</p>"
-      },
-      {
-        "ver": "v2.2.31",
-        "hash": "v2231",
-        "product": "Java Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> <code>trace_basetime</code>または<code>profile_basetime</code>オプションと関係なくエラーのある詳細トレースを基本収集するよう修正</p>"
-      },
-      {
-        "ver": "v2.2.31",
-        "hash": "v2231",
-        "product": "Java Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> oshiの配布ディレクトリをlib4からlib5にアップデート</p>"
-      },
-      {
-        "ver": "v2.2.31",
-        "hash": "v2231",
-        "product": "Java Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> oshi、sigarライブラリ適用時のエージェントログの誤字を修正</p>"
       }
     ]
   },
@@ -642,76 +690,6 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_26",
-    "ver": "v2.2.26",
-    "date": "2024-01-11",
-    "Lists": [
-      {
-        "ver": "v2.2.26",
-        "hash": "v2226",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> spring-boot-2.5以降でreactor-kafka-1.3を追跡</p>"
-      },
-      {
-        "ver": "v2.2.26",
-        "hash": "v2226",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> spring-boot-2.5以降でRxJava使用時、RxJavaのscheduleを追跡</p>"
-      },
-      {
-        "ver": "v2.2.26",
-        "hash": "v2226",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> spring-boot-3.0以降でRxJava3使用時、RxJava3のscheduleを追跡</p>"
-      },
-      {
-        "ver": "v2.2.26",
-        "hash": "v2226",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code>エージェントログに<code>threadName</code>、<code>className</code>, <code>methodName</code>、<code>lineNumber</code>を収集して表示</p>"
-      },
-      {
-        "ver": "v2.2.26",
-        "hash": "v2226",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code>エージェントログの形態を修正</p>"
-      },
-      {
-        "ver": "v2.2.26",
-        "hash": "v2226",
-        "product": "Java Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Tiberoの<code>CallableStatement</code>を追跡</p>"
-      },
-      {
-        "ver": "v2.2.26",
-        "hash": "v2226",
-        "product": "Java Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code>エージェントログのテキストの色を変更</p>"
-      },
-      {
-        "ver": "v2.2.26",
-        "hash": "v2226",
-        "product": "Java Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code>エージェント起動時にエージェントログのファイル名を<em>whatap-<code>date</code>.log</em>から<em>whatap.log</em>に変更</p>"
-      },
-      {
-        "ver": "v2.2.26",
-        "hash": "v2226",
-        "product": "Java Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code> UTC基準日付が変更されると<em>whatap.log</em>ファイル名を<em>whatap-<code>date</code>.log</em>に保存</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_27",
     "ver": "v2.2.27",
     "date": "2024-02-06",
@@ -771,6 +749,71 @@
         "product": "Java Agent",
         "type": "Deprecate",
         "desc": "<p><code class=\"Deprecate\">Deprecate</code> Lettuceドライバーの使用時、Redisのvalue収集中断</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/java/java-2_2_31",
+    "ver": "v2.2.31",
+    "date": "2024-04-03",
+    "Lists": [
+      {
+        "ver": "v2.2.31",
+        "hash": "v2231",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> spring-boot-2.7.xでkafka-batchを追跡</p>"
+      },
+      {
+        "ver": "v2.2.31",
+        "hash": "v2231",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> JDBCドライバーでSqlExceptionが発生した場合、追跡有無の設定オプションを追加</p>",
+        "details": "<p>オプション値を<code>false</code>に設定すると、ユーザー定義の例外処理により<code>biz_exceptions</code>処理できます。</p>"
+      },
+      {
+        "ver": "v2.2.31",
+        "hash": "v2231",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> URL + HTTP method設定オプションを追加</p>",
+        "details": "<ul>\n<li>例、/api/user+GET、/api/user+POST</li>\n<li><span class=\"uitext\">統計</span>または<span class=\"uitext\">TX検索</span>メニューでURL methodで確認可能</li>\n<li>統計データでURL変更したURL methodで収集</li>\n</ul>"
+      },
+      {
+        "ver": "v2.2.31",
+        "hash": "v2231",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> oshi-core-6.1.6にアップデート</p>"
+      },
+      {
+        "ver": "v2.2.31",
+        "hash": "v2231",
+        "product": "Java Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code>Javaエージェントでnetstat指標を収集、Maximum Transmission Unit(MTU) 指標を追加</p>"
+      },
+      {
+        "ver": "v2.2.31",
+        "hash": "v2231",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> <code>trace_basetime</code>または<code>profile_basetime</code>オプションと関係なくエラーのある詳細トレースを基本収集するよう修正</p>"
+      },
+      {
+        "ver": "v2.2.31",
+        "hash": "v2231",
+        "product": "Java Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code> oshiの配布ディレクトリをlib4からlib5にアップデート</p>"
+      },
+      {
+        "ver": "v2.2.31",
+        "hash": "v2231",
+        "product": "Java Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> oshi、sigarライブラリ適用時のエージェントログの誤字を修正</p>"
       }
     ]
   }

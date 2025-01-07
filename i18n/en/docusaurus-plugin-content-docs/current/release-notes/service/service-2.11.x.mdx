@@ -6,6 +6,146 @@ pagination_next: release-notes/service/service-2_10_x
 displayed_sidebar: releaseSidebar
 ---
 
+## Service 2.11.10
+
+December 19, 2024
+
+<div class='indentTab'>
+
+### `Application`
+
+<Status priority='0'>Fixed</Status> In <Cmdname sid="side_integratedFlexboard" className="uitext" />, fixed the error that occurs when the <Cmdname sid="AA002" className="uitext" /> <UI>TopN</UI> widget is clicked.
+
+</div>
+
+## Service 2.11.9
+
+December 19, 2024
+
+<div class='indentTab'>
+
+### `Database`
+
+#### PostgreSQL
+
+<Status priority='0'>Fixed</Status> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" />, fixed the issue where the data is not displayed for the <UI>SQL Elapse Map</UI> widget.
+
+</div>
+
+## Service 2.11.8
+
+December 16, 2024
+
+<div class='indentTab'>
+
+### `Server`
+
+<Status priority='0'>Fixed</Status> In <Cmdname sid="side_serverList" className="uitext" /> &gt; <Cmdname sid="side_serverDetail" className="uitext" />, fixed the issue where the icons for some operating systems are not displayed in the <Cmdname sid="oname" className="uitext" /> column.
+
+</div>
+
+## Service 2.11.7
+
+December 10, 2024
+
+<div class='indentTab'>
+
+### `Database`
+
+<Status priority='0'>Fixed</Status> In custom widgets of the <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" /> menu, fixed the issue where the data for Cloud metrics is not displayed.
+
+</div>
+
+## Service 2.11.6
+
+December 9, 2024
+
+<div class='indentTab'>
+
+### `AWS Log`
+
+<Status priority='0'>Fixed</Status> In <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentInstall" className="uitext" />, fixed the link parameter error for the <Cmdname sid="LNK05983" className="uitext" /> button.
+
+</div>
+
+## Service 2.11.5
+
+December 5, 2024
+
+<div class='indentTab'>
+
+### `Application`
+
+<Status priority='0'>Fixed</Status> Fixed the following issues that occur in the <Cmdname sid="TTL06209" className="uitext" /> window when the start/end time units ​​for transactions are different.
+
+For example, there is an issue that occurs when a transaction starts at **17**:59 and ends at **18**:00.
+
+- In the <Cmdname sid="TTL06126" className="uitext" /> &gt; <Cmdname sid="TTL06224" className="uitext" /> modal, fixed the issue where parameter binding does not work.
+
+- In the <Cmdname sid="TTL06126" className="uitext" /> &gt; <Cmdname sid="TTL06412" className="uitext" /> modal, fixed the issue where the active stack does not appear.
+
+---
+
+### `Server`
+
+<Status priority='0'>Fixed</Status> In the <Cmdname sid="server_info" className="uitext" /> panel of the <Cmdname sid="side_serverList" className="uitext" /> &gt; <Cmdname sid="side_serverDetail" className="uitext" /> menu, fixed the whiteout that occurs when the <Cmdname sid="server_alert_list" className="uitext" /> button is clicked.
+
+</div>
+
+## Service 2.11.4
+
+December 4, 2024
+
+<div class='indentTab'>
+
+### `Application`
+
+<Status priority='1'>Feature</Status> In the <Cmdname sid="TTL06129" className="uitext" />, <Cmdname sid="TTL06131" className="uitext" />, <Cmdname sid="TTL06130" className="uitext" />, and <Cmdname sid="TTL06133" className="uitext" /> tabs of the <Cmdname sid="TTL06209" className="uitext" /> window, added the text download feature.
+
+---
+
+### `Kubernetes`
+
+<Status priority='0'>Fixed</Status> In <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_etcdDashboard" className="uitext" />, removed unnecessary data values from the chart indexes.
+
+</div>
+
+## Service 2.11.3
+
+December 3, 2024
+
+<div class='indentTab'>
+
+### `Database`
+
+#### Common
+
+- <Status priority='0'>Fixed</Status> Changed the units for memory size-related metrics collected by the XOS agent.
+
+  :::note
+
+  This fix is to be available to view on December 4 after deployment of the collection server.
+
+  :::
+
+- <Status priority='0'>Fixed</Status> When the <UI>Default Bind</UI> feature is run in the <Cmdname sid="TTL06224" className="uitext" /> and <Cmdname sid="session_detail" className="uitext" /> windows to check the plan information, fixed the issue where all bind variables are fixed with `1`.
+
+#### Oracle, Oracle Pro
+
+- <Status priority='0'>Fixed</Status> In <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_tableSpace" className="uitext" />, fixed the unit display error in the <Cmdname sid="TTL08164" className="uitext" /> section.
+
+- <Status priority='0'>Fixed</Status> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />, fixed the issue where the session status values in the <Cmdname sid="active_sessions" className="uitext" /> table are not displayed normally.
+
+#### SQL Server <code className="my">V2</code>
+
+<Status priority='0'>Changed</Status> In the **account creation** step of the <Cmdname sid="side_management" className="uitext" /> &gt; <Cmdname sid="side_agentInstall" className="uitext" /> menu, added the configuration text for the environments **below 2012**.
+
+#### Tibero
+
+<Status priority='0'>Fixed</Status> In <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_tableSpace" className="uitext" />, fixed the issue where the Total item is displayed multiple times.
+
+</div>
+
 ## Service 2.11.2
 
 November 28, 2024
@@ -184,7 +324,7 @@ This feature can be seen in the <Cmdname sid="side_statistics" className="uitext
 
 - <Status priority='1'>Changed</Status> In <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_flexboard" className="uitext" />, modified the oname tag to be included optionally in the id when creating a widget by using fields in the `server_disk` and `server_process` categories.
 
-- <Status priority='1'>Changed</Status> Changed the <Cmdname sid="side_serverList" className="uitext" /> &gt; <Cmdname sid="side_serverInventory" className="uitext" /> menu name to <UI>Server inventory</UI>.
+- <Status priority='1'>Changed</Status> Changed the name of the <Cmdname sid="side_serverList" className="uitext" /> &gt; <UI>Server Configuration Info</UI> menu to <Cmdname sid="side_serverInventory" className="uitext" />.
 
 - <Status priority='1'>Changed</Status> Modified the UI in <Cmdname sid="side_event" className="uitext" /> &gt; <Cmdname sid="side_eventHistory" className="uitext" />.
 

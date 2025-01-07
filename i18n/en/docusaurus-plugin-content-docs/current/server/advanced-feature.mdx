@@ -82,28 +82,42 @@ import Serveradfntp from "../common-items/_server-adf-ntp.mdx";
 
 <Serveradfntp />
 
-## Linux system log monitoring
+{/* 서버 로그  */}
 
 import Serveradflinuxsystemlog from "../common-items/_server-adf-linux-system-log.mdx";
+import Logserverlinuxshell from "../common-items/_log-server-linux-shell.mdx";
+import Logserverwindowspowershell from "../common-items/_log-server-windows-powershell.mdx";
+import Logserversettings from "../common-items/_log-server-settings.mdx";
+import Serveradflogplugin from "../common-items/_server-adf-log-plugin.mdx";
+import Logserverwindowsevent from "../common-items/_log-server-windows-event.mdx";
+import Logservermultifilecategory from "../common-items/_log-server-multi-file-category.mdx";
+
+## Linux system log monitoring
 
 <Serveradflinuxsystemlog />
 
 ## Log monitoring plug-in
 
-import Serveradflogplugin from "../common-items/_server-adf-log-plugin.mdx";
+You can arbitrarily collect the logs. The following configuration requires restart of the agent.
 
-<Serveradflogplugin />
+### Linux Shell
+
+<Logserverlinuxshell />
+
+### Windows Powershell
+
+<Logserverwindowspowershell />
+
+### Configuring options {#server-log-settings}
+
+<Logserversettings />
 
 ### Configuring the log options for Windows events
-
-import Logserverwindowsevent from "../common-items/_log-server-windows-event.mdx";
 
 <Logserverwindowsevent />
 
 ### Specifying and separating multiple log files{#log-multiple-file-specification-and-separation}
 
 {/* 다중 파일 및 파일 분리 241014 */}
-
-import Logservermultifilecategory from "../common-items/_log-server-multi-file-category.mdx";
 
 <Logservermultifilecategory />

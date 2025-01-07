@@ -1,0 +1,45 @@
+<Title level={props.level} hashid="dbagentspec" >Agent minimum installation specifications</Title>
+
+- **CPU**: Approximately 20 agents can be installed per core (may differ depending on the DB server load).
+
+- **Memory**: 200 MB
+
+- **Disk**: 100 MB (Agent space of 50 MB + Log file generation space of 50 MB)
+
+:::note
+
+Minimum installation requirements based on the number of agents 
+
+| Number of installed agents |   CPU  | Memory | Disk |
+| :------------------------: | :----: | :----: | :--: |
+|             10             | 1-core |  2 GB  | 1 GB |
+|             20             | 1-core |  4 GB  | 2 GB |
+|             40             | 2-core |  8 GB  | 4 GB |
+
+:::
+
+<Title level={props.level} hashid="dbagentrunning" >Agent operation method</Title>
+
+The DB agent basically operates in the following way:
+
+- **Execution cycle**: 5 secs (default)
+
+- **Number of queries performed**: 5 to 6
+
+- **Speed**: It terminates within 1 second when the server load is normal.
+
+- Up to 2 sessions (5-second collection session, other information collection session)
+
+When a timeout occurs during collection query, the DB agent operates in the following way to minimize the load.
+
+- Do not run a new collection query until the previous collection query has finished.
+
+- If the timeout exceeds 12 seconds (exceeds 2 refresh cycles), the session is reconnected after termination.
+
+- If timeout occurs 3 times or more, wait 10 seconds and try again.
+
+:::note
+
+Depending on the load status of the DB server, it may take a long time or a timeout may occur until the result of a collection query appears on the WhaTap monitoring service screen.
+
+:::

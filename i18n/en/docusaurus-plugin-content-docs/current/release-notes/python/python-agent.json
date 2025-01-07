@@ -1,19 +1,5 @@
 [
   {
-    "url": "https://docs.whatap.io/en/release-notes/python/python-1_6_7",
-    "ver": "v1.6.7",
-    "date": "2024-08-21",
-    "Lists": [
-      {
-        "ver": "v1.6.7",
-        "hash": "v167",
-        "product": "Python Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Prevented data from being overwritten by deep copying the TraceContext before putting it in the queue.</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/en/release-notes/python/python-1_6_10",
     "ver": "v1.6.10",
     "date": "2024-09-05",
@@ -25,48 +11,6 @@
         "type": "New",
         "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the feature to support ASGI in the Django framework.</p>",
         "details": "<ul>\n<li>\n<p>Added the support logic for using Uvicorn in Django.</p>\n</li>\n<li>\n<p>Added logic to maintain context to address potential data corruption issues when using local threads in asynchronous operations.</p>\n</li>\n</ul>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/python/python-1_7_2",
-    "ver": "v1.7.2",
-    "date": "2024-11-12",
-    "Lists": [
-      {
-        "ver": "v1.7.2",
-        "hash": "v172",
-        "product": "Python Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the feature to collect the open file descriptor usage based on the PID per process.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/python/python-1_6_6",
-    "ver": "v1.6.6",
-    "date": "2024-06-07",
-    "Lists": [
-      {
-        "ver": "v1.6.6",
-        "hash": "v166",
-        "product": "Python Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> FastAPI - Fixed the bug that occurs when collecting the remoteIP.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/python/python-1_7_0",
-    "ver": "v1.7.0",
-    "date": "2024-09-24",
-    "Lists": [
-      {
-        "ver": "v1.7.0",
-        "hash": "v170",
-        "product": "Python Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the transaction collection error for fastapi 0.115.0.</p>"
       }
     ]
   },
@@ -107,6 +51,41 @@
     ]
   },
   {
+    "url": "https://docs.whatap.io/en/release-notes/python/python-1_7_3",
+    "ver": "v1.7.3",
+    "date": "2024-12-19",
+    "Lists": [
+      {
+        "ver": "v1.7.3",
+        "hash": "v173",
+        "product": "Python Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the feature to collect SQL patch counts.</p>"
+      },
+      {
+        "ver": "v1.7.3",
+        "hash": "v173",
+        "product": "Python Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the issue where multi-transactions are not collected when using the FastAPI.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/python/python-1_7_0",
+    "ver": "v1.7.0",
+    "date": "2024-09-24",
+    "Lists": [
+      {
+        "ver": "v1.7.0",
+        "hash": "v170",
+        "product": "Python Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> Fixed the transaction collection error for fastapi 0.115.0.</p>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/en/release-notes/python/python-1_6_9",
     "ver": "v1.6.9",
     "date": "2024-09-03",
@@ -122,45 +101,30 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/python/python-1_6_2",
-    "ver": "v1.6.2",
-    "date": "2024-03-29",
+    "url": "https://docs.whatap.io/en/release-notes/python/python-1_7_2",
+    "ver": "v1.7.2",
+    "date": "2024-11-12",
     "Lists": [
       {
-        "ver": "v1.6.2",
-        "hash": "v162",
+        "ver": "v1.7.2",
+        "hash": "v172",
         "product": "Python Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> Added the <code>exit_with_parent_process_enabled</code> option.</p>",
-        "details": "<ul>\n<li>\n<b>exit_with_parent_process_enabled</b>\n<em>bool</em>\n<br>\n<p>Default <code>false</code></p>\n<p>Set the value of the option through the <em>whatap.conf</em> file in the Python agent's <code>WHATAP_HOME</code> path. You can set whether or not to end the <code>whatap_python</code> process when the monitored Python process is terminated. If the option value is set to <code>true</code>, the <code>whatap_python</code> process ends together when the monitored application is terminated. It may take up to 1 minute.</p>\n</li>\n</ul>"
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> Added the feature to collect the open file descriptor usage based on the PID per process.</p>"
       }
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/python/python-1_6_4",
-    "ver": "v1.6.4",
-    "date": "2024-05-14",
+    "url": "https://docs.whatap.io/en/release-notes/python/python-1_6_7",
+    "ver": "v1.6.7",
+    "date": "2024-08-21",
     "Lists": [
       {
-        "ver": "v1.6.4",
-        "hash": "v164",
+        "ver": "v1.6.7",
+        "hash": "v167",
         "product": "Python Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Modified the parsing logic that searches for the <code>containerID</code> in the Kubernetes environment.</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/en/release-notes/python/python-1_5_8",
-    "ver": "v1.5.8",
-    "date": "2024-02-18",
-    "Lists": [
-      {
-        "ver": "v1.5.8",
-        "hash": "v158",
-        "product": "Python Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the double counting error for users (related to the number of users) in Frappe Application.</p>"
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Prevented data from being overwritten by deep copying the TraceContext before putting it in the queue.</p>"
       }
     ]
   },
@@ -179,16 +143,16 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/python/python-1_5_9",
-    "ver": "v1.5.9",
-    "date": "2024-03-11",
+    "url": "https://docs.whatap.io/en/release-notes/python/python-1_6_6",
+    "ver": "v1.6.6",
+    "date": "2024-06-07",
     "Lists": [
       {
-        "ver": "v1.5.9",
-        "hash": "v159",
+        "ver": "v1.6.6",
+        "hash": "v166",
         "product": "Python Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the issue where input is made without line breaks when setting agent options.</p>"
+        "desc": "<p><code class=\"Fixed\">Fixed</code> FastAPI - Fixed the bug that occurs when collecting the remoteIP.</p>"
       }
     ]
   },
@@ -203,6 +167,21 @@
         "product": "Python Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\">Fixed</code> Modified the parsing logic that searches for the <code>containerID</code> in the Kubernetes environment.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/python/python-1_6_2",
+    "ver": "v1.6.2",
+    "date": "2024-03-29",
+    "Lists": [
+      {
+        "ver": "v1.6.2",
+        "hash": "v162",
+        "product": "Python Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> Added the <code>exit_with_parent_process_enabled</code> option.</p>",
+        "details": "<ul>\n<li>\n<b>exit_with_parent_process_enabled</b>\n<em>bool</em>\n<br>\n<p>Default <code>false</code></p>\n<p>Set the value of the option through the <em>whatap.conf</em> file in the Python agent's <code>WHATAP_HOME</code> path. You can set whether or not to end the <code>whatap_python</code> process when the monitored Python process is terminated. If the option value is set to <code>true</code>, the <code>whatap_python</code> process ends together when the monitored application is terminated. It may take up to 1 minute.</p>\n</li>\n</ul>"
       }
     ]
   },
@@ -235,6 +214,34 @@
     ]
   },
   {
+    "url": "https://docs.whatap.io/en/release-notes/python/python-1_5_9",
+    "ver": "v1.5.9",
+    "date": "2024-03-11",
+    "Lists": [
+      {
+        "ver": "v1.5.9",
+        "hash": "v159",
+        "product": "Python Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the issue where input is made without line breaks when setting agent options.</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/python/python-1_6_4",
+    "ver": "v1.6.4",
+    "date": "2024-05-14",
+    "Lists": [
+      {
+        "ver": "v1.6.4",
+        "hash": "v164",
+        "product": "Python Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Modified the parsing logic that searches for the <code>containerID</code> in the Kubernetes environment.</p>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/en/release-notes/python/python-1_5_6",
     "ver": "v1.5.6",
     "date": "2024-02-02",
@@ -249,16 +256,16 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/python/python-1_5_5",
-    "ver": "v1.5.5",
-    "date": "2024-02-01",
+    "url": "https://docs.whatap.io/en/release-notes/python/python-1_5_8",
+    "ver": "v1.5.8",
+    "date": "2024-02-18",
     "Lists": [
       {
-        "ver": "v1.5.5",
-        "hash": "v155",
+        "ver": "v1.5.8",
+        "hash": "v158",
         "product": "Python Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Improved the issue where the performance collection error occurs when there is no instance (DB) in the database connection information in applications developed using the Frappe framework.</p>"
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the double counting error for users (related to the number of users) in Frappe Application.</p>"
       }
     ]
   },
@@ -277,16 +284,16 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/en/release-notes/python/python-1_5_3",
-    "ver": "v1.5.3",
-    "date": "2024-01-05",
+    "url": "https://docs.whatap.io/en/release-notes/python/python-1_5_5",
+    "ver": "v1.5.5",
+    "date": "2024-02-01",
     "Lists": [
       {
-        "ver": "v1.5.3",
-        "hash": "v153",
+        "ver": "v1.5.5",
+        "hash": "v155",
         "product": "Python Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the gunicorn transaction collection error in Python agent v1.4.9 or later.</p>"
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Improved the issue where the performance collection error occurs when there is no instance (DB) in the database connection information in applications developed using the Frappe framework.</p>"
       }
     ]
   },
@@ -302,6 +309,20 @@
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the module dependency collection error for some Python versions in Python agent 1.4.9 or later.</p>",
         "details": "<ul>\n<li>Python 3.6</li>\n<li>Python 3.7</li>\n</ul>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/en/release-notes/python/python-1_5_3",
+    "ver": "v1.5.3",
+    "date": "2024-01-05",
+    "Lists": [
+      {
+        "ver": "v1.5.3",
+        "hash": "v153",
+        "product": "Python Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Fixed the gunicorn transaction collection error in Python agent v1.4.9 or later.</p>"
       }
     ]
   }

@@ -10,21 +10,27 @@ keywords:
 
 It guides you how to create a DockerFile in the Docker environment to install and run the Node.js agent. For the example file used in the following guide, see [the following link](https://github.com/whatap/nodejs_sample_application/tree/main/simple_http).
 
+<Steps>
+
 ## File structure
 
 The Node.js agent's sample file has the structure as follows.
 
-- _html_: Sample application folder.
+<Filetree name="sample_http" open>
 
-- _Dockerfile_: Configuration file to build the Docker image.
+<FiletreeItem name="html/" type="folder">Sample application folder</FiletreeItem>
 
-- _http.js_: Sample application file.
+<FiletreeItem name="Dockerfile" type="file">Configuration file for building Docker images</FiletreeItem>
 
-- _package.json_: Document for the sample application information and dependency management.
+<FiletreeItem name="http.js" type="file">Sample application file</FiletreeItem>
 
-- _whatap.conf_: Option configuration file for monitoring.
+<FiletreeItem name="package.json" type="file">Sample application information and dependency management document</FiletreeItem>
 
-- _security.conf_ (or _paramkey.txt_): Parameter encryption key.
+<FiletreeItem name="whatap.conf" type="file">Agent configuration file for monitoring</FiletreeItem>
+
+<FiletreeItem name="security.conf (or paramkey.txt)" type="file">Parameter encryption key</FiletreeItem>
+
+</Filetree>
 
 ## Installing the agent
 
@@ -76,6 +82,8 @@ $ docker run --rm -p 3500:3500 \
     -e license=$WHATAP_LICENSE \
     sampleapp/nodejs:0503
 ```
+
+</Steps>
 
 {/* 다음 단계 */}
 import NextSteps from "../common-items/_apm-next-stemp-exclude-java.mdx";

@@ -73,9 +73,9 @@ import CriteriaTip from "../common-items/_browser-stat-criteria-tip.mdx";
 
 <CriteriaTip/>
 
-### Downloading the viewed result
+import CSVdownload from "../common-items/_browser-stat-download-csv.mdx";
 
-You can download the searched data as a CSV format file. Select ![Download icon](/img/ic-csv-download-ms.svg) on the upper right of the screen. The CSV file name has the format of *IP*LoadStatistics*`YYYYMMDD_HHMMSS`.csv*.
+<CSVdownload filename="IP_LoadStatistics" />
 
 ## Screen layout
 
@@ -218,7 +218,31 @@ import Coumnsetting from "../common-items/_browser-stat-column-setting.mdx";
 
 <Coumnsetting/>
 
-{/* 컬럼 및 용어 안내 */}
-import Statcolumn from "../common-items/_browser-stat-column-info.mdx";
+## Guide to the columns and terms {#columninfo}
 
-<Statcolumn/>
+<div className="c3-20-15-65 tableScroll">
+
+| Columns                                            | Unit        | Description                                                                                                                                                                                             |
+| -------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <Cmdname sid="backend_time" className="uitext" />  | millisecond | Time taken for the backend to process a page load from the IP address. (Time from `startTime` to `responseEnd`)                                                                                         |
+| <Cmdname sid="frontend_time" className="uitext" /> | millisecond | Processing time of the frontend area while loading a page from the IP address. (Time from `domInteractive` to `loadEventEnd`)                                                                           |
+| <Cmdname sid="ITM08283" className="uitext" />      | millisecond | Time taken for redirection to load a web page from the IP address. (Time from `redirectStart` to `redirectEnd`)                                                                                         |
+| <Cmdname sid="cache_time" className="uitext" />    | millisecond | Time taken to retrieve a cached resource from a given IP address. (Time from `fetchStart` to `domainLookupStart`)                                                                                       |
+| <Cmdname sid="ITM08284" className="uitext" />      | millisecond | Time taken to view a website domain from the IP address. (Time from `domainLookupStart` to `domainLookupEnd`)                                                                                           |
+| <Cmdname sid="ITM08876" className="uitext" />      | millisecond | Time taken for the network connection between the client requesting the IP and the server.                                                                                                              |
+| <Cmdname sid="ssl_time" className="uitext" />      | millisecond | Time taken for TLS handshaking when connecting to HTTPS. (Time from `connectEnd` to `secureConnectionStart`)                                                                                            |
+| <Cmdname sid="ITM08285" className="uitext" />      | millisecond | Time taken to receive the first byte from the server after an IP request. (Time from `requestStart` to `responseStart`)                                                                                 |
+| <Cmdname sid="download_time" className="uitext" /> | millisecond | Time taken to download the IP-related resources from the server. (Time from `responseStart` to `responseEnd`)                                                                                           |
+| <Cmdname sid="ITM08286" className="uitext" />      | millisecond | Time taken for the initial content rendering from the IP address.                                                                                                                                       |
+| <Cmdname sid="domload_time" className="uitext" />  | millisecond | Time taken for all resources to load and fully render in the state where the end users can interact with them.                                                                                          |
+| <Cmdname sid="render_time" className="uitext" />   | millisecond | Time taken to load a page from the IP address, render on screen, and complete the page event.                                                                                                           |
+| <Cmdname sid="TTL08498" className="uitext" />      | millisecond | Time taken to load a page from the IP address until the onLoad event occurs. It indicates the time from retrieving the IP address and establishing a network connection until all resources are loaded. |
+| <Cmdname sid="TTL06361" className="uitext" />      | millisecond | Total time taken to fully load a page from the IP address.                                                                                                                                              |
+
+</div>
+
+:::note
+
+For more information about **Navigation timing**, see [the following](collect-data#navigation-timing).
+
+:::

@@ -28,7 +28,9 @@ WhaTapモニタリングサービスのメイン画面でプロジェクトを�
 
 :::note
 
-最大31日間のデータを照会できます。ただし、<Cmdname sid="side_statRemote" className="uitext" />メニューでは最大7日間のデータを照会できます。
+- 最大31日間のデータを照会できます。ただし、<Cmdname sid="side_statRemote" className="uitext" />メニューでは最大7日間のデータを照会できます。
+
+- <Cmdname sid="time_selector" className="uitext" />オプションの利用方法の詳細については、[次の文書](usage-ui#timeselector)を参照してください。
 
 :::
 
@@ -67,6 +69,32 @@ WhaTapモニタリングサービスのメイン画面でプロジェクトを�
 <Cmdname sid="TTL06975" className="uitext" />を収集するためには、エージェント設定(*whatap.conf*)に<code>trace_malloc_enabled=true</code>を追加する必要があります。該当オプションの既定値は<code>false</code>です。
 
 </InDoc>
+
+:::
+
+### 推移比較機能を利用する{#comparetrend}
+
+<Cmdname sid="TTL08868" className="uitext" />機能を利用して、多数のトランザクションの推移を一目で比較できます。この機能は、確認するトランザクション数が多い場合、主要な問題を迅速に識別し、トラフィックの問題を解決するのに役立ちます。
+
+<ImgLang img="apm-statistic-tx-compare-trend.png" desc="推移比較" />
+
+1. 照会したい時間とモニタリング対象を選択した後![検索アイコン](/img/ico-btn-search.png)ボタンを選択します。
+
+2. トランザクション一覧から比較したいトランザクションを1つ以上選択します。
+
+3. <Cmdname sid="TTL08868" className="uitext" />ボタンを選択してください。
+
+4. 選択したトランザクションの推移グラフが一覧表示される<Cmdname sid="TTL08868" className="uitext" />ウィンドウが表示されます。
+
+<Cmdname sid="TTL08868" className="uitext" />ウィンドウで推移グラフを確認して、トランザクション間のトラフィックパターンを比較します。 特定の時間帯、サービスパスのトラフィック分布を比較できます。
+
+:::note
+
+- 最大100個のトランザクションを選択して照会できます。
+
+- 選択したトランザクションが多い場合、ロード時間が増加する可能性があります。
+
+- 正確な分析のために<Cmdname sid="filter" className="uitext" />オプションを適切に活用します。
 
 :::
 
@@ -137,7 +165,7 @@ whatap.stat_mtrace_enabled=true
 
 <Xclude product="php">
 
-```ini title='whatap.conf of [front]'
+```ini title='whatap.conf of \[front]'
 mtrace_rate=100
 mtrace_spec=v1
 stat_mtrace_enabled=true
@@ -152,7 +180,7 @@ stat_mtrace_enabled=true
 
 <InDoc product="php">
 
-```ini title='whatap.ini of [front]'
+```ini title='whatap.ini of \[front]'
 whatap.mtrace_rate=100
 whatap.mtrace_spec=v1
 whatap.stat_mtrace_enabled=true

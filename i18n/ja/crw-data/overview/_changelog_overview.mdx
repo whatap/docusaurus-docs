@@ -1,3 +1,65 @@
+- <code class='changelog-overview'>共通</code>
+<code class='changelog-date'>2024年12月24日</code> <code class='changelog-service'><a href="https://docs.whatap.io/ja/release-notes/service/service-2_12_x"><img src="../img/ic-link.svg" width="18px" height="18px" class="ico-link medium-zoom-image"></img> Service 2.12.0​</a></code>
+  - <code class="Feature" type="1">Feature</code>個別メニューでタイムセレクターのコンポーネントを交替
+  - <code class="Feature" type="1">Feature</code> <span class="uitext">Flexボード</span>または<span class="uitext">統合Flexボード</span>メニューの<span class="uitext">アラートリスト</span>ウィジェットに次の機能を追加
+    - <Cmdname sid="ITM08413" className="uitext" />オプションを追加
+    - ダッシュボードに設定された時間とは別に照会時間を選択できるオプションを追加
+  - <code class="Feature" type="1">Feature</code> <span class="uitext">分析</span> &gt; <span class="uitext">メトリクスチャート</span> <code class="newfunc">New</code>メニューで次の機能を追加
+    - ダッシュボードのウィジェット凡例表示有無によって異なるUIを表示
+    - ウィジェットの凡例フィルタリング機能
+    - ウィジェットの凡例にマウスオーバー時、該当するチャートラインのハイライト機能
+    - チャートラインが多い時、グラフのカラーがぼやけないように処理
+  - <code class="Feature" type="1">Feature</code> <span class="uitext">アラート通知</span> &gt; <span class="uitext">イベント設定</span> <code class="newfunc">New</code>メニューで<span class="uitext">解消された通知</span>オプションに関する説明を追加
+  - <code class="Feature" type="1">Feature</code> <span class="uitext">アラート通知</span> &gt; <span class="uitext">通知設定</span>メニューで通知メッセージをAIを通じてユーザーフレンドリーな内容で送信できる<span class="uitext">Smartメッセージ(AI)</span>オプションを追加
+
+- <code class='changelog-overview'>Application</code>
+<code class='changelog-date'>2024年12月24日</code> <code class='changelog-service'><a href="https://docs.whatap.io/ja/release-notes/service/service-2_12_x"><img src="../img/ic-link.svg" width="18px" height="18px" class="ico-link medium-zoom-image"></img> Service 2.12.0​</a></code>
+  - <code class="Feature" type="1">Feature</code> <span class="uitext">トレース分析</span>ウィンドウの<span class="uitext">テーブルビュー</span>タブでSQL詳細情報を確認する時、バインド変数コピー機能を追加
+  - <code class="Feature" type="1">Feature</code> <span class="uitext">統計</span> &gt; <span class="uitext">トランザクション</span>メニューで複数のトランザクションを選択して詳細情報を確認できる<span class="uitext">推移比較</span> 機能を追加
+  - <code class="Feature" type="1">Feature</code> <span class="uitext">アラート通知</span> &gt; <span class="uitext">イベント設定</span> <code class="newfunc">New</code>メニューでアプリケーションの<span class="uitext">エージェント重複イベント</span>オプションを追加
+
+- <code class='changelog-overview'>Server</code>
+<code class='changelog-date'>2024年12月24日</code> <code class='changelog-service'><a href="https://docs.whatap.io/ja/release-notes/service/service-2_12_x"><img src="../img/ic-link.svg" width="18px" height="18px" class="ico-link medium-zoom-image"></img> Service 2.12.0​</a></code>
+  - <code class="Feature" type="1">Feature</code> <span class="uitext">サーバーリスト</span> &gt; <span class="uitext">サーバー インベントリ</span>メニューでCSVファイルをアップロードしてサーバー一覧のユーザー定義コラムを交換する機能を追加
+
+- <code class='changelog-overview'>Kubernetes</code>
+<code class='changelog-date'>2024年12月24日</code> <code class='changelog-service'><a href="https://docs.whatap.io/ja/release-notes/service/service-2_12_x"><img src="../img/ic-link.svg" width="18px" height="18px" class="ico-link medium-zoom-image"></img> Service 2.12.0​</a></code>
+  - <code class="Feature" type="1">Feature</code> <span class="uitext">クラスター</span> &gt; <span class="uitext">Ingress リスト</span>メニューの詳細情報にアプリケーション情報を追加
+  - <code class="Feature" type="1">Feature</code> <span class="uitext">クラスター</span> &gt; <span class="uitext">etcd ダッシュボード</span>メニューに案内メッセージのモーダルを追加
+  - <code class="Feature" type="1">Feature</code> <span class="uitext">クラスター</span> &gt; <span class="uitext">etcd ダッシュボード</span>メニューに入ると、インストールしたエージェントバージョンがサポートバージョンより低い場合、アップデート案内画面を表示する機能を追加
+  - <code class="Feature" type="1">Feature</code>次のメニュー経路の<span class="uitext">詳細</span>画面で各メニューに移動できるリンクをリソース 一覧に追加
+    - <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_nodeTimeline" className="uitext" />
+    - <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_ingressList" className="uitext" />
+  - <code class="Feature" type="1">Feature</code>次のメニューパスの詳細情報で提供する<span class="uitext">ノード 構成</span>タブのCPU、メモリ、ディスクのtotal値を追加
+    - <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_nodeMap" className="uitext" />
+    - <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_nodeList" className="uitext" />
+    - <Cmdname sid="side_cluster" className="uitext" /> &gt; <Cmdname sid="side_nodeTimeline" className="uitext" />
+
+- <code class='changelog-overview'>Database</code>
+<code class='changelog-date'>2024年12月24日</code> <code class='changelog-service'><a href="https://docs.whatap.io/ja/release-notes/service/service-2_12_x"><img src="../img/ic-link.svg" width="18px" height="18px" class="ico-link medium-zoom-image"></img> Service 2.12.0​</a></code>
+<br/><code class='changelog-overview2'>共通</code>
+  - <code class="Feature" type="1">Feature</code>次のメニューパスの<span class="uitext">アクティブセッション</span>テーブルにページネーションを適用
+    - <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_dbMonitoring" className="uitext" />
+    - <Cmdname sid="side_dashboard" className="uitext" /> &gt; <Cmdname sid="side_multiInstance" className="uitext" />
+  - <code class="Feature" type="1">Feature</code> <span class="uitext">管理</span> &gt; <span class="uitext">エージェントアップデート</span>メニューでユーザーがエージェントをアップデートすると<span class="uitext">ユーザー行為</span>メニューで確認できる機能を追加
+  - <code class="Feature" type="1">Feature</code> <span class="uitext">実験室</span> &gt; <span class="uitext">スクリプト·マネージャー</span>メニューでユーザーがSQLを実行した場合<span class="uitext">ユーザー行為</span>メニューで確認できる機能を追加
+
+- <code class='changelog-overview'>Database</code>
+<code class='changelog-date'>2024年12月24日</code> <code class='changelog-service'><a href="https://docs.whatap.io/ja/release-notes/service/service-2_12_x"><img src="../img/ic-link.svg" width="18px" height="18px" class="ico-link medium-zoom-image"></img> Service 2.12.0​</a></code>
+<br/><code class='changelog-overview2'>Database V2</code>
+  - <code class="Feature" type="1">Feature</code> <span class="uitext">ダッシューボード</span> &gt; <span class="uitext">マルチインスタンス</span>メニューのカスタムウィジェットに選択した指標の単位を表示するように追加
+  - <code class="Feature" type="1">Feature</code>APMプロジェクトの<span class="uitext">トレース分析</span>ウィンドウでコピーしたバインド変数の値を<span class="uitext">連携データベース情報</span>ウィンドウで貼り付けるボタンを追加
+
+- <code class='changelog-overview'>Database</code>
+<code class='changelog-date'>2024年12月24日</code> <code class='changelog-service'><a href="https://docs.whatap.io/ja/release-notes/service/service-2_12_x"><img src="../img/ic-link.svg" width="18px" height="18px" class="ico-link medium-zoom-image"></img> Service 2.12.0​</a></code>
+<br/><code class='changelog-overview2'>Oracle、Oracle Pro</code>
+  - <code class="Feature" type="1">Feature</code> <span class="uitext">ダッシューボード</span> &gt; <span class="uitext">インスタンスモニタリング</span>メニューの<span class="uitext">SQL詳細</span>ウィンドウにアクティブセッション情報を追加
+  - <code class="Feature" type="1">Feature</code> <span class="uitext">分析</span> &gt; <span class="uitext">SQL分析</span>メニューの<span class="uitext">フィルター</span>オプションに<code>object_name</code>条件を追加
+
+- <code class='changelog-overview'>Browser</code>
+<code class='changelog-date'>2024年12月24日</code> <code class='changelog-service'><a href="https://docs.whatap.io/ja/release-notes/service/service-2_12_x"><img src="../img/ic-link.svg" width="18px" height="18px" class="ico-link medium-zoom-image"></img> Service 2.12.0​</a></code>
+  - <code class="Feature" type="1">Feature</code>リソース別の性能データを視覚的に提供し、ロード時間、リソースサイズ、タイプ別の性能推移などを分析できる<span class="uitext">リソース負荷統計</span>メニューを追加
+
 - <code class='changelog-overview'>新機能リリーズ</code>
 <code class='changelog-date'>2024年11月27日</code> <code class='changelog-service'><a href="https://docs.whatap.io/ja/release-notes/service/service-2_11_x"><img src="../img/ic-link.svg" width="18px" height="18px" class="ico-link medium-zoom-image"></img> Service 2.11.0​</a></code>
 <br/><code class='changelog-overview2'>Server</code>

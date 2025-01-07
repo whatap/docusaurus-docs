@@ -1,0 +1,32 @@
+- `stats_enabled`：収集状態データの収集有無を設定します。 既定値は`false`です。 値を`true`に設定してください。 `true`に設定すると次の`stats_category`で設定したカテゴリ(`logsink_stats`)で統計データが作成されます。
+
+- `stats_category`：収集データを保存するメトリクスカテゴリを設定します。 値を`logsink_stats`に設定してください。 統計データのフィールドは次のとおりです。
+
+  - `file`
+  - `checkInterval`
+  - `encoding`
+  - `filepos`
+  - `checkedLocalTime`
+  - `lastupdatedLocalTime`
+  - `fileSize`
+  - `error`
+  - `firstCheck`
+  - `transferBytes`
+
+- `excludeNames`：ログのファイルパス（path）にアスタリスク（\*）が含まれた場合、ログの非対象ファイルを除外するようにファイル名を設定できます。 コンマ(,)区切り文字として複数設定することができます。
+
+  ```ini title='Example'
+  excludeNames = [ ".gz",".zip" ]
+  ```
+
+- `nowrap_keywords`：行単位のログ検索時に、対応するオプション値として指定されたキーワードが検索される場合は、以前のログにマージします。
+
+- `pcode`: ログを送信する同じリージョンのプロジェクトコードを入力します。 
+
+- `license`: ログを送信する同じリージョンのプロジェクトのライセンスコードを入力します。
+
+:::note 
+
+`pcode`、`license`オプションの場合、サーバーエージェント2.7.4バージョン以降に対応します。 
+
+:::

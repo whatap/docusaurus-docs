@@ -1,0 +1,34 @@
+---
+id: dbx-2_2_7
+title: DBX v2.2.7
+pagination_next: release-notes/db/dbx-2_2_6
+displayed_sidebar: releaseSidebar
+---
+
+December 7, 2024
+
+## MySQL
+
+- <Status priority='1'>Feature</Status> Added the agent option to collect literal parameters.
+
+  **save_literal_param** <span class='type'>Boolean</span>
+
+  Default `true`
+
+  It sets whether or not to collect literal parameters. If set to `false`, literal parameters are not collected.
+
+- <Status priority='1'>Changed</Status> When transmitting **db_mysql_statements**, added the limit of 5000 per hour.
+
+## PostgreSQL
+
+<Status priority='1'>Changed</Status> When transmitting **db_postgresql_statements**, added the limit of 5000 per hour.
+
+## Oracle
+
+- <Status priority='1'>Changed</Status> Modified the real-time object query feature.
+
+  - Changed the order of index columns.
+
+  - Added the feature to query the sequence layout.
+
+- <Status priority='0'>Fixed</Status> Fixed the saving plan bug.

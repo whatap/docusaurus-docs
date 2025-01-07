@@ -2394,10 +2394,10 @@
   resolved "https://registry.npmjs.org/@colors/colors/-/colors-1.5.0.tgz"
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
-"@crowdin/cli@^4.4.0":
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/@crowdin/cli/-/cli-4.4.0.tgz#8ba6718b079f3af4032dd499ad38fdf1dfc40f62"
-  integrity sha512-oKpM535mnzCaZRWcTAIDYfMY0ABnl0VkxM++7sfpAyn6dtf+QGhxHuruOfuOwEaSOJxG0pEhCy0UC2LpYUUb2Q==
+"@crowdin/cli@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@crowdin/cli/-/cli-4.5.0.tgz#c84bde006473fdb6303274ead578e0c5aad994c2"
+  integrity sha512-faj84fCXT8GcM0CwZ6KuXQ6ckwRHj2OKFFib048RobykRoMFJxXJnu6P/OBjWpcqFFbxWJB0QL0VkS42hqdMng==
   dependencies:
     command-exists-promise "^2.0.2"
     node-fetch "2.7.0"
@@ -2405,10 +2405,10 @@
     tar "^6.2.0"
     yauzl "^3.1.0"
 
-"@crowdin/crowdin-api-client@^1.39.1":
-  version "1.39.1"
-  resolved "https://registry.yarnpkg.com/@crowdin/crowdin-api-client/-/crowdin-api-client-1.39.1.tgz#248846bdc81d2e5af08786f7375c55b7b1a3809a"
-  integrity sha512-y1ctN0uAHw873GWOfPKcQRWim/W7PpW1vco22gcgSCBh2Qb9IVxFzj5uInLUh5A4GsfpJnq/rT+YEdPRwfIOLg==
+"@crowdin/crowdin-api-client@^1.41.0":
+  version "1.41.0"
+  resolved "https://registry.yarnpkg.com/@crowdin/crowdin-api-client/-/crowdin-api-client-1.41.0.tgz#cd7b6bd815e26ebede3bead4aee68e8481afd64d"
+  integrity sha512-Qpdo+mN9r2A23r7RdbzY3W//aN1tOr4boPyS9WaLXs6sHWkYlMsB1US5MY7EwUnJoRvHJjRJ+26fp/R7gQIDEA==
   dependencies:
     axios "^1"
 

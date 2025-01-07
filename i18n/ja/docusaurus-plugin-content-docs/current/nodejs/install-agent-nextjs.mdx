@@ -16,6 +16,8 @@ keywords:
 
 :::
 
+<Steps>
+
 ## エージェント インストール {#installagent}
 
 次のコマンドを実行してエージェントをインストールしてください。
@@ -28,7 +30,7 @@ npm install whatap
 
 エージェントのファイル構成については、以下を参照してください。
 
-<Filetree name="whatap">
+<Filetree name="whatap" open>
 
 <FiletreeItem name="package.json" type="file">サンプルアプリケーション情報と依存関係(dependency)の管理文書ファイルです。</FiletreeItem>
 
@@ -146,9 +148,13 @@ app.prepare().then(() => {
 
 ## アプリケーションを実行する
 
+次のコマンドを使用してアプリケーションを実行します。
+
 ```bash title="SH"
 node server.js
 ```
+
+</Steps>
 
 {/* 다음 단계 */}
 import NextSteps from "../common-items/_apm-next-stemp-exclude-java.mdx";

@@ -358,7 +358,11 @@ This site or product includes IP2Location LITE data available from [https://lite
 
 ### ![](/img/ic-alert.svg) <Cmdname sid="side_event" /> {#event}
 
-複数のプロジェクトを選択してアラート通知が発生した履歴を確認したり、リアルタイムでイベント発生状況を確認できます。
+#### <Cmdname sid="event_list" /> {#eventlist}
+
+1つまたは複数のプロジェクトで発生した通知履歴をリアルタイムで把握したり、特定の照会時間を設定して確認できます。
+
+##### <Cmdname sid="edit_mode" />
 
 <Columns>
 
@@ -366,27 +370,79 @@ This site or product includes IP2Location LITE data available from [https://lite
 
 ![アラートリスト](/img/fb-alert-list-widget.png)
 
-<Cmdname sid="event_list" className="uitext" />
-
 </Column>
 
 <Column className="text--center">
 
-![イベントタイムライン](/img/fb-event-timeline-widget.png)
-
-<Cmdname sid="event" className="uitext" /> <Cmdname sid="timeline" className="uitext" />
+![アラートリスト](/img/fb-alert-list-widget-time-selector.png)
 
 </Column>
 
 </Columns>
 
-<Cmdname sid="event_list" className="uitext" />ウィジェットでは<Cmdname sid="title" className="uitext" />、<Cmdname sid="project" className="uitext" />、<Cmdname sid="application" className="uitext" />ごとにグループ化し、ソートできます。 グループ化を解除するには、<Cmdname sid="timeline" className="uitext" />ボタンを選択します。
+- <Cmdname sid="edit_mode" className="uitext" />では、<Cmdname sid="title" className="uitext" />、<Cmdname sid="project" className="uitext" />、<Cmdname sid="application" className="uitext" />ごとにグループ化してソートできます。 グループ化を解除するには、<Cmdname sid="timeline" className="uitext" />ボタンを選択します。
+
+- 解消されたイベントのリストを含めて確認するには<Cmdname sid="ITM08413" className="uitext" />オプションを活性化します。
+
+- ダッシュボードに設定された照会時間ではなく、別の時間を設定できます。 ![時計のアイコン](/img/ic-custom-time.svg)ボタンを選択します。 <Cmdname sid="select_time_title" className="uitext" />ポップアップが表示されたら<Cmdname sid="use_dashboard_settings" className="uitext" />オプションのチェックボックスを削除します。
 
 :::note
 
-通知が発生した場合、サウンドをオンまたはオフにするには![音アイコン](/img/ico-noti-sound.svg)ボタンを選択します。
+- <Cmdname sid="select_time_title" className="uitext" />オプションの利用方法の詳細については、[次の文書](usage-ui#timeselector)を参照してください。
+
+- 通知が発生した場合、サウンドをオンまたはオフにするには![音アイコン](/img/ico-noti-sound.svg)ボタンを選択します。
 
 :::
+
+##### <Cmdname sid="view_mode" />
+
+<Columns>
+
+<Column className="text--center width--50">
+
+![アラートリスト](/img/fb-alert-list-widget-view-mode.png)
+
+</Column>
+
+<Column className="text--left">
+
+<Cmdname sid="view_mode" className="uitext" />では<Cmdname sid="edit_mode" className="uitext" />の設定内容を基準に通知発生状況を確認できます。
+
+- 通知一覧を全画面サイズで確認するには![全画面アイコン](/img/ic-fullscreen.svg)ボタンを選択します。
+
+- 通知一覧を新しいウィンドウで開いて確認するには![新しいウィンドウアイコン](/img/ic-popup.svg)ボタンを選択します。
+
+</Column>
+
+</Columns>
+
+#### <Cmdname sid="event" /> <Cmdname sid="timeline" /> {#eventtimeline}
+
+1つまたは複数のプロジェクトで発生した時間帯別の通知履歴をチャート形式で確認できます。
+
+<Columns>
+
+<Column className="text--center width--50">
+
+![イベントタイムライン](/img/fb-event-timeline-widget.png)
+
+<Cmdname sid="edit_mode" />
+
+</Column>
+
+<Column className="text--center">
+
+![イベントタイムライン](/img/fb-event-timeline-widget-view-mode.png)
+
+<Cmdname sid="view_mode" />
+
+</Column>
+
+</Columns>
+
+- <Cmdname sid="edit_mode" className="uitext" />ではダッシュボードに設定された照会時間ではなく、別の時間を設定できます。 ![時計のアイコン](/img/ic-custom-time.svg)ボタンを選択します。 <Cmdname sid="select_time_title" className="uitext" />ポップアップが表示されたら<Cmdname sid="use_dashboard_settings" className="uitext" />オプションのチェックボックスを削除します。
+
+- <Cmdname sid="view_mode" className="uitext" />で全画面サイズで確認するには![全画面アイコン](/img/ic-fullscreen.svg)ボタンを選択します。 新しいウィンドウを開いて確認するには![新しいウィンドウアイコン](/img/ic-popup.svg)ボタンを選択します。
 
 ### ![](/img/ic-agent.svg)ステータスの確認{#checkstatus}
 

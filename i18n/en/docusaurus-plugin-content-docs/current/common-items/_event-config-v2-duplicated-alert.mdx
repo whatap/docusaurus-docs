@@ -1,0 +1,7 @@
+## Setting the duplicated alerts {#duplicatedalert}
+
+The <Cmdname sid="TTL05989" className="uitext" /> option is an alert notification that occurs when multiple agents with the same ID are set among the agents being monitored, causing duplicate collection of metrics. See the related options among the agent settings to check that there are duplicate agent names. It is recommended to use this function when an alert occurs due to duplicate agents in deployment such as blue and green.
+
+<ImgLang img="event-config-v2-apm-duplicated-alert.png" desc="Event duplication alert" />
+
+When multiple agents with the same name are running simultaneously, notifications are not received for the time selected in the <Cmdname sid="TTL05989" className="uitext" /> option at the top of the event list.

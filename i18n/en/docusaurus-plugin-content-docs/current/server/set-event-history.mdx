@@ -13,80 +13,94 @@ Home &gt; Select Project &gt; <Cmdname sid="side_event" className="uitext" /> &g
 
 You can check the history of alerts. You can see a list of all events that have occurred. 
 
+## Basic screen guide
+
 <ImgLang img='event-history-server.png' desc='Server event history'/>
 
-- ![number1](/img/number-01.png) **Options at the top**
+### ![](/img/number-01.png) **User configuration**
 
-  - <Cmdname sid="time_selector" className="uitext" />
+- <Cmdname sid="time_selector" className="uitext" />
 
-    - You can select a lookup time by selecting the green button on the right. The default setting is 12 hours.
+  - You can select a lookup time by selecting the green button on the right. The default setting is 12 hours.
 
-    - By selecting ![Left arrow icon](/img/left-arrow.svg) or ![Right arrow icon](/img/right-arrow.svg), you can move by the selected inquiry time range.
+  - By selecting ![Left arrow icon](/img/left-arrow.svg) or ![Right arrow icon](/img/right-arrow.svg), you can move by the selected inquiry time range.
 
-    - To select a detailed time, select a date or time zone. Set the detailed time and then select <Cmdname sid="apply" className="uitext" />.
+  - To select a detailed time, select a date or time zone. Set the detailed time and then select <Cmdname sid="apply" className="uitext" />.
 
-  - **_Input field_**  
+  :::note 
 
-    You can search by server name or event name in the input field.
+  For more information on how to use the time selector, see [the following](usage-ui#timeselector).
 
-  - <Cmdname sid="exclude_resolved_alerts" className="uitext" />
+  :::
 
-    You can only see **progress events** in the event history list.
+- **_Input field_**  
 
-  - <Cmdname sid="BTN06585" className="uitext" />
+  You can search by server name or event name in the input field.
 
-    In the event history list, the <Cmdname sid="TTL06583" className="uitext" /> column can be added. 
+- <Cmdname sid="exclude_resolved_alerts" className="uitext" />
 
-    :::note
+  You can only see **progress events** in the event history list.
 
-    In an active event, the <Cmdname sid="TTL06583" className="uitext" /> is not viewed.
+- <Cmdname sid="BTN06585" className="uitext" />
 
-    :::
+  In the event history list, the <Cmdname sid="TTL06583" className="uitext" /> column can be added. 
 
-  - **_CSV_**
+  :::note
 
-    You can save the viewed event records as a CSV file. Enter the <Cmdname sid="maximum_csv_lines" className="uitext" /> and then select <Cmdname sid="download" className="uitext" />.
+  In an active event, the <Cmdname sid="TTL06583" className="uitext" /> is not viewed.
 
-- ![number2](/img/number-02.png) **Event History List**
+  :::
 
-  - <Cmdname sid="sms_alert_severity" className="uitext" />
+- **_CSV_**
 
-    The severity is displayed in colors for <span class='vslow'>Fatal</span>, <span class='slow'>Warning</span>.
+  You can save the viewed event records as a CSV file. Enter the <Cmdname sid="maximum_csv_lines" className="uitext" /> and then select <Cmdname sid="download" className="uitext" />.
 
-  - <Cmdname sid="event_title" className="uitext" />
+### ![](/img/number-02.png) **Event History List**
 
-    The name of the event occurred based on the value set in the event policy.
+- <Cmdname sid="sms_alert_severity" className="uitext" />
 
-  - <Cmdname sid="event_time" className="uitext" />
+  The severity is displayed in colors for <span class='vslow'>Fatal</span>, <span class='slow'>Warning</span>.
 
-    Event occurrence time.
+- <Cmdname sid="event_title" className="uitext" />
 
-  - **_+_** <Cmdname sid="sms_alert_acknowledge" className="uitext" /><ScrollToLink anchor='scrollTo-alert-acknowledge' />
+  The name of the event occurred based on the value set in the event policy.
 
-    The event processing history can be added.
+- <Cmdname sid="event_time" className="uitext" />
 
-  - <Cmdname sid="server" className="uitext" />
+  Event occurrence time.
 
-    Server name. 
+- <Cmdname sid="sms_alert_acknowledge" className="uitext" /><ScrollToLink anchor='scrollTo-alert-acknowledge' />
 
-  - <Cmdname sid="sms_alert_snapshot" className="uitext" />
+  The event processing history can be added.
 
-    Snapshot information of <Cmdname sid="cpu" className="uitext" />, <Cmdname sid="memory_pused" className="uitext" />, <Cmdname sid="disk" className="uitext" />, and <Cmdname sid="network" className="uitext" /> for the occurred events. 
+  :::caution
 
-### Event Detail Info
+  When you register the processing history, the <Cmdname sid="TTL06149" className="uitext" /> of the event is suspended. For more information about <Cmdname sid="TTL06149" className="uitext" />, see [the following](set-receive-event#escalation).
+
+  :::
+
+- <Cmdname sid="server" className="uitext" />
+
+  Server name. 
+
+- <Cmdname sid="sms_alert_snapshot" className="uitext" />
+
+  Snapshot information of <Cmdname sid="cpu" className="uitext" />, <Cmdname sid="memory_pused" className="uitext" />, <Cmdname sid="disk" className="uitext" />, and <Cmdname sid="network" className="uitext" /> for the occurred events. 
+
+## Event Detail Info
 
 If you select <Cmdname sid="event_title" className="uitext" /> in the event history list, it goes to the <Cmdname sid="detail" className="uitext" /> information for 5 minutes before and after the event.
 
-<ImgLang img='server-event-detail.png' desc='Server Event Detail'/>
+<ImgLang img='server-event-detail.png' desc='Server event detail'/>
 
-- ![number1](/img/number-01.png) **Chart Widget**
+### ![](/img/number-01.png) ** Chart Widget**
 
-  It displays the **_CPU Usage_**, **_Memory Usage_**, **_Network_**, and **_Disk IO_** charts before and after the alarm. The <Cmdname sid="sms_alert_severity" className="uitext" /> of the event part appears.
+It displays the **_CPU Usage_**, **_Memory Usage_**, **_Network_**, and **_Disk IO_** charts before and after the alarm. The <Cmdname sid="sms_alert_severity" className="uitext" /> of the event part appears.
 
-- ![number2](/img/number-02.png) <Cmdname sid="sms_summary_process" className="uitext" />
+### ![](/img/number-02.png) <Cmdname sid="sms_summary_process" className="uitext" />
 
-  You can view the top 10 processes for the event. 
+You can view the top 10 processes for the event. 
 
-- ![number3](/img/number-03.png) <Cmdname sid="sms_alert_acknowledge_detail" className="uitext" />
+### ![](/img/number-03.png) <Cmdname sid="sms_alert_acknowledge_detail" className="uitext" />
 
-  The event process records can be viewed. If you select <Cmdname sid="sms_alert_acknowledge_add" className="uitext" />, you can write and save the history.
+The event process records can be viewed. If you select <Cmdname sid="sms_alert_acknowledge_add" className="uitext" />, you can write and save the history.

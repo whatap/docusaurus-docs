@@ -15,10 +15,11 @@ keywords:
 import CommonCont from '../common-items/_import_db-specification-common.mdx';
 import NewFeature from '../common-items/_import_db-v2-new-feature.mdx';
 import Dbintroductiondesc from "../common-items/_db-introduction-desc.mdx";
+import DBsupportNote from "../common-items/_db-support-functions-note.mdx";
 
 <Dbintroductiondesc />
 
-<Videos url="https://img.whatap.io/23/11/06/031831DB_prd.mp4" />
+<DBsupportNote />
 
 ## PostgreSQL Monitoring features
 
@@ -33,34 +34,3 @@ import Dbspecification from "../common-items/_db-specification.mdx";
 ## New features in Database Monitoring V2 {#new-feature}
 
 <NewFeature product='PostgreSQL' ver='1.6.7' />
-
----
-
-## Supported functions
-
-The following are available features.
-
-| Category   | Function type               |                                     PostgreSQL                                     |
-| ---------- | --------------------------- | :--------------------------------------------------------------------------------: |
-| Monitoring | Instance List               |                           <span class='emoji-ok'>✅</span>                          |
-| ^          | Instance Monitoring         |                           <span class='emoji-ok'>✅</span>                          |
-| ^          | Multi DataBase (tenant)     | <span class='emoji-ok'>✅</span><br/>multi db stat is possible only in some metrics |
-| ^          | Slow Query                  |                           <span class='emoji-ok'>✅</span>                          |
-| Analysis   | Trends                      |                           <span class='emoji-ok'>✅</span>                          |
-| ^          | Trends Compare              |                           <span class='emoji-ok'>✅</span>                          |
-| ^          | Lock Tree                   |                           <span class='emoji-ok'>✅</span>                          |
-| ^          | Parallel Query Tree         |                           <span class='emoji-no'>❌</span>                          |
-| ^          | Dead Lock                   |                           <span class='emoji-no'>❌</span>                          |
-| ^          | DB Parameters               |                           <span class='emoji-ok'>✅</span>                          |
-| Statistics | SQL Stat                    |                           <span class='emoji-ok'>✅</span>                          |
-| ^          | Table Size                  |                                  Scheduled support                                 |
-| ^          | Database (TableSpace) Size  |                           <span class='emoji-ok'>✅</span>                          |
-| ^          | SGA Size                    |                           <span class='emoji-no'>❌</span>                          |
-| Report     | Daily/Weekly/Monthly Report |                           <span class='emoji-ok'>✅</span>                          |
-| Event      | Event List                  |                           <span class='emoji-ok'>✅</span>                          |
-| ^          | Event Stat                  |                           <span class='emoji-ok'>✅</span>                          |
-| ^          | Event Setting               |                           <span class='emoji-ok'>✅</span>                          |
-| ^          | Notification                |                           <span class='emoji-ok'>✅</span>                          |
-| Management | Agent Setup                 |                           <span class='emoji-ok'>✅</span>                          |
-| ^          | Agent List                  |                           <span class='emoji-ok'>✅</span>                          |
-| ^          | Project Management          |                           <span class='emoji-ok'>✅</span>                          |

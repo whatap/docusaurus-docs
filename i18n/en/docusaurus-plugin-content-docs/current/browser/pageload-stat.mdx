@@ -49,27 +49,10 @@ For more information about <Cmdname sid="TTL08276" className="uitext" />, see [t
 
 :::
 
-### Setting the lookup time
+{/* 조회 시간 설정하기 */}
+import Settime from "../common-items/_browser-stat-set-time.mdx";
 
-Set the date and time to view the performance metrics in <Cmdname sid="time" className="uitext" />.
-
-- Select the green button on the utmost right, you can select from various time ranges. 
-
-  <ImgLang img="browser-statistics-set-time-select-options.png" className="width-600" desc="Time setting" />
-
-- By selecting ![Left arrow icon](/img/left-arrow.svg) or ![Right arrow icon](/img/right-arrow.svg), you can shift the time. The shifting interval is the time interval set on the right.
-
-- Click the Date & Time area to manually select the desired date and time.
-
-  <ImgLang img="browser-statistics-set-custom-time.png" desc="Time setting" />
-
-:::note
-
-- The maximum time you can select is 3 days, and the minimum selectable time is 5 minutes.
-
-- If you select a range of 2 hours or less, data is retrieved every 5 minutes. If it exceeds 2 hours, data is retrieved every 1 hour.
-
-:::
+<Settime/>
 
 ### Selecting the statistical criteria {#statcriteria}
 
@@ -96,9 +79,9 @@ import CriteriaTip from "../common-items/_browser-stat-criteria-tip.mdx";
 
 <CriteriaTip/>
 
-### Downloading the viewed result
+import CSVdownload from "../common-items/_browser-stat-download-csv.mdx";
 
-You can download the searched data as a CSV format file. Select ![Download icon](/img/ic-csv-download-ms.svg) on the upper right of the screen. The CSV file name has the format of *LoadStatistics_`YYYYMMDD_HHMMSS`.csv*.
+<CSVdownload filename="Page_LoadStatistics" />
 
 ## Screen layout
 
@@ -263,7 +246,37 @@ import Coumnsetting from "../common-items/_browser-stat-column-setting.mdx";
 
 <Coumnsetting/>
 
-{/* 컬럼 및 용어 안내 */}
-import Statcolumn from "../common-items/_browser-stat-column-info.mdx";
+## Guide to the columns and terms {#columninfo}
 
-<Statcolumn/>
+<div className="c3-20-15-65 tableScroll">
+
+| Columns                                            | Unit        | Description                                                                                                                                                                     |
+| -------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <Cmdname sid="backend_time" className="uitext" />  | millisecond | Time processed on the backend while loading the page. (Time from `startTime` to `responseEnd`)                                                                                  |
+| <Cmdname sid="frontend_time" className="uitext" /> | millisecond | Time processed on the frontend area while loading the page. (Time from `domInteractive` to `loadEventEnd`)                                                                      |
+| <Cmdname sid="ITM08283" className="uitext" />      | millisecond | Redirection time taken for the browser to load the web page. (Time from `redirectStart` to `redirectEnd`)                                                                       |
+| <Cmdname sid="cache_time" className="uitext" />    | millisecond | Time taken for the browser to retrieve cached resources while loading the web page. (Time from `fetchStart` to `domainLookupStart`)                                             |
+| <Cmdname sid="ITM08284" className="uitext" />      | millisecond | Time taken for a browser to query a website domain while loading the web page. (Time from `domainLookupStart` to `domainLookupEnd`)                                             |
+| <Cmdname sid="ITM08876" className="uitext" />      | millisecond | Time taken to establish a network connection between the browser and the server while loading a page. It is the time taken for the client and server to establish a connection. |
+| <Cmdname sid="ssl_time" className="uitext" />      | millisecond | Time taken for TLS handshaking. (Time from `connectEnd` to `secureConnectionStart`) It is measured only when the last request used HTTPS.                                       |
+| <Cmdname sid="ITM08285" className="uitext" />      | millisecond | Time taken for a browser to receive the first byte from the server after sending a network request while loading the web page. (Time from `requestStart` to `responseStart`)    |
+| <Cmdname sid="download_time" className="uitext" /> | millisecond | Time taken for a browser to download resources from the server while loading a web page. (Time from `responseStart` to `responseEnd`)                                           |
+| <Cmdname sid="ITM08286" className="uitext" />      | millisecond | Time taken for a web page to render its initial content and become interactive. (Time from `domContentLoadedEventStart` to `domContentLoadedEventEnd`)                          |
+| <Cmdname sid="domload_time" className="uitext" />  | millisecond | Time taken for all resources on a web page to be loaded and rendered before users can be interactive with them. (Time from `loadEventStart` to `loadEventEnd`)                  |
+| <Cmdname sid="render_time" className="uitext" />   | millisecond | Time taken to render resources downloaded from the server on the screen and finish the page load event. (Time from `domInteractive` to `domComplete`)                           |
+| <Cmdname sid="TTL08498" className="uitext" />      | millisecond | Time taken for the load event to be completed as measured by the browser. (Time from the start to `loadEventEnd`)                                                               |
+| <Cmdname sid="TTL06361" className="uitext" />      | millisecond | Time taken for a browser to completely load a web page.                                                                                                                         |
+| <Cmdname sid="count" className="uitext" />         | Count       | Number of page loads.                                                                                                                                                           |
+| <Cmdname sid="page_group" className="uitext" />    | URL text    | It is a group of statistics that provides URL paths normalized using regular expressions. For more information, see [the following](before-starting#page-group).                |
+| <Cmdname sid="TTL08449" className="uitext" />      | URL text    | It is a URL path that has not been normalized using a regular expression.                                                                                                       |
+| <Cmdname sid="browser" className="uitext" />       | Text        | It is the type of browser used by the end user, such as Chrome, Edge, Safari, and the like.                                                                                     |
+| <Cmdname sid="os" className="uitext" />            | Text        | It is the type of OS that the end users are using on their device, such as macOS, Windows, or Linux.                                                                            |
+| <Cmdname sid="device" className="uitext" />        | Text        | It is the type of device used by the end user, such as Desktop, Mobile, or Tablet.                                                                                              |
+
+</div>
+
+:::note
+
+For more information about **Navigation timing**, see [the following](collect-data#navigation-timing).
+
+:::

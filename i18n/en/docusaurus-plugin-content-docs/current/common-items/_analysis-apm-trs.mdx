@@ -28,7 +28,9 @@ Set the <Cmdname sid="time_selector" className="uitext" />, <Cmdname sid="filter
 
 :::note
 
-You can view the data for up to 31 days. However, you can view the data for up to 7 days in <Cmdname sid="side_statRemote" className="uitext" />.
+- You can view the data for up to 31 days. However, you can view the data for up to 7 days in <Cmdname sid="side_statRemote" className="uitext" />.
+
+- For more information on how to use the <Cmdname sid="time_selector" className="uitext" /> option, see [the following](usage-ui#timeselector).
 
 :::
 
@@ -67,6 +69,32 @@ It collects statistics for transactions. Every 5 minutes, up to 5,000 URL-specif
 <Cmdname sid="TTL06975" className="uitext" /> requires to set the <code>trace_malloc_enabled=true</code> option in the agent configuration (*whatap.ini*) for collection. The default value is <code>false</code>.
 
 </InDoc>
+
+:::
+
+### Using the trend comparison feature {#comparetrend}
+
+You can use the <Cmdname sid="TTL08868" className="uitext" /> feature to compare multiple transaction trends at a glance. This feature is useful for quickly identifying key issues and resolving traffic issues when there are a large number of transactions to check.
+
+<ImgLang img="apm-statistic-tx-compare-trend.png" desc="Compare trends" />
+
+1. Select the time and monitoring target for a query, and then select the ![Search icon](/img/ico-btn-search.png).
+
+2. Select one or more transactions to compare from the transaction list.
+
+3. Select <Cmdname sid="TTL08868" className="uitext" />.
+
+4. The <Cmdname sid="TTL08868" className="uitext" /> window appears listing the trend graphs for the selected transactions.
+
+Check the trend graph in the <Cmdname sid="TTL08868" className="uitext" /> window to compare traffic patterns between transactions. You can compare traffic distributions for specific time periods and service paths.
+
+:::note
+
+- You can select and view up to 100 transactions.
+
+- If there are a lot of selected transactions, the loading time may increase.
+
+- For accurate analysis, use the <Cmdname sid="filter" className="uitext" /> option appropriately.
 
 :::
 

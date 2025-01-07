@@ -4,9 +4,15 @@
 
 <InDoc product="mssql"><ImgLang img="db-locktress-basic-mssql-v2.png" desc="Lock tree" /></InDoc>
 
-<Xclude product='postgresql,mysql,altibase,mssql,mssql-v1,cubrid'>
+<Xclude product='postgresql,mysql,altibase,mssql,mssql-v1,cubrid,tibero'>
 
 目的の![数字1](/img/number-01.png)日付と時間を設定し、[数字2](/img/number-02.png)の一覧からインスタンスを選択してください。設定した時間にロックが発生した場合は、**_lock wait sessions_**と画面下のテーブルに表示されているデータを表示します。
+
+:::note
+
+<Cmdname sid="time" className="uitext" />オプションの利用方法の詳細については、[次の文書](usage-ui#timeselector)を参照してください。
+
+:::
 
 </Xclude>
 
@@ -26,6 +32,12 @@
 
 - チャートで3時間以内にドラッグして、5秒単位のデータを照会できます。ただし、5秒単位のデータは、最近 1か月の範囲に限って照会できます。1か月前のデータは、5分要約データでしか閲覧できません。例えば、40 日前のロックトリックデータをドラッグ(ドリルダウン)すると、5分要約データは照会できますが、5秒データは照会できません。
 
+:::note
+
+<Cmdname sid="time" className="uitext" />オプションの利用方法の詳細については、[次の文書](usage-ui#timeselector)を参照してください。
+
+:::
+
 </InDoc>
 
 <InDoc product="mssql,mssql-v1,tibero">
@@ -40,7 +52,9 @@
 
 :::note
 
-チャートで3時間以内にドラッグして、5秒単位のデータを照会できます。ただし、5秒単位のデータは、最近 1か月の範囲に限って照会できます。1か月前のデータは、5分要約データでしか閲覧できません。例えば、40 日前のロックトリックデータをドラッグ(ドリルダウン)すると、5分要約データは照会できますが、5秒データは照会できません。
+- チャートで3時間以内にドラッグして、5秒単位のデータを照会できます。ただし、5秒単位のデータは、最近 1か月の範囲に限って照会できます。1か月前のデータは、5分要約データでしか閲覧できません。例えば、40 日前のロックトリックデータをドラッグ(ドリルダウン)すると、5分要約データは照会できますが、5秒データは照会できません。
+
+- <Cmdname sid="time" className="uitext" />オプションの利用方法の詳細については、[次の文書](usage-ui#timeselector)を参照してください。
 
 :::
 

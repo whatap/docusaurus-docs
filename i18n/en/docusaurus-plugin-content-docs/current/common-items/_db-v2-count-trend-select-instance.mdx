@@ -2,18 +2,22 @@
 
 Select ![number 1](/img/number-01.png) <Cmdname sid="TTL06202" className="uitext" /> and <Cmdname sid="instance" className="uitext" />, and then select ![number 2](/img/number-02.png) <Cmdname sid="TTL06203" className="uitext" /> and <Cmdname sid="instance" className="uitext" />. You can check the data details at the time point through a tooltip that appears by hovering the mouse over the chart. The content of the tooltip is updated based on the position of the mouse.
 
-![Tooltip](/img/db-compare-count-trend-tootip.png)
+<ImgLang img="db-compare-count-trend-tootip.png" desc="Tooltip" />
 
 - Each series is given a unique color for easy visual distinction. The solid line represents the data in <Cmdname sid="TTL06202" className="uitext" />, and the dotted line represents the data in <Cmdname sid="TTL06203" className="uitext" />.
 
 - **_Compare Time_** displays the time value of the data where the mouse pointer is located.
 
-- It displays the metric value at the time point of the selected data, and provides the data by series. Each series includes the metric name, date, and value of the data point.
+- It displays the metric value at the time point of the selected data, and provides the data by series. Each series includes the data point date, agent (instance) name, metric name, and the value.
+
+<InDoc product="postgresql,oracle,oracle-v1,oracle-pro,mssql,mssql-v1">
 
 :::note
 
-- In <Cmdname sid="database" className="uitext" />, you can select a database for comparison.
+- You can also select a desired database to compare from <Cmdname sid="database" className="uitext" /> at the top of the screen.
 
-- The colors in <Cmdname sid="database" className="uitext" /> are the same in the graph chart.
+- The color of <Cmdname sid="database" className="uitext" /> at the top of the screen is displayed in the same color on the graph chart.
 
 :::
+
+</InDoc>

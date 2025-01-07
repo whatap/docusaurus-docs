@@ -38,6 +38,13 @@ Select Home screen &gt; cluster project (<code class='my'>CP</code>) &gt; <Cmdna
 
 - It provides the existence status of etcd leaders and the history of leader changes. 
 
+{/* •	etcd 리소스 사용량
+•	Provision of data for CPU and memory usage, number of Pod restarts, and related log data
+•	Job processing status
+•	Numbers of etcd commits and applies
+•	Reader status tracking
+•	etcd reader existence and reader change history */}
+
 ## Activation of the etcd monitoring
 
 Activate the agent by modifying the downloaded *YAML* file and registering the mTLS certificate when installing the WhaTap Kubernetes agent.
@@ -124,7 +131,7 @@ Modify the WhaTap Kubernetes agent *YAML* file to add container settings and the
 
 1. Add a secret to the volumes section in `whatap-master-agent` of Deployment. 
 
-   ```yaml
+   ```yaml {3}
    - name: "whatap-etcd-cert"
      secret:
        secretName: "whatap-etcd-cert"
@@ -132,7 +139,7 @@ Modify the WhaTap Kubernetes agent *YAML* file to add container settings and the
 
 2. Mount the secret into the `whatap-control-plane-helper` container. 
 
-   ```yaml
+   ```yaml {2}
    volumeMounts:
      - name: "whatap-etcd-cert"
        readOnly: true

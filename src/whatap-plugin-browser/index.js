@@ -13,7 +13,7 @@ module.exports = function () {
                             pcode: 29856,
                             sampleRate: 100,
                             sessionReplaySampleRate: 100,
-                            ignoreOrigins: [/^.*localhost.*$/i, /^.*ngrok-free.app.*$/i, /^.*whatap.github.io.*$/i],
+                            ignorePageUrls: [/^.*localhost.*$/i, /^.*ngrok-free.app.*$/i, /^.*whatap.github.io.*$/i],
                             collectUserClick: true
                           },
                         };

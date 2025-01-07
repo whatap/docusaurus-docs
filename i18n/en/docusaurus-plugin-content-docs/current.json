@@ -1872,7 +1872,7 @@
     "description": "The label for category Server Solaris in sidebar releaseSidebar"
   },
   "sidebar.manageSidebar.category.Single Sign-On 연동": {
-    "message": "Single Sign-On",
+    "message": "Single Sign-On integration",
     "description": "The label for category Single Sign-On 연동 in sidebar manageSidebar"
   },
   "sidebar.otelSidebar.category.릴리스 노트": {
@@ -1888,7 +1888,7 @@
     "description": "The label for the doc item APACHE in sidebar featuremonitorSidebar, linking to the doc features/apache-introduction"
   },
   "sidebar.rumsSidebar.category.통계": {
-    "message": "Statistics",
+    "message": "Statistic",
     "description": "The label for category 통계 in sidebar rumsSidebar"
   },
   "sidebar.rumsSidebar.category.경고 알림": {
@@ -1896,11 +1896,11 @@
     "description": "The label for category 경고 알림 in sidebar rumsSidebar"
   },
   "sidebar.mssqlSidebar.category.SQL Server V2 모니터링": {
-    "message": "SQL Server V2 Monitoring",
+    "message": "SQL Server V2 monitoring",
     "description": "The label for category SQL Server V2 모니터링 in sidebar mssqlSidebar"
   },
   "sidebar.mssqlSidebar.category.로그": {
-    "message": "로그",
+    "message": "Log",
     "description": "The label for category 로그 in sidebar mssqlSidebar"
   },
   "sidebar.mssqlV1Sidebar.category.SQL Server V1 모니터링": {
@@ -1948,7 +1948,7 @@
     "description": "The label for the doc item 지원 환경 in sidebar mssqlV1Sidebar, linking to the doc mssql-v1/monitoring-support"
   },
   "sidebar.serverSidebar.category.서버 인벤토리 맵": {
-    "message": "Server Inventory Map",
+    "message": "Server inventory map",
     "description": "The label for category 서버 인벤토리 맵 in sidebar serverSidebar"
   },
   "sidebar.altibasev1Sidebar.category.대시보드": {
@@ -1972,7 +1972,7 @@
     "description": "The label for category 단계별 명령어 가이드 in sidebar learningSidebar"
   },
   "sidebar.learningSidebar.category.용어 알아보기": {
-    "message": "Learn About The Glossary",
+    "message": "Learning about terms",
     "description": "The label for category 용어 알아보기 in sidebar learningSidebar"
   },
   "sidebar.referSidebar.category.라이선스": {
@@ -2016,11 +2016,11 @@
     "description": "The label for category 경고 알림 in sidebar serverSidebar"
   },
   "sidebar.serverSidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar serverSidebar"
   },
   "sidebar.kubeSidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar kubeSidebar"
   },
   "sidebar.logSidebar.category.경고 알림": {
@@ -2040,35 +2040,35 @@
     "description": "The label for category Database Reference in sidebar dbSidebar"
   },
   "sidebar.dbSidebar.link.데이터베이스별 지원 기능 비교": {
-    "message": "Comparison between supported functions by database",
+    "message": "Comparison of supported features for each database",
     "description": "The label for link 데이터베이스별 지원 기능 비교 in sidebar dbSidebar, linking to ../db-support-functions"
   },
   "sidebar.javaSidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar javaSidebar"
   },
   "sidebar.phpSidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar phpSidebar"
   },
   "sidebar.nodejsSidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar nodejsSidebar"
   },
   "sidebar.pySidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar pySidebar"
   },
   "sidebar.dotNetSidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar dotNetSidebar"
   },
   "sidebar.goSidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar goSidebar"
   },
   "sidebar.postgreSidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar postgreSidebar"
   },
   "sidebar.dboracleSidebar.category.경고 알림": {
@@ -2076,63 +2076,63 @@
     "description": "The label for category 경고 알림 in sidebar dboracleSidebar"
   },
   "sidebar.dboracleSidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar dboracleSidebar"
   },
   "sidebar.dboracleV2Sidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar dboracleV2Sidebar"
   },
   "sidebar.dboracledmaSidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar dboracledmaSidebar"
   },
   "sidebar.mysqlSidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar mysqlSidebar"
   },
   "sidebar.mssqlSidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar mssqlSidebar"
   },
   "sidebar.mssqlV1Sidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar mssqlV1Sidebar"
   },
   "sidebar.tiberoSidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar tiberoSidebar"
   },
   "sidebar.cubridSidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar cubridSidebar"
   },
   "sidebar.cubridV1Sidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar cubridV1Sidebar"
   },
   "sidebar.altibaseSidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar altibaseSidebar"
   },
   "sidebar.altibasev1Sidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar altibasev1Sidebar"
   },
   "sidebar.redisSidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar redisSidebar"
   },
   "sidebar.mongodbSidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar mongodbSidebar"
   },
   "sidebar.npmsidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar npmsidebar"
   },
   "sidebar.rumsSidebar.category.이벤트 설정": {
-    "message": "Event Configuration",
+    "message": "Event Setting",
     "description": "The label for category 이벤트 설정 in sidebar rumsSidebar"
   }
 }

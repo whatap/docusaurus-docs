@@ -1,0 +1,211 @@
+---
+id: resourceload-stat
+title: Resource Load Statistics
+description: The IP load statistics provide load performance data for each IP address connected to the website.
+keywords:
+  - Browser Monitoring
+  - Resource Load Statistics
+---
+
+{/* Note */}
+import TimequeryNotes from "../common-items/_browser-stat-time-query-note.mdx"
+
+Home &gt; Select Project &gt; <Cmdname sid="side_statistics" className="uitext" /> &gt; <Cmdname sid="side_resourceLoadStatistics" className="uitext" />
+
+The <Cmdname sid="side_resourceLoadStatistics" className="uitext" /> menu provides a visual performance data on web pages, as well as useful information to systematically analyze and improve performance bottlenecks. By analyzing the performance trends, response times, sizes, and the like for each resource, you can obtain specific evidences for optimizing web page performance. This allows you to identify resources with long load times, optimize large-scale resources, and check the performance impact of 3rd party resources.
+
+:::note
+
+For more information about the collecgted data, see [the following](collect-data#pageloadtime).
+
+:::
+
+## Basic usage guide {#basicusageguide}
+
+It provides data needed to reduce the page load time and improve user experience. By clearly identifying the cause of performance degradation, improvement efforts can be carried out more effectively.
+
+<ImgLang img="browser-resourceload-stat-basic.png" desc="Resource load statistics" />
+
+1. Set the date and time to view the performance metrics in <Cmdname sid="time" className="uitext" />.
+
+2. Select the desired criteria in <Cmdname sid="TTL08276" className="uitext" />.
+
+3. Select ![Search icon](/img/ic-search-on-press.svg) on the upper right of the screen.
+
+You can see the performance metrics of the time range searched for through graph charts and lists in each section. If you hover the mouse over the graph chart in each section, the metric information for the time zone appears. This allows you to analyze hourly trends to determine if performance degradation is concentrated in specific time zones.
+
+:::note
+
+For more information about <Cmdname sid="TTL08276" className="uitext" />, see [the following](#statcriteria).
+
+:::
+
+{/* 조회 시간 설정하기 */}
+import Settime from "../common-items/_browser-stat-set-time.mdx";
+
+<Settime/>
+
+### Selecting the statistical criteria {#statcriteria}
+
+<Cmdname sid="TTL08276" className="uitext" /> is an option that allows users to check the statistical metrics to analyze based on the following selection criteria:
+
+- <Cmdname sid="merge_avg" className="uitext" />: It provides statistics by calculating the average load times for each resource.
+
+- <Cmdname sid="merge_max" className="uitext" />: It provides the statistics based on the maximum load times for each resource. You can identify which resource is most inefficient in page load time.
+
+- <Cmdname sid="merge_min" className="uitext" />: It provides statistics based on the minimum load time for each resource. You can identify which resource has the fastest page load time.
+
+:::tip
+
+- <Cmdname sid="merge_avg" className="uitext" /> is useful to get the overall performance.
+
+- <Cmdname sid="merge_max" className="uitext" /> can be used for analyzing the sections with the longer response time or larger size.
+
+:::
+
+{/* 조회 결과 다운로드하기 */}
+import CSVdownload from "../common-items/_browser-stat-download-csv.mdx";
+
+<CSVdownload filename="Resource_LoadStatistics" />
+
+## Screen layout
+
+### <Cmdname sid="TTL08866" /> {#TTL08866}
+
+It provides visualization of load counts by resource type on an hourly basis. If the load ratio of a specific resource type is excessively high, it may cause a performance bottleneck, so check and optimize it. 
+
+<ImgLang img="browser-resourceload-stat-resource-type-trend.png" desc="Trends in load count by resource type" />
+
+- The pie chart allows you to see the ratios by resource type at a glance. If you hover your mouse over the chart, a tooltip appears with the ratio of the resource.
+
+- You can see the resource load trends over time through a bar graph. If you hover your mouse over the graph, a tooltip appears to display the numbers of loads for each resource type for the time zone.
+
+- When you select a specific time in the bar graph, the data in the <Cmdname sid="TTL08860" className="uitext" />, <Cmdname sid="TTL08861" className="uitext" />, <Cmdname sid="TTL08862" className="uitext" /> sections is updated for the selected time zone. At this time, in the <Cmdname sid="TTL08860" className="uitext" /> and <Cmdname sid="TTL08861" className="uitext" /> sections, the graph format changes to a bar graph.
+
+  <ImgLang img="browser-resourceload-stat-resource-type-trend-select-time.png" desc="Trends in load count by resource type" />
+
+:::note
+
+For more information about the resource types, see [the following](#resourcetype).
+
+:::
+
+### <Cmdname sid="TTL08860" /> {#TTL08860}
+
+It provides a list for the top 10 resources with the longest average response times for each resource along with a chart.
+
+<ImgLang img="browser-resourceload-stat-resoponse-top.png" desc="Top 10 Resource Response Times" />
+
+You can quickly identify the resources causing performance degradation. You can also check the response time trend over time to analyze if there are any issues occurred for a specific time zone. It can be used to identify resources with long response times and optimize the server response or network delays.
+
+### <Cmdname sid="TTL08861" /> {#TTL08861}
+
+It provides a list of top 10 largest resources along with a chart.
+
+<ImgLang img="browser-resourceload-stat-size-top.png" desc="Top 10 Resource Sizes" />
+
+You can identify large-scale resources that are causing poor web page loading performance. It can be used to improve the page performance through image optimization, JS bundling, and compression.
+
+### <Cmdname sid="TTL08862" /> {#TTL08862}
+
+It provides a table for all resources loaded on the web page. You can check detailed performance metrics for each resource. You can analyze the load path and request count for a specific resource to reduce unnecessary repeated requests. You can check the performance status for third-party APIs or CDNs by checking the <Cmdname sid="CNT08863" className="uitext" /> column of external resources (**3rd party**).
+
+<ImgLang img="browser-resourceload-stat-group-list.png" desc="Resource group list" />
+
+- If you click a header column in the table, the list is sorted based on the column. 
+
+- When you hover your mouse over a header column, you can see a tooltip explaining the column.
+
+- ![Column Icon](/img/ic-column.svg) <Cmdname sid="BTN06441" className="uitext" />: You can hide the table header columns or add desired items. You can also change the column order. For more information, see [the following](#setcolumn).
+
+- ![Pop-up icon](/img/ic-popup.svg): It displays the resource group list in full screen.
+
+- ![Left arrow icon](/img/left-arrow.svg) / ![Right arrow icon](/img/right-arrow.svg): When there are many resource lists, you can select a button to move between pages.
+
+## Filtering the searched results
+
+You can filter the retrieved statistical data by domain or performance metrics (ms), and resource path to focus on your analysis.
+
+### Domain filters {#domainfilter}
+
+The <Cmdname sid="TTL08857" className="uitext" /> option allows you to distinguish which entity is providing the resource, and thus determine whether the factor affecting the performance is **internal** (<Cmdname sid="CNT08859" className="uitext" />) or **external** (<Cmdname sid="CNT08858" className="uitext" />). Through this, you can effectively analyze where bottlenecks occur when optimizing the web page performance.
+
+- <Cmdname sid="CNT08859" className="uitext" />: You can filter only the resources provided by the company. It includes the web servers and self-hosted resources.
+
+- <Cmdname sid="CNT08858" className="uitext" />: Resources provided by external services. It includes all resources loaded from external domains such as CDN resources, external APIs (e.g. Google Analytics), and third-party libraries.
+
+:::tip
+
+- Check **1st Party** resources to see the performance bottlenecks on your internal servers.
+
+- By analyzing the response times for **3rd party** resources, evaluate the impact of external services or CDNs on your web pages.
+
+:::
+
+{/* 성능 지표 필터 */}
+import PermetricsFilter from "../common-items/_browser-stat-perf-metrics-filter.mdx";
+
+<PermetricsFilter/>
+
+### Resource path filter
+
+You can select a specific resource path to see its performance data. Select a desired resource path in the <Cmdname sid="resource_url_path" className="uitext" /> option and then click <Cmdname sid="apply" className="uitext" />.
+
+<ImgLang img="browser-resourceload-stat-resource-path-filter.png" desc="Resource Path" />
+
+:::note
+
+You can select up to 3 resource paths.
+
+:::
+
+## Resource types {#resourcetype}
+
+The following guides the resource types defined in WhaTap Browser Monitoring.
+
+| Resource type | Description                                                                                                                              |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **script**    | It is the Java script file resource. For example, `.js` files are script files required for running front-end code and dynamic features. |
+| **image**     | It is the image file resource. It includes various image formats such as `.png`, `.jpg`, `.svg`, and such.                               |
+| **fetch**     | It is an HTTP request to retrieve data from the browser. It is usually used for API calls or data requests.                              |
+| **css**       | It is the stylesheet resource. It is the CSS file that defines the layout and design for web pages.                                      |
+| **font**      | It is the web font resource. For example, it includes font files such as `.woff`, `.ttf`, and `.otf`.                                    |
+| **xhr**       | It is the resource fetched through an XML HTTP request. It is mainly used for asynchronous data requests (e.g. AJAX calls).              |
+| **media**     | It is the media file resource such as audio and video. For example, it includes various media such as `.mp4`, `.mp3`, and `.wav`.        |
+| **beacon**    | It is a request to send asynchronous data to the server by using `navigator.sendBeacon()`.                                               |
+| **document**  | It is the HTML document itself, which is a major content resource that makes up the page.                                                |
+| **other**     | It is the resource classified as Other. It includes resources that are not clearly classified by the type.                               |
+
+{/* 컬럼 설정하기 */}
+import Coumnsetting from "../common-items/_browser-stat-column-setting.mdx";
+
+<Coumnsetting/>
+
+## Guide to the columns and terms {#columninfo}
+
+<div className="c3-20-15-65 tableScroll">
+
+| Columns                                                | Unit        | Description                                                                                                     |
+| ------------------------------------------------------ | ----------- | --------------------------------------------------------------------------------------------------------------- |
+| <Cmdname sid="count" className="uitext" />             | Count       | It is the total number of resource requests.                                                                    |
+| <Cmdname sid="TTL06361" className="uitext" />          | millisecond | It is the time taken to fully load the resources.                                                               |
+| <Cmdname sid="download_time" className="uitext" />     | millisecond | Time taken to download resources from the server. (Time from `responseStart` to `responseEnd`)                  |
+| <Cmdname sid="ITM08283" className="uitext" />          | millisecond | It is the time taken for redirect while loading resources. (Time from `redirectStart` to `redirectEnd`)         |
+| <Cmdname sid="CNT08864" className="uitext" />          | Text        | It is the type of the requested resource. For more information, see [the following](#resourcetype).             |
+| <Cmdname sid="CNT08863" className="uitext" />          | Text        | It is the host name of the server providing resources.                                                          |
+| <Cmdname sid="resource_url_path" className="uitext" /> | Text        | It is the URL path or file path of the requested resource.                                                      |
+| <Cmdname sid="version" className="uitext" />           | Text        | It is the version of the resource.                                                                              |
+| <Cmdname sid="ITM08876" className="uitext" />          | Millisecond | It is the time taken for the network connection between the client requesting resources and the server.         |
+| <Cmdname sid="size" className="uitext" />              | Byte        | It is the data size of the requested resource.                                                                  |
+| <Cmdname sid="environment" className="uitext" />       | Text        | It is the operating environment where resources are loaded. e.g. development environment, operating environment |
+| <Cmdname sid="ITM08284" className="uitext" />          | millisecond | It is the time taken to query the domain name. (Time from `domainLookupStart` to `domainLookupEnd`)             |
+| <Cmdname sid="ITM08285" className="uitext" />          | millisecond | Time taken until the first byte is received from the server. (Time from `requestStart` to `responseStart`)      |
+| <Cmdname sid="ssl_time" className="uitext" />          | millisecond | Time taken for TLS handshaking when connecting to HTTPS. (Time from `connectEnd` to `secureConnectionStart`)    |
+
+</div>
+
+:::note
+
+For more information about **Navigation timing**, see [the following](collect-data#navigation-timing).
+
+:::

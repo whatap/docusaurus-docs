@@ -1,0 +1,18 @@
+---
+id: dbx-2_2_4
+title: DBX v2.2.4
+pagination_next: release-notes/db/dbx-2_2_3
+displayed_sidebar: releaseSidebar
+---
+
+November 27, 2024
+
+## SQL Server
+
+- <Status priority='1'>Feature</Status> Added full text in active sessions.
+
+- <Status priority='1'>Changed</Status> Changed and transferred the log format.
+
+  - Changed to transfer `EXEC xp_ReadErrorLog` data to the `#DB` category every 1 minute.
+
+  - Changed to allow error log viewing without installing the XOS agent.

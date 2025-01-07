@@ -50,6 +50,20 @@ import Setheapmemory from "./_set-heap-memory.mdx";
 
 <Setheapmemory />
 
+## In case the client IP address is not collected
+
+If the client IP addresses are not collected from the dashboard or other menus, see the following. 
+
+To collect valid client IP addresses from the Java agent, it is required to pass the original client IP address from the IBM HTTP server to the backend WebSphere application server. To pass the original client IP address, add `X-Forwarded-For` to the HTTP header on the IBM HTTP server. 
+
+This is handled in more detail in the IBM Support document: [Passing the real client IP from IBM HTTP Server 9.0 to WebSphere Application Server](https://www.ibm.com/support/pages/passing-real-client-ip-ibm-http-server-90-websphere-application-server).
+
+:::note
+
+You may need an IBM account to view the IBM support documentation.
+
+:::
+
 {/* 다음 단계 */}
 import Nextstep from "../../common-items/_apm-next-step.mdx";
 

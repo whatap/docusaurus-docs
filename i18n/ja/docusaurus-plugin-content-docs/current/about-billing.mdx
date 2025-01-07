@@ -1,21 +1,40 @@
 ---
 id: about-billing
-title: WhaTap決済アカウント
-description: WhaTapの決済アカウント登録と変更方法について案内します。
+title: 決済アカウント
+description: WhaTapの決済アカウント登録と変更方法に関するFAQ文書です。
 keywords:
   - WhaTap
   - 決済アカウント
   - アカウント管理
-toc_max_heading_level: 2
+  - FAQ
+toc_max_heading_level: 3
 ---
 
-WhaTapモニタリングでの決済情報登録、決済権限譲渡及びプロジェクト有料転換など、決済アカウントの管理方法について案内します。 トライアル利用期間中、およびトライアル利用期間が終了した時点で、サービス利用を続けたい場合は決済情報を登録し、該当プロジェクトを有料として転換します。 
+WhaTapモニタリングサービス利用中の決済アカウントに関するFAQ文書です。
 
-<Steps type="yl">
+<div className="faqs">
+
+## 決済アカウント管理{#faq-billing-account}
+
+> WhaTapサービスの決済アカウントの管理方法について知りたいです。
+
+WhaTapモニタリングでの決済情報登録、決済権限譲渡及びプロジェクト有料転換など、決済アカウントの管理方法については、次の概括案内を参考にしてください。 
+
+:::note
+
+トライアル利用期間中、およびトライアル利用期間が終了した時点で、サービス利用を続けたい場合は決済情報を登録し、該当プロジェクトを有料として転換します。 
+
+:::
+
+</div>
+
+{/* <Steps type="yl"> */}
 
 {/* <Steps> */}
 
-## 決済情報の登録 {#regisgerpay}
+<div className="faq-about-billing">
+
+### ![1](/img/number-01.png) 決済情報の登録 {#regisgerpay}
 
 決済情報を登録する前に、まず**決済**権限を確認してください。 基本的に、プロジェクト作成アカウントに**決済**権限が付与されます。
 
@@ -49,17 +68,17 @@ WhaTapモニタリングでの決済情報登録、決済権限譲渡及びプ�
 
 :::
 
-## 決済権限の譲渡{#transferpayauth}
+### ![2](/img/number-02.png) 決済権限の変更 {#transferpayauth}
 
 **決済**権限は、**1個のアカウント**へのみ付与できます。 例えば、AアカウントからBアカウントに決済権限を譲渡する場合、Aアカウントはこれ以上決済権限を保有しなくなります。 また、**決済**権限を受け取るアカウントが決済情報を登録した状態でなければ**決済**権限は譲渡できません。
 
-### 決済権限を受け取るアカウントの決済情報登録
+#### 決済権限を受け取るアカウントの決済情報登録
 
 1. [WhaTapモニタリング](https://service.whatap.io)から**決済**権限を受け取るアカウントとしてログインします。
 
 2. ![指示線1](/img/number-01.png)の過程を通じて、該当アカウントの決済情報を登録してください。
 
-### メンバー招待
+#### メンバー招待
 
 1. [WhaTapモニタリング](https://service.whatap.io)で、**決済**権限と**修正**権限を持ったアカウントとしてログインしてください。
 
@@ -73,7 +92,7 @@ WhaTapモニタリングでの決済情報登録、決済権限譲渡及びプ�
 
 6. <Cmdname sid="member_invite_list" className="uitext" replace=" ({length})" />に該当アカウントが登録されたことを確認してから、<Cmdname sid="complete" className="uitext" />ボタンをクリックしてください。
 
-### 権限の修正
+#### 権限の修正
 
 <ImgLang img='best-p/about-billing-member-role.png' desc='権限修正sc' />
 
@@ -91,7 +110,7 @@ WhaTapモニタリングでの決済情報登録、決済権限譲渡及びプ�
 
 :::
 
-## プロジェクト有料転換{#subscripeproject}
+### ![3](/img/number-03.png) プロジェクト有料転換 {#subscripeproject}
 
 決済情報の登録を完了すると、<Cmdname sid="side_projectSubscription" className="uitext" />メニューに移動します。 該当アカウントが保有しているすべての<Cmdname sid="project_list" className="uitext" />を次のように確認できます。 
 
@@ -111,4 +130,6 @@ WhaTapモニタリングでの決済情報登録、決済権限譲渡及びプ�
 
 :::
 
-</Steps>
+{/* </Steps> */}
+
+</div>

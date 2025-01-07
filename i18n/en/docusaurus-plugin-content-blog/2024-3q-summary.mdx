@@ -11,7 +11,11 @@ tags:
 
 Here’s an overview of new features and notable changes of WhaTap’s 3rd quarter services in 2024. Take a look at new features offered by WhaTap at a glance.
 
+{/* 새로운 기능 sc 이미지 국문과 영문 */}
+
 <ImgLang img='changelog/changelog-new3.png' desc='New features' />
+
+{/* truncate */}
 
 <div class ='faq'>
 
@@ -59,6 +63,8 @@ An overview of changes other than new features for each product, the correspondi
 <br/>
 <br/>
 
+{/* 공통 및 브라우저 뺄지?? */}
+
 ## `Common`
 
 In the WhaTap `Common` section in Q3 2024, the <Cmdname sid="side_eventSettingV2" className="uitext" /> menu has been newly improved and the newly reorganized <Cmdname sid="side_metricsChart" className="uitext" /> <code class="newfunc">New</code> menu has been introduced. 
@@ -70,6 +76,8 @@ The searching feature has been added to the existing <Cmdname sid="side_eventSet
 The `Application`, `Kubernetes`, and `Database` product suites newly reorganized the <Cmdname sid="side_metricsChart" className="uitext" /> <code class="newfunc">New</code> menu. <Cmdname sid="side_metricsChart" className="uitext" /> <code class="newfunc">New</code> is designed to enable monitoring tasks more efficient by significantly improving the user experience. 
 
 ![Common metrics chart v2 branching example](/img/changelog/changelog-24q3-common-metrics-chart.gif)
+
+{/* ![공통 메트릭스 차트 v2 분기 예시2](/img/changelog/changelog-24q3-common-add_chart.gif) */}
 
 You can easily add charts by processing ***Time***, ***Target***, and ***Interval*** settings at a time. You can also freely change the time range of the dashboard widget, and the batch change and preset features make configuration management easier. In addition, you can freely adjust the dashboard layout and widgets, making chart analysis more efficient.
 
@@ -183,7 +191,7 @@ WhaTap Server Monitoring provides a new <Cmdname sid="side_serverInventory" clas
 
 ![Server components sc](/img/changelog/changelog-24q3-server-inventory.png)
 
-Custom columns can be configured through custom items to monitor the server status and performance in more detail and respond to issues. For example, you can add information about the operation managers for direct communication with each server manager, enabling a quick response upon an issue. Additionally, the <Cmdname sid="side_serverInventory" className="uitext" /> menu allows you to quickly filter servers that meet your criteria through three-level multi-sorting. The default sorting is performed based on ***OS type***, ***Model***, and ***Serial information***. 
+Custom columns can be configured through custom items to monitor the server status and performance in more detail and respond to issues. For example, you can add information about the operation managers for direct communication with each server manager, enabling a quick response upon an issue. Additionally, the <Cmdname sid="side_serverInventory" className="uitext" /> menu allows you to quickly filter servers that meet your criteria through three-level multi-sorting. The default sorting is performed based on ***OS type***, ***Model***, and ***Serial information***.
 
 **Unix** `HP-UX` agent installation package is provided. `HP-UX` is the high-performance Unix operating system developed by Hewlett-Packard (HP), known for its stability and performance on Itanium and PA-RISC systems. 
 
@@ -240,6 +248,8 @@ Additionally, WhaTap Kubernetes component analysis feature has been improved. Th
 ![k8s performance summary branching example](/img/changelog/changelog-24q3-k8s-summary.gif)
 
 In addition, as part of the expansion of WhaTap Kubernetes monitoring information, the new <Cmdname sid="side_kubeServiceList" className="uitext" /> menu has been added, allowing you to check the configuration of each service and the status of the connected Pods. It provides the service information collected over the past one minute based on the query time. 
+
+<ImgLang img='k8s-service-list.png' desc='k8s Service List quarter example' />
 
 Through the following overview guide, check the new features and major changes in the `Kubernetes` product in Q3 2024 along with the release versions.
 
@@ -335,7 +345,8 @@ import DBX_agent_24q3 from "../crw-data/crwld-agent-24q3/_import-agent-24q3-dbx.
 
 :::
 
-<br/> 
+<br/>
+
 ## `Feature`
 
 WhaTap launched the **Beta** services for `Aerospike` monitoring and `Apache Pulsar` monitoring in the form of feature projects (<code class='Features'>Features</code>) in Q3 2024. It is scheduled for official release in the future, and the support scope is to be expanded. 

@@ -1,120 +1,97 @@
 ---
 id: install-agent-nuxtjs
 title: Installation of the Nuxt.js environment
-description: The following explains how to configure the Custom Server for monitoring the Node.js applications in the server-side rendering (SSR) framework such as Nuxt.js.
+description: The following explains how to install the Node.js agent in **Nuxt.js 3** that is easy for users to install.
 keywords:
   - Node.js
   - Nuxt.js
   - Agent
 ---
 
-Server-side rendering (SSR) frameworks such as **Nuxt.js** require the Custom Server settings for application monitoring. They require an approach different from typical Node.js frameworks (e.g. Express.js, Nest.js).
+The following explains how to install the Node.js agent in **Nuxt.js 3** that is easy for users to install. This document has been created based on **Nuxt.js 3**.
 
-:::note
-
-Reference: [Nuxt.js Custom Server Configuration](https://v2.nuxt.com/docs/configuration-glossary/configuration-dev/)
-
-:::
+<Steps>
 
 ## Installing the agent {#installagent}
 
-Execute the following command to install the agent.
+Install the WhaTap agent by executing the following command from the root path of the project.
 
 ```bash title="BASH"
 npm install whatap
 ```
 
-## Agent file structure {#agentfiles}
+## Creating the agent configuration file
 
-For the agent file configuration, see the following.
+Create the _whatap.conf_ file in the root path of the project and then add the required settings. For more information about the agent configuration, see [the following](set-agent).
 
-<Filetree name="whatap">
+```ini title='whatap.conf'
+license={ACCESS_KEY}
+whatap.server.host={COLLECTION_SERVER_IP}
+```
 
-<FiletreeItem name="package.json" type="file">Document file for sample applications and dependency management.</FiletreeItem>
+## Building the Nuxt application
 
-<FiletreeItem name="whatap.conf" type="file">This configuration file stores monitoring agent settings, access key, and WhaTap data collection server IP.</FiletreeItem>
+Build the Nuxt application by executing the following command:
 
-<FiletreeItem name="security.conf (or paramkey.txt)" type="file">It stores the security key that is entered for viewing SQL variables and HTTP queries, or using the Thread stop function.</FiletreeItem>
+```bash title="BASH"
+npm run build
+```
 
-<FiletreeItem name="server.js / index.js" type="file">Example file names. Server configuration file for **Nuxt.js** app instances.</FiletreeItem>
+When the build is completed, a _.output/server_ directory is created. For the directory structure, see the following.
+
+<Filetree name=".output/server/" open>
+
+<FiletreeItem name="chunks/" type="folder">Chunk files (Code-splitted Java script files)</FiletreeItem>
+
+<FiletreeItem name="node_modules/" type="folder">Dependency modules required to run the server</FiletreeItem>
+
+<FiletreeItem name="package.json" type="file">Application information and dependency management document</FiletreeItem>
+
+<FiletreeItem name="index.mjs" type="file">Server entry point file</FiletreeItem>
 
 </Filetree>
 
-## Creating the server/index.js code
-
-Create the **server/index.js** file for **Nuxt.js** application instances. This file must be located in the project's server (_server_) folder.
-
-### Initializing the WhaTap agent
-
-```javascript title="server/index.js"
-var Whatap = require('whatap').NodeAgent;
-```
-
-### Loading Nuxt.js and other required modules
-
-```javascript title="server/index.js"
-const express = require('express');
-const { Nuxt, Builder } = require('nuxt');
-const app = express();
-```
-
-### Configuring and initializing the Nuxt instance
-
-```javascript title="server/index.js"
-const config = require('./nuxt.config.js');
-config.dev = process.env.NODE_ENV !== 'production';
-const nuxt = new Nuxt(config);
-
-if (config.dev) {
-    new Builder(nuxt).build();
-}
-```
-
-### Configuring the Express Server and adding the Nuxt middleware
-
-In the following code, set the server port number in `port`.
-
-```javascript title="server/index.js"
-app.use(nuxt.render);
-
-const port = 3000;
-app.listen(port, () => {
-    console.log(`Server listening on http://localhost:${port}`);
-});
-```
-
-### Viewing the full code {#fullcode}
-
-See the completed full code.
-
-```javascript title="server/index.js"
-var Whatap = require('whatap').NodeAgent;
-
-const express = require('express');
-const { Nuxt, Builder } = require('nuxt');
-const app = express();
-
-const config = require('./nuxt.config.js');
-config.dev = process.env.NODE_ENV !== 'production';
-const nuxt = new Nuxt(config);
-
-if (config.dev) {
-    new Builder(nuxt).build();
-}
-
-app.use(nuxt.render);
-
-const port = 3000;
-app.listen(port, () => {
-    console.log(`Server listening on http://localhost:${port}`);
-});
-```
-
 ## Running the application
 
-```bash title="SH"
-node server/index.js
+Use the following command to run the application.
+
+```bash title="BASH"
+node -r whatap .output/server/index.mjs
 ```
+
+</Steps>
+
+## Running in the Decker environment
+
+To run your Nuxt application in the Docker environment, add the following steps in _Dockerfile_:
+
+1. Go to the _.output/server_ directory.
+
+   ```bash title="BASH"
+   cd .output/server
+   ```
+
+2. Execute the following command to install the WhaTap agent.
+
+   ```bash title="BASH"
+   npm install whatap
+   ```
+
+   :::note
+
+   After building the application, install the **whatap** package with a separate command, because the **whatap** package does not exist in the _.output/server_ path. It is a tree shaking feature of **Nuxt.js**, which prevents packages that are not used in the code from being included in the build.
+
+   :::
+
+3. Create the _whatap.conf_ file and then perform configuration.
+
+4. Copy the configured _.output/server_ path to `WORKDIR`.
+
+5. Use the following command to run the application.
+
+   ```bash title="BASH"
+   node -r whatap .output/server/index.mjs
+   ```
 
 {/* 다음 단계 */}
 import NextSteps from "../common-items/_apm-next-stemp-exclude-java.mdx";

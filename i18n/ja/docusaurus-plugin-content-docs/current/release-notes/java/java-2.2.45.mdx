@@ -1,0 +1,60 @@
+---
+id: java-2_2_45
+title: Java Agent v2.2.45
+toc_max_heading_level: 2
+pagination_next: release-notes/java/java-2_2_44
+displayed_sidebar: releaseSidebar
+---
+
+2024年12月10日
+
+- <Status priority='1'>New</Status>mongodb-4.11追跡
+
+  ```ini title="whatap.conf"
+  weaving=mongodb-4.11
+  ```
+
+- <Status priority='1'>New</Status>mongodb-5.0追跡
+
+  ```ini title="whatap.conf"
+  weaving=mongodb-5.0
+  ```
+
+- <Status priority='1'>Changed</Status> MongoDB SQLデータ変更
+
+  - **既存**: `${query}`形式、パラメータ収集
+
+    ```json
+    {"find": "employee", "filter": {"_id": "a40b6cc6-e1e6-#b-#ddf-b880e55f25bb"}, "limit": #, "singleBatch": true}
+    ```
+
+  - **変更**: `$database ${query}`形式、パラメータ除去
+
+    ```json
+    test {"find": employee}
+    ```
+
+- <Status priority='1'>Changed</Status> `weaving=spring-boot-3.2`オプションからMongoDB設定を分離
+
+  mongodb-driver-coreライブラリの内部動作がバージョンごとに異なりspring-boot設定から分離します。
+
+  ```ini title="whatap.conf"
+  # ex. spring-boot-2.3.0.RELEASE + spring-boot-starter-data-mongodb
+  weaving=spring-boot-2.1,mongodb-4.0.3
+
+  # ex. spring-boot-2.5.0 + spring-boot-starter-data-mongodb
+  weaving=spring-boot-2.5
+
+  # ex. spring-boot-3.0.0 + spring-boot-starter-data-mongodb
+  weaving=spring-boot-3.0
+
+  # ex. spring-boot-3.2.0 + spring-boot-starter-data-mongodb
+  weaving=spring-boot-3.2,mongodb-4.11
+
+  # ex. spring-boot-3.3.0 + spring-boot-starter-data-mongodb
+  weaving=spring-boot-3.2,mongodb-5.0
+  ```
+
+import DownloadJava from './_import_dl-java-agent.mdx';
+
+<DownloadJava ver="2.2.45" />

@@ -36,3 +36,45 @@ import Permissionerror from "../common-items/_permission-error.mdx";
 import Sigarlibraryerror from "../common-items/_sigar-library-error.mdx";
 
 <Sigarlibraryerror />
+
+## In case CPU metrics are displayed as -1 {#cpumetrics}
+
+When running IBM Java in the environment with the latest version of the Java agent, the CPU metrics may sometimes be displayed as **-1**. This issue occurs because the **System Load Average** value is not supported on specific platforms.
+
+The Java agent basically uses the Java Management Extensions (JMX) to collect metrics. It uses the `getSystemLoadAverage()` method of the `OperatingSystemMXBean` interface. This method returns the average load of the system over the last minute depending on the operating system. However, some platforms do not support this value and may return **-1**.
+
+:::info
+
+The `getSystemLoadAverage()` method can be checked in the OpenJDK source code. For example, the source code for the OpenJDK 7u version can be seen in the [GitHub repository](https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/lang/management/OperatingSystemMXBean.java).
+
+:::
+
+### Recommendation: Configure metric collection via built-in libraries.
+
+To resolve the CPU metrics displayed as **-1**, enable the built-in library (OSHI or SIGAR) via the Java agent settings.
+
+- **Java 8 or later**: Use the **OSHI** library.
+
+  You can use the **OSHI** library to reliably collect operating system level metrics. See the following how to configure the agent.
+
+  ```ini title="whatap.conf"
+  # default false
+  oshi_enabled=true
+  ```
+
+- **Below Java 8**: Use the **SIGAR** library.
+
+  For environments below Java 8, you can collect metrics via the **SIGAR** library. For more information on how to configure the agent, see the following.
+
+  ```ini title="whatap.conf"
+  # default false
+  sigar_enabled=true
+  ```
+
+:::note
+
+- The **OSHI** (`oshi_enabled`) and **SIGAR** (`sigar_enabled`) options are disabled by default. They must be explicitly set if needed.
+
+- Be careful not to enable both settings at the same time. Select a library that best suits your environment and then configure it.
+
+:::

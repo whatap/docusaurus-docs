@@ -1,0 +1,45 @@
+- ***Basic installation***
+
+  ```bash title='Linux Shell'
+  export LOGFILES=/some/path/file1,/some/other/file2
+  echo "logsink.files=$LOGFILES" | sudo tee -a /usr/whatap/infra/conf/whatap.conf
+  ```
+
+- ***Install with Category***
+
+  ```bash title='Linux Shell' {7-12,14,15,25,26,29-31} showLineNumbers
+  cd /usr/whatap/infra
+  sudo mkdir extension
+
+  cat <<EOL | sudo tee extension/logsink.conf > /dev/null
+  [[inputs.logsink]]
+    category = "serverlog"
+    ## Whether to send log generation statistics as separate data
+    stats_enabled = true 
+    ## Log generation statistics category
+    stats_category = "logsink_stats"
+    ## Set the log file name to be excluded if the log file path contains an asterisk (*). 
+    excludeNames = [ ".gz",".zip" ] 
+    [[inputs.logsink.file]]
+      ## When a log file is specified, you can specify a date pattern (strftime.org).
+      path = "/some/path/%Y-%m-%d/.log" 
+      disabled = false
+      encoding = "euc-kr"
+
+    [[inputs.logsink.file]]
+      path = "/some/other/log"
+      disabled = false
+      encoding = "utf-8"
+
+    [[inputs.logsink.file]]
+      ## When searching for the keyword in the line-by-line log, merge it with the previous log.
+      nowrap_keywords = ["Caused by:", "Test"]
+
+    [[inputs.logsink.file]]
+    ## When entering the project code and project license, logs can be transferred to a desired project in the same region.
+    # pcode = Project code
+    # license = "Project license"
+  EOL
+
+  sudo service whatap-infra restart
+  ```

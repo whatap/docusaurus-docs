@@ -1,19 +1,19 @@
 1. XOSエージェントの実行権限を付与します。
 
-    ```bash
-    chmod +x ./whatap.agent.xos*
-    ```
+   ```bash
+   chmod +x ./whatap.agent.xos*
+   ```
 
-1. XOSエージェントを実行します。
+2. XOSエージェントを実行します。
 
-    ```bash
-    ./start.sh
-    ```
+   ```bash
+   ./start.sh
+   ```
 
 :::note
 
-* DBXエージェントでモニタリングしたデータを転送するために`dbx_port`に設定したポート(default 3002)が開いている必要があります。(**UDP Outbound**)
+- DBXエージェントでモニタリングしたデータを転送するために`dbx_port`に設定したポート(default 3002)が開いている必要があります。 (**UDP Outbound**)
 
-* XOSエージェントをバックグラウンドで実行するには*./startd.sh*ファイルを実行します。
+- XOSエージェントをバックグラウンドで実行するには*./startd.sh*ファイルを実行します。
 
 :::

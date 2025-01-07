@@ -22,6 +22,12 @@ JavaエージェントがCPU、メモリ、ディスク使用量を収集する�
 
   CPU、メモリ、ディスクの使用量を測定するとき、oshiライブラリを使用するかどうかを設定します。
 
+  :::note
+
+  Java 8 以降の環境での使用をお勧めします。
+
+  :::
+
 - **oshi_netstat_enabled** <span class='type'>Boolean</span> <code class="my">Java Agent v2.2.31 or later</code>
 
   既定値`false`
@@ -38,6 +44,8 @@ JavaエージェントがCPU、メモリ、ディスク使用量を収集する�
 
   - whatap.agent.2.1.0バージョン以下では既定値は`true`です。whatap.agent.2.1.0バージョン以降では既定値は`false`です。
 
-  - Java 1.6以下のバージョン環境では、`sigar_enabled=true`オプションを追加してsigarライブラリを有効にし、パフォーマンス指標を収集できます。
+  - Java 8 未満またはJava 1.6 以下のバージョン環境では、`sigar_enabled=true`オプションを追加してsigarライブラリを有効にし、パフォーマンス指標を収集できます。
+
+  - アプリケーション環境によってCPU指標が**-1**と表示される現象がある可能性があります。WhaTapが提供する勧告事項を確認し、現状を解決できます。[次の文書](agent-troubleshooting#cpumetrics)を参照してください。
 
   :::

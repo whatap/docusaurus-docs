@@ -1,0 +1,32 @@
+- `stats_enabled`: Set whether or not to collect the collection status data. The default value is `false`. The value must be set to `true`. If set to `true`, statistical data is generated in the category (`logsink_stats`) set in the following `stats_category`.
+
+- `stats_category`: Set the metrics category to store the collection status data in. The value must be set to `logsink_stats`. Statistical data fields are as follows:
+
+  - `file`
+  - `checkInterval`
+  - `encoding`
+  - `filepos`
+  - `checkedLocalTime`
+  - `lastupdatedLocalTime`
+  - `fileSize`
+  - `error`
+  - `firstCheck`
+  - `transferBytes`
+
+- `excludeNames`: By including asterisks (\*) in the log file path, you can set the file name to exclude non log files. You can set multiple values using comma (,) as a separator.
+
+  ```ini title='Example'
+  excludeNames = [ ".gz",".zip" ]
+  ```
+
+- `nowrap_keywords`: While searching logs by line, if any keyword is detected by a specified option value, it is merged with the previous log.
+
+- `pcode`: Enter the project code of the same region to which you want to send the logs. 
+
+- `license`: Enter the license code of the project in the same region to which you want to send the logs.
+
+:::note 
+
+In case of the `pcode` and `license` options, it is supported from Server Agent 2.7.4 or later. 
+
+:::

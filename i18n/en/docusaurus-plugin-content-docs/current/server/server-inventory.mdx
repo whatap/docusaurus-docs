@@ -8,33 +8,16 @@ keywords:
   - Analysis
   - UI
   - Server
+toc_max_heading_level: 3
 ---
 
-{/* 11월에 서버 구성 정보 -> 서버 인벤토리 변경 예정 현재 로케일 미 업데이트라 관련 텍스트만 일부 수정 */}
+import ServerInventoryFilter from "../common-items/_server-inventory-filter.mdx";
 
 Home &gt; Select Project &gt; <Cmdname sid="side_serverList" className="uitext" /> &gt; <Cmdname sid="side_serverInventory" className="uitext" />
-
-{/* :::note 
-
-**Supported agent versions**
-
-The <Cmdname sid="side_serverInventory" className="uitext" /> menu is supported only on specific agent versions or later. The minimum supported versions for each operating system are as follows:
-
-- **Linux**: 2.6.6 or later
-
-- **AIX**: 1.3.4 or later
-
-- **Solaris**: 1.3.4 or later
-
-- **Windows**: 2.6.6 or later
-
-::: */}
 
 On the initial screen of the WhaTap monitoring service, select a project, and then select the <Cmdname sid="side_serverInventory" className="uitext" /> menu under the <Cmdname sid="side_serverList" className="uitext" /> menu. <Cmdname sid="side_serverInventory" className="uitext" /> provides configuration information required for server operations and allows you to manually add management items for management convenience. 
 
 The <Cmdname sid="side_serverInventory" className="uitext" /> menu systematically manages the physical and virtual characteristics of the server, as well as the operating environment. This feature allows for detailed insight and management of the server configuration through automatically collected server components and custom items. <Cmdname sid="side_serverInventory" className="uitext" /> provides essential data for performance analysis and troubleshooting of the server.
-
-{/* ## 지원 에이전트 및 업데이트 */}
 
 :::note 
 
@@ -177,37 +160,15 @@ The following settings are required to enable the <Cmdname sid="side_serverInven
 
 ## Basic screen guide
 
-{/* 대시보드 및 주요 제공 정보 안내  */}
-
 The <Cmdname sid="side_serverInventory" className="uitext" /> menu provides key configuration items of the server in a list form. You can manage essential information required for server operation and management, as well as custom items that are automatically collected. This allows server administrators to monitor and operate their infrastructure more systematically and efficiently. Use the filters and sorting feature to easily find the information you need.
 
 <ImgLang img='server-inventory.png' desc='Server inventory' />
 
-{/* 
-
-You can automatically collect and manage server configuration data from the <Cmdname sid="side_serverInventory" className="uitext" /> menu. You can also add or modify custom server configuration items. This allows you to see at a glance the important data required for server operation and management, and improve the efficiency of server management through additional configuration management items.
-
-The menu provides a list of key hardware and software configuration items for the server. The <Cmdname sid="side_serverInventory" className="uitext" /> menu provides automatic collection of essential data required for server operation and management, along with extensibility through custom items. This allows server administrators to monitor and manage their infrastructure more systematically and efficiently. Use the filters and sorting feature to easily find the information you need. 
-
-*/}
-
-{/* 이를 통해 다음 예시와 같은 구성 관리가 가능합니다. 
-
-- Information for administration personnel and support vendors
-
-- Server introduction date and other management items
-
-- 서버를 용도나 역할에 따라 그룹으로 분류하여 다양한 그룹 관리  */}
-
 ### Filtering
 
-In the ![Instruction line 1](/img/number-01.png) filter input field at the top, you can enter the desired conditions and view only the items that meet those conditions. Enter or select column conditions and then press Enter to add them. Apply `==` or `!=`, enter a value for the condition, and then press Enter.
+Click the ![Leader line 1](/img/number-01.png) filter input window at the top, select the desired ***filter key*** and ***condition***, enter values, and then click ***Apply***. In the ![Leader line 2](/img/number-02.png) server inventory list area, you can view the filtered list. 
 
-> e..g. <code class='filter'>Server name</code><code class='filter center'>==</code><code class='filter'>server04</code>
-
-If you click <Cmdname sid="BTN06223" className="uitext" /> after entering the filters, you can view the filtered list in the ![Instruction line 2](/img/number-02.png) server inventory list area. 
-
-{/* 컬럼 조건 특정 후 조회 선택해야 적용 */}
+<ServerInventoryFilter />
 
 ### Align
 
@@ -218,19 +179,6 @@ Through the sorting option at the top of ![Leader line 2](/img/number-02.png), m
 Sorting is reset when moving and refreshing the menu.
 
 :::
-
-{/* \* 1차 2차 3차 정렬 
-
-- 기본 설정: OS - 모델 - 시리얼 
-
-- 현재 정렬 옵션 선택 시 컬럼 설정에서 선택하지 않은 항목까지 보임?
-
-- 정렬 조작으로 적용  
-
-Column Settings
-Users can configure custom columns by adding their own desired items in addition to the default ones.
-
-*/}
 
 ### Column Settings
 
@@ -252,9 +200,37 @@ Click ![Column Icon](/img/ic-column.svg) <Cmdname sid="column_settings" classNam
 
   Users can configure custom columns (<code class='custom-cl'>custom</code>) by selecting the ***+*** <Cmdname sid="add_a_column" className="uitext" /> button and adding their own desired items in addition to the default items. Add columns to your taste and then monitor the server status and performance in more detail. 
 
-### Download CSV
+### CSV downloading and uploading
+
+#### CSV downloading {#csvdownload}
 
 By selecting ![Download icon](/img/ico-download.svg) <Cmdname sid="download" className="uitext" /> at the top of the ![Leader line 2](/img/number-02.png) area, you can download the collected server inventory in *CSV* file format. 
+
+#### CSV uploading {#csvupload}
+
+When you need to enter server configuration information in bulk, manually entering individual pieces of data can be time-consuming. The *CSV file* uploading feature allows efficient handling of bulk data entry. Try modifying the downloaded *CSV* file and using the upload feature. 
+
+1. At the top of the ![Leader line 2](/img/number-02.png) area, click ![Upload icon](/img/ico-upload.svg) ***CSV*** <Cmdname sid="upload" className="uitext" /> and then select the *CSV* file to upload. 
+
+2. Through the ***CSV verification*** window, check the verified results for the uploaded data. 
+
+   - You can check the numbers of changes and errors.
+
+     <ImgLang img='server-inventory-csv-preview.png' desc='Server Inventory preview CSV' />
+
+   - If you click an error, the item in question within the change data list on the right appears, and the erroneous item is highlighted.
+
+     <ImgLang img='server-inventory-csv-error.png' desc='Server Inventory preview CSV2' />
+
+3. If there is no issue found after verifying the data, click ***Apply*** to apply the server configuration information from the selected *CSV* file. 
+
+:::note 
+
+- *When uploading a *CSV\*, only the changes to <Cmdname sid="TTL08183" className="uitext" />, <Cmdname sid="TTL08184" className="uitext" /> and custom columns (<code class='custom-cl'>custom</code>) are applied. 
+
+- When uploading *CSV*, the columns that were not previously registered are not reflected. 
+
+:::
 
 ### Edit
 
@@ -263,11 +239,3 @@ You can edit the server inventory list by selecting ![Edit icon](/img/ic-edit.sv
 - You can configure the settings for the <Cmdname sid="TTL08183" className="uitext" /> and <Cmdname sid="TTL08184" className="uitext" /> columns.
 
 - You can set the contents of custom columns (<code class='custom-cl'>custom</code>) added by users.
-
-{/* 
-
-### Usage example
-
-활용 예시의 경우 추후 학습하기 문서에서 활용 
-
-*/}

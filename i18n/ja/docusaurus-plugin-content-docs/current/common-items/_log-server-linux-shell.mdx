@@ -1,0 +1,45 @@
+- ***基本インストール***
+
+  ```bash title='Linux Shell'
+  export LOGFILES=/some/path/file1,/some/other/file2
+  echo "logsink.files=$LOGFILES" | sudo tee -a /usr/whatap/infra/conf/whatap.conf
+  ```
+
+- ***カテゴリでインストール***
+
+  ```bash title='Linux Shell' {7-12,14,15,25,26,29-31} showLineNumbers
+  cd /usr/whatap/infra
+  sudo mkdir extension
+
+  cat <<EOL | sudo tee extension/logsink.conf > /dev/null
+  [[inputs.logsink]]
+    category = "serverlog"
+    ## ログ発生量統計の別途データとしての送信有無
+    stats_enabled = true 
+    ## 対数発生量の統計カテゴリ
+    stats_category = "logsink_stats"
+    ## ログファイルパス(path)にアスタリスク(*)が含まれれ、除外するログ非対象ファイル名を設定 
+    excludeNames = [ ".gz",".zip" ] 
+    [[inputs.logsink.file]]
+      ## ログファイルの指定時、日付パターン(strftime.org)指定可能
+      path = "/some/path/%Y-%m-%d/.log" 
+      disabled = false
+      encoding = "utf-8"
+
+    [[inputs.logsink.file]]
+      path = "/some/other/log"
+      disabled = false
+      encoding = "utf-8"
+
+    [[inputs.logsink.file]]
+      ## 行単位ログで該当キーワードを検索する時、以前のログにマージ
+      nowrap_keywords = ["Caused by:", "Test"]
+
+    [[inputs.logsink.file]]
+    ## プロジェクトコード及びプロジェクトライセンスの入力時、ログを同じリージョンの希望するプロジェクトに転送可能
+    # pcode = プロジェクトコード
+    # license = "プロジェクトライセンス"
+  EOL
+
+  sudo service whatap-infra restart
+  ```

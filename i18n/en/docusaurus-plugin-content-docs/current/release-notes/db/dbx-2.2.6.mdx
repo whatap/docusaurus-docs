@@ -1,0 +1,30 @@
+---
+id: dbx-2_2_6
+title: DBX v2.2.6
+pagination_next: release-notes/db/dbx-2_2_5
+displayed_sidebar: releaseSidebar
+---
+
+December 2, 2024
+
+## Altibase
+
+<Status priority='1'>Feature</Status> Added the agent option for segment data collection.
+
+- **segments** <span class='type'>Boolean</span>
+
+  Default `true` 
+
+  It collects the segment size information. In <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_tableSpace" className="uitext" />, you can see the size by selecting the database or tablespace.
+
+- **segments_min_size** <span class='type'>Int</span>
+
+  Default `10` (unit: MB)
+
+  The minimum unit for collecting segment sizes is 10 MB by default. When collecting the segment sizes, the segment sizes less than the set value are not collected.
+
+- **segments_hour** <span class='type'>Int</span>
+
+  Default `5`
+
+  It sets the time to collect segment sizes. The default value is `5` and collection starts at 5 AM.

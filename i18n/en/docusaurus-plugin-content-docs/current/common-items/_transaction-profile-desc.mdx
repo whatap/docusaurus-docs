@@ -8,16 +8,6 @@ The types of steps collected for transaction performance tracing are as follows.
 
   It includes the performance for connection to RDB. Step information includes the name, response time, and error.
 
-  <InDoc product="java">
-
-  :::tip
-
-  If you add a database project through the <Cmdname sid="side_correlatedProjectManagement" className="uitext" /> menu, you can see the performance metrics of the linked project. For more detailed information about adding and analyzing a linked project, see [the following] (linked-projects).
-
-  :::
-
-  </InDoc>
-
 - **SQL Step** <span class='type'>START-END</span>
 
   It includes the performance for JDBC SQL. Step information includes connection data, SQL statements, and errors.
@@ -41,6 +31,16 @@ The types of steps collected for transaction performance tracing are as follows.
 - **ACTIVE STACK Step** <span class='type'>START-END</span>
 
   It includes the active stack information. It is created and collected by a separate thread and it is added to the transaction trace.
+
+<InDoc product="java">
+
+:::tip
+
+If you add a database project through the <Cmdname sid="side_correlatedProjectManagement" className="uitext" /> menu, you can see the performance metrics of the linked project. For more detailed information about adding and analyzing a linked project, see [the following] (linked-projects).
+
+:::
+
+</InDoc>
 
 :::note
 

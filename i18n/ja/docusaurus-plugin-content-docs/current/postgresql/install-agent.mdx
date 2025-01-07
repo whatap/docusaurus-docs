@@ -35,21 +35,21 @@ import Dbcreatemonitoringaccount from "../common-items/_db-create-monitoring-acc
 
 機能と使用環境に応じて追加権限を付与してください。
 
-- PostgreSQL 10バージョン以降
+- **PostgreSQL 10バージョン以降**
 
   ```sql title="SQL"
   create user DB_User with password 'DB Password'; 
   grant pg_monitor to DB_User;
   ```
 
-- PostgreSQL 10バージョン未満
+- **PostgreSQL 10バージョン未満**
 
   ```sql title="SQL"
   create user DB_User with password 'DB Password';
   alter user DB_User with superuser;
   ```
 
-- Kill sessionを使用する場合
+- **Kill sessionを使用する場合**
 
   データベースモニタリングでは、進行中のセッションを終了できる<UI>Kill Session</UI>機能を提供します。この機能を使用するには、次のように権限を設定してください。
 
@@ -57,13 +57,19 @@ import Dbcreatemonitoringaccount from "../common-items/_db-create-monitoring-acc
   grant pg_signal_backend to DB_User;
   ```
 
-- テーブルサイズを収集する場合
+- **テーブルサイズを収集する場合** (<Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_dbSize" className="uitext" /> &gt; <Cmdname sid="TTL06572" className="uitext" />)
 
   ```sql title="SQL"
   grant usage on schema {schema_name} to DB_User;
   ```
 
-- オブジェクト情報を照会する場合(<Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbObjectInfo" className="uitext" />)
+  :::note
+
+  個別のDBごとにコマンドを実行する必要があります。
+
+  :::
+
+- **オブジェクト情報を照会する場合**(<Cmdname sid="side_analysis" className="uitext" /> &gt; <Cmdname sid="side_dbObjectInfo" className="uitext" />)
 
   ```sql title="SQL"
   grant select on all tables in schema {schema_name} to DB_User;

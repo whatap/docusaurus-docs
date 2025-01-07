@@ -4,7 +4,7 @@ title: IP負荷統計
 description: IPロード統計は、ウェブサイトに接続したIPアドレス別のロード性能情報を提供します。
 keywords:
   - Browser Monitoring
-  - IP負荷統計
+  - IP負荷
   - 統計
 ---
 
@@ -73,9 +73,9 @@ import CriteriaTip from "../common-items/_browser-stat-criteria-tip.mdx";
 
 <CriteriaTip/>
 
-### 照会結果をダウンロードする
+import CSVdownload from "../common-items/_browser-stat-download-csv.mdx";
 
-照会したデータをCSV形式のファイルでダウンロードできます。 画面右上の![ダウンロードアイコン](/img/ic-csv-download-ms.svg)ボタンを選択します。 CSVファイル名は*IP*LoadStatistics*`YYYYMMDD_HHMMSS`.csv*形式です。
+<CSVdownload filename="IP_LoadStatistics" />
 
 ## 画面構成
 
@@ -218,7 +218,31 @@ import Coumnsetting from "../common-items/_browser-stat-column-setting.mdx";
 
 <Coumnsetting/>
 
-{/* 컬럼 및 용어 안내 */}
-import Statcolumn from "../common-items/_browser-stat-column-info.mdx";
+## カラムと用語案内{#columninfo}
 
-<Statcolumn/>
+<div className="c3-20-15-65 tableScroll">
+
+| カラム                                                | 単位  | 説明                                                                                                     |
+| -------------------------------------------------- | --- | ------------------------------------------------------------------------------------------------------ |
+| <Cmdname sid="backend_time" className="uitext" />  | ミリ秒 | 該当IPアドレスからのページのロード中にバックエンドで処理された時間です。 (`startTime`から`responseEnd`までの時間)                                |
+| <Cmdname sid="frontend_time" className="uitext" /> | ミリ秒 | 該当IPアドレスからのページロード中のフロントエンド領域の処理時間です。 (`domInteractive`から`loadEventEnd`までの時間)                           |
+| <Cmdname sid="ITM08283" className="uitext" />      | ミリ秒 | 該当IPアドレスからのページロード中のリダイレクトにかかった時間です。 (`redirectStart`から`redirectEnd`までの時間)                              |
+| <Cmdname sid="cache_time" className="uitext" />    | ミリ秒 | 該当IPアドレスからキャッシュされたリソースを検索するのにかかった時間です。 (`fetchStart`から`domainLookupStart`までの時間)                        |
+| <Cmdname sid="ITM08284" className="uitext" />      | ミリ秒 | 該当IPアドレスからウェブサイトのドメインを照会するのにかかった時間です。 (`domainLookupStart`から`domainLookupEnd`までの時間)                    |
+| <Cmdname sid="ITM08876" className="uitext" />      | ミリ秒 | IPをリクエストするクライアントとサーバーとのネットワーク接続にかかった時間です。                                                              |
+| <Cmdname sid="ssl_time" className="uitext" />      | ミリ秒 | HTTPS接続時、TLSハンドシェイクにかかった時間です。 (`connectEnd`から`secureConnectionStart`までの時間)                             |
+| <Cmdname sid="ITM08285" className="uitext" />      | ミリ秒 | IPのリクエスト後、サーバーから最初のバイト(byte)を受信するまでかかった時間です。 (`requestStart`から`responseStart`までの時間)                    |
+| <Cmdname sid="download_time" className="uitext" /> | ミリ秒 | サーバーからIP関連リソースをダウンロードするのにかかった時間です。 (`responseStart`から`responseEnd`までの時間)                               |
+| <Cmdname sid="ITM08286" className="uitext" />      | ミリ秒 | 該当IPアドレスから初期コンテンツのレンダリングまでかかった時間です。                                                                    |
+| <Cmdname sid="domload_time" className="uitext" />  | ミリ秒 | すべてのリソースをロードし、エンドユーザーが相互作用できる状態として完全にレンダリングされるまでの時間です。                                                 |
+| <Cmdname sid="render_time" className="uitext" />   | ミリ秒 | 該当IPアドレスからページをロードした後、画面にレンダリングしてページイベントを完了するのにかかった時間です。                                                |
+| <Cmdname sid="TTL08498" className="uitext" />      | ミリ秒 | 該当IPアドレスからページのロードが完了し、onLoadイベントが発生するまでかかった時間です。 IPアドレスを照会し、ネットワーク接続の設定からすべてのリソースのロードが完了するまでの時間を意味します。 |
+| <Cmdname sid="TTL06361" className="uitext" />      | ミリ秒 | 該当IPアドレスからページを完全に読み込むのにかかった全体の時間です。                                                                    |
+
+</div>
+
+:::note
+
+**Navigation timing**についての詳細は、[次の文書](collect-data#navigation-timing)を参照してください。
+
+:::

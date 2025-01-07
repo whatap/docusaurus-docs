@@ -1,0 +1,35 @@
+---
+id: php-2_9_0
+title: PHP Agent v2.9.0
+toc_max_heading_level: 2
+pagination_next: release-notes/php/php-2_8_2
+displayed_sidebar: releaseSidebar
+---
+
+2024年12月11日
+
+- <Status priority='1'>New</Status> PHP 8.4バージョンに対応
+
+- <Status priority='0'>Fixed</Status> `session_start`プロファイル情報の位置を修正
+
+  `session_start`関数の内部でRedisクエリーが実行される時、`session_start`関数情報をRedisクエリより先に表示するように修正します。
+
+- <Status priority='0'>Fixed</Status>マルチトランザクションサンプリングを修正
+
+  マルチトランザクションサンプリングが非活性化すると、外部HTTP呼び出しが複数あっても分散トランザクションの追跡を中断します。
+
+:::info
+
+**ダウンロード**
+
+| OS名                             |  ファイル形式  | アーキテクチャ |                                     ダウンロード                                     |
+| ------------------------------- | :------: | :-----: | :----------------------------------------------------------------------------: |
+| Red Hat / CentOS / Amazon linux |    RPM   | x86 x64 |  [ダウンロード](https://repo.whatap.io/centos/6/x86_64/whatap-php-2.9-0.x86_64.rpm)  |
+| \^                              |    \^    | aarch64 | [ダウンロード](https://repo.whatap.io/centos/7/aarch64/whatap-php-2.9-0.aarch64.rpm) |
+| Ubuntu 12 and above / Debian    |    DEB   |  amd64  |   [ダウンロード](https://repo.whatap.io/debian/unstable/whatap-php_2.9.0_amd64.deb)  |
+| \^                              |    \^    |  arm64  |   [ダウンロード](https://repo.whatap.io/debian/unstable/whatap-php_2.9.0_arm64.deb)  |
+| Alpine linux                    | tar gzip | x86 x64 |     [ダウンロード](https://repo.whatap.io/alpine/x86_64/whatap-php-2.9.0.tar.gz)     |
+| \^                              |    \^    | aarch64 |     [ダウンロード](https://repo.whatap.io/alpine/aarch64/whatap-php-2.9.0.tar.gz)    |
+| Freebsd 10以降                    |    TXZ   | x86 x64 |        [ダウンロード](https://repo.whatap.io/freebsd/10/whatap-php-2.9.0.txz)        |
+
+:::

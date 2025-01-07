@@ -227,6 +227,12 @@ The following options are used to trace and monitor non-HTTP transactions: These
 
 The following options are used to trace and monitor cross-application calls. The options can help you understand the interactions between multiple applications. Various options provided allow you to fine-tune the behaviors for tracing multiple transactions.
 
+- **mtrace_enabled** <span class='type'>Boolean</span>
+
+  Default `false`
+
+  It sets whether or not to use the multi-transaction tracing (MTID). By tracing the MTID, you can check the calls between all the registered applications.
+
 - **mtrace_rate** <span class='type'>Int</span>
 
   Default `0`

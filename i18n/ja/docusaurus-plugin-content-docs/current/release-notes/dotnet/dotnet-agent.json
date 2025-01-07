@@ -1,141 +1,5 @@
 [
   {
-    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_3_0",
-    "ver": "v2.3.0",
-    "date": "2024-07-31",
-    "Lists": [
-      {
-        "ver": "v2.3.0",
-        "hash": "v230",
-        "product": ".NET Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <a href=\"/ja/release-notes/dotnet/dotnet-2_2_9\">v2.2.9</a>でSQL、HTTPモニタリングが漏れる問題を修正</p>"
-      },
-      {
-        "ver": "v2.3.0",
-        "hash": "v230",
-        "product": ".NET Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>パケット処理が遅延した時にUDPパケットが変調される問題を改善</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_3_1",
-    "ver": "v2.3.1",
-    "date": "2024-08-26",
-    "Lists": [
-      {
-        "ver": "v2.3.1",
-        "hash": "v231",
-        "product": ".NET Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code>トランザクション外部で発生するトレース情報の収集機能を追加</p>",
-        "details": "<ul>\n<li>\n<p><strong>expand_transaction_level</strong> <span class=\"type\">Boolean</span></p>\n<p>既定値<code>false</code></p>\n<p>オプション値を<code>true</code>に設定すると、トランザクションの外部から発生するSQL、HTTPの呼び出しをトランザクションとして扱い、ヒットマップに表示します。</p>\n</li>\n<li>\n<p><strong>expand_transaction_basetime</strong> <span class=\"type\">Int</span></p>\n<p>既定値<code>1000</code>(1秒)/最小値<code>100</code>(0.1秒)</p>\n<p><code>expand_transaction_level</code>オプションが<code>true</code>である場合、設定した時間より応答時間が長くかかる場合にのみデータを収集します。 毎秒最大100件まで収集します。</p>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v2.3.1",
-        "hash": "v231",
-        "product": ".NET Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> DB接続情報の表示：データベースを使用するトランザクションは、データベース接続情報を表示する機能を追加</p>"
-      },
-      {
-        "ver": "v2.3.1",
-        "hash": "v231",
-        "product": ".NET Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code>エラーでない場合でもトランザクションのステータスコードを表示するように修正</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_9",
-    "ver": "v2.2.9",
-    "date": "2024-07-05",
-    "Lists": [
-      {
-        "ver": "v2.2.9",
-        "hash": "v229",
-        "product": ".NET Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code>マルチトランザクションのモニタリングに対応: WhaTapモニタリングプラットフォームのプロジェクトとして登録されたアプリケーションサービス間の呼び出しを追跡できます。</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_3_2",
-    "ver": "v2.3.2",
-    "date": "2024-09-05",
-    "Lists": [
-      {
-        "ver": "v2.3.2",
-        "hash": "v232",
-        "product": ".NET Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code>ランザクションの収集から除外するURL形式(suffix)を設定できるエージェントオプションを追加</p>",
-        "details": "<p><strong>trace_ignore_url_suffix</strong> <span class=\"type\">String</span></p>"
-      },
-      {
-        "ver": "v2.3.2",
-        "hash": "v232",
-        "product": ".NET Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>Parameterized Queryの追跡機能を追加</p>"
-      },
-      {
-        "ver": "v2.3.2",
-        "hash": "v232",
-        "product": ".NET Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>REST APIトランザクションのステータスコード(status code) 表示で発生するエラーを修正</p>"
-      },
-      {
-        "ver": "v2.3.2",
-        "hash": "v232",
-        "product": ".NET Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code><code>System.Data.Common.DbCommand</code>の関連メソッドの中でモニタリングに含まれていなかったメソッドを追加</p>",
-        "details": "<p>次の非同期メソッドの中で、オーバーロードされたメソッドの一部が漏れて追加されました。</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_3_3",
-    "ver": "v2.3.3",
-    "date": "2024-09-25",
-    "Lists": [
-      {
-        "ver": "v2.3.3",
-        "hash": "v233",
-        "product": ".NET Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> .NET CoreからSQLパラメータモニタリング対応を追加</p>"
-      },
-      {
-        "ver": "v2.3.3",
-        "hash": "v233",
-        "product": ".NET Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> .NET CoreからStored Procedureモニタリング対応を追加</p>"
-      },
-      {
-        "ver": "v2.3.3",
-        "hash": "v233",
-        "product": ".NET Agent",
-        "type": "New",
-        "desc": "<p><code class=\"New\" type=\"1\">New</code> <code>System.Net.Http.HttpClient.SendAsync</code>モニタリング対応を追加</p>"
-      },
-      {
-        "ver": "v2.3.3",
-        "hash": "v233",
-        "product": ".NET Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> .NET Coreバージョンのエージェントをインストールした後、削除しない状態で、.NET Frameworkバージョンを追加インストールするとアクティブスタックが収集されないバグを修正</p>"
-      }
-    ]
-  },
-  {
     "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_3_6",
     "ver": "v2.3.6",
     "date": "2024-11-25",
@@ -196,6 +60,142 @@
     ]
   },
   {
+    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_9",
+    "ver": "v2.2.9",
+    "date": "2024-07-05",
+    "Lists": [
+      {
+        "ver": "v2.2.9",
+        "hash": "v229",
+        "product": ".NET Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code>マルチトランザクションのモニタリングに対応: WhaTapモニタリングプラットフォームのプロジェクトとして登録されたアプリケーションサービス間の呼び出しを追跡できます。</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_3_1",
+    "ver": "v2.3.1",
+    "date": "2024-08-26",
+    "Lists": [
+      {
+        "ver": "v2.3.1",
+        "hash": "v231",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code>トランザクション外部で発生するトレース情報の収集機能を追加</p>",
+        "details": "<ul>\n<li>\n<p><strong>expand_transaction_level</strong> <span class=\"type\">Boolean</span></p>\n<p>既定値<code>false</code></p>\n<p>オプション値を<code>true</code>に設定すると、トランザクションの外部から発生するSQL、HTTPの呼び出しをトランザクションとして扱い、ヒットマップに表示します。</p>\n</li>\n<li>\n<p><strong>expand_transaction_basetime</strong> <span class=\"type\">Int</span></p>\n<p>既定値<code>1000</code>(1秒)/最小値<code>100</code>(0.1秒)</p>\n<p><code>expand_transaction_level</code>オプションが<code>true</code>である場合、設定した時間より応答時間が長くかかる場合にのみデータを収集します。 毎秒最大100件まで収集します。</p>\n</li>\n</ul>"
+      },
+      {
+        "ver": "v2.3.1",
+        "hash": "v231",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> DB接続情報の表示：データベースを使用するトランザクションは、データベース接続情報を表示する機能を追加</p>"
+      },
+      {
+        "ver": "v2.3.1",
+        "hash": "v231",
+        "product": ".NET Agent",
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\" type=\"1\">Changed</code>エラーでない場合でもトランザクションのステータスコードを表示するように修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_3_3",
+    "ver": "v2.3.3",
+    "date": "2024-09-25",
+    "Lists": [
+      {
+        "ver": "v2.3.3",
+        "hash": "v233",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> .NET CoreからSQLパラメータモニタリング対応を追加</p>"
+      },
+      {
+        "ver": "v2.3.3",
+        "hash": "v233",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> .NET CoreからStored Procedureモニタリング対応を追加</p>"
+      },
+      {
+        "ver": "v2.3.3",
+        "hash": "v233",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code> <code>System.Net.Http.HttpClient.SendAsync</code>モニタリング対応を追加</p>"
+      },
+      {
+        "ver": "v2.3.3",
+        "hash": "v233",
+        "product": ".NET Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> .NET Coreバージョンのエージェントをインストールした後、削除しない状態で、.NET Frameworkバージョンを追加インストールするとアクティブスタックが収集されないバグを修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_3_2",
+    "ver": "v2.3.2",
+    "date": "2024-09-05",
+    "Lists": [
+      {
+        "ver": "v2.3.2",
+        "hash": "v232",
+        "product": ".NET Agent",
+        "type": "New",
+        "desc": "<p><code class=\"New\" type=\"1\">New</code>ランザクションの収集から除外するURL形式(suffix)を設定できるエージェントオプションを追加</p>",
+        "details": "<p><strong>trace_ignore_url_suffix</strong> <span class=\"type\">String</span></p>"
+      },
+      {
+        "ver": "v2.3.2",
+        "hash": "v232",
+        "product": ".NET Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>Parameterized Queryの追跡機能を追加</p>"
+      },
+      {
+        "ver": "v2.3.2",
+        "hash": "v232",
+        "product": ".NET Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>REST APIトランザクションのステータスコード(status code) 表示で発生するエラーを修正</p>"
+      },
+      {
+        "ver": "v2.3.2",
+        "hash": "v232",
+        "product": ".NET Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code><code>System.Data.Common.DbCommand</code>の関連メソッドの中でモニタリングに含まれていなかったメソッドを追加</p>",
+        "details": "<p>次の非同期メソッドの中で、オーバーロードされたメソッドの一部が漏れて追加されました。</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_3_0",
+    "ver": "v2.3.0",
+    "date": "2024-07-31",
+    "Lists": [
+      {
+        "ver": "v2.3.0",
+        "hash": "v230",
+        "product": ".NET Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code> <a href=\"/ja/release-notes/dotnet/dotnet-2_2_9\">v2.2.9</a>でSQL、HTTPモニタリングが漏れる問題を修正</p>"
+      },
+      {
+        "ver": "v2.3.0",
+        "hash": "v230",
+        "product": ".NET Agent",
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\" type=\"0\">Fixed</code>パケット処理が遅延した時にUDPパケットが変調される問題を改善</p>"
+      }
+    ]
+  },
+  {
     "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_3_5",
     "ver": "v2.3.5",
     "date": "2024-11-04",
@@ -250,39 +250,16 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_7",
-    "ver": "v2.2.7",
-    "date": "2024-06-10",
+    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_5",
+    "ver": "v2.2.5",
+    "date": "2024-05-08",
     "Lists": [
       {
-        "ver": "v2.2.7",
-        "hash": "v227",
-        "product": ".NET Agent",
-        "type": "Changed",
-        "desc": "<p><code class=\"Changed\">Changed</code>対応環境の分析ツール(<a href=\"https://repo.whatap.io/windows/WhaTapDotnetScan.exe\" target=\"_blank\" rel=\"noopener noreferrer\">WhaTapDotnetScan.exe</a>)改善</p>",
-        "details": "<ul>\n<li>\n<p>ドットネットが設置されていない環境でも実行できるように改善</p>\n</li>\n<li>\n<p>旧バージョンのドットネットランタイムを使用したり、ドットネットランタイムがインストールされていない場合に発生するエラーを修正</p>\n</li>\n</ul>"
-      },
-      {
-        "ver": "v2.2.7",
-        "hash": "v227",
+        "ver": "v2.2.5",
+        "hash": "v225",
         "product": ".NET Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code>処理許容量を超えたトランザクションを除去する過程で、開始時点だけが残り、終了時点が削除されるバグを修正</p>"
-      }
-    ]
-  },
-  {
-    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_3",
-    "ver": "v2.2.3",
-    "date": "2024-04-24",
-    "Lists": [
-      {
-        "ver": "v2.2.3",
-        "hash": "v223",
-        "product": ".NET Agent",
-        "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code> Rest APIモニタリング中に特定条件でCPU使用率が増加するバグを修正</p>",
-        "details": "<ul>\n<li>\n<p>特定の顧客からCPU使用量が増加する問題が発生したため、該当バグを修正します。</p>\n</li>\n<li>\n<p>トラブルが発生しない顧客でも、エージェントをアップグレードすることをお勧めします。 性能向上に役立ちます。</p>\n</li>\n</ul>"
+        "desc": "<p><code class=\"Fixed\">Fixed</code>サーバーのCPU性能に余裕がない時、モニタリングメッセージが遅延して蓄積され、ボトルネックを加速する不具合を修正</p>"
       }
     ]
   },
@@ -351,37 +328,24 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_4",
-    "ver": "v2.2.4",
-    "date": "2024-03-30",
+    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_7",
+    "ver": "v2.2.7",
+    "date": "2024-06-10",
     "Lists": [
       {
-        "ver": "v2.2.4",
-        "hash": "v224",
+        "ver": "v2.2.7",
+        "hash": "v227",
         "product": ".NET Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code>バイトコードの処理プロセス性能を改善</p>"
+        "type": "Changed",
+        "desc": "<p><code class=\"Changed\">Changed</code>対応環境の分析ツール(<a href=\"https://repo.whatap.io/windows/WhaTapDotnetScan.exe\" target=\"_blank\" rel=\"noopener noreferrer\">WhaTapDotnetScan.exe</a>)改善</p>",
+        "details": "<ul>\n<li>\n<p>ドットネットが設置されていない環境でも実行できるように改善</p>\n</li>\n<li>\n<p>旧バージョンのドットネットランタイムを使用したり、ドットネットランタイムがインストールされていない場合に発生するエラーを修正</p>\n</li>\n</ul>"
       },
       {
-        "ver": "v2.2.4",
-        "hash": "v224",
+        "ver": "v2.2.7",
+        "hash": "v227",
         "product": ".NET Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code>ログの処理プロセス性能を改善</p>"
-      },
-      {
-        "ver": "v2.2.4",
-        "hash": "v224",
-        "product": ".NET Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code>UDPパケットプロセス性能を改善</p>"
-      },
-      {
-        "ver": "v2.2.4",
-        "hash": "v224",
-        "product": ".NET Agent",
-        "type": "Feature",
-        "desc": "<p><code class=\"Feature\">Feature</code> <a href=\"http://ASP.NET\" target=\"_blank\" rel=\"noopener noreferrer\">ASP.NET</a>MVCライブラリの処理プロセス性能を改善</p>"
+        "type": "Fixed",
+        "desc": "<p><code class=\"Fixed\">Fixed</code>処理許容量を超えたトランザクションを除去する過程で、開始時点だけが残り、終了時点が削除されるバグを修正</p>"
       }
     ]
   },
@@ -409,16 +373,17 @@
     ]
   },
   {
-    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_5",
-    "ver": "v2.2.5",
-    "date": "2024-05-08",
+    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_3",
+    "ver": "v2.2.3",
+    "date": "2024-04-24",
     "Lists": [
       {
-        "ver": "v2.2.5",
-        "hash": "v225",
+        "ver": "v2.2.3",
+        "hash": "v223",
         "product": ".NET Agent",
         "type": "Fixed",
-        "desc": "<p><code class=\"Fixed\">Fixed</code>サーバーのCPU性能に余裕がない時、モニタリングメッセージが遅延して蓄積され、ボトルネックを加速する不具合を修正</p>"
+        "desc": "<p><code class=\"Fixed\">Fixed</code> Rest APIモニタリング中に特定条件でCPU使用率が増加するバグを修正</p>",
+        "details": "<ul>\n<li>\n<p>特定の顧客からCPU使用量が増加する問題が発生したため、該当バグを修正します。</p>\n</li>\n<li>\n<p>トラブルが発生しない顧客でも、エージェントをアップグレードすることをお勧めします。 性能向上に役立ちます。</p>\n</li>\n</ul>"
       }
     ]
   },
@@ -456,6 +421,41 @@
         "product": ".NET Agent",
         "type": "Fixed",
         "desc": "<p><code class=\"Fixed\">Fixed</code>32ビットドットネットランタイムで<em>whatap.conf</em>ファイルが見つからない問題を修正</p>"
+      }
+    ]
+  },
+  {
+    "url": "https://docs.whatap.io/ja/release-notes/dotnet/dotnet-2_2_4",
+    "ver": "v2.2.4",
+    "date": "2024-03-30",
+    "Lists": [
+      {
+        "ver": "v2.2.4",
+        "hash": "v224",
+        "product": ".NET Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code>バイトコードの処理プロセス性能を改善</p>"
+      },
+      {
+        "ver": "v2.2.4",
+        "hash": "v224",
+        "product": ".NET Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code>ログの処理プロセス性能を改善</p>"
+      },
+      {
+        "ver": "v2.2.4",
+        "hash": "v224",
+        "product": ".NET Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code>UDPパケットプロセス性能を改善</p>"
+      },
+      {
+        "ver": "v2.2.4",
+        "hash": "v224",
+        "product": ".NET Agent",
+        "type": "Feature",
+        "desc": "<p><code class=\"Feature\">Feature</code> <a href=\"http://ASP.NET\" target=\"_blank\" rel=\"noopener noreferrer\">ASP.NET</a>MVCライブラリの処理プロセス性能を改善</p>"
       }
     ]
   }

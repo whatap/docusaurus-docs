@@ -358,7 +358,11 @@ If you have a lot of widgets placed on the dashboard, this feature can help you 
 
 ### ![](/img/ic-alert.svg) <Cmdname sid="side_event" /> {#event}
 
-You can select multiple projects to check the history of alert notifications or real-time events.
+#### <Cmdname sid="event_list" /> {#eventlist}
+
+You can check the notification history that occurred in one or more projects in real time or set a specific inquiry time.
+
+##### <Cmdname sid="edit_mode" />
 
 <Columns>
 
@@ -366,27 +370,79 @@ You can select multiple projects to check the history of alert notifications or 
 
 ![Alert list](/img/fb-alert-list-widget.png)
 
-<Cmdname sid="event_list" className="uitext" />
-
 </Column>
 
 <Column className="text--center">
 
-![Event tilmeline](/img/fb-event-timeline-widget.png)
-
-<Cmdname sid="event" className="uitext" /> <Cmdname sid="timeline" className="uitext" />
+![Alert list](/img/fb-alert-list-widget-time-selector.png)
 
 </Column>
 
 </Columns>
 
-In the <Cmdname sid="event_list" className="uitext" /> widget, you can sort after grouping for <Cmdname sid="title" className="uitext" />, <Cmdname sid="project" className="uitext" />, and <Cmdname sid="application" className="uitext" />. To perform ungrouping, select <Cmdname sid="timeline" className="uitext" />.
+- In <Cmdname sid="edit_mode" className="uitext" />, sorting is possible by grouping by <Cmdname sid="title" className="uitext" />, <Cmdname sid="project" className="uitext" />, or <Cmdname sid="application" className="uitext" />. To perform ungrouping, select <Cmdname sid="timeline" className="uitext" />.
+
+- Enable the <Cmdname sid="ITM08413" className="uitext" /> option to check including the list of resolved events.
+
+- You can set a separate time other than the query time set on the dashboard. Select ![Clock icon](/img/ic-custom-time.svg). When the <Cmdname sid="select_time_title" className="uitext" /> pop-up appears, uncheck the <Cmdname sid="use_dashboard_settings" className="uitext" /> option.
 
 :::note
 
-To turn on or off the sound when a notification occurs, select ![Sound icon](/img/ico-noti-sound.svg).
+- For more information on how to use the <Cmdname sid="select_time_title" className="uitext" /> option, see [the following](usage-ui#timeselector).
+
+- To turn the sound on or off when a notification occurs, select ![Sound icon](/img/ico-noti-sound.svg).
 
 :::
+
+##### <Cmdname sid="view_mode" />
+
+<Columns>
+
+<Column className="text--center width--50">
+
+![Alert list](/img/fb-alert-list-widget-view-mode.png)
+
+</Column>
+
+<Column className="text--left">
+
+In <Cmdname sid="view_mode" className="uitext" />, you can check the notification occurrence status based on the setting of <Cmdname sid="edit_mode" className="uitext" />.
+
+- To view the notification list in full screen, select ![Full screen icon](/img/ic-fullscreen.svg).
+
+- To open the notification list in a new window for checking, select ![New window icon](/img/ic-popup.svg).
+
+</Column>
+
+</Columns>
+
+#### <Cmdname sid="event" /> <Cmdname sid="timeline" /> {#eventtimeline}
+
+You can view the time-based notification history for one or more projects in chart format.
+
+<Columns>
+
+<Column className="text--center width--50">
+
+![Event tilmeline](/img/fb-event-timeline-widget.png)
+
+<Cmdname sid="edit_mode" />
+
+</Column>
+
+<Column className="text--center">
+
+![Event tilmeline](/img/fb-event-timeline-widget-view-mode.png)
+
+<Cmdname sid="view_mode" />
+
+</Column>
+
+</Columns>
+
+- In <Cmdname sid="edit_mode" className="uitext" />, you can set a separate time other than the query time set in the dashboard. Select ![Clock icon](/img/ic-custom-time.svg). When the <Cmdname sid="select_time_title" className="uitext" /> pop-up appears, uncheck the <Cmdname sid="use_dashboard_settings" className="uitext" /> option.
+
+- To display a full screen in <Cmdname sid="view_mode" className="uitext" />, select ![Full screen icon](/img/ic-fullscreen.svg). To check in a new window, select ![New window icon](/img/ic-popup.svg).
 
 ### ![](/img/ic-agent.svg) Checking status {#checkstatus}
 

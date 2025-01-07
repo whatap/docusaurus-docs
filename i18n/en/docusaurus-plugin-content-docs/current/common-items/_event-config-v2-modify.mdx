@@ -12,6 +12,12 @@ You can set the criteria for event occurrence conditions.
 
   <ImgLang img='event-config-v2-simulation-common.png' desc='Event simulation' />
 
+  :::note
+
+  For more information on how to use the time selector, see [the following](usage-ui#timeselector).
+
+  :::
+
 - <Cmdname sid="TTL07365" className="uitext" replace="</br>" />: You can set the thresholds for the <span class="slow">Warning</span> or <span class="vslow">Critical</span> notifications. Set an operator and then enter thresholds.
 
   - Operators: `>` (greater than), `>=` (greater than or equal to), `<` (less than), `<=` (less than or equal to), `==` (equal to)
@@ -161,7 +167,9 @@ You can write a title and message for the event received as a notification, and 
 
   :::note
 
-  During testing, substitution for actual metric values or variables does not work, and the notifications cannot be sent only to users with recipient tags.
+  - During testing, substitutions for actual metric values ​​or variables do not work. 
+
+  - Test notifications are sent only to users with the recipient tag set in the <Cmdname sid="TTL07415" className="uitext" /> option. If you select <Cmdname sid="ITM07419" className="uitext" />, a test notification is sent to all users.
 
   :::
 

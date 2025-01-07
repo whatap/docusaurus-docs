@@ -1,0 +1,30 @@
+---
+id: dbx-2_2_6
+title: DBX v2.2.6
+pagination_next: release-notes/db/dbx-2_2_5
+displayed_sidebar: releaseSidebar
+---
+
+2024年12月02日
+
+## Altibase
+
+<Status priority='1'>Feature</Status> Segment情報収集のためのエージェントオプションを追加
+
+- **segments** <span class='type'>Boolean</span>
+
+  既定値 `true` 
+
+  セグメントサイズの情報を収集します。 <Cmdname sid="side_reportStat" className="uitext" /> &gt; <Cmdname sid="side_tableSpace" className="uitext" />メニューからデータベースまたはテーブルスペースを選択すると、サイズ情報を確認できます。
+
+- **segments_min_size** <span class='type'>Int</span>
+
+  デフォルト値`10` (単位: MB)
+
+  セグメントサイズの情報を収集する最小単位の既定値は10MBです。 セグメントサイズ情報を収集する時に設定した値よりも小さいサイズのセグメントサイズ情報は収集しません。
+
+- **segments_hour** <span class='type'>Int</span>
+
+  既定値`5`
+
+  セグメントサイズの情報を収集する時刻を設定します。 既定値は`5`であり、朝の5時に収集を始めます。
