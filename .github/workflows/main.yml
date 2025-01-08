@@ -16,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Increase file limit
+        run: sudo sysctl -w fs.file-max=65536
       - uses: actions/setup-node@v3
         with:
           node-version: 18
