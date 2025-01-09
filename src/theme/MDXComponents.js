@@ -28,6 +28,8 @@ import Title from '@site/src/components/Title';
 import ReturnLink from '@site/src/components/CurrentDocurl.js';
 import ImportJson from "@site/src/components/ImportJson";
 import Collection from "@site/src/components/Collection";
+import UptoDate from "@site/src/components/Date/index.js";
+import Rcarditem from "@site/src/components/ReleasenoteCard/index.js";
 
 export default {
   // 기본 mapping 재사용
@@ -58,5 +60,7 @@ export default {
   Title,
   ReturnLink,
   ImportJson,
-  Collection
+  Collection,
+  UptoDate,
+  Rcarditem
 };
