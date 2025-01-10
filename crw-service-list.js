@@ -7,7 +7,10 @@ const urls = [
     // 'https://docs.whatap.io/release-notes/service/service-2_6_x',
     // 'https://docs.whatap.io/release-notes/service/service-2_7_x',
     // 'https://docs.whatap.io/release-notes/service/service-2_8_x',
-    'https://docs.whatap.io/release-notes/service/service-2_9_x',
+    // 'https://docs.whatap.io/release-notes/service/service-2_9_x',
+    'https://docs.whatap.io/release-notes/service/service-2_10_x',
+    'https://docs.whatap.io/release-notes/service/service-2_11_x',
+    'https://docs.whatap.io/release-notes/service/service-2_12_x',
 ];
 
 // 제품명별로 생성된 파일명을 묶는 객체
@@ -39,7 +42,7 @@ const processUrls = async () => {
                         productName = 'AWSLog';
                     }
 
-                    const fileName = `./crw-data/crwld-service-24q3/_import-24q3-${lastUrl2}-${productName}.mdx`.trim();
+                    const fileName = `./crw-data/crwld-service-24q4/_import-24q4-${lastUrl2}-${productName}.mdx`.trim();
 
                     let mdxContent = '';
 
@@ -115,13 +118,13 @@ const processUrls = async () => {
             Object.keys(productFiles).forEach(productName => {
                 const filesList = productFiles[productName].map(file => {
                     const cleanFileName = file.replace(/\u200B/g, '');
-                    return `import ${productName}_24q3 from ".${cleanFileName}";\n\n<${productName}_24q3 />\n`;
+                    return `import ${productName}_24q4 from ".${cleanFileName}";\n\n<${productName}_24q4 />\n`;
                 }).join('\n');
                 const cleanProductName = productName.replace(/\u200B/g, '');
                 productFilesContent += `## \`${cleanProductName}\`\n\n${filesList}\n`;
             });
 
-            const newFilesMDX = `./crw-data/crwld-service-24q3/_import-new-files-${lastUrl2}.mdx`; // newFilesMDX 정의
+            const newFilesMDX = `./crw-data/crwld-service-24q4/_import-new-files-${lastUrl2}.mdx`; // newFilesMDX 정의
             if (fs.existsSync(newFilesMDX)) {
                 const existingFilesContent = fs.readFileSync(newFilesMDX, 'utf-8');
                 const existingFilesSet = new Set(existingFilesContent.split('\n').map(line => line.trim()));
@@ -167,7 +170,7 @@ function updateMDXContent(fileName, existingContent, version, newContent, produc
     fs.writeFileSync(fileName, updatedContent);
     console.log(`MDX file updated: ${fileName}`);
 
-    const backupFileName = `./crw-data/backup/_import-backup-24q3-${lastUrl2}-${productName}.mdx`;
+    const backupFileName = `./crw-data/backup/_import-backup-24q4-${lastUrl2}-${productName}.mdx`;
     fs.copyFileSync(fileName, backupFileName);
     console.log(`Backup file created: ${backupFileName}`);
 }

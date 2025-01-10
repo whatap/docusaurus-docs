@@ -16,6 +16,7 @@
     "className": "iflang",
     "link": "/blog/tags/2024",
     "items": [
+      { "link": "/blog/2024-4q-summary", "className": "news" },
       { "link": "/blog/2024-3q-summary", "className": "iflang" },
       { "link": "/blog/2024-2q-summary" , "className": "iflang" },
       { "link": "/blog/2024-1q-summary" , "className": "iflang" }

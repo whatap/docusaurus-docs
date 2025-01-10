@@ -3,7 +3,7 @@ const fs = require('fs').promises;
 const path = require('path');
 
 // 폴더 경로
-const folderPath = './crw-data/crwld-agent-24q3';
+const folderPath = './crw-data/crwld-agent-24q4';
 
 async function processFiles() {
     try {
@@ -62,10 +62,14 @@ function generateVersionLink(productName, versionLinkPart) {
         versionLinkDB = 'db/xos';
     } else if (versionLinkDB === 'dbx/dbx') {
         versionLinkDB = 'db/dbx';
-    } else if (versionLink = 'browser/browser'){
+    } else if (productName === 'browser'){
         return `https://docs.whatap.io/release-notes/${versionLinkDB}-v${versionLinkPart}`;
     }
     return `https://docs.whatap.io/release-notes/${versionLinkDB}-${versionLinkPart}`;
 }
 
 processFiles();
+
+
+// if (versionLink = 'browser/browser')
+// if (productName === 'browser')
